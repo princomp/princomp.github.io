@@ -41,24 +41,9 @@ jobs:
         sudo apt-get install -y texlive texlive-xetex texlive-latex-extra lmodern librsvg2-bin fonts-symbola 
         pip install --upgrade pip
         pip install Pygments pandoc-include
-    - name: Fetch previous version ⤵️
-      run: |
-        cd /home/runner/work/csci-1301.github.io/csci-1301.github.io/
-        wget https://github.com/csci-1301/csci-1301.github.io/releases/download/latest/release.zip && unzip -q release.zip && cd content && rsync -avR labs/*/*.zip ../
     - name: Build 🏗️
-      run: make all
-    - name: Deploy website 🚀
-      uses: JamesIves/github-pages-deploy-action@v4
-      with:
-        branch: gh-pages 
-        folder: content
-        clean: true
-        single-commit: true
-    - name: Create package 🎁
-      uses: crowbarmaster/GH-Automatic-Releases@latest
-      with:
-        automatic_release_tag: "latest"
-        repo_token: ${{ secrets.GITHUB_TOKEN }}
-        prerelease: true
-        draft: false
-        files: content/release.zip
+      run: | 
+        make all
+        tree content/
+        git checkout quartz
+        npx quartz build --serve --concurrency 8
