@@ -14,6 +14,7 @@ The [source code repository](https://github.com/princomp/princomp.github.io)'s m
 path | description
 --- | ---
 `.github` | github templates and configuration for github actions
+`misc` | resources that needs to be either integrated into the source, or discarded
 `source`| source for the material
 `licence.md` | license file
 `readme.md` | presentation of the repository.
@@ -27,10 +28,10 @@ path | description
 `img` | all images
 `labs` | lab exercises
 `lectures` | lecture notes
-`misc` | various notes
 `slides` | slides
 `templates` | templates and meta data files used for building this resource 
 `vid` | video files
+`Makefile` | makefile used to instruct how to compile this resource
 `index.md` | website index page
 `404.md` | website 404 page
 
