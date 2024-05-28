@@ -6,7 +6,6 @@ This guide explains how this resource is organized, how it is built, and how to 
 |:---------------------------|
 | This resource is currently under heavy remodelling. This documentation will be updated but is outdated in places as of this writing. |
 
-
 ## Resources Organization 
 
 The [source code repository](https://github.com/princomp/princomp.github.io)'s main branch is organized as follows:
@@ -34,6 +33,13 @@ path | description
 `Makefile` | makefile used to instruct how to compile this resource
 `index.md` | website index page
 `order` | file used to specify in which order the website's menu and the book needs to be presented
+
+The content is built and deployed in two phases:
+
+- Running `make all` in the `source` folder will create a `content` folder at root level containing:
+    - the `.md` files (regardless of their location) processed by pandoc after it applied some filters (refer to the `PANDOC_MD` variable in our makefile),
+    - for each `.md` file in the `source` folder, the same document in an "alternative formats" (`.pdf`, `odt` and `.docx`), as processed by pandoc,
+    - some files (in `img`, `slides`, `vid`, `templates`) copied verbatim or selectively (for example, )
 
 ### Locating course resources
 
@@ -437,7 +443,14 @@ Possible improvements:
 
 - Integrate callouts, as <https://quartz.jzhao.xyz/features/callouts>, <https://gist.github.com/jskherman/8e721302e67d308e8a81f3df84f01f20>, <https://www.reddit.com/r/LaTeX/comments/1baudg4/callouts_in_latex/>, <https://tex.stackexchange.com/questions/714908/newcommand-syntax-with-callouts>, <https://forum.obsidian.md/t/rendering-callouts-similarly-in-pandoc/40020/6>, <https://raw.githubusercontent.com/kdheepak/kdheepak.github.io/main/blog/pandoc-lua-filter-for-alerts/index.md>.
 
-- Document [quartz](quartz.jzhao.xyz/), how to run it locally, and explain the edits made in <https://github.com/princomp/princomp.github.io/tree/quartz-migration>.
+- Document [quartz](quartz.jzhao.xyz/), how to run it locally, and explain the edits made in <https://github.com/princomp/princomp.github.io/tree/quartz-migration>. 
+
+- explain how order works, and that changing 
+```
+useSavedState: true, // To debug the explorer, change to "false" (this way, the menu is not cached / permanent), 
+```
+in https://github.com/princomp/princomp.github.io/blob/quartz/quartz/components/Explorer.tsx can help in debugging the changes.
+
 
 - Add logos before code, pdf, odt, docx, md.
 
