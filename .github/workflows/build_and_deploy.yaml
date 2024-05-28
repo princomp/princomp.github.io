@@ -52,7 +52,7 @@ jobs:
     - name: Build 🏗️
       run: | 
         cd source
-        make build-light
+        make all
     - name: Create package 🎁
       uses: crowbarmaster/GH-Automatic-Releases@latest
       with:
