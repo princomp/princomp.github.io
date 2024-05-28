@@ -20,9 +20,10 @@ permissions:
 on:
   push:
     branches: [ main ]
+    paths:
+      - 'source/**'
   workflow_dispatch:
-    branches: [ main ]
-    
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
