@@ -242,7 +242,7 @@ MAKEFLAGS:= -j
 # process.
 # Refer to sortFn.ts and web-order.ts
 # in the quartz branch for more info
-web-order.ts: order
+$(BUILD_DIR)web-order.ts: order
 	@echo -n "// This file was generated automatically by calling make web-order.ts.\n// Refer to the Makefile to read indications on how to generate and edit it.\nexport const nameOrderMap: Record<string, number> = {\n" > $@
 	@n=0 ;
 	@while read -r line; do \
@@ -412,7 +412,7 @@ $(BUILD_DIR)book.docx: $(SOURCE_BOOK)
 TARGET_BOOK: $(BUILD_DIR)book.html $(BUILD_DIR)book.pdf $(BUILD_DIR)book.odt $(BUILD_DIR)book.docx
 
 # Ligter build, to test compilation and website deployment
-build-light: web-order.ts $(TARGET_MD_FILES) $(TARGET_WOFF_FONT_FILES) $(TARGET_IMAGES_FILES) $(TARGET_VIDEOS_FILES) $(TARGET_DOC_FILES_WITHOUT_INDEX)
+build-light: $(BUILD_DIR)web-order.ts $(TARGET_MD_FILES) $(TARGET_WOFF_FONT_FILES) $(TARGET_IMAGES_FILES) $(TARGET_VIDEOS_FILES) $(TARGET_DOC_FILES_WITHOUT_INDEX)
 
 build: build-light $(TARGET_PDF_FILES_WITHOUT_INDEX) $(TARGET_ODT_FILES_WITHOUT_INDEX) $(TARGET_PROJECTS_FILES) $(TARGET_BOOK)
 
