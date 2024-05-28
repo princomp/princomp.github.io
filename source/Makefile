@@ -243,6 +243,7 @@ MAKEFLAGS:= -j
 # Refer to sortFn.ts and web-order.ts
 # in the quartz branch for more info
 $(BUILD_DIR)web-order.ts: order
+	mkdir -p $(dir $@)
 	@echo -n "// This file was generated automatically by calling make web-order.ts.\n// Refer to the Makefile to read indications on how to generate and edit it.\nexport const nameOrderMap: Record<string, number> = {\n" > $@
 	@n=0 ;
 	@while read -r line; do \
