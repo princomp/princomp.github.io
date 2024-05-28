@@ -190,7 +190,7 @@ The `{ width=80% }` attribute is optional.
     - source code that is faulty, partial, or does not terminate can be included in markdown as inline code block
     - we can automatically check these code snippets for syntactical correctness if these guidelines are followed
  
-- code snippet can be included in markdown documents using pandoc-include filter:
+- code snippet can be included in markdown documents using [pandoc-include](https://github.com/DCsunset/pandoc-include) filter:
 
     <pre>
     ```
@@ -198,6 +198,7 @@ The `{ width=80% }` attribute is optional.
     ```
     </pre>
 
+    Note that for [an unknown reason](https://github.com/DCsunset/pandoc-include/issues/45), no special characters (such as `_`) should be used in the filenames.
 - Title each source code block included in markdown, this will create a URL for the code block and enables linking to it.
 - code blocks are by default annotated as `csharp`
     - syntax highlighting is applied automatically at build time based on the code block language
