@@ -411,8 +411,11 @@ $(BUILD_DIR)book.docx: $(SOURCE_BOOK)
 
 TARGET_BOOK: $(BUILD_DIR)book.html $(BUILD_DIR)book.pdf $(BUILD_DIR)book.odt $(BUILD_DIR)book.docx
 
-all: web-order.ts $(TARGET_MD_FILES) $(TARGET_WOFF_FONT_FILES) $(TARGET_IMAGES_FILES) $(TARGET_VIDEOS_FILES) 
+build: web-order.ts $(TARGET_MD_FILES) $(TARGET_WOFF_FONT_FILES) $(TARGET_IMAGES_FILES) $(TARGET_VIDEOS_FILES) 
 # $(TARGET_DOC_FILES_WITHOUT_INDEX) $(TARGET_PDF_FILES_WITHOUT_INDEX) $(TARGET_ODT_FILES_WITHOUT_INDEX) $(TARGET_PROJECTS_FILES) $(TARGET_BOOK)
+
+all: build
+	7z a $(BUILD_DIR)release.zip $(BUILD_DIR)
 
 # Phony rule to display variables
 # Uncomment the following and replace
@@ -420,9 +423,3 @@ all: web-order.ts $(TARGET_MD_FILES) $(TARGET_WOFF_FONT_FILES) $(TARGET_IMAGES_F
 # with the variable you want listed.
 #test:
 #	$(info $$PROJECT_DIR is [${PROJECT_DIR}])
-
-#deploy:
-#	git checkout quartz-migration
-#	npx quartz build --serve --concurrency 8	
-
-
