@@ -13,7 +13,7 @@ This is an excellent practice that can also be performed "by hand", as explained
 
 ## Executing Code Found on-line
 
-As you progress in this class, you will be asked more and more to download and execute code hosted [in our repository](https://github.com/csci-1301/csci-1301.github.io/).
+As you progress in this class, you will be asked more and more to download and execute code hosted [in our repository](https://github.com/princomp/princomp.github.io/).
 How can you tell that you can trust this code?
 
 We have not implemented checksum-matching (yet!), but you can trust this code as it was coded by your instructors, and hosted on a platform using [two-factor authentication](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/about-two-factor-authentication) where every action is tracked using [versioning](https://www.wikiwand.com/en/Software_versioning).

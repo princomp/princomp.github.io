@@ -21,7 +21,7 @@ Possible improvements:
 
 - Integrate callouts, as <https://quartz.jzhao.xyz/features/callouts>, <https://gist.github.com/jskherman/8e721302e67d308e8a81f3df84f01f20>, <https://www.reddit.com/r/LaTeX/comments/1baudg4/callouts_in_latex/>, <https://tex.stackexchange.com/questions/714908/newcommand-syntax-with-callouts>, <https://forum.obsidian.md/t/rendering-callouts-similarly-in-pandoc/40020/6>, <https://raw.githubusercontent.com/kdheepak/kdheepak.github.io/main/blog/pandoc-lua-filter-for-alerts/index.md>.
 
-- Document [quartz](quartz.jzhao.xyz/), how to run it locally, and explain the edits made in <https://github.com/csci-1301/csci-1301.github.io/tree/quartz-migration>.
+- Document [quartz](quartz.jzhao.xyz/), how to run it locally, and explain the edits made in <https://github.com/princomp/princomp.github.io/tree/quartz-migration>.
 
 - Add logos before code, pdf, odt, docx, md.
 
@@ -91,7 +91,7 @@ useSavedState: false, // TEMPORARY, to debug the explorer.
 
 ## Resources Organization 
 
-The [source code repository](https://github.com/csci-1301/csci-1301.github.io)'s main branch is organized as follows:
+The [source code repository](https://github.com/princomp/princomp.github.io)'s main branch is organized as follows:
 
 path | description
 --- | ---
@@ -113,16 +113,16 @@ Additional configuration files are at the root of the source code repository.
 
 How to obtain the latest version of this resource:
 
-#. visit the accompanying website [csci-1301.github.io](https://csci-1301.github.io). This website includes the latest version of the course textbook in all supported formats, links to labs, and all other available student resources.
+#. visit the accompanying website [princomp.github.io](https://princomp.github.io). This website includes the latest version of the course textbook in all supported formats, links to labs, and all other available student resources.
 #. AU-hosted mirror of the website is located at <https://spots.augusta.edu/caubert/teaching/csci-1301>
-#. latest version of built resource is available as a .zip file under [releases](https://github.com/csci-1301/csci-1301.github.io/releases) on Github.
+#. latest version of built resource is available as a .zip file under [releases](https://github.com/princomp/princomp.github.io/releases) on Github.
 
 A mirrored version of this website is hosted on [spots](https://spots.augusta.edu/caubert/teaching/csci-1301/) and updated regularly.
 Additional copies of this resource can be made available through box or D2L. Because manual effort is required to share the resource through these channels, these may be slightly behind the latest version.
 
 How to obtain much earlier versions of this resource:
 
-#. Complete release history is accessible under [releases](https://github.com/csci-1301/csci-1301.github.io/releases) on Github
+#. Complete release history is accessible under [releases](https://github.com/princomp/princomp.github.io/releases) on Github
 #. Earlier versions of this resource will be periodically archived on Galileo.
  
 ## Editing Resources
@@ -298,11 +298,11 @@ Use emoji shortcodes to label following course resources
 
 #. Each resource will be labelled with prerequisites. 
 
-    This is a list of zero or more values. For zero prerequisites write `None`. These requirements are expressed in the associated index of lectures/labs/problems (cf. [lectures](https://github.com/csci-1301/csci-1301.github.io/tree/main/lectures)).
+    This is a list of zero or more values. For zero prerequisites write `None`. These requirements are expressed in the associated index of lectures/labs/problems (cf. [lectures](https://github.com/princomp/princomp.github.io/tree/main/lectures)).
 
 #. Lecture notes and slides will be labelled by related labs, and vice versa
 
-    These requirements are expressed in the associated index of lectures and labs (cf. [lectures](https://github.com/csci-1301/csci-1301.github.io/tree/main/lectures)).
+    These requirements are expressed in the associated index of lectures and labs (cf. [lectures](https://github.com/princomp/princomp.github.io/tree/main/lectures)).
 
 
 ## Styling and Templating
@@ -378,11 +378,11 @@ This repository uses following tools and technologies:
 
 ### Build outputs
 
-The resource material is organized into specific directories (cf. [resource organization](#resources-organization)). These resources are then compiled into templated documents in various formats using [pandoc](https://pandoc.org/MANUAL.html). Different directories undergo different build steps as defined in the project [Makefile](https://github.com/csci-1301/csci-1301.github.io/blob/main/Makefile) and generate various outputs. For example, lecture notes are compiled into a textbook and labs are packaged into individual labs. The makefile explains the exact steps applied to each type of resource.
+The resource material is organized into specific directories (cf. [resource organization](#resources-organization)). These resources are then compiled into templated documents in various formats using [pandoc](https://pandoc.org/MANUAL.html). Different directories undergo different build steps as defined in the project [Makefile](https://github.com/princomp/princomp.github.io/blob/main/Makefile) and generate various outputs. For example, lecture notes are compiled into a textbook and labs are packaged into individual labs. The makefile explains the exact steps applied to each type of resource.
 
 ### Github actions
 
-This resource is built automatically every time changes are committed to the main branch of the repository. This is configured to run on [Github actions](https://github.com/features/actions). There are currently two configured [workflows](https://github.com/csci-1301/csci-1301.github.io/actions): one to build the resource and to deploy it, and a second one to check that any opened pull requests can be built successfully. 
+This resource is built automatically every time changes are committed to the main branch of the repository. This is configured to run on [Github actions](https://github.com/features/actions). There are currently two configured [workflows](https://github.com/princomp/princomp.github.io/actions): one to build the resource and to deploy it, and a second one to check that any opened pull requests can be built successfully. 
 
 The build configuration uses texlive to keep the dependency installation time low. Similarly, the choice of Python packages is preferable for pandoc filters, because they are usually straightforward and fast to install. We want to avoid choosing packages that significantly increase build time.
 
@@ -396,7 +396,7 @@ Currently a github action is setup to do the following: whenever a new commit is
 
 Making a versioned release is done as follows:
 
-#. Go to [repository releases](https://github.com/csci-1301/csci-1301.github.io/releases)
+#. Go to [repository releases](https://github.com/princomp/princomp.github.io/releases)
 #. Choose latest, which contains the files of the latest build
 #. Edit this release, giving it a semantic name and a version, such as v1.0.0. Name and version can be the same.
    (cf. [semantic versioning](https://semver.org/))
@@ -409,7 +409,7 @@ Following these steps will generate a new, versioned release. The versioned rele
 
 Once this is done, remember to create the next pre-release:
 
-#. Go to [the repository releases](https://github.com/csci-1301/csci-1301.github.io/releases).
+#. Go to [the repository releases](https://github.com/princomp/princomp.github.io/releases).
 #. Click on "Draft a new release".
 #. Pick the tag "Latest".
 #. Click on "Generate release notes"
@@ -423,7 +423,7 @@ For the purposes of editing content, it is sufficient to make edits to markdown 
 
 #### Installing dependencies
 
-To find the current list of dependencies needed to build this resource, refer to the [build script install section](https://github.com/csci-1301/csci-1301.github.io/blob/main/.github/workflows/build.yaml#L33-L40), which lists all required packages needed to build the resource. The exact installation steps vary depending on your local operating system.
+To find the current list of dependencies needed to build this resource, refer to the [build script install section](https://github.com/princomp/princomp.github.io/blob/main/.github/workflows/build.yaml#L33-L40), which lists all required packages needed to build the resource. The exact installation steps vary depending on your local operating system.
 
 In general the following dependencies are needed:
 
@@ -470,14 +470,14 @@ The steps for migrating feedback target repository are as follows:
 
 #. Create a new **public** repository under `csci-1301` github organization. Follow the established naming convention, and leave all the options except for visibility (which needs to be set to public) by default.
 #. Go to repository Issues (make sure issues is enabled in repository settings)
-#. Create a new label whose _label name_ is `comment` (to match [widget configuration](https://github.com/csci-1301/csci-1301.github.io/blob/main/templates/web/template.html#L87-L94))
+#. Create a new label whose _label name_ is `comment` (to match [widget configuration](https://github.com/princomp/princomp.github.io/blob/main/templates/web/template.html#L87-L94))
 #. Go to [`Organization Settings > Installed GitHub Apps`](https://github.com/organizations/csci-1301/settings/installations) 
 #. Choose "utterances" > "configure"
 #. Under "Repository access" > "Only select repositories"
    - select the repository created in step 1. 
    - remove the previous semester feedback repository
 #. Save
-#. In `csci-1301.github.io` repository open `/templates/web/template.html`
+#. In `princomp.github.io` repository open `/templates/web/template.html`
 #. Update utteranc.es widget code to point to the new feedback repository created in step 1.
 
     ```js
@@ -497,7 +497,7 @@ The steps for migrating feedback target repository are as follows:
 Every semester,
 
 - [The members of the "UCAs" team](https://github.com/orgs/csci-1301/teams/ucas) should be updated,
-- A "uca-resources-<semester>-YYYY" repository should be created, by [forking the template](https://github.com/csci-1301/uca-resources-template) (private repository),
+- A "uca-resources-<semester>-YYYY" repository should be created, by [forking the template](https://github.com/princomp/uca-resources-template) (private repository),
 - The new repository should be added to the [list of repositories of the team](https://github.com/orgs/csci-1301/teams/ucas/repositories) (as maintainer),
 - The old repository should be deleted from that same list, and then archived.
 - GRAs should be added / removed from the [instructors list](https://github.com/orgs/csci-1301/teams/instructors), and previous instructors should be removed from that same list,

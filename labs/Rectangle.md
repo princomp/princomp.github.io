@@ -17,7 +17,7 @@ This lab serves multiple goals:
 
     ![](./../../img/solution_explorer_rectangle.png)
 
-#. In the Solution Explorer, double-click on `Rectangle.cs` and note how close it is to what is presented during in [the lecture notes](https://csci-1301.github.io/book.html#writing-our-first-class).
+#. In the Solution Explorer, double-click on `Rectangle.cs` and note how close it is to what is presented during in [the lecture notes](https://princomp.github.io/book.html#writing-our-first-class).
 #. In the Solution Explorer, double-click on `Program.cs` and observe it.
 #. Compile and execute the code.
 #. Now, do the following:

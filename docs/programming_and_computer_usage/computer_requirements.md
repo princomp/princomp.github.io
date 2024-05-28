@@ -1,7 +1,7 @@
 #  Computer Requirements
 
 This page contains some recommendations on students wishing to buy a computer to complete their program in [the School of Cyber and Computer Sciences](https://www.augusta.edu/ccs/).
-Note that **possessing a computer [is not required to complete CSCI 1301](https://csci-1301.github.io/software_install.html#accessing-an-ide-1)**, but recommended.
+Note that **possessing a computer [is not required to complete CSCI 1301](https://princomp.github.io/software_install.html#accessing-an-ide-1)**, but recommended.
 
 ## In Short
 

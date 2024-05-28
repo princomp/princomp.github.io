@@ -121,7 +121,7 @@ The sum from 1 to your number is: 36
 
 And you can verify for yourself that 1+2+3+4+5+6+7+8 = 36.
 <details><summary>Solution</summary>
-You can look at the code under "Accumulator" at <https://csci-1301.github.io/book.html#vocabulary-1> to get started: essentially, you need to replace the fixed value 10 with the value given by the user.
+You can look at the code under "Accumulator" at <https://princomp.github.io/book.html#vocabulary-1> to get started: essentially, you need to replace the fixed value 10 with the value given by the user.
 </details>
 
 ## Infinite Loops

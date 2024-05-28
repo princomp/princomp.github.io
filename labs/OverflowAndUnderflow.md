@@ -12,7 +12,7 @@ This lab serves multiple goals:
 
 ### Warm Up
 
-For a general introduction of overflow, please [read the relevant section](https://csci-1301.github.io/book.html#overflow).
+For a general introduction of overflow, please [read the relevant section](https://princomp.github.io/book.html#overflow).
 Do execute the code shared in this section:
 
 ```
@@ -83,7 +83,7 @@ As funny or interesting as that strange behavior may seem, overflow errors actua
 
 ## Underflow
 
-Most of what we wrote about overflow is also true of _under_ flow, and you can read about it [in the lecture notes](https://csci-1301.github.io/book.html#underflow).
+Most of what we wrote about overflow is also true of _under_ flow, and you can read about it [in the lecture notes](https://princomp.github.io/book.html#underflow).
 In a nutshell, you can witness it by executing a statement such as
 
 ```

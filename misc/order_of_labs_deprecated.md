@@ -3,7 +3,7 @@
 <!--
 This directory contains all lab exercises. At build time these labs are compiled into instructions in various document formats with an optional, accompanying source code solution.
 
-Cf. https://csci-1301.github.io/user_guide.html#creating-new-labs on how to add a new lab.
+Cf. https://princomp.github.io/user_guide.html#creating-new-labs on how to add a new lab.
 -->
 
 <!-- This table ends up causing more confusion than it's worth. Recommend to make internal for instructors' eyes only
@@ -11,21 +11,21 @@ Cf. https://csci-1301.github.io/user_guide.html#creating-new-labs on how to add 
 
 |  Week | Lab Topic      | 
 |    | |
-|  1    | [Introduction](https://csci-1301.github.io/labs/Introduction/)  | 
-|  2    | [Hello World](https://csci-1301.github.io/labs/HelloWorld/), [First Program](https://csci-1301.github.io/labs/FirstProgram/)  | 
-|  3    | [Variables](https://csci-1301.github.io/labs/Variables/), [Casting](https://csci-1301.github.io/labs/Casting/)  | 
-|  4    | [User Input](https://csci-1301.github.io/labs/UserInput/), [Introduction to Classes](https://csci-1301.github.io/labs/Rectangle/)  | 
-|  5    | [Class Diagram](https://csci-1301.github.io/labs/ClassDiagram/), [Constructor and ToString](https://csci-1301.github.io/labs/ConstructorToString/) |  
-|  6    | [Precise Rectangle](https://csci-1301.github.io/labs/PreciseRectangle/)  | 
-|  7    | [Booleans](https://csci-1301.github.io/labs/Booleans/), [If](https://csci-1301.github.io/labs/If/), [If and Switch](https://csci-1301.github.io/labs/IfAndSwitch/)  |  
-|  8    | [Increment Decrement](https://csci-1301.github.io/labs/IncrementDecrement/), [While](https://csci-1301.github.io/labs/While/) | 10/05: Quiz #3 |
-|  9    | [Validating Input](https://csci-1301.github.io/labs/ValidatingInput/)  | 
-|  10   | [Do While](https://csci-1301.github.io/labs/DoWhile/)   | 
-|  11   | [Overflow and Underflow](https://csci-1301.github.io/labs/OverflowAndUnderflow/)  | 
-|  12   | [Char and Int Conversion](https://csci-1301.github.io/labs/Char/)    | 
-|  13   | [First Arrays Manipulations](https://csci-1301.github.io/labs/ArrayBasics/), [For Loops](https://csci-1301.github.io/labs/For/)  | 
-|  14   | [Using static keyword](https://csci-1301.github.io/labs/Static/)  | 
-|  15   | [Chemical Elements](https://csci-1301.github.io/labs/ChemicalElements/), [GradeCalculator](https://csci-1301.github.io/labs/GradeCalculator/), [Random](https://csci-1301.github.io/labs/Random/)
+|  1    | [Introduction](https://princomp.github.io/labs/Introduction/)  | 
+|  2    | [Hello World](https://princomp.github.io/labs/HelloWorld/), [First Program](https://princomp.github.io/labs/FirstProgram/)  | 
+|  3    | [Variables](https://princomp.github.io/labs/Variables/), [Casting](https://princomp.github.io/labs/Casting/)  | 
+|  4    | [User Input](https://princomp.github.io/labs/UserInput/), [Introduction to Classes](https://princomp.github.io/labs/Rectangle/)  | 
+|  5    | [Class Diagram](https://princomp.github.io/labs/ClassDiagram/), [Constructor and ToString](https://princomp.github.io/labs/ConstructorToString/) |  
+|  6    | [Precise Rectangle](https://princomp.github.io/labs/PreciseRectangle/)  | 
+|  7    | [Booleans](https://princomp.github.io/labs/Booleans/), [If](https://princomp.github.io/labs/If/), [If and Switch](https://princomp.github.io/labs/IfAndSwitch/)  |  
+|  8    | [Increment Decrement](https://princomp.github.io/labs/IncrementDecrement/), [While](https://princomp.github.io/labs/While/) | 10/05: Quiz #3 |
+|  9    | [Validating Input](https://princomp.github.io/labs/ValidatingInput/)  | 
+|  10   | [Do While](https://princomp.github.io/labs/DoWhile/)   | 
+|  11   | [Overflow and Underflow](https://princomp.github.io/labs/OverflowAndUnderflow/)  | 
+|  12   | [Char and Int Conversion](https://princomp.github.io/labs/Char/)    | 
+|  13   | [First Arrays Manipulations](https://princomp.github.io/labs/ArrayBasics/), [For Loops](https://princomp.github.io/labs/For/)  | 
+|  14   | [Using static keyword](https://princomp.github.io/labs/Static/)  | 
+|  15   | [Chemical Elements](https://princomp.github.io/labs/ChemicalElements/), [GradeCalculator](https://princomp.github.io/labs/GradeCalculator/), [Random](https://princomp.github.io/labs/Random/)
 -->
 
 ## Prerequisites and related lectures

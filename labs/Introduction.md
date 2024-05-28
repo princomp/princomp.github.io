@@ -15,13 +15,13 @@ Action:
 
 ## Navigating our Resources
 
-We strive to provide to our students all the material they will need to succeed in one place, at <https://csci-1301.github.io/>.
+We strive to provide to our students all the material they will need to succeed in one place, at <https://princomp.github.io/>.
 On this website, you will find:
 
-- ["The book"](https://csci-1301.github.io/book.html), which contains the lecture notes to cover one semester and is available [in `pdf`](https://csci-1301.github.io/book.pdf) (for printing, typically) and [in `odt`](https://csci-1301.github.io/book.odt)/[`docx`](https://csci-1301.github.io/book.docx) (for editing, typically; `docx` included for Microsoft Word compatibility). Along with [the `html` version](https://csci-1301.github.io/book.html) (i.e., the website), this gives four convenient ways of accessing the content of this course.
-- [Slides](https://csci-1301.github.io/slides.html), accompanys the lecture notes (in `pptx` and `pdf`).
-- [The labs](https://csci-1301.github.io/labs/), which are (most of the time) tied to particular lectures and contains hands-on practice exercise as well as instructions on how to use computers to complete this class.
-- Along with [other useful documents](https://csci-1301.github.io/#other-documents) about this class or studying at [our school](https://www.augusta.edu/ccs/) in particular.
+- ["The book"](https://princomp.github.io/book.html), which contains the lecture notes to cover one semester and is available [in `pdf`](https://princomp.github.io/book.pdf) (for printing, typically) and [in `odt`](https://princomp.github.io/book.odt)/[`docx`](https://princomp.github.io/book.docx) (for editing, typically; `docx` included for Microsoft Word compatibility). Along with [the `html` version](https://princomp.github.io/book.html) (i.e., the website), this gives four convenient ways of accessing the content of this course.
+- [Slides](https://princomp.github.io/slides.html), accompanys the lecture notes (in `pptx` and `pdf`).
+- [The labs](https://princomp.github.io/labs/), which are (most of the time) tied to particular lectures and contains hands-on practice exercise as well as instructions on how to use computers to complete this class.
+- Along with [other useful documents](https://princomp.github.io/#other-documents) about this class or studying at [our school](https://www.augusta.edu/ccs/) in particular.
 
 The main purpose of this first lab is to help you navigate those resources.
 We want this reading to be proactive, so we will include questions and actions like the ones below every now and then to help you be engaged with the material.
@@ -34,13 +34,13 @@ Action:
 Download them by clicking on the "↓ pdf", "↓ odt", and "↓ docx" links, then make sure you can open them all.
 You should realize that their content is identical to the page you are currently reading!^[Even this sentence will be displayed, even if it makes no sense to discuss the links in the footer of a `pdf` file, which does not have them!]
 
-You may also have seen the [Source code](https://github.com/csci-1301/csci-1301.github.io) and [About](../../about.html) links in the footer; the first one will give you access to the "frame" we are using to construct all of these resources, and the second contains information about the authors, copyrights, and tools used to construct this website.
-Even if you do not need to understand the source code and details of the implementation of these resources (which uses, as you may have guessed … markdown!), being curious about them may be extremely useful for the sake of learning, if you want to become an [Undergraduate (or Graduate) Course Assistant (UCA)](https://csci-1301.github.io/ca.html), are interested in contributing to open-source projects, or simply wonder how the magic is done!
+You may also have seen the [Source code](https://github.com/princomp/princomp.github.io) and [About](../../about.html) links in the footer; the first one will give you access to the "frame" we are using to construct all of these resources, and the second contains information about the authors, copyrights, and tools used to construct this website.
+Even if you do not need to understand the source code and details of the implementation of these resources (which uses, as you may have guessed … markdown!), being curious about them may be extremely useful for the sake of learning, if you want to become an [Undergraduate (or Graduate) Course Assistant (UCA)](https://princomp.github.io/ca.html), are interested in contributing to open-source projects, or simply wonder how the magic is done!
 
 ## What to Read First
 
 Your instructor(s) will be your primary guide when it comes to the order in which you need to read the material hosted here.
-However, you should feel free to explore our [other useful documents](https://csci-1301.github.io/#other-documents) that contain information you may be interested in fairly early in the semester (like…today!).
+However, you should feel free to explore our [other useful documents](https://princomp.github.io/#other-documents) that contain information you may be interested in fairly early in the semester (like…today!).
 Typically, the [Installing Software](../../software_install.html) page should probably be one of the first documents you read; it explains in detail how to set-up your computer to be able to execute, compile, and study the code we will be discussing in class and lab and how to access and use the computer labs.
 
 Action:

@@ -9,7 +9,7 @@ We would like to hear your thoughts on this resource to understand how to make i
 - talk to your instructor about the issue
 - talk to your section's UCA about the issue
 - leave feedback on this website on the page where you notice the issue
-- [Open an issue](https://github.com/csci-1301/csci-1301.github.io/issues/new/choose)
+- [Open an issue](https://github.com/princomp/princomp.github.io/issues/new/choose)
 - print the resource and identify the issue, then hand it to your instructor or UCA
 
 If you have suggestions on how to make it better, we encourage you to share those ideas too.
@@ -24,9 +24,9 @@ You will need to have a [Github account](https://github.com/join). Next ask your
 
 ### If you are an outside collaborator
 
-When you have identified a mistake in this resource and want to notify the authors, leave feedback on this website on the page where you notice the issue or [open an issue](https://github.com/csci-1301/csci-1301.github.io/issues/new/choose) explaining the issue. 
+When you have identified a mistake in this resource and want to notify the authors, leave feedback on this website on the page where you notice the issue or [open an issue](https://github.com/princomp/princomp.github.io/issues/new/choose) explaining the issue. 
 
-If you want to make edits yourself, you can [fork](https://github.com/csci-1301/csci-1301.github.io/fork) the source code, make edits, then open a [pull request](https://github.com/csci-1301/csci-1301.github.io/pulls) for us to review.
+If you want to make edits yourself, you can [fork](https://github.com/princomp/princomp.github.io/fork) the source code, make edits, then open a [pull request](https://github.com/princomp/princomp.github.io/pulls) for us to review.
 
 ## Next steps for editors
 

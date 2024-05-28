@@ -10,7 +10,7 @@ based on what is defined in the makefile, just be aware of that while editing.
 
 Welcome to the course resources website to teach principles of computer programming using C#.
 
-> ⚠️ [Our website on github](https://csci-1301.github.io/) will most likely be under maintenance during Summer 2024: please, [refer to our mirror on spots](https://spots.augusta.edu/caubert/teaching/csci-1301/) in the meantime. Thanks! ⚠️
+> ⚠️ [Our website on github](https://princomp.github.io/) will most likely be under maintenance during Summer 2024: please, [refer to our mirror on spots](https://spots.augusta.edu/caubert/teaching/csci-1301/) in the meantime. Thanks! ⚠️
 
 | 💥 News (4/5/24)       |
 |:---------------------------|

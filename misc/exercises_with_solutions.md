@@ -296,7 +296,7 @@ The following three exercises **do not** require a computer.
 Make sure you feel ready before starting them, try to do them with limited time and without notes, and, if you want, check your answer using your IDE.
 
 #. 
-    This problem restates the content of the [Order of Operations](https://csci-1301.github.io/book.html#order-of-operations) section of the lecture notes and ask you to answer various problems.
+    This problem restates the content of the [Order of Operations](https://princomp.github.io/book.html#order-of-operations) section of the lecture notes and ask you to answer various problems.
 
     There are 5 different arithmetic operations available in C#:
 
@@ -1482,7 +1482,7 @@ This time, the two exercises **do not** require a computer, and are here to craf
     }
     ```
     
-    The `decimal totalCost = sizeChoice == 'c' ? copies * 0.2m : copies * 0.25m;` statement uses [the conditional operator](https://csci-1301.github.io/book.html#the-conditional-operator).
+    The `decimal totalCost = sizeChoice == 'c' ? copies * 0.2m : copies * 0.25m;` statement uses [the conditional operator](https://princomp.github.io/book.html#the-conditional-operator).
     This particular statement is a shorter way of writing
     
     ```

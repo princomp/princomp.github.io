@@ -28,7 +28,7 @@ Question:
 ~ Have you actually checked where the HelloWorld (zip) archive was hosted? Was it on a trustworthy website? If yes, is it trustworthy because of the [domain name](https://www.wikiwand.com/en/Domain_name), because we told you to do so, or for some other reasons?
 
 <details><summary>Elements of solution</summary>
-The zip archive we asked you to download is hosted on <https://csci-1301.github.io/>, that is, on [Github pages](https://pages.github.com/).
+The zip archive we asked you to download is hosted on <https://princomp.github.io/>, that is, on [Github pages](https://pages.github.com/).
 There *can be* malware hosted on Github pages, and the fact that this website is secure (it uses http*s*) is in no ways a guarantee of safety.
 So, in short, this archive is safe because we told you so, and because we are careful how it is updated. 
 

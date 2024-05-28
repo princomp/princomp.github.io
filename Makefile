@@ -328,7 +328,7 @@ $(BUILD_DIR)$(PROJECT_DIR)%.zip: $(PROJECT_DIR)%.zip
 
 # Rule to create one individual project and zip it:
 # The code below is taken from and documented at 
-# https://github.com/csci-1301/C-Sharp-project-maker
+# https://github.com/princomp/C-Sharp-project-maker
 $(PROJECT_DIR)%.zip: $(PROJECT_DIR)%/*/Program.cs | $(PROJECT_DIR)/%/*/*.cs
 #
 # The structure of an archive is as follows:

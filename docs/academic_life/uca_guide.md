@@ -32,7 +32,7 @@ You can discuss topics such as the need for (virtual or physical) office hours, 
 
 On top of supporting students and helping the instructor, you are also encouraged to work on the improvement of those resources.
 Your contribution may range from spell-checking to pointing inconsistencies, from clarifying statements to re-organizing exercises.
-Thanks to git and [pull requests](https://github.com/csci-1301/csci-1301.github.io/pulls), you do not need to worry (too much) about introducing mistakes or blunders: the changes you suggest will always be reviewed by instructors before being merged in our master document.
+Thanks to git and [pull requests](https://github.com/princomp/princomp.github.io/pulls), you do not need to worry (too much) about introducing mistakes or blunders: the changes you suggest will always be reviewed by instructors before being merged in our master document.
 We discuss below how you can edit our resources.
 
 ## Editing the Resources
@@ -54,7 +54,7 @@ For github's interface, please refer to the following guide:
 
 GitHub is separated into many "repositories":
 
-- The **csci-1301.github.io** contains most of the resources that will be used (so it will be where you will navigate to the most),
+- The **princomp.github.io** contains most of the resources that will be used (so it will be where you will navigate to the most),
 - The **uca-resources-<semester>-YYYY** is a _private_ repository where material useful to UCAs but not accessible to students (such as project solution, listings, etc.) will be shared, 
 - The **feedback-<semester>-YYYY** and similarly named repositories contains feedback submitted by students/users. 
 
@@ -78,7 +78,7 @@ On this page, you will see the document formatted as markdown with two sections 
 
 !["Proposing Changes"](img/uca_guide_getting_help_2.png) 
 
-Once you have made the edits you wanted, you need to "commit" them; just like how you may write a paper, you need to submit it to the professor for them to see it. At the bottom of the page, there is a header box and a description box for you to describe what you did so others will know the changes you did (you do not need to go into *every* detail; just describe it generally, like "I fixed grammatical issues" or "Fixed code error"). As a UCA, you do not have write access to the **csci-1301.github.io** repository, so submitting a change will write it to a new branch in your fork `<your name>`/csci-1301.github.io, so you can send a pull request. Given the new protocol by Github, after making the neccessary edits, click the "Propose Changes" button located at the bottom. On this page and the next, there will be a "Create pull request" button, by clicking on this you will start a pull request. After you have successfully created a new branch for your commit and started a pull request, your edits will be checked by others so as to catch any mistake(s) you may have introduced before your pull request is merged into the base branch. 
+Once you have made the edits you wanted, you need to "commit" them; just like how you may write a paper, you need to submit it to the professor for them to see it. At the bottom of the page, there is a header box and a description box for you to describe what you did so others will know the changes you did (you do not need to go into *every* detail; just describe it generally, like "I fixed grammatical issues" or "Fixed code error"). As a UCA, you do not have write access to the **princomp.github.io** repository, so submitting a change will write it to a new branch in your fork `<your name>`/princomp.github.io, so you can send a pull request. Given the new protocol by Github, after making the neccessary edits, click the "Propose Changes" button located at the bottom. On this page and the next, there will be a "Create pull request" button, by clicking on this you will start a pull request. After you have successfully created a new branch for your commit and started a pull request, your edits will be checked by others so as to catch any mistake(s) you may have introduced before your pull request is merged into the base branch. 
 
 !["Committing"](img/uca_guide6.jpg)
 
@@ -87,6 +87,6 @@ Once you have made the edits you wanted, you need to "commit" them; just like ho
  
 - **Commit directly to `main` branch** submits your edits directly into the document.
 
-- **Create a new branch for this commit and start a pull request** creates a "pull request" (which can be found [in the *Pull Requests* tab at the top of the page](https://github.com/csci-1301/csci-1301.github.io/pulls)) which essentially notifies others "you edited this document and you want them to check it". Others can check the changes you make, improve them, change them, and can submit them for you. 
+- **Create a new branch for this commit and start a pull request** creates a "pull request" (which can be found [in the *Pull Requests* tab at the top of the page](https://github.com/princomp/princomp.github.io/pulls)) which essentially notifies others "you edited this document and you want them to check it". Others can check the changes you make, improve them, change them, and can submit them for you. 
 
 You can **Create a new branch for this commit and start a pull request** so others can double check your edits: it can act as a safety net, so your colleagues will be able to catch any mistake(s) you may have introduced!

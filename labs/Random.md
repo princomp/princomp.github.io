@@ -13,7 +13,7 @@ The `Random` class from the C## standard library can be used to generate random 
 In this lab, you will practice using the `Random` class.
 
 
-Start by reading [the corresponding chapter in the lecture notes](https://csci-1301.github.io/book.html#random), then create a new project and practice generating and displaying to the screen different random numbers:
+Start by reading [the corresponding chapter in the lecture notes](https://princomp.github.io/book.html#random), then create a new project and practice generating and displaying to the screen different random numbers:
 
 #. Generate any random integer
 #. Generate a random integer between -10 and 10 including these boundary values

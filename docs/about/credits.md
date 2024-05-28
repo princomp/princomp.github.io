@@ -8,7 +8,7 @@ It is used in the delivery of CSCI 1301 - Principles of Computer Programming I a
 ## Authors
 
 At the time of writing, this resource is actively maintained [Clément Aubert](https://spots.augusta.edu/caubert/#contact). 
-Additional contributions, by [(under)graduate course assistants](/docs/academic_life/ca) and other contributors, are [tracked by version control](https://github.com/csci-1301/csci-1301.github.io/graphs/contributors).
+Additional contributions, by [(under)graduate course assistants](/docs/academic_life/ca) and other contributors, are [tracked by version control](https://github.com/princomp/princomp.github.io/graphs/contributors).
 
 Some of the material originated from discussion, handouts and contributions by [Clément Aubert](http://spots.augusta.edu/caubert/), [Aubrey Bryant](https://www.linkedin.com/in/aubrey-bryant-61898176), [Michael Dowell](https://spots.augusta.edu/mdowell/), [Richard DeFrancisco](https://www.augusta.edu/faculty/directory/view.php?id=RDEFRANCISCO),  [Onyeka Ezenwoye](https://www.augusta.edu/faculty/directory/view.php?id=oezenwoye), [Leszek Gasieniec](https://cgi.csc.liv.ac.uk/~leszek/),  [Reza Rahaeimehr](https://www.augusta.edu/faculty/directory/view.php?id=RRAHAEIMEHR), [Neea Rusch](https://nkrusch.github.io/), [Edward Tremel](https://edwardtremel.com/) and [Paul York](https://www.augusta.edu/faculty/directory/view.php?id=pyork1).
 
@@ -58,4 +58,4 @@ Concretely, this means that you are free to:
 
 as long as you give proper credit and keep the same licence.
 
-Please refer to [our licence file](https://github.com/csci-1301/csci-1301.github.io/blob/main/LICENSE.md) for the detail of this licence.
+Please refer to [our licence file](https://github.com/princomp/princomp.github.io/blob/main/LICENSE.md) for the detail of this licence.
