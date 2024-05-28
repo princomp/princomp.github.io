@@ -6,88 +6,6 @@ This guide explains how this resource is organized, how it is built, and how to 
 |:---------------------------|
 | This resource is currently under heavy remodelling. This documentation will be updated but is outdated in places as of this writing. |
 
-::: callout
-::: warning
-This is a `warning`.
-:::
-:::
-
-> ![warning] Title
-> 
-> This resource is currently under heavy remodelling. This documentation
-> will be updated but is outdated in places as of this writing.
-
-Possible improvements:
-
-- Integrate callouts, as <https://quartz.jzhao.xyz/features/callouts>, <https://gist.github.com/jskherman/8e721302e67d308e8a81f3df84f01f20>, <https://www.reddit.com/r/LaTeX/comments/1baudg4/callouts_in_latex/>, <https://tex.stackexchange.com/questions/714908/newcommand-syntax-with-callouts>, <https://forum.obsidian.md/t/rendering-callouts-similarly-in-pandoc/40020/6>, <https://raw.githubusercontent.com/kdheepak/kdheepak.github.io/main/blog/pandoc-lua-filter-for-alerts/index.md>.
-
-- Document [quartz](quartz.jzhao.xyz/), how to run it locally, and explain the edits made in <https://github.com/princomp/princomp.github.io/tree/quartz-migration>.
-
-- Add logos before code, pdf, odt, docx, md.
-
-- explain how to add lecture (and how to sort it in the menu and get it in the book pdf, but also that it must have only one title element at top level).
-
-- explain that no two files should have the same name considering the sorting we use ^
-
-- give title to code snippets / code blocks
-
-- sort out misc folder
-
-```
-[WARNING] Could not fetch resource ./../../img/solution_explorer_rectangle.png: replacing image with description
-[WARNING] Could not fetch resource ./../../img/create_project.png: replacing image with description
-[WARNING] Could not fetch resource ./../../img/select_net.png: replacing image with description
-[WARNING] Could not fetch resource ./../../img/create_project_on_mac_1.png: replacing image with description
-[WARNING] Could not fetch resource ./../../img/create_project_on_mac_2.png: replacing image with description
-[WARNING] Could not fetch resource ./../../img/create_project_on_mac_3.png: replacing image with description
-[WARNING] Could not fetch resource ./../../img/create_project_on_mac_4.png: replacing image with description
-[WARNING] Could not fetch resource ./../../img/create_project_monodevelop.png: replacing image with description
-[WARNING] Could not fetch resource ./../../img/solution_explorer_rectangle.png: PandocResourceNotFound "./../../img/solution_explorer_rectangle.png"
-[WARNING] Could not fetch resource ./../../img/create_project.png: PandocResourceNotFound "./../../img/create_project.png"
-[WARNING] Could not fetch resource ./../../img/select_net.png: PandocResourceNotFound "./../../img/select_net.png"
-[WARNING] Could not fetch resource ./../../img/create_project_on_mac_1.png: PandocResourceNotFound "./../../img/create_project_on_mac_1.png"
-[WARNING] Could not fetch resource ./../../img/create_project_on_mac_2.png: PandocResourceNotFound "./../../img/create_project_on_mac_2.png"
-[WARNING] Could not fetch resource ./../../img/create_project_on_mac_3.png: PandocResourceNotFound "./../../img/create_project_on_mac_3.png"
-[WARNING] Could not fetch resource ./../../img/create_project_on_mac_4.png: PandocResourceNotFound "./../../img/create_project_on_mac_4.png"
-[WARNING] Could not fetch resource ./../../img/create_project_monodevelop.png: PandocResourceNotFound "./../../img/create_project_monodevelop.png"
-```
-    
-```
-[WARNING] Missing character: There is no  (U+FE0F) (U+FE0F) in font [templates/fonts/urw_gothic/U
-[WARNING] Missing character: There is no  (U+FE0F) (U+FE0F) in font [templates/fonts/urw_gothic/U
-```
-
-```
-[WARNING] Duplicate identifier 'general' at ./docs/academic_life/getting_help.md line 7 column 1
-[WARNING] Duplicate identifier 'school' at ./docs/academic_life/getting_help.md line 18 column 1
-[WARNING] Duplicate identifier 'install-win' at ./docs/programming_and_computer_usage/installing_software.md line 56 column 1
-[WARNING] Duplicate identifier 'general' at ./docs/academic_life/getting_help.md line 7 column 1
-[WARNING] Duplicate identifier 'school' at ./docs/academic_life/getting_help.md line 18 column 1
-[WARNING] Duplicate identifier 'install-win' at ./docs/programming_and_computer_usage/installing_software.md line 56 column 1
-[WARNING] Duplicate identifier 'general' at ./docs/academic_life/getting_help.md line 7 column 1
-[WARNING] Duplicate identifier 'school' at ./docs/academic_life/getting_help.md line 18 column 1
-[WARNING] Duplicate identifier 'install-win' at ./docs/programming_and_computer_usage/installing_software.md line 56 column 1
-[WARNING] Duplicate identifier 'general' at ./docs/academic_life/getting_help.md line 7 column 1
-[WARNING] Duplicate identifier 'school' at ./docs/academic_life/getting_help.md line 18 column 1
-[WARNING] Duplicate identifier 'install-win' at ./docs/programming_and_computer_usage/installing_software.md line 56 column 1
-[WARNING] Missing character: There is no  (U+FE0F) (U+FE0F) in font [templates/fonts/urw_gothic/U
-[WARNING] Missing character: There is no  (U+FE0F) (U+FE0F) in font [templates/fonts/urw_gothic/U
-``` 
-
-
-Notes:
-
-- Undo changes in explorer.tsx (csci-1310/quartz/quartz/components/Explorer.tsx)
-
-```
-useSavedState: false, // TEMPORARY, to debug the explorer.
-```
-
-## Website
-
-- The favicon are in the quartz branch, at `quartz/static/`, and have been generated using <https://realfavicongenerator.net/>.
-
-
 
 ## Resources Organization 
 
@@ -96,7 +14,15 @@ The [source code repository](https://github.com/princomp/princomp.github.io)'s m
 path | description
 --- | ---
 `.github` | github templates and configuration for github actions
-`code` | code examples
+`source`| source for the material
+`licence.md` | license file
+`readme.md` | presentation of the repository.
+
+The `source` folder contains the following:
+
+path | description
+--- | --- 
+`code` | code examples (snippets and projects)
 `docs` | additional helpful documents
 `img` | all images
 `labs` | lab exercises
@@ -502,3 +428,78 @@ Every semester,
 - The old repository should be deleted from that same list, and then archived.
 - GRAs should be added / removed from the [instructors list](https://github.com/orgs/csci-1301/teams/instructors), and previous instructors should be removed from that same list,
 - GRAs should be [added to the "UCAs" teams](https://github.com/orgs/csci-1301/teams/ucas/members) and given "maintainer" rights (_inside that team_, and not for the whole organization).
+
+
+# TEMP NOTES
+
+
+Possible improvements:
+
+- Integrate callouts, as <https://quartz.jzhao.xyz/features/callouts>, <https://gist.github.com/jskherman/8e721302e67d308e8a81f3df84f01f20>, <https://www.reddit.com/r/LaTeX/comments/1baudg4/callouts_in_latex/>, <https://tex.stackexchange.com/questions/714908/newcommand-syntax-with-callouts>, <https://forum.obsidian.md/t/rendering-callouts-similarly-in-pandoc/40020/6>, <https://raw.githubusercontent.com/kdheepak/kdheepak.github.io/main/blog/pandoc-lua-filter-for-alerts/index.md>.
+
+- Document [quartz](quartz.jzhao.xyz/), how to run it locally, and explain the edits made in <https://github.com/princomp/princomp.github.io/tree/quartz-migration>.
+
+- Add logos before code, pdf, odt, docx, md.
+
+- explain how to add lecture (and how to sort it in the menu and get it in the book pdf, but also that it must have only one title element at top level).
+
+- explain that no two files should have the same name considering the sorting we use ^
+
+- give title to code snippets / code blocks
+
+- sort out misc folder
+
+```
+[WARNING] Could not fetch resource ./../../img/solution_explorer_rectangle.png: replacing image with description
+[WARNING] Could not fetch resource ./../../img/create_project.png: replacing image with description
+[WARNING] Could not fetch resource ./../../img/select_net.png: replacing image with description
+[WARNING] Could not fetch resource ./../../img/create_project_on_mac_1.png: replacing image with description
+[WARNING] Could not fetch resource ./../../img/create_project_on_mac_2.png: replacing image with description
+[WARNING] Could not fetch resource ./../../img/create_project_on_mac_3.png: replacing image with description
+[WARNING] Could not fetch resource ./../../img/create_project_on_mac_4.png: replacing image with description
+[WARNING] Could not fetch resource ./../../img/create_project_monodevelop.png: replacing image with description
+[WARNING] Could not fetch resource ./../../img/solution_explorer_rectangle.png: PandocResourceNotFound "./../../img/solution_explorer_rectangle.png"
+[WARNING] Could not fetch resource ./../../img/create_project.png: PandocResourceNotFound "./../../img/create_project.png"
+[WARNING] Could not fetch resource ./../../img/select_net.png: PandocResourceNotFound "./../../img/select_net.png"
+[WARNING] Could not fetch resource ./../../img/create_project_on_mac_1.png: PandocResourceNotFound "./../../img/create_project_on_mac_1.png"
+[WARNING] Could not fetch resource ./../../img/create_project_on_mac_2.png: PandocResourceNotFound "./../../img/create_project_on_mac_2.png"
+[WARNING] Could not fetch resource ./../../img/create_project_on_mac_3.png: PandocResourceNotFound "./../../img/create_project_on_mac_3.png"
+[WARNING] Could not fetch resource ./../../img/create_project_on_mac_4.png: PandocResourceNotFound "./../../img/create_project_on_mac_4.png"
+[WARNING] Could not fetch resource ./../../img/create_project_monodevelop.png: PandocResourceNotFound "./../../img/create_project_monodevelop.png"
+```
+
+```
+[WARNING] Missing character: There is no  (U+FE0F) (U+FE0F) in font [templates/fonts/urw_gothic/U
+[WARNING] Missing character: There is no  (U+FE0F) (U+FE0F) in font [templates/fonts/urw_gothic/U
+```
+
+```
+[WARNING] Duplicate identifier 'general' at ./docs/academic_life/getting_help.md line 7 column 1
+[WARNING] Duplicate identifier 'school' at ./docs/academic_life/getting_help.md line 18 column 1
+[WARNING] Duplicate identifier 'install-win' at ./docs/programming_and_computer_usage/installing_software.md line 56 column 1
+[WARNING] Duplicate identifier 'general' at ./docs/academic_life/getting_help.md line 7 column 1
+[WARNING] Duplicate identifier 'school' at ./docs/academic_life/getting_help.md line 18 column 1
+[WARNING] Duplicate identifier 'install-win' at ./docs/programming_and_computer_usage/installing_software.md line 56 column 1
+[WARNING] Duplicate identifier 'general' at ./docs/academic_life/getting_help.md line 7 column 1
+[WARNING] Duplicate identifier 'school' at ./docs/academic_life/getting_help.md line 18 column 1
+[WARNING] Duplicate identifier 'install-win' at ./docs/programming_and_computer_usage/installing_software.md line 56 column 1
+[WARNING] Duplicate identifier 'general' at ./docs/academic_life/getting_help.md line 7 column 1
+[WARNING] Duplicate identifier 'school' at ./docs/academic_life/getting_help.md line 18 column 1
+[WARNING] Duplicate identifier 'install-win' at ./docs/programming_and_computer_usage/installing_software.md line 56 column 1
+[WARNING] Missing character: There is no  (U+FE0F) (U+FE0F) in font [templates/fonts/urw_gothic/U
+[WARNING] Missing character: There is no  (U+FE0F) (U+FE0F) in font [templates/fonts/urw_gothic/U
+``` 
+
+
+Notes:
+
+- Undo changes in explorer.tsx (csci-1310/quartz/quartz/components/Explorer.tsx)
+
+```
+useSavedState: false, // TEMPORARY, to debug the explorer.
+```
+
+## Website
+
+- The favicon are in the quartz branch, at `quartz/static/`, and have been generated using <https://realfavicongenerator.net/>.
+
