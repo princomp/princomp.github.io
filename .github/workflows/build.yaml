@@ -2,7 +2,7 @@ name: Build
 
 permissions:
   contents: write
-   pages: write
+  pages: write
   id-token: write
 
 on:
