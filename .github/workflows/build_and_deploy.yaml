@@ -51,6 +51,7 @@ jobs:
         pip install Pygments pandoc-include
     - name: Build 🏗️
       run: | 
+        cd source
         make all
     - name: Create package 🎁
       uses: crowbarmaster/GH-Automatic-Releases@latest

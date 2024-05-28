@@ -57,7 +57,7 @@ tidy:
 # -------------------------------
 
 # The folder where to build.
-BUILD_DIR = content/
+BUILD_DIR = ../content/
 # The folder where the lectures are located.
 LECTURES_DIR = lectures/
 # The folder where the documentation is located.
@@ -411,7 +411,10 @@ $(BUILD_DIR)book.docx: $(SOURCE_BOOK)
 
 TARGET_BOOK: $(BUILD_DIR)book.html $(BUILD_DIR)book.pdf $(BUILD_DIR)book.odt $(BUILD_DIR)book.docx
 
-build: web-order.ts $(TARGET_MD_FILES) $(TARGET_WOFF_FONT_FILES) $(TARGET_IMAGES_FILES) $(TARGET_VIDEOS_FILES) $(TARGET_DOC_FILES_WITHOUT_INDEX) $(TARGET_PDF_FILES_WITHOUT_INDEX) $(TARGET_ODT_FILES_WITHOUT_INDEX) $(TARGET_PROJECTS_FILES) $(TARGET_BOOK)
+# Ligter build, to test compilation and website deployment
+build-light: web-order.ts $(TARGET_MD_FILES) $(TARGET_WOFF_FONT_FILES) $(TARGET_IMAGES_FILES) $(TARGET_VIDEOS_FILES) $(TARGET_DOC_FILES_WITHOUT_INDEX)
+
+build: build-light $(TARGET_PDF_FILES_WITHOUT_INDEX) $(TARGET_ODT_FILES_WITHOUT_INDEX) $(TARGET_PROJECTS_FILES) $(TARGET_BOOK)
 
 all: build
 	7z a $(BUILD_DIR)release.zip $(BUILD_DIR)
