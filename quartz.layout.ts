@@ -8,7 +8,7 @@ export const sharedPageComponents: SharedLayout = {
   footer: Component.Footer({
     links: {
       "About" : "/docs/about.html",
-      "Source Code": "https://github.com/csci-1301/csci-1301.github.io",
+      "Source Code": "https://github.com/princomp/princomp.github.io",
       "CC BY 4.0": "/docs/about.html#licence",
       "Discord Community": "https://discord.gg/AYSw3UNKEh"
     }})
