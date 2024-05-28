@@ -417,7 +417,7 @@ build-light: $(BUILD_DIR)web-order.ts $(TARGET_MD_FILES) $(TARGET_WOFF_FONT_FILE
 
 build: build-light $(TARGET_PDF_FILES_WITHOUT_INDEX) $(TARGET_ODT_FILES_WITHOUT_INDEX) $(TARGET_PROJECTS_FILES) $(TARGET_BOOK)
 
-all: build-light
+all: build
 	7z a $(BUILD_DIR)release.zip $(BUILD_DIR)
 
 # Phony rule to display variables

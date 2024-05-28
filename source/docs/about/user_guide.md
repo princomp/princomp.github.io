@@ -33,9 +33,7 @@ path | description
 `vid` | video files
 `Makefile` | makefile used to instruct how to compile this resource
 `index.md` | website index page
-`404.md` | website 404 page
-
-Additional configuration files are at the root of the source code repository.
+`order` | file used to specify in which order the website's menu and the book needs to be presented
 
 ### Locating course resources
 
