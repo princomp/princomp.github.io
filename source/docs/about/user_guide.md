@@ -27,6 +27,7 @@ path | description
 `img` | all images
 `labs` | lab exercises
 `lectures` | lecture notes
+`misc` | various notes
 `slides` | slides
 `templates` | templates and meta data files used for building this resource 
 `vid` | video files
