@@ -34,7 +34,7 @@ path | description
 `labs/` | lab exercises
 `lectures/` | lecture notes
 `slides/` | slides
-`templates/` | templates, filters and fonts files used for building this resource
+`templates/` | templates and filters used for building this resource
 `vid/` | video files
 `Makefile` | makefile used to compile this resource
 `index.md` | website index page
@@ -42,13 +42,13 @@ path | description
 
 ### Building and Deploying
 
-The content is built and deployed in two phases:
+The content is [built and deployed](#building-and-deploying) in two phases:
 
-- Running `make all` in the `source/` folder will create a `content/` folder at root level containing:
+- [Running `make all` in the `source/` folder](#building-all-resources) will create a `content/` folder at root level containing:
     - one `.md` file per `.md` file in the `source/` folder (in the same location: `source/labs/If.md` is compiled to `content/labs/If.md`), resulting from [pandoc](https://pandoc.org/)'s conversion,
     - one `.pdf`, `.odt` and `.docx` file per `.md` file (with the exception of the `index.md` files) in the `source/` folder (in the same location: `source/labs/If.md` is compiled to `content/labs/If.pdf`), resulting from [pandoc](https://pandoc.org/)'s conversion,
-    - some files (in `img/`, `slides/`, `vid/`, `templates/`) copied verbatim or selectively (for example, only the `.jpeg`, `.png`, `.pdf`, `.svg` and `.gif` files are copied from the `img` folder),
-    - the `.woff` and `.woff2` files copied from the `templates/fonts` folders,
+    - some files from the `img/`, `slides/` and `vid/` folders, copied selectively (for example, only the `.jpeg`, `.png`, `.pdf`, `.svg` and `.gif` files are copied from the `img/` folder),
+    - the `.woff` and `.woff2` files copied from the `fonts/` folders,
     - a `code/projects/` folder containing, for each `Program.cs` file contained in a `source/code/projects/x/y`, a `x.zip` archive containing a C# project including `Program.cs` along with some (optional) class file,
     - a `web-order.ts` file, compiled from the `source/order` file, that fixes the order used by the website in the menu,
     - a `book.html`, a `book.pdf`, a `book.html` and a `book.docx` file resulting from [pandoc](https://pandoc.org/)'s conversion of the `.md` files contained in the `SOURCE_BOOK`'s makefile variable (containing all the `.md` files in the `source/docs/` and  `source/lectures/`, in the order fixed by the `order` file).
@@ -65,13 +65,16 @@ This resource is mainly developed and powered using
 - [quartz](https://quartz.jzhao.xyz/), 
 - [github's actions](https://docs.github.com/en/actions).
 
-While most of those tools are fairly standard (with the exception of quartz, but it relies itself on the fairly standard [Node](https://nodejs.org/) and `npm` technologies), we acknowledge that
+But note that knowing git and markdown are enough to contribute on-line through the [github repository](https://github.com/princomp/princomp.github.io).
+
+While most of those tools are standard (with the exception of quartz, but it relies itself on the standard [Node](https://nodejs.org/) and `npm` technologies), we acknowledge that
 
 #. It is challenging to understand that many different technologies,
 #. We should strive to welcome contributions from collaborators not familiar with them,
 #. Our set-up is unique in some respects.
 
 This guide tries to alleviate some challenges resulting from this overall unique and diverse resource organization.
+For more details about our tools, please refer to the [Installing dependencies](#installing-dependencies) and [Repository Maintenance](#repository-maintenance) sections.
 
 ### Locating Resources
 
@@ -95,7 +98,14 @@ Follow the [IT Inclusive Language Guide](https://itconnect.uw.edu/guides-by-topi
 
 >  use gender-neutral terms; avoid ableist language; focus on people not disabilities or circumstances; avoid generalizations about people, regions, cultures and countries; and avoid slang, idioms, metaphors and other words with layers of meaning and a negative history.
 
-Typically, we recommend using "unethical hacker" instead of "black hat", "main" instead of "master", "blank space" instead of "white space", "display on the screen" instead of "printing", etc.
+Typically, we recommend using 
+
+- "unethical hacker" instead of "black hat", 
+- "main" instead of "master",
+- "blank space" instead of "white space",
+- "display on the screen" instead of "printing",
+-etc.
+
 In doubt, please start by referring to [this list of problematic words and phrases](https://itconnect.uw.edu/guides-by-topic/identity-diversity-inclusion/inclusive-language-guide/#list).
 
 #### Structure for accessibility
@@ -167,11 +177,11 @@ The `{ width=80% }` attribute is optional.
 
 Code snippets can be included in markdown documents using [pandoc-include](https://github.com/DCsunset/pandoc-include) filter:
 
-    <pre>
-    ```
-    !include code/sample.cs
-    ```
-    </pre>
+
+        ```
+        !include code/sample.cs
+        ```
+
 
     Note that for [an unknown reason](https://github.com/DCsunset/pandoc-include/issues/45), no special characters (such as `_`) should be used in the filenames.
 - Title each source code block included in markdown, this will create a URL for the code block and enables linking to it.
