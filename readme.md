@@ -9,4 +9,4 @@ To view this resource on the web,  please head to [princomp.github.io](https://p
 
 ## Contributing to this resource
 
-See [contribution guidelines](https://princomp.github.io/docs/about/contributing) and [user guide](https://princomp.github.io/docs/about/user_guide) to get started.
+See [contribution guidelines](https://princomp.github.io/docs/about/contributing) and [dev. guide](https://princomp.github.io/docs/about/dev_guide) to get started.

@@ -6,25 +6,28 @@ This guide explains how this resource is organized, how it is built, and how to 
 |:---------------------------|
 | This resource is currently under heavy remodelling. This documentation will be updated but is outdated in places as of this writing. |
 
-## Resources Organization 
+## Resources Organization Overview
+
+### Folders and Files
 
 The [source code repository](https://github.com/princomp/princomp.github.io)'s main branch is organized as follows:
 
 path | description
 --- | ---
 `.github/` | github templates and configuration for github actions
-`misc/` | resources that needs to be either integrated into the source, or discarded
+`misc/` | resources that need to be either integrated into the resource, or discarded
 `source/`| source for the material
 `licence.md` | license file
 `readme.md` | presentation of the repository.
 
-The `source` folder contains the following:
+The `source/` folder contains the following:
 
 path | description
---- | --- 
+------ | --- 
 `code/` | code examples (snippets and projects)
 `docs/` | additional helpful documentation
-`img/` | all images
+`fonts/` | the fonts (redistributed with permission) used by this resource
+`img/` | images, sometimes with their LaTeX source code
 `labs/` | lab exercises
 `lectures/` | lecture notes
 `slides/` | slides
@@ -34,17 +37,40 @@ path | description
 `index.md` | website index page
 `order` | file used to specify in which order the website's menu and the book needs to be presented
 
+### Building and Deploying
+
 The content is built and deployed in two phases:
 
 - Running `make all` in the `source/` folder will create a `content/` folder at root level containing:
-    - one `.md` file per `.md` file in the `source/` folder (in the same location: `source/labs/If.md` is compiled to `content/labs/If.md`), resulting from pandoc's conversion,
-    - one `.pdf`, `.odt` and `.docx` file per `.md` file (with the exception of the `index.md` files) in the `source/` folder (in the same location: `source/labs/If.md` is compiled to `content/labs/If.pdf`), resulting from pandoc's conversion,
-    - some files (in `img/`, `slides/`, `vid/`, `templates/`) copied verbatim or selectively (for example, only the `.jpeg`, `.png`, `.pdf`, `.svg` and `.gif` files are copied from the `img` folder, and only the `.woff` and `.woff2` files in the `templates/fonts` folders are copied),
+    - one `.md` file per `.md` file in the `source/` folder (in the same location: `source/labs/If.md` is compiled to `content/labs/If.md`), resulting from [pandoc](https://pandoc.org/)'s conversion,
+    - one `.pdf`, `.odt` and `.docx` file per `.md` file (with the exception of the `index.md` files) in the `source/` folder (in the same location: `source/labs/If.md` is compiled to `content/labs/If.pdf`), resulting from [pandoc](https://pandoc.org/)'s conversion,
+    - some files (in `img/`, `slides/`, `vid/`, `templates/`) copied verbatim or selectively (for example, only the `.jpeg`, `.png`, `.pdf`, `.svg` and `.gif` files are copied from the `img` folder),
+    - the `.woff` and `.woff2` files copied from the `templates/fonts` folders,
     - a `code/projects` folder containing, for each `Program.cs` file contained in a `source/code/project/x/y`, a `x.zip` archive containing a C# project including `Program.cs` along with some (optional) class file,
     - a `web-order.ts` file, compiled from the `source/order` file, that fixes the order used by the website in the menu,
-    - a `book.html`, a `book.pdf`, a `book.html` and a `book.docx` file resulting from pandoc's conversion of the `.md` files contained in the `SOURCE_BOOK`'s makefile variable (containing all the `.md` files in the `source/docs/` and  `source/lectures/`, in the order fixed by the `order` file).
-    
-### Locating course resources
+    - a `book.html`, a `book.pdf`, a `book.html` and a `book.docx` file resulting from [pandoc](https://pandoc.org/)'s conversion of the `.md` files contained in the `SOURCE_BOOK`'s makefile variable (containing all the `.md` files in the `source/docs/` and  `source/lectures/`, in the order fixed by the `order` file).
+- Then, using the files in the generated `content/` folder, a website is built using [quartz](https://quartz.jzhao.xyz/) and deployed to <https://princomp.github.io/>. This is achieved mainly thanks to the `.github/workflows/build_and_deploy.yaml` file and [github's actions](https://docs.github.com/en/actions).
+
+### Tools, Briefly
+
+This resource is mainly developed and powered using 
+
+- [git](https://git-scm.com/)
+- [pandoc](https://pandoc.org/installing.html)
+- [make](https://www.gnu.org/software/make/)
+- [python](https://www.python.org)
+- [quartz](https://quartz.jzhao.xyz/), 
+- [github's actions](https://docs.github.com/en/actions).
+
+While most of those tools are fairly standard (with the exception of quartz, but it relies itself on the fairly standard [Node](https://nodejs.org/) and `npm` technologies), we acknowledge that
+
+#. It is challenging to understand that many different technologies,
+#. We should strive to welcome contributions from collaborators not familiar with them,
+#. Our set-up is unique in some respects.
+
+This guide tries to alleviate some challenges resulting from this overall unique and diverse resource organization.
+
+## Locating course resources
 
 How to obtain the latest version of this resource:
 
