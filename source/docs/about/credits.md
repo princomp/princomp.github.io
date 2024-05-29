@@ -20,7 +20,7 @@ The first source of support is the constant stream of feedback we receive from s
 
 This project has been monetarily supported by an [Affordable Learning Georgia](https://www.affordablelearninggeorgia.org/) [Transformation Grants](https://www.affordablelearninggeorgia.org/grants/overview/) ([Proposal 571](https://www.affordablelearninggeorgia.org/assets/documents/571-proposal.docx)) and a Continuous Improvement Grant (M260).
 
-[![](./img/ALG_Logo_hires.png)](https://www.affordablelearninggeorgia.org/)
+[!["Affordable Learning Georgia"](./img/ALG_Logo_hires.png){ width=80% }](https://www.affordablelearninggeorgia.org/)
 
 This project also received the support of [Augusta University](https://www.augusta.edu/)'s [School of Computer and Cyber Sciences](https://www.augusta.edu/ccs/) and [Center for Instructional Innovation](https://www.augusta.edu/innovation/).
 

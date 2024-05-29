@@ -115,19 +115,22 @@ Resources to assess accessibility:
  
 #### Markdown
 
-- text documents are written in readme files using standard markdown syntax
-- we will use a convention of always naming such files `readme.md` (lowercase)
+Text documents are written using [standard markdown syntax](https://commonmark.org/). More precisely, 
+
+    - in the `markdown+emoji` format, that is, [in pandoc's markdown](https://pandoc.org/MANUAL.html#pandocs-markdown), using the [emoji](https://pandoc.org/MANUAL.html#extension-emoji) [extension](https://pandoc.org/MANUAL.html#extensions)),
+    - using the [pandoc-include](https://github.com/DCsunset/pandoc-include) filter,
+    - and a [custom](https://github.com/princomp/princomp.github.io/tree/main/source/templates/filters) filter that sets all the [code blocks](https://github.com/princomp/princomp.github.io/blob/main/source/templates/filters/default-code-class-block.lua), or [all the code block and inline code](https://github.com/princomp/princomp.github.io/blob/main/source/templates/filters/default-code-class-block-inline.lua)'s syntax highlighting to C# by default.
+
 
 #### Images
 
+- Images belong in `source/img/` directory.
 - Explain the image in written form.
 - Title each image, this will create a URL for the image and enables linking to it.
 - Always include a descriptive alt tag for accessibility.
 - [Do not rely on everyone seeing colors the same way](https://www.wikiwand.com/en/Color_blindness).
 - Prefer scalable vector images.
-- Store images in the repository in `img` directory
-    - When referring to images in markdown, use path from root, see example below
-    - the image may appear broken locally, but pandoc will resolve the path at build time
+- When referring to images in markdown, use path from root, see example below
     
 
 **Syntax example.** The quoted text is the alt tag and in parentheses is path to file
@@ -140,13 +143,27 @@ The `{ width=80% }` attribute is optional.
 
 #### Source code
 
-- source code programs belong _primarily_ in `code` directory 
-    - the code included in this directory should be a complete program
-    - the program should compile and terminate
-    - source code that is faulty, partial, or does not terminate can be included in markdown as inline code block
-    - we can automatically check these code snippets for syntactical correctness if these guidelines are followed
- 
-- code snippet can be included in markdown documents using [pandoc-include](https://github.com/DCsunset/pandoc-include) filter:
+- Source code programs belong in `source/code/` directory.
+- The code included in this directory should either be:
+    - Placed in the `snippets/` sub-folder, and be a complete program.
+    - Placed in the `projects/<solution>/<project>/` sub-folder, and contains a `Program.cs` file:
+        - Go to `source/code/projets/`,
+        - Create a subdirectory with the name of the solution you would like to use,
+        - Create a subdirectory with the name of the project you would like to use,
+        - Create a file called `Program.cs` in `source/code/projects/<solution>/<project>/Program.cs`
+        - If you want to add additional classes, add them in `code/projects/<solution>/<project>/<Class>.cs` files. 
+    
+        Do **not** add solution (`sln`) or project (`csproj`) files: they will be created automatically using the project and solution's name you specified, if multiple classes are present they will all be linked, and the resulting archive will be hosted in the lab's folder as `code/projects/<solution>.zip`.
+    
+    Note / known issue: when including multiple solutions, the basename should be different, for example: `SomeLab` and `Solution_SomeLab` (instead of `SomeLabSolution`); to ensure solutions are packaged separately from one another.
+    
+    - The program should compile.
+- Source code that is faulty, partial, or does not terminate can be included in markdown as inline code block.
+<!--
+- We can automatically check these code snippets for syntactical correctness if these guidelines are followed
+-->
+
+- Code snippets can be included in markdown documents using [pandoc-include](https://github.com/DCsunset/pandoc-include) filter:
 
     <pre>
     ```
