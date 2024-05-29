@@ -117,9 +117,9 @@ Resources to assess accessibility:
 
 Text documents are written using [standard markdown syntax](https://commonmark.org/). More precisely, 
 
-    - in the `markdown+emoji` format, that is, [in pandoc's markdown](https://pandoc.org/MANUAL.html#pandocs-markdown), using the [emoji](https://pandoc.org/MANUAL.html#extension-emoji) [extension](https://pandoc.org/MANUAL.html#extensions)),
-    - using the [pandoc-include](https://github.com/DCsunset/pandoc-include) filter,
-    - and a [custom](https://github.com/princomp/princomp.github.io/tree/main/source/templates/filters) filter that sets all the [code blocks](https://github.com/princomp/princomp.github.io/blob/main/source/templates/filters/default-code-class-block.lua), or [all the code block and inline code](https://github.com/princomp/princomp.github.io/blob/main/source/templates/filters/default-code-class-block-inline.lua)'s syntax highlighting to C# by default.
+- in the `markdown+emoji` format, that is, [in pandoc's markdown](https://pandoc.org/MANUAL.html#pandocs-markdown), using the [emoji](https://pandoc.org/MANUAL.html#extension-emoji) [extension](https://pandoc.org/MANUAL.html#extensions)),
+- using the [pandoc-include](https://github.com/DCsunset/pandoc-include) filter,
+- and a [custom](https://github.com/princomp/princomp.github.io/tree/main/source/templates/filters) filter that sets all the [code blocks](https://github.com/princomp/princomp.github.io/blob/main/source/templates/filters/default-code-class-block.lua), or [all the code block and inline code](https://github.com/princomp/princomp.github.io/blob/main/source/templates/filters/default-code-class-block-inline.lua)'s syntax highlighting to C# by default.
 
 
 #### Images
@@ -150,20 +150,20 @@ The `{ width=80% }` attribute is optional.
         - Go to `source/code/projets/`,
         - Create a subdirectory with the name of the solution you would like to use,
         - Create a subdirectory with the name of the project you would like to use,
-        - Create a file called `Program.cs` in `source/code/projects/<solution>/<project>/Program.cs`
+        - Create a file called `Program.cs` in 
+        ```text
+        source/code/projects/<solution>/<project>/Program.cs
+        ```
         - If you want to add additional classes, add them in `code/projects/<solution>/<project>/<Class>.cs` files. 
     
-        Do **not** add solution (`sln`) or project (`csproj`) files: they will be created automatically using the project and solution's name you specified, if multiple classes are present they will all be linked, and the resulting archive will be hosted in the lab's folder as `code/projects/<solution>.zip`.
-    
-    Note / known issue: when including multiple solutions, the basename should be different, for example: `SomeLab` and `Solution_SomeLab` (instead of `SomeLabSolution`); to ensure solutions are packaged separately from one another.
-    
-    - The program should compile.
+        Do **not** add solution (`sln`) or project (`csproj`) files: they will be created automatically using the project and solution's name you specified, if multiple classes are present they will all be linked, and the resulting archive will be hosted at `content/code/projects/<solution>.zip`.
+
 - Source code that is faulty, partial, or does not terminate can be included in markdown as inline code block.
 <!--
 - We can automatically check these code snippets for syntactical correctness if these guidelines are followed
 -->
 
-- Code snippets can be included in markdown documents using [pandoc-include](https://github.com/DCsunset/pandoc-include) filter:
+Code snippets can be included in markdown documents using [pandoc-include](https://github.com/DCsunset/pandoc-include) filter:
 
     <pre>
     ```
@@ -188,7 +188,7 @@ The `{ width=80% }` attribute is optional.
 
 ### Creating new lectures
 
-All lecture notes are under `lectures` directory. This directory also contains an index indicating the related labs and prerequisites for each lecture. 
+All lecture notes are under `source/lectures/` directory.
 
 To create a new lecture, e.g. `lecture xyz`:
 
