@@ -424,6 +424,7 @@ Due to [make's unique feature](https://makefiletutorial.com/) only the files who
 
 ## Website
 
+
 ### Editing the website
 
 The website <https://princomp.github.io/> is built from the `.md` files contained in the `content/` folder using [a dedicated branch](https://github.com/princomp/princomp.github.io/tree/quartz) of [quartz](https://quartz.jzhao.xyz/).
@@ -434,7 +435,11 @@ To edit the layout, style, or other features such as the footer, please
 
 ### Deploying locally the website
 
-Start by [building the resource locally](#build-locally).
+Follow closely those steps:
+
+- [Build the resource locally](#build-locally),
+- git checkout quartz 
+
 
 
 ## How to edit the style?
