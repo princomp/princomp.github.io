@@ -410,15 +410,17 @@ $(BUILD_DIR)book.docx: $(SOURCE_BOOK)
 # Putting it all together
 # -------------------------------
 
-TARGET_BOOK: $(BUILD_DIR)book.html $(BUILD_DIR)book.pdf $(BUILD_DIR)book.odt $(BUILD_DIR)book.docx
+book: $(BUILD_DIR)book.html $(BUILD_DIR)book.pdf $(BUILD_DIR)book.odt $(BUILD_DIR)book.docx
 
 # Ligter build, to test compilation and website deployment
 build-light: $(BUILD_DIR)web-order.ts $(TARGET_MD_FILES) $(TARGET_WOFF_FONT_FILES) $(TARGET_IMAGES_FILES) $(TARGET_VIDEOS_FILES) $(TARGET_DOC_FILES_WITHOUT_INDEX)
 
-build: build-light $(TARGET_PDF_FILES_WITHOUT_INDEX) $(TARGET_ODT_FILES_WITHOUT_INDEX) $(TARGET_PROJECTS_FILES) $(TARGET_BOOK)
+build: build-light $(TARGET_PDF_FILES_WITHOUT_INDEX) $(TARGET_ODT_FILES_WITHOUT_INDEX) $(TARGET_PROJECTS_FILES) book
 
-all: build
+$(BUILD_DIR)release.zip: | build
 	7z a $(BUILD_DIR)release.zip $(BUILD_DIR)
+
+all: build $(BUILD_DIR)release.zip
 
 # Phony rule to display variables
 # Uncomment the following and replace

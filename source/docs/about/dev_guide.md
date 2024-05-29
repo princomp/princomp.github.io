@@ -2,7 +2,7 @@
 
 This guide explains how this resource is organized, how it is built, and how to maintain this resource.
 
-| ⚠️ Warning       |
+| ⚠️ Warning |
 |:---------------------------|
 | This resource is currently under heavy remodelling. This documentation will be updated but is outdated in places as of this writing. |
 
@@ -39,7 +39,8 @@ The content is built and deployed in two phases:
 - Running `make all` in the `source` folder will create a `content` folder at root level containing:
     - the `.md` files (regardless of their location) processed by pandoc after it applied some filters (refer to the `PANDOC_MD` variable in our makefile),
     - for each `.md` file in the `source` folder, the same document in an "alternative formats" (`.pdf`, `odt` and `.docx`), as processed by pandoc,
-    - some files (in `img`, `slides`, `vid`, `templates`) copied verbatim or selectively (for example, )
+    - some files (in `img`, `slides`, `vid`, `templates`) copied verbatim or selectively (for example, only the `.jpeg`, `.png`, `.pdf`, `.svg` and `.gif` files are copied from the `img` folder, and only the `.woff` and `.woff2` files in the `templates/fonts` folders are copied),
+    - 
 
 ### Locating course resources
 
