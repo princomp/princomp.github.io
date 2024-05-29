@@ -81,6 +81,8 @@ FONT_DIR := fonts/
 
 ## Templates
 TEMPLATES = templates/
+# Path to HTML templates to use with pandoc
+HTM_TEMPLATES = $(TEMPLATES)html/
 # Path to PDF templates to use with pandoc
 PDF_TEMPLATES = $(TEMPLATES)latex/
 # Path to ODT templates to use with pandoc
@@ -176,6 +178,9 @@ PANDOC_MD = $(PANDOC_OPTIONS) --standalone --lua-filter $(FIL_TEMPLATES)default-
 # Options common to all alternative format.
 PANDOC_OPTIONS_ALT = --lua-filter $(FIL_TEMPLATES)default-code-class-block-inline.lua
 
+# HTML build options
+PANDOC_HTML = $(PANDOC_OPTIONS_ALT) -B $(HTM_TEMPLATES)header.html -A $(HTM_TEMPLATES)footer.html --default-image-extension=svg --standalone --template=$(HTM_TEMPLATES)template.html
+
 # PDF build options
 PANDOC_PDF:= $(PANDOC_OPTIONS_ALT) --toc -V links-as-notes --default-image-extension=pdf --pdf-engine=xelatex --include-in-header=$(PDF_TEMPLATES)header.tex
 
@@ -188,7 +193,7 @@ PANDOC_DOC:= $(PANDOC_OPTIONS_ALT) --default-image-extension=svg
 
 # Book build options
 PANDOC_BOOK_PDF:= $(PANDOC_PDF)
-PANDOC_BOOK_HTM:= $(PANDOC_OPTIONS_ALT)
+PANDOC_BOOK_HTM:= $(PANDOC_HTM)
 PANDOC_BOOK_DOC:= $(PANDOC_DOC)
 PANDOC_BOOK_ODT:= $(PANDOC_ODT)
 
