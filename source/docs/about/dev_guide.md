@@ -437,8 +437,48 @@ To edit the layout, style, or other features such as the footer, please
 
 Follow closely those steps:
 
-- [Build the resource locally](#build-locally),
-- git checkout quartz 
+- [Build the resource locally](#build-locally) (note that running `make build-light` is enough to deploy the website).
+- Move to the `quartz` branch by running 
+
+    ```text
+    git checkout quartz 
+    ```
+    Note that the `content/` folder is still here, but that the source is absent from this branch: only files related to quartz are committed in this branch.
+
+- Rename the `content/index.md` file (this is due to [an annoying bug](https://github.com/jackyzha0/quartz/issues/1175)) by running
+```text
+mv content/index.md content/index_b.md
+```
+- Follow [quartz's instructions](https://quartz.jzhao.xyz/#-get-started):
+    - If you don't have at least Node v18.14 and npm v9.3.1, install [node](https://nodejs.org/en/download/package-manager) and [npm](https://github.com/npm/cli?tab=readme-ov-file#installation) (npm is probably installed automatically when you install node),
+    - Run the following commands _at root level_ (do _not_ enter the `quartz/` folder):
+    ```text
+    npm i
+    npx quartz create
+    ```
+    for this last command, select 
+    
+    > │  ● Empty Quartz
+    
+    then,
+    
+    > │  ● Treat links as shortest path ((default))
+    
+    - If the previous command succeeded, run
+    
+    ```text
+    mv content/index_b.md content/index.md
+    ```
+    
+    to restore our index file, then 
+    
+    ```text
+    npx quartz build --serve
+    ```
+    
+    to start the server. Then, navigate to `localhost:8080/` to see the website deployed locally.
+
+
 
 
 
