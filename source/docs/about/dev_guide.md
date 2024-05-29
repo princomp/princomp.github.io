@@ -161,7 +161,7 @@ The `{ width=80% }` attribute is optional.
         ```
         - If you want to add additional classes, add them in `code/projects/<solution>/<project>/<Class>.cs` files. 
     
-        Do **not** add solution (`sln`) or project (`csproj`) files: they will be created automatically using the project and solution's name you specified, if multiple classes are present they will all be linked, and the resulting archive will be hosted at `content/code/projects/<solution>.zip`.
+        Do **not** add solution (`sln`) or project (`csproj`) files: they will be created automatically using the project and solution's name you specified (and a makefile rule [similar to this one](https://github.com/csci-1301/C-Sharp-project-maker)), if multiple classes are present they will all be linked, and the resulting archive will be hosted at `content/code/projects/<solution>.zip`.
 
 - Source code that is faulty, partial, or does not terminate can be included in markdown as inline code block.
 <!--
@@ -257,20 +257,18 @@ Markdown files can contain at their very top a [YAML metadata block](https://pan
 ---
 tags:
 - Resource
-- Guide
 ---
 ```
 
-to "tag" this resource with "Resource" and "Guide".
-
-
-
-Course resources are labelled with emoji shortcodes or text labels.
-
-https://github.com/csci-1301/C-Sharp-project-maker
-https://quartz.jzhao.xyz/features/folder-and-tag-listings#tag-listings
-
-Each resource should, at minimum, list its prerequisites and security-related content.
+to "tag" this resource with "Resource" so that it will appears in the [tag listing](https://princomp.github.io/tags/Guide).
+To include multiple tags, simply make a list:
+```yaml
+---
+tags:
+- Resource
+- Guide
+---
+```
 
 <!--
 | Description | Shortcode | Icon |
@@ -283,20 +281,9 @@ Each resource should, at minimum, list its prerequisites and security-related co
 | Examples of common pitfalls | `:warning:` | ⚠️ |
 -->
 
-### Labelling using text labels
-
-#. Each resource will be labelled with prerequisites. 
-
-    This is a list of zero or more values. For zero prerequisites write `None`. These requirements are expressed in the associated index of lectures/labs/problems (cf. [lectures](https://github.com/princomp/princomp.github.io/tree/main/lectures)).
-
-#. Lecture notes and slides will be labelled by related labs, and vice versa
-
-    These requirements are expressed in the associated index of lectures and labs (cf. [lectures](https://github.com/princomp/princomp.github.io/tree/main/lectures)).
-
-
 ## Styling and Templating
 
-Templating files are under `templates` directory.
+Templating files are under `source/templates/` directory.
 
 Templates directory specifies layout files and stylesheets used in the website. These layouts are applied by pandoc when resources are built.
 
@@ -304,7 +291,7 @@ For maintainability reasons it is preferable to apply templates during build tim
 
 Currently templates directory contains the following:
 
-- `default-code-class.lua` - pandoc filter for annotating code blocks, configured to default to C\#, which then allows applying syntax highlighting to all code block.
+- `filters/` - contains pandoc filters for annotating code blocks, configured to default to C\#, which then allows applying syntax highlighting to all code block.
 - `templates/labs` - templates used for generating lab resources and associated pages
 - `templates/web` - templates for website and HTML format resources.
 
