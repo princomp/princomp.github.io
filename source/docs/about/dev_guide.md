@@ -1,3 +1,9 @@
+---
+tags:
+- Resource
+- Guide
+---
+
 # Dev. Guide
 
 This guide explains how this resource is organized, how it is built and deployed, and how to maintain this resource.
@@ -131,7 +137,6 @@ Text documents are written using [standard markdown syntax](https://commonmark.o
 - [Do not rely on everyone seeing colors the same way](https://www.wikiwand.com/en/Color_blindness).
 - Prefer scalable vector images.
 - When referring to images in markdown, use path from root, see example below
-    
 
 **Syntax example.** The quoted text is the alt tag and in parentheses is path to file
 
@@ -188,81 +193,87 @@ Code snippets can be included in markdown documents using [pandoc-include](https
 
 ### Creating new lectures
 
-All lecture notes are under `source/lectures/` directory.
+Lecture notes belong to the `source/lectures/` directory.
 
 To create a new lecture, e.g. `lecture xyz`:
 
-#. Create a directory called `NNN_lecture_xyz` under `lectures` directory
+#. Create a directory corresponding to the theme if it does not exist already (say, `exceptions`), under `source/lectures/` directory
 
     - Follow the existing pattern for naming convention which is lowercase and separation by underscores. 
-    - The numbers `NNN` tell pandoc how to order book content. Use leading zero and increments of 10.
-    - Choose this number  based on where in the book the new lecture should appear. 
+    - At the root of this folder, create an `index.md` file (so, at `source/lectures/exceptions/index.md`) containing
+    
+        ```text
+        ---
+        title: Desired Title for Theme
+        ---
+        ```
+        so that your theme will be labeled "Desired Title for Theme" on the website's menu (see [content labelling](#content-labelling) on how to further label it).
 
-#. under the new directory, create a file `readme.md` (lowercase). Write lecture notes in this file using markdown.
-
-    - We use filename `readme.md` because the build script looks for files matching this pattern. 
+#. Under the directory corresponding to your theme, create a file named after the lecture's title (e.g., `exception-handling.md`) in lowercase. Write lecture notes in this file [using markdown](#markdown).
+#. Edit the `source/order` file and insert where appropriate
+    - `./lectures/exception/` (if you created a folder called `exception`),
+    - `./lectures/exception/exception-handling.md` (which *must be* between `./lectures/exception/` and the next `./lectures/xyz/` folder).
+    
+    This last step will insure that your lecture is 1. included in the book, 2. sorted correctly on the website's menu (the default ordering is alphabetical).
 
 Following these steps will automatically include the new lecture in the book. 
 
 If the lecture does not appear, here are the steps for troubleshooting the issue:
  
-#. Check that after committing changes, the automated build has completed successfully 
-#. The newly created lecture is immediately under `lectures/` directory
-#. The `readme.md` exists 
-#. In `gh-pages` branch, ensure the book is generated
+#. Check that after committing changes, the automated build has completed successfully, by checking [the workflows](https://github.com/princomp/princomp.github.io/actions),
+#. The newly created lecture is under the subdirectory you picked in the [`source/lectures/` directory](https://github.com/princomp/princomp.github.io/tree/main/source/lectures),
+#. The `.md` file exists,
 #. Hard refresh the browser page if viewing the resources website
-
-Do not include meta section in individual lecture files because these lectures will be concatenated by pandoc into a single larger document. Any meta data in individual files would appear somewhere in the middle of the larger document, and as such will not be treated as front matter.
 
 **Known issues**: When concatenating files pandoc may or may not include empty spaces between individual files. This may cause the subsequent lecture title to not appear in the generated book. For this reason, each lecture file should end with a newline.
 
 ### Creating new labs
 
-All lab resources are located under `labs` directory. At build time these labs are compiled into instructions in various document formats with an optional, accompanying source code solution. 
+The process is very close to [the process to create a new lecture](#creating-new-lectures), with the following exceptions:
 
-#. Choose a short and unique name that describes the lab (say, `StringMethods`)
-    - follow the existing convention for naming
-    - do not number labs or make assumptions about numbering because another instructor may not follow the exact same lab order
-     
-#. Create a `labs/StringMethods.md` file
-    - write lab instructions in this file. You should include meta data, at minimum a title
-    - make the lab standalone to support alternative ordering (avoid assumptions about what was done "last time")
-    - do not make assumptions about student using specific OS, include instructions for all supported options (Windows, MacOS, Linux)
-    - do not make assumptions about student using Visual Studio, refer to IDE instead
+- All lab resources are located under `source/labs/` directory, at root level (there is no "theme" sub-folder).
+- You do not need to edit the `source/order` file, since labs are not included in the book nor sorted on the website.
+
+Additionally, remember to:
+
+#. Choose a short and unique name that describes the lab (say, `StringMethods.md`)
+    - follow the existing convention for naming,
+    - do not number labs or make assumptions about numbering because another instructor may not follow the exact same lab order,
+    - make the lab standalone to support alternative ordering (avoid assumptions about what was done "last time"),
+    - do not make assumptions about student using specific OS, include instructions for all supported options (Windows, MacOS, Linux),
+    - do not make assumptions about student using Visual Studio, refer to IDE instead.
     
-#. (optional) if you want to include starter code with the lab,
-    - go to `code/projets`,
-    - create a subdirectory with the name of the solution you would like to use,
-    - create a subdirectory with the name of the project you would like to use,
-    - create a file called `Program.cs` in `code/projects/<solution>/<project>/Program.cs`
-    - if you want to add additional classes, add them in `code/projects/<solution>/<project>/<Class>.cs` files. 
-    
-    Do **not** add solution (`sln`) or project (`csproj`) files: they will be created automatically using the project and solution's name you specified, if multiple classes are present they will all be linked, and the resulting archive will be hosted in the lab's folder as `code/projects/<solution>.zip`.
+#. (optional) You can add a downloadable project (use a link of the form `[the Rectangle project](./code/projects/Rectangle.zip)`) or include snippets of code by following [our instructions to add source code](#source-code). 
 
-    Note / known issue: when including multiple solutions, the basename should be different, for example: `SomeLab` and `Solution_SomeLab` (instead of `SomeLabSolution`); to ensure solutions are packaged separately from one another.
-
-#. (_obsolete?_) Create an entry for the new lab in the table at `labs/readme.md`. List all prerequisite labs and related lectures.
-
-Using this established build system generates labs that are cross-platform (Windows, MacOS, Linux) and work on different IDEs. Do not attempt to create labs locally as that approach does not have the same cross-platform guarantee.
+Using this established build system generates labs that are cross-platform (Windows, MacOS, Linux) and work on different IDEs (this process is documented [in the corresponding repository](https://github.com/csci-1301/C-Sharp-project-maker)).
+Do not attempt to create labs locally as that approach does not have the same cross-platform guarantee.
 
 ## Content Labelling
 
-(_obsolete?_)
+[Quartz](https://quartz.jzhao.xyz/authoring-content#syntax)
+
+---
+tags:
+- Resource
+- Guide
+---
+
+
 
 Course resources are labelled with emoji shortcodes or text labels.
 
+https://github.com/csci-1301/C-Sharp-project-maker
+https://quartz.jzhao.xyz/features/folder-and-tag-listings#tag-listings
+
 Each resource should, at minimum, list its prerequisites and security-related content.
 
-### Labelling with shortcodes
-
-Use emoji shortcodes to label following course resources
-
+<!--
 | Description | Shortcode | Icon |
 | : |  |  |
 | Security related aspects will be labelled as "security" | `:shield:` | 🛡 |
 | Optional parts will be labelled as "optional" | `:question:` | ❓ |
 | Elements to be incorporated in the future as "soon" | `:soon:` | 🔜 | 
-
+-->
 <!--
 | Examples of common pitfalls | `:warning:` | ⚠️ |
 -->
