@@ -16,11 +16,11 @@
 
 # Display help message.
 help:
-	@echo "all - build everything"
-	@echo "book - build books only (in all formats)"
-	@echo "labs - build labs only"
-	@echo "web - build html only, useful for testing web rendering"
-	@echo "clean - remove generated build artifacts"
+	@echo "all       - build everything"
+	@echo "all-light - build only the files required for the website"
+	@echo "fetch     - fetch the current release and extract it"
+	@echo "clean     - remove generated build artifacts"
+	@echo "refer to https://princomp.github.io/docs/about/dev_guide#building-locally"
 
 # Phony rule to display variables
 .PHONY: test
@@ -217,8 +217,8 @@ PANDOC_BOOK_DOC:= $(PANDOC_DOC)
 .PHONY:MAKEFLAGS
 MAKEFLAGS:= -j
 
-# By default, we construct all the files.
-.DEFAULT_GOAL:= all
+# By default, we construct display the help message.
+.DEFAULT_GOAL:= help
 
 # -------------------------------
 # Order file

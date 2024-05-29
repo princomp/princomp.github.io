@@ -345,14 +345,14 @@ For the purposes of editing content, it is sufficient to make edits to markdown 
 
 #### Installing dependencies
 
-To find the current list of dependencies needed to build this resource, refer to the [build script install section](https://github.com/princomp/princomp.github.io/blob/main/.github/workflows/build.yaml#L33-L40), which lists all required packages needed to build the resource. The exact installation steps vary depending on your local operating system.
+To find the current list of dependencies needed to build this resource, refer to the [build and deploy script install section](https://github.com/princomp/princomp.github.io/blob/main/.github/workflows/build_and_deploy.yaml), which lists all required packages needed to build the resource. The exact installation steps vary depending on your local operating system.
 
 In general the following dependencies are needed:
 
 - [pandoc](https://pandoc.org/installing.html)
 - [texlive](https://www.tug.org/texlive/)
-- make
-- python 3.+
+- [make](https://www.gnu.org/software/make/) and other standard unix utilities (such as sed or wget, all included in the [Windows Subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/install)),
+- [python 3.+](https://www.python.org/)
 - packages and filters: [Pygments](https://pygments.org/download/), [pandoc-include](https://github.com/DCsunset/pandoc-include#installation), [texlive-xetex](https://tug.org/xetex/), texlive-latex-extra, lmodern, [librsvg2-bin](https://askubuntu.com/a/31446)
 - symbola font
 
@@ -368,19 +368,54 @@ This is needed if running a recent version of pandoc (as of pandoc 3.1.6.1 at le
 
 #### Running the build
 
-After installing all dependencies, from the repository root, run:
+| ⚠️ Warning       |
+|:---------------------------|
+| Running `make all` can be *very resource-incentive* and may render your system unstable. Read this section entirely before running any command. |
+
+After installing all dependencies, from the `source` root, run:
 
 ```bash
 make
 ```
 
-make fetch <-- Document that
+to display a list of useful rules.
 
-To see a list of other alternative build options run
+It is recommended to first run a command building simple documents or copying files such as
 
 ```bash
-make help
+make ../content/docs/about/credits.md
+make ../content/docs/about/credits.pdf
+make ../content/docs/about/credits.odt
+make ../content/docs/about/credits.docx
+make ../content/code/projects/Rectangle.zip
+make ../content/web-order.ts
+make ../content/img/create_project_monodevelop.png
+make ../content/fonts/hack/hack-italic-subset.woff
+
 ```
+to test your installation.
+If this was successful, you can compile the [resources needed for the website](#website) using
+
+```bash
+make build-light
+```
+
+If you want to speed-up the compilation time, you can run
+
+```bash
+make fetch
+```
+
+which will fetch the [latest build output](#build-outputs), extract it and populate the `content/` folder using its content.
+Due to [make's unique feature](https://makefiletutorial.com/) only the files whose source was edited will be re-created, hence saving *a lot* of time.
+
+Finally, you can run
+```bash
+make all
+```
+
+to create and populate the `content/` folder at root level with all the resources compiled.
+
 
 ## Website
 
