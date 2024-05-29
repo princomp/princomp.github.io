@@ -21,4 +21,4 @@ Note that on most pages, on the right below the title, there are links to downlo
     
 | ⚠️ Warning       |
 |:---------------------------|
-| As of Summer 2024, this website is still under active development. Please, [refer to the CSCI-1301 website](https://csci-1301.github.io/) if you are looking for stable resources on programming for C#.
+| As of Summer 2024, this resource is under active (re)development. Please, [refer to the CSCI-1301 website](https://csci-1301.github.io/) if you are looking for stable resources on programming for C#. |
