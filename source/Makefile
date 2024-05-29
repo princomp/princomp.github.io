@@ -179,7 +179,7 @@ PANDOC_MD = $(PANDOC_OPTIONS) --standalone --lua-filter $(FIL_TEMPLATES)default-
 PANDOC_OPTIONS_ALT = --lua-filter $(FIL_TEMPLATES)default-code-class-block-inline.lua
 
 # HTML build options
-PANDOC_HTML = $(PANDOC_OPTIONS_ALT) -B $(HTM_TEMPLATES)header.html -A $(HTM_TEMPLATES)footer.html --default-image-extension=svg --standalone --template=$(HTM_TEMPLATES)template.html
+PANDOC_HTML = $(PANDOC_OPTIONS_ALT) --default-image-extension=svg --standalone --template=$(HTM_TEMPLATES)template.html
 
 # PDF build options
 PANDOC_PDF:= $(PANDOC_OPTIONS_ALT) --toc -V links-as-notes --default-image-extension=pdf --pdf-engine=xelatex --include-in-header=$(PDF_TEMPLATES)header.tex

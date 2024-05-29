@@ -61,7 +61,7 @@ jobs:
         pip install Pygments pandoc-include
     - name: Fetch previous version ⤵️ # <- To save some compilation time, we download the last release and unzip it. We also synchronize the project files back in the source/ folder, to gain some time.
       run: |
-          cd /home/runner/work/princomp.github.io/princomp.github.io/
+          cd /home/runner/work/princomp.github.io/princomp.github.io/source/
           make fetch
     - name: Build 🏗️
       run: |
