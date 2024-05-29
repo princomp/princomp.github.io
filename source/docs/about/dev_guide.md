@@ -250,13 +250,18 @@ Do not attempt to create labs locally as that approach does not have the same cr
 
 ## Content Labelling
 
-[Quartz](https://quartz.jzhao.xyz/authoring-content#syntax)
+[Quartz](https://quartz.jzhao.xyz/authoring-content#syntax) support a powerful [tagging system](https://quartz.jzhao.xyz/features/folder-and-tag-listings#tag-listings) which should be leveraged.
+Markdown files can contain at their very top a [YAML metadata block](https://pandoc.org/MANUAL.html#extension-yaml_metadata_block) containing, e.g.
 
+```yaml
 ---
 tags:
 - Resource
 - Guide
 ---
+```
+
+to "tag" this resource with "Resource" and "Guide".
 
 
 
