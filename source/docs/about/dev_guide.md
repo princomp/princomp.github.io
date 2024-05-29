@@ -248,7 +248,7 @@ Additionally, remember to:
 Using this established build system generates labs that are cross-platform (Windows, MacOS, Linux) and work on different IDEs (this process is documented [in the corresponding repository](https://github.com/csci-1301/C-Sharp-project-maker)).
 Do not attempt to create labs locally as that approach does not have the same cross-platform guarantee.
 
-## Content Labelling
+### Content Labelling
 
 [Quartz](https://quartz.jzhao.xyz/authoring-content#syntax) support a powerful [tagging system](https://quartz.jzhao.xyz/features/folder-and-tag-listings#tag-listings) which should be leveraged.
 Markdown files can contain at their very top a [YAML metadata block](https://pandoc.org/MANUAL.html#extension-yaml_metadata_block) containing, e.g.
@@ -291,14 +291,17 @@ For maintainability reasons it is preferable to apply templates during build tim
 
 Currently templates directory contains the following:
 
+- `docx/` - contains template used to produce `.docx` files (this template is not used yet, for [size issues](https://github.com/csci-1301/csci-1301.github.io/issues/156)).
 - `filters/` - contains pandoc filters for annotating code blocks, configured to default to C\#, which then allows applying syntax highlighting to all code block.
-- `templates/labs` - templates used for generating lab resources and associated pages
-- `templates/web` - templates for website and HTML format resources.
+- `html/` - contains template used to produce *only the book.html file* (to edit the style of the website, refer to [editing website](#editing-website))
+- `latex` - contains templates used to produce `.pdf` files,
+- `docx/` - contains template used to produce `.odt` files.
 
 ### Updating docx template
 
+*Note that this template is not used yet, for (among other) [size issues](https://github.com/csci-1301/csci-1301.github.io/issues/156).*
 
-First, output the default template file:
+To edit this template, start by obtaining the default template file:
 
 ```{bash}
 pandoc -o custom-reference.docx --print-default-data-file reference.docx
@@ -313,7 +316,7 @@ Then, open `reference.docx`, and, following loosely [this tutorial](https://supp
 - [Make sure the fonts are embedded](https://support.microsoft.com/en-us/office/benefits-of-embedding-custom-fonts-cb3982aa-ea76-4323-b008-86670f222dbc),
 - Save and close the document.
 
-This was inspired by [this post](https://stackoverflow.com/a/70513063) but does not seem to work properly :-/
+This was inspired by [this post](https://stackoverflow.com/a/70513063) but does not seem to work properly.
 
 ### Updating odt template
 
@@ -325,15 +328,84 @@ pandoc -o custom-reference.odt --print-default-data-file reference.odt
 
 Then, open `reference.odt`, and, following loosely [this tutorial](https://github.com/jgm/pandoc/wiki/Defining-custom-DOCX-styles-in-LibreOffice-(and-Word)#libreoffice), do:
 
-- View -> Styles
+- Click on View, then Styles.
 - Right-click on "Preformatted Text", click on "Modify…", and then select the desired font family for source code.
 - In the dialog or sidebar which opens make sure the button in the top panel marked with ¶ is highlighted (it is very subtle).
 - In the menu at the bottom of the dialog/sidebar choose Applied Styles. Only "Default Paragraph Style" and "Footer" should appear.
 - Right-click on "Default Paragraph Style", click on "Modify…", and then select the desired font family for the rest of the text.
 - Then, highlight the A next to ¶.
 - Right-click on "Source_Text", click on "Modify…", and then select the desired font family for source code.
-- File -> Properties -> Font tab, click on "Embed fonts in the document".
+- Click on File, then Properties, then on the Font tab, click on "Embed fonts in the document".
 - Save and close the document.
+
+## Building locally
+
+It is generally not necessary to build this resource locally unless the intent is to preview templating changes or to make changes to build scripts.
+For the purposes of editing content, it is sufficient to make edits to markdown files and commit those changes. 
+
+#### Installing dependencies
+
+To find the current list of dependencies needed to build this resource, refer to the [build script install section](https://github.com/princomp/princomp.github.io/blob/main/.github/workflows/build.yaml#L33-L40), which lists all required packages needed to build the resource. The exact installation steps vary depending on your local operating system.
+
+In general the following dependencies are needed:
+
+- [pandoc](https://pandoc.org/installing.html)
+- [texlive](https://www.tug.org/texlive/)
+- make
+- python 3.+
+- packages and filters: [Pygments](https://pygments.org/download/), [pandoc-include](https://github.com/DCsunset/pandoc-include#installation), [texlive-xetex](https://tug.org/xetex/), texlive-latex-extra, lmodern, [librsvg2-bin](https://askubuntu.com/a/31446)
+- symbola font
+
+For this later, note that starting [with version 11](http://web.archive.org/web/20181228102842/http://users.teilar.gr/%7Eg1951d/Symbola.pdf), the licence is too restrictive for non-personal use.
+As a consequence, users are asked to make sure they do not use a version greater than v.10.24, which is "free for any use" and [archived on-line](http://web.archive.org/web/20180307012615/http://users.teilar.gr/~g1951d/Symbola.zip) (curious users can also refer to [the related webpage](http://web.archive.org/web/20180307012615/http://users.teilar.gr/~g1951d/)).
+Note that installing this dependency using a unix-like package manager will result in installing a version of the font that [is free to use in any context](https://metadata.ftp-master.debian.org/changelogs//main/t/ttf-ancient-fonts/ttf-ancient-fonts_2.60-1.1_copyright). 
+
+You can make sure you are currently using the latest version of panflute by running
+```
+pip install -U panflute
+```
+This is needed if running a recent version of pandoc (as of pandoc 3.1.6.1 at least).
+
+#### Running the build
+
+After installing all dependencies, from the repository root, run:
+
+```bash
+make
+```
+
+make fetch <-- Document that
+
+To see a list of other alternative build options run
+
+```bash
+make help
+```
+
+## Website
+
+### Editing the website
+
+The website <https://princomp.github.io/> is built from the `.md` files contained in the `content/` folder using [a dedicated branch](https://github.com/princomp/princomp.github.io/tree/quartz) of [quartz](https://quartz.jzhao.xyz/).
+To edit the layout, style, or other features such as the footer, please
+
+- Refer to quartz's [website](https://quartz.jzhao.xyz/), [repository](https://github.com/jackyzha0/quartz) and general community,
+- Knowing that [multiple edits](https://github.com/princomp/princomp.github.io/commits/quartz/) already tweaked its style.
+
+### Deploying locally the website
+
+Start by [building the resource locally](#build-locally).
+
+
+## How to edit the style?
+
+
+
+
+
+
+
+
 
 
 ## Repository Maintenance
@@ -392,49 +464,6 @@ Once this is done, remember to create the next pre-release:
 #. Check "This is a pre-release"
 #. Click on "Publish release"
 
-### Building locally
-
-It is generally not necessary to build this resource locally unless the intent is to preview templating changes or to make changes to build scripts.
-For the purposes of editing content, it is sufficient to make edits to markdown files and commit those changes. 
-
-#### Installing dependencies
-
-To find the current list of dependencies needed to build this resource, refer to the [build script install section](https://github.com/princomp/princomp.github.io/blob/main/.github/workflows/build.yaml#L33-L40), which lists all required packages needed to build the resource. The exact installation steps vary depending on your local operating system.
-
-In general the following dependencies are needed:
-
-- [pandoc](https://pandoc.org/installing.html)
-- [texlive](https://www.tug.org/texlive/)
-- make
-- python 3.+
-- packages and filters: [Pygments](https://pygments.org/download/), [pandoc-include](https://github.com/DCsunset/pandoc-include#installation), [texlive-xetex](https://tug.org/xetex/), texlive-latex-extra, lmodern, [librsvg2-bin](https://askubuntu.com/a/31446)
-- symbola font
-
-For this later, note that starting [with version 11](http://web.archive.org/web/20181228102842/http://users.teilar.gr/%7Eg1951d/Symbola.pdf), the licence is too restrictive for non-personal use.
-As a consequence, users are asked to make sure they do not use a version greater than v.10.24, which is "free for any use" and [archived on-line](http://web.archive.org/web/20180307012615/http://users.teilar.gr/~g1951d/Symbola.zip) (curious users can also refer to [the related webpage](http://web.archive.org/web/20180307012615/http://users.teilar.gr/~g1951d/)).
-Note that installing this dependency using a unix-like package manager will result in installing a version of the font that [is free to use in any context](https://metadata.ftp-master.debian.org/changelogs//main/t/ttf-ancient-fonts/ttf-ancient-fonts_2.60-1.1_copyright). 
-
-You can make sure you are currently using the latest version of panflute by running
-```
-pip install -U panflute
-```
-This is needed if running a recent version of pandoc (as of pandoc 3.1.6.1 at least).
-
-#### Running the build
-
-After installing all dependencies, from the repository root, run:
-
-```bash
-make
-```
-
-make fetch <-- Document that
-
-To see a list of other alternative build options run
-
-```bash
-make help
-```
 
 ### Maintaining repository feedback
 
