@@ -99,12 +99,10 @@ In doubt, please start by referring to [this list of problematic words and phras
 
 - All resources are titled
     - title each markdown document by having one (and only one) title at top level (that is, using `#`),
-    - use subtitles when appropriate
-    - title all images with a descriptive title and add an alt-tag
-    - title all code blocks in labs and lecture notes                 
-- All resources are labelled when applicable
-    - at minimum list prerequisites and security-related aspects
-    - see [Content Labelling](#content-labelling) for more details
+    - use subtitles when appropriate,
+    - title all images with a descriptive title and add an alt-tag,
+    - title all code blocks in labs and lecture notes.
+- All resources are labelled when applicable, see [content labelling](#content-labelling) for more details
 
 Resources to assess accessibility:
 
