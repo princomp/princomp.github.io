@@ -30,10 +30,10 @@ If you want to make edits yourself, you can [fork](https://github.com/princomp/p
 
 ## Next steps for editors
 
-If you are looking to edit this resource and making your first contribution, read through the [user guide](dev_guide.html). It explains:
+If you are looking to edit this resource and making your first contribution, read through the [dev. guide](dev_guide). It explains:
 
 - how to locate different resources
 - how to edit the resources
 - how to label content
 
-Following the user guide will help to ensure your edits meet the expected quality guidelines and can be integrated into the existing resource with ease.
+Following the [dev. guide](dev_guide) will help to ensure your edits meet the expected quality guidelines and can be integrated into the existing resource with ease.
