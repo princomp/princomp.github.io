@@ -84,7 +84,7 @@ jobs:
       run: npx quartz build
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3.0.1
-      with:
+        with:
         path: public
 
   deploy:
