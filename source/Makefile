@@ -76,6 +76,8 @@ IMG_DIR = img/
 VID_DIR = vid/
 # The folders where the project are located.
 PROJECTS_DIRS := $(shell find $(PROJECT_DIR) -maxdepth 1 -mindepth 1 -type d)
+# The folder where the fonts are located.
+FONT_DIR := fonts/
 
 ## Templates
 TEMPLATES = templates/
@@ -122,7 +124,7 @@ TARGET_DOC_FILES_WITHOUT_INDEX := $(addsuffix .docx, $(basename $(TARGET_MD_FILE
 SOURCE_BOOK := $(shell cat order | grep -E "./lectures/.*.md|./docs/.*md")
 
 # Font files (source and target).
-SOURCE_WOFF_FONT_FILES := $(shell find templates/fonts/ -iname "*.woff*")
+SOURCE_WOFF_FONT_FILES := $(shell find $(FONT_DIR) -iname "*.woff*")
 TARGET_WOFF_FONT_FILES := $(addprefix $(BUILD_DIR), $(SOURCE_WOFF_FONT_FILES))
 
 # Image files (source and target).
@@ -309,12 +311,12 @@ $(BUILD_DIR)$(VID_DIR)%: $(VID_DIR)%
 # -------------------------------
 	
 # Individual woff font files:
-$(BUILD_DIR)fonts/%.woff : templates/fonts/%.woff
+$(BUILD_DIR)fonts/%.woff : $(FONT_DIR)%.woff
 	@mkdir -p $(dir $@)
 	@rsync -av $< $@
 	
 # Individual woff2 font files:
-$(BUILD_DIR)fonts/%.woff2 : templates/fonts/%.woff2
+$(BUILD_DIR)fonts/%.woff2 : $(FONT_DIR)%.woff2
 	@mkdir -p $(dir $@)
 	@rsync -av $< $@
 
