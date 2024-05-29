@@ -12,7 +12,7 @@ export default ((opts?: Options) => {
         const linkToDocx = absSlug + ".docx";
         const linkToMd   = absSlug + ".md";
         //  {fileData.slug === "404" ? "404" : cfg.baseUrl + fileData.slug}
-        const linkToSource = "https://github.com/csci-1301/csci-1301.github.io/blob/main/" + fileData.slug + ".md";
+        const linkToSource = "https://github.com/princomp/princomp.github.io/blob/main/" + fileData.slug + ".md";
         
         if (fileData.slug === "404" || fileData.slug == "index") {
             // We don't display anything if looking at the 404 page.

@@ -36,11 +36,12 @@ export default ((opts?: Options) => {
               <a href={link}>{text}</a>
             </li>
           ))}
+          <li>
+            {i18n(cfg.locale).components.footer.createdWith}{" "}
+            <a href="/docs/about/credits#tools" title="A list of tools used to create this resource.">free software</a> 🅭 🅯 {year}
+          </li>
         </ul>
-        <p>
-        {i18n(cfg.locale).components.footer.createdWith}{" "}
-        <a href="/docs/about/credits#tools" title="A list of tools used to create this resource.">free software</a> 🅭 🅯 {year}
-        </p>
+
       </footer>
     )
   }

@@ -12,7 +12,7 @@ export const sharedPageComponents: SharedLayout = {
   footer: Component.Footer({
     links: {
       "Credits" : "/docs/about/credits",
-      "Source": "https://github.com/csci-1301/csci-1301.github.io",
+      "Source": "https://github.com/princomp/princomp.github.io",
       "CC BY 4.0": "/docs/about/credits#licence",
       "Discord": "https://discord.gg/AYSw3UNKEh",
     }})
