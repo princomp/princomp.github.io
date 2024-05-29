@@ -12,9 +12,9 @@ The [source code repository](https://github.com/princomp/princomp.github.io)'s m
 
 path | description
 --- | ---
-`.github` | github templates and configuration for github actions
-`misc` | resources that needs to be either integrated into the source, or discarded
-`source`| source for the material
+`.github/` | github templates and configuration for github actions
+`misc/` | resources that needs to be either integrated into the source, or discarded
+`source/`| source for the material
 `licence.md` | license file
 `readme.md` | presentation of the repository.
 
@@ -22,26 +22,28 @@ The `source` folder contains the following:
 
 path | description
 --- | --- 
-`code` | code examples (snippets and projects)
-`docs` | additional helpful documentation
-`img` | all images
-`labs` | lab exercises
-`lectures` | lecture notes
-`slides` | slides
-`templates` | templates, filters and fonts files used for building this resource
-`vid` | video files
+`code/` | code examples (snippets and projects)
+`docs/` | additional helpful documentation
+`img/` | all images
+`labs/` | lab exercises
+`lectures/` | lecture notes
+`slides/` | slides
+`templates/` | templates, filters and fonts files used for building this resource
+`vid/` | video files
 `Makefile` | makefile used to compile this resource
 `index.md` | website index page
 `order` | file used to specify in which order the website's menu and the book needs to be presented
 
 The content is built and deployed in two phases:
 
-- Running `make all` in the `source` folder will create a `content` folder at root level containing:
-    - the `.md` files (regardless of their location) processed by pandoc after it applied some filters (refer to the `PANDOC_MD` variable in our makefile),
-    - for each `.md` file in the `source` folder, the same document in an "alternative formats" (`.pdf`, `odt` and `.docx`), as processed by pandoc,
-    - some files (in `img`, `slides`, `vid`, `templates`) copied verbatim or selectively (for example, only the `.jpeg`, `.png`, `.pdf`, `.svg` and `.gif` files are copied from the `img` folder, and only the `.woff` and `.woff2` files in the `templates/fonts` folders are copied),
-    - 
-
+- Running `make all` in the `source/` folder will create a `content/` folder at root level containing:
+    - one `.md` file per `.md` file in the `source/` folder (in the same location: `source/labs/If.md` is compiled to `content/labs/If.md`), resulting from pandoc's conversion,
+    - one `.pdf`, `.odt` and `.docx` file per `.md` file (with the exception of the `index.md` files) in the `source/` folder (in the same location: `source/labs/If.md` is compiled to `content/labs/If.pdf`), resulting from pandoc's conversion,
+    - some files (in `img/`, `slides/`, `vid/`, `templates/`) copied verbatim or selectively (for example, only the `.jpeg`, `.png`, `.pdf`, `.svg` and `.gif` files are copied from the `img` folder, and only the `.woff` and `.woff2` files in the `templates/fonts` folders are copied),
+    - a `code/projects` folder containing, for each `Program.cs` file contained in a `source/code/project/x/y`, a `x.zip` archive containing a C# project including `Program.cs` along with some (optional) class file,
+    - a `web-order.ts` file, compiled from the `source/order` file, that fixes the order used by the website in the menu,
+    - a `book.html`, a `book.pdf`, a `book.html` and a `book.docx` file resulting from pandoc's conversion of the `.md` files contained in the `SOURCE_BOOK`'s makefile variable (containing all the `.md` files in the `source/docs/` and  `source/lectures/`, in the order fixed by the `order` file).
+    
 ### Locating course resources
 
 How to obtain the latest version of this resource:

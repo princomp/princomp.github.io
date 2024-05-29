@@ -123,7 +123,7 @@ SOURCE_BOOK := $(shell cat order | grep -E "./lectures/.*.md|./docs/.*md")
 
 # Font files (source and target).
 SOURCE_WOFF_FONT_FILES := $(shell find templates/fonts/ -iname "*.woff*")
-TARGET_WOFF_FONT_FILES := $(addprefix $(BUILD_DIR), $(patsubst templates/%,%,$(SOURCE_WOFF_FONT_FILES)))
+TARGET_WOFF_FONT_FILES := $(addprefix $(BUILD_DIR), $(SOURCE_WOFF_FONT_FILES))
 
 # Image files (source and target).
 SOURCE_IMAGES_FILES := $(shell find $(IMG_DIR) -mindepth 1  -maxdepth 1 -iname "*.jpg" -or -iname "*.jpeg" -or -iname "*.png" -or -iname "*.pdf" -or -iname "*.svg" -or -iname "*.gif")
