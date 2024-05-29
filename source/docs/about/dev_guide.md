@@ -372,6 +372,8 @@ This is needed if running a recent version of pandoc (as of pandoc 3.1.6.1 at le
 |:---------------------------|
 | Running `make all` can be *very resource-incentive* and may render your system unstable. Read this section entirely before running any command. |
 
+#### Testing the installation
+
 After installing all dependencies, from the `source` root, run:
 
 ```bash
@@ -400,6 +402,16 @@ If this was successful, you can compile the [resources needed for the website](#
 make build-light
 ```
 
+#### Building all ressources
+
+You can run
+
+```bash
+make all
+```
+
+to create and populate the `content/` folder at root level with all the resources compiled.
+
 If you want to speed-up the compilation time, you can run
 
 ```bash
@@ -408,13 +420,6 @@ make fetch
 
 which will fetch the [latest build output](#build-outputs), extract it and populate the `content/` folder using its content.
 Due to [make's unique feature](https://makefiletutorial.com/) only the files whose source was edited will be re-created, hence saving *a lot* of time.
-
-Finally, you can run
-```bash
-make all
-```
-
-to create and populate the `content/` folder at root level with all the resources compiled.
 
 
 ## Website
