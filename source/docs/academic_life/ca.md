@@ -1,4 +1,17 @@
+---
+tags: 
+- Augusta University
+- Course Assistants
+- Resource
+- Guide
+---
+
 #  Course Assistants
+
+| 🛈 Info |
+|:---------------------------|
+| This page is primarily targeted for Augusta University students. |
+
 
 ## What Is an Undergraduate Course Assistant?
 

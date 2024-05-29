@@ -1,4 +1,16 @@
+---
+tags: 
+- Augusta University
+- Course Assistants
+- Resource
+- Guide
+---
+
 #  UCA starting guide
+
+| 🛈 Info |
+|:---------------------------|
+| This page is primarily targeted for Augusta University students. |
 
 Congratulations on your new position!
 This page briefly explain what is expected from you as an Undergraduate Course Assistant (UCA).
@@ -46,9 +58,9 @@ You need three things to start editing our resources:
 Follow the instructions in our ["Contributing Guidelines"](contributing.html#if-you-are-a-uca) for the first step.
 
 For a quick syntax guide in Markdown, the best resource is [this website](https://commonmark.org/help/) and its [10 minutes tutorial](https://commonmark.org/help/tutorial/).
-We list some [best practices](dev_guide.html#editing-resources-1), and would appreciate if you could follow them.
+We list some [best practices](./about/dev_guide#editing-resources), and would appreciate if you could follow them.
 
-For github's interface, please refer to the following guide:
+For github's interface, please refer to the following guide (where the screenshots where taken for the [csci-1301.github.io](https://github.com/csci-1301/csci-1301.github.io) website, but remains relevant).
 
 !["Navigating repositories"](img/uca_guide1.jpg) 
 

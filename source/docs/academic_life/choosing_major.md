@@ -1,4 +1,16 @@
+---
+tags: 
+- Augusta University
+- Major
+- Curriculum
+---
+
 #  Choosing Your Major
+
+| 🛈 Info |
+|:---------------------------|
+| This page is primarily targeted for Augusta University students. |
+
 
 ## Which degree is best for you?
 

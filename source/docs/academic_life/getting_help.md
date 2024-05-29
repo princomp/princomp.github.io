@@ -1,4 +1,16 @@
+---
+tags: 
+- Augusta University
+- Course Assistants
+- Tutoring
+- Office hours
+---
+
 #  How to get Help
+
+| 🛈 Info |
+|:---------------------------|
+| This page is primarily targeted for Augusta University students. |
 
 This page lists resources for Augusta University students to receive help with their course of studies, [in general](#general), for [students of the School of Computer and Cyber Sciences](#school), and for [this course in particular](#course).
 

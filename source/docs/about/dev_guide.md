@@ -7,6 +7,7 @@ tags:
 # Dev. Guide
 
 This guide explains how this resource is organized, how it is built and deployed, and how to maintain this resource.
+It is intended to be comprehensive, but should most likely be read only after having read our [contributing](./docs/about/contributing) and [UCA](./docs/academic_life/uca_guide#editing-the-resources) guides.
 
 ## Resources Organization Overview
 
