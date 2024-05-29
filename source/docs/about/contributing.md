@@ -16,7 +16,7 @@ If you have suggestions on how to make it better, we encourage you to share thos
 
 ### If you are an instructor
 
-You will need to have a [Github account](https://github.com/join). Next contact any of the [authors](about#authors) of this resource over email, provide your Github username, and request an invitation to be added to the instructors team. 
+You will need to have a [Github account](https://github.com/join). Next contact any of the [authors](credits#authors) of this resource over email, provide your Github username, and request an invitation to be added to the instructors team. 
 
 ### If you are a UCA
 

@@ -84,7 +84,7 @@ TEMPLATES = templates/
 # Path to HTML templates to use with pandoc
 HTM_TEMPLATES = $(TEMPLATES)html/
 # Path to PDF templates to use with pandoc
-PDF_TEMPLATES = $(TEMPLATES)latex/
+PDF_TEMPLATES = $(TEMPLATES)pdf/
 # Path to ODT templates to use with pandoc
 ODT_TEMPLATES = $(TEMPLATES)odt/
 # Path to DOCX templates to use with pandoc
