@@ -424,14 +424,30 @@ Due to [make's unique feature](https://makefiletutorial.com/) only the files who
 
 ## Website
 
-
 ### Editing the website
 
 The website <https://princomp.github.io/> is built from the `.md` files contained in the `content/` folder using [a dedicated branch](https://github.com/princomp/princomp.github.io/tree/quartz) of [quartz](https://quartz.jzhao.xyz/).
-To edit the layout, style, or other features such as the footer, please
+To edit the layout, style, or other features such as the footer, please *start by checking out the quartz branch* (using `git checkout quartz`), and then
 
 - Refer to quartz's [website](https://quartz.jzhao.xyz/), [repository](https://github.com/jackyzha0/quartz) and general community,
 - Knowing that [multiple edits](https://github.com/princomp/princomp.github.io/commits/quartz/) already tweaked its style.
+
+A couple of indications about the edits made to quartz:
+- The favicon at `quartz/static/`, and have been generated using <https://realfavicongenerator.net/>.
+- The order in the menu is constructed using the `content/web-order.ts` file, itself generated from the `source/order` file in the main branch: refer to the makefile (again, in the main branch) for explanations on how this file is created, to [the quartz documentation](https://quartz.jzhao.xyz/features/explorer#use-sort-with-pre-defined-sort-order) for the main inspiration, and to the `quartz.layout.ts` and `sortFn.ts` files for the concrete implementation. If you change the order, setting 
+```
+useSavedState: true, // To debug the explorer, change to "false" (this way, the menu is not cached / permanent), 
+```
+to `false` in the `quartz/components/Explorer.tsx` file *may* help in refreshing the menu more easily.
+- Other files edited or created include:
+    - `quartz/components/AlternativeFormats.tsx` and `quartz/components/styles/alternativeFormats.scss` to list alternative formats at the top of the page,
+    - `quartz/components/Comments.tsx`, `quartz/components/scripts/darkmode.inline.ts`, `quartz/components/Footer.tsx` and `quartz/components/styles/listPage.scss` to customize the footer and add a link to [our repository feedback](#maintaining-repository-feedback) (while following [the selected style](https://github.com/jackyzha0/quartz/issues/1161)),
+    - `quartz/styles/base.scss` to load a different set of fonts,
+    - `quartz/components/Explorer.tsx` and `quartz.layout.ts` to tweak the menu and layout,
+    - `quartz.config.ts` to set meta-data about the website,
+    - `quartz/components/pages/404.tsx` to customize the 404 error message,
+    - `quartz/plugins/emitters/assets.ts` to emit the `.md` files (they are not available by default),
+    - `quartz/components/index.ts` to tie it all together.
 
 ### Deploying locally the website
 
@@ -478,21 +494,6 @@ mv content/index.md content/index_b.md
     
     to start the server. Then, navigate to `localhost:8080/` to see the website deployed locally.
 
-
-
-
-
-## How to edit the style?
-
-
-
-
-
-
-
-
-
-
 ## Repository Maintenance
 
 This repository uses following tools and technologies:
@@ -511,21 +512,24 @@ This repository uses following tools and technologies:
 
 ### Build outputs
 
-The resource material is organized into specific directories (cf. [resource organization](#resources-organization)). These resources are then compiled into templated documents in various formats using [pandoc](https://pandoc.org/MANUAL.html). Different directories undergo different build steps as defined in the project [Makefile](https://github.com/princomp/princomp.github.io/blob/main/Makefile) and generate various outputs. For example, lecture notes are compiled into a textbook and labs are packaged into individual labs. The makefile explains the exact steps applied to each type of resource.
+The resource material is organized into specific directories inside the `source/` folder.
+These resources are then compiled into templated documents in various formats using [pandoc](https://pandoc.org/MANUAL.html).
+The makefile explains the exact steps applied to each type of resource.
 
 ### Github actions
 
-This resource is built automatically every time changes are committed to the main branch of the repository. This is configured to run on [Github actions](https://github.com/features/actions). There are currently two configured [workflows](https://github.com/princomp/princomp.github.io/actions): one to build the resource and to deploy it, and a second one to check that any opened pull requests can be built successfully. 
+This resource is built automatically every time changes concerning files in the `source/` folder are committed to the main branch of the repository. This is configured to run on [Github actions](https://github.com/features/actions). There is currently one configured [workflow](https://github.com/princomp/princomp.github.io/blob/main/.github/workflows/build_and_deploy.yaml) with two jobs: one to build the resource, and one to deploy it.
 
 The build configuration uses texlive to keep the dependency installation time low. Similarly, the choice of Python packages is preferable for pandoc filters, because they are usually straightforward and fast to install. We want to avoid choosing packages that significantly increase build time.
 
 Currently Github actions offers unlimited free build minutes for public repositories (and 2000 min/mo. for _private_ repositories, should we ever need them), which hopefully continues in perpetuity (if it does not there are other alternative services). Going with one specific CI service over another is simply a matter of preference. 
 
-Following a successful build, the build script will automatically deploy the generated resources to an accompanying website hosted on [github pages](https://pages.github.com/). In the repository a special branch `gh-pages` represents the contents of the deployed website. It also allows maintainers to observe the generated build outputs.
+Following a successful build, the build script will automatically deploy the generated resources to an accompanying website hosted on [github pages](https://pages.github.com/). 
 
 ### Creating releases
 
-Currently a github action is setup to do the following: whenever a new commit is made to the main branch, the action will build the resource and add the generated books as a pre-release under releases and tag them as "latest". If a subsequent commit occurs it will overwrite the previous latest files and become the new latest version. This cycle continues until maintainers are ready to make a versioned release (or "package").
+Currently a github action is setup to do the following: whenever a new commit is made to the main branch, the action will build the resource and add the generated resources as a [pre-release](https://github.com/princomp/princomp.github.io/releases) and tag them as ["latest"](https://github.com/princomp/princomp.github.io/releases/tag/latest).
+If a subsequent commit occurs it will overwrite the previous latest files and become the new latest version. This cycle continues until maintainers are ready to make a versioned release (or "package").
 
 Making a versioned release is done as follows:
 
@@ -552,7 +556,7 @@ Once this is done, remember to create the next pre-release:
 
 ### Maintaining repository feedback
 
-Resource users can submit feedback about the resource through various means, one of which is leaving comments on the website. This feature is enabled by [utteranc.es](https://utteranc.es/). 
+Resource users can submit feedback about the resource through various means, one of which is leaving comments on the website. This feature is enabled by [utteranc.es](https://utteranc.es/), and for now those repositories are hosted by the [`csci-1301` github organization](https://github.com/csci-1301) (this may change).
 
 To manage user feedback over time, a semester-specific repository is created for issues only. This must be a public repository and located under the same organization as the resources repository. utteranc.es widget is configured to point to this repository. After a semester is over,  this feedback repository will be archived, and a new one created for the next semester. This will simultaneously archive all older issues and reset the feedback across website pages.
 
@@ -560,16 +564,16 @@ To manage user feedback over time, a semester-specific repository is created for
 
 The steps for migrating feedback target repository are as follows:
 
-#. Create a new **public** repository under `csci-1301` github organization. Follow the established naming convention, and leave all the options except for visibility (which needs to be set to public) by default.
+#. Create a new **public** repository under [`csci-1301` github organization](https://github.com/csci-1301). Follow the established naming convention, and leave all the options except for visibility (which needs to be set to public) by default.
 #. Go to repository Issues (make sure issues is enabled in repository settings)
-#. Create a new label whose _label name_ is `comment` (to match [widget configuration](https://github.com/princomp/princomp.github.io/blob/main/templates/web/template.html#L87-L94))
-#. Go to [`Organization Settings > Installed GitHub Apps`](https://github.com/organizations/csci-1301/settings/installations) 
+#. Create a new label whose _label name_ is `comment` (to match widget configuration as indicated in `quartz/components/Footer.tsx`, in the `quartz` branch)
+#. Go to [`Organization Settings > Installed GitHub Apps`](https://github.com/organizations/csci-1301/settings/installations)
 #. Choose "utterances" > "configure"
 #. Under "Repository access" > "Only select repositories"
    - select the repository created in step 1. 
    - remove the previous semester feedback repository
 #. Save
-#. In `princomp.github.io` repository open `/templates/web/template.html`
+#. In `princomp/princomp.github.io/` repository, in the `quartz` branch, open `quartz/components/Footer.tsx`
 #. Update utteranc.es widget code to point to the new feedback repository created in step 1.
 
     ```js
@@ -580,21 +584,15 @@ The steps for migrating feedback target repository are as follows:
     </script>
     ```
 
-#. Commit change to template.html
+#. Commit change to `quartz/components/Footer.tsx`
 #. Make sure the feedback works after migration. If it does not, retrace your steps.
 #. Archive the earlier feedback repository in its settings.
 
 ### Maintaining Instructors / G/UCA rights
 
-Every semester,
+This is handled by the [`csci-1301` github organization](https://github.com/csci-1301) and documented at <https://csci-1301.github.io/user_guide.html#maintaining-instructors-guca-rights>.
 
-- [The members of the "UCAs" team](https://github.com/orgs/csci-1301/teams/ucas) should be updated,
-- A "uca-resources-<semester>-YYYY" repository should be created, by [forking the template](https://github.com/princomp/uca-resources-template) (private repository),
-- The new repository should be added to the [list of repositories of the team](https://github.com/orgs/csci-1301/teams/ucas/repositories) (as maintainer),
-- The old repository should be deleted from that same list, and then archived.
-- GRAs should be added / removed from the [instructors list](https://github.com/orgs/csci-1301/teams/instructors), and previous instructors should be removed from that same list,
-- GRAs should be [added to the "UCAs" teams](https://github.com/orgs/csci-1301/teams/ucas/members) and given "maintainer" rights (_inside that team_, and not for the whole organization).
-
+<!--
 
 # TEMP NOTES
 
@@ -603,20 +601,7 @@ Possible improvements:
 
 - Integrate callouts, as <https://quartz.jzhao.xyz/features/callouts>, <https://gist.github.com/jskherman/8e721302e67d308e8a81f3df84f01f20>, <https://www.reddit.com/r/LaTeX/comments/1baudg4/callouts_in_latex/>, <https://tex.stackexchange.com/questions/714908/newcommand-syntax-with-callouts>, <https://forum.obsidian.md/t/rendering-callouts-similarly-in-pandoc/40020/6>, <https://raw.githubusercontent.com/kdheepak/kdheepak.github.io/main/blog/pandoc-lua-filter-for-alerts/index.md>.
 
-- Document [quartz](quartz.jzhao.xyz/), how to run it locally, and explain the edits made in <https://github.com/princomp/princomp.github.io/tree/quartz-migration>. 
-
-- explain how order works, and that changing 
-```
-useSavedState: true, // To debug the explorer, change to "false" (this way, the menu is not cached / permanent), 
-```
-in https://github.com/princomp/princomp.github.io/blob/quartz/quartz/components/Explorer.tsx can help in debugging the changes.
-
-
 - Add logos before code, pdf, odt, docx, md.
-
-- explain how to add lecture (and how to sort it in the menu and get it in the book pdf, but also that it must have only one title element at top level).
-
-- explain that no two files should have the same name considering the sorting we use ^
 
 - give title to code snippets / code blocks
 
@@ -662,17 +647,4 @@ in https://github.com/princomp/princomp.github.io/blob/quartz/quartz/components/
 [WARNING] Missing character: There is no  (U+FE0F) (U+FE0F) in font [templates/fonts/urw_gothic/U
 [WARNING] Missing character: There is no  (U+FE0F) (U+FE0F) in font [templates/fonts/urw_gothic/U
 ``` 
-
-
-Notes:
-
-- Undo changes in explorer.tsx (csci-1310/quartz/quartz/components/Explorer.tsx)
-
-```
-useSavedState: false, // TEMPORARY, to debug the explorer.
-```
-
-## Website
-
-- The favicon are in the quartz branch, at `quartz/static/`, and have been generated using <https://realfavicongenerator.net/>.
-
+-->
