@@ -410,6 +410,8 @@ After installing all dependencies, from the repository root, run:
 make
 ```
 
+make fetch <-- Document that
+
 To see a list of other alternative build options run
 
 ```bash
