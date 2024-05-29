@@ -192,10 +192,10 @@ PANDOC_DOC:= $(PANDOC_OPTIONS_ALT) --default-image-extension=svg
 # --reference-doc=$(DOCX_TEMPLATES)custom-reference.docx
 
 # Book build options
-PANDOC_BOOK_PDF:= $(PANDOC_PDF)
 PANDOC_BOOK_HTM:= $(PANDOC_HTM)
-PANDOC_BOOK_DOC:= $(PANDOC_DOC)
+PANDOC_BOOK_PDF:= $(PANDOC_PDF)
 PANDOC_BOOK_ODT:= $(PANDOC_ODT)
+PANDOC_BOOK_DOC:= $(PANDOC_DOC)
 
 # Remember to add ?
 # --metadata-file=$(METADATA_FILE)
@@ -270,14 +270,6 @@ $(BUILD_DIR)%.md: %.md
 	@pandoc $(PANDOC_MD) $< -o $@
 	
 # -------------------------------
-# docx files
-# -------------------------------
-
-$(BUILD_DIR)%.docx: %.md
-	@mkdir -p $(dir $@)
-	@pandoc $(PANDOC_DOC) $< -o $@
-
-# -------------------------------
 # pdf files
 # -------------------------------
 
@@ -294,10 +286,17 @@ $(BUILD_DIR)%.odt: %.md
 	@pandoc $(PANDOC_ODT) $< -o $@
 
 # -------------------------------
+# docx files
+# -------------------------------
+
+$(BUILD_DIR)%.docx: %.md
+	@mkdir -p $(dir $@)
+	@pandoc $(PANDOC_DOC) $< -o $@
+
+# -------------------------------
 # image file
 # -------------------------------
 
-# Individual images:
 $(BUILD_DIR)$(IMG_DIR)%: $(IMG_DIR)%
 	@mkdir -p $(dir $@)
 	@rsync -av $<  $@
@@ -306,7 +305,6 @@ $(BUILD_DIR)$(IMG_DIR)%: $(IMG_DIR)%
 # video file
 # -------------------------------	
 
-# Individual videos:
 $(BUILD_DIR)$(VID_DIR)%: $(VID_DIR)%
 	@mkdir -p $(dir $@)
 	@rsync -av $< $@
@@ -315,12 +313,12 @@ $(BUILD_DIR)$(VID_DIR)%: $(VID_DIR)%
 # font files
 # -------------------------------
 	
-# Individual woff font files:
+# woff font files:
 $(BUILD_DIR)fonts/%.woff : $(FONT_DIR)%.woff
 	@mkdir -p $(dir $@)
 	@rsync -av $< $@
 	
-# Individual woff2 font files:
+# woff2 font files:
 $(BUILD_DIR)fonts/%.woff2 : $(FONT_DIR)%.woff2
 	@mkdir -p $(dir $@)
 	@rsync -av $< $@

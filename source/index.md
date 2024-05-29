@@ -12,10 +12,10 @@ You can either:
     - (desktop only) use the menu on your left,
     - noting that hovering over most links gives a preview of the page content,
 - download our book containing some documentation and all of our lecture notes in multiple formats:
+    - [HTML](book.html) - to read from your browser, convenient for phones as well, and lightweight.
     - [PDF](book.pdf) - to print and archive.
     - [ODT](book.odt) - to edit (using e.g., [libreoffice](https://www.libreoffice.org/)) and archive.
     - [DOCX](book.docx) - to edit (using e.g., Microsoft Office) and archive.
-    - [HTML](book.html) - to read from your browser, convenient for phones as well, but without any style.
 
 Note that on most pages, on the right below the title, there are links to download the current webpage in md, pdf, odt and docx as well as a link to its source code: your [contributions](docs/about/contributing) will be welcome!
     
