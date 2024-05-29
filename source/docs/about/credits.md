@@ -37,7 +37,7 @@ This website uses different technologies.
 - The source code is highlighted thanks to [Pygments](https://pygments.org/).
 - The website is powered by [quartz](https://quartz.jzhao.xyz/).
 
-More details on the tools we use and how this resource is made can be found in [our user guide](docs/about/user_guide#repository-maintenance).
+More details on the tools we use and how this resource is made can be found in [our user guide](docs/about/dev_guide#repository-maintenance).
 
 ### Fonts
 

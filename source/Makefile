@@ -1,7 +1,7 @@
 ###################################################### 
 # Welcome, source code reader!                       #
 # In general, refer to                               #
-# https://princomp.github.io/docs/about/user_guide   #
+# https://princomp.github.io/docs/about/dev_guide    #
 # for a complete documentation on how this resource  #
 # is built and maintained.                           #
 ######################################################

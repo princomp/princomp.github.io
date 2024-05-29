@@ -1,4 +1,4 @@
-#  User Guide
+# Dev. Guide
 
 This guide explains how this resource is organized, how it is built, and how to maintain this resource.
 
@@ -23,12 +23,12 @@ The `source` folder contains the following:
 path | description
 --- | --- 
 `code` | code examples (snippets and projects)
-`docs` | additional helpful documents
+`docs` | additional helpful documentation
 `img` | all images
 `labs` | lab exercises
 `lectures` | lecture notes
 `slides` | slides
-`templates` | templates and meta data files used for building this resource 
+`templates` | templates, filters, fonts and meta data files used for building this resource
 `vid` | video files
 `Makefile` | makefile used to instruct how to compile this resource
 `index.md` | website index page

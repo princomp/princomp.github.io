@@ -30,7 +30,7 @@ If you want to make edits yourself, you can [fork](https://github.com/princomp/p
 
 ## Next steps for editors
 
-If you are looking to edit this resource and making your first contribution, read through the [user guide](user_guide.html). It explains:
+If you are looking to edit this resource and making your first contribution, read through the [user guide](dev_guide.html). It explains:
 
 - how to locate different resources
 - how to edit the resources
