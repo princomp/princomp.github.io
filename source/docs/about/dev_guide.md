@@ -35,7 +35,7 @@ path | description
 `vid/` | video files
 `Makefile` | makefile used to compile this resource
 `index.md` | website index page
-`order` | file used to specify in which order the website's menu and the book needs to be presented
+`order` | file used to specify the order on the website's menu and the book
 
 ### Building and Deploying
 
@@ -70,22 +70,16 @@ While most of those tools are fairly standard (with the exception of quartz, but
 
 This guide tries to alleviate some challenges resulting from this overall unique and diverse resource organization.
 
-## Locating course resources
+### Locating Resources
 
-How to obtain the latest version of this resource:
+To obtain the latest version of this resource, you can either
 
-#. visit the accompanying website [princomp.github.io](https://princomp.github.io). This website includes the latest version of the course textbook in all supported formats, links to labs, and all other available student resources.
-#. AU-hosted mirror of the website is located at <https://spots.augusta.edu/caubert/teaching/csci-1301>
-#. latest version of built resource is available as a .zip file under [releases](https://github.com/princomp/princomp.github.io/releases) on Github.
+- visit the accompanying website [princomp.github.io](https://princomp.github.io),
+- download [the latest version of the built resource](https://github.com/princomp/princomp.github.io/releases/download/latest/release.zip),
+- clone [our repository](https://github.com/princomp/princomp.github.io/).
 
-A mirrored version of this website is hosted on [spots](https://spots.augusta.edu/caubert/teaching/csci-1301/) and updated regularly.
-Additional copies of this resource can be made available through box or D2L. Because manual effort is required to share the resource through these channels, these may be slightly behind the latest version.
+This resource is an extension of [csci-1301.github.io/](https://csci-1301.github.io/), please refer to [their user guide](https://csci-1301.github.io/user_guide.html#locating-course-resources) for more information about it.
 
-How to obtain much earlier versions of this resource:
-
-#. Complete release history is accessible under [releases](https://github.com/princomp/princomp.github.io/releases) on Github
-#. Earlier versions of this resource will be periodically archived on Galileo.
- 
 ## Editing Resources
 
 If you are new to this project, first read through [Contributing Guidelines](/contributing) to learn how you can contribute to the improvement of this resource, and if applicable, how to join a contributing team.
@@ -98,10 +92,13 @@ Follow the [IT Inclusive Language Guide](https://itconnect.uw.edu/guides-by-topi
 
 >  use gender-neutral terms; avoid ableist language; focus on people not disabilities or circumstances; avoid generalizations about people, regions, cultures and countries; and avoid slang, idioms, metaphors and other words with layers of meaning and a negative history.
 
+Typically, we recommend using "unethical hacker" instead of "black hat", "main" instead of "master", "blank space" instead of "white space", "display on the screen" instead of "printing", etc.
+In doubt, please start by referring to [this list of problematic words and phrases](https://itconnect.uw.edu/guides-by-topic/identity-diversity-inclusion/inclusive-language-guide/#list).
+
 #### Structure for accessibility
 
 - All resources are titled
-    - title each markdown document: either in head meta or in markdown syntax, depending on resource type
+    - title each markdown document by having one (and only one) title at top level (that is, using `#`),
     - use subtitles when appropriate
     - title all images with a descriptive title and add an alt-tag
     - title all code blocks in labs and lecture notes                 
