@@ -28,9 +28,9 @@ path | description
 `labs` | lab exercises
 `lectures` | lecture notes
 `slides` | slides
-`templates` | templates, filters, fonts and meta data files used for building this resource
+`templates` | templates, filters and fonts files used for building this resource
 `vid` | video files
-`Makefile` | makefile used to instruct how to compile this resource
+`Makefile` | makefile used to compile this resource
 `index.md` | website index page
 `order` | file used to specify in which order the website's menu and the book needs to be presented
 
