@@ -374,7 +374,7 @@ This is needed if running a recent version of pandoc (as of pandoc 3.1.6.1 at le
 
 #### Testing the installation
 
-After installing all dependencies, from the `source` root, run:
+After installing all dependencies, from the `source/` folder, run:
 
 ```bash
 make
@@ -393,8 +393,8 @@ make ../content/code/projects/Rectangle.zip
 make ../content/web-order.ts
 make ../content/img/create_project_monodevelop.png
 make ../content/fonts/hack/hack-italic-subset.woff
-
 ```
+
 to test your installation.
 If this was successful, you can compile the [resources needed for the website](#website) using
 
@@ -402,7 +402,7 @@ If this was successful, you can compile the [resources needed for the website](#
 make build-light
 ```
 
-#### Building all ressources
+#### Building all resources
 
 You can run
 
@@ -419,7 +419,7 @@ make fetch
 ```
 
 which will fetch the [latest build output](#build-outputs), extract it and populate the `content/` folder using its content.
-Due to [make's unique feature](https://makefiletutorial.com/) only the files whose source was edited will be re-created, hence saving *a lot* of time.
+Due to [make's unique feature](https://makefiletutorial.com/) only the files whose source was edited will be re-created when executing `make all` the next time, hence saving *a lot* of time.
 
 
 ## Website
