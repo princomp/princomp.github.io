@@ -607,24 +607,6 @@ Possible improvements:
 
 - sort out misc folder
 
-```
-[WARNING] Could not fetch resource ./../../img/solution_explorer_rectangle.png: replacing image with description
-[WARNING] Could not fetch resource ./../../img/create_project.png: replacing image with description
-[WARNING] Could not fetch resource ./../../img/select_net.png: replacing image with description
-[WARNING] Could not fetch resource ./../../img/create_project_on_mac_1.png: replacing image with description
-[WARNING] Could not fetch resource ./../../img/create_project_on_mac_2.png: replacing image with description
-[WARNING] Could not fetch resource ./../../img/create_project_on_mac_3.png: replacing image with description
-[WARNING] Could not fetch resource ./../../img/create_project_on_mac_4.png: replacing image with description
-[WARNING] Could not fetch resource ./../../img/create_project_monodevelop.png: replacing image with description
-[WARNING] Could not fetch resource ./../../img/solution_explorer_rectangle.png: PandocResourceNotFound "./../../img/solution_explorer_rectangle.png"
-[WARNING] Could not fetch resource ./../../img/create_project.png: PandocResourceNotFound "./../../img/create_project.png"
-[WARNING] Could not fetch resource ./../../img/select_net.png: PandocResourceNotFound "./../../img/select_net.png"
-[WARNING] Could not fetch resource ./../../img/create_project_on_mac_1.png: PandocResourceNotFound "./../../img/create_project_on_mac_1.png"
-[WARNING] Could not fetch resource ./../../img/create_project_on_mac_2.png: PandocResourceNotFound "./../../img/create_project_on_mac_2.png"
-[WARNING] Could not fetch resource ./../../img/create_project_on_mac_3.png: PandocResourceNotFound "./../../img/create_project_on_mac_3.png"
-[WARNING] Could not fetch resource ./../../img/create_project_on_mac_4.png: PandocResourceNotFound "./../../img/create_project_on_mac_4.png"
-[WARNING] Could not fetch resource ./../../img/create_project_monodevelop.png: PandocResourceNotFound "./../../img/create_project_monodevelop.png"
-```
 
 ```
 [WARNING] Missing character: There is no  (U+FE0F) (U+FE0F) in font [templates/fonts/urw_gothic/U
