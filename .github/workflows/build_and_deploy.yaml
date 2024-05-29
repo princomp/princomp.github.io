@@ -61,11 +61,11 @@ jobs:
         pip install Pygments pandoc-include
     - name: Fetch previous version ⤵️ # <- To save some compilation time, we download the last release and unzip it. We also synchronize the project files back in the source/ folder, to gain some time.
       run: |
-          cd /home/runner/work/princomp.github.io/princomp.github.io/
-          wget https://github.com/princomp/princomp.github.io/releases/download/latest/release.zip && unzip -q release.zip && cd content && rsync -avR code/projects/**.zip ../source || true
+          cd /home/runner/work/princomp.github.io/princomp.github.io/source/
+          make fetch
     - name: Build 🏗️
       run: |
-        cd source
+        cd /home/runner/work/princomp.github.io/princomp.github.io/source/
         make all
     - name: Create package 🎁
       uses: crowbarmaster/GH-Automatic-Releases@latest

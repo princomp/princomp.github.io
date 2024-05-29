@@ -412,6 +412,10 @@ $(BUILD_DIR)book.docx: $(SOURCE_BOOK)
 # Putting it all together
 # -------------------------------
 
+.PHONY: fetch
+fetch:
+	wget https://github.com/princomp/princomp.github.io/releases/download/latest/release.zip && unzip -q release.zip && cd content && rsync -avR code/projects/**.zip ../source || true
+
 book: $(BUILD_DIR)book.html $(BUILD_DIR)book.pdf $(BUILD_DIR)book.odt $(BUILD_DIR)book.docx
 
 # Ligter build, to test compilation and website deployment

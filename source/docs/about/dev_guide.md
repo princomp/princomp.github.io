@@ -1,6 +1,6 @@
 # Dev. Guide
 
-This guide explains how this resource is organized, how it is built, and how to maintain this resource.
+This guide explains how this resource is organized, how it is built and deployed, and how to maintain this resource.
 
 | ⚠️ Warning |
 |:---------------------------|
