@@ -8,10 +8,6 @@ tags:
 
 This guide explains how this resource is organized, how it is built and deployed, and how to maintain this resource.
 
-| ⚠️ Warning |
-|:---------------------------|
-| This resource is currently under heavy remodelling. This documentation will be updated but is outdated in places as of this writing. |
-
 ## Resources Organization Overview
 
 ### Folders and Files
