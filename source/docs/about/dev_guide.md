@@ -178,12 +178,12 @@ The `{ width=80% }` attribute is optional.
 Code snippets can be included in markdown documents using [pandoc-include](https://github.com/DCsunset/pandoc-include) filter:
 
 
-        ```
+        ```text
         !include code/sample.cs
         ```
+    
+Note that for [an unknown reason](https://github.com/DCsunset/pandoc-include/issues/45), no special characters (such as `_`) should be used in the filenames.
 
-
-    Note that for [an unknown reason](https://github.com/DCsunset/pandoc-include/issues/45), no special characters (such as `_`) should be used in the filenames.
 - Title each source code block included in markdown, this will create a URL for the code block and enables linking to it.
 - code blocks are by default annotated as `csharp`
     - syntax highlighting is applied automatically at build time based on the code block language
@@ -202,7 +202,7 @@ Code snippets can be included in markdown documents using [pandoc-include](https
 
 Lecture notes belong to the `source/lectures/` directory.
 
-To create a new lecture, e.g. `lecture xyz`:
+To create a new lecture, for instance on exception handling:
 
 #. Create a directory corresponding to the theme if it does not exist already (say, `exceptions`), under `source/lectures/` directory
 
@@ -222,8 +222,6 @@ To create a new lecture, e.g. `lecture xyz`:
     - `./lectures/exception/exception-handling.md` (which *must be* between `./lectures/exception/` and the next `./lectures/xyz/` folder).
     
     This last step will insure that your lecture is 1. included in the book, 2. sorted correctly on the website's menu (the default ordering is alphabetical).
-
-Following these steps will automatically include the new lecture in the book. 
 
 If the lecture does not appear, here are the steps for troubleshooting the issue:
  
@@ -291,8 +289,7 @@ tags:
 ## Styling and Templating
 
 Templating files are under `source/templates/` directory.
-
-Templates directory specifies layout files and stylesheets used in the website. These layouts are applied by pandoc when resources are built.
+Templates directory contain layout files that are applied by pandoc when resources are built: note that [the website's style](#editing-the-website) uses a completely different mechanism.
 
 For maintainability reasons it is preferable to apply templates during build time. This strategy makes it easy to edit templates later and apply those changes across all resources. Avoid applying templating to individual resource files whenever possible.
 
@@ -310,7 +307,7 @@ Currently templates directory contains the following:
 
 To edit this template, start by obtaining the default template file:
 
-```{bash}
+```bash
 pandoc -o custom-reference.docx --print-default-data-file reference.docx
 ```
 
@@ -329,7 +326,7 @@ This was inspired by [this post](https://stackoverflow.com/a/70513063) but does 
 
 First, output the default template file:
 
-```{bash}
+```bash
 pandoc -o custom-reference.odt --print-default-data-file reference.odt
 ```
 
@@ -352,7 +349,8 @@ For the purposes of editing content, it is sufficient to make edits to markdown 
 
 #### Installing dependencies
 
-To find the current list of dependencies needed to build this resource, refer to the [build and deploy script install section](https://github.com/princomp/princomp.github.io/blob/main/.github/workflows/build_and_deploy.yaml), which lists all required packages needed to build the resource. The exact installation steps vary depending on your local operating system.
+To find the current list of dependencies needed to build this resource, refer to the [build and deploy script install section](https://github.com/princomp/princomp.github.io/blob/main/.github/workflows/build_and_deploy.yaml).
+The exact installation steps vary depending on your local operating system.
 
 In general the following dependencies are needed:
 
@@ -389,7 +387,7 @@ make
 
 to display a list of useful rules.
 
-It is recommended to first run a command building simple documents or copying files such as
+It is recommended to first run a command building simple documents or copying files to test your installation, such as
 
 ```bash
 make ../content/docs/about/credits.md
@@ -402,7 +400,6 @@ make ../content/img/create_project_monodevelop.png
 make ../content/fonts/hack/hack-italic-subset.woff
 ```
 
-to test your installation.
 If this was successful, you can compile the [resources needed for the website](#website) using
 
 ```bash
@@ -440,6 +437,7 @@ To edit the layout, style, or other features such as the footer, please *start b
 - Knowing that [multiple edits](https://github.com/princomp/princomp.github.io/commits/quartz/) already tweaked its style.
 
 A couple of indications about the edits made to quartz:
+
 - The favicon at `quartz/static/`, and have been generated using <https://realfavicongenerator.net/>.
 - The order in the menu is constructed using the `content/web-order.ts` file, itself generated from the `source/order` file in the main branch: refer to the makefile (again, in the main branch) for explanations on how this file is created, to [the quartz documentation](https://quartz.jzhao.xyz/features/explorer#use-sort-with-pre-defined-sort-order) for the main inspiration, and to the `quartz.layout.ts` and `sortFn.ts` files for the concrete implementation. If you change the order, setting 
 ```
