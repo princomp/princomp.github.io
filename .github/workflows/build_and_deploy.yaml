@@ -2,10 +2,10 @@
 # https://rhysd.github.io/actionlint/
 
 # There *could* be a point to be made that
-# this workflow could be divided in two, cf. 
+# this workflow could be divided in two, cf.
 # https://stackoverflow.com/q/69316044
 # for instance (one to build, one to deploy).
-# However, since we will always build and 
+# However, since we will always build and
 # deploy, and since it introduces additional
 # complications (detailed below), we prefer to
 # keep the jobs in the same workflow.
@@ -56,15 +56,15 @@ jobs:
         sudo apt-get update
         test -f pandoc-3.2-1-amd64.deb || wget https://github.com/jgm/pandoc/releases/download/3.2/pandoc-3.2-1-amd64.deb
         sudo dpkg -i pandoc-3.2-1-amd64.deb
-        sudo apt-get install -y texlive texlive-xetex texlive-latex-extra lmodern librsvg2-bin fonts-symbola 
+        sudo apt-get install -y texlive texlive-xetex texlive-latex-extra lmodern librsvg2-bin fonts-symbola
         pip install --upgrade pip
         pip install Pygments pandoc-include
-     - name: Fetch previous version ⤵️ # <- To save some compilation time, we download the last release and unzip it. We also synchronize the project files back in the source/ folder, to gain some time.
-        run: |
+    - name: Fetch previous version ⤵️ # <- To save some compilation time, we download the last release and unzip it. We also synchronize the project files back in the source/ folder, to gain some time.
+      run: |
           cd /home/runner/work/princomp.github.io/princomp.github.io/
-          wget https://github.com/princomp/princomp.github.io/releases/download/latest/release.zip && unzip -q release.zip && cd content && rsync -avR code/projects/**.zip ../source || true 
+          wget https://github.com/princomp/princomp.github.io/releases/download/latest/release.zip && unzip -q release.zip && cd content && rsync -avR code/projects/**.zip ../source || true
     - name: Build 🏗️
-      run: | 
+      run: |
         cd source
         make all
     - name: Create package 🎁
@@ -86,7 +86,7 @@ jobs:
       uses: actions/upload-pages-artifact@v2
       with:
         path: public
-        
+
   deploy:
     needs: build
     environment:
