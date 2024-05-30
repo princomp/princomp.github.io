@@ -518,6 +518,8 @@ The following guide was inspired [by this discussion](https://github.com/jackyzh
 
 The first step is to save as a git patch all the edits that have been made on our local copy of quartz since it was last updated.
 
+- Make sure you are in the `quartz` branch and that it is up-to-date.
+
 - Locate the commit `id` of the last commit performed by quartz maintainer. A way of achieving this is to look for "PCP" in the commit messages, using
 
     ```bash
