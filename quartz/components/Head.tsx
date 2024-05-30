@@ -15,8 +15,8 @@ export default (() => {
     const path = url.pathname as FullSlug
     const baseDir = fileData.slug === "404" ? path : pathToRoot(fileData.slug!)
 
-    const iconPath = joinSegments(baseDir, "static/icon.png")
-    const ogImagePath = `https://${cfg.baseUrl}/static/og-image.png`
+    const iconPath = joinSegments(baseDir, "static/")
+    const ogImagePath = `https://${cfg.baseUrl}/static/og-image-source.svg`
 
     return (
       <head>
@@ -35,9 +35,15 @@ export default (() => {
         {cfg.baseUrl && <meta property="og:image" content={ogImagePath} />}
         <meta property="og:width" content="1200" />
         <meta property="og:height" content="675" />
-        <link rel="icon" href={iconPath} />
+        <link rel="apple-touch-icon" sizes="180x180" href={iconPath + "apple-touch-icon.png"} />
+        <link rel="icon" type="image/png" sizes="32x32" href={iconPath + "favicon-32x32.png"} />
+        <link rel="icon" type="image/png" sizes="16x16" href={iconPath + "favicon-16x16.png"} />
+        <link rel="manifest" href={iconPath + "site.webmanifest"} />
+        <link rel="mask-icon" href={iconPath + "safari-pinned-tab.svg"} color="#5bbad5" />
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff" />
         <meta name="description" content={description} />
-        <meta name="generator" content="Quartz" />
+        <meta name="generator" content="Pandoc & Quartz" />
         {css.map((href) => (
           <link key={href} href={href} rel="stylesheet" type="text/css" spa-preserve />
         ))}

@@ -1,5 +1,9 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
+// Function to sort entries in explorer.
+import { sortFn } from "./sortFn.ts"
+
+
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
@@ -7,10 +11,11 @@ export const sharedPageComponents: SharedLayout = {
   header: [],
   footer: Component.Footer({
     links: {
-      GitHub: "https://github.com/jackyzha0/quartz",
-      "Discord Community": "https://discord.gg/cRFFHYye7t",
-    },
-  }),
+      "Credits" : "/docs/about/credits",
+      "Source": "https://github.com/princomp/princomp.github.io",
+      "CC BY 4.0": "/docs/about/credits#licence",
+      "Discord": "https://discord.gg/AYSw3UNKEh",
+    }})
 }
 
 // components for pages that display a single page (e.g. a single note)
@@ -19,6 +24,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Breadcrumbs(),
     Component.ArticleTitle(),
     Component.ContentMeta(),
+    Component.AlternativeFormats(),
     Component.TagList(),
   ],
   left: [
@@ -26,7 +32,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.DesktopOnly(Component.Explorer()),
+    Component.DesktopOnly(Component.Explorer({sortFn: sortFn})),
   ],
   right: [
     Component.Graph(),
@@ -43,7 +49,7 @@ export const defaultListPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.DesktopOnly(Component.Explorer()),
+    Component.DesktopOnly(Component.Explorer({sortFn: sortFn})),
   ],
   right: [],
 }
