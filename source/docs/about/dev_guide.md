@@ -588,7 +588,18 @@ git push origin quartz-update
 
 #### Update the branch
 
-**If you were able to fix all the conflicts and to check that the website could still be deployed locally**, 
+**If you were able to fix all the conflicts and to check that the website could still be deployed locally**, then overwrite the `quartz` branch with the `quartz-update` branch, [by executing](https://www.reddit.com/r/git/comments/bqx85v/comment/eo8j4zh):
+
+```bash
+# Make sure your working tree is in a clean state
+git status
+
+# Check out the branch you want to change, e.g. some-branch
+git checkout quartz
+
+# Reset that branch to some other branch/commit, e.g. target-branch
+git reset --hard quartz-update
+```
  
 ## Repository Maintenance
 
