@@ -499,6 +499,41 @@ mv content/index.md content/index_b.md
     
     to start the server. Then, navigate to `localhost:8080/` to see the website deployed locally.
 
+### Updating quartz
+
+Our local copy of quartz, [in the `quartz` branch](https://github.com/princomp/princomp.github.io/tree/quartz), is "frozen" in the sense that it corresponds to the development of quartz at a point of time.
+It is possible to 
+
+#. Save the edits made to our local copy (as a [git patch](https://git-scm.com/docs/git-apply)),
+#. Pull the current version of quartz in a different branch (called `quartz-update`),
+#. Apply our edits to this updated version of quartz,
+#. Replace the `quartz` branch with the `quartz-update` branch to deploy the updated version of quartz with our edits.
+
+This process is not without risks and requires to be able to [deploy locally the website](#deploying-locally-the-website) to test it before deploying it.
+The following guide was inspired [by this discussion](https://github.com/jackyzha0/quartz/issues/1145).
+
+#### Generate the git patch
+
+The first step is to save as a git patch all the edits that have been made on our local copy of quartz since it was last updated.
+
+- Locate the commit `id` of the last commit performed by quartz maintainer. A way of achieving this is to look for "PCP" in the commit messages, using
+
+    ```bash
+    git rev-parse :/PCP
+    ```
+
+    and then to look for the commit id of the commit that came _before_ it. For instance, if the previous command returns `b9c0a47fcc6fd50977a5cd60f4851e71fe5400f2`, then the command 
+    
+    ```bash
+    git show b9c0a47fcc6fd50977a5cd60f4851e71fe5400f2^1
+    ```
+    
+    will return information about the commit that came before that last commit. Visual inspection using [github's interface](https://github.com/princomp/princomp.github.io/commits/quartz/) or a program such as [gitk](https://git-scm.com/docs/gitk) can facilitate this process.
+
+- git diff-index 81a4e202362f42a82baa9df2b6b91a774098740b --binary > pcp_quartz_patch
+    
+    
+   
 ## Repository Maintenance
 
 This repository uses following tools and technologies:
