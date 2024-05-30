@@ -579,12 +579,21 @@ git apply --ignore-space-change --ignore-whitespace --reject pcp_quartz_patch
 
 Look for the `.rej` files: they will contain the edited version of a file that you will need to merge manually with the updated version of the same file from quartz's update.
 Once you are done manually merging, **test** your updated version by [deploying locally the website](#deploying-locally-the-website) and making sure that quartz does not return any error.
-If everything looks ok, commit the edits using a message containing the "PCP" string (to facilitate future [generation of git patch](#generate-the-git-patch)), and push, using for example
+If everything looks ok, add all the new files and commit the edits using a message containing the "PCP" string (to facilitate future [generation of git patch](#generate-the-git-patch)), and push, using for example:
 
-```bash
-git commit -a -m "Applying previous PCP patch."
-git push origin quartz-update
-```
+- First, use 
+    ```bash
+    git add --all -n .
+    ```
+    to list all the files you are about to add: make sure you are not adding files from the `content/` folder, for instance. If everything looks fine, proceed to the next step.
+
+- Then, actually add the files, commit, and push, using:
+
+    ```bash
+    git add --all
+    git commit -a -m "Applying previous PCP patch."
+    git push origin quartz-update
+    ```
 
 #### Update the branch
 
