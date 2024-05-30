@@ -454,6 +454,8 @@ to `false` in the `quartz/components/Explorer.tsx` file *may* help in refreshing
     - `quartz/plugins/emitters/assets.ts` to emit the `.md` files (they are not available by default),
     - `quartz/components/index.ts` to tie it all together.
 
+Refer to [Generate the git patch](#generate-the-git-patch) for instruction on how to generate a patch containing all the edits performed to our local copy of quartz.
+
 ### Deploying locally the website
 
 Follow closely those steps:
@@ -528,12 +530,66 @@ The first step is to save as a git patch all the edits that have been made on ou
     git show b9c0a47fcc6fd50977a5cd60f4851e71fe5400f2^1
     ```
     
-    will return information about the commit that came before that last commit. Visual inspection using [github's interface](https://github.com/princomp/princomp.github.io/commits/quartz/) or a program such as [gitk](https://git-scm.com/docs/gitk) can facilitate this process.
+    will return information about the commit that came before that last commit: we will assume its id is `81a4e202362f42a82baa9df2b6b91a774098740b` in the following.
+    
+    Visual inspection using [github's interface](https://github.com/princomp/princomp.github.io/commits/quartz/) or a program such as [gitk](https://git-scm.com/docs/gitk) can facilitate this process. Note that using the `--short` option will give the _short_ version of the id, which may be easier to compare, and is used on github's interface.
 
-- git diff-index 81a4e202362f42a82baa9df2b6b91a774098740b --binary > pcp_quartz_patch
+- Use the id previously obtained to generate a patch containing all the changes made since that commit:
+
+    ```bash
+    git diff-index 81a4e202362f42a82baa9df2b6b91a774098740b --binary > pcp_quartz_patch
+    ```
     
+    The `--binary` option insures that any file created will be included in the patch: as a result, this file can heavy.
     
-   
+- Make sure you save this `pcp_quartz_patch` file but do not commit it to the repository.
+
+#### Clone the latest version of quartz
+
+Execute the following commands:
+
+```bash
+git remote add quartz https://github.com/jackyzha0/quartz.git
+git fetch quartz
+git checkout -b quartz-update quartz/v4
+```
+
+where `quartz-update` is the name we use for our branch, and `quartz/v4` is the name of the branch in the quartz repository we want to copy.
+
+#### Apply the git patch
+
+Make sure you are in the `quartz-update` branch by executing
+
+```bash
+git rev-parse --abbrev-ref HEAD
+```
+
+Then, copy your `pcp_quartz_patch` file at the root level, and check if the patch is applicable, by executing
+
+```bash
+git apply --ignore-space-change --ignore-whitespace --check --reject pcp_quartz_patch
+```
+
+Some sections of the patch may be rejected: make sure you take note of which file will need to be merged by hand.
+Finally, apply the patch, using
+
+```bash
+git apply --ignore-space-change --ignore-whitespace --reject pcp_quartz_patch
+```
+
+Look for the `.rej` files: they will contain the edited version of a file that you will need to merge manually with the updated version of the same file from quartz's update.
+Once you are done manually merging, **test** your updated version by [deploying locally the website](#deploying-locally-the-website) and making sure that quartz does not return any error.
+If everything looks ok, commit the edits using a message containing the "PCP" string (to facilitate future [generation of git patch](#generate-the-git-patch)), and push, using for example
+
+```bash
+git commit -a -m "Applying previous PCP patch."
+git push origin quartz-update
+```
+
+#### Update the branch
+
+**If you were able to fix all the conflicts and to check that the website could still be deployed locally**, 
+ 
 ## Repository Maintenance
 
 This repository uses following tools and technologies:
