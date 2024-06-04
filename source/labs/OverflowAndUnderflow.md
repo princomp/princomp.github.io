@@ -71,11 +71,11 @@ We will now study some of the safeguards against overflowing that are implemente
 
 Circling back to our prompt in the warm-up section, enter in the following table the value(s) and datatype(s) for `x`, `y`, and `z`:
 
-Description | Value(s) | Datatype(s) 
-- | -- | --
-`x` is equal to `x`+1 | | 
-`y` +1 is less than `y` | |
-`z` * 2 / 2 is equal to `z` times 2 | | 
+| Description | Value(s) | Datatype(s) | 
+| :---:       | :---:    | :---:       |
+| `x` is equal to `x`+1 | | | 
+| `y` +1 is less than `y` | | |
+| `z` * 2 / 2 is equal to `z` times 2 | | |
 
 Note that `int.MinValue` can similarly be used to produce strange mathematical properties of the same kind.
 
