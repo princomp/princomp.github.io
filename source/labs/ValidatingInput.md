@@ -28,20 +28,20 @@ For each input in the table below:
 
 The first few lines are given as examples; your task is to complete the rest of the table.
 You will need to update the program by replacing all the occurrences of `int` with `double` to test if your answers were correct in the second half of the table.
-
-| |	int.TryParse | | double.TryParse | |
-| : | :: | :: | :: | :: |
-| Input	| returns |	value	| returns |	value |
-| `"160519"`	| `true`  |	`160519` | `true` |	`160519` |
-| `"9432.0"`	| `false` |	`0`	| `true` |	`9432.0` |
-| `"nope"` | `false` | `0` | `false` | `0` |
-| `"12,804"` | | | | |
-| `"+5102"` |||||
-| `"2+2"` |||||
-| `" -322 "` |||||
-| `"(72);"` |||||
-| `"000"` |||||
-| `"78 095"` |||||
+ 
+|            | `int.TryParse` |          | `double.TryParse` |          |
+| :---:      | :---:          | :---:    | :---:             | :---:    |
+| Input      | returns        | value    | returns           | value    |
+| `"160519"` | `true`         | `160519` | `true`            | `160519` |
+| `"9432.0"` | `false`        | `0`      | `true`            | `9432.0` |
+| `"nope"`   | `false`        | `0`      | `false`           | `0`      |
+| `"12,804"` |                |          |                   |          |
+| `"+5102"`  |                |          |                   |          |
+| `"2+2"`    |                |          |                   |          |
+| `" -322 "` |                |          |                   |          |
+| `"(72);"`  |                |          |                   |          |
+| `"000"`    |                |          |                   |          |
+| `"78 095"` |                |          |                   |          |
 
 Question:
 ~  After completing the table, can you detect a pattern between "returns" and "value"?

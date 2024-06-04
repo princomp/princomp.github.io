@@ -329,10 +329,10 @@
 
 - This table summarizes how methods are allowed to access them:
 
-    |                   | Static Field | Non-static Field |
-    | ::             | ::        | ::            |
-    | Static method     | Yes          | No               |
-    | Non-static method | Yes          | Yes              |
+    |                    | Static Field | Non-static Field |
+    | :---:              | :---:        | :---:            |
+    | Static method      | Yes          | No               |
+    | Non-static method  | Yes          | Yes              |
 
 ## Static Classes
 
