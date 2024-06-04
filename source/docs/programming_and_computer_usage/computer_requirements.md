@@ -18,11 +18,11 @@ Desktop, Laptop, or something else?
 Specifications:
 ~ 
 
-    Component | Minimum | Suggested | Comfortable |
-     |  |  |  |
-    [CPU](https://en.wikipedia.org/wiki/Processor_(computing)) | 4 cores @ 2.66 GHz | 6 cores @ 3.8 GHz | 6 cores @ 4.4 GHz |
-    [RAM](https://en.wikipedia.org/wiki/Random-access_memory) | 8GB | 16GB | 32GB | 
-    [Hard Drive](https://en.wikipedia.org/wiki/Hard_disk_drive) | 100GB | 500GB of [SSD](https://en.wikipedia.org/wiki/Solid-state_drive) | 1TB of [SSD](https://en.wikipedia.org/wiki/Solid-state_drive) | 
+    | Component | Minimum | Suggested | Comfortable |
+    | :--:      | :--:    | :--:      | :-- :       |
+    | [CPU](https://en.wikipedia.org/wiki/Processor_(computing)) | 4 cores @ 2.66 GHz | 6 cores @ 3.8 GHz | 6 cores @ 4.4 GHz |
+    | [RAM](https://en.wikipedia.org/wiki/Random-access_memory) | 8GB | 16GB | 32GB | 
+    | [Hard Drive](https://en.wikipedia.org/wiki/Hard_disk_drive) | 100GB | 500GB of [SSD](https://en.wikipedia.org/wiki/Solid-state_drive) | 1TB of [SSD](https://en.wikipedia.org/wiki/Solid-state_drive) | 
     
     [GPU](https://en.wikipedia.org/wiki/Graphics_processing_unit) and other special equipment are not required, but recent USB-C connectors will be useful.
 

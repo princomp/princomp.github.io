@@ -15,30 +15,30 @@ It is intended to be comprehensive, but should most likely be read only after ha
 
 The [source code repository](https://github.com/princomp/princomp.github.io)'s main branch is organized as follows:
 
-path | description
---- | ---
-`.github/` | github templates and configuration for github actions
-`misc/` | resources that need to be either integrated into the resource, or discarded
-`source/`| source for the material
-`licence.md` | license file
-`readme.md` | presentation of the repository.
+| path         | description | 
+| :---:        | :---: | 
+| `.github/`   | github templates and configuration for github actions | 
+| `misc/`      | resources that need to be either integrated into the resource, or discarded | 
+| `source/`    | source for the material | 
+| `licence.md` | license file | 
+| `readme.md`  | presentation of the repository | 
 
 The `source/` folder contains the following:
 
-path | description
------- | --- 
-`code/` | code examples (snippets and projects)
-`docs/` | additional helpful documentation
-`fonts/` | the fonts (redistributed with permission) used by this resource
-`img/` | images, sometimes with their LaTeX source code
-`labs/` | lab exercises
-`lectures/` | lecture notes
-`slides/` | slides
-`templates/` | templates and filters used for building this resource
-`vid/` | video files
-`Makefile` | makefile used to compile this resource
-`index.md` | website index page
-`order` | file used to specify the order on the website's menu and the book
+| path        | description |
+| :------:    | :---: | 
+| `code/`     | code examples (snippets and projects) | 
+| `docs/`     | additional helpful documentation | 
+| `fonts/`    | the fonts (redistributed with permission) used by this resource | 
+| `img/`      | images, sometimes with their LaTeX source code | 
+| `labs/`     | lab exercises | 
+| `lectures/` | lecture notes | 
+| `slides/`   | slides |
+| `templates/`| templates and filters used for building this resource |
+| `vid/`      | video files |
+| `Makefile`  | makefile used to compile this resource |
+| `index.md`  | website index page |
+| `order`     | file used to specify the order on the website's menu and the book |
 
 ### Building and Deploying
 

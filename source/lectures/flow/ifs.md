@@ -295,7 +295,7 @@ Console.WriteLine("Goodbye");
 - Example outcomes of executing this code (which value `x` is assigned) based on the values of `myIntVar`, `myStringVar`, and `myBoolVar`:
 
     | `myIntVar` | `myStringVar` | `myBoolVar` | `x` |
-    | - | -    | -  |  |
+    | ---        | ---           | ---         | --- |
     | 12         | "Yes"         | `true`      | 20  |
     | 15         | "Yes"         | `false`     | 10  |
     | -15        | "yes"         | `true`      | 30  |

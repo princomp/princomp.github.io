@@ -337,9 +337,9 @@ Let's look at each part of this code in order.
     ```text
     |=====================================================|
     |                    **ClassName**                    |
-    |--|
+    |-----------------------------------------------------|
     | - attribute : type                                  |
-    |--|
+    |-----------------------------------------------------|
     | + SetAttribute(attributeParameter: `type`): `void`  |
     | + GetAttribute(): `type`                            |
     | + Method(paramName: `type`): `type`                 |
@@ -362,10 +362,10 @@ Let's look at each part of this code in order.
     ```text
     |======================================|
     |             **Rectangle**            |
-    |  |
+    |--------------------------------------|
     | - width: `int`                       |
     | - length: `int`                      |
-    |  |
+    |--------------------------------------|
     | + SetLength(lengthParameter: `int`)  |
     | + GetLength(): `int`                 |
     | + SetWidth(widthParameter: `int`)    |

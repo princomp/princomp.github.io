@@ -36,13 +36,13 @@ Answer the following:
 <details><summary>Solution:</summary>
 There are 5 variables.
 
-Name | Datatype | Value 
- |  |  
-`a` | `int` | 21
-`b` | `int` | 4
-`f` | `float` | 2.5000000
-`d` | `double` | -1.3
-`m` | `decimal` | 2.5
+| Name  | Datatype | Value     |
+| :---: | :---:    | :---:     | 
+| `a`   | `int`    | 21        |
+| `b`   | `int`    | 4         |
+| `f`   | `float`  | 2.5000000 | 
+| `d`   | `double` | -1.3      |
+| `m`   | `decimal`| 2.5       |
 </details>
 
 
@@ -50,17 +50,17 @@ Name | Datatype | Value
 
 Consider the following expressions, all of which use the variables we declared above. For each of them, decide if they are legal, and if so, determine the result and its corresponding datatype.  The first two are given as examples:
 
-Operation | Legal? | Result | Datatype
- |  |  | 
-`a + d` | Yes | $19.7$ | `double`
-`m + f` | No | N/A | N/A |
-`a / b` |   |  |  |
-`b * f` |   |  |  |
-`d + f` |   |  |  |
-`d + b` |   |  |  |
-`a + m` |   |  |  |
-`f / m` |   |  |  |
-`d * m` |   |  |  |
+| Operation | Legal? | Result | Datatype |
+| :---:     | :---:  | :---:  | :--:     | 
+| `a + d`   | Yes    | $19.7$ | `double` |
+| `m + f`   | No     | N/A    | N/A      |
+| `a / b`   |        |        |          |
+| `b * f`   |        |        |          |
+| `d + f`   |        |        |          |
+| `d + b`   |        |        |          |
+| `a + m`   |        |        |          |
+| `f / m`   |        |        |          |
+| `d * m`   |        |        |          |
 
 <!--
 You can check your answers using an IDE: create a new project, copy the variable declarations and assignments, and  write your own statements to perform the calculations in the `Main` method.

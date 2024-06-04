@@ -31,7 +31,7 @@
 - When you create (instantiate) a new object, its instance variables will be assigned specific default values based on their type:
 
     | **Type**      | **Default Value** |
-    | - | :- |
+    | ---           | :---              |
     | Numeric types | 0                 |
     | `string`      | `null`            |
     | objects       | `null`            |
@@ -49,10 +49,10 @@
     ```text
     |=========================================|
     |                **ClassRoom**            |
-    |  |
+    |-----------------------------------------|
     | - building: `string`                    |
     | - number: `int`                         |
-    |  |
+    |-----------------------------------------|
     | + SetBuilding(buildingParam : `string`) |
     | + GetBuilding(): `string`               |
     | + SetNumber(numberParameter: `int`)     |
@@ -442,10 +442,10 @@
     ```text
     |==========================================================================|
     |                                   **ClassRoom**                          |
-    |  |
+    |--------------------------------------------------------------------------|
     | - building: `string`                                                     |
     | - number: `int`                                                          |
-    |  |
+    |--------------------------------------------------------------------------|
     | + <<constructor>> ClassRoom(buildingParam: `string`, numberParam: `int`) |
     | + SetBuilding(buildingParam : `string`)                                  |
     | + GetBuilding(): `string`                                                |
@@ -557,10 +557,10 @@
     ```text
     |==================================|
     |             **Rectangle**        |
-    | -- |
+    |----------------------------------|
     | + <<property>> Width: `int`      |
     | + <<property>> Length: `int`     |
-    | -- |
+    |----------------------------------|
     | + ComputeArea(): `int`           |
     |==================================|
     ```
