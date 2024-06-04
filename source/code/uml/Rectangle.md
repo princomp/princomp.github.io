@@ -1,0 +1,12 @@
+|======================================|
+|               Rectangle              |
+|--------------------------------------|
+| - width: int                         |
+| - length: int                        |
+|--------------------------------------|
+| + SetLength(lengthParameter: int)    |
+| + GetLength(): int                   |
+| + SetWidth(widthParameter: int)      |
+| + GetWidth(): int                    |
+| + ComputeArea(): int                 |
+|======================================|

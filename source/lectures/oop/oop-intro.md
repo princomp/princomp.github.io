@@ -335,15 +335,7 @@ Let's look at each part of this code in order.
 - UML Class Diagram elements
 
     ```text
-    |=====================================================|
-    |                    **ClassName**                    |
-    |-----------------------------------------------------|
-    | - attribute : type                                  |
-    |-----------------------------------------------------|
-    | + SetAttribute(attributeParameter: `type`): `void`  |
-    | + GetAttribute(): `type`                            |
-    | + Method(paramName: `type`): `type`                 |
-    |=====================================================|
+    !include code/uml/ClassName.md
     ```
 
     - Top box: Class name, centered
@@ -360,18 +352,7 @@ Let's look at each part of this code in order.
 - UML Diagram for the Rectangle class
 
     ```text
-    |======================================|
-    |             **Rectangle**            |
-    |--------------------------------------|
-    | - width: `int`                       |
-    | - length: `int`                      |
-    |--------------------------------------|
-    | + SetLength(lengthParameter: `int`)  |
-    | + GetLength(): `int`                 |
-    | + SetWidth(widthParameter: `int`)    |
-    | + GetWidth(): `int`                  |
-    | + ComputeArea(): `int`               |
-    |======================================|
+    !include code/uml/Rectangle.md
     ```
     
     - Note that when the return type of a method is `void`, we can omit it in UML

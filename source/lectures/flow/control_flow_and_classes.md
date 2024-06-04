@@ -467,20 +467,9 @@ There are several ways we can use `if-else` and `if-else-if` statements with met
 
 - For example, we can add an instance variable called "taxable" to the Item class to indicate whether or not the item should have sales tax added to its price at checkout. The UML diagram for Item with this instance variable would look like this:
 
-    |                              **Item**                                      |
-    | -- |
-    | - price: `decimal`                                                         |
-    | - description: `string`                                                    |
-    | - taxable: `bool`                                                          |
-    | + SALES_TAX: `decimal`                                                     |
-    | -- |
-    | + Item(initDescription: `string`, initPrice: `decimal`, isTaxable: `bool`) |
-    | + SetPrice(priceParameter: `decimal`)                                      |
-    | + GetPrice(): `decimal`                                                    |
-    | + SetDescription(descriptionParameter: `string`)                           |
-    | + GetDescription(): `string`                                               |
-    | + SetTaxable(taxableParam: `bool`)                                         |
-    | + IsTaxable() : `bool`                                                     |
+    ```text
+    !include code/uml/Item.md
+    ```
 
     - Note that the "getter" for a Boolean variable is conventionally named with a word like "Is" or "Has" rather than "Get"
     - We will add a constant named SALES_TAX to the Item class to store the sales tax rate that should be applied if the item is taxable. The sales tax rate is not likely to change during the program's execution, but it is better to store it in a named variable instead of writing the same literal value (e.g. `0.08m`) every time we want to compute a total price with tax.

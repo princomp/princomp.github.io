@@ -24,16 +24,7 @@ In this lab, you will practice interpreting and creating one of them: a _class d
 Study the following diagram, then answer follow-up questions:
 
 ```text
-|===========================================|
-|                 Account                   |
-|-|
-| - balance : decimal                       |
-|-|
-| + GetBalance():decimal                    |
-| + DisplayBalance():void                   |
-| + AddFunds(amount:decimal):void           |
-| + Withdraw(amount:decimal):void           |
-|===========================================|
+!include code/uml/Account.md
 ```
 
 #. What is the name of this class?
