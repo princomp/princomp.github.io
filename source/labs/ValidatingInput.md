@@ -1,3 +1,10 @@
+---
+tags:
+- datatypes/strings
+- datatypes/numerical
+- control-structures/conditionals
+---
+
 #  Validating Inputs
 
 This lab serves multiple goals:
