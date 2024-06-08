@@ -1,3 +1,8 @@
+---
+tags:
+- datatypes/collections
+---
+
 #  Operations on Arrays
 
 This lab serves multiple goals:
