@@ -1,3 +1,9 @@
+---
+tags:
+- datatypes/strings
+- datatypes/numerical
+---
+
 #  User Input
 
 This lab serves multiple goals:
