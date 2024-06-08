@@ -1,3 +1,8 @@
+---
+tags:
+- datatypes
+---
+
 #  Variable Manipulation
 
 This lab serves multiple goals:
