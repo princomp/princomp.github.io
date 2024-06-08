@@ -1,3 +1,8 @@
+---
+tags:
+- control-structures/iteratives
+---
+
 #  foreach Loops
 
 This lab serves multiple goals:
