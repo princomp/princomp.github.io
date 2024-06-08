@@ -1,3 +1,8 @@
+---
+tags:
+- oop/structures
+---
+
 #  Using static keyword
 
 This lab serves multiple goals:
