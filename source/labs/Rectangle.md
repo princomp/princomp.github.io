@@ -1,3 +1,8 @@
+---
+tags:
+- oop
+---
+
 #  Rectangle Class
 
 This lab serves multiple goals:
