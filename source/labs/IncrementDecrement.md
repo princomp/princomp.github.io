@@ -1,3 +1,9 @@
+---
+tags:
+- datatypes/numerical
+- control-structures/iteratives
+---
+
 #  Increment and Decrement Operators, First Loops
 
 This lab serves multiple goals:

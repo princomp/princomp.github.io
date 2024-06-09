@@ -1,3 +1,8 @@
+---
+tags:
+- datatypes/collections
+---
+
 #  First Arrays Manipulations
 
 This lab serves multiple goals:

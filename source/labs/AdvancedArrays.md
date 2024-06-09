@@ -1,3 +1,8 @@
+---
+tags:
+- datatypes/collections
+---
+
 # Advanced Arrays
 
 ### Value and Reference Types

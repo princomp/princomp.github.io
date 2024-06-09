@@ -1,3 +1,8 @@
+---
+tags:
+- datatypes
+---
+
 #  Booleans
 
 This lab serves multiple goals:

@@ -1,3 +1,10 @@
+<!-- UNSURE IF THIS NEEDS A TAG SINCE IT IS JUST INTRO. ADDED SORTME TAG IN COMMENT FOR NOW
+---
+tags:
+- SORTME
+---
+-->
+
 #  Introduction
 
 For this first lab, we would like to discuss three important topics for you to succeed in this class.

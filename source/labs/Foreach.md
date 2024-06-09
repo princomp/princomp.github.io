@@ -1,3 +1,9 @@
+---
+tags:
+- control-structures/iteratives
+---
+<!-- Could potentially add oop tag as well for the latter section in lab, but unsure -->
+
 #  foreach Loops
 
 This lab serves multiple goals:

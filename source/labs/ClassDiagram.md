@@ -1,3 +1,8 @@
+---
+tags:
+- oop/uml
+---
+
 #  UML Class Diagram
 
 This lab serves multiple goals:

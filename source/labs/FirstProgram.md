@@ -1,3 +1,10 @@
+<!-- UNSURE IF THIS NEEDS A TAG SINCE IT IS JUST INTRO. ADDED SORTME TAG IN COMMENT FOR NOW
+---
+tags:
+- SORTME
+---
+-->
+
 #  Your First Program
 
 This lab serves multiple goals:

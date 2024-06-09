@@ -1,3 +1,8 @@
+---
+tags:
+- oop
+---
+
 #  Precise Rectangle
 
 This lab serves multiple goals:
