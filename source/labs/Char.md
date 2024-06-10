@@ -1,3 +1,8 @@
+---
+tags:
+- datatypes
+---
+
 #  Char Conversion and Ordering
 
 This lab serves multiple goals:

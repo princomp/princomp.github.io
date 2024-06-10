@@ -1,3 +1,8 @@
+---
+tags:
+- control-structures/iteratives
+---
+
 #  while Loop
 
 This lab serves multiple goals:

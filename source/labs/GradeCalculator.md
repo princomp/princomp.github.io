@@ -1,3 +1,9 @@
+---
+tags:
+- control-structures
+- datatypes/collections
+---
+
 #  Grade Calculator
 
 This lab serves multiple goals:

@@ -1,3 +1,8 @@
+---
+tags:
+- control-structures/conditionals
+---
+
 #  If Statements
 
 This lab serves multiple goals:
