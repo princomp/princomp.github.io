@@ -46,9 +46,7 @@
 
 - UML Diagram:
 
-    ```text
-    !includeuml/ClassRoom.md
-    ```
+    !include uml/ClassRoom.md
     
     - There are two attributes: the name of the building (a string) and the room number (an `int`)
     - Each attribute will have a "getter" and "setter" method
@@ -429,9 +427,7 @@
     - Annotation "\<\<constructor\>\>" is nice, but not necessary: if the method name matches the class name, it is a constructor
 - Example for ClassRoom:
 
-    ```text
-    !includeuml/ClassRoom_with_constructor.md
-    ```
+    !include uml/ClassRoom_with_constructor.md
     
 ## Properties
 
@@ -533,8 +529,6 @@
 - Note that the access modifier (+ or -) is for the property, not the instance variable, so it is + if the property is `public` (which it usually is)
 - Example for `Rectangle`, assuming we converted both attributes to use properties instead of getters and setters:
 
-    ```text
-    !includeuml/Rectangle_with_properties.md
-    ```
+    !include uml/Rectangle_with_properties.md
     
 - We no longer need to write all those setter and getter methods, since they are "built in" to the properties

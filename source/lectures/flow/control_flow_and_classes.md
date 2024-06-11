@@ -468,7 +468,7 @@ There are several ways we can use `if-else` and `if-else-if` statements with met
 - For example, we can add an instance variable called "taxable" to the Item class to indicate whether or not the item should have sales tax added to its price at checkout. The UML diagram for Item with this instance variable would look like this:
 
     ```text
-    !includeuml/Item.md
+    !include uml/Item.md
     ```
 
     - Note that the "getter" for a Boolean variable is conventionally named with a word like "Is" or "Has" rather than "Get"

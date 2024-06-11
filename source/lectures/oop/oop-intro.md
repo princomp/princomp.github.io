@@ -349,9 +349,7 @@ Let's look at each part of this code in order.
         - Plus sign at beginning of line indicates "public", which is what we want for methods
 - UML Diagram for the Rectangle class
 
-    ```text
-    !includeuml/Rectangle.md
-    ```
+    !include uml/Rectangle.md
     
     - Note that when the return type of a method is `void`, we can omit it in UML
     - In general, attributes will be private (`-` sign) and methods will be public (`+` sign), so you can expect most of your classes to follow this pattern (`-`s in the upper box, `+`s in the lower box)

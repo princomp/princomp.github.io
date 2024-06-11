@@ -28,9 +28,7 @@ In this lab, you will practice interpreting and creating one of them: a _class d
 
 Study the following diagram, then answer follow-up questions:
 
-```text
-!includeuml/Account.md
-```
+!include uml/Account.md
 
 #. What is the name of this class?
 #. How many attributes does this class have?
