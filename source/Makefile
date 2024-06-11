@@ -72,6 +72,8 @@ PROJECT_DIR = $(CODE_DIR)projects/
 MD_DIRS = lectures/ docs/ labs/
 # The folder where the images are located.
 IMG_DIR = img/
+# The folder where the UML class diagrams are located
+CLA_DIR = $(IMG_DIR)class_diagram/
 # The folder where the videos are located.
 VID_DIR = vid/
 # The folders where the project are located.
@@ -132,6 +134,10 @@ TARGET_WOFF_FONT_FILES := $(addprefix $(BUILD_DIR), $(SOURCE_WOFF_FONT_FILES))
 # Image files (source and target).
 SOURCE_IMAGES_FILES := $(shell find $(IMG_DIR) -mindepth 1  -maxdepth 1 -iname "*.jpg" -or -iname "*.jpeg" -or -iname "*.png" -or -iname "*.pdf" -or -iname "*.svg" -or -iname "*.gif")
 TARGET_IMAGES_FILES := $(addprefix $(BUILD_DIR), $(SOURCE_IMAGES_FILES))
+
+# UML class diagrams (source and target).
+SOURCE_CLA_FILES := $(shell find $(CLA_DIR) -mindepth 1  -maxdepth 1 -iname "*.md")
+TARGET_CLA_FILES := $(addprefix $(BUILD_DIR), $(SOURCE_CLA_FILES))
 
 # Video files (source and target).
 SOURCE_VIDEOS_FILES := $(shell find $(VID_DIR) -mindepth 1  -maxdepth 1 -iname "*.mov" -or -iname "*.avi" -or -iname "*.m4v" -or -iname "*.mkv")
@@ -262,6 +268,27 @@ $(BUILD_DIR)web-order.ts: order
 	@echo "}" >> $@
 
 # -------------------------------
+# UML class diagram file
+# -------------------------------
+
+$(CLA_DIR)%.md: $(CLA_DIR)%.diag
+# First, set the caption to be 
+# "A UML diagram for the"
+# followed by the name of the (first) class in the .diag file
+# followed by "class"
+	export MERMAID_FILTER_CAPTION="A UML diagram for the $$(sed 's-class \(.*\){-\1-g' $< | sed -n '1p')class"
+# Then, we convert using the mermaid-filter, and two helpers files, before and after:
+	pandoc -F mermaid-filter $(CLA_DIR)before.md $< $(CLA_DIR)after.md -o $@
+# Then, we remove the "fig:" caption, but leave the first ".
+	sed -i 's-fig:")--g' $@
+# And add the content of the $< file to become the new alt. text for the image:
+	cat $< >> $@ && echo '")' >> $@
+# We remove all the new lines introduced by the previous operations,
+# Using tr (which doesn't support in-file edit, so we use a temp file).
+	tr '\n' ' ' < $@ > diag-temp.md && mv diag-temp.md $@
+
+
+# -----------------------------
 # md file
 # -------------------------------
 

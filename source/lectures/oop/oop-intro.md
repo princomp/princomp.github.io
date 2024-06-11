@@ -334,6 +334,8 @@ Let's look at each part of this code in order.
     - Process: Determine program requirements $\rightarrow$ Make UML diagrams $\rightarrow$ Write code based on UML $\rightarrow$ Test and debug program
 - UML Class Diagram elements
 
+    !include img/class_diagram/ClassName.md
+
     ```text
     !include code/uml/ClassName.md
     ```
