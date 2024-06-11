@@ -92,4 +92,4 @@ The following are independent tasks that you can perform to broaden your underst
 
 #. Class diagrams are one of many kinds of UML diagrams. Have a look at <https://www.wikiwand.com/en/Unified_Modeling_Language#Diagrams>. In which category are class diagrams: behavior or structure?
 #. Besides modeling attributes and methods, class diagrams can also represent relationships between classes. Have a look at <https://www.wikiwand.com/en/Class_diagram> for more examples of class diagrams and their uses.
-#. An Activity Diagram is another type of UML diagram for representing program actions. You will occasionally see activity diagrams in the lecture notes. Have a look at <https://www.wikiwand.com/en/Activity_diagram> and try to understand the example: "Activity diagram for a guided brainstorming process".s
+#. An Activity Diagram is another type of UML diagram for representing program actions. You will occasionally see activity diagrams in the lecture notes. Have a look at <https://www.wikiwand.com/en/Activity_diagram> and try to understand the example: "Activity diagram for a guided brainstorming process".
