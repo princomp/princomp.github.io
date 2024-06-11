@@ -177,7 +177,7 @@ PANDOC_OPTIONS = --filter pandoc-include -f markdown+emoji \
 
 ## MD build options
 PANDOC_MD = $(PANDOC_OPTIONS) --standalone --lua-filter $(FIL_TEMPLATES)default-code-class-block.lua \
---shift-heading-level-by=-1 --to gfm+pipe_tables
+--shift-heading-level-by=-1 --to gfm+pipe_tables --default-image-extension=svg
 # -s/--standalone is required to save the metadata block.
 
 ## Alternative formats options.
