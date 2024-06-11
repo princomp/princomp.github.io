@@ -334,11 +334,7 @@ Let's look at each part of this code in order.
     - Process: Determine program requirements $\rightarrow$ Make UML diagrams $\rightarrow$ Write code based on UML $\rightarrow$ Test and debug program
 - UML Class Diagram elements
 
-    !include img/class_diagram/ClassName.md
-
-    ```text
-    !includeuml/ClassName.md
-    ```
+    !include uml/ClassName.md
 
     - Top box: Class name, centered
     - Middle box: Attributes (i.e. instance variables)
