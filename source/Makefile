@@ -239,7 +239,7 @@ MAKEFLAGS:= -j
 # pdf, then svg
 
 $(IMG_DIR)%.pdf:$(IMG_DIR)%.tex
-	latexmk -pdf -cd -quiet $<
+	latexmk -shell-escape -pdf -cd -quiet $<
 
 $(IMG_DIR)%.svg:$(IMG_DIR)%.pdf
 	pdf2svg $< $@
