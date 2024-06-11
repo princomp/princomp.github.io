@@ -337,7 +337,7 @@ Let's look at each part of this code in order.
     !include img/class_diagram/ClassName.md
 
     ```text
-    !include code/uml/ClassName.md
+    !includeuml/ClassName.md
     ```
 
     - Top box: Class name, centered
@@ -354,7 +354,7 @@ Let's look at each part of this code in order.
 - UML Diagram for the Rectangle class
 
     ```text
-    !include code/uml/Rectangle.md
+    !includeuml/Rectangle.md
     ```
     
     - Note that when the return type of a method is `void`, we can omit it in UML

@@ -29,7 +29,7 @@ In this lab, you will practice interpreting and creating one of them: a _class d
 Study the following diagram, then answer follow-up questions:
 
 ```text
-!include code/uml/Account.md
+!includeuml/Account.md
 ```
 
 #. What is the name of this class?

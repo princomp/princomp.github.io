@@ -47,7 +47,7 @@
 - UML Diagram:
 
     ```text
-    !include code/uml/ClassRoom.md
+    !includeuml/ClassRoom.md
     ```
     
     - There are two attributes: the name of the building (a string) and the room number (an `int`)
@@ -430,7 +430,7 @@
 - Example for ClassRoom:
 
     ```text
-    !include code/uml/ClassRoom_with_constructor.md
+    !includeuml/ClassRoom_with_constructor.md
     ```
     
 ## Properties
@@ -534,7 +534,7 @@
 - Example for `Rectangle`, assuming we converted both attributes to use properties instead of getters and setters:
 
     ```text
-    !include code/uml/Rectangle_with_properties.md
+    !includeuml/Rectangle_with_properties.md
     ```
     
 - We no longer need to write all those setter and getter methods, since they are "built in" to the properties
