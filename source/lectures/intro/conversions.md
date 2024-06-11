@@ -130,4 +130,4 @@ Summary of implicit and explicit conversions for the numeric datatypes:
 
 !["Implicit and Explicit Conversion Between Datatypes"](img/conversions)
 
-Refer to [the "Result Type of Operations" chart from the cheatsheet](../datatypes_in_csharp.html#result-type-of-operations) for more detail.
+Refer to [the "Result Type of Operations" chart from the cheatsheet](./docs/programming_and_computer_usage/datatypes_in_csharp) for more detail.
