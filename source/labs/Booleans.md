@@ -1,3 +1,8 @@
+---
+tags:
+- datatypes
+---
+
 #  Booleans
 
 This lab serves multiple goals:
@@ -42,7 +47,7 @@ This lab serves multiple goals:
 ### Reading and Understanding
 
 If you read the [documentation on operator precedence](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/#operator-precedence), you will see that operators are evaluated in a particular order.
-This order is also given [in our notes](../../book.html#precedence-of-operators-1).
+This order is also given [on this page](./lectures/flow/booleans#precedence-of-operators).
 
 For instance, `! true || false && 3 * 2 == 6` will be evaluated as
 

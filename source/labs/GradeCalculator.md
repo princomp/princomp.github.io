@@ -1,3 +1,9 @@
+---
+tags:
+- control-structures
+- datatypes/collections
+---
+
 #  Grade Calculator
 
 This lab serves multiple goals:
@@ -13,12 +19,12 @@ This project will help you design and implement a "grade calculator" for (a vari
 
 We will assume that your grade for this class will be computed as follows:
 
-        Evaluation  Number   Points   Percents
-  - -- -- -
-           Quizzes    4        20       10%
-          Projects    2        20       10%
-    In-class Tests    2       100       40%
-        Final Exam    1       200       40%
+| Evaluation     | Number | Points | Percents |
+| :---:          | :---:  | :---:  | :---:    |
+| Quizzes        | 4      | 20     | 10%      |
+| Projects       | 2      | 20     | 10%      |
+| In-class Tests | 2      | 100    | 40%      |
+| Final Exam     | 1      | 200    | 40%      |
 
 Our goal is to write a program that asks the user for their grades obtained *so far* (it is possible that some quizzes, projects, and tests are still to be taken, or that the final has not happened yet) and computes their *current* class average.
 

@@ -1,0 +1,16 @@
+class Room{
+    -building: string 
+    -number: int 
+    -computer: bool 
+    +GetComputer() bool 
+    +SetComputer(compP:bool) void 
+    +Room(bP: string, nP: int, cP:bool) 
+    +GetCode() string 
+    +ToString() string 
+    +InSameBuilding(roomP:Room) bool 
+    +RoomRoute() string 
+}
+
+
+
+

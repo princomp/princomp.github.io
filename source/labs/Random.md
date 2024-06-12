@@ -1,3 +1,8 @@
+---
+tags:
+- datatypes/numerical
+---
+
 #  Random class
 
 

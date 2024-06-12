@@ -1,3 +1,8 @@
+---
+tags:
+- control-structures/conditionals
+---
+
 #  Practicing if and switch
 
 This lab serves multiple goals:

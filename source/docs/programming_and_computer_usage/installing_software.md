@@ -93,7 +93,7 @@ You can download Rider [from their website](https://www.jetbrains.com/rider/down
 Note that, as a student, you can [obtain a licence for free](https://www.jetbrains.com/community/education/#students): simply [fill out this form](https://www.jetbrains.com/shop/eform/students), making sure you use your @augusta.edu email account, and you should receive a free licence instantaneously!
 
 Note that Jetbrains offers to use a SHA-256 checksum (for instance, [for the linux version](https://download.jetbrains.com/rider/JetBrains.Rider-2022.2.2.tar.gz.sha256)) for you to check that your download has not been tampered with.
-In any case, you can [consult their detailled instructions](https://www.jetbrains.com/help/rider/Installation_guide.html#standalone) to install and execute Rider on any operating system.
+In any case, you can [consult their detailed instructions](https://www.jetbrains.com/help/rider/Installation_guide.html#standalone) to install and execute Rider on any operating system.
 
 #### Installing Geany On Your Own Computer
 

@@ -72,6 +72,8 @@ PROJECT_DIR = $(CODE_DIR)projects/
 MD_DIRS = lectures/ docs/ labs/
 # The folder where the images are located.
 IMG_DIR = img/
+# The folder where the UML class diagrams are located
+CLA_DIR = uml/
 # The folder where the videos are located.
 VID_DIR = vid/
 # The folders where the project are located.
@@ -133,6 +135,11 @@ TARGET_WOFF_FONT_FILES := $(addprefix $(BUILD_DIR), $(SOURCE_WOFF_FONT_FILES))
 SOURCE_IMAGES_FILES := $(shell find $(IMG_DIR) -mindepth 1  -maxdepth 1 -iname "*.jpg" -or -iname "*.jpeg" -or -iname "*.png" -or -iname "*.pdf" -or -iname "*.svg" -or -iname "*.gif")
 TARGET_IMAGES_FILES := $(addprefix $(BUILD_DIR), $(SOURCE_IMAGES_FILES))
 
+# UML class diagrams (source and target).
+# Note that we copy only the .txt files: the .diag files are converted to .md, and automatically inserted.
+SOURCE_CLA_TXT_FILES := $(shell find $(CLA_DIR) -mindepth 1  -maxdepth 1 -iname "*.txt")
+TARGET_CLA_TXT_FILES := $(addprefix $(BUILD_DIR), $(SOURCE_CLA_TXT_FILES))
+
 # Video files (source and target).
 SOURCE_VIDEOS_FILES := $(shell find $(VID_DIR) -mindepth 1  -maxdepth 1 -iname "*.mov" -or -iname "*.avi" -or -iname "*.m4v" -or -iname "*.mkv")
 TARGET_VIDEOS_FILES := $(addprefix $(BUILD_DIR), $(SOURCE_VIDEOS_FILES))
@@ -170,13 +177,13 @@ PANDOC_OPTIONS = --filter pandoc-include -f markdown+emoji \
 
 ## MD build options
 PANDOC_MD = $(PANDOC_OPTIONS) --standalone --lua-filter $(FIL_TEMPLATES)default-code-class-block.lua \
---shift-heading-level-by=-1 --to gfm+pipe_tables
+--shift-heading-level-by=-1 --to gfm+pipe_tables --default-image-extension=svg
 # -s/--standalone is required to save the metadata block.
 
 ## Alternative formats options.
 
 # Options common to all alternative format.
-PANDOC_OPTIONS_ALT = --lua-filter $(FIL_TEMPLATES)default-code-class-block-inline.lua
+PANDOC_OPTIONS_ALT = --lua-filter $(FIL_TEMPLATES)default-code-class-block-inline.lua -M pathToProjectRoot=https://princomp.github.io/ --lua-filter $(FIL_TEMPLATES)prefix-path.lua
 
 # HTML build options
 PANDOC_HTM = $(PANDOC_OPTIONS_ALT) --toc --default-image-extension=svg --standalone --template=$(HTM_TEMPLATES)template.html --metadata title="ℙrinciples of ℂomputer ℙrogramming"
@@ -221,6 +228,45 @@ MAKEFLAGS:= -j
 .DEFAULT_GOAL:= help
 
 # -------------------------------
+# "Local" rules.
+# Those rules produce files that 
+# are *added* to the repository.
+# No need to run them unless
+# the source files have been edited.
+# -------------------------------
+
+# Image files produced from .tex files
+# pdf, then svg
+
+$(IMG_DIR)%.pdf:$(IMG_DIR)%.tex
+	latexmk -shell-escape -pdf -cd -quiet $<
+
+$(IMG_DIR)%.svg:$(IMG_DIR)%.pdf
+	pdf2svg $< $@
+
+# UML class diagram file
+# To recompile everything, we can use
+# rm uml/Account.md uml/ClassName.md uml/ClassRoom.md uml/ClassRoom_with_constructor.md uml/Item.md uml/Rectangle.md uml/Rectangle_with_properties.md 
+# make uml/Account.md uml/ClassName.md uml/ClassRoom.md uml/ClassRoom_with_constructor.md uml/Item.md uml/Rectangle.md uml/Rectangle_with_properties.md 
+
+$(CLA_DIR)%.md: $(CLA_DIR)%.txt
+# First, set the caption to be 
+# "A UML diagram for the"
+# followed by the name of the (first) class in the .txt file
+# followed by "class", followed by a link to the text version of the UML diagram.
+# Then, we convert using the mermaid-filter, and two helpers files, before and after:
+	export MERMAID_FILTER_CAPTION="A UML diagram for the $$(sed 's-class \(.*\){-\1-g' $< | sed -n '1p') class ([text version](./$<))" && pandoc -F mermaid-filter $(CLA_DIR)before.md $< $(CLA_DIR)after.md -o $@
+# We remove the escape characters introduced in the figure's caption.
+	sed -i 's-\\\[-[-g' $@ && sed -i 's-\\\]-]-g' $@
+# Then, we remove the "fig:" caption, and the closing parenthesis.
+	sed -i 's-"fig:")--g' $@
+# And add the content of the $< file to become the new alt. text for the image:
+	echo -n '"' >> $@ && cat $< >> $@ && echo -n '")' >> $@
+# We remove all the new lines introduced by the previous operations,
+# Using tr (which doesn't support in-file edit, so we use a temp file).
+	tr '\n' ' ' < $@ > diag-temp.md && mv diag-temp.md $@
+
+# -------------------------------
 # Order file
 # -------------------------------
 
@@ -261,14 +307,14 @@ $(BUILD_DIR)web-order.ts: order
 	done < order
 	@echo "}" >> $@
 
-# -------------------------------
+# -----------------------------
 # md file
 # -------------------------------
 
 $(BUILD_DIR)%.md: %.md
 	@mkdir -p $(dir $@)
 	@pandoc $(PANDOC_MD) $< -o $@
-	
+
 # -------------------------------
 # pdf files
 # -------------------------------
@@ -298,6 +344,14 @@ $(BUILD_DIR)%.docx: %.md
 # -------------------------------
 
 $(BUILD_DIR)$(IMG_DIR)%: $(IMG_DIR)%
+	@mkdir -p $(dir $@)
+	@rsync -av $<  $@
+
+# -------------------------------
+# class diagram (txt files only)
+# -------------------------------
+
+$(BUILD_DIR)$(CLA_DIR)%: $(CLA_DIR)%
 	@mkdir -p $(dir $@)
 	@rsync -av $<  $@
 
@@ -422,7 +476,7 @@ fetch:
 book: $(BUILD_DIR)book.html $(BUILD_DIR)book.pdf $(BUILD_DIR)book.odt $(BUILD_DIR)book.docx
 
 # Ligter build, to test compilation and website deployment
-build-light: $(BUILD_DIR)web-order.ts $(TARGET_MD_FILES) $(TARGET_WOFF_FONT_FILES) $(TARGET_IMAGES_FILES) $(TARGET_VIDEOS_FILES) $(TARGET_DOC_FILES_WITHOUT_INDEX)
+build-light: $(BUILD_DIR)web-order.ts $(TARGET_MD_FILES) $(TARGET_WOFF_FONT_FILES) $(TARGET_IMAGES_FILES) $(TARGET_VIDEOS_FILES) $(TARGET_DOC_FILES_WITHOUT_INDEX) $(TARGET_CLA_TXT_FILES)
 
 build: build-light $(TARGET_PDF_FILES_WITHOUT_INDEX) $(TARGET_ODT_FILES_WITHOUT_INDEX) $(TARGET_PROJECTS_FILES) book
 

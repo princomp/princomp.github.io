@@ -1,3 +1,8 @@
+---
+tags:
+- oop
+---
+
 # Chemical Elements Class
 
 This lab serves multiple goals:
@@ -13,7 +18,7 @@ Consult <https://www.wikiwand.com/en/List_of_chemical_elements#List> for a compl
 
 ### Reading
 
-Download [ChemElemProject](./code/projects/./code/projects/ChemicalElements.zip) and extract the project. Open it in your IDE, compile, and execute it.
+Download [ChemElemProject](./code/projects/ChemicalElements.zip) and extract the project. Open it in your IDE, compile, and execute it.
 Now read the code in "ChemElem.cs" and "Program.cs".
 
 The class definition "ChemElem.cs" contains:
