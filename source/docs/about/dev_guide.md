@@ -670,13 +670,18 @@ The makefile explains the exact steps applied to each type of resource.
 
 ### Github actions
 
-This resource is built automatically every time changes concerning files in the `source/` folder are committed to the main branch of the repository. This is configured to run on [Github actions](https://github.com/features/actions). There is currently one configured [workflow](https://github.com/princomp/princomp.github.io/blob/main/.github/workflows/build_and_deploy.yaml) with two jobs: one to build the resource, and one to deploy it.
-
-The build configuration uses texlive to keep the dependency installation time low. Similarly, the choice of Python packages is preferable for pandoc filters, because they are usually straightforward and fast to install. We want to avoid choosing packages that significantly increase build time.
+This resource is built automatically every time changes concerning files in the `source/` folder are committed to the main branch of the repository. This is configured to run on [Github actions](https://github.com/features/actions). The [workflow](https://github.com/princomp/princomp.github.io/blob/main/.github/workflows/build_and_deploy.yaml) that is automatically triggered has two jobs: one to build the resource, and one to deploy it.
 
 Currently Github actions offers unlimited free build minutes for public repositories (and 2000 min/mo. for _private_ repositories, should we ever need them), which hopefully continues in perpetuity (if it does not there are other alternative services). Going with one specific CI service over another is simply a matter of preference. 
 
 Following a successful build, the build script will automatically deploy the generated resources to an accompanying website hosted on [github pages](https://pages.github.com/). 
+
+#### Fetch and No Fetch Versions
+
+There is a [second workflow](https://github.com/princomp/princomp.github.io/blob/main/.github/workflows/build_and_deploy_no_fetch.yaml) that is identical to the first one with one important exception: to speed up compilation, `build_and_deploy.yaml` uses `make fetch` to [speed up compilation time](#building-all-resources) by re-downloading the latest build output, and then compiling only the required files.
+This can sometimes complicate the propagation of changes, typically if a template is modified (as this does not triggers a re-compilation of the files using it currently).
+
+The [build_and_deploy_no_fetch.yaml](https://github.com/princomp/princomp.github.io/blob/main/.github/workflows/build_and_deploy_no_fetch.yaml) can be [triggered manually](https://github.com/princomp/princomp.github.io/actions/workflows/build_and_deploy_no_fetch.yaml) to force a "fresh" remote compilation.
 
 ### Creating releases
 
