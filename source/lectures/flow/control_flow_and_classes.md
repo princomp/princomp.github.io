@@ -722,26 +722,12 @@ There are several ways that `while` loops are useful when working with classes a
 
 ### The Room Class
 
-The class and its associated `Main` method presented [in this archive](/labs/ValidatingInput/Room.zip) show how you can use classes, methods, constructors and decision structures all in the same program.
+The class and its associated `Main` method presented [in this archive](./code/projects/Room.zip) show how you can use classes, methods, constructors and decision structures all in the same program.
 It also exemplifies how a method can take _an object_ as a parameter with `InSameBuilding`.
 
 The corresponding UML diagram is:
 
-
-|          **Room**                        |
-||
-|-building: `string`                       |
-|-number: `int`                            |
-|-computer: `bool`                         |
-||
-|+GetComputer():`bool`                     |
-|+SetComputer(compP:`bool`): `void`        |
-|+Room(bP: `string`, nP: `int`, cP:`bool`) |
-|+GetCode(): `string`                      |
-|+ToString(): `string`                     |
-|+InSameBuilding(roomP:`Room`):`bool`      |
-|+RoomRoute(): `string`                    |
-
+!include uml/Room.md
 
 ### The Loan Class
 
