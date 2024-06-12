@@ -30,7 +30,15 @@
 \newunicodechar{⌥}{\symb ⌥}  % U+2325 "OPTION KEY"
 \newunicodechar{⇒}{\symb ⇒}  % U+21D2
 \newunicodechar{🛈}{\symb 🛈} % U+1F6C8
-\newunicodechar{⚠}{\symb ⚠}  % U+26A0
+\newunicodechar{ℙ}{\symb ℙ}  % U+2119
+\newunicodechar{ℂ}{\symb ℂ}  % U+1F6C8
+
+% Courtesy of https://tex.stackexchange.com/a/159701
+\newcommand\Warning{%
+	\makebox[1.4em][c]{%
+		\makebox[0pt][c]{\raisebox{.1em}{\small!}}%
+		\makebox[0pt][c]{\color{red}\Large$\bigtriangleup$}}}%
+\newunicodechar{⚠}{\Warning}  % U+26A0
 
 % Spaces
 \newunicodechar{ }{\symb  }
