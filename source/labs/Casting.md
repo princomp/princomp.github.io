@@ -16,7 +16,7 @@ This lab serves multiple goals:
 
 ## Numerical Datatypes
 
-For this part, it is recommended to have the [datatypes cheatsheet](../../datatypes_in_csharp.html) readily available.
+For this part, it is recommended to have the [datatypes cheatsheet](./docs/programming_and_computer_usage/datatypes_in_csharp) readily available.
 Note that there are numerous references at the bottom of the cheatsheat.
 You are encouraged to open those links and have a look at the official documentation, if you have not already done so. Being able to reference the official documentation will help you in your studies. 
 
