@@ -23,10 +23,10 @@ Although such a program has no real interest nor purpose, it is used to make sur
 ### Opening Your First Program
 
 #. Download [HelloWorld_Solution.zip](./code/projects/HelloWorld_Solution.zip) and save it on your computer.
-#. [Unzip the program file](../../zip_guide.html#unzipping-files)^[Be careful: some file explorers will simply _preview_ the (zip) archive if you simply double-click on it, but most IDE will not accept to open a file if it has not been actually extracted / unzipped!].
+#. [Unzip the program file](./docs/programming_and_computer_usage/unzipping_archives#unzipping-files)^[Be careful: some file explorers will simply _preview_ the (zip) archive if you simply double-click on it, but most IDE will not accept to open a file if it has not been actually extracted / unzipped!].
 #. Go in the HelloWorld folder that was created.
 #. Double-click on `HelloWorld_Solution.sln` file
-#. Clicking the `.sln` file should launch your default C\## IDE that [you installed previously](../../software_install.html) or that is pre-loaded on the computer lab you are using.
+#. Clicking the `.sln` file should launch your default C\## IDE that [you installed previously](./docs/programming_and_computer_usage/installing_software) or that is pre-loaded on the computer lab you are using.
 
     - If you get prompted for which application to use, choose the IDE you installed previously.
     - If the IDE does not launch or launches in a different program, right click on the `.sln` file and look for an option to `open with`, then select to open it with the IDE you installed previously.
@@ -88,7 +88,7 @@ For this part, everything will take place inside the IDE that was started previo
         - Exit any program: <kbd>Cmd</kbd> + <kbd>q</kbd>
 
 That makes 3 shortcuts already!
-You can find many more [on this resource page](../../shortcuts.html).
+You can find many more [on this resource page](./docs/programming_and_computer_usage/keyboard_shortcuts).
 
 ### Backups
 
@@ -158,7 +158,7 @@ IDEs have many features and require practice. Explore your IDE and try to comple
 
 ### Breaking Your Program
 
-If you followed the instructions carefully, you were able to build the solution and start the program without debugging after each step. [As you know, C\## has precise rules](../../book.html#rules-of-c-syntax), and not respecting them can prevent your solution from being built by the IDE.
+If you followed the instructions carefully, you were able to build the solution and start the program without debugging after each step. [As you know, C\## has precise rules](./lectures/intro/csharp_fundamentals#rules-of-c-syntax), and not respecting them can prevent your solution from being built by the IDE.
 
 In this exercise, you are asked to do the following:
 
