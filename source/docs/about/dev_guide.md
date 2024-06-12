@@ -452,7 +452,7 @@ The website <https://princomp.github.io/> is built from the `.md` files containe
 To edit the layout, style, or other features such as the footer, please *start by checking out the quartz branch* (using `git checkout quartz`), and then
 
 - Refer to quartz's [website](https://quartz.jzhao.xyz/), [repository](https://github.com/jackyzha0/quartz) and general community,
-- Knowing that [multiple edits](https://github.com/princomp/princomp.github.io/commits/quartz/) already tweaked its style.
+- Knowing that [multiple edits](#generate-the-git-patch) already tweaked its style.
 
 A couple of indications about the edits made to quartz:
 
