@@ -82,7 +82,10 @@ Draw the UML diagram of the following class:
     - a `Swap` method to swap the length and the width of a rectangle, and
     - a `Multiply` method to multiply the length *and* width of a rectangle by a ratio given as an argument that is of type`int`.
     
-<details><summary>Solution:</summary>You can check your answer by referring back to the Rectangle.cs file from the [Enriched Rectangle project](./code/projects/Enriched_Rectangle.zip). The UML diagram for this class is indicated in the comments at the beginning of the file (but without the Multiply method).</details>
+<details><summary>Solution:</summary>
+You can check your answer by referring back to the `Rectangle.cs` file from the [Enriched Rectangle](./code/projects/Enriched_Rectangle.zip) project.
+The UML diagram for this class is indicated in the comments at the beginning of the file (but without the `Multiply` method).
+</details>
 
 ## Pushing Further (Optional)
 

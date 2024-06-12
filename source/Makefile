@@ -183,7 +183,7 @@ PANDOC_MD = $(PANDOC_OPTIONS) --standalone --lua-filter $(FIL_TEMPLATES)default-
 ## Alternative formats options.
 
 # Options common to all alternative format.
-PANDOC_OPTIONS_ALT = --lua-filter $(FIL_TEMPLATES)default-code-class-block-inline.lua
+PANDOC_OPTIONS_ALT = --lua-filter $(FIL_TEMPLATES)default-code-class-block-inline.lua -M pathToProjectRoot=https://princomp.github.io/ --lua-filter $(FIL_TEMPLATES)prefix-path.lua
 
 # HTML build options
 PANDOC_HTM = $(PANDOC_OPTIONS_ALT) --toc --default-image-extension=svg --standalone --template=$(HTM_TEMPLATES)template.html --metadata title="ℙrinciples of ℂomputer ℙrogramming"
