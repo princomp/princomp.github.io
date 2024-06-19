@@ -122,14 +122,14 @@ From the distance, both looks like what is pictured in the [the flowchart demons
     - Testing the program (once it can execute with no errors)
     - Debugging the program, if necessary
     
-Interperted languages have
+Interpreted languages have
 
 - **Advantages**: Fewer steps between writing and executing, can be a faster cycle
 - **Disadvantages**: All errors happen when you execute the program, no distinction between syntax errors (compile errors) and logic errors (bugs in executing program)
 
 ### (Integrated) Development Environment
 
-Programers can either use a collection of tools to write, compile, debug and execute a program, or use an "all-in-one" solution called an Integrated Development Environment (IDE).
+Programmers can either use a collection of tools to write, compile, debug and execute a program, or use an "all-in-one" solution called an Integrated Development Environment (IDE).
 
 - The ["Unix philosophy"](https://www.wikiwand.com/en/Unix_philosophy) states that a program should do only one task, and do it properly. For programmers, this means that
     - One program will be needed to edit the source code, a text editor (it can be Geany, notepad, kwrite, emacs, sublime text, vi, etc.),

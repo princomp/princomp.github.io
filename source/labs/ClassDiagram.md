@@ -28,9 +28,7 @@ In this lab, you will practice interpreting and creating one of them: a _class d
 
 Study the following diagram, then answer follow-up questions:
 
-```text
-!include code/uml/Account.md
-```
+!include uml/Account.md
 
 #. What is the name of this class?
 #. How many attributes does this class have?
@@ -85,7 +83,8 @@ Draw the UML diagram of the following class:
     - a `Multiply` method to multiply the length *and* width of a rectangle by a ratio given as an argument that is of type`int`.
     
 <details><summary>Solution:</summary>
-You can check your answer by referring back to the `Rectangle.cs` file from the ["Enriched Rectangle" project](./code/projects/Enriched_Rectangle.zip). The UML diagram for this class is indicated in the comments at the beginning of the file (but without the `Multiply` method).
+You can check your answer by referring back to the `Rectangle.cs` file from the [Enriched Rectangle](./code/projects/Enriched_Rectangle.zip) project.
+The UML diagram for this class is indicated in the comments at the beginning of the file (but without the `Multiply` method).
 </details>
 
 ## Pushing Further (Optional)
@@ -94,4 +93,4 @@ The following are independent tasks that you can perform to broaden your underst
 
 #. Class diagrams are one of many kinds of UML diagrams. Have a look at <https://www.wikiwand.com/en/Unified_Modeling_Language#Diagrams>. In which category are class diagrams: behavior or structure?
 #. Besides modeling attributes and methods, class diagrams can also represent relationships between classes. Have a look at <https://www.wikiwand.com/en/Class_diagram> for more examples of class diagrams and their uses.
-#. An Activity Diagram is another type of UML diagram for representing program actions. You will occasionally see activity diagrams in the lecture notes. Have a look at <https://www.wikiwand.com/en/Activity_diagram> and try to understand the example: "Activity diagram for a guided brainstorming process".s
+#. An Activity Diagram is another type of UML diagram for representing program actions. You will occasionally see activity diagrams in the lecture notes. Have a look at <https://www.wikiwand.com/en/Activity_diagram> and try to understand the example: "Activity diagram for a guided brainstorming process".

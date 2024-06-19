@@ -1,0 +1,6 @@
+class ClassName{
+    -attribute : type
+    +SetAttribute(attributeParameter: type) void
+    + GetAttribute() type
+    + Method(paramName: type) type
+}

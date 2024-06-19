@@ -30,7 +30,7 @@ Questions
 <details><summary>Answer:</summary>
 - All the values in the array are set to 0,
 - Two possible ways are `int[] myArray = new int[] {1, 2, 3, 4, 5};` and `int[] myArray =  {1, 2, 3, 4, 5};`.
-</detail>
+</details>
 
 ### Going wrong
 
