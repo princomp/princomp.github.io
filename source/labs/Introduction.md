@@ -21,7 +21,7 @@ We strive to provide to our students all the material they will need to succeed 
 On this website, you will find:
 
 - ["The book"](https://princomp.github.io/book.html), which contains the lecture notes to cover one semester and is available [in `pdf`](https://princomp.github.io/book.pdf) (for printing, typically) and [in `odt`](https://princomp.github.io/book.odt)/[`docx`](https://princomp.github.io/book.docx) (for editing, typically; `docx` included for Microsoft Word compatibility). Along with [the `html` version](https://princomp.github.io/book.html) (i.e., the website), this gives four convenient ways of accessing the content of this course.
-- [Slides](https://princomp.github.io/slides.html), accompanys the lecture notes (in `pptx` and `pdf`).
+- [Slides](./lectures/slides), accompanys the lecture notes (in `pptx` and `pdf`).
 - [The labs](https://princomp.github.io/labs/), which are (most of the time) tied to particular lectures and contains hands-on practice exercise as well as instructions on how to use computers to complete this class.
 - Along with [other useful documents](https://princomp.github.io/#other-documents) about this class or studying at [our school](https://www.augusta.edu/ccs/) in particular.
 
