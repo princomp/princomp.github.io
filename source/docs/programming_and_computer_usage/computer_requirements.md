@@ -18,7 +18,7 @@ Desktop, Laptop, or something else?
 Specifications:
 ~ 
 
-    | **Component**                                               | **Minimum**        | **Suggested**                                                   | **Comfortable**                                               |
+	| Component                                                   | Minimum            | Suggested                                                       | Comfortable                                                   |
 	|:-----------------------------------------------------------:|:------------------:|:---------------------------------------------------------------:|:-------------------------------------------------------------:|
 	| [CPU](https://en.wikipedia.org/wiki/Processor_(computing))  | 4 cores @ 2.66 GHz | 6 cores @ 3.8 GHz                                               | 6 cores @ 4.4 GHz                                             |
 	| [RAM](https://en.wikipedia.org/wiki/Random-access_memory)   | 8GB                | 16GB                                                            | 32GB                                                          |
