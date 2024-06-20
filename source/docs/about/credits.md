@@ -58,4 +58,4 @@ Concretely, this means that you are free to:
 
 as long as you give proper credit and keep the same licence.
 
-Please refer to [our licence file](https://github.com/princomp/princomp.github.io/blob/main/LICENSE.md) for the detail of this licence.
+Please refer to [our licence file](https://github.com/princomp/princomp.github.io/blob/main/license.md) for the detail of this licence.

@@ -58,7 +58,7 @@ You need three things to start editing our resources:
 Follow the instructions in our ["Contributing Guidelines"](contributing.html#if-you-are-a-uca) for the first step.
 
 For a quick syntax guide in Markdown, the best resource is [this website](https://commonmark.org/help/) and its [10 minutes tutorial](https://commonmark.org/help/tutorial/).
-We list some [best practices](./about/dev_guide#editing-resources), and would appreciate if you could follow them.
+We list some [best practices](dev_guide#editing-resources), and would appreciate if you could follow them.
 
 For github's interface, please refer to the following guide (where the screenshots where taken for the [csci-1301.github.io](https://github.com/csci-1301/csci-1301.github.io) website, but remains relevant).
 
@@ -73,7 +73,7 @@ GitHub is separated into many "repositories":
 !["Navigating folders"](img/uca_guide2.jpg) 
 
 Under the **Code** section (next to Issues, Pull Requests, Actions, etc.), you will find various folders containing documents for the website. Typically, if there is some error or mistake in the lecture notes, so that will be where you will navigate to the most. 
-The way the resources are organized [is explained here](dev_guide.html#resources-organization-1).
+The way the resources are organized [is explained here](dev_guide#resources-organization-overview).
 
 !["Navigating documents"](img/uca_guide3.jpg)
 

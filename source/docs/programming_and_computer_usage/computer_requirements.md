@@ -1,7 +1,7 @@
 #  Computer Requirements
 
 This page contains some recommendations on students wishing to buy a computer to complete their program in [the School of Cyber and Computer Sciences](https://www.augusta.edu/ccs/).
-Note that **possessing a computer [is not required to complete CSCI 1301](https://princomp.github.io/software_install.html#accessing-an-ide-1)**, but recommended.
+Note that **possessing a computer [is not required to complete CSCI 1301](./installing_software.md#accessing-an-ide)**, but recommended.
 
 ## In Short
 
@@ -18,11 +18,11 @@ Desktop, Laptop, or something else?
 Specifications:
 ~ 
 
-    | Component | Minimum | Suggested | Comfortable |
-    | :--:      | :--:    | :--:      | :-- :       |
-    | [CPU](https://en.wikipedia.org/wiki/Processor_(computing)) | 4 cores @ 2.66 GHz | 6 cores @ 3.8 GHz | 6 cores @ 4.4 GHz |
-    | [RAM](https://en.wikipedia.org/wiki/Random-access_memory) | 8GB | 16GB | 32GB | 
-    | [Hard Drive](https://en.wikipedia.org/wiki/Hard_disk_drive) | 100GB | 500GB of [SSD](https://en.wikipedia.org/wiki/Solid-state_drive) | 1TB of [SSD](https://en.wikipedia.org/wiki/Solid-state_drive) | 
+    | **Component**                                               | **Minimum**        | **Suggested**                                                   | **Comfortable**                                               |
+	|:-----------------------------------------------------------:|:------------------:|:---------------------------------------------------------------:|:-------------------------------------------------------------:|
+	| [CPU](https://en.wikipedia.org/wiki/Processor_(computing))  | 4 cores @ 2.66 GHz | 6 cores @ 3.8 GHz                                               | 6 cores @ 4.4 GHz                                             |
+	| [RAM](https://en.wikipedia.org/wiki/Random-access_memory)   | 8GB                | 16GB                                                            | 32GB                                                          |
+	| [Hard Drive](https://en.wikipedia.org/wiki/Hard_disk_drive) | 100GB              | 500GB of [SSD](https://en.wikipedia.org/wiki/Solid-state_drive) | 1TB of [SSD](https://en.wikipedia.org/wiki/Solid-state_drive) |
     
     [GPU](https://en.wikipedia.org/wiki/Graphics_processing_unit) and other special equipment are not required, but recent USB-C connectors will be useful.
 
@@ -66,7 +66,7 @@ Virtual machines allow you to simulate (almost) any operating system using (almo
 
 Note that CSCI 4532 - Hardware and Embedded Systems and CSCI 4531 - Malware Analysis and Reverse Engineering _require_ you to run virtual machines. If you are planning on taking one of those classes, make sure your computer can run virtual machines!
 
-You can find [on this page](software_install.html#installing-anything-anywhere) some indications on how to run a virtual machine on your computer, and you can check on-line the recommended specifications for [Hyper-V](https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/reference/hyper-v-requirements), [VirtualBox](https://www.virtualbox.org/wiki/End-user_documentation), [kvm](https://www.linux-kvm.org/page/FAQ#What_do_I_need_to_use_KVM?), [vmware](https://www.vmware.com/products/workstation-player.html).
+You can find [on this page](./installing_software.md#installing-anything-anywhere) some indications on how to run a virtual machine on your computer, and you can check on-line the recommended specifications for [Hyper-V](https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/reference/hyper-v-requirements), [VirtualBox](https://www.virtualbox.org/wiki/End-user_documentation), [kvm](https://www.linux-kvm.org/page/FAQ#What_do_I_need_to_use_KVM?), [vmware](https://www.vmware.com/products/workstation-player.html).
 Note that, as a student, you can obtain [a free licence for Windows](https://portal.azure.com/?Microsoft_Azure_Education_correlationId=696fbf50-4829-476c-bfc8-09974888f850#view/Microsoft_Azure_Education/EducationMenuBlade/~/software).
 
 

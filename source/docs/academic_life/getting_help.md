@@ -21,7 +21,7 @@ Many resources are available to help you be a successful student:
 - If you are food insecure, [you are not alone](https://www.wjbf.com/csra-news/nearly-36-percent-of-college-students-are-hungry/), and the [Open Paws Food Pantry](https://www.augusta.edu/student-affairs/open-paws.php) will help you.
 - For tutoring resources, consult the [Academic Success Center](https://www.augusta.edu/academicsuccess/) (or "ASC"). It can help you, among other things, in the areas of time management, test preparation and study strategies.
 - [Student Counseling & Psychological Services](https://www.augusta.edu/counseling/) (or "SCAPS") is here to assist students with a variety of personal, developmental, and mental health concerns.
-- The [Writing Center](https://www.augusta.edu/pamplin/writingcenter/) can help you with any written, oral, or multimedia project.
+- The [Writing Center](https://www.augusta.edu/cwe/) can help you with any written, oral, or multimedia project.
 - To get help with technologies, refer to our [Instructional Technology Support](https://www.augusta.edu/continuity/index.php) correspondent [Sienna Sewell](https://spots.augusta.edu/sSewell/).
 - The [Department of Multicultural Student Engagement (MSE)](https://www.augusta.edu/multicultural/) aims to provide education, training, and programming to foster awareness of diversity and inclusion among Augusta University students. Their [Multicultural Mentorship Program and African American Male Initiative](https://www.augusta.edu/multicultural/programming.php) are excellent resources to receive additional help.
 
