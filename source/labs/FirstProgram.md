@@ -25,7 +25,7 @@ This lab serves multiple goals:
 
 #. Download [InitialSolution.zip](./code/projects/InitialSolution.zip) and save it onto your computer.
 
-#. Unzip the program file. You can refer to [our small guide on manipulating archives](/zip_guide.html). *Be careful* as some file explorers will simply _preview_ the (zip) archive if you simply double-click on it, but most IDEs will not accept a file if it has not been actually extracted / unzipped!
+#. Unzip the program file. You can refer to [our small guide on manipulating archives](./docs/programming_and_computer_usage/unzipping_archives#unzipping-files). *Be careful* as some file explorers will simply _preview_ the (zip) archive if you simply double-click on it, but most IDEs will not accept a file if it has not been actually extracted / unzipped!
 
 #### Renaming
 
@@ -43,7 +43,7 @@ Use your IDE to rename this _solution_:
 
 **_Do not_ rename a solution outside your IDE; always use an IDE to rename.**
 
-Renaming C\## project files requires more than simply changing a file name. By using an IDE to perform the renaming, all references to the name will be updated.
+Renaming C\# project files requires more than simply changing a file name. By using an IDE to perform the renaming, all references to the name will be updated.
 
 ##### Renaming the Project
 
