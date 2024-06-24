@@ -51,13 +51,13 @@ This order is also given [on this page](./lectures/flow/booleans#precedence-of-o
 
 For instance, `! true || false && 3 * 2 == 6` will be evaluated as
 
-| Operation |        | Result | Op. |
-| :---:     | :----: | :---:  | :---: |
-| **`! true`** `|| false && 3 * 2 == 6` | ⇒ | **`false`** `|| false && 3 * 2 == 6` | `!` |
-| `false || false &&` **`3 * 2`** `== 6` | ⇒ | `false || false &&` **`6`** `== 6` | `*` |
-| `false || false &&` **`6 == 6`** | ⇒ | `false || false &&` **`true`** | `==` |
-| `false ||` **`false && true`** | ⇒ | `false ||` **`false`** | `&&` |
-| **`false || false`** | ⇒ | **`false`** | `||` |
+| Operation                                |   | Result                                 | Op.    |
+|:----------------------------------------:|:---:|:--------------------------------------:|:------:|
+| **`!true`** `\|\| false && 3 * 2 == 6`   | ⇒ | **`false`** `\|\| false && 3 * 2 == 6` | `!`    |
+| `false \|\| false &&` **`3 * 2`** `== 6` | ⇒ | `false \|\| false &&` **`6`** `== 6`   | `*`    |
+| `false \|\| false &&` **`6 == 6`**       | ⇒ | `false \|\| false &&` **`true`**       | `==`   |
+| `false \|\|` **`false && true`**         | ⇒ | `false \|\|` **`false`**               | `&&`   |
+| **`false \|\| false`**                   | ⇒ | **`false`**                            | `\|\|` |
 
 Note that an expression like `!3 > 2` does not make any sense: C## would try to take the negation of `3` (since `!` has higher precedence than `>`), but you cannot negate the truth value of an integer!
 Along the same lines, an expression like `false * true` does not make sense; you can not multiply booleans (what would be "true times false"?)!

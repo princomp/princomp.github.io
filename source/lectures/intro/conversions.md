@@ -1,3 +1,8 @@
+---
+tags:
+- datatypes/numerical
+---
+
 # Conversions
 
 We now discuss implicit and explicit conversions between datatypes: how C# can (or not!) convert a value from one datatype to another, and how we can "force" this conversion if C# does not do it automatically.

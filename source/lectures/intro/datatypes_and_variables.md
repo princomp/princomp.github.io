@@ -1,3 +1,8 @@
+---
+tags:
+- datatypes
+---
+
 # Datatypes and Variables
 
 ## Datatype Basics

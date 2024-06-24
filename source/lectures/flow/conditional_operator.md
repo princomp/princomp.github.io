@@ -1,3 +1,8 @@
+---
+tags:
+- control-structures/conditionals
+---
+
 #  The Conditional Operator
 
 - There are many situations where we need to assign a variable to a different value depending on the result of a condition

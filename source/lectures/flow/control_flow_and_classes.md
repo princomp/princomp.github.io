@@ -1,3 +1,8 @@
+---
+tags:
+- control-structures/conditionals
+---
+
 #  Combining Classes and Decision Structures
 
 Now that we have learned about decision structures, we can revisit classes and methods. Decision structures can make our methods more flexible, useful, and functional.

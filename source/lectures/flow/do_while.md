@@ -1,3 +1,8 @@
+---
+tags:
+- control-structures/iteratives
+---
+
 # do while
 
 ## Comparing `while` and `if` statements

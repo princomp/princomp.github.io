@@ -1,3 +1,8 @@
+---
+tags:
+- control-structures/iteratives
+---
+
 #  For Loops
 
 ## Counter-controlled loops

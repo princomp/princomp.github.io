@@ -1,3 +1,8 @@
+---
+tags:
+- datatypes/numerical
+---
+
 # Operators
 
 ## Arithmetic Operators

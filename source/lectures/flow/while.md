@@ -1,3 +1,8 @@
+---
+tags:
+- control-structures/iteratives
+---
+
 # While Loops
 
 ## Introduction to `while` loops

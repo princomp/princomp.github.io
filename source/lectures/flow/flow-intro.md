@@ -1,3 +1,8 @@
+---
+tags:
+- control-structures
+---
+
 #  Introduction
 
 Decisions are a constant occurrence in daily life.

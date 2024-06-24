@@ -1,3 +1,8 @@
+---
+tags:
+- control-structures/iteratives
+---
+
 # While Loop With Complex Conditions
 
 In the following example, a complex boolean expression is used in the _while_ statement. The program gets a value and tries to parse it as an integer. If the value can not be converted to an integer, the program tries again, but not more than three times.

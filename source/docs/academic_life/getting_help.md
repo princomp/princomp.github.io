@@ -1,9 +1,6 @@
 ---
 tags: 
-- Augusta University
-- Course Assistants
-- Tutoring
-- Office hours
+- augusta-university
 ---
 
 #  How to get Help

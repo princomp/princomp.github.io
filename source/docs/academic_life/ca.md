@@ -1,9 +1,6 @@
 ---
 tags: 
-- Augusta University
-- Course Assistants
-- Resource
-- Guide
+- augusta-university
 ---
 
 #  Course Assistants

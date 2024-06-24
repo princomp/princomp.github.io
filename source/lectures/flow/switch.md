@@ -1,4 +1,9 @@
-##  Switch
+---
+tags:
+- control-structures/conditionals
+---
+
+#  Switch
 
 ## Switch Statements
 

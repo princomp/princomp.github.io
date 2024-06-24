@@ -1,3 +1,8 @@
+---
+tags:
+- control-structures/iteratives
+---
+
 #  Break and continue
 
 ## Conditional iteration

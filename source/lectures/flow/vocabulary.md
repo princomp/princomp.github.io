@@ -1,3 +1,8 @@
+---
+tags:
+- control-structures/iteratives
+---
+
 # Loop Vocabulary
 
 Variables and values can have multiple roles, but it is useful to mention three different roles in the context of loops:

@@ -1,8 +1,6 @@
 ---
 tags: 
-- Augusta University
-- Major
-- Curriculum
+- augusta-university
 ---
 
 #  Choosing Your Major

@@ -1,3 +1,8 @@
+---
+tags:
+- oop
+---
+
 #  The `static` Keyword
 
 ## Static Methods

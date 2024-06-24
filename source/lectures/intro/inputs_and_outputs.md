@@ -1,3 +1,8 @@
+---
+tags:
+- datatypes
+---
+
 # Inputs and Outputs
 
 ## Reading Input from the User
