@@ -70,19 +70,19 @@ We will now study some of the safeguards against overflowing that are implemente
     
     What happens when you try to compile and run this program?
     
-#. Note that our program does not give the result of adding one to the maximum value that can get assigned to a `decimal`. Try to display on the screen the result of adding one to `decimal.MaxValue` (both inside and outside the `unchecked` environment).
+#. Note that our program does not give the result of adding one to the maximum value that can be assigned to a `decimal`. Try to display on the screen the result of adding one to `decimal.MaxValue` (both inside and outside the `unchecked` environment).
 
 ### Strange Mathematical Properties
 
-Circling back to our prompt in the warm-up section, enter in the following table the value(s) and datatype(s) for `x`, `y`, and `z`:
+Circling back to our prompt in the warm-up section, determine which datatype matches the different overflow behaviors described in the table below, along with the resulting values for each:
 
-| Description | Value(s) | Datatype(s) | 
-| :---:       | :---:    | :---:       |
-| `x` is equal to `x`+1 | | | 
-| `y` +1 is less than `y` | | |
-| `z` * 2 / 2 is equal to `z` times 2 | | |
+| Description                                                | Value(s) | Datatype(s) |
+|:----------------------------------------------------------:|:--------:|:-----------:|
+| `<datatype>`.MaxValue == `<datatype>`.MaxValue + 1         |          |             |
+| `<datatype>`.MaxValue + 1 < `<datatype>`.MaxValue          |          |             |
+| `<datatype>`.MaxValue * 2 / 2 == `<datatype>`.MaxValue * 2 |          |             |
 
-Note that `int.MinValue` can similarly be used to produce strange mathematical properties of the same kind.
+Note that `int.MinValue` can similarly produce strange mathematical properties of the same kind.
 
 As funny or interesting as that strange behavior may seem, overflow errors actually caused death and millions of dollars of losses repeatedly, as you can read for instance [in this blog post](https://medium.com/@jollyfish/integer-overflow-underflow-and-floating-point-imprecision-6ba869a99033#73a3).
 
