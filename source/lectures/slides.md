@@ -6,7 +6,7 @@ The slides covers only some of the lecture chapters, and are grouped by topic, a
 
 | Topic | Slides |
 | :--- | --- |
-| Introduction to Computers and Programming | [pptx](https://github.com/princomp/princomp.github.io/raw/main/lectures/010_general_concepts/Programming-Intro.pptx), [pdf](https://github.com/princomp/princomp.github.io/raw/main/lectures/010_general_concepts/Programming-Intro.pdf) |
+| Introduction to Computers and Programming | [pptx](./slides/010_general_concepts/Programming-Intro.pptx), [pdf](./slides/010_general_concepts/Programming-Intro.pdf) |
 | Introduction to the C# Language | [pptx](https://github.com/princomp/princomp.github.io/raw/main/lectures/020_first_program/C%23-Intro-WriteLine.pptx), [pdf](https://github.com/princomp/princomp.github.io/raw/main/lectures/020_first_program/C%23-Intro-WriteLine.pdf) |
 | Datatype Basics | [pptx](https://github.com/princomp/princomp.github.io/raw/main/lectures/030_datatypes_and_variables/Datatypes-Variables.pptx), [pdf](https://github.com/princomp/princomp.github.io/raw/main/lectures/030_datatypes_and_variables/Datatypes-Variables.pdf) |
 | Datatype Details | [pptx](https://github.com/princomp/princomp.github.io/raw/main/lectures/030_datatypes_and_variables/Datatypes-Variables-Details.pptx), [pdf](https://github.com/princomp/princomp.github.io/raw/main/lectures/030_datatypes_and_variables/Datatypes-Variables-Details.pdf) |
