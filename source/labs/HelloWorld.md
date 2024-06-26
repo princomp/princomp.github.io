@@ -100,7 +100,7 @@ You can save your project:
 
 - On your hard drive, if you are using your own computer.
 - On an external/removable data storage: USB flash drive, external hard disk drive, or any kind of USB mass storage device.
-- On a server: the University has a [partnership](https://www.augusta.edu/its/box/) with [box.com](https://box.com/), and you can follow [this tutorial](https://www.augusta.edu/its/box/quickstart.php) to get started, but any service ([Google Drive](https://www.google.com/drive/), [Dropbox](https://www.dropbox.com/), [OneDrive](https://onedrive.live.com/), etc.) would do.
+- On a server: the University has a [partnership](https://www.augusta.edu/its/box/) with [box.com](https://box.com/), and you can follow [this tutorial](https://www.augusta.edu/its/box/quickstart.php) to get started, but any service ([Google Drive](https://www.google.com/drive/), [Dropbox](https://www.dropbox.com/), [OneDrive](https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage), etc.) would do.
 
 Having _two_ backups is generally recommended.
 

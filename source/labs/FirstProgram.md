@@ -14,7 +14,7 @@ This lab serves multiple goals:
 - To understand how to display characters, strings, and escape sequences on the screen,
 - To read and understand error messages from your IDE,
 - To understand how the renaming of projects and solution works,
-- To explain how to explore C\## documentation,
+- To explain how to explore C\# documentation,
 - To explore new useful IDE features.
 
 ## Your First Program
@@ -104,7 +104,7 @@ We will now change (edit) our `EditedSolution` solution.
 
     Do you understand what `\n` is doing?
 
-#. Have a look at [escape sequences](/book.html#escape-sequences), and edit your program by adding a statement that displays the `\` and the `"` characters.
+#. Have a look at [escape sequences](./lectures/intro/csharp_fundamentals#escape-sequences), and edit your program by adding a statement that displays the `\` and the `"` characters.
 #. Add a comment (using `//` or `/*` and `*/`) in your program.
 
 Make a back up of what you just did. Upload `EditedSolution` to your remote backup, or copy it onto your thumb drive. After saving the backup, close your IDE and make sure you can still open the solution.
@@ -116,7 +116,7 @@ This time you will not be given a project to load or to copy. You will start fro
 
 #### Starting from a Template
 
-We will first create a new C\## project using the template for a "Console App" (we give first a general guidance, and then some details that are specific to particular IDE / operating systems combinations):
+We will first create a new C\# project using the template for a "Console App" (we give first a general guidance, and then some details that are specific to particular IDE / operating systems combinations):
 
 #. Launch your IDE
 #. After the IDE launches, look for an option to create a new project. The exact wording varies between different IDEs, but look for one of the following: 
@@ -213,15 +213,15 @@ Now you will start writing your own code. We'll start by writing a very familiar
 
 ### Exploring the Documentation
 
-The documentation for C## is packed with useful information, and efforts are made to make it accessible to beginners. The goal of this exercise is to help you realize that it contains answers to questions that you may have asked yourself like "what is a solution?" or "what does the `namespace` keyword do?"
+The documentation for C# is packed with useful information, and efforts are made to make it accessible to beginners. The goal of this exercise is to help you realize that it contains answers to questions that you may have asked yourself like "what is a solution?" or "what does the `namespace` keyword do?"
 
-The documentation for C## is at <https://docs.microsoft.com/en-us/dotnet/csharp/>. To get started, have a look at "Introduction" at <https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/introduction/>, and answer the following:
+The documentation for C# is at <https://docs.microsoft.com/en-us/dotnet/csharp/>. To get started, have a look at "Introduction" at <https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/introduction/>, and answer the following:
 
 #. What C\## language feature is responsible for reclaiming unused memory?
-#. What file extension is used by C\## source code files?
-#. Can you list 3 different C\## data types?
+#. What file extension is used by C\# source code files?
+#. Can you list 3 different C\# data types?
 
- C\## programs often use namespaces as a way of organizing large code projects, and your IDE may create a `namespace` when you create a new program. Read the page at <https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/namespaces/>. Do you know an example of a namespace that we have used?
+ C\# programs often use namespaces as a way of organizing large code projects, and your IDE may create a `namespace` when you create a new program. Read the page at <https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/namespaces/>. Do you know an example of a namespace that we have used?
 
 ### More About Displaying Characters on the Screen
 

@@ -12,7 +12,7 @@ Additional contributions, by [(under)graduate course assistants](/docs/academic_
 
 Some of the material originated from discussion, handouts and contributions by [Clément Aubert](http://spots.augusta.edu/caubert/), [Aubrey Bryant](https://www.linkedin.com/in/aubrey-bryant-61898176), [Michael Dowell](https://spots.augusta.edu/mdowell/), [Richard DeFrancisco](https://www.augusta.edu/faculty/directory/view.php?id=RDEFRANCISCO),  [Onyeka Ezenwoye](https://www.augusta.edu/faculty/directory/view.php?id=oezenwoye), [Leszek Gasieniec](https://cgi.csc.liv.ac.uk/~leszek/),  [Reza Rahaeimehr](https://www.augusta.edu/faculty/directory/view.php?id=RRAHAEIMEHR), [Neea Rusch](https://nkrusch.github.io/), [Edward Tremel](https://edwardtremel.com/) and [Paul York](https://www.augusta.edu/faculty/directory/view.php?id=pyork1).
 
-Additionally, the [School of Computer & Cyber Sciences](https://www.augusta.edu/ccs/)'s past and present [academic advisors](https://www.augusta.edu/ccs/faculty.php#Staff), Laura Austin, Denise Coleman, Markus Bacha, and Wennie Squires, and communications & marketing specialist, Haley Bourne, improved the [Academic Life](/docs/academic_life) notes through their suggestions and references.
+Additionally, the [School of Computer & Cyber Sciences](https://www.augusta.edu/ccs/)'s past and present [academic advisors](https://www.augusta.edu/ccs/faculty.php#administration), Laura Austin, Denise Coleman, Markus Bacha, and Wennie Squires, and communications & marketing specialist, Haley Bourne, improved the [Academic Life](/docs/academic_life) notes through their suggestions and references.
 
 ## Supports
 

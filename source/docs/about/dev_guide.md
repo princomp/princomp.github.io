@@ -331,7 +331,7 @@ Currently templates directory contains the following:
 
 - `docx/` - contains template used to produce `.docx` files (this template is not used yet, for [size issues](https://github.com/csci-1301/csci-1301.github.io/issues/156)).
 - `filters/` - contains pandoc filters for annotating code blocks, configured to default to C\#, which then allows applying syntax highlighting to all code block.
-- `html/` - contains template used to produce *only the book.html file* (to edit the style of the website, refer to [editing website](#editing-website))
+- `html/` - contains template used to produce *only the book.html file* (to edit the style of the website, refer to [editing website](#editing-the-website))
 - `latex` - contains templates used to produce `.pdf` files,
 - `docx/` - contains template used to produce `.odt` files.
 
@@ -494,7 +494,7 @@ Refer to [Generate the git patch](#generate-the-git-patch) for instruction on ho
 
 Follow closely those steps:
 
-- [Build the resource locally](#build-locally) (note that running `make build-light` is enough to deploy the website).
+- [Build the resource locally](#building-locally) (note that running `make build-light` is enough to deploy the website).
 - Move to the `quartz` branch by running 
 
     ```text

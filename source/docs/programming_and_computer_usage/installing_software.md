@@ -45,7 +45,7 @@ You should not rely on it for the duration of this course.
 This part gathers some references for you to install [Visual Studio](https://visualstudio.microsoft.com/), [MonoDevelop](https://www.monodevelop.com/) and [Rider](https://www.jetbrains.com/rider/features/) on your own computer, regardless of your operating system.
 It is strongly encouraged that you do so, especially if you want to continue in a CS/IT/Cyber degree, but is not mandatory^[Unless this class is fully online, of course.].
 
-The instructions are detailed, but there are plenty of ways this can go wrong: make sure you have read and followed those instructions carefully before [asking for help](labs/Introduction/#how-to-ask-a-question)!
+The instructions are detailed, but there are plenty of ways this can go wrong: make sure you have read and followed those instructions carefully before [asking for help](./labs/Introduction#how-to-get-help)!
 
 #### Installing Visual Studio On Your Own Computer
 
@@ -90,7 +90,7 @@ Unfortunately, MonoDevelop offers pre-packaged release only for linux distributi
 #### Installing Rider On Your Own Computer
 
 You can download Rider [from their website](https://www.jetbrains.com/rider/download/), for any operating system.
-Note that, as a student, you can [obtain a licence for free](https://www.jetbrains.com/community/education/#students): simply [fill out this form](https://www.jetbrains.com/shop/eform/students), making sure you use your @augusta.edu email account, and you should receive a free licence instantaneously!
+Note that, as a student, you can [obtain a licence for free](https://www.jetbrains.com/community/education): simply [fill out this form](https://www.jetbrains.com/shop/eform/students), making sure you use your @augusta.edu email account, and you should receive a free licence instantaneously!
 
 Note that Jetbrains offers to use a SHA-256 checksum (for instance, [for the linux version](https://download.jetbrains.com/rider/JetBrains.Rider-2022.2.2.tar.gz.sha256)) for you to check that your download has not been tampered with.
 In any case, you can [consult their detailed instructions](https://www.jetbrains.com/help/rider/Installation_guide.html#standalone) to install and execute Rider on any operating system.

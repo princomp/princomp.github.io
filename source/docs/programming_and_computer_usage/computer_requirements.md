@@ -75,6 +75,7 @@ Note that, as a student, you can obtain [a free licence for Windows](https://por
 That is really up to you, but remember that, as a student (or employee), you are allowed to 
 
 - [Some discounts](https://my.augusta.edu/discounts/electronics.php),
+<!-- - [Software discounts via OnTheHub](https://onthehub.com/) I've used this for certain software deals, but I'll leave it up to you on whether to keep it or not. ~Jason -->
 - [A free licence for Windows](https://portal.azure.com/?Microsoft_Azure_Education_correlationId=696fbf50-4829-476c-bfc8-09974888f850#view/Microsoft_Azure_Education/EducationMenuBlade/~/software).
 
 Second-hand computers or even custom-built computers are probably fine, but requires more skills (such as how to factory-reset a computer and / or how to (re)install an operating system) and inspections on your end.

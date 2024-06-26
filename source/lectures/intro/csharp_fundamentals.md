@@ -2,7 +2,7 @@
 
 ## Introduction to the C# Language
 
-- C# is a managed language (as [discussed previously](#programming-language-concepts-1))
+- C# is a managed language (as [discussed previously](./lectures/intro/computers_and_programming#programming-language-concepts))
     - Write in a high-level language, compile to intermediate language, run intermediate language in interpreter
     - Intermediate language is called CIL (Common Intermediate Language)
     - Interpreter is called .NET run-time

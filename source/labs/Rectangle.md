@@ -13,7 +13,7 @@ This lab serves multiple goals:
 - To briefly discuss naming conventions in classes,
 - To encourage you to enrich an existing class with additional methods.
 
-[This last part](#enriching-rectangle.cs) is challenging; therefore, we provide a possible solution at the end of the page, but make sure you try to solve it by yourself beforehand.
+[This last part](#enriching-rectanglecs) is challenging; therefore, we provide a possible solution at the end of the page, but make sure you try to solve it by yourself beforehand.
 
 ## Manipulating Two `.cs` Files at a Time
 
@@ -39,7 +39,7 @@ Edit `Program.cs` by adding a few statements at the end of its `Main` method. Th
 #. Create a fourth `Rectangle` object without specifying its length or width and display them on the screen. What do you observe?
 
 In the last part, you may notice that the length and the width of the newly created object were assigned default values.
-To know more about this, refer to [the documentation on default values of C## types](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/default-values-table).
+To know more about this, refer to [the documentation on default values of C# types](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/default-values-table).
 
 ## Editing `Rectangle.cs`
 

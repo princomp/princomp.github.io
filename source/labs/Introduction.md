@@ -9,8 +9,8 @@ tags:
 
 For this first lab, we would like to discuss three important topics for you to succeed in this class.
 
-#. [How to access the material and navigate our resources](#navigating-our-resources-1),
-#. [What to read first](#what-to-read-first-1),
+#. [How to access the material and navigate our resources](#navigating-our-resources),
+#. [What to read first](#what-to-read-first),
 #. [How to get help](#how-to-get-help).
 
 As you may have noted, the list of topics was already included a first time below the title; we generally try to include a table of contents and summary, along with numerous links, to make our guides easy to navigate.
@@ -22,8 +22,8 @@ On this website, you will find:
 
 - ["The book"](https://princomp.github.io/book.html), which contains the lecture notes to cover one semester and is available [in `pdf`](https://princomp.github.io/book.pdf) (for printing, typically) and [in `odt`](https://princomp.github.io/book.odt)/[`docx`](https://princomp.github.io/book.docx) (for editing, typically; `docx` included for Microsoft Word compatibility). Along with [the `html` version](https://princomp.github.io/book.html) (i.e., the website), this gives four convenient ways of accessing the content of this course.
 - [Slides](./lectures/slides), accompanys the lecture notes (in `pptx` and `pdf`).
-- [The labs](https://princomp.github.io/labs/), which are (most of the time) tied to particular lectures and contains hands-on practice exercise as well as instructions on how to use computers to complete this class.
-- Along with [other useful documents](https://princomp.github.io/#other-documents) about this class or studying at [our school](https://www.augusta.edu/ccs/) in particular.
+- [The labs](./labs/), which are (most of the time) tied to particular lectures and contains hands-on practice exercise as well as instructions on how to use computers to complete this class.
+- Along with [other useful documents](./docs/) about this class or studying at [our school](https://www.augusta.edu/ccs/) in particular.
 
 The main purpose of this first lab is to help you navigate those resources.
 We want this reading to be proactive, so we will include questions and actions like the ones below every now and then to help you be engaged with the material.
