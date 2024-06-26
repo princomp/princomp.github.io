@@ -1,3 +1,8 @@
+---
+tags:
+- guide
+---
+
 #  Computer Requirements
 
 This page contains some recommendations on students wishing to buy a computer to complete their program in [the School of Cyber and Computer Sciences](https://www.augusta.edu/ccs/).

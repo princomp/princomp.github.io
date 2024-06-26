@@ -1,3 +1,8 @@
+---
+tags:
+- guide
+---
+
 #  (Un)Zipping Archives
 
 This short note explains how to

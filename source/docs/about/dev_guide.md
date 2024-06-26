@@ -1,7 +1,6 @@
 ---
 tags:
-- Resource
-- Guide
+- guide
 ---
 
 # Dev. Guide

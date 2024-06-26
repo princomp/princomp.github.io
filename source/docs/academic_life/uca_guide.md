@@ -1,6 +1,7 @@
 ---
 tags: 
 - augusta-university
+- guide
 ---
 
 #  UCA starting guide

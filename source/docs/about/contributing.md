@@ -1,3 +1,8 @@
+---
+tags:
+- guide
+---
+
 #  Contributing
 
 ## How can I contribute?

@@ -1,3 +1,8 @@
+---
+tags:
+- guide
+---
+
 #  Installing Software
 
 ## Generalities on Installing Software
