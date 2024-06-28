@@ -16,10 +16,10 @@
 
 # Display help message.
 help:
-	@echo "all       - build everything"
-	@echo "all-light - build only the files required for the website"
-	@echo "fetch     - fetch the current release and extract it"
-	@echo "clean     - remove generated build artifacts"
+	@echo "all         - build everything"
+	@echo "build-light - build only the files required for the website"
+	@echo "fetch       - fetch the current release and extract it"
+	@echo "clean       - remove generated build artifacts"
 	@echo "refer to https://princomp.github.io/docs/about/dev_guide#building-locally"
 
 # Phony rule to display variables
@@ -64,12 +64,14 @@ LECTURES_DIR = lectures/
 DOCS_DIR = docs/
 # The folder where the labs are located.
 LABS_DIR = labs/
+# The folder where the exercises are located.
+EXO_DIR = exercises/
 # The folder where the .cs code snippets and projects are located.
 CODE_DIR = code/
 # The folder where the .zip archives containing projects are located.
 PROJECT_DIR = $(CODE_DIR)projects/
 # The folders where .md files are located.
-MD_DIRS = lectures/ docs/ labs/
+MD_DIRS = $(LECTURES_DIR) $(DOCS_DIR) $(LABS_DIR) $(EXO_DIR)
 # The folder where the images are located.
 IMG_DIR = img/
 # The folder where the UML class diagrams are located
