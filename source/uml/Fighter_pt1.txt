@@ -1,0 +1,24 @@
+class Fighter["Fighter Pt. 1"]{
+	-name : string
+	-level : byte
+	-curExp : int
+	-maxExp : int
+	-hitPts : decimal
+	-attack : int
+	-defense : int
+	+GetName() string
+	+SetName(nameP : string)
+	+GetLevel() byte
+	+GetCurExp() int
+	+GetMaxExp() int
+	+GetHitPts() decimal
+	+GetAttack() int
+	+SetAttack(attackP : int)
+	+GetDefense() int
+	+SetDefense(defenseP : int)
+	+LevelUp()
+	+TakeDamage(attackP : int)
+	+ToString() string
+	+<< constructor >> Fighter() (BONUS)
+	+<< constructor >> Fighter(nameP : string, attackP : int, defenseP : int) (BONUS)
+}
