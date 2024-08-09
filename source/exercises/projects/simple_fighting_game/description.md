@@ -44,7 +44,7 @@ In more details:
 
 ```text
 |==============================================================|
-|             Fighter                                          |
+|                           Fighter                            |
 |--------------------------------------------------------------|
 | - name:string                                                |
 | - level:byte                                                 |
@@ -73,6 +73,7 @@ In more details:
 ```
 
 In order, the attributes will store:
+
 - The name of the fighter,
 - The level of the fighter,
 - The current experience the fighter has,
@@ -83,6 +84,7 @@ In order, the attributes will store:
 - The defense stat of the fighter.
 
 The methods to be implemented are as follows:
+
 - Getters for all attributes,
 - Setters for `name`, `attack`, and `defense`,
 - A `LevelUp` method
@@ -103,7 +105,8 @@ The methods to be implemented are as follows:
 ##### Example
 
 Once creating my fighter, Totally McRealGuy, this is what I display to the console:
-```{bash}
+
+```text
 Name: Totally McRealGuy
 Level: 0
 HP: 100.00%
@@ -111,10 +114,12 @@ Exp: 0/100
 Attack: 15
 Defense: 5
 ```
+
 Notice how `hitPts` (abbreviated as HP) is displayed as a percentage and attack and defense was set.
 
 TotallyMcRealGuy leveled up! Let's check his stats now:
-```{bash}
+
+```text
 Name: Totally McRealGuy
 Level: 1
 HP: 100.00%
@@ -122,6 +127,7 @@ Exp: 0/150
 Attack: 18
 Defense: 8
 ```
+
 Notice how `maxExp`, `attack`, and `defense` has incremented.
 
 #### Bonus
@@ -201,6 +207,7 @@ _**(Note: You must use the template to complete this project unless you got a pe
 ```
 
 In `Fighter.cs`...
+
 - Add a no-args constructor that sets the attribute values to:
   - name: "Default"
   - level: 1
@@ -217,6 +224,7 @@ In `Fighter.cs`...
   - Sets `hitPts` to 1
 
 In `Program.cs`...
+
 - Create a program that prompts the user to input the values to create your fighter.
   - Ask the user for the name of their fighter (no validation required on this part)
   - Ask the user for their attack and defense stats
@@ -229,7 +237,7 @@ Below is a full runthrough of the progam you'll be expected to make. Note that u
 
 An example of output:
 
-```{bash}
+```text
 MAKE YOUR FIGHTER!!!!
 Name: T͟o͟t͟a͟l͟l͟y͟ ͟M͟c͟R͟e͟a͟l͟g͟u͟y͟←
 Set your attack and defense (combined total must not exceed 20).
@@ -254,7 +262,7 @@ Defense: 5
 
 #### Bonus
 
-Create a third constructor that takes in only a name parameter and creates a fighter using _randomly generated_ attack and defense values. These values must also not allow the combined total of these to be greater than 20. (For information on Random, see here: [https://csci-1301.github.io/book.html#random](https://csci-1301.github.io/book.html#random))
+Create a third constructor that takes in only a name parameter and creates a fighter using _randomly generated_ attack and defense values. These values must also not allow the combined total of these to be greater than 20. ([For information on Random](./lectures/misc/random))
 
 ## Project 2 Phase 3
 
@@ -371,7 +379,8 @@ See the video demo on D2L
 
 For this final phase, there are two bonuses:
 1. Modify the ToString method in `Fighter.cs` to display like this:
-   ```{bash}
+
+   ```text
    Name: Totally McRealguy
    Level: 1
    HP: [█████████████████████████] 100.00%
@@ -379,6 +388,7 @@ For this final phase, there are two bonuses:
    Attack: 10
    Defense: 10
    ```
+   
   - Note: The number of blocks displayed should be based on how much health the fighter has, and should center so that if blocks are missing (e.g., `HP: [████████████             ] 50.00%`) The escape character for the block is `\u2588`.
   - Hint: See the [official documentation for string interpolation](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated) and [a relevant StackOverflow post about repeating characters](https://stackoverflow.com/a/411762).
 2. Add a new move that either fighter can use, Heavy Attack, which will add the additional conditions for each move:
@@ -390,3 +400,7 @@ For this final phase, there are two bonuses:
     - and opponent attacks, then both take damage with the opposing fighter's attack stat * 2
     - and opponent defends then opponent takes damage with the player's attack stat
     - and opponent heavy attacks, then both take damage with the opposing fighter's attack stat * 4
+	
+### Solution
+
+Project 2 Phase 3 Solution [LINK HERE]

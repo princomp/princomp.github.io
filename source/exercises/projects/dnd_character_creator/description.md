@@ -66,7 +66,7 @@ Consider the following UML diagram for a `Character` class:
 | + ToString() : string                   |
 |=========================================|
 ```
-    
+
 In order, the attributes will store:
 
 - The name of the character,
@@ -98,7 +98,7 @@ Finally, write your name and the date in a delimited comment at the beginning of
 
 My character, _Totally McRealguy_, is a level 5 male orc. This is what my `ToString` method displays to the console:
 
-```{.bash}
+```text
 Character Name: Totally McRealguy
 Race: Orc
 Gender: M
@@ -108,7 +108,7 @@ HP: 25
 
 Oh wow, _Totally McRealguy_ leveled up! Let's see what the console says now:
 
-```{.bash}
+```text
 Character Name: Totally McRealguy
 Race: Orc
 Gender: M
@@ -164,7 +164,6 @@ First, download the Project 2 Phase 2 Template [LINK HERE]
 
 Consider the following UML diagram for the updated `Character` class:
 
-
 ```text
 |===============================================================================================|
 |                                        Character (Pt. 2)                                      |
@@ -191,8 +190,8 @@ Consider the following UML diagram for the updated `Character` class:
 |===============================================================================================|
 ```
 
+In Character.cs:
 
-In Character.cs...
 - Add an empty constructor with the following default values
   - charName: "N/A"
   - race: "N/A"
@@ -202,7 +201,8 @@ In Character.cs...
 - Add a constructor with parameters (assign as normal)
   - Note: This should also use `SetHitPts`
 
-In Program.cs...
+In Program.cs:
+
 - Create a program that prompts the user to input the values to create the character.
 - Each value will be restricted to inputs that fit these conditions:
   - name: no input validation needed
@@ -223,7 +223,7 @@ Finally, write your name and the date in a delimited comment at the beginning of
 
 The program starts by welcoming the user and asking for the character's name:
 
-```{bash}
+```text
 =========================================
 | Welcome to the DnD Character Creator! |
 =========================================
@@ -237,13 +237,11 @@ What is Totally McRealguy's race? (Choose between Human, Elf, Orc, Dragonborn, o
 orc
 ```
 
-
 Notice that it repeats itself when given a wrong input. Additionally, it accepts lowercase values.
 
 Continuing to gender:
 
-
-```{bash}
+```text
 What is Totally McRealguy's gender? (Choose between (M)ale, (F)emale, (O)ther, (I)ntersex)
 no
 That is not a valid response, try again.
@@ -254,11 +252,9 @@ What is Totally McRealguy's gender? (Choose between (M)ale, (F)emale, (O)ther, (
 m
 ```
 
-
 And  level:
 
-
-```{bash}
+```text
 What is Totally McRealguy's level? (Choose a number no greater than 30)
 -1
 That is not a valid response, try again.
@@ -281,6 +277,7 @@ HP: 19
 #### Bonus
 
 Add these additional restrictions to your program:
+
 - Tieflings can only be (I)ntersex
 - Always store gender as Uppercase
 
@@ -330,7 +327,6 @@ First, download the Project 2 Phase 3 Template. [LINK HERE]
 
 Consider the following UML diagram for the updated `Character` class:
 
-
 ```text
 |=======================================================================================|
 |                                    Character                                          |
@@ -364,8 +360,8 @@ Consider the following UML diagram for the updated `Character` class:
 |=======================================================================================|
 ```
 
-
 In `Character.cs`:
+
 - Add two new attributes:
   - `stats`: an array of integers of size 6, where the integer at each index holds the value of a specific stat
     - 0: Strength
@@ -402,6 +398,7 @@ In `Character.cs`:
   - Once validated role is provided, value is stored in `role`, and method ends.
 
 In `Program.cs`
+
 - After the code written in Phase 2, add the following:
   - Create an array of length 6 to store dice rolls
   - Fill array with 6 randomly generated integers between 1 and 20 (inclusive)
@@ -422,8 +419,7 @@ Finally, write your name and the date in a delimited comment at the beginning of
 
 Let's assume that the following character has already been created:
 
-
-```{bash}
+```text
 Character Name: Totally McRealguy
 Race: orc
 Gender: M
@@ -438,13 +434,11 @@ Charisma: 0
 Role: Peasant
 ```
 
-
 Notice that the ToString has now changed to show the new, currently unassigned attributes.
 
 Now, after randomly generating 6 dice values, we call `AssignStats` and pass in the values. The following is what proceeds:
 
-
-```{bash}
+```text
 Stats:
 Strength: 0
 Dexterity: 0
@@ -474,11 +468,9 @@ Which stat would you like to assign this dice roll to?
 6 - Charisma
 ```
 
-
 Notice how the user is reprompted when given a wrong value. Let's assign the 3 roll to wisdom:
 
-
-```{bash}
+```text
 5
 
 *****************************************
@@ -514,13 +506,11 @@ Which stat would you like to assign this dice roll to?
 6 - Charisma
 ```
 
-
 If we attempt to assign the new stat to wisdom, it tells you that the stat has already been assigned to.
 
 Now let's go ahead and assume the user assigned all 6 values to the 6 stats, showing us this:
 
-
-```{bash}
+```text
 Character Name: Totally McRealguy
 Race: orc
 Gender: M
@@ -535,22 +525,18 @@ Charisma: 5
 Role: Peasant
 ```
 
-
 Next, we should call the `SetRole` method, which gives us the following:
 
-
-```{bash}
+```text
 Choose from the following roles:
 Your stats are too low. You are assigned the role "Peasant."
 ```
-
 
 Notice that our stats are too low to be assigned a stat, so we get "Peasant"
 
 Let's try some different stats:
 
-
-```{bash}
+```text
 Character Name: Totally McRealguy
 Race: orc
 Gender: M
@@ -565,11 +551,9 @@ Charisma: 1
 Role: Peasant
 ```
 
-
 I got pretty lucky on this one! Let's see what the program shows me this time...
 
-
-```{bash}
+```text
 Choose from the following roles:
 0: Barbarian
 1: Fighter
@@ -581,20 +565,16 @@ Choose from the following roles:
 8: Cleric
 ```
 
-
 Notice how the Bard and Warlock roles are still blocked, since my charisma stat is too low. If I try to select one of those...
 
-
-```{bash}
+```text
 2
 This is not a valid choice, try again.
 ```
 
-
 I am blocked. However, if I pick one that is available...
 
-
-```{bash}
+```text
 3
 Character Name: Totally McRealguy
 Race: orc
@@ -610,7 +590,6 @@ Charisma: 1
 Role: Rogue
 ```
 
-
 It works! And now my character is complete!
 
 #### Bonus
@@ -624,24 +603,12 @@ It works! And now my character is complete!
   - Modify ToString to Display job
   - Create new SetJob method
     - User picks jobs available to them based on stats
-      - Strength:
-        - Greater than 10: Soldier
-        - Greater than 15: Mercenary
-      - Dexterity:
-        - Greater than 10: Armorer
-        - Greater than 15: Blacksmith
-      - Constitution:
-        - Greater than 10: Miner
-        - Greater than 15: Gladiator
-      - Intelligence:
-        - Greater than 10: Mathematician
-        - Greater than 15: Scholar
-      - Wisdom:
-        - Greater than 10: Historian
-        - Greater than 15: Philosopher
-      - Charisma:
-        - Greater than 10: Merchant
-        - Greater than 15: Bartender
+      - Strength: Greater than 10: Soldier; Greater than 15: Mercenary
+      - Dexterity: Greater than 10: Armorer; Greater than 15: Blacksmith
+      - Constitution: Greater than 10: Miner; Greater than 15: Gladiator
+      - Intelligence: Greater than 10: Mathematician; Greater than 15: Scholar
+      - Wisdom: Greater than 10: Historian; Greater than 15: Philosopher
+      - Charisma: Greater than 10: Merchant; Greater than 15: Bartender
     - Array of all options should be set at the beginning [str, str, dex, dex, con, con, ...]
     - Only show jobs that are available to user (like `SetRole`)
     - User should pick job (with validation)
