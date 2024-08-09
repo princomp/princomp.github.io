@@ -4,7 +4,7 @@ title: Project Description
 
 # Project 2 Description
 
-Below is the combinded descriptions of each phase of project 2. If working through this project for the first time, it is encouraged to work on one phase at a time, ensuring your execution of the project is correct by comparing with our solution before moving on.
+Below is the combined descriptions of each phase of project 2. If working through this project for the first time, it is encouraged to work on one phase at a time, ensuring your execution of the project is correct by comparing with our solution before moving on.
 
 ## Project 2 Phase 1
 
@@ -42,30 +42,7 @@ In more details:
 
 Consider the following UML diagram for a `Character` class:
 
-```text
-|=========================================|
-|                Character                |
-|-----------------------------------------|
-| - charName : string                     |
-| - race : string                         |
-| - gender : char                         |
-| - level : int                           |
-| - hitPts : int                          |
-|-----------------------------------------|
-| + GetName() : string                    |
-| + GetRace() : string                    |
-| + GetGender() : char                    |
-| + GetLevel() : int                      |
-| + GetHitPts() : int                     |
-| + SetName(nameP : string) : void        |
-| + SetRace(raceP : string) : void        |
-| + SetGender(genderP : char) : void      |
-| + SetLevel(levelP : int) : void         |
-| - SetHitPts() : void                    |
-| + LevelUP() : void                      |
-| + ToString() : string                   |
-|=========================================|
-```
+!include uml/Character_pt1.md
 
 In order, the attributes will store:
 
