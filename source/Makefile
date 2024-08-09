@@ -66,12 +66,14 @@ DOCS_DIR = docs/
 LABS_DIR = labs/
 # The folder where the exercises are located.
 EXO_DIR = exercises/
+# The folder where the projects are located.
+PROJECT_DIR = projects/
 # The folder where the .cs code snippets and projects are located.
 CODE_DIR = code/
 # The folder where the .zip archives containing projects are located.
 PROJECT_DIR = $(CODE_DIR)projects/
 # The folders where .md files are located.
-MD_DIRS = $(LECTURES_DIR) $(DOCS_DIR) $(LABS_DIR) $(EXO_DIR)
+MD_DIRS = $(LECTURES_DIR) $(DOCS_DIR) $(LABS_DIR) $(EXO_DIR) $(PROJECT_DIR)
 # The folder where the images are located.
 IMG_DIR = img/
 # The folder where the UML class diagrams are located
