@@ -1,0 +1,21 @@
+class Character["Character Pt. 2"]{
+	-charName : string
+	-race : string
+	-gender : char
+	-level : int
+	-hitPts : int
+	+GetName() string
+	+GetRace() string
+	+GetGender() char
+	+GetLevel() int
+	+GetHitPts() int
+	+SetName(nameP : string) void
+	+SetRace(raceP : string) void
+	+SetGender(genderP : char) void
+	+SetLevel(levelP : int) void
+	-SetHitPts() void
+	+LevelUP() void
+	+ToString() string
+	+<< constructor >> Character()
+	+<< constructor >> Character(nameP : string, raceP : string, genderP : char, levelP : int)
+}
