@@ -1,12 +1,9 @@
----
-title: Project Description
----
+# Description
 
-# Project 2 Description
+Below is the combined descriptions of each phase of the "Character creation" project.
+If working through this project for the first time, it is encouraged to work on one phase at a time, ensuring your execution of the project is correct by comparing with our solution before moving on.
 
-Below is the combined descriptions of each phase of project 2. If working through this project for the first time, it is encouraged to work on one phase at a time, ensuring your execution of the project is correct by comparing with our solution before moving on.
-
-## Project 2 Phase 1
+## Phase 1
 
 ### Purpose:
 ~ This first project is designed to teach you how to devise, implement, and submit solutions to programming problems. As you will be expected to complete projects not only this semester, but throughout your studies, one of our primary goals is to familiarize you with the submission process. This task will also ensure that you understand the basic concepts we have been studying thus far.
@@ -103,7 +100,7 @@ Extra points will be given if you implement both an empty and normal `Constructo
 
 Project 2 Phase 1 Solution [LINK HERE]
 
-## Project 2 Phase 2
+## Phase 2
 
 ### Purpose:
 ~ This first project is designed to teach you how to devise, implement, and submit solutions to programming problems. As you will be expected to complete projects not only this semester, but throughout your studies, one of our primary goals is to familiarize you with the submission process. This task will also ensure that you understand the basic concepts we have been studying thus far.
@@ -262,7 +259,7 @@ Add these additional restrictions to your program:
 
 Project 2 Phase 2 Solution [LINK HERE]
 
-## Project 2 Phase 3
+## Phase 3
 
 ### Purpose:
 ~ This final phase is designed to use all of the programming strategies and concepts taught throughout the semester, along with arrays and potentially for loops, to finalize the three-phase project you've been working on throughout the semester. This project is a bit more complex than the other two, so please **read carefully** and allocate enough time to work on it.

@@ -1,10 +1,7 @@
----
-title: Project Rubric
----
+# Rubric
 
-# Project 2 Rubric
-
-Below are the rubrics used to grade each phase of Project 2. It is advised to use these rubrics as a way to check your work, along with the solution for the corresponding phase.
+Below are the rubrics used to grade each phase of the "Character creation" project.
+It is advised to use these rubrics as a way to check your work, along with the solution for the corresponding phase.
 
 ## Phase 1
 

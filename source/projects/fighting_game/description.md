@@ -1,20 +1,17 @@
----
-title: Project Description
----
+# Description
 
-# Project 2 Description
+Below is the combined descriptions of each phase of the "Fighting game" project.
+If working through this project for the first time, it is encouraged to work on one phase at a time, ensuring your execution of the project is correct by comparing with our solution before moving on.
 
-Below is the combinded descriptions of each phase of project 2. If working through this project for the first time, it is encouraged to work on one phase at a time, ensuring your execution of the project is correct by comparing with our solution before moving on.
-
-## Project 2 Phase 1
+## Phase 1
 
 ### Purpose:
 
-~ This second project will be spread across three phases to give you the experience of implementing a class and feature-rich program utilizing said class. This first phase consists of implementing a starting form of the class you will be working with until the end of the semester. This class will primarily consist of setting up attributes and their respective getters/setters, as well as some unique methods needed to define the core functionality of the class being created.
+This second project will be spread across three phases to give you the experience of implementing a class and feature-rich program utilizing said class. This first phase consists of implementing a starting form of the class you will be working with until the end of the semester. This class will primarily consist of setting up attributes and their respective getters/setters, as well as some unique methods needed to define the core functionality of the class being created.
 
-### Skills:
+### Skills
 
-~  For this project, you will need to:
+For this project, you will need to:
 
 - Exhibit an understanding of IDE features pertaining to object-oriented development,
 - Analyze a simple design document,
@@ -23,8 +20,7 @@ Below is the combinded descriptions of each phase of project 2. If working throu
 
 ### Knowledge:
 
-~ This assignment will familiarize you with the following important
-    skills:
+This assignment will familiarize you with the following important skills:
 
 - How to read a UML diagram,
 - How to interpret a series of simple instructions, and
@@ -34,13 +30,13 @@ Below is the combinded descriptions of each phase of project 2. If working throu
 
 #### Challenge
 
-In short:
-~ 
-  You will be creating a `Fighter` class, which will contain the core functionality of a character in some turned-based RPG type game.
+#### In short
 
-In more details:
-~ 
-  Consider the following UML diagram for the `Fighter` class:
+You will be creating a `Fighter` class, which will contain the core functionality of a character in some turned-based RPG type game.
+
+#### In more details
+
+Consider the following UML diagram for the `Fighter` class:
 
 ```text
 |==============================================================|
@@ -134,15 +130,15 @@ Notice how `maxExp`, `attack`, and `defense` has incremented.
 
 We'll add two new constructors to the class, one that takes no parameters, and another that takes in parameters for `name`, `attack`, and `defense`. The former should have an empty body, while the latter should assign the parameters to their respective attributes.
 
-## Project 2 Phase 2
+## Phase 2
 
-### Purpose:
+### Purpose
 
-~ This is the second phase of your three-phase project for the course. This phase will consist of extending your Fighter class to add some more functionality, then creating a user-interactive program that collectsthe data from the user to make a Fighter object with the class.
+This is the second phase of your three-phase project for the course. This phase will consist of extending your Fighter class to add some more functionality, then creating a user-interactive program that collectsthe data from the user to make a Fighter object with the class.
 
-### Skills:
+### Skills
 
-~ For this project, you will need to:
+For this project, you will need to:
 
 - Exhibit an understanding of IDE features pertaining to object-oriented development,
 - Expand on the class you made last time with new methods,
@@ -150,9 +146,9 @@ We'll add two new constructors to the class, one that takes no parameters, and a
 - Validate inputs from the user using boolean logic, and
 - Create an object from the class you constructed.
 
-### Knowledge:
+### Knowledge
 
-~ This assignment will familiarize you with the following important skills:
+This assignment will familiarize you with the following important skills:
 
 -   How to manipulate objects,
 -   How to use boolean systems (`if`/`switch`, loops), and
@@ -162,12 +158,13 @@ We'll add two new constructors to the class, one that takes no parameters, and a
 
 #### Challenge
 
-In short:
-~ 
-  You will be adding four additional methods into the `Fighter` class you constructed in phase 1, then implementing a program to construct a `Fighter` object based on the _validated_ input given by the user.
+##### In short
 
-In more details:
-~ First, download the Project 2 Phase 2 Template: [LINK HERE]
+You will be adding four additional methods into the `Fighter` class you constructed in phase 1, then implementing a program to construct a `Fighter` object based on the _validated_ input given by the user.
+
+##### In more details
+
+First, download the Project 2 Phase 2 Template: [LINK HERE]
 
 _**(Note: You must use the template to complete this project unless you got a perfect score on Phase 1)**_
 
@@ -233,7 +230,7 @@ In `Program.cs`...
     
 ##### Example
 
-Below is a full runthrough of the progam you'll be expected to make. Note that underlined sections are the inputs made by the user.
+Below is a full runthrough of the program you'll be expected to make. Note that underlined sections are the inputs made by the user.
 
 An example of output:
 
@@ -264,15 +261,15 @@ Defense: 5
 
 Create a third constructor that takes in only a name parameter and creates a fighter using _randomly generated_ attack and defense values. These values must also not allow the combined total of these to be greater than 20. ([For information on Random](./lectures/misc/random))
 
-## Project 2 Phase 3
+## Phase 3
 
-### Purpose:
+### Purpose
 
-~ In this final phase of your second project, you will be utilizing the full extent of your Fighter class to make a game loop focused on the player fighter fighting randomly generated opponent fighters.
+In this final phase of your second project, you will be utilizing the full extent of your Fighter class to make a game loop focused on the player fighter fighting randomly generated opponent fighters.
 
-### Skills:
+### Skills
 
-~ For this project, you will need:
+For this project, you will need:
 
 - Exhibit an understanding of IDE features pertaining to object-oriented development,
 - Expand on the class you made last time with new methods,
@@ -280,9 +277,9 @@ Create a third constructor that takes in only a name parameter and creates a fig
 - Validate inputs from the user using boolean logic, and
 - Create an object from the class you constructed.
 
-### Knowledge:
+### Knowledge
 
-~ This assignment will familiarize you with the following important skills:
+This assignment will familiarize you with the following important skills:
 
 -   How to manipulate objects,
 -   How to generate random numbers,
@@ -293,12 +290,12 @@ Create a third constructor that takes in only a name parameter and creates a fig
 
 #### Challenge
 
-In short:
-~ 
-  You will be adding one more method to your `Fighter` class before extending your implementation in `Program.cs` to make a game loop where the player fighter fights rounds of randomly generated opponent fighters.
+##### In short
 
-In more details:
-~ 
+You will be adding one more method to your `Fighter` class before extending your implementation in `Program.cs` to make a game loop where the player fighter fights rounds of randomly generated opponent fighters.
+
+#### In more details
+
 First, download the Project 2 Phase 3 Template: [LINK HERE]
 
 _**(Note: You must use the template to complete this project unless you got a perfect score on Phase 2)**_
