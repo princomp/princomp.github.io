@@ -38,7 +38,7 @@ You will be creating a `Fighter` class, which will contain the core functionalit
 
 Consider the following UML diagram for the `Fighter` class:
 
-```text
+<!-- ```text
 |==============================================================|
 |                           Fighter                            |
 |--------------------------------------------------------------|
@@ -66,7 +66,8 @@ Consider the following UML diagram for the `Fighter` class:
 | + Fighter() (BONUS)                                          |
 | + Fighter(nameP:string, attackP:int, defenseP:int) (BONUS)   |
 |==============================================================|
-```
+``` -->
+!include uml/Fighter_pt1.md
 
 In order, the attributes will store:
 
@@ -170,7 +171,7 @@ _**(Note: You must use the template to complete this project unless you got a pe
 
   Consider the updated UML Diagram for the `Fighter` class:
 
-```text
+<!--```text
 |==============================================================|
 |                        Fighter Pt. 2                         |
 |--------------------------------------------------------------|
@@ -201,7 +202,8 @@ _**(Note: You must use the template to complete this project unless you got a pe
 | + Heal()                                                     |
 | + Fighter(nameP:string) (BONUS)                              |
 |==============================================================|
-```
+```-->
+!include uml/Fighter_pt2.md
 
 In `Fighter.cs`...
 
@@ -302,7 +304,7 @@ _**(Note: You must use the template to complete this project unless you got a pe
 
   Consider the updated UML Diagram for the `Fighter` class:
 
-```text
+<!--```text
 |==============================================================|
 |                       Fighter Pt. 3                          |
 |--------------------------------------------------------------|
@@ -333,7 +335,8 @@ _**(Note: You must use the template to complete this project unless you got a pe
 | + Heal()                                                     |
 | + Fighter(nameP:string, playerLvl:byte)                      |
 |==============================================================|
-```
+```-->
+!include uml/Fighter_pt3.md
 
 In `Fighter.cs`...
 - Add one more constructor that takes in a string parameter for `name` and a byte parameter for the player's level (named `playerLvl` in the UML)
