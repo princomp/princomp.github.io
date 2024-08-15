@@ -15,8 +15,6 @@ able to see it by right-clicking on it and then selecting "Properties" or "Get I
 
 *Make sure you submitted the correct files*, for instance by retracing the steps described in [the Hello World lab](./labs/HelloWorld#how-was-the-backup)
 
-# Additional Considerations
-
 ## Criteria for Success
 
 A good, finished project should include *all* of the following:
@@ -60,4 +58,13 @@ A good, finished project should include *all* of the following:
     etc. You should ask early and not wait until the last minute.
     Asking during lab is fine.
 
-[^1]: Refer to <https://stackoverflow.com/a/4842351/> for an example of usage.
+## Checklist
+
+- [ ] Project compiles
+- [ ] Tested project with example in project description
+- [ ] Tested project with example(s) of your own
+- [ ] Check project requirements for anything missing
+- [ ] Zip your project (see [our Zip Guide](./docs/programming_and_computer_usage/unzipping_archives#zipping-files))
+- [ ] Rename it with the format *lastname_firstname* so the entire filename is *lastname_firstname.zip*
+- [ ] Test zip file by unzipping it and opening it to see if it loads correctly. If not, repeat previous step
+- [ ] Submit project to the corresponding zip folder on D2L
