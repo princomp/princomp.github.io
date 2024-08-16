@@ -138,7 +138,7 @@ First, download the Project 2 Phase 2 Template [LINK HERE]
 
 Consider the following UML diagram for the updated `Character` class:
 
-```text
+<!--```text
 |===============================================================================================|
 |                                        Character (Pt. 2)                                      |
 |-----------------------------------------------------------------------------------------------|
@@ -162,7 +162,8 @@ Consider the following UML diagram for the updated `Character` class:
 | + Character() : void                                                                          |
 | + Character(nameP : string, raceP : string, genderP : char, levelP : int) : void              |
 |===============================================================================================|
-```
+```-->
+!include uml/Character_pt2.md
 
 In Character.cs:
 
@@ -301,7 +302,7 @@ First, download the Project 2 Phase 3 Template. [LINK HERE]
 
 Consider the following UML diagram for the updated `Character` class:
 
-```text
+<!--```text
 |=======================================================================================|
 |                                    Character                                          |
 |---------------------------------------------------------------------------------------|
@@ -332,7 +333,8 @@ Consider the following UML diagram for the updated `Character` class:
 | + SetRole() : void                                                                    |
 | + SetJob() : void                                                                     |
 |=======================================================================================|
-```
+```-->
+!include uml/Character_pt3.md
 
 In `Character.cs`:
 
