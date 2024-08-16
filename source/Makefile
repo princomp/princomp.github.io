@@ -70,7 +70,7 @@ EXO_DIR = exercises/
 PROJ_DIR = projects/
 # The folder where the .cs code snippets and projects are located.
 CODE_DIR = code/
-# The folder where the .zip archives containing projects (used in lab and clases as examples) are located.
+# The folder where the .zip archives containing projects (used in lab and classes as examples) are located.
 PROJECT_DIR = $(CODE_DIR)projects/
 # The folders where .md files are located.
 MD_DIRS = $(LECTURES_DIR) $(DOCS_DIR) $(LABS_DIR) $(EXO_DIR) $(PROJ_DIR)
