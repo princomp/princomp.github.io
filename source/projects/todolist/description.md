@@ -14,18 +14,19 @@ It aims at making sure that you master the simple concepts of control structures
 
 ### In short
 
-Develop a simple program that a. asks the user to provide their todo list, b. track the completion of the items on that list.
+Develop a simple program that asks the user to provide their todo list, and then tracks the completion of the items (or "tasks") on that list.
 
 ### In more details
 
 #. Your program should start by asking the user to provide items for their todo list, one by one.
 #. Once the user is done providing the items, it should display the todo list, with a number associated to each item, and its status (done or not done).
 #. Then, your program should ask the user to enter the number of the item they have just completed. There are three cases:
-  #. If the user enters something that is not a number, your program should simply ask again.
-  #. If the user enters an "invalid" number (that is, that does not correspond to the number of an item), your program should ask again,
-  #. If the user enters the number of an item, its status should become "done".
+
+    #. If the user enters something that is not a number, your program should simply ask again.
+    #. If the user enters an "invalid" number (that is, that does not correspond to the number of an item), your program should ask again.
+    #. If the user enters the number of an item that is not done, its status should become "done".
 #. Once the user entered the number of item, the updated todo list should be displayed, and the user should be asked for another number of an item.
-#. Once the user completed all the items in the list, the program should display a celebratory message about being done with your todo list.
+#. Once the user completed all the items in the list, the program should display a celebratory message about being done.
 
 ## Submission
 
@@ -73,8 +74,9 @@ You're all done, congratulations!
 Press any key to continue...
 ```
 
-## Bonus
+## Bonuses
 
-- The behaviour of the program if the user enter the number of an item whose status is "done" is not (clearly) specified above. Write in your program which behaviour you implemented, and test it.
+- The behaviour of the program if the user enters the number of an item whose status is "done" is not specified above. Write (as a comment) in your program which behaviour you implemented, and test it.
 - Complete the project without resizing arrays.
 - Improve the way the todo list is displayed using [string formatting](./labs/OverflowAndUnderflow#optional-string-formatting).
+- Display, along with the list of items, the completion rate: for example, after the user completed the first of their list of 4 items, the program should display "You are 25% done!".
