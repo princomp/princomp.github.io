@@ -21,7 +21,7 @@ Upload this zip onto D2L / LMS before the deadline in the appropriate assignment
 
 | ⚠️ Warning       |
 |:---------------------------|
-| Make sure you submitted the correct files, for instance by retracing the steps described in [the Hello World lab](./labs/HelloWorld#how-was-the-backup) |
+| Make sure you submitted the correct files, for instance by retracing the steps described in [the Hello World lab](./labs/HelloWorld#how-was-the-backup). |
 
 
 ## Criteria for Success
@@ -51,7 +51,7 @@ You should ask early and not wait until the last minute.
 
 | ⚠️ Warning       |
 |:---------------------------|
-| *Do not* ask other classmates for help. This work is supposed to be *your own*, and should reflect *your own* understanding. Copying and pasting code from the internet will hurt your grade and your understanding of this class. | 
+| *Do not* ask other classmates for help, copy and paste from the internet, or ask a chatbot to writh the program for you. This work is supposed to be *your own*, and should reflect *your own* understanding. Getting help from un-authorized sources will hurt your understanding of this class and therefore your grade on the long run. | 
  
 ## Checklist
 
@@ -59,7 +59,7 @@ You should ask early and not wait until the last minute.
 - [ ] Tested project with example in project description.
 - [ ] Tested project with example(s) of your own.
 - [ ] Check project requirements for anything missing.
-- [ ] Zip your project (see [our Zip Guide](./docs/programming_and_computer_usage/unzipping_archives#zipping-files)).
+- [ ] [Zip your project](./docs/programming_and_computer_usage/unzipping_archives#zipping-files).
 - [ ] Rename it with the format *lastname_firstname* so the entire filename is *lastname_firstname.zip*.
 - [ ] Test zip file by unzipping it and opening it to see if it loads correctly. If not, repeat previous step.
 - [ ] Submit project to the corresponding zip folder on D2L.
