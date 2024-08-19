@@ -32,7 +32,7 @@ Although such a program has no real interest nor purpose, it is used to make sur
     - If the IDE does not launch or launches in a different program, right click on the `.sln` file and look for an option to `open with`, then select to open it with the IDE you installed previously.
 
 Question:
-~ Have you actually checked where the HelloWorld (zip) archive was hosted? Was it on a trustworthy website? If yes, is it trustworthy because of the [domain name](https://www.wikiwand.com/en/Domain_name), because we told you to do so, or for some other reasons?
+Have you actually checked where the HelloWorld (zip) archive was hosted? Was it on a trustworthy website? If yes, is it trustworthy because of the [domain name](https://www.wikiwand.com/en/Domain_name), because we told you to do so, or for some other reasons?
 
 <details><summary>Elements of solution</summary>
 The zip archive we asked you to download is hosted on <https://princomp.github.io/>, that is, on [Github pages](https://pages.github.com/).
@@ -41,11 +41,11 @@ So, in short, this archive is safe because we told you so, and because we are ca
 
 Ultimately, many security decisions rest on trust, and you will have to trust us during this course.
 If you continue your study in our School, you will learn about [virtualization](https://www.wikiwand.com/en/Virtualization), that allows you to execute programs you cannot trust in a safe environment.
-</details>sq
+</details>
 
-
-Question:
-~  How is an IDE different from other types of software? Identify 3 differences between an IDE and a web browser. Can you identify 3 similarities?
+| ‚ùì Question       |
+|:---------------------------|
+| How is an IDE different from other types of software? Identify 3 differences between an IDE and a web browser. Can you identify 3 similarities? |
 
 <details><summary>Elements of solution</summary>
 This is really up to you! Among the similarities, one can remark that an IDE and pretty much every other software you have ever used both have:
@@ -73,19 +73,17 @@ For this part, everything will take place inside the IDE that was started previo
 
 #. You will **extensively** compile and execute programs in this class. Instead of having to click twice, it is recommended that you start memorizing shortcuts. You should study your IDE to see the exact shortcuts for your IDE for compiling and running a program. Here are the *usual* shortcuts for different operating systems:
 
-    Windows/Linux:
-    ~ 
-        
-        - Build solution: <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd>
-        - Run / Start Debugging: <kbd>Ctrl</kbd> + <kbd>F5</kbd>
-        - Exit any program: <kbd>Alt</kbd> + <kbd>F4</kbd>
+Windows/Linux:
 
-    MacOS:
-    ~ 
+- Build solution: <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd>
+- Run / Start Debugging: <kbd>Ctrl</kbd> + <kbd>F5</kbd>
+- Exit any program: <kbd>Alt</kbd> + <kbd>F4</kbd>
 
-        - Build solution: <kbd>Cmd</kbd> + <kbd>B</kbd>
-        - Run / Start Debugging: <kbd>Cmd</kbd> + <kbd>return</kbd> &nbsp; -or- &nbsp; <kbd>F5</kbd>
-        - Exit any program: <kbd>Cmd</kbd> + <kbd>q</kbd>
+MacOS:
+
+- Build solution: <kbd>Cmd</kbd> + <kbd>B</kbd>
+- Run / Start Debugging: <kbd>Cmd</kbd> + <kbd>return</kbd> &nbsp; -or- &nbsp; <kbd>F5</kbd>
+- Exit any program: <kbd>Cmd</kbd> + <kbd>q</kbd>
 
 That makes 3 shortcuts already!
 You can find many more [on this resource page](./docs/programming_and_computer_usage/keyboard_shortcuts).
@@ -141,7 +139,7 @@ If your backup went wrong (you cannot open the project, it refuses to compile, ‚
 Then re-download the `HelloWorld_Solution.zip`, unzip it, and make sure you can build the solution and execute the program.
 
 Action:
-~ Note that for such a small project, it is easy to re-download it and use it locally. Now imagine the program you are studying is the code of an operating system, spanning across millions of [lines of code](https://www.wikiwand.com/en/Source_lines_of_code); such a strategy would not be very efficient, to say the least. Yet mistakes happen, and for that very reason, programmers generally use [version control](https://www.wikiwand.com/en/Version_control) which allows them to _undo indefinitely_! Look up [Distributed version control](https://www.wikiwand.com/en/Distributed_version_control) and try to understand its importance.
+Note that for such a small project, it is easy to re-download it and use it locally. Now imagine the program you are studying is the code of an operating system, spanning across millions of [lines of code](https://www.wikiwand.com/en/Source_lines_of_code); such a strategy would not be very efficient, to say the least. Yet mistakes happen, and for that very reason, programmers generally use [version control](https://www.wikiwand.com/en/Version_control) which allows them to _undo indefinitely_! Look up [Distributed version control](https://www.wikiwand.com/en/Distributed_version_control) and try to understand its importance.
 
 ### Orientation
 
