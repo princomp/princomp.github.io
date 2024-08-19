@@ -42,10 +42,10 @@ Operation | Value
 
 Operation | Value
 --- | ---
-`true \|\| true` | `true`
-`true \|\| false` | `true`
-`false \|\| true` | `true`
-`false \|\| false` | `false`
+`true || true` | `true`
+`true || false` | `true`
+`false || true` | `true`
+`false || false` | `false`
 
 Operation | Value
 --- | ---
