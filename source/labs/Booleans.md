@@ -59,7 +59,7 @@ For instance, `! true || false && 3 * 2 == 6` will be evaluated as
 | `false \|\|` **`false && true`**         | ⇒ | `false \|\|` **`false`**               | `&&`   |
 | **`false \|\| false`**                   | ⇒ | **`false`**                            | `\|\|` |
 
-Note that an expression like `!3 > 2` does not make any sense: C## would try to take the negation of `3` (since `!` has higher precedence than `>`), but you cannot negate the truth value of an integer!
+Note that an expression like `!3 > 2` does not make any sense: C# would try to take the negation of `3` (since `!` has higher precedence than `>`), but you cannot negate the truth value of an integer!
 Along the same lines, an expression like `false * true` does not make sense; you can not multiply booleans (what would be "true times false"?)!
 Similarly, `3 % false` will cause an error; can you see why?  These are all examples of "illegal" expressions.
 

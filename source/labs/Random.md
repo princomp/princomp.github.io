@@ -14,7 +14,7 @@ This lab serves multiple goals:
 
 ## Generating Random Numbers
 
-The `Random` class from the C## standard library can be used to generate random numbers in any given range.
+The `Random` class from the C# standard library can be used to generate random numbers in any given range.
 In this lab, you will practice using the `Random` class.
 
 

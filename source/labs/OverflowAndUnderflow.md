@@ -52,9 +52,9 @@ We will now study some of the safeguards against overflowing that are implemente
     int int_max_value_plus_one_bis = int.MaxValue + 1;
     ```
     
-    You should receive an error message. Reads it and try to understand what C## is warning you against. 
+    You should receive an error message. Reads it and try to understand what C# is warning you against. 
    
-#. Isn't that weird that C## let go 
+#. Isn't that weird that C# let go 
     
     ```
     int int_max_value_ter = int.MaxValue;
@@ -95,7 +95,7 @@ In a nutshell, you can witness it by executing a statement such as
 Console.WriteLine(0.00000000000000001f * 0.00000000000000001f);
 ```
 
-Which should display `1e-34` but actually displays `9.999999E-35`. As you can see, a rounding error took place because C## did not have enough "room" to store all the information.
+Which should display `1e-34` but actually displays `9.999999E-35`. As you can see, a rounding error took place because C# did not have enough "room" to store all the information.
 Another interesting example is given by the following loop:
 
 ```

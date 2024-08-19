@@ -41,7 +41,7 @@ So, in short, this archive is safe because we told you so, and because we are ca
 
 Ultimately, many security decisions rest on trust, and you will have to trust us during this course.
 If you continue your study in our School, you will learn about [virtualization](https://www.wikiwand.com/en/Virtualization), that allows you to execute programs you cannot trust in a safe environment.
-</details>
+</details>sq
 
 
 Question:
@@ -115,8 +115,8 @@ After selecting where you want to store your backup files
 #. Create subfolder for the `HelloWorld` lab. Put all of the files related to the "HelloWorld" solution in this folder.
 #. Explore your backup. Check that you have multiple folders. Specifically check that your backup contains at least the following files:
 
-    - `HelloWorld_Solution.sln` - this is called a solution file. It tells the IDE how to load your C## source code in the IDE.
-    - `HelloWorld_Project.csproj` - this a project file. Every C## solution contains at least 1 project. Dividing code into multiple project is useful for very large programs and allows integrating projects written in different languages under the same solution.
+    - `HelloWorld_Solution.sln` - this is called a solution file. It tells the IDE how to load your C# source code in the IDE.
+    - `HelloWorld_Project.csproj` - this a project file. Every C# solution contains at least 1 project. Dividing code into multiple project is useful for very large programs and allows integrating projects written in different languages under the same solution.
     - `Program.cs` - this is the actual source code of your program and where you write code.
 
     It is useful to understand the purpose and role of these different files (`.sln`, `.csproj`, `.cs`) when you want to backup or share (i.e. turn in) C\## programs.

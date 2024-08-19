@@ -103,7 +103,7 @@ Create a new project, and then do the following.
 
     Can you explain it?
 
-#. Your IDE is suggesting that we use a "cast" to "force" C## to store the value of the variable `floatVar` into the variable `intVar`.
+#. Your IDE is suggesting that we use a "cast" to "force" C# to store the value of the variable `floatVar` into the variable `intVar`.
 To do so, replace the statement
 
     ```

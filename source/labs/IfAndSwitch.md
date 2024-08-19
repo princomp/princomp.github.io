@@ -24,7 +24,7 @@ Console.WriteLine("Please enter the day of the week.");
 // Note that anything that is not spelled exactly as 
 // in the switch statement will be treated as the 
 // default case.
-
+q
 // We read from the user:
 string string_day = Console.ReadLine();
 
@@ -157,7 +157,7 @@ Practice using the conditional operator by adding these statements to the progra
 
 ### `ToUpper()` Method
 
-C## contains a method called `ToUpper()` in the `string` class. You can read [its documentation](https://learn.microsoft.com/en-us/dotnet/api/system.string.toupper?view=net-6.0), but the simplest way to understand is probably to see an example first.
+C# contains a method called `ToUpper()` in the `string` class. You can read [its documentation](https://learn.microsoft.com/en-us/dotnet/api/system.string.toupper?view=net-6.0), but the simplest way to understand is probably to see an example first.
 The statement
 
 ```

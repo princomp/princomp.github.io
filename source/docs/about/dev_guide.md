@@ -659,7 +659,7 @@ This repository uses following tools and technologies:
 - additional packages for specific tasks: texlive, Pygments, pandoc filters, [lua filter](https://github.com/jgm/pandoc/issues/2104), etc.
 - fonts-symbola - to produce the emoji and other symbols in the pdf document.
 - [utteranc.es](https://utteranc.es/) - for feedback through website
-- [csharpier](https://github.com/belav/csharpier) - to tidy the C## source code
+- [csharpier](https://github.com/belav/csharpier) - to tidy the C# source code
 
 ### Build outputs
 

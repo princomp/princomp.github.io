@@ -43,7 +43,7 @@ Use your IDE to rename this _solution_:
 
 **_Do not_ rename a solution outside your IDE; always use an IDE to rename.**
 
-Renaming C\# project files requires more than simply changing a file name. By using an IDE to perform the renaming, all references to the name will be updated.
+Renaming C# project files requires more than simply changing a file name. By using an IDE to perform the renaming, all references to the name will be updated.
 
 ##### Renaming the Project
 
@@ -170,7 +170,7 @@ After clicking on `File > New Solution`, you will be prompted with a screen simi
 ![](./img/create_project_monodevelop.png)
 
 Under ".NET Core", pick the "App" category, and then click on "Console Application" under "General". 
-Make sure you pick the C## programming language.
+Make sure you pick the C# programming language.
 
 ##### Questions 
 
