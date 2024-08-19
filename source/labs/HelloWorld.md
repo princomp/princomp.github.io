@@ -26,7 +26,7 @@ Although such a program has no real interest nor purpose, it is used to make sur
 #. [Unzip the program file](./docs/programming_and_computer_usage/unzipping_archives#unzipping-files)^[Be careful: some file explorers will simply _preview_ the (zip) archive if you simply double-click on it, but most IDE will not accept to open a file if it has not been actually extracted / unzipped!].
 #. Go in the HelloWorld folder that was created.
 #. Double-click on `HelloWorld_Solution.sln` file
-#. Clicking the `.sln` file should launch your default C\## IDE that [you installed previously](./docs/programming_and_computer_usage/installing_software) or that is pre-loaded on the computer lab you are using.
+#. Clicking the `.sln` file should launch your default C# IDE that [you installed previously](./docs/programming_and_computer_usage/installing_software) or that is pre-loaded on the computer lab you are using.
 
     - If you get prompted for which application to use, choose the IDE you installed previously.
     - If the IDE does not launch or launches in a different program, right click on the `.sln` file and look for an option to `open with`, then select to open it with the IDE you installed previously.
@@ -119,10 +119,10 @@ After selecting where you want to store your backup files
     - `HelloWorld_Project.csproj` - this a project file. Every C# solution contains at least 1 project. Dividing code into multiple project is useful for very large programs and allows integrating projects written in different languages under the same solution.
     - `Program.cs` - this is the actual source code of your program and where you write code.
 
-    It is useful to understand the purpose and role of these different files (`.sln`, `.csproj`, `.cs`) when you want to backup or share (i.e. turn in) C\## programs.
+    It is useful to understand the purpose and role of these different files (`.sln`, `.csproj`, `.cs`) when you want to backup or share (i.e. turn in) C# programs.
 
 Question:
-~  Now that you understand the basic files that go into a C\## program, can you identify which files you should always include when you prepare to submit your code for evaluation? Can you develop a strategy with a friend, a classmate, or a second computer, to always make sure that your submission is correctly uploaded and complete?
+~  Now that you understand the basic files that go into a C# program, can you identify which files you should always include when you prepare to submit your code for evaluation? Can you develop a strategy with a friend, a classmate, or a second computer, to always make sure that your submission is correctly uploaded and complete?
 
 ### How Was the Backup?
 
@@ -158,7 +158,7 @@ IDEs have many features and require practice. Explore your IDE and try to comple
 
 ### Breaking Your Program
 
-If you followed the instructions carefully, you were able to build the solution and start the program without debugging after each step. [As you know, C\## has precise rules](./lectures/intro/csharp_fundamentals#rules-of-c-syntax), and not respecting them can prevent your solution from being built by the IDE.
+If you followed the instructions carefully, you were able to build the solution and start the program without debugging after each step. [As you know, C# has precise rules](./lectures/intro/csharp_fundamentals#rules-of-c-syntax), and not respecting them can prevent your solution from being built by the IDE.
 
 In this exercise, you are asked to do the following:
 

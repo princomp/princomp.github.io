@@ -202,7 +202,7 @@ Note that for [an unknown reason](https://github.com/DCsunset/pandoc-include/iss
 - Title each source code block included in markdown, this will create a URL for the code block and enables linking to it.
 - code blocks are by default annotated as `csharp`
     - syntax highlighting is applied automatically at build time based on the code block language
-    - to use a language other than C\#, specify the language locally in the specific code block:
+    - to use a language other than C#, specify the language locally in the specific code block:
 
     <pre>
     ```text
@@ -329,7 +329,7 @@ For maintainability reasons it is preferable to apply templates during build tim
 Currently templates directory contains the following:
 
 - `docx/` - contains template used to produce `.docx` files (this template is not used yet, for [size issues](https://github.com/csci-1301/csci-1301.github.io/issues/156)).
-- `filters/` - contains pandoc filters for annotating code blocks, configured to default to C\#, which then allows applying syntax highlighting to all code block.
+- `filters/` - contains pandoc filters for annotating code blocks, configured to default to C#, which then allows applying syntax highlighting to all code block.
 - `html/` - contains template used to produce *only the book.html file* (to edit the style of the website, refer to [editing website](#editing-the-website))
 - `latex` - contains templates used to produce `.pdf` files,
 - `docx/` - contains template used to produce `.odt` files.

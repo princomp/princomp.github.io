@@ -14,7 +14,7 @@ This lab serves multiple goals:
 ## Static Classes -- Warm-Up
 
 One use case for static classes is creating utility classes (or "helper classes")
-that contain related and frequently-used methods Using a static class makes those methods easily callable anywhere in the program. Some examples of static classes in C\## are the `Math` and `Console` classes.
+that contain related and frequently-used methods Using a static class makes those methods easily callable anywhere in the program. Some examples of static classes in C# are the `Math` and `Console` classes.
 
 Pay attention to how these classes are used:
 

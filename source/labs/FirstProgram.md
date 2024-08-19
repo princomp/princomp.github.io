@@ -14,7 +14,7 @@ This lab serves multiple goals:
 - To understand how to display characters, strings, and escape sequences on the screen,
 - To read and understand error messages from your IDE,
 - To understand how the renaming of projects and solution works,
-- To explain how to explore C\# documentation,
+- To explain how to explore C# documentation,
 - To explore new useful IDE features.
 
 ## Your First Program
@@ -116,7 +116,7 @@ This time you will not be given a project to load or to copy. You will start fro
 
 #### Starting from a Template
 
-We will first create a new C\# project using the template for a "Console App" (we give first a general guidance, and then some details that are specific to particular IDE / operating systems combinations):
+We will first create a new C# project using the template for a "Console App" (we give first a general guidance, and then some details that are specific to particular IDE / operating systems combinations):
 
 #. Launch your IDE
 #. After the IDE launches, look for an option to create a new project. The exact wording varies between different IDEs, but look for one of the following: 
@@ -125,7 +125,7 @@ We will first create a new C\# project using the template for a "Console App" (w
     - `File > New > Project` in the IDE menu
     - `File > New Solution` in the IDE menu
 
-#. Look for the "Console Application" option, and check that the associated language is C\## (cf. below).
+#. Look for the "Console Application" option, and check that the associated language is C# (cf. below).
 #. If multiple frameworks are offered, make sure you pick the right one (cf. below).
 #. Enter `MyFirstProject` as the name of the project.
 #. Enter `MyFirstSolution` as the name of the solution. 
@@ -146,7 +146,7 @@ You should see something like:
     
 ![](./img/create_project.png)
     
-Pick the _first_ item, which is for C\#.
+Pick the _first_ item, which is for C#.
 When selecting the framework, make sure you are using .NET 5.0 or lower. 
 
 ![](./img/select_net.png)
@@ -217,11 +217,11 @@ The documentation for C# is packed with useful information, and efforts are made
 
 The documentation for C# is at <https://docs.microsoft.com/en-us/dotnet/csharp/>. To get started, have a look at "Introduction" at <https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/introduction/>, and answer the following:
 
-#. What C\## language feature is responsible for reclaiming unused memory?
-#. What file extension is used by C\# source code files?
-#. Can you list 3 different C\# data types?
+#. What C# language feature is responsible for reclaiming unused memory?
+#. What file extension is used by C# source code files?
+#. Can you list 3 different C# data types?
 
- C\# programs often use namespaces as a way of organizing large code projects, and your IDE may create a `namespace` when you create a new program. Read the page at <https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/namespaces/>. Do you know an example of a namespace that we have used?
+ C# programs often use namespaces as a way of organizing large code projects, and your IDE may create a `namespace` when you create a new program. Read the page at <https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/namespaces/>. Do you know an example of a namespace that we have used?
 
 ### More About Displaying Characters on the Screen
 
