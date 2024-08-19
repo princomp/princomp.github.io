@@ -1,17 +1,8 @@
 # Rubric
 
-To be written.
 
-<!--
-
-Below are the rubrics used to grade each phase of the "Character creation" project.
-It is advised to use these rubrics as a way to check your work, along with the solution for the corresponding phase.
-
-## Phase 1
-
-| Criteria                                                                         | Points                                                                                                                                                                                                                                                                   |
-|----------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **In**correct filename (lname_fname.zip, not lname_fname.zip.zip for instance)   | -0.5pt                                                                                                                                                                                                                                                                   |
+| Criteria | Points |                                                                                                                                                                                                                                                                  |--------- |:------:|
+| **In**correct filename (should be lname_fname.zip)   | -0.5pt                                                                                                                                                                                                                                                                   |
 | **In**correct file (archive zipped, not just the .cs file)                       | -0.5pt (if the student did not share their .cs code at all, then your grading ends here)                                                                                                                                                                                 |
 | Name and date in a delimited comment **not** at the very beginning of their code | -1pt (If they forgot the date, their name, if the comment is in-line, that is `//` and not `/* ... */`, or if it is not the very first thing in the file, they get only -0.5pt. If they made multiple mistakes (eg, only their name, in the main method), they get -1pt) |
 | If the program does not compile                                                  | Stop here. No points.                                                                                                                                                                                                                                                    |
