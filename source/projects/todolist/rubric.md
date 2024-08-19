@@ -1,6 +1,8 @@
 # Rubric
 
+To be written.
 
+<!--
 | Criteria | Points |                                                                                                                                                                                                                                                                  |--------- |:------:|
 | **In**correct filename (should be lname_fname.zip)   | -0.5pt                                                                                                                                                                                                                                                                   |
 | **In**correct file (archive zipped, not just the .cs file)                       | -0.5pt (if the student did not share their .cs code at all, then your grading ends here)                                                                                                                                                                                 |
