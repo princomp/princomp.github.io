@@ -714,30 +714,35 @@ Once this is done, remember to create the next pre-release:
 
 ### Maintaining repository feedback
 
-Resource users can submit feedback about the resource through various means, one of which is leaving comments on the website. This feature is enabled by [utteranc.es](https://utteranc.es/), and for now those repositories are hosted by the [`csci-1301` github organization](https://github.com/csci-1301) (this may change).
+Resource users can submit feedback about the resource through various means, one of which is leaving comments on the website.
+This feature is enabled by [utteranc.es](https://utteranc.es/), using repositories hosted by the [`princomp` github organization](https://github.com/princomp).
 
-To manage user feedback over time, a semester-specific repository is created for issues only. This must be a public repository and located under the same organization as the resources repository. utteranc.es widget is configured to point to this repository. After a semester is over,  this feedback repository will be archived, and a new one created for the next semester. This will simultaneously archive all older issues and reset the feedback across website pages.
+To manage user feedback over time, a semester-specific repository is created for issues only.
+This must be a public repository and located under the same organization as the resources repository.
+utteranc.es widget is configured to point to this repository.
+After a semester is over,  this feedback repository will be archived, and a new one created for the next semester.
+This will simultaneously archive all older issues and reset the feedback across website pages.
 
 #### Migrating feedback repository
 
 The steps for migrating feedback target repository are as follows:
 
-#. Create a new **public** repository under [`csci-1301` github organization](https://github.com/csci-1301). Follow the established naming convention, and leave all the options except for visibility (which needs to be set to public) by default.
-#. Go to repository Issues (make sure issues is enabled in repository settings)
-#. Create a new label whose _label name_ is `comment` (to match widget configuration as indicated in `quartz/components/Footer.tsx`, in the `quartz` branch)
-#. Go to [`Organization Settings > Installed GitHub Apps`](https://github.com/organizations/csci-1301/settings/installations)
+#. Create a new **public** repository under [`princomp` github organization](https://github.com/organizations/princomp/repositories/new). Follow the established naming convention (`feedback-<fall|spring|summer>-<YYYY>`), and leave all the options except for visibility (which needs to be set to public) by default.
+#. Go to repository Issues (make sure issues is enabled in repository settings).
+#. Create a new label whose _label name_ is `comment` (to match widget configuration as indicated in `quartz/components/Footer.tsx`, in the `quartz` branch).
+#. Go to [`Organization Settings > Installed GitHub Apps`](https://github.com/organizations/princomp/settings/installations).
 #. Choose "utterances" > "configure"
 #. Under "Repository access" > "Only select repositories"
-   - select the repository created in step 1. 
-   - remove the previous semester feedback repository
-#. Save
-#. In `princomp/princomp.github.io/` repository, in the `quartz` branch, open `quartz/components/Footer.tsx`
+   - Select the repository created in step 1. 
+   - Remove the previous semester feedback repository.
+   - Save.
+#. In `princomp/princomp.github.io/` repository, [in the `quartz` branch](https://github.com/princomp/princomp.github.io/blob/quartz/quartz/components/Footer.tsx), open `quartz/components/Footer.tsx`
 #. Update utteranc.es widget code to point to the new feedback repository created in step 1.
 
     ```js
     <script data-external="1"
             src="https://utteranc.es/client.js"
-            repo="csci-1301/{REPOSITORY_NAME}"
+            repo="princomp/{REPOSITORY_NAME}"
             label="comment" …>
     </script>
     ```
