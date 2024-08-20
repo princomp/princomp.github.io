@@ -127,12 +127,14 @@ Resources to assess accessibility:
  
 #### Markdown
 
-Text documents are written using [standard markdown syntax](https://commonmark.org/). More precisely, 
+Text documents are written using [standard markdown syntax](https://commonmark.org/).
+More precisely, 
 
 - in the `markdown+emoji` format, that is, [in pandoc's markdown](https://pandoc.org/MANUAL.html#pandocs-markdown), using the [emoji](https://pandoc.org/MANUAL.html#extension-emoji) [extension](https://pandoc.org/MANUAL.html#extensions)),
 - using the [pandoc-include](https://github.com/DCsunset/pandoc-include) filter,
 - and a [custom](https://github.com/princomp/princomp.github.io/tree/main/source/templates/filters) filter that sets all the [code blocks](https://github.com/princomp/princomp.github.io/blob/main/source/templates/filters/default-code-class-block.lua), or [all the code block and inline code](https://github.com/princomp/princomp.github.io/blob/main/source/templates/filters/default-code-class-block-inline.lua)'s syntax highlighting to C# by default.
 
+Because of the way the markdown is processed, please refrain from using the `“` and `”` characters: pandoc will automatically convert `"` into language-appropriate quotes for us.
 
 #### Images
 
