@@ -53,7 +53,7 @@ We will be studying and writing programs in _high-level languages_, but understa
         - High-level concepts such as processing a collection of items are easier to write and understand
         - Takes less code since each statement might be translated into several assembly instructions
     - **Compiler**: Translates high-level language to machine code
-        - Finds “spelling” errors but not problem-solving errors
+        - Finds "spelling" errors but not problem-solving errors
         - Incorporates code libraries – commonly used pieces of code previously written such as Math.Sqrt(9)
         - Optimizes high-level instructions – your code may look very different after it has been optimized
         - Compiler is specific to both the source language and the target computer
