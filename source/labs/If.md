@@ -180,14 +180,14 @@ Some tips:
 - When asking "yes" / "no" questions, treat "y" and "Y" as a "Yes", and any other string as a "No".
 - Note that we will sell the pass even if the user is not saving any money by doing so (e.g., if 6 children want to enter, $\$4 \times 6 = \$24 < \$ 30$, but we would still sell them the pass).
 
-Here is an example of execution, where the user input is u͟n͟d͟e͟r͟l͟i͟n͟e͟d͟, and hitting "enter" is represented by "←":
+Here is an example of execution, where the user input is u͟n͟d͟e͟r͟l͟i͟n͟e͟d͟, and hitting "enter" is represented by "⏎͟":
 
 ```text
 How many adults?
-2͟←
+2͟⏎͟
 How many children?
-4͟←
+4͟⏎͟
 Since you are more than 6, you can buy a group pass for $30. Are you interested (please enter "Y" for "yes" or anything else for "no")?
-Y͟←
+Y͟⏎͟
 Your total is $30.00 (you saved $0.00).
 ```

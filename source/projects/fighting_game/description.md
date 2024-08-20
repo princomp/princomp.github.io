@@ -232,24 +232,22 @@ In `Program.cs`...
     
 ##### Example
 
-Below is a full runthrough of the program you'll be expected to make. Note that underlined sections are the inputs made by the user.
-
-An example of output:
-
+Here is an example of execution, where the user input is u͟n͟d͟e͟r͟l͟i͟n͟e͟d͟, and hitting "enter" is represented by "⏎͟":
+s
 ```text
 MAKE YOUR FIGHTER!!!!
-Name: T͟o͟t͟a͟l͟l͟y͟ ͟M͟c͟R͟e͟a͟l͟g͟u͟y͟←
+Name: T͟o͟t͟a͟l͟l͟y͟ ͟M͟c͟R͟e͟a͟l͟g͟u͟y͟⏎͟
 Set your attack and defense (combined total must not exceed 20).
-Attack: n͟o͟←
+Attack: n͟o͟⏎͟
 Invalid entry, try again.
-Attack: 2͟1͟←
+Attack: 2͟1͟⏎͟
 Invalid entry, try again.
-Attack: 1͟5͟←
-Defense: 1͟5͟←
+Attack: 1͟5͟⏎͟
+Defense: 1͟5͟⏎͟
 Combined total exceeds 20, try again.
 Set your attack and defense (combined total must not exceed 20).
-Attack: 1͟5͟←
-Defense: 5͟←
+Attack: 1͟5͟⏎͟
+Defense: 5͟⏎͟
 YOUR FIGHTER HAS BEEN CREATED!!!
 Name: Totally McRealguy
 Level: 1
