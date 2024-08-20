@@ -90,8 +90,22 @@ tags:
 
 - Properties "act like" variables: you can assign to them and read from them
 - Reading from a property will *automatically* call the `get` accessor for that property
-    - For example, `Console.WriteLine($"The width is {myRectangle.Width}");` will call the `get` accessor inside the `Width` property, which in turn executes `return width` and returns the current value of the instance variable
-    - This is equivalent to `Console.WriteLine($"The width is {myRectangle.GetWidth()}");` using the "old" Rectangle code
+    - For example, 
+    
+    ```
+    Console.WriteLine(
+        $"The width is {myRectangle.Width}");
+    ```
+    
+    will call the `get` accessor inside the `Width` property, which in turn executes `return width` and returns the current value of the instance variable
+    - This is equivalent to 
+    
+    ```
+    Console.WriteLine(
+        $"The width is {myRectangle.GetWidth()}");
+    ```
+    
+    using the "old" Rectangle code
 - Assigning to (writing) a property will *automatically* call the `set` accessor for that property, with an argument equal to the right side of the `=` operator
     - For example, `myRectangle.Width = 15;` will call the `set` accessor inside the `Width` property, with `value` equal to 15
     - This is equivalent to `myRectangle.SetWidth(15);` using the "old" Rectangle code
