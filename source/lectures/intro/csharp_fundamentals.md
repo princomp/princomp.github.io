@@ -103,8 +103,8 @@ Features of this program:
     - A method named `writeline` is not the same as one named `WriteLine`
 - Braces and parentheses must always be matched
     - Once you start a class or method definition with `{`, you must end it with `}`
-- Whitespace has _almost_ no meaning
-    - "Whitespaces" refer to spaces (sometimes denoted " ", "␣" or "⌴"), [tabs](https://www.wikiwand.com/en/Tab_key#Tab_characters) (which consists in 4 spaces), and newlines (sometimes denoted "↵", "↩" or "⏎")
+- Blank space has _almost_ no meaning
+    - Blank spaces refer to spaces (sometimes denoted " ", "␣" or "⌴"), [tabs](https://www.wikiwand.com/en/Tab_key#Tab_characters) (which consists in 4 spaces), and new lines (sometimes denoted "↵", "↩", "←" or "⏎")
     - There must be at least 1 space between words
     - Other than that, spaces and new lines are just to help humans read the code 
     - Spaces are counted exactly if they are inside string data, e.g. `"Hello      world!"` is different from `"Hello world!"`
