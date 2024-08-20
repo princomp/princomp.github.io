@@ -680,7 +680,7 @@ Following a successful build, the build script will automatically deploy the gen
 #### Fetch and No Fetch Versions
 
 There is a [second workflow](https://github.com/princomp/princomp.github.io/blob/main/.github/workflows/build_and_deploy_no_fetch.yaml) that is identical to the first one with one important exception: to speed up compilation, `build_and_deploy.yaml` uses `make fetch` to [speed up compilation time](#building-all-resources) by re-downloading the latest build output, and then compiling only the required files.
-This can sometimes complicate the propagation of changes, typically if a template is modified (as this does not triggers a re-compilation of the files using it currently).
+This can sometimes complicate the propagation of changes, typically if a template is modified (as this does not triggers a re-compilation of the files using it currently) or if a file is renamed (as the previous version will not be deleted).
 
 The [build_and_deploy_no_fetch.yaml](https://github.com/princomp/princomp.github.io/blob/main/.github/workflows/build_and_deploy_no_fetch.yaml) can be [triggered manually](https://github.com/princomp/princomp.github.io/actions/workflows/build_and_deploy_no_fetch.yaml) to force a "fresh" remote compilation.
 
