@@ -78,7 +78,7 @@ tags:
 	
 		```
 		Random rand = new Random();
-		string answer = “”;
+		string answer = "";
 		int selection = 0;
 		
 		for(int i = 0; i < 10; i++)
@@ -86,16 +86,16 @@ tags:
 			selection = rand.Next(4);
 			switch(selection){
 			case(0):
-				answer+=“a”;
+				answer+="a";
 				break;
 			case(1):
-				answer+=“b”;
+				answer+="b";
 				break;
 			case(2):
-				answer+=“c”;
+				answer+="c";
 				break;
 			default:
-				answer+=“d”;
+				answer+="d";
 				break;
 			}
 		}
