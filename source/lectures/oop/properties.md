@@ -36,7 +36,7 @@ tags:
     - You need to come up with a name for the setter's parameter, even though it also represents the width (i.e. the new value you want to assign to the width attribute). We usually end up naming it "widthParameter" or "widthParam" or "newWidth" or "newValue."
 - Properties are a "shorthand" way of writing this code: They implement an attribute with less repetition
 
-#### Writing properties
+## Writing properties
 
 - Declare an instance variable for the attribute, like before
 - A **property declaration** has 3 parts:
@@ -77,15 +77,15 @@ tags:
     - Parameter: Same type as the property header's type, name is always "value". In this case that means the parameter is `int value`; imagine the method header says `public void set(int value)`
     - Body of `set` section looks just like the body of a setter: Assign the parameter to the instance variable (and the parameter is always named "value"). In this case, that means `width = value`
 
-#### Using properties
+## Using properties
 
 - Properties are members of an object, just like instance variables and methods
 - Access them with the "member access" operator, aka the dot operator
     - For example, `myRect.Width` will access the property we wrote, assuming `myRect` is a Rectangle
-- A complete example, where the "length" attribute is implemented the "old" way with a getter and setter, and the "width" attribute is implemented with a property:
+- A complete example (available [as a complete solution](./code/projects/Properties_Example.zip), where the "length" and "width" attributes are implemented with properties:
 
     ```
-    !include code/snippets/usingWidthProperty.cs
+    !include code/projects/Properties_Example/Rectangle/Rectangle.cs
     ```
 
 - Properties "act like" variables: you can assign to them and read from them
@@ -110,7 +110,7 @@ tags:
     - For example, `myRectangle.Width = 15;` will call the `set` accessor inside the `Width` property, with `value` equal to 15
     - This is equivalent to `myRectangle.SetWidth(15);` using the "old" Rectangle code
 
-#### Properties in UML
+## Properties in UML
 
 - Since properties represent attributes, they go in the "attributes" box (the second box)
 - If a property will simply "get" and "set" an instance variable of the same name, you do *not* need to write the instance variable in the box
