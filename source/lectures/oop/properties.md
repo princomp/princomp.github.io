@@ -82,7 +82,7 @@ tags:
 - Properties are members of an object, just like instance variables and methods
 - Access them with the "member access" operator, aka the dot operator
     - For example, `myRect.Width` will access the property we wrote, assuming `myRect` is a Rectangle
-- A complete example (available [as a complete solution](./code/projects/Properties_Example.zip), where the "length" and "width" attributes are implemented with properties:
+- A complete example (available [as a complete solution](./code/projects/Properties_Example.zip)), where the "length" and "width" attributes are implemented with properties:
 
     ```
     !include code/projects/Properties_Example/Rectangle/Rectangle.cs

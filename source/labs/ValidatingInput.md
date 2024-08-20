@@ -109,19 +109,19 @@ The beginning of the first and second problems are given to get you started.
 #. Do the following problem using the `decimal` type. Ask the user to enter any numbers which can be positive, negative, or zero. Ignore all non-numeric inputs using `TryParse`.
 Choose an appropriate sentinel value to enable the user to indicate when they are done. Compute and display the average of all the numbers that the user entered. If the user didn't enter any numbers, display "You did not enter any numbers".
     
-    Here is an example of the desired execution, where the user input is underlined, and hitting "enter" is represented by ↵:
+    Here is an example of execution, where the user input is u͟n͟d͟e͟r͟l͟i͟n͟e͟d͟, and hitting "enter" is represented by "←":
 
     ```text
     Please enter a number, or "Done" to exit:
-    8̲↵
+    8̲←
     Please enter a number, or "Done" to exit:
-    2̲↵
+    2̲←
     Please enter a number, or "Done" to exit:
-    H̲o̲l̲d̲ ̲o̲n̲↵
+    H̲o̲l̲d̲ ̲o̲n̲←
     Please enter a number, or "Done" to exit:
-    -̲5̲↵
+    -̲5̲←
     Please enter a number, or "Done" to exit:
-    D̲o̲n̲e̲
+    D̲o̲n̲e̲←
 
     The average of the numbers you entered is 1.66666666667.
     ```

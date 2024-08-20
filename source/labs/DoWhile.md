@@ -42,19 +42,19 @@ In the following problem, implement a program combining a `do…while` loop with
 #. If the value provided by the user is not in this range, the program should repeat the question.
 #. After the user provides an integer within the range, display that number.
 
-Here is an example of a possible interaction with the program, where the user input is underlined, and hitting "enter" is represented by ↵:
+Here is an example of execution, where the user input is u͟n͟d͟e͟r͟l͟i͟n͟e͟d͟, and hitting "enter" is represented by "←":
 
 ```text
 Enter an integer between 0 and 100:
-N͟O͟↵
+N͟O͟←
 Sorry, that is not a valid integer.
 
 Enter an integer between 0 and 100:
--͟2͟0͟↵
+-͟2͟0͟←
 Sorry, that is not a valid integer.
 
 Enter an integer between 0 and 100:
-4͟2͟↵
+4͟2͟←
 You entered 42.
 ```
 

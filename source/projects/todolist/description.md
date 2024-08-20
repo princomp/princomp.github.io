@@ -35,6 +35,8 @@ In particular, make sure you write your name and the date in a delimited comment
 
 ## Example
 
+Here is an example of execution, where the user input is u͟n͟d͟e͟r͟l͟i͟n͟e͟d͟, and hitting "enter" is represented by "←":
+
 ```text
 What is on your todo list? Enter "done" when you are done.
 M͟a͟k͟e͟ ͟s͟u͟r͟e͟ ͟m͟y͟ ͟I͟D͟E͟ ͟i͟s͟ ͟s͟t͟i͟l͟l͟ ͟w͟o͟r͟k͟i͟n͟g͟.͟←

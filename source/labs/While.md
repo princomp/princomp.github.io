@@ -116,11 +116,11 @@ In other words, it tries to divide `n` by all the numbers between 2 and `n-1`, a
 
 Write a program that asks for an integer value greater than 1 from the user, and computes the result of this series: `1 + 2 + 3 + 4 + ...` up to  `n` where `n` represents the number obtained from the user.
 
-Here is an example of the desired execution, where the user input is underlined, and hitting "enter" is represented by ↵:
+Here is an example of execution, where the user input is u͟n͟d͟e͟r͟l͟i͟n͟e͟d͟, and hitting "enter" is represented by "←":
 
 ```text
 Please enter an integer greater than 1:
-8̲↵
+8̲←
 The sum from 1 to your number is: 36
 ```
 
