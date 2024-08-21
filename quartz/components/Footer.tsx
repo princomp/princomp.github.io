@@ -13,22 +13,22 @@ export default ((opts?: Options) => {
     const links = opts?.links ?? []
     return (
       <footer class={`${displayClass ?? ""}`}>
-      {
+      { 
         // We embed the plug-in to provide feedback through github:
       }
-        <h2 id="how-is-this-page">Any Comment?</h2>
-        <script data-external="1"
-          src="https://utteranc.es/client.js"
-          repo="princomp/feedback-fall-2024"
-          issue-term="pathname"
-          label="comment"
-          theme="github-light"
-          crossorigin="anonymous"
-          async>
-        </script>
-        {
-          // Links About, Source Code, etc.
-        }
+      <h2 id="how-is-this-page">Any Comment?</h2>
+      <script data-external="1"
+        src="https://utteranc.es/client.js"
+        repo="princomp/feedback-fall-2024"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+      </script>
+      {
+        // Links About, Source Code, etc.
+      }
         <hr />
         <ul>
           {Object.entries(links).map(([text, link]) => (
@@ -36,10 +36,10 @@ export default ((opts?: Options) => {
               <a href={link}>{text}</a>
             </li>
           ))}
-            <li>
-              {i18n(cfg.locale).components.footer.createdWith}{" "}
-              <a href="/docs/about/credits#tools" title="A list of tools used to create this resource.">free software</a> 🅭 🅯 {year}
-           </li>
+          <li>
+            {i18n(cfg.locale).components.footer.createdWith}{" "}
+            <a href="/docs/about/credits#tools" title="A list of tools used to create this resource.">free software</a> 🅭 🅯 {year}
+          </li>
         </ul>
       </footer>
     )
