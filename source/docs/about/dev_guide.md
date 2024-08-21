@@ -705,9 +705,10 @@ git reset --hard quartz-update
 **If the deployment was successful and everything seems to be working**, you can delete the quartz-update branch, locally then remotely, by executing
 
 ```bash
-git branch -d quartz-update
+git branch -D quartz-update
 git push -d origin quartz-update
 ```
+
  
 ## Repository Maintenance
 
