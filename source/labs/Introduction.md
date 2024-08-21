@@ -21,9 +21,9 @@ We strive to provide to our students all the material they will need to succeed 
 On this website, you will find:
 
 - ["The book"](https://princomp.github.io/book.html), which contains the lecture notes to cover one semester and is available [in `pdf`](https://princomp.github.io/book.pdf) (for printing, typically) and [in `odt`](https://princomp.github.io/book.odt)/[`docx`](https://princomp.github.io/book.docx) (for editing, typically; `docx` included for Microsoft Word compatibility). Along with [the `html` version](https://princomp.github.io/book.html) (i.e., the website), this gives four convenient ways of accessing the content of this course.
-- [Slides](./lectures/slides), accompanys the lecture notes (in `pptx` and `pdf`).
+- [Slides](./lectures/slides), accompany the lecture notes (in `pptx` and `pdf`).
 - [The labs](./labs/), which are (most of the time) tied to particular lectures and contains hands-on practice exercise as well as instructions on how to use computers to complete this class.
-- Along with [other useful documents](./docs/) about this class or studying at [our school](https://www.augusta.edu/ccs/) in particular.
+- Along with [other useful documents](./docs/) about programming, this resource, or studying at [the School of Cyber and Computer Sciences at Augusta University](https://www.augusta.edu/ccs/).
 
 The main purpose of this first lab is to help you navigate those resources.
 We want this reading to be proactive, so we will include questions and actions like the ones below every now and then to help you be engaged with the material.
@@ -34,9 +34,8 @@ We want this reading to be proactive, so we will include questions and actions l
 
 | ⇒ Action ⇐ | 
 | ---------- | 
-| On the `html` version of our documents (so, on the website), you will always find [in the footer](#footer) links to the `pdf`, `odt`, and `docx` versions of the document you are currently reading.
-Download them by clicking on the "↓ pdf", "↓ odt", and "↓ docx" links, then make sure you can open them all.
-You should realize that their content is identical to the page you are currently reading!^[Even this sentence will be displayed, even if it makes no sense to discuss the links in the footer of a `pdf` file, which does not have them!]|
+| On the `html` version of our documents (so, on the website), you will always find near the title, at the top of the page, the "Alternative formats". Those are links to the `pdf`, `odt`, `docx` and `md` versions of the document you are currently reading.  
+Download them by clicking on the "pdf", "odt", "docx" and "md" links, then make sure you can open them all. You should realize that their content is identical to the page you are currently reading!^[Even this sentence will be displayed, even if it makes no sense to discuss the links in the footer of a `pdf` file, which does not have them!] |
 
 You may also have seen the [Credits](./docs/about/credits) and [Source](https://github.com/princomp/princomp.github.io) links in the footer; the first one contains information about the authors, copyrights, and tools used to construct this website, and the second will give you access to the "frame" we are using to construct all of these resources.
 Even if you do not need to understand the source code and details of the implementation of these resources (which uses, as you may have guessed … markdown!), being curious about them may be extremely useful for the sake of learning, if you want to become an [Undergraduate (or Graduate) Course Assistant (UCA)](./docs/academic_life/ca), are interested in contributing to open-source projects, or simply wonder how the magic is done!
@@ -47,13 +46,11 @@ Your instructor(s) will be your primary guide when it comes to the order in whic
 However, you should feel free to explore our [documentations](./docs/) that contain information you may be interested in fairly early in the semester (like…today!).
 Typically, the [Installing Software](./docs/programming_and_computer_usage/installing_software) page should probably be one of the first documents you read; it explains in detail how to set-up your computer to be able to execute, compile, and study the code we will be discussing in class and lab and how to access and use the computer labs.
 
-Action:
-~ Reading instructions is not always easy. You should try to always understand what is crucial, what is important, and what is optional.
-Although you may have overlooked that subtlety, the previous paragraph actually meant
-
-> _Go read [Installing Software](./docs/programming_and_computer_usage/installing_software) as soon as possible; you want to be ready for the next lab!_
-
-This is particularly true for labs asking for you to set things up; there is little to gain in postponing that step, and if you are facing difficulties, it is better [to ask](#how-to-get-help) earlier rather than later!
+| ⇒ Action ⇐ | 
+| ---------- | 
+|  Reading instructions is not always easy. You should try to always understand what is crucial, what is important, and what is optional. Although you may have overlooked that subtlety, the previous paragraph actually meant  
+> _Go read [Installing Software](./docs/programming_and_computer_usage/installing_software) as soon as possible; you want to be ready for the next lab!_  
+This is particularly true for labs asking for you to set things up; there is little to gain in postponing that step, and if you are facing difficulties, it is better [to ask](#how-to-get-help) earlier rather than later! |
 
 Some of the resources on this website are still in flux. The instructors are working hard to construct the material from scratch, and we are sorry if at times you feel that you are going through dry runs.
 On the flip side, remember that you did not have to buy a textbook and that these resources will be tailored for your use and course of study here at Augusta University. Among many other specificity, like using C#, we are making sure that security and other cyber-related issues are regularly discussed!
@@ -92,23 +89,14 @@ Also, understanding _how_ to ask is extremely important.
 
 All of that is discussed [on this page](./docs/academic_life/getting_help).
 
-Action:
-~ 
-    Read the [How to get Help](./docs/academic_life/getting_help) page.
+| ⇒ Action ⇐ | 
+| ---------- | 
+|  Read the [How to get Help](./docs/academic_life/getting_help) page. |
 
-Action:
-~ 
-    _If you feel like it_, create an account on [Github](https://github.com/login) and [leave a comment](#how-is-this-page)! We'll be happy to read from you!
+| ⇒ Action ⇐ | 
+| ---------- | 
+| _If you feel like it_, create an account on [Github](https://github.com/login) and [leave a comment](#how-is-this-page)! We'll be happy to read from you! |
 
-Action:
-~ 
-    You may have noticed that multiple links point to <https://www.wikihow.com/>. Can you check if _the content_ and _the software platform_ of wikihow are free (as in coffee or speech)?
-
-<!--
-Again, your instructor(s) should be your first point of contact.
-Make sure you have their email address and understand their preferred means of communication; is it through [LMS](https://lms.augusta.edu/) (formerly D2L), [Teams](https://www.augusta.edu/its/microsoftteams.php), their office hours?
-
-Secondly, if your class has Undergraduate Course Assistant(s) (UCA), they may be the right person(s) to ask all kind of questions; they went through CSCI 1301 and have been selected based on their capacities, grades, interest, and skills, so they will be able at the same time to relate to your struggle and describe the program better than anyone else!
-
-There is also a way of reaching _all the instructors of CSCI 1301_ at once, and it is by commenting on this site's pages, as we explain below.
--->
+| ⇒ Action ⇐ | 
+| ---------- | 
+| You may have noticed that multiple links point to <https://www.wikihow.com/>. Can you check if _the content_ and _the software platform_ of wikihow are free (as in coffee or speech)? |
