@@ -565,33 +565,43 @@ The following guide was inspired [by this discussion](https://github.com/jackyzh
 
 The first step is to save as a git patch all the edits that have been made on our local copy of quartz since it was last updated.
 
-- Make sure you are in the `quartz` branch and that it is up-to-date.
-
-- Locate the commit `id` of the last commit performed by quartz maintainer. A way of achieving this is to look for "PCP" in the commit messages, using
-
-    ```bash
-    git rev-parse :/PCP
-    ```
-
-    and then to look for the commit id of the commit that came _before_ it. For instance, if the previous command returns `b9c0a47fcc6fd50977a5cd60f4851e71fe5400f2`, then the command 
+- Make sure you are 
+    #. At root level in your repository's copy,
+    #. In the `quartz` branch,
+    #. That your branch is up-to-date.
+    
+    by running a command such as
     
     ```bash
-    git show b9c0a47fcc6fd50977a5cd60f4851e71fe5400f2^1
+    pwd && git checkout quartz && git pull
     ```
-    
-    will return information about the commit that came before that last commit: we will assume its id is `81a4e202362f42a82baa9df2b6b91a774098740b` in the following.
-    
-    Visual inspection using [github's interface](https://github.com/princomp/princomp.github.io/commits/quartz/) or a program such as [gitk](https://git-scm.com/docs/gitk) can facilitate this process. Note that using the `--short` option will give the _short_ version of the id, which may be easier to compare, and is used on github's interface.
 
-- Use the id previously obtained to generate a patch containing all the changes made since that commit:
+- Locate the commit (short) `id` of the last commit performed by quartz maintainer. A way of achieving this is to look for "PCP" in the commit messages, using
 
     ```bash
-    git diff-index 81a4e202362f42a82baa9df2b6b91a774098740b --binary > pcp_quartz_patch
+    git rev-parse --short :/PCP
+    ```
+
+    and then to look for the commit id of the commit that came _before_ it. For instance, if the previous command returns `847e3356`, then the command 
+    
+    ```bash
+    git rev-parse --short 847e3356^1
     ```
     
-    The `--binary` option insures that any file created will be included in the patch: as a result, this file can heavy.
+    will return information about the commit that came before that last commit: we will assume its (short) id is `3b74453f` in the following.
     
-- Make sure you save this `pcp_quartz_patch` file but do not commit it to the repository.
+    Visual inspection using [github's interface](https://github.com/princomp/princomp.github.io/commits/quartz/) or a program such as [gitk](https://git-scm.com/docs/gitk) can facilitate this process.
+    Note that removing the `--short` option will give the _long_ version of the id, which may be harder to compare.
+
+- Use the (short) id previously obtained to generate a patch containing all the changes made since that commit:
+
+    ```bash
+    git diff-index 3b74453f --binary > pcp_quartz_patch
+    ```
+    
+    The `--binary` option insures that any file created will be included in the patch: as a result, this file can be heavy.
+    
+- Make sure this `pcp_quartz_patch` file is located at the root level in your repository's copy but do not commit it to the repository.
 
 #### Clone the latest version of quartz
 
@@ -607,26 +617,59 @@ where `quartz-update` is the name we use for our branch, and `quartz/v4` is the 
 
 #### Apply the git patch
 
-Make sure you are in the `quartz-update` branch by executing
+There are two ways of applying the patch.
+First, make sure you are in the `quartz-update` branch by executing
 
 ```bash
 git rev-parse --abbrev-ref HEAD
 ```
 
-Then, copy your `pcp_quartz_patch` file at the root level, and check if the patch is applicable, by executing
+Then follows the first method if possible.
+
+##### Using apply
+
+First, check if the `pcp_quartz_patch` patch is applicable, by executing
 
 ```bash
 git apply --ignore-space-change --ignore-whitespace --check --reject pcp_quartz_patch
 ```
 
 Some sections of the patch may be rejected: make sure you take note of which file will need to be merged by hand.
-Finally, apply the patch, using
+Then, apply the patch, using
 
 ```bash
 git apply --ignore-space-change --ignore-whitespace --reject pcp_quartz_patch
 ```
 
-Look for the `.rej` files: they will contain the edited version of a file that you will need to merge manually with the updated version of the same file from quartz's update.
+Then look for the `.rej` files: they will contain the edited version of a file that you will need to merge manually with the updated version of the same file from quartz's update.
+
+##### Using patch
+
+If `git apply` gave an error starting with
+
+```bash
+Checking patch quartz.layout.ts...
+error: while searching for:
+```
+
+then, instead, do
+
+```bash
+patch -p1 < pcp_quartz_patch
+```
+
+And look for the `.rej` files as described above.
+Note that using this technique *requires to copy the binary files by hand*.
+Indeed, you should receive warning messages like
+
+```bash
+File quartz/static/android-chrome-192x192.png: git binary diffs are not supported.
+```
+
+and those files will have to be copied by hand from another branch, and / or re-added to the repository.
+
+##### Testing
+
 Once you are done manually merging, **test** your updated version by [deploying locally the website](#deploying-locally-the-website) and making sure that quartz does not return any error.
 If everything looks ok, add all the new files and commit the edits using a message containing the "PCP" string (to facilitate future [generation of git patch](#generate-the-git-patch)), and push, using for example:
 
