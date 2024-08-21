@@ -6,20 +6,20 @@ title: How to Submit Projects
 
 First, make sure your name and the date is placed in a delimited comment at the very beginning of each of your `.cs` file.
 
-| ⚠️ Warning       |
+| ⚠ Warning       |
 |:---------------------------|
 | A *delimited* comment starts with `/*` and ends with `*/`. It must be *on the very first line* in your file, even before `using System;`. |
 
 Once your project is done, [zip the folder](./docs/programming_and_computer_usage/unzipping_archives#zipping-files) into a file `lname_fname`, where `lname` is your last name and `fname` is your first name.
 With the file extension, the filename will look like `lname_fname.zip`.
 
-| ⚠️ Warning       |
+| ⚠ Warning       |
 |:---------------------------|
 | Make sure your file is named "lname_fname.zip" and not "lname_fname.zip.zip".  Some operating systems hide the file's extension by default, but you may be  able to see it by right-clicking on it and then selecting "Properties" or "Get Info". |
 
 Upload this zip onto D2L / LMS before the deadline in the appropriate assignment submission folder.
 
-| ⚠️ Warning       |
+| ⚠ Warning       |
 |:---------------------------|
 | Make sure you submitted the correct files, for instance by retracing the steps described in [the Hello World lab](./labs/HelloWorld#how-was-the-backup). |
 
@@ -49,7 +49,7 @@ A good, finished project should include *all* of the following:
 You can ask the instructor or the (under)graduate course assistants for help  and feedback. Please upload your project according to the  instructions and send an email asking to go over it if you want us to check that you submitted the correct file, that your code compiles,  etc.
 You should ask early and not wait until the last minute.
 
-| ⚠️ Warning       |
+| ⚠ Warning       |
 |:---------------------------|
 | *Do not* ask other classmates for help, copy and paste from the internet, or ask a chatbot to writh the program for you. This work is supposed to be *your own*, and should reflect *your own* understanding. Getting help from un-authorized sources will hurt your understanding of this class and therefore your grade on the long run. | 
  

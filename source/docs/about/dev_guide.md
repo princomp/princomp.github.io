@@ -309,18 +309,6 @@ We will follow the guidance provided [on this page](https://karl-voit.at/2022/01
 - Use One Tag Language
 - Explain Your Tags
 
-
-<!--
-| Description | Shortcode | Icon |
-| : |  |  |
-| Security related aspects will be labelled as "security" | `:shield:` | 🛡 |
-| Optional parts will be labelled as "optional" | `:question:` | ❓ |
-| Elements to be incorporated in the future as "soon" | `:soon:` | 🔜 | 
--->
-<!--
-| Examples of common pitfalls | `:warning:` | ⚠️ |
--->
-
 ## Styling and Templating
 
 Templating files are under `source/templates/` directory.
@@ -408,7 +396,7 @@ This is needed if running a recent version of pandoc (as of pandoc 3.1.6.1 at le
 
 #### Running the build
 
-| ⚠️ Warning       |
+| ⚠ Warning |
 |:---------------------------|
 | Running `make all` can be *very resource-incentive* and may render your system unstable. Read this section entirely before running any command. |
 
@@ -479,15 +467,39 @@ A couple of indications about the edits made to quartz:
 useSavedState: true, // To debug the explorer, change to "false" (this way, the menu is not cached / permanent), 
 ```
 to `false` in the `quartz/components/Explorer.tsx` file *may* help in refreshing the menu more easily.
+
 - Other files edited or created include:
-    - `quartz/components/AlternativeFormats.tsx` and `quartz/components/styles/alternativeFormats.scss` to list alternative formats at the top of the page,
-    - `quartz/components/Comments.tsx`, `quartz/components/scripts/darkmode.inline.ts`, `quartz/components/Footer.tsx` and `quartz/components/styles/listPage.scss` to customize the footer and add a link to [our repository feedback](#maintaining-repository-feedback) (while following [the selected style](https://github.com/jackyzha0/quartz/issues/1161)),
-    - `quartz/styles/base.scss` to load a different set of fonts,
-    - `quartz/components/Explorer.tsx` and `quartz.layout.ts` to tweak the menu and layout,
-    - `quartz.config.ts` to set meta-data about the website,
-    - `quartz/components/pages/404.tsx` to customize the 404 error message,
-    - `quartz/plugins/emitters/assets.ts` to emit the `.md` files (they are not available by default),
-    - `quartz/components/index.ts` to tie it all together.
+    - The files
+    
+        ```text
+        quartz/components/AlternativeFormats.tsx
+        quartz/components/styles/alternativeFormats.scss
+        ```
+        
+        list alternative formats at the top of the page,
+    - The files
+    
+        ```text
+        quartz/components/Comments.tsx
+        quartz/components/scripts/darkmode.inline.ts
+        quartz/components/Footer.tsx
+        quartz/components/styles/listPage.scss
+        ``` 
+        
+        customize the footer and add a link to [our repository feedback](#maintaining-repository-feedback) (while following [the selected style](https://github.com/jackyzha0/quartz/issues/1161)),
+    - `quartz/styles/base.scss` loads a different set of fonts,
+    - The files
+    
+        ```text
+        quartz/components/Explorer.tsx
+        quartz.layout.ts
+        ```
+        
+        tweak the menu and layout,
+    - `quartz.config.ts` sets meta-data about the website,
+    - `quartz/components/pages/404.tsx` customizes the 404 error message,
+    - `quartz/plugins/emitters/assets.ts` emits the `.md` files (they are not available by default),
+    - `quartz/components/index.ts` ties it all together.
 
 Refer to [Generate the git patch](#generate-the-git-patch) for instruction on how to generate a patch containing all the edits performed to our local copy of quartz.
 

@@ -19,6 +19,6 @@ You can either:
 
 Note that on most pages, on the right below the title, there are links to download the current webpage in md, pdf, odt and docx as well as a link to its source code: your [contributions](./docs/about/contributing) will be welcome!
     
-| ⚠️ Warning       |
+| ⚠ Warning       |
 |:---------------------------|
 | As of early Fall 2024, this resource is under active (re)development. Please, [refer to the CSCI-1301 website](https://csci-1301.github.io/) if you are looking for stable resources on programming for C#. |

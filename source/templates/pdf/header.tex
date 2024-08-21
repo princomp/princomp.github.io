@@ -13,7 +13,6 @@
 \newunicodechar{🔒}{\symb 🔒}  % U+1F512, "LOCK"
 \newunicodechar{✘}{\symb ✘}  % U+2718, "HEAVY BALLOT X"
 \newunicodechar{✓}{\symb ✓}  % U+2713, "CHECK MARK"
-\newunicodechar{⚠}{\symb ⚠}  % U+26A0, "WARNING SIGN"
 \newunicodechar{❓}{\symb ❓} % U+2753, "BLACK QUESTION MARK ORNAMENT"
 \newunicodechar{🔜}{\symb 🔜}  % U+1F51C, "SOON WITH RIGHTWARDS ARROW ABOVE"
 \newunicodechar{ℕ}{\symb ℕ}  % U+2115, "DOUBLE-STRUCK CAPITAL N"
@@ -35,12 +34,18 @@
 \newunicodechar{☑}{\symb ☑}  % U+2611, "BALLOT BOX WITH CHECK"
 \newunicodechar{☐}{\symb ☐}  % U+2610, "BALLOT BOX"
 
+% Warning symbol
+\newunicodechar{⚠}{\symb ⚠}  % U+26A0, "WARNING SIGN" 
+% Warning, do not use the emoji ⚠️, rendered as the unicode ⚠ sometimes but not compatible with XeTeX.
+% An alternative solution could be to define a "custom" warning sign using the following.
 % Courtesy of https://tex.stackexchange.com/a/159701
-\newcommand\Warning{%
-	\makebox[1.4em][c]{%
-		\makebox[0pt][c]{\raisebox{.1em}{\small!}}%
-		\makebox[0pt][c]{\color{red}\Large$\bigtriangleup$}}}%
-\newunicodechar{⚠}{\Warning}  % U+26A0
+%\newcommand\Warning{%
+%	\makebox[1.4em][c]{%
+%		\makebox[0pt][c]{\raisebox{.1em}{\small!}}%
+%		\makebox[0pt][c]{\color{red}\Large$\bigtriangleup$}}}%
+%\newunicodechar{⚠}{\Warning}  % U+26A0
+
+
 
 % Spaces
 \newunicodechar{ }{\symb  }
@@ -53,8 +58,8 @@
 
 % This character "🛡", apparently also represented with "◌️" and ️" " 
 % and known as U+FE0F, "VARIATION SELECTOR-16"
-% was weirdly added, and tracked in the lecture notes using
-% grep "$(printf '\uFE0F')" lectures/*/readme.md
+% was weirdly added, and tracked  using
+% grep "$(printf '\uFE0F')" *.md
 
 % To look for a unicode symbol in the files, we can also use
 % grep -r $'\u035F' *
