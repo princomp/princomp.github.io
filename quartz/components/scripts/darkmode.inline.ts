@@ -1,5 +1,29 @@
 const userPref = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark"
 const currentTheme = localStorage.getItem("theme") ?? userPref
+
+document.addEventListener("themechange", (e) => {
+  console.log("Theme changed to " + e.detail.theme) // either "light" or "dark"
+  if (document.querySelector('.utterances-frame')) {
+    const theme = e.detail.theme === 'dark' ? 'github-dark' : 'github-light'
+    const message = {
+      type: 'set-theme',
+      theme: theme
+    };
+    const iframe = document.querySelector('.utterances-frame');
+    iframe.contentWindow.postMessage(message, 'https://utteranc.es');
+  }
+})
+
+window.addEventListener('load', () => {
+  const theme = document.documentElement.getAttribute('saved-theme') === 'dark' ? 'github-dark' : 'github-light'
+  const message = {
+    type: 'set-theme',
+    theme: theme
+  };
+  const iframe = document.querySelector('.utterances-frame');
+  iframe.contentWindow.postMessage(message, 'https://utteranc.es');
+})
+
 document.documentElement.setAttribute("saved-theme", currentTheme)
 
 const emitThemeChangeEvent = (theme: "light" | "dark") => {

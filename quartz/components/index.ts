@@ -19,6 +19,7 @@ import DesktopOnly from "./DesktopOnly"
 import MobileOnly from "./MobileOnly"
 import RecentNotes from "./RecentNotes"
 import Breadcrumbs from "./Breadcrumbs"
+import AlternativeFormats from "./AlternativeFormats"
 import Comments from "./Comments"
 
 export {
@@ -43,5 +44,6 @@ export {
   RecentNotes,
   NotFound,
   Breadcrumbs,
+  AlternativeFormats,
   Comments,
 }
