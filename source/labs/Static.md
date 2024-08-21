@@ -24,13 +24,10 @@ Pay attention to how these classes are used:
     ```
     Console.WriteLine("calling a static method");
     ```
-Question:
-: 
-    Using your IDE, check what happens if you do the following:
 
-    ```
-    Console test = new Console();
-    ```
+| ❓ Question       |
+|:---------------------------|
+| Using your IDE, check what happens if you do the following: `Console test = new Console();`. |
 
 <details><summary>Solution:</summary>
 Indeed, it is _not possible_ to instantiate an object when a class is declared `static`.

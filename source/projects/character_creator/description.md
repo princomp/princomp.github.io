@@ -5,22 +5,22 @@ If working through this project for the first time, it is encouraged to work on 
 
 ## Phase 1
 
-### Purpose:
-~ This first project is designed to teach you how to devise, implement, and submit solutions to programming problems. As you will be expected to complete projects not only this semester, but throughout your studies, one of our primary goals is to familiarize you with the submission process. This task will also ensure that you understand the basic concepts we have been studying thus far.
+### Purpose
 
-### Skills:
-~ 
-    For this project, you will need:
+This first project is designed to teach you how to devise, implement, and submit solutions to programming problems. As you will be expected to complete projects not only this semester, but throughout your studies, one of our primary goals is to familiarize you with the submission process. This task will also ensure that you understand the basic concepts we have been studying thus far.
+
+### Skills
+
+For this project, you will need:
 
 - Exhibit an understanding of IDE features pertaining to object-oriented development,
 - Analyze a simple design document,
 - Implement a simple class containing multiple attributes and methods, and
 - Write a test program for your implementation.
 
-### Knowledge:
-~ 
-    This assignment will familiarize you with the following important
-    skills:
+### Knowledge
+
+This assignment will familiarize you with the following important skills:
 
 -   How to read a UML diagram,
 -   How to interpret a series of simple instructions, and
@@ -30,12 +30,11 @@ If working through this project for the first time, it is encouraged to work on 
 
 #### Challenge
 
-In short:
-~ 
-    In this project, you are asked to develop a `Character` class, based (loosely) on a Dungeons and Dragons character sheet.
+##### In short
 
-In more details:
-~ 
+In this project, you are asked to develop a `Character` class, based (loosely) on a Dungeons and Dragons character sheet.
+
+##### In more details
 
 Consider the following UML diagram for a `Character` class:
 
@@ -102,12 +101,13 @@ Project 2 Phase 1 Solution [LINK HERE]
 
 ## Phase 2
 
-### Purpose:
-~ This first project is designed to teach you how to devise, implement, and submit solutions to programming problems. As you will be expected to complete projects not only this semester, but throughout your studies, one of our primary goals is to familiarize you with the submission process. This task will also ensure that you understand the basic concepts we have been studying thus far.
+### Purpose
 
-### Skills:
-~ 
-    For this project, you will need:
+This first project is designed to teach you how to devise, implement, and submit solutions to programming problems. As you will be expected to complete projects not only this semester, but throughout your studies, one of our primary goals is to familiarize you with the submission process. This task will also ensure that you understand the basic concepts we have been studying thus far.
+
+### Skills
+
+For this project, you will need:
 
 - Exhibit an understanding of IDE features pertaining to object-oriented development,
 - Expand on the class you made last time with new methods
@@ -115,10 +115,9 @@ Project 2 Phase 1 Solution [LINK HERE]
 - Validate inputs from the user using boolean systems
 - Make an object from the class you constructed
 
-### Knowledge:
-~ 
-    This assignment will familiarize you with the following important
-    skills:
+### Knowledge
+
+This assignment will familiarize you with the following important skills:
 
 -   How to manipulate objects
 -   How to use boolean systems (If/switch, loops)
@@ -128,12 +127,12 @@ Project 2 Phase 1 Solution [LINK HERE]
 
 #### Challenge
 
-In short:
-~ 
-    In this project, you are asked to add two new methods to your Character class, then make a program asking the user to give you the values you need to make a new character with input validation.
+##### In short
 
-In more details:
-~ 
+In this project, you are asked to add two new methods to your Character class, then make a program asking the user to give you the values you need to make a new character with input validation.
+
+##### In more details
+
 First, download the Project 2 Phase 2 Template [LINK HERE]
 
 Consider the following UML diagram for the updated `Character` class:
@@ -262,12 +261,13 @@ Project 2 Phase 2 Solution [LINK HERE]
 
 ## Phase 3
 
-### Purpose:
-~ This final phase is designed to use all of the programming strategies and concepts taught throughout the semester, along with arrays and potentially for loops, to finalize the three-phase project you've been working on throughout the semester. This project is a bit more complex than the other two, so please **read carefully** and allocate enough time to work on it.
+### Purpose
 
-### Skills:
-~ 
-    For this project, you will need:
+This final phase is designed to use all of the programming strategies and concepts taught throughout the semester, along with arrays and potentially for loops, to finalize the three-phase project you've been working on throughout the semester. This project is a bit more complex than the other two, so please **read carefully** and allocate enough time to work on it.
+
+### Skills
+
+For this project, you will need:
 
 - Exhibit an understanding of IDE features pertaining to object-oriented development,
 - Expand on the class you made last time with new methods,
@@ -276,9 +276,9 @@ Project 2 Phase 2 Solution [LINK HERE]
 - Validate inputs from the user using boolean systems,
 - Make an object from the class you constructed
 
-### Knowledge:
-~ 
-    This assignment will familiarize you with the following important
+### Knowledge
+
+This assignment will familiarize you with the following important
     skills:
 
 -   How to manipulate objects
@@ -290,12 +290,12 @@ Project 2 Phase 2 Solution [LINK HERE]
 
 #### Challenge
 
-In short:
-~ 
-    In this project, you are asked some new attributes to your `Character` class, along with additional methods to use those attributes. Additionally, you should extend your user interactive program to use these new methods.
+##### In short
 
-In more details:
-~ 
+In this project, you are asked some new attributes to your `Character` class, along with additional methods to use those attributes. Additionally, you should extend your user interactive program to use these new methods.
+
+##### In more details
+
 First, download the Project 2 Phase 3 Template. [LINK HERE]
 
 (Note: You may only use your phase 2 implementation **if you received full points for that phase**.
@@ -569,6 +569,7 @@ Role: Rogue
 It works! And now my character is complete!
 
 #### Bonus
+
 - For your dice rolls, instead of generating a single value between 1 and 20, generate four values between 1 and 6, drop the lowest roll, and add them together.
   1. Go from rolling a sinlge 20-sided die to four 6-sided dice, keeping the top three rolls.
     - Ex: If you rolled 4, 5, 2, and 6, you should keep 4, 5, and 6.

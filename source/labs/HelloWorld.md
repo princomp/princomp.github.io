@@ -31,8 +31,9 @@ Although such a program has no real interest nor purpose, it is used to make sur
     - If you get prompted for which application to use, choose the IDE you installed previously.
     - If the IDE does not launch or launches in a different program, right click on the `.sln` file and look for an option to `open with`, then select to open it with the IDE you installed previously.
 
-Question:
-Have you actually checked where the HelloWorld (zip) archive was hosted? Was it on a trustworthy website? If yes, is it trustworthy because of the [domain name](https://www.wikiwand.com/en/Domain_name), because we told you to do so, or for some other reasons?
+| ❓ Question       |
+|:---------------------------|
+| Have you actually checked where the HelloWorld (zip) archive was hosted? Was it on a trustworthy website? If yes, is it trustworthy because of the [domain name](https://www.wikiwand.com/en/Domain_name), because we told you to do so, or for some other reasons? |
 
 <details><summary>Elements of solution</summary>
 The zip archive we asked you to download is hosted on <https://princomp.github.io/>, that is, on [Github pages](https://pages.github.com/).
@@ -119,8 +120,9 @@ After selecting where you want to store your backup files
 
     It is useful to understand the purpose and role of these different files (`.sln`, `.csproj`, `.cs`) when you want to backup or share (i.e. turn in) C# programs.
 
-Question:
-~  Now that you understand the basic files that go into a C# program, can you identify which files you should always include when you prepare to submit your code for evaluation? Can you develop a strategy with a friend, a classmate, or a second computer, to always make sure that your submission is correctly uploaded and complete?
+| ❓ Question       |
+|:---------------------------|
+| Now that you understand the basic files that go into a C# program, can you identify which files you should always include when you prepare to submit your code for evaluation? Can you develop a strategy with a friend, a classmate, or a second computer, to always make sure that your submission is correctly uploaded and complete? |
 
 ### How Was the Backup?
 

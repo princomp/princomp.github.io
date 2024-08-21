@@ -22,12 +22,13 @@ Write a program that implements the following steps:
 #. initializes `myArray` with the values $1$, $2$, $3$, $4$ and $5$,
 #. displays the content of `myArray` on the screen.
 
-Questions
-~ 
-    - What values are stored in this array after declaring it _but before initializing it_?
-    - There are a few different ways you can declare and initialize an array of size $5$ holding values $1$, $2$, $3$, $4$ and $5$. Can you think of two different ways of doing this?
+
+| ❓ Questions       |
+|:---------------------------|
+| What values are stored in this array after declaring it _but before initializing it_? | 
+| There are a few different ways you can declare and initialize an array of size $5$ holding values $1$, $2$, $3$, $4$ and $5$. Can you think of two different ways of doing this? | 
     
-<details><summary>Answer:</summary>
+<details><summary>Answers:</summary>
 - All the values in the array are set to 0,
 - Two possible ways are `int[] myArray = new int[] {1, 2, 3, 4, 5};` and `int[] myArray =  {1, 2, 3, 4, 5};`.
 </details>

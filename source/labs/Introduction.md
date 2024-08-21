@@ -28,13 +28,15 @@ On this website, you will find:
 The main purpose of this first lab is to help you navigate those resources.
 We want this reading to be proactive, so we will include questions and actions like the ones below every now and then to help you be engaged with the material.
 
-Question:
-~  We used five different file formats in the text above you may not be familiar with. Along with _markdown_ (`md`), that's six; can you make sure you know them all and know their purposes? Looking them up [on wikipedia](https://www.wikiwand.com/en/List_of_file_formats) and reading the first paragraph of each of their pages can be a good way of getting started!
+| ❓ Question       |
+|:---------------------------|
+| We used five different file formats in the text above you may not be familiar with. Along with _markdown_ (`md`), that's six; can you make sure you know them all and know their purposes? Looking them up [on wikipedia](https://www.wikiwand.com/en/List_of_file_formats) and reading the first paragraph of each of their pages can be a good way of getting started! |
 
-Action:
-~ On the `html` version of our documents (so, on the website), you will always find [in the footer](#footer) links to the `pdf`, `odt`, and `docx` versions of the document you are currently reading.
+| ⇒ Action ⇐ | 
+| ---------- | 
+| On the `html` version of our documents (so, on the website), you will always find [in the footer](#footer) links to the `pdf`, `odt`, and `docx` versions of the document you are currently reading.
 Download them by clicking on the "↓ pdf", "↓ odt", and "↓ docx" links, then make sure you can open them all.
-You should realize that their content is identical to the page you are currently reading!^[Even this sentence will be displayed, even if it makes no sense to discuss the links in the footer of a `pdf` file, which does not have them!]
+You should realize that their content is identical to the page you are currently reading!^[Even this sentence will be displayed, even if it makes no sense to discuss the links in the footer of a `pdf` file, which does not have them!]|
 
 You may also have seen the [Credits](./docs/about/credits) and [Source](https://github.com/princomp/princomp.github.io) links in the footer; the first one contains information about the authors, copyrights, and tools used to construct this website, and the second will give you access to the "frame" we are using to construct all of these resources.
 Even if you do not need to understand the source code and details of the implementation of these resources (which uses, as you may have guessed … markdown!), being curious about them may be extremely useful for the sake of learning, if you want to become an [Undergraduate (or Graduate) Course Assistant (UCA)](./docs/academic_life/ca), are interested in contributing to open-source projects, or simply wonder how the magic is done!
@@ -60,16 +62,13 @@ You should also remember that the internet is (also!) a wonderful place where ma
 For instance, [this guide on open source](https://opensource.guide/) is an excellent place to understand what open source is and why it matters.
 Our resources are supported by Affordable Learning Georgia, which strives to share good, accessible, and free (as in "free coffee" _and_ as in "free speech") Open Educational Resources (OER) to students in Georgia, and [reading their "About"](https://www.affordablelearninggeorgia.org/about-us/missions-values/) page may help you understand the importance and benefits of developing resources here, for you!
 
-Questions:
-~ Answer the following: 
-
-    - What exactly is implied by "free" as in "free coffee" _and_ as in "free speech"?
-    - Try to understand what "[free software](https://www.wikiwand.com/en/Free_software)" means; is it like coffee (some people say "beer") or like speech?
-    - Are the resources presented here free as in coffee, as in speech, or both?
-    - And what about your computer's operating system? 
-    - Your media player? 
+| ❓ Questions       |
+|:---------------------------|
+| What exactly is implied by "free" as in "free coffee" _and_ as in "free speech"? | 
+| Try to understand what "[free software](https://www.wikiwand.com/en/Free_software)" means; is it like coffee (some people say "beer") or like speech? | 
+| Are the resources presented here free as in coffee, as in speech, or both? And what about your computer's operating system? Your media player? |
     
-    Try to look at the licenses of some of the software you use on a daily basis. You may realize that some important software products are actually open source and host their code on e.g., github!
+Try to look at the licenses of some of the software you use on a daily basis. You may realize that some important software products are actually open source and host their code on e.g., github!
 
 <details><summary>Elements of solution</summary>
 - "Free" as in "free coffee" means that you are welcome to use the resource without paying for it. It means "at no monetary cost" (gratis).  
