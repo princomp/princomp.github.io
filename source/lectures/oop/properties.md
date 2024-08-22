@@ -206,4 +206,20 @@ tags:
     public int MaximumValue { get; } = 999;
     ```
     
+- Finally, properties can be `static` as well:
+
+    ```
+    public static string Explanation { get; set; } = "A Circle has for radius its diameter divided by 2.";
+    ```
     
+    Such a property can be accessed using for example
+    
+    ```
+    Console.WriteLine(Circle.Explanation);
+    ```
+    
+    and its value can be changed, for instance by appending a `string` to it:
+    
+    ```
+    Circle.Explanation += "\nIts circumference is π multiplied by its diameter.";
+    ```
