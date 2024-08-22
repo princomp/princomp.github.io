@@ -111,19 +111,6 @@ tags:
     - For example, `myRectangle.Width = 15;` will call the `set` accessor inside the `Width` property, with `value` equal to 15
     - This is equivalent to `myRectangle.SetWidth(15);` using the "old" Rectangle code
 
-## Properties in UML
-
-- Since properties represent attributes, they go in the "attributes" box (the second box)
-- If a property will simply "get" and "set" an instance variable of the same name, you do *not* need to write the instance variable in the box
-    - No need to write both the property `Width` and the instance variable `width`
-- Syntax: `[+/-] <<property>> [name]: [type]`
-- Note that the access modifier (+ or -) is for the property, not the instance variable, so it is + if the property is `public` (which it usually is)
-- Example for `Rectangle`, assuming we converted both attributes to use properties instead of getters and setters:
-
-    !include uml/Rectangle_with_properties.md
-    
-- We no longer need to write all those setter and getter methods, since they are "built in" to the properties
- 
 ## In More Details
 
 - Note that in a property, `value` is what is called a *[contextual keyword](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/lexical-structure#644-keywords)*: it is not a reserved word in C# (it could be used as an identifier),  but *inside a property* it refers to something special, the value that is assigned to the property.
@@ -145,7 +132,7 @@ tags:
     ```
     
     The attribute `width` is called *the Width's property backing field*: it holds the data assigned to the property.
-- When the property's get and set accessors are trivial (like the ones above), we can simply omit them. That is, the previous `Width` property could be implemented using
+- When the property's get *and* set accessors are trivial (like the ones above), we can simply omit them. That is, the previous `Width` property could be implemented using
 
     ```
     public int Width { get; set;  }
@@ -223,3 +210,45 @@ tags:
     ```
     Circle.Explanation += "\nIts circumference is π multiplied by its diameter.";
     ```
+
+## Properties in UML Class Diagrams
+
+### Simple Notation
+
+- Since properties represent (or, rather, allow to access) attributes, they go in the "attributes" box (the second box)
+- If a property will simply "get" and "set" an instance variable of the same name, you do *not* need to write the instance variable in the box
+    - No need to write both the property `Width` and the instance variable `width`
+- Syntax: `[+/-] <<property>> [name]: [type]`
+- Note that the access modifier (+ or -) is for the property, not the instance variable, so it is + if the property is `public` (which it usually is)
+- Example for `Rectangle`, assuming we converted both attributes to use properties instead of getters and setters:
+
+    !include uml/Rectangle_with_properties.md
+    
+- We no longer need to write all those setter and getter methods, since they are "built in" to the properties
+
+#### More Accurate Notation
+
+In general, instead of writing for example
+
+```text
++ <<properties>> Explanation: string
+```
+
+one can write
+
+```text
++ <<get, set>> Explanation: string
+```
+
+or even
+
+```text
++ <<set>> Explanation: string
++ <<get>> Explanation: string
+```
+
+The benefit of this notation is that read-only properties can easily be integrated in the UML class diagram, by simply omitting the `<<set>>` line:
+
+```text
++ <<get>> Radius : decimal
+```
