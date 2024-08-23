@@ -113,7 +113,7 @@ tags:
 
 ## In More Details
 
-- Note that in a property, `value` is what is called a *[contextual keyword](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/lexical-structure#644-keywords)*: it is not a reserved word in C# (it could be used as an identifier),  but *inside a property* it refers to something special, the value that is assigned to the property.
+- Note that in a property, `value` is what is called a *[contextual keyword](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/lexical-structure#644-keywords)*: it is not a reserved word in C# (it could be used as an identifier),  but *inside a property* it refers to something special, the name of the set method parameter.
 - In the following code:
 
     ```
@@ -132,7 +132,7 @@ tags:
     ```
     
     The attribute `width` is called *the Width's property backing field*: it holds the data assigned to the property.
-- When the property's get *and* set accessors are trivial (like the ones above), we can simply omit them. That is, the previous `Width` property could be implemented using
+- When the property's get *and* set accessors are trivial (like the ones above), we can simply omit them their body completely. That is, the previous `Width` property could be implemented using
 
     ```
     public int Width { get; set;  }
@@ -158,7 +158,7 @@ tags:
     }
     ```
 - Note however that if the set or get accessor is not the "trivial" one, then auto-properties cannot be used and the other accessor must be specified.
-    - For example, in the above code, simply writing `get;` instead `get { return length; }` would give a compilation error.
+    - For example, in the above code, simply writing `get;` instead of `get { return length; }` would give a compilation error.
 - Note that properties can exist without backing field, and they can be *read-only* (that is, without a set accessor) or *write-only* (that is, without a get accessor, but this is rarer).
     - An example of read-only property is as follows: 
 
