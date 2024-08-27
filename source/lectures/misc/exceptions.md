@@ -89,7 +89,7 @@ tags:
 	{
 		Console.WriteLine("You tried to divide by zero.");
 	}
-	catch(FormatException)
+	catch (FormatException)
 	{
 		Console.WriteLine("You have tried to convert a string containing non-numerical characters to a number.");
 	}
@@ -102,6 +102,7 @@ tags:
 	- This allows a more fine-grained handling of the exceptions that can be thrown.
 	- In the example, if a `DivideByZeroException` exception is thrown, it is because the user entered "0" and the operation `{10 / uInput}` failed. In this case, we can display an appropriate error message ("You tried to divide by zero").
 	- In the example, if a `FormatException` exception is thrown, it is because the user entered a string containing non-numerical characters, and we can similarly return an appropriate error message.
+	- Writing `catch{…}` is the same as `catch (Exception){…}`: by default, a `catch` block catches all the exceptions that can be thrown, not the exceptions of a particular class. Note that, if specifying multiple `catch` blocks, the order matter, as a `catch (Exception)`, if placed first, will always execute before the `catch` blocks put after.
 
 ## Exception Class and Objects
 
@@ -128,5 +129,69 @@ tags:
 	```
 	
 	- When the statement `test[10] = 10;` gets executed, the exception is thrown, named `ex`, and we display its message ("Index was outside the bounds of the array.") and StackTrace ("at Program.Main (System.String[] args) [0x0000f] in `<path>`/Program.cs:`<line>`", with `<path>` the path of the Program.cs file, and `<line>` the line where the error occurs).
+
+## Purpose of the `finally` Block
+
+- The difference between
+
+	```
+	try{
+		<statement block 1>
+	}
+	catch{
+		<statement block 2>
+	}
+	finally{
+		<statement block 3>
+	}
+	```
+	
+	and
+	
+	```
+	try{
+		<statement block 1>
+	}
+	catch{
+		<statement block 2>
+	}
+	<statement block 3>
+	```
+	
+	is that in the second case, `<statement block 3>` may be skipped if `<statement block 1>` or `<statement block 2>` return a value, throw an exception that is not caught, or break the flow of control (using for example `break;`).
+	In the first case, `<statement block 3>` will *always*^[That is, unless the program crashes or loops forever.] get executed, no matter which block gets executed and even if it breaks the control flow or throws another exception.
+- For example,
+
+	```
+	static bool GuessGame(string guessP)
+    {
+        const int valueToGuess = 12;
+        try
+        {
+            int guessV = int.Parse(guessP);
+            if (guessV == valueToGuess)
+            {
+                Console.WriteLine("You guessed it!");
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("Try again!");
+                return false;
+            }
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine("Please, provide a string containing only numbers");
+            return false;
+        }
+        finally
+        {
+            Console.WriteLine("Thank you for playing!");
+        }
+    }
+    ```
+    
+    will always display "Thank you for playing!". If this last statement was *not* in the `finally` block, but was simply inserted after the `try` … `catch` statement, then this message would actually never be displayed.
 
 
