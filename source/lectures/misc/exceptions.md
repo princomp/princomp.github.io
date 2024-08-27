@@ -73,7 +73,7 @@ tags:
 	- If the user enters a string that does *not* contain only numbers (say, "No"), then the program will display "Something was off." then "Did it worked?".
 	
 	
-- Both the `catch` and the `finally` parts of the statement are optional: they can be both present, both absent, or only one can occur in the `try` block statement.
+- Both the `catch` and the `finally` parts of the statement are optional: they can be both present, or only one can occur in the `try` block statement (however, you have to have one or the other).
 - A `try` block can have multiple `catch`, as follows:
 
 	```
@@ -194,4 +194,90 @@ tags:
     
     will always display "Thank you for playing!". If this last statement was *not* in the `finally` block, but was simply inserted after the `try` … `catch` statement, then this message would actually never be displayed.
 
+## Scoping in `try` … `catch`… `finally` Statements
 
+- Understanding the scope of statements in `try` … `catch`… `finally` statements can be tricky.
+- The general rules are:
+	- Variables declared in `try`, `catch` or `finally` blocks will not be accessible outside of them,
+	- Variables whose value are set in the `try` block will keep the value they had when the `try` block threw an exception.
+- For example, in the following code,
+
+	```
+	int zero = -1;
+	try
+	{
+		zero = 0;
+		int x = 1 / zero;
+		zero = 2;
+	}
+	catch (DivideByZeroException)
+	{
+		Console.WriteLine("You tried to divide by " + zero + ".");
+		zero = 3;
+	}
+	finally
+	{
+		Console.WriteLine("The variable holds " + zero + ".");
+	}
+	```
+	
+	- This program will display
+	
+		```text
+		You tried to divide by 0.
+		The variable holds 3.
+		```
+		
+	- The variable `x` would not be accessible to the `catch` or `finally` blocks.
+	- If we were to remove the `zero = 0;` statement, then the program would display "The variable holds 2.".
+
+## When To Use `try` … `catch` and When To Use `TryParse`?
+
+- If something goes wrong in a method, that method can either return some error code or throw an exception.
+- Returning an error code means possibly cluttering the signature of the method with some extra parameters, as in the `TryParse` methods.
+- `TryParse` is "baking in" a way of signaling that something went wrong because
+	#. This type of error is simple, common and predictable,
+	#. It decided not to care about *why* the parsing fails (it can be either because the input is `null`, because it is not in valid format, or because it produces an overflow).
+- However, exceptions can handle those cases differently thanks to different `catch` blocks:
+
+	```
+	Console.WriteLine("Test with" +
+		"\n\t- nothing (ctrl + d on linux, ctrl + z on windows), " +
+		"\n\t- \"No\"," +
+		"\n\t-  " + int.MaxValue + "+ 1 = 2147483648.");
+	try
+	{
+		int.Parse(Console.ReadLine());
+	}
+	catch (ArgumentNullException)
+	{
+		Console.WriteLine("No argument provided.");
+	}
+	catch (FormatException)
+	{
+		Console.WriteLine("The string does not contain only number characters.");
+	}
+	catch (OverflowException)
+	{
+		Console.WriteLine("The number is greater than what an integer can store.");
+	}
+	```
+	
+- So, in summary, `TryParse` is in general better if there is no need to handle the different exceptions differently.
+
+## Throwing an Exception
+
+- You can explicitly throw an exception by
+	- Creating an `Exception` object,
+	- Throwing it, using the `throw` keyword.
+- For example, the property setter in the following class can explicitly throw an `ArgumentOutOfRangeException` object if we try to create a `Circle` object with a negative diameter:
+
+    ```
+    !include code/projects/Properties_Exception/Circle/Circle.cs
+    ```
+- To use this class properly, every time the `Diameter` value is set (using the set accessor or the constructor), a `try` … `catch` statement should be used to handle a possible exception, as follows:
+
+	```
+    !include code/projects/Properties_Exception/Circle/Program.cs
+    ```
+- If, in the previous code, we had `throw;` (without argument) in the `catch` blocks after `WriteLine($"Error: value was out of range.");`, then the exception would be passed to the calling environment. It is indeed possible to catch the exception, do something with it (typically, log it or display an error message), and then "pass" that exception to the surrounding environment. 
