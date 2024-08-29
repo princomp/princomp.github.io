@@ -4,7 +4,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        Circle circle1 = new Circle(1); 
+        Circle circle1 = new Circle(1);
+        Console.WriteLine(circle1);
+
         try
         {
             circle1 = new Circle(-10);
@@ -12,16 +14,30 @@ class Program
         }
         catch (ArgumentOutOfRangeException)
         {
-            WriteLine($"Error: value was out of range.");
+            Console.WriteLine($"Error: value was out of range.");
         }
-        try
+        Console.WriteLine(circle1);
+
+        bool circle_modified = false;
+        do
         {
-            circle1.Diameter = -10;
-            Console.WriteLine("circle1: " + circle1);
-        }
-        catch (ArgumentOutOfRangeException)
-        {
-            WriteLine($"Error: value was out of range.");
-        }
+            try
+            {
+                Console.WriteLine("Enter the circle new diameter.");
+                int uInput = int.Parse(Console.ReadLine());
+                circle1.Diameter = uInput;
+                Console.WriteLine(circle1);
+                circle_modified = true;
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                Console.WriteLine($"Error: value was out of range.");
+            }
+            catch
+            {
+                Console.WriteLine("Something went wrong.");
+                throw;
+            }
+        } while (!circle_modified);
     }
 }

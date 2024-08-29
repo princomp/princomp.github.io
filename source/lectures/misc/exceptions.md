@@ -275,9 +275,9 @@ tags:
     ```
     !include code/projects/Properties_Exception/Circle/Circle.cs
     ```
-- To use this class properly, every time the `Diameter` value is set (using the set accessor or the constructor), a `try` … `catch` statement should be used to handle a possible exception, as follows:
+- To use this class properly, every time the `Diameter` value is set (using the set accessor, possibly *via* the constructor), a `try` … `catch` statement should be used to handle a possible exception, with possibly a loop around it, as follows:
 
 	```
     !include code/projects/Properties_Exception/Circle/Program.cs
     ```
-- If, in the previous code, we had `throw;` (without argument) in the `catch` blocks after `WriteLine($"Error: value was out of range.");`, then the exception would be passed to the calling environment. It is indeed possible to catch the exception, do something with it (typically, log it or display an error message), and then "pass" that exception to the surrounding environment. 
+- In the last `catch` block above, the `throw;` (without argument) will pass the exception to the calling environment. It is indeed possible to catch the exception, do something with it (typically, log it or display an error message), and then "pass" that exception to the surrounding environment. 

@@ -1,14 +1,16 @@
-﻿class Circle
+﻿using System;
+class Circle
 {
     public decimal diameter;
-    public decimal Diameter {
+    public decimal Diameter
+    {
         get
         {
             return Diameter;
         }
         set
         {
-            if (value <= 0)
+        if (value <= 0)
             {
                 throw new ArgumentOutOfRangeException();
             }
@@ -18,12 +20,14 @@
             }
         }
     }
+
     public Circle(decimal dP)
     {
         Diameter = dP;
     }
+
     public override string ToString()
     {
-        return "Diameter:" + Diameter;
+        return "Diameter: " + diameter;
     }
 }
