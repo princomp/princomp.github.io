@@ -48,7 +48,11 @@ class Program
 
     // We display the number corresponding to the day entered:
     Console.WriteLine(
-      "The number corresponding to " + string_day + " is " + num_day + "."
+      "The number corresponding to "
+        + string_day
+        + " is "
+        + num_day
+        + "."
     );
   }
 }

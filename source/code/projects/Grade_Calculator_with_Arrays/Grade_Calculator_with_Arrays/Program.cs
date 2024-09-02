@@ -76,7 +76,8 @@ class Program
     if (accumAssignments[0] != 0)
     {
       averagePoints[0] =
-        pointsEarned[0] / ((double)accumAssignments[0] * CONSTVARS[0]);
+        pointsEarned[0]
+        / ((double)accumAssignments[0] * CONSTVARS[0]);
       tot += 0.1;
       Console.WriteLine(
         $"Your average for the quiz is {averagePoints[0]:P}."
@@ -111,7 +112,8 @@ class Program
     if (accumAssignments[1] != 0)
     {
       averagePoints[1] =
-        pointsEarned[1] / ((double)accumAssignments[1] * CONSTVARS[1]);
+        pointsEarned[1]
+        / ((double)accumAssignments[1] * CONSTVARS[1]);
       tot += 0.1;
       Console.WriteLine(
         $"Your average for the project is {averagePoints[1]:P}."
@@ -146,7 +148,8 @@ class Program
     if (accumAssignments[2] != 0)
     {
       averagePoints[2] =
-        pointsEarned[2] / ((double)accumAssignments[2] * CONSTVARS[2]);
+        pointsEarned[2]
+        / ((double)accumAssignments[2] * CONSTVARS[2]);
       tot += 0.4;
       Console.WriteLine(
         $"Your average for the tests is {averagePoints[2]:P}."
@@ -157,7 +160,9 @@ class Program
 
     // Asking and reading for the final.
     Console.WriteLine(
-      "What was your grade for the final (out of " + CONSTVARS[3] + ")?"
+      "What was your grade for the final (out of "
+        + CONSTVARS[3]
+        + ")?"
     );
     read = int.Parse(Console.ReadLine());
     if (read != -1)

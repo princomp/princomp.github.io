@@ -32,7 +32,9 @@ class Loan
     cscore = cscoreP;
     if (cscore < 421)
     {
-      Console.WriteLine("Sorry, we can't accept your application.");
+      Console.WriteLine(
+        "Sorry, we can't accept your application."
+      );
       amount = -1;
       rate = -1;
     }

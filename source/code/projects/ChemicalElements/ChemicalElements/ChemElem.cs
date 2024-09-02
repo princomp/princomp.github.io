@@ -24,7 +24,9 @@
    * Fahrenheit 	    [°F] = [K] × ​9⁄5 − 459.67 	[K] = ([°F] + 459.67) × ​5⁄9
    */
 
-  public static decimal FromKelvinToCelsius(decimal kelvinParam)
+  public static decimal FromKelvinToCelsius(
+    decimal kelvinParam
+  )
   {
     return (kelvinParam - 273.15M);
   }

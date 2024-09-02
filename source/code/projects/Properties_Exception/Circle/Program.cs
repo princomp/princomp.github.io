@@ -31,7 +31,9 @@ class Program
       }
       catch (ArgumentOutOfRangeException)
       {
-        Console.WriteLine($"Error: value was out of range.");
+        Console.WriteLine(
+          $"Error: value was out of range."
+        );
       }
       catch
       {

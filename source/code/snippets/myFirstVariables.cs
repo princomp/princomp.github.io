@@ -11,6 +11,8 @@ class MyFirstVariables
     myAge = 29;
     myName = "Edward";
     // Displaying
-    Console.WriteLine($"My name is {myName} and I am {myAge} years old.");
+    Console.WriteLine(
+      $"My name is {myName} and I am {myAge} years old."
+    );
   }
 }

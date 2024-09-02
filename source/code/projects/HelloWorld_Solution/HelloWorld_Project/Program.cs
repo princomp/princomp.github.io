@@ -9,6 +9,8 @@ class Program
 {
   static void Main()
   {
-    Console.WriteLine("Welcome to the lab portion of CSCI 1301!"); // This is an in-line comment.
+    Console.WriteLine(
+      "Welcome to the lab portion of CSCI 1301!"
+    ); // This is an in-line comment.
   }
 }

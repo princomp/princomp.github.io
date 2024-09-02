@@ -58,16 +58,22 @@ class Program
 
       if (int_max_value > int_max_value_plus_one)
       {
-        Console.WriteLine("Integers in C# are not really reliable.");
+        Console.WriteLine(
+          "Integers in C# are not really reliable."
+        );
       }
       if (float.MaxValue == float.MaxValue + 1)
       {
-        Console.WriteLine("Floats in C# are not really reliable.");
+        Console.WriteLine(
+          "Floats in C# are not really reliable."
+        );
       }
 
       if (double.MaxValue == double.MaxValue + 1)
       {
-        Console.WriteLine("Double in C# are not really reliable.");
+        Console.WriteLine(
+          "Double in C# are not really reliable."
+        );
       }
 
       if (float.MaxValue * 2 / 2 == float.MaxValue * 2)

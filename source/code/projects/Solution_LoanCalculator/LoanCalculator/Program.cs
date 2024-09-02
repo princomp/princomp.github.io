@@ -37,21 +37,30 @@ class Program
           + Loan.TypeOfLoan(type)
           + ", great.\nWhat is your current credit score?"
       );
-      success = int.TryParse(Console.ReadLine(), out cscore);
+      success = int.TryParse(
+        Console.ReadLine(),
+        out cscore
+      );
     } while (!success || cscore < 300 || cscore > 850);
 
     decimal need;
     do
     {
       Console.WriteLine("How much do you need, total?");
-      success = decimal.TryParse(Console.ReadLine(), out need);
+      success = decimal.TryParse(
+        Console.ReadLine(),
+        out need
+      );
     } while (!success || need < 0);
 
     decimal down;
     do
     {
       Console.WriteLine("What is your down payment?");
-      success = decimal.TryParse(Console.ReadLine(), out down);
+      success = decimal.TryParse(
+        Console.ReadLine(),
+        out down
+      );
     } while (!success || down < 0);
 
     Loan myLoan = new Loan(name, type, cscore, need, down);

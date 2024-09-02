@@ -14,7 +14,8 @@ class Program
 
     // choose secure (!) random integer
     // between 50 (inclusive) and 500 (exclusive)
-    int anotherSecureRandom = RandomNumberGenerator.GetInt32(50, 500);
+    int anotherSecureRandom =
+      RandomNumberGenerator.GetInt32(50, 500);
 
     // display cryptographically secure int
     Console.WriteLine(anotherSecureRandom);

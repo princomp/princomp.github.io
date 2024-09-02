@@ -7,17 +7,27 @@ public class Program
     int a = 0,
       b = 0;
     Console.WriteLine("Before changing their values:");
-    Console.WriteLine($"\ta is {a}\n\tb is {b}\n-----------");
-    Console.WriteLine("Incrementing, using postfix and prefix operators:");
+    Console.WriteLine(
+      $"\ta is {a}\n\tb is {b}\n-----------"
+    );
+    Console.WriteLine(
+      "Incrementing, using postfix and prefix operators:"
+    );
 
     a++;
     ++b;
-    Console.WriteLine($"\ta is {a}\n\tb is {b}\n-----------");
-    Console.WriteLine("Decrementing, using postfix and prefix operators:");
+    Console.WriteLine(
+      $"\ta is {a}\n\tb is {b}\n-----------"
+    );
+    Console.WriteLine(
+      "Decrementing, using postfix and prefix operators:"
+    );
 
     a--;
     --b;
-    Console.WriteLine($"\ta is {a}\n\tb is {b}\n-----------");
+    Console.WriteLine(
+      $"\ta is {a}\n\tb is {b}\n-----------"
+    );
     Console.WriteLine(
       "When combining decrementing and incrementing operators"
         + " with other operations,\nit makes a difference whether you use"

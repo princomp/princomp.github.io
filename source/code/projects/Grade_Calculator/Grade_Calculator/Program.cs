@@ -98,7 +98,9 @@ namespace Grade_Calculator
       {
         aQ = accQ / ((double)nQ * MAXQ);
         tot += 0.1;
-        Console.WriteLine($"Your average for the quiz is {aQ:P}.");
+        Console.WriteLine(
+          $"Your average for the quiz is {aQ:P}."
+        );
       }
 
       skip = false; // We reset this counter to its original value.
@@ -130,7 +132,9 @@ namespace Grade_Calculator
       {
         aP = accP / ((double)nP * MAXP);
         tot += 0.1;
-        Console.WriteLine($"Your average for the project is {aP:P}.");
+        Console.WriteLine(
+          $"Your average for the project is {aP:P}."
+        );
       }
 
       skip = false;
@@ -162,14 +166,18 @@ namespace Grade_Calculator
       {
         aT = accT / ((double)nT * MAXT);
         tot += 0.4;
-        Console.WriteLine($"Your average for the tests is {aT:P}.");
+        Console.WriteLine(
+          $"Your average for the tests is {aT:P}."
+        );
       }
 
       skip = false;
 
       // Asking and reading for the final.
       Console.WriteLine(
-        "What was your grade for the final (out of " + MAXF + ")?"
+        "What was your grade for the final (out of "
+          + MAXF
+          + ")?"
       );
       read = int.Parse(Console.ReadLine());
       if (read != -1)
@@ -181,7 +189,8 @@ namespace Grade_Calculator
       // Note that we do not use the nF variable in this program, but still declare and update it, to accomodate possible evolution of our program.
 
       // Finally, we compute the average, based on the coefficients (10%, 10%, 40%, 40%) and on the total possible points:
-      double avg = (aQ * 0.1 + aP * 0.1 + aT * 0.4 + aF * 0.4) / tot;
+      double avg =
+        (aQ * 0.1 + aP * 0.1 + aT * 0.4 + aF * 0.4) / tot;
 
       // We then display the average, using the format specifier for percentage:
       Console.WriteLine($"Your average so far is {avg:P}.");

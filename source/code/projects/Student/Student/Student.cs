@@ -4,7 +4,8 @@ class Student
 {
   private int id;
   private string name;
-  private static string universityName = "Augusta University";
+  private static string universityName =
+    "Augusta University";
   private static int studentCount;
 
   public Student(int id, string name)
@@ -19,7 +20,9 @@ class Student
     // does this work? Uncomment (at the end of this lab) to check
     // Console.WriteLine(name);
 
-    Console.WriteLine($"Number of students: {studentCount}");
+    Console.WriteLine(
+      $"Number of students: {studentCount}"
+    );
   }
 
   public override string ToString()

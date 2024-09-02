@@ -69,7 +69,12 @@ public class Program
           itemStatus = '☐';
         }
         Console.WriteLine(
-          "| " + (i + 1) + " |   " + itemStatus + "    | " + todo[i]
+          "| "
+            + (i + 1)
+            + " |   "
+            + itemStatus
+            + "    | "
+            + todo[i]
         );
       }
       /*
@@ -78,7 +83,9 @@ public class Program
       valid = false; // We assume that the user has not given a valid value yet.
       do
       {
-        Console.WriteLine("Enter the number of the task you completed.");
+        Console.WriteLine(
+          "Enter the number of the task you completed."
+        );
         valid =
           int.TryParse(Console.ReadLine(), out justdone)
           && 0 < justdone
@@ -91,7 +98,9 @@ public class Program
       }
       else
       {
-        Console.WriteLine("You already completed this item.");
+        Console.WriteLine(
+          "You already completed this item."
+        );
         status[justdone - 1] = false; // We set the status of this item back to false.
         Console.WriteLine(
           "I interpret this command as \"I did not completed this item actually\","
