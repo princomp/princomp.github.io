@@ -1,6 +1,17 @@
+---
+tags:
+- datatypes/collections
+- oop
+---
+
 # Arrays of Objects
 
-In the following example, we will ask the user how many `Item` objects they want to create, then fill an array with `Item` objects initialized from user input:
+An array can contain more than simple datatypes: it can contains object.
+It can be objects from a custom class, or even … arrays, which are themselves objects!
+
+## Array of Objects From a Custom Class
+
+In the following example, we will ask the user how many `Item` objects (the details of the implementation does not matter, but can be [inspired by this example](./lectures/flow/control_flow_and_classes#setters-with-input-validation)) they want to create, then fill an array with `Item` objects initialized from user input:
 
 ```
 Console.WriteLine("How many items would you like to stock?");
@@ -36,3 +47,5 @@ Console.WriteLine($"The lowest-priced item is {lowestItem}");
 ```
 
 Note that the `lowestItem` variable needs to be initialized to refer to an `Item` object before we can call the `GetPrice()` method on it; we cannot call `GetPrice()` if `lowestItem` is `null`. We could try to create an `Item` object with the "highest possible" price, but a simpler approach is to initialize `lowestItem` with `items[0]`. As long as the array has at  least one element, `0` is a valid index, and the first item in the array can be our first "guess" at the lowest-priced item.
+
+## Arrays of Arrays

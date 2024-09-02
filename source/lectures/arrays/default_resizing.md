@@ -1,7 +1,7 @@
 # Default Values and Resizing
 
 When created, arrays have a fixed size and are populated with some _default values_.
-We discuss here what those default values are, and how an array can be resized.
+We discuss here what those default values are, how an array can be resized, and how we can avoid resizing an array.
 
 ## Default Values
 
@@ -48,3 +48,6 @@ myArray[3] = 40;
 Array.Resize(ref myArray, 2);
 ```
 In the above example, all data starting at index 2 is lost.
+
+
+## Partially Filled Arrays
