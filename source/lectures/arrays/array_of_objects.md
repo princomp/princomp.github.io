@@ -49,3 +49,66 @@ Console.WriteLine($"The lowest-priced item is {lowestItem}");
 Note that the `lowestItem` variable needs to be initialized to refer to an `Item` object before we can call the `GetPrice()` method on it; we cannot call `GetPrice()` if `lowestItem` is `null`. We could try to create an `Item` object with the "highest possible" price, but a simpler approach is to initialize `lowestItem` with `items[0]`. As long as the array has at  least one element, `0` is a valid index, and the first item in the array can be our first "guess" at the lowest-priced item.
 
 ## Arrays of Arrays
+
+An array of arrays is called a multi-dimensional array.
+A multi-dimensional array can be rectangular (it then represents an $n$-dimensional block of memory) or jagged (in that case, it is an array of arrays).
+
+### Rectangular Multi-Dimensional Array
+
+Also called $2$-dimensional arrays, their syntax is very close to $1$-dimensional arrays:
+
+```
+int[,] matrix = new int[2, 3];
+```
+
+where `2` is the number of rows, and `3` is the number of columns.
+They can be accessed with `matrix.GetLength(0)` and `matrix.GetLength(1)` respectively.
+
+Assignment is as for $1$-dimensional arrays, starting at $0$:
+
+```
+matrix[0, 0] = 1;
+matrix[0, 1] = 2;
+matrix[0, 2] = 3;
+matrix[1, 0] = 4;
+matrix[1, 1] = 5;
+matrix[1, 2] = 6;
+```
+
+This will produce a matrix as follows:
+
+        | 0th col. | 1st col. | 2nd col. |
+------- | :---:    | :---:    | :---:    | 
+0th row |   1      |   2      |    3     |
+1st row |   4      |   5      |    6     |
+
+We could also have used a shortened notation to declare this $2$-dimensional array, as follows:
+
+```
+int[,] matrix = new int[,]
+{
+    {1,2,3},
+    {4,5,6}
+};
+```
+
+or even simply
+
+```
+int[,] matrix = {{1,2,3},{4,5,6}};
+```
+
+To display such an array, nested loops are needed:
+
+```
+for (int row = 0; row < matrix.GetLength(0); row++)
+{
+    for (int col = 0; col < matrix.GetLength(1); col++)
+        Console.Write(matrix[row, col] + " ");
+    Console.WriteLine();
+}
+```
+
+### Jagged Array
+
+*To be written.*

@@ -1,3 +1,8 @@
+---
+tags:
+- datatypes/collections
+---
+
 # Default Values and Resizing
 
 When created, arrays have a fixed size and are populated with some _default values_.

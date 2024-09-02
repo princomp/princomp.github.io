@@ -46,6 +46,7 @@
 ./lectures/arrays/1d.md
 ./lectures/arrays/loop_length.md
 ./lectures/arrays/default_resizing.md
+./lectures/arrays/search.md
 ./lectures/arrays/array_of_objects.md
 ./lectures/misc/
 ./lectures/misc/over_under_flow.md
