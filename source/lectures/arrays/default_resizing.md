@@ -38,7 +38,9 @@ Rectangle[] shapes = {new Rectangle(), new Rectangle(), new Rectangle()};
 
 ## Changing the Size
 
-There is a class named `Array` that can be used to resize an array. Upon expanding an array, the additional indices will be filled with the default value of the corresponding type.  Shrinking an array will cause the data in the removed indices (those beyond the new length) to be lost.
+There is a class named `Array` that can be used to resize an array.
+Upon expanding an array, the additional indices will be filled with the default value of the corresponding type.
+Shrinking an array will cause the data in the removed indices (those beyond the new length) to be lost.
 
 ### Example
 
@@ -47,9 +49,16 @@ Array.Resize(ref myArray, 4); //myArray[3] now contains 0
 myArray[3] = 40;
 Array.Resize(ref myArray, 2);
 ```
+
 In the above example, all data starting at index 2 is lost.
 
 
 ## Partially Filled Arrays
 
+To avoid resizing an array, it also possible to declare it *larger than it needs to be*, and then to manipulate an accompanying integer variable that holds the number of elements that are actually stored in the array.
+The [solution to the todo list project](./projects/todolist/solution) illustrates this behavior in detail, the general idea is that you want to let the user store some elements without having to say ahead of time how many, and without having to resize the array constantly.
+The drawback is that the `Length` property becomes less useful, and that you have to manipulate a custom "accounting" variable to keep track of the actual number of elements manipulated.
 
+``` 
+!include code/snippets/partiallyFilledArray.cs
+```
