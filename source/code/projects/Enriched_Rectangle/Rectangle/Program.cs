@@ -51,7 +51,9 @@ class Program
     userInput = Console.ReadLine(); // We read a string from the user. Note that we can re-use the same string variable.
     temporary = int.Parse(userInput); // We convert the string into a numerical value. Note that we can re-use the same int variable.
     myThirdRect.SetWidth(temporary); // We set the length of the rectangle to be the value we obtained.
-    Console.WriteLine($"The area of your rectangle is {myThirdRect.ComputeArea()}");
+    Console.WriteLine(
+      $"The area of your rectangle is {myThirdRect.ComputeArea()}"
+    );
 
     //Create a fourth `Rectangle` object, do not specify its length or width, and display them on the screen. What do you observe?
     Rectangle myFourthRect = new Rectangle();

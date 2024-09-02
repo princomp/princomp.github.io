@@ -60,7 +60,8 @@
   {
     //return $"This room is located in {building}({GetCode()}), {number}.{(computer ? "\nIt has a computer." : "")}";
     string result;
-    result = $"This room is located in {building} ({GetCode()}), {number}.";
+    result =
+      $"This room is located in {building} ({GetCode()}), {number}.";
     if (computer)
       result += $"\nIt has a computer.";
     else

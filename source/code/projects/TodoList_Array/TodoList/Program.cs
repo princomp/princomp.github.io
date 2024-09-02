@@ -30,7 +30,9 @@ public class Program
 
     do
     {
-      Console.WriteLine("What is on your todo list? Enter \"done\" when you are done.");
+      Console.WriteLine(
+        "What is on your todo list? Enter \"done\" when you are done."
+      );
       uInput = Console.ReadLine();
       if (uInput != "done")
       {
@@ -66,7 +68,9 @@ public class Program
         {
           itemStatus = '☐';
         }
-        Console.WriteLine("| " + (i + 1) + " |   " + itemStatus + "    | " + todo[i]);
+        Console.WriteLine(
+          "| " + (i + 1) + " |   " + itemStatus + "    | " + todo[i]
+        );
       }
       /*
        * We now ask the user to enter the number of the completed item.
@@ -76,7 +80,9 @@ public class Program
       {
         Console.WriteLine("Enter the number of the task you completed.");
         valid =
-          int.TryParse(Console.ReadLine(), out justdone) && 0 < justdone && justdone <= todoSize;
+          int.TryParse(Console.ReadLine(), out justdone)
+          && 0 < justdone
+          && justdone <= todoSize;
       } while (!valid);
       if (!status[justdone - 1]) // We make sure this item was not completed already.
       {

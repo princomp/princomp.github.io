@@ -17,15 +17,40 @@ class Program
 
       Console.Write( // We display information about the maximum value of different datatypes:
         "\n|-------|---------------------------------|---------------------------------|\n"
-          + String.Format("|{0,7}|{1,33}|{2,33}|", "Type", "Max value", "Max Value +1")
+          + String.Format(
+            "|{0,7}|{1,33}|{2,33}|",
+            "Type",
+            "Max value",
+            "Max Value +1"
+          )
           + "\n|=======|=================================|=================================|\n"
-          + String.Format("|{0,7}|{1,33}|{2,33}|", "int", int.MaxValue, int_max_value_plus_one)
+          + String.Format(
+            "|{0,7}|{1,33}|{2,33}|",
+            "int",
+            int.MaxValue,
+            int_max_value_plus_one
+          )
           + "\n|-------|---------------------------------|---------------------------------|\n"
-          + String.Format("|{0,7}|{1,33}|{2,33}|", "float", float.MaxValue, float.MaxValue + 1)
+          + String.Format(
+            "|{0,7}|{1,33}|{2,33}|",
+            "float",
+            float.MaxValue,
+            float.MaxValue + 1
+          )
           + "\n|-------|---------------------------------|---------------------------------|\n"
-          + String.Format("|{0,7}|{1,33}|{2,33}|", "double", double.MaxValue, double.MaxValue + 1)
+          + String.Format(
+            "|{0,7}|{1,33}|{2,33}|",
+            "double",
+            double.MaxValue,
+            double.MaxValue + 1
+          )
           + "\n|-------|---------------------------------|---------------------------------|\n"
-          + String.Format("|{0,7}|{1,33}|{2,33}|", "decimal", decimal.MaxValue, "N/a")
+          + String.Format(
+            "|{0,7}|{1,33}|{2,33}|",
+            "decimal",
+            decimal.MaxValue,
+            "N/a"
+          )
           + "\n|-------|---------------------------------|---------------------------------|\n"
       );
 

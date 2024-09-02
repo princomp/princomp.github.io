@@ -56,11 +56,19 @@ class Program
     // We display the number corresponding to the day entered:
     if (num_day < 0)
     {
-      Console.WriteLine($"I am sorry, but {string_day} does not seem to be a valid day.");
+      Console.WriteLine(
+        $"I am sorry, but {string_day} does not seem to be a valid day."
+      );
     }
     else
     {
-      Console.WriteLine("The number corresponding to " + string_day + " is " + num_day + ".");
+      Console.WriteLine(
+        "The number corresponding to "
+          + string_day
+          + " is "
+          + num_day
+          + "."
+      );
     }
   }
 }

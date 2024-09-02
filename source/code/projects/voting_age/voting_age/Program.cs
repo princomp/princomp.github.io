@@ -17,11 +17,15 @@ class Program
 
     if (yourAge < 0)
     {
-      Console.WriteLine("I believe you made a mistake, an age cannot be negative!");
+      Console.WriteLine(
+        "I believe you made a mistake, an age cannot be negative!"
+      );
     }
     else if (yourAge > 2000)
     {
-      Console.WriteLine("I believe you made a mistake, nobody can live that long!");
+      Console.WriteLine(
+        "I believe you made a mistake, nobody can live that long!"
+      );
     }
     else if (yourAge >= 18)
     {
@@ -33,12 +37,15 @@ class Program
     else if (yourAge >= 19)
     {
       Console.WriteLine(
-        "In all States but Mississippi and Puerto Rico," + " you have reached the age of majority."
+        "In all States but Mississippi and Puerto Rico,"
+          + " you have reached the age of majority."
       );
     }
     else if (yourAge >= 21)
     {
-      Console.WriteLine("You have reached the age of majority in all US states.");
+      Console.WriteLine(
+        "You have reached the age of majority in all US states."
+      );
     }
   }
 }

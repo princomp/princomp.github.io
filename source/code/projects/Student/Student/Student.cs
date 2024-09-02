@@ -24,6 +24,8 @@ class Student
 
   public override string ToString()
   {
-    return $"id: {id}\n" + $"name: {name}\n" + $"university: {universityName}";
+    return $"id: {id}\n"
+      + $"name: {name}\n"
+      + $"university: {universityName}";
   }
 }

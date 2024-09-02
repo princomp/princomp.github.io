@@ -6,7 +6,11 @@
   private decimal melt; // Melting point (in Kelvin) of the chemical element
 
   // Constructor:
-  public ChemElem(int atomicNumberParam, string nameParam, decimal meltParam)
+  public ChemElem(
+    int atomicNumberParam,
+    string nameParam,
+    decimal meltParam
+  )
   {
     atomicNumber = atomicNumberParam;
     name = nameParam;

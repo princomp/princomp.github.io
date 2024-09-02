@@ -74,7 +74,13 @@ namespace Grade_Calculator
       // Loop to collect the data for the quizzes, and then we compute the average for the quizzes.
       do
       {
-        Console.WriteLine("What was your grade for quiz " + (nQ + 1) + " (out of " + MAXQ + ")?");
+        Console.WriteLine(
+          "What was your grade for quiz "
+            + (nQ + 1)
+            + " (out of "
+            + MAXQ
+            + ")?"
+        );
         read = int.Parse(Console.ReadLine());
         if (read == -1)
         {
@@ -102,7 +108,11 @@ namespace Grade_Calculator
       do
       {
         Console.WriteLine(
-          "What was your grade for project " + (nP + 1) + " (out of " + MAXP + ")? "
+          "What was your grade for project "
+            + (nP + 1)
+            + " (out of "
+            + MAXP
+            + ")? "
         );
         read = int.Parse(Console.ReadLine());
         if (read == -1)
@@ -130,7 +140,11 @@ namespace Grade_Calculator
       do
       {
         Console.WriteLine(
-          "What was your grade for in-class test " + (nT + 1) + " (out of " + MAXT + ")? "
+          "What was your grade for in-class test "
+            + (nT + 1)
+            + " (out of "
+            + MAXT
+            + ")? "
         );
         read = int.Parse(Console.ReadLine());
         if (read == -1)
@@ -154,7 +168,9 @@ namespace Grade_Calculator
       skip = false;
 
       // Asking and reading for the final.
-      Console.WriteLine("What was your grade for the final (out of " + MAXF + ")?");
+      Console.WriteLine(
+        "What was your grade for the final (out of " + MAXF + ")?"
+      );
       read = int.Parse(Console.ReadLine());
       if (read != -1)
       {

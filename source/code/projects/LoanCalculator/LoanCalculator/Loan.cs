@@ -19,7 +19,13 @@ class Loan
    * based on the information given as arguments.
    * The name, type and credit score will simply be given as arguments.
    */
-  public Loan(string nameP, char typeP, int cscoreP, decimal needP, decimal downP)
+  public Loan(
+    string nameP,
+    char typeP,
+    int cscoreP,
+    decimal needP,
+    decimal downP
+  )
   {
     name = nameP;
     type = typeP;
@@ -73,6 +79,10 @@ class Loan
         typeName = "another reason";
         break;
     }
-    return "Dear " + name + $", you borrowed {amount:C} at {rate:P} for " + typeName + ".";
+    return "Dear "
+      + name
+      + $", you borrowed {amount:C} at {rate:P} for "
+      + typeName
+      + ".";
   }
 }

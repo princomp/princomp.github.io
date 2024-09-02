@@ -11,7 +11,9 @@ class Program
   {
     string yourFirstName; // Variable to hold the user's first name
 
-    Console.WriteLine("Please enter your first name, followed by \"Enter\":"); // We ask the user for their first name.
+    Console.WriteLine(
+      "Please enter your first name, followed by \"Enter\":"
+    ); // We ask the user for their first name.
 
     yourFirstName = Console.ReadLine(); // We read from the user using Console.ReadLine(), and store the result in the variable yourFirstName.
 

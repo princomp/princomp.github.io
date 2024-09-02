@@ -15,7 +15,9 @@ class Program
     Console.WriteLine($"The code is {n126.GetCode()}.");
     Console.WriteLine(n126);
     Room test = new Room("Allgood Hall", 999, false);
-    Console.WriteLine($"n126 and test are in the same building: {n126.InSameBuilding(test)}");
+    Console.WriteLine(
+      $"n126 and test are in the same building: {n126.InSameBuilding(test)}"
+    );
     n126.RoomRoute();
     Console.WriteLine(test.RoomRoute());
   }
