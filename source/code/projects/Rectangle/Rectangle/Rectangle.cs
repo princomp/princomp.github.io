@@ -19,49 +19,49 @@
 
 class Rectangle
 {
-    /*
-     * Declaration of the two instance variables / attributes / fields
-     */
-    private int length;
-    private int width;
+  /*
+   * Declaration of the two instance variables / attributes / fields
+   */
+  private int length;
+  private int width;
 
-    /*
-     * Accessors for the Length
-     */
+  /*
+   * Accessors for the Length
+   */
 
-    // "Setter" (or "mutator") for the Length:
-    public void SetLength(int lengthParameter)
-    {
-        length = lengthParameter;
-    }
+  // "Setter" (or "mutator") for the Length:
+  public void SetLength(int lengthParameter)
+  {
+    length = lengthParameter;
+  }
 
-    // "Getter" (or "accessor") for the Length
-    public int GetLength()
-    {
-        return length;
-    }
+  // "Getter" (or "accessor") for the Length
+  public int GetLength()
+  {
+    return length;
+  }
 
-    /*
-     * Accessors for the Width
-     */
+  /*
+   * Accessors for the Width
+   */
 
-    // "Setter" (or "mutator") for the Width:
-    public void SetWidth(int widthParameter)
-    {
-        width = widthParameter;
-    }
+  // "Setter" (or "mutator") for the Width:
+  public void SetWidth(int widthParameter)
+  {
+    width = widthParameter;
+  }
 
-    // "Getter" (or "accessor") for the Width
-    public int GetWidth()
-    {
-        return width;
-    }
+  // "Getter" (or "accessor") for the Width
+  public int GetWidth()
+  {
+    return width;
+  }
 
-    /*
-     * Method to compute the area of a rectangle
-     */
-    public int ComputeArea()
-    {
-        return length * width;
-    }
+  /*
+   * Method to compute the area of a rectangle
+   */
+  public int ComputeArea()
+  {
+    return length * width;
+  }
 }

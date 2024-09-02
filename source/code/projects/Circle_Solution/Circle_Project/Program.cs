@@ -2,8 +2,8 @@
 
 class Program
 {
-    static void Main()
-    {
-        Rectangle test = new Rectangle();
-    }
+  static void Main()
+  {
+    Rectangle test = new Rectangle();
+  }
 }

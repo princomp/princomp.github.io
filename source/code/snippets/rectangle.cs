@@ -1,30 +1,30 @@
 class Rectangle
 {
-    private int length;
-    private int width;
+  private int length;
+  private int width;
 
-    public void SetLength(int lengthParameter)
-    {
-        length = lengthParameter;
-    }
+  public void SetLength(int lengthParameter)
+  {
+    length = lengthParameter;
+  }
 
-    public int GetLength()
-    {
-        return length;
-    }
+  public int GetLength()
+  {
+    return length;
+  }
 
-    public void SetWidth(int widthParameter)
-    {
-        width = widthParameter;
-    }
+  public void SetWidth(int widthParameter)
+  {
+    width = widthParameter;
+  }
 
-    public int GetWidth()
-    {
-        return width;
-    }
+  public int GetWidth()
+  {
+    return width;
+  }
 
-    public int ComputeArea()
-    {
-        return length * width;
-    }
+  public int ComputeArea()
+  {
+    return length * width;
+  }
 }

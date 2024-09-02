@@ -1,25 +1,25 @@
 class ClassRoom
 {
-    private string building;
-    private int number;
+  private string building;
+  private int number;
 
-    public void SetBuilding(string buildingParam)
-    {
-        building = buildingParam;
-    }
+  public void SetBuilding(string buildingParam)
+  {
+    building = buildingParam;
+  }
 
-    public string GetBuilding()
-    {
-        return building;
-    }
+  public string GetBuilding()
+  {
+    return building;
+  }
 
-    public void SetNumber(int numberParam)
-    {
-        number = numberParam;
-    }
+  public void SetNumber(int numberParam)
+  {
+    number = numberParam;
+  }
 
-    public int GetNumber()
-    {
-        return number;
-    }
+  public int GetNumber()
+  {
+    return number;
+  }
 }
