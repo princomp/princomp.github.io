@@ -41,6 +41,7 @@
 ./lectures/flow/control_flow_and_classes.md
 ./lectures/flow/break_continue.md
 ./lectures/flow/conditional_operator.md
+./lectures/arrays/
 ./lectures/arrays/intro.md
 ./lectures/arrays/1d.md
 ./lectures/arrays/loop_length.md
