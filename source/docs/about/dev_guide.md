@@ -215,6 +215,18 @@ Note that for [an unknown reason](https://github.com/DCsunset/pandoc-include/iss
 - only include code in text form such that it can be copy-pasted for reuse
 - make sure to include blank lines before and after code blocks, since the absence of these can cause the code block to display incorrectly.
 
+##### Tidying Source code
+
+[CSharpier](https://csharpier.com/) is used to tidy the source code and make it uniform.
+Use
+
+```text
+make tidy
+```
+
+to tidy all the source code present in the `source/code/` folders.
+The [configuration file](https://csharpier.com/docs/Configuration) is at `source/code/csharpierrc.yaml`.
+
 ### Creating new lectures
 
 Lecture notes belong to the `source/lectures/` directory.

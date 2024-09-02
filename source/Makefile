@@ -37,7 +37,7 @@ clean:
 
 # Rule to tidy all C# source code, requires https://csharpier.com/
 tidy:
-	dotnet csharpier $(CODE_DIR)
+	dotnet csharpier --config-path "$(CODE_DIR)csharpierrc.yaml" $(CODE_DIR)
 	
 # -------------------------------
 # Useful Makefile doc. 
