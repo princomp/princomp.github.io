@@ -17,7 +17,7 @@ public class Program
         bool valid; // This will hold true if the user input is valid (a positive number
         // less than the number of items in the list), false otherwise. Used for user-input
         // validation.
-        char itemStatus; // This will hold '☑' if the current item is done, 
+        char itemStatus; // This will hold '☑' if the current item is done,
         // '☐' otherwise.
 
         // We start by populating the list with items.
@@ -27,13 +27,13 @@ public class Program
             uInput = Console.ReadLine();
             if (uInput != "done")
             {
-                todo[todoSize] = uInput; // We can store the first item at index todoSize 
+                todo[todoSize] = uInput; // We can store the first item at index todoSize
                 // since its initial value is 0.
                 todoSize++; // We increment the number of items in the list.
             }
         } while (uInput != "done"); // When the user enters "done", we exit this loop.
 
-        // We now display the todo list, and ask the user to indicate which item they 
+        // We now display the todo list, and ask the user to indicate which item they
         // completed, as long as there are some items left in their list.
 
         while (completed != todoSize)
@@ -43,15 +43,25 @@ public class Program
             Console.WriteLine("| # | Status | Task |");
             for (int i = 0; i < todoSize; i++)
             {
-                if (status[i]) { itemStatus = '☑'; } else { itemStatus = '☐'; }
-                Console.WriteLine("| "+ (i+1) + " |   " + itemStatus + "    | " + todo[i]);
+                if (status[i])
+                {
+                    itemStatus = '☑';
+                }
+                else
+                {
+                    itemStatus = '☐';
+                }
+                Console.WriteLine("| " + (i + 1) + " |   " + itemStatus + "    | " + todo[i]);
             }
             // We now ask the user to enter the number of the completed item.
             valid = false; // We assume that the user has not given a valid value yet.
             do
             {
                 Console.WriteLine("Enter the number of the task you completed.");
-                valid = int.TryParse(Console.ReadLine(), out justdone) && 0 < justdone && justdone <= todoSize;
+                valid =
+                    int.TryParse(Console.ReadLine(), out justdone)
+                    && 0 < justdone
+                    && justdone <= todoSize;
             } while (!valid);
             status[justdone - 1] = true; // We indicate that the item was completed by setting its value to true.
             completed++; // We increment the number of items completed.
