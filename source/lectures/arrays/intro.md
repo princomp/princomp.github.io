@@ -12,8 +12,12 @@ The elements in an array are always stored in a contiguous block of memory, prov
 An array can be:
 
 - Single-Dimensional,
-- Multidimensional,
-- Jagged.
+- Multidimensional.
+
+Multidimensional arrays can be 
+
+- Jagged,
+- Rectangular.
 
 Arrays are useful, for instance,
 
