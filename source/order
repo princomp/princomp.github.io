@@ -23,12 +23,12 @@
 ./lectures/intro/conversions.md
 ./lectures/intro/inputs_and_outputs.md
 ./lectures/oop/
-./lectures/oop/oop-intro.md
+./lectures/oop/oop_intro.md
 ./lectures/oop/more_advanced_object_concepts.md
 ./lectures/oop/properties.md
 ./lectures/oop/static.md
 ./lectures/flow/
-./lectures/flow/flow-intro.md
+./lectures/flow/flow_intro.md
 ./lectures/flow/booleans.md
 ./lectures/flow/ifs.md
 ./lectures/flow/switch.md
@@ -41,8 +41,11 @@
 ./lectures/flow/control_flow_and_classes.md
 ./lectures/flow/break_continue.md
 ./lectures/flow/conditional_operator.md
-./lectures/arrays/
+./lectures/arrays/intro.md
 ./lectures/arrays/1d.md
+./lectures/arrays/loop_length.md
+./lectures/arrays/default_resizing.md
+./lectures/arrays/array_of_objects.md
 ./lectures/misc/
 ./lectures/misc/over_under_flow.md
 ./lectures/misc/random.md
