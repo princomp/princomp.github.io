@@ -215,3 +215,5 @@ Range: 2 -- 2
 Mid: 2
 Found the value: True
 ```
+
+Observe that if we were to replace `start <= end` with `start < end` then the algorithm would not have correctly terminated in the example above.
