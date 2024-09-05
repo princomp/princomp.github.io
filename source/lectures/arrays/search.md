@@ -103,6 +103,8 @@ Console.WriteLine("The array is sorted: " + sortedSoFar +".");
 
 ### Binary Search
 
+#### Introduction
+
 *Binary* (*half-interval* or *logarithmic*) *search* leverages the fact that the array is sorted to speed up the search for a particular value.
 It goes as follows:
 
@@ -115,6 +117,8 @@ The algorithm compares the `target` value to the middle element of the array.
     #. If the middle element is less than the `target`, then the algorithm restarts, but looking for the value only in the right half of the array.
 
 #. If the search ends with the remaining half being empty, the `target` is not in the array. 
+
+#### First Example
 
 An example of implementation (and of execution) is as follows:
 
@@ -165,4 +169,49 @@ The middle index is 10.
 I keep looking left.
 The middle index is 9.
 Found the value: True.
+```
+
+#### Second Example
+
+Remembering that characters are such that `'A'` is less than `'a'`, and `'a'` is less than `'b'`, we can run a binary search on a sorted array of characters.
+The code below is the same algorithm as above, only the information logged changes:
+
+```
+char[] arrayExample = { 'A', 'B', 'D', 'Z', 'a', 'b', 'd' };
+char target = 'D';
+bool foundSoFar = false;
+int start = 0;
+int end = arrayExample.Length - 1;
+int mid;
+while (start <= end && !foundSoFar)
+{
+    Console.WriteLine("Range: " + start + " -- " + end);
+    mid = (start + end) / 2;
+    Console.WriteLine("Mid: " + mid);
+    if (target == arrayExample[mid])
+    {
+        foundSoFar = true;
+    }
+    else if (target > arrayExample[mid])
+    {
+        start = mid + 1;
+    }
+    else
+    {
+        end = mid - 1;
+    }
+}
+Console.WriteLine("Found the value: " + foundSoFar + ".");
+```
+
+This will display:
+
+```text
+Range: 0 -- 6
+Mid: 3
+Range: 0 -- 2
+Mid: 1
+Range: 2 -- 2
+Mid: 2
+Found the value: True
 ```
