@@ -2,7 +2,7 @@
 tags:
 - datatypes/collections
 - oop/objects
-- oop/objects
+- debugging/exceptions
 ---
 
 # Description
@@ -83,7 +83,7 @@ Description: Temperatures recorded in Augusta, GA between 2024/02 and 2024/03
 Median: 43
 Average: 47.625
 Specified argument was out of the range of valid values.
-Parameter name: That is hotter than the hottest ever recorded!
+Parameter name: That is hotter than the hottest ever recorded on Earth!
 Specified argument was out of the range of valid values.
 Parameter name: That is colder than the coldest ever recorded on Earth!
 Your data is not sorted.
@@ -93,7 +93,7 @@ Press any key to continue...
 
 ## Bonuses
 
-- Implement a method to display the values nicely.
+- Implement a method to display the values and the description nicely.
 - Implement a method to display the values *converted to Celcius* nicely.
-- You array can be sorted in increasing *or* decreasing order. That is, the value `3.5, -10, -15` should be accepted.
+- Accept arrays sorted in increasing *or* decreasing order. That is, the array `3.5, -10, -15` should be accepted.
 - Implement a method (or property) to compute [the mode](https://en.wikipedia.org/wiki/Mode_(statistics)) of the temperatures. Note that the mode is not always unique: in that case, an exception should be raised.

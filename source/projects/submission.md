@@ -44,6 +44,16 @@ A good, finished project should include *all* of the following:
 - A partially completed project is better than nothing. Do not hesitate to add a comment describing your difficulties; that will show that you are aware of the limitations of your program.
 - Make sure you submitted the correct files by re-downloading them (possibly on a different computer) and making sure you can still compile and execute your program.
 
+## Elegance, Clarity and Readability
+
+While elegance, clarity and readability are not *strictly speaking* parts of the rubric, they matter.
+Try to
+
+- Comment your code,
+- Avoid `while(true)` loops (so that the reader can ["understand the termination condition just by looking at the header"](https://stackoverflow.com/a/390566)),
+- Remove useless keywords (do you know what `internal` do? If not, consider removing it from your program),
+- Not load namespaces that you are not using.
+
 ## Getting Help 
 
 You can ask the instructor or the (under)graduate course assistants for help  and feedback. Please upload your project according to the  instructions and send an email asking to go over it if you want us to check that you submitted the correct file, that your code compiles,  etc.
