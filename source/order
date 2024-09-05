@@ -56,6 +56,8 @@
 ./labs/
 ./exercises/
 ./projects/
-./projects/submission
+./projects/submission.md
 ./projects/character_creator/
 ./projects/fighting_game/
+./projects/todolist/
+./projects/temp_stats/
