@@ -3,9 +3,9 @@ tags:
 - datatypes/collections
 ---
 
-# Manipulating 2D Arrays
+# Manipulating Rectangular Arrays
 
-We present below some simple algorithms to manipulate 2-dimensional arrays.
+We present below some simple algorithms to manipulate 2-dimensional (rectangular) arrays.
 
 ## Summing the values row per row
 

@@ -111,4 +111,13 @@ for (int row = 0; row < matrix.GetLength(0); row++)
 
 ### Jagged Array
 
-*To be written.*
+A jagged array is an array of arrays.
+The difference with rectangular arrays is that the arrays stored can be of varying size.
+
+The syntax is straightforward once understood that jagged arrays are *exactly* arrays of arrays: 
+
+``` 
+!include code/snippets/jaggedArray.cs
+```
+
+In this example, it should be clear that `jaggedArray[row]` is itself an array, and hence that we can use e.g., `jaggedArray[row].Length` or `jaggedArray[row][arrayCell]`.
