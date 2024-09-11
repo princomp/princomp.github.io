@@ -446,10 +446,11 @@ make build-light
 You can run
 
 ```bash
-make all
+make -l 2.5 -j$(nproc --ignore=2) all
 ```
 
 to create and populate the `content/` folder at root level with all the resources compiled.
+Note that this command limits the number of jobs in parallel and the number of CPU used ([using this trick](https://stackoverflow.com/a/56607839)), but that [tweaking those values](https://stackoverflow.com/a/32487943) may be needed to find the sweet spot on your own machine.
 
 If you want to speed-up the compilation time, you can run
 
@@ -459,7 +460,7 @@ make fetch
 
 which will fetch the [latest build output](#build-outputs), extract it and populate the `content/` folder using its content.
 Due to [make's unique feature](https://makefiletutorial.com/) only the files whose source was edited will be re-created when executing `make all` the next time, hence saving *a lot* of time.
-
+However, please not that files moved or deleted will still be present in the build.
 
 ## Website
 

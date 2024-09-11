@@ -231,6 +231,11 @@ PANDOC_BOOK_DOC:= $(PANDOC_DOC)
 # Maximize parallel execution whenever possible
 .PHONY:MAKEFLAGS
 MAKEFLAGS:= -j
+# Warning: this is extremely resource-consuming.
+# We recommend limiting the number of processors 
+# and of jobs using a command such as
+# make -l 2.5 -j$(nproc --ignore=2) all
+# when invoking "make all".
 
 # By default, we construct display the help message.
 .DEFAULT_GOAL:= help
