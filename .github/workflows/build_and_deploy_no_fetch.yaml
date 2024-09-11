@@ -10,7 +10,7 @@
 # complications (detailed below), we prefer to
 # keep the jobs in the same workflow.
 
-name: Build & deploy (no fetch)
+name: Build & deploy (no fetch) (test)
 
 permissions:
   contents: write
