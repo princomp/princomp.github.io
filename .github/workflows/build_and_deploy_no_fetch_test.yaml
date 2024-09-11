@@ -51,7 +51,7 @@ jobs:
       run: |
         test -f pandoc-3.2.1-1-amd64.deb || wget https://github.com/jgm/pandoc/releases/download/3.2.1/pandoc-3.2.1-1-amd64.deb
         sudo dpkg -i pandoc-3.2.1-1-amd64.deb
-        sudo apt-get install -y lmodern librsvg2-bin fonts-symbola
+        sudo apt-get install -y  texlive-xetex lmodern librsvg2-bin fonts-symbola
         pip install Pygments pandoc-include
     - name: Build 🏗️
       run: |
