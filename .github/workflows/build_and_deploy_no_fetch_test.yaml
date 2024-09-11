@@ -10,7 +10,7 @@
 # complications (detailed below), we prefer to
 # keep the jobs in the same workflow.
 
-name: Build & deploy (no fetch)
+name: Build & deploy (no fetch) (test)
 
 permissions:
   contents: write
@@ -49,43 +49,12 @@ jobs:
         python-version: "3.10"
     - name: Setup pandoc ⚙️
       run: |
-        sudo apt-get update
         test -f pandoc-3.2.1-1-amd64.deb || wget https://github.com/jgm/pandoc/releases/download/3.2.1/pandoc-3.2.1-1-amd64.deb
         sudo dpkg -i pandoc-3.2.1-1-amd64.deb
-        sudo apt-get install -y texlive texlive-xetex texlive-latex-extra lmodern librsvg2-bin fonts-symbola
-        pip install --upgrade pip
+        sudo apt-get install -y lmodern librsvg2-bin fonts-symbola
         pip install Pygments pandoc-include
     - name: Build 🏗️
       run: |
         cd /home/runner/work/princomp.github.io/princomp.github.io/source/
         make all
-    - name: Create package 🎁
-      uses: crowbarmaster/GH-Automatic-Releases@latest
-      with:
-        automatic_release_tag: "latest"
-        repo_token: ${{ secrets.GITHUB_TOKEN }}
-        prerelease: true
-        draft: false
-        files: content/release.zip
-    - name: Switching to quartz 🪴
-      run: git checkout quartz # <- This part is a bit tricky. We built the content/ folder previously, and since it is not tracked by github, this folder stays even if we change branch.
-      # If we had two different workflow, we would need to re-download the package created previously before being able to deploy the website.
-    - name: Install Dependencies
-      run: npm ci
-    - name: Build Quartz
-      run: npx quartz build
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v2
-      with:
-        path: public
-
-  deploy:
-    needs: build
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+ 
