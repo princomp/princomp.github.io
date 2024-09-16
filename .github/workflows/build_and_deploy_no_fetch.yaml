@@ -58,7 +58,7 @@ jobs:
     - name: Build 🏗️
       run: |
         cd /home/runner/work/princomp.github.io/princomp.github.io/source/
-        make all
+        make -l 2.5 -j$(nproc --ignore=2) all
     - name: Create package 🎁
       uses: crowbarmaster/GH-Automatic-Releases@latest
       with:

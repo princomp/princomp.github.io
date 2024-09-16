@@ -91,6 +91,8 @@ Your data is not sorted.
 Press any key to continue...
 ```
 
+Note that it is ok if you cannot reproduce this output *exactly*.
+
 ## Bonuses
 
 - Implement a method to display the values and the description nicely.

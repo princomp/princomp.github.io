@@ -62,7 +62,10 @@ You should ask early and not wait until the last minute.
 | ⚠ Warning       |
 |:---------------------------|
 | *Do not* ask other classmates for help, copy and paste from the internet, or ask a chatbot to writh the program for you. This work is supposed to be *your own*, and should reflect *your own* understanding. Getting help from un-authorized sources will hurt your understanding of this class and therefore your grade on the long run. | 
- 
+
+
+How to share a project is also explained [in this video](./vid/CreateUploadProjectTutorial_light.mkv).
+
 ## Checklist
 
 - [ ] Project compiles.
