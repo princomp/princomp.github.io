@@ -319,7 +319,7 @@ tags:
     ```
     </details>
 
-## Warm-up Exercises -- Calculating With Arrays
+### Calculating With Arrays
     
 #. Write a program that computes the sum of values stored in a `numbers` array of integers
 
@@ -368,7 +368,7 @@ tags:
     </details>
     
 
-## Warm-Up Exercise -- Looking For Values
+### Looking For Values
 
 #. Given an array `myArray` and a value `val`, write code that checks if `myArray` contains `val`. The result should be `true` if `val` occur in `myArray` and `false` otherwise.
 
@@ -387,6 +387,23 @@ tags:
     }
     ```
     </details>
+    
+#. Given an array and some value x, write code that computes the number of times x occurs in the array.
+    
+    <details>
+    <summary>Solution</summary>
+    
+    ```cs
+    int count = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (x == array[i])
+        {
+            count++;
+        }
+    }
+    ```
+    </details>    
     
 #. Given an array `myArray` and two values `x` and `y`, write code that checks if `myArray` contains *either* `x` or `y`. The result should be `true` if `x` or `y` occur in `myArray` and `false` otherwise.
 
@@ -473,7 +490,7 @@ For example, in an array containing 1, 2, 6, 7, 3, 9 with x being 8, the solutio
     </details>
 
    
-## Warm-up Exercises -- Manipulating Two Arrays
+### Manipulating Two Arrays
 
 #. Given two arrays `array1` and `array2`, write a program to determine if there exists a value that occurs in both arrays. If such value exists, the result should be `true` and `false` otherwise.
 
@@ -492,6 +509,27 @@ For example, in an array containing 1, 2, 6, 7, 3, 9 with x being 8, the solutio
                 valueInCommon = true;
             }
         }
+    }
+    ```
+    </details>
+
+    
+#. Write a program that combines two `string` arrays called `array1` and `array2` into a single array containing first all the elements from `array1`, then all the values from `array2`. No values should be lost during the merge.
+
+    <details>
+    <summary>Solution</summary>
+    
+    ```cs
+    string[] combined = new string[array1.Length + array2.Length];
+    
+    for (int i = 0; i < array1.Length; i++)
+    {
+        combined[i] = array1[i];
+    }
+    
+    for (int j = 0; j < array2.Length; j++)
+    {
+        combined[array1.Length + j] = array2[j];
     }
     ```
     </details>
@@ -561,10 +599,7 @@ For example, in an array containing 1, 2, 6, 7, 3, 9 with x being 8, the solutio
     </details>
 
 
-
-
-## Questions (harder)
-
+## Algorithms
 
 #. Given an array of positive integers, count how many even values occur in that array.
 
@@ -583,24 +618,7 @@ For example, in an array containing 1, 2, 6, 7, 3, 9 with x being 8, the solutio
     }
     return count;
     ```
-    </details>
-
-#. Given an array and some value x, write code that computes the number of times x occurs in the array.
-
-    <details>
-    <summary>Solution</summary>
-
-    ```cs
-    int count = 0;
-    for (int i = 0; i < array.Length; i++)
-    {
-        if (x == array[i])
-        {
-            count++;
-        }
-    }
-    ```
-    </details>
+    </details>   
 
 #. Write a program that computes the average of values of a numeric array.
 
@@ -758,75 +776,23 @@ For example, in an array containing 1, 2, 6, 7, 3, 9 with x being 8, the solutio
     ```
     </details>
 
-#. Write code that counts the number of occurrences of a specified value in an array.
+
+#. Write code to reverse the contents of an array `myArray`. For example, an array containing 1, 4, 3, 2, 5 should contain, after the program was executed, 5, 2, 3, 4, 1.
 
     <details>
     <summary>Solution</summary>
 
     ```cs
-    int NumberOfOccurrences(int[] a, int v)
+    for (int i = 0, j = myArray.Length - 1; i < j; i++, j--)
     {
-        int count = 0;
-        foreach (int i in a)
-        {
-            if (i == v)
-            {
-                count++;
-            }
-        }
-        return count;
+        int temp = myArray[i];
+        myArray[i] = myArray[j];
+        myArray[j] = temp;
     }
     ```
     </details>
 
-#. Write code to reverse the contents of an array.
-Example: Array [1,4,3,2,5] should be [5,2,3,4,1] after being reversed
-
-    <details>
-    <summary>Solution</summary>
-
-    ```cs
-    void ReverseArray(int[] array)
-    {
-        for (int i = 0, j = array.Length - 1; i < j; i++, j--)
-        {
-            int temp = array[i];
-            array[i] = array[j];
-            array[j] = temp;
-        }
-    }
-    ```
-    </details>
-
-#. Write a program that combines two arrays of same data type into a single array. No values should be lost during the merge.
-
-    <details>
-    <summary>Solution</summary>
-
-    ```cs
-    string[] CombineArray(string[] array1, string[] array2)
-    {
-        string[] combined = new string[array1.Length + array2.Length];
-
-        int i = 0;
-
-        for (; i < array1.Length; i++)
-        {
-            combined[i] = array1[i];
-        }
-
-        for (int j = 0; j < array2.Length; j++)
-        {
-            combined[i + j] = array2[j];
-        }
-
-        return combined;
-    }
-    ```
-    </details>
-
-
-## Problems
+## Wrap-Up Problems
 
 #. Declare and initialize three arrays:
 
