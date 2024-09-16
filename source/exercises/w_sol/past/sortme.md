@@ -274,3 +274,114 @@ else {Console.WriteLie(“No”);}
   else {Console.WriteLie(“No”);}   // WriteLie is not a method in the Console class, whereas WriteLine is.
   
 </details>
+
+
+
+#. Assuming we have two **int** arrays of the same size, `firstA` and `secondA`, write a program that copies the content of `firstA` into `secondA`.
+
+    <details>
+    <summary>Solution</summary>
+
+    ```cs
+    for (int k =0; k < firstA.Length; k++)
+        secondA[k] = firstA[k];
+    ```
+    </details>
+
+#. Write a static method (header included) that takes as an argument an **int** array, and display on the screen the value of each element of that array.
+
+    <details>
+    <summary>Solution</summary>
+
+    ```cs
+    public static void p(int[] a){
+        foreach (int k in a) Console.WriteLine(k);
+    }
+    ```
+    </details>
+
+#. Write a static method (header included) that takes as an argument an **int** array, and stores the value 10 in each element of that array.
+
+    <details>
+    <summary>Solution</summary>
+
+    ```cs
+    public static void z(int[] a){
+        for (int j = 0; j < a.Length; j++) a[j] = 10;
+    }
+    ```
+    </details>  
+    
+    
+#. What sequence will appear on the output of this C# code? Which parameter of `SD(int[] A, int B)` method is passed by value? 
+
+    ```cs
+    using System;
+    class Program
+    {
+        static void SD(int[] A, int B)
+        {
+            A[2] += A[2];
+            B /= B;
+        }
+        static void Main(string[] args)
+        {
+            int[] A = { 0, 1, 2, 3 };
+            S(A, A[2]);
+            Console.Write($"[{A[0]},{A[1]},{A[2]},{A[3]}]");
+        }
+    }
+    ```
+    <details>
+    <summary>Solution</summary>
+    The sequence that appears in the output is 0, 1, 4, 3. The parameter int B is passed by value.
+    </details>
+
+    
+    
+    
+#. Consider the following code:
+
+```cs
+for (int y = 1; y <= 3; y++)
+{
+	for (int z = 1; z < 5; z++)
+		Console.Write("Scene " + y + ", take " + z + ". " );
+	Console.WriteLine();
+}
+```
+- How many times does the outer loop iterate (i.e., how many scenes are shot)? 
+- How many times does the inner loop iterates (i.e., how many takes for each scene)? 
+- Finally, what is the total number of iteration of the nested loops (i.e., how many takes are made, total)?
+
+<details>
+<summary>Solution</summary>
+3, 4, 12
+</details>
+
+#. Mark the pretest loops:
+
+    - [ ] do while
+    - [ ] switch
+    - [ ] while
+    - [ ] for
+    - [ ] if-else-if
+
+    <details>
+    <summary>Solution</summary>
+    for and while are the pretest loops
+    </details>
+    
+#. Which of the following correctly declares and creates a two-dimensional rectangular array of integers?
+
+    - [x] int[,] sum = new int[10, 40];
+    - [ ] int[][] sum = new int[25, 43];
+    - [ ] int sum[] = new int[20, 20];
+    - [ ] None of the above.
+
+#. C# supports two types of two-dimensional arrays:
+
+    - [ ] quadrilateral and isosceles
+    - [x] jagged and rectangular
+    - [ ] jagged and round
+    - [ ] None of the above.
