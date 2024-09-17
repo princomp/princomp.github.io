@@ -242,52 +242,7 @@ title: "Multiple Choice Questions (with solutions)"
     - [ ] Any number between 10 and 100 (both excluded)
     - [ ] Any number not between 10 and 100 (both excluded)
 
-#. What is the correct way of creating an array of `int` of size 5 named `myArray`?
 
-    - [x] `int[] myArray = new int[5];`
-    - [ ] `int[] myArray = int[5];`
-    - [ ] `int[5] myArray = new int[];`
-    - [ ] `int[4] myArray = new int[];`
-    - [ ] `int myArray = new int[5];`
-    - [ ] `int[] myArray = new int[4];`
-    - [ ] `int[] myArray = new int(5);`
-    - [ ] `int[] myArray = int[4];`
-    
-#. Consider the following code:
-
-    ```
-    int[] grades = {10, 20, 5, 15};
-    Console.WriteLine(grades[2]);
-    ```
-
-    What will it display?
-    
-    - [x] 5
-    - [ ] Nothing
-    - [ ] 20
-    - [ ] 15
-    - [ ] grades
-    - [ ] grades[2]
-    - [ ] 10
-
-#. Consider the following code:
-
-    ```
-    char[] grades = {'A', 'B', 'C', 'D', 'F'};
-    int i = 0;
-    while(i < grades.Length){
-        i++;
-        Console.WriteLine(grades[i]);
-    }
-    ```
-
-    Something is wrong with it, can you tell what?
-    
-    - [x] There will be an "Index was outside the bounds of the array." error.
-    - [ ] The array is not properly initialized.
-    - [ ] The loop is infinite
-    - [ ] `grades.Length` is not declared.
-    
 #. What will be displayed by the following code?
 
     ```
