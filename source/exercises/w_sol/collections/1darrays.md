@@ -54,33 +54,33 @@ tags:
     - [ ] `grades.Length` is not declared.
     
 
-## Warm-up Exercises
+## Exercises
 
 ### Syntax
 
-#. Write a statement that creates a 10-element **int** array named `numbers`.
+#. Write a statement that creates a 10-element `int` array named `numbers`.
 
     <details>
     <summary>Solution</summary>
 
-    ```cs
+    ```
     int[] numbers = new int[10];
     ```
     </details>
 
-#. Write a statement that creates and initializes a double array with the values 12.5, 89.0 and 3.24.
+#. Write a statement that creates and initializes an array of `double` with the values 12.5, 89.0 and 3.24.
 
     <details>
     <summary>Solution</summary>
 
-    ```cs
+    ```
     double[] question = {12.5, 89.0, 3.24};
     ```
     </details>
 
 #. In the following, what is the value of the size declarator? What is the value of the index?
 
-    ```cs
+    ```
     int[] numbers;
     numbers = new int[8];
     numbers[4] = 9;
@@ -95,12 +95,12 @@ tags:
 
     <details>
     <summary>Solution</summary>
-    It is when C# makes sure that you're not using a subscript outside the allowed range. It happens at run time.
+    It is when C# makes sure that you're not using a subscript outside the allowed range. It happens at run time, so after the program is already compiled, when it is executed.
     </details>
 
-#. Is there an error with the following code? If you think there is one, explain it, otherwise draw the content of the myIncomes array once those statements have been executed.
+#. Is there an error with the following code? If you think there is one, explain it, otherwise draw the content of the `myIncomes` array once those statements have been executed.
 
-    ```cs
+    ```
     double[] myIncomes = new double[5];
     myIncomes[1] = 3.5;
     // No income on day two.
@@ -114,7 +114,7 @@ tags:
     The subscripts are off. They should go from 0 to 4.
     </details>
 
-#. What would be the size of the test array after the following statement has been executed?
+#. What would be the size of the `test` array after the following statement has been executed?
 
     `int[] test = {3, 5, 7, 0, 9};`
 
@@ -125,7 +125,7 @@ tags:
 
 #. What is wrong with the following array declaration?
 
-    ```cs
+    ```
     int[] books = new int[-1];
     ```
     <details>
@@ -137,12 +137,12 @@ tags:
 
     <details>
     <summary>Solution</summary>
-    By using the `Length` field: `temp.Length`
+    By using the `Length` field: `temp.Length` is the number of elements in the `temp` array.
     </details>
 
 #. What is the value of `count` and the content of `number` once the following has been executed?
 
-    ```cs
+    ```
     int count=2;
     int[] number={3, 5, 7};
     number[count--] = 8;
@@ -151,22 +151,22 @@ tags:
 
     <details>
     <summary>Solution</summary>
-    `count` is 1. `numbers` is 3, 4, 8.
+    The value of `count` is 1, `numbers` contains the elements 3, 4, 8.
     </details>
 
 
 #. Describe what the following code would do.
 
-    ```cs
+    ```
     int[] record = { 3, 8, 11 };
     int accumulator = 0;
     foreach (int i in record)
-    accumulator += i;
+        accumulator += i;
     ```
 
     <details>
     <summary>Solution</summary>
-    Declare and initialize an int array with the values 3, 8, and 11, and then sum those values in an accumulator variable.
+    This code declares and initializes an `int` array with the values 3, 8, and 11, and then sum those values in an `accumulator` variable.
     </details>
 
 ### Displaying Arrays
@@ -176,7 +176,7 @@ tags:
     <details>
     <summary>Solution</summary>
 
-    ```cs
+    ```
     int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
     Console.WriteLine($"First element: {numbers[0]}");
@@ -186,7 +186,7 @@ tags:
 
 #. What will be displayed at the screen by the following code?
 
-    ```cs
+    ```
     int[] values = new int[6];
     for (int i = 0 ; i < 6 ; i++)
         values[i] = (i * 2 );
@@ -205,12 +205,12 @@ tags:
     10
     </details>
 
-#. Suppose we are given an **int** array `dailyPushUp` with 7 elements. Write a piece of code that displays the value of the elements stored in the array `dailyPushUp`.
+#. Suppose we are given an `int` array `dailyPushUp` with 7 elements. Write a piece of code that displays the value of the elements stored in the array `dailyPushUp`.
 
     <details>
     <summary>Solution</summary>
 
-    ```cs
+    ```
     for (int j = 0; j < 7; j++)
         Console.WriteLine(dailyPushUp[j]);
     ```
@@ -221,8 +221,8 @@ tags:
     <details>
     <summary>Solution</summary>
 
-    ```cs
-    for ( int i = 0; i < numbers.Length; i++ )
+    ```
+    for (int i = 0; i < numbers.Length; i++)
     {
         Console.WriteLine(numbers[i]);
     }
@@ -234,8 +234,8 @@ tags:
     <details>
     <summary>Solution</summary>
 
-    ```cs
-    for ( int i = (numbers.Length - 1) ; i >= 0 ; i-- )
+    ```
+    for (int i = (numbers.Length - 1) ; i >= 0 ; i-- )
     {
         Console.WriteLine(numbers[i]);
     }
@@ -247,7 +247,7 @@ tags:
     <details>
     <summary>Solution</summary>
 
-    ```cs
+    ```
     for (int i = 0; i < numbers.Length; i += 2)
     {
         Console.WriteLine(numbers[i]);
@@ -260,7 +260,7 @@ tags:
     <details>
     <summary>Solution</summary>
 
-    ```cs
+    ```
     for (int i = 0; i < numbers.Length; i++)
     {
         if (numbers[i] >= x)
@@ -271,44 +271,12 @@ tags:
     ```
     </details>
 
-### Filling Arrays
-
-#. Given some positive number `n`, write code that first declares an array of length `n`, then sets its contents to sequentially increasing values 1, 2, 3, ..., n.
-
-    <details>
-    <summary>Solution</summary>
-
-    ```cs
-    int[] nums = new int[n];
-
-    for ( int i = 0 ; i < n ; i++ )
-    {
-        nums[i] = i + 1;
-    }
-    ```
-    </details>   
+#. Write code that displays every unique value of *a sorted* array `numbers`. This array could contain, for example, 1, 1, 1, 4, 4, 5, 8, 9, 11: values are increasing and can occur multiple times. In our example, the values 1, 4, 5, 8, 9 and 11.
     
-#. Given an array `myArray` and some value `x`, write code that sets the value of every array element to `x`.
-
     <details>
     <summary>Solution</summary>
-
-    ```cs
-    for (int i = 0; i < myArray.Length; i++)
-    {
-        myArray[i] = x;
-    }
+    
     ```
-    </details>
-
-#. Write code that displays every unique value of a sorted array. This array could be, for example, 1 1 1 4 4 5 8 9 11 such that values are increasing but value can occur multiple times.
-
-    <details>
-    <summary>Solution</summary>
-
-    ```cs
-    int[] numbers = {1, 1, 1, 4, 4, 5, 8, 9, 11};
-
     for (int i = 0 ;  i < numbers.Length ; i++)
     {
         if (i > 0 && numbers[i] != numbers[i - 1])
@@ -319,32 +287,43 @@ tags:
     ```
     </details>
 
-### Calculating With Arrays
-    
-#. Write a program that computes the sum of values stored in a `numbers` array of integers
+### Filling Arrays
+
+#. Given an array `myArray` and some value `x`, write code that sets the value of every array element to `x`.
 
     <details>
     <summary>Solution</summary>
 
-    ```cs
-    int sum = 0;
-
-    for (int i = 0; i < numbers.Length; i++)
+    ```
+    for (int i = 0; i < myArray.Length; i++)
     {
-        sum += numbers[i];
+        myArray[i] = x;
     }
-    
-    Console.WriteLine($"The sum is {sum}.");
     ```
     </details>
 
-#. Given an array of integers, and two integer variables `oldValue` and `newValue`; write code that replaces every occurrence of `oldValue` in the array with `newValue`.
+#. Given some positive number `n`, write code that first declares an array of length `n`, then sets its contents to sequentially increasing values 1, 2, 3, ..., n.
 
     <details>
     <summary>Solution</summary>
 
-    ```cs
-    for (int i = 0; i < myArray.Length; i++ )
+    ```
+    int[] nums = new int[n];
+
+    for (int i = 0 ; i < n ; i++)
+    {
+        nums[i] = i + 1;
+    }
+    ```
+    </details>   
+
+#. Given an array of integers, and two integer variables `oldValue` and `newValue`; write code that replaces every occurrence of `oldValue` in the array with `newValue`.
+    
+    <details>
+    <summary>Solution</summary>
+    
+    ```
+    for (int i = 0; i < myArray.Length; i++)
     {
         if (myArray[i] == oldValue)
         {
@@ -355,12 +334,12 @@ tags:
     </details>
 
 #. Write code that squares every value in an `myArray` integer array. For example, an array containing 2, 3, 4 would after the program contain 4, 9, 16.
-
+    
     <details>
     <summary>Solution</summary>
-
-    ```cs
-    for ( int i = 0; i < myArray.Length; i++ )
+    
+    ```
+    for (int i = 0; i < myArray.Length; i++)
     {
         myArray[i] *= myArray[i];
     }
@@ -375,7 +354,7 @@ tags:
     <details>
     <summary>Solution</summary>
 
-    ```cs
+    ```
     bool valOccurs = false;
 
     for (int i = 0; i < myArray.Length; i++)
@@ -388,12 +367,12 @@ tags:
     ```
     </details>
     
-#. Given an array and some value x, write code that computes the number of times x occurs in the array.
+#. Given an array `myArray` and a variable `x`, write code that computes the number of times `x` occurs in `myArray`.
     
     <details>
     <summary>Solution</summary>
     
-    ```cs
+    ```
     int count = 0;
     for (int i = 0; i < array.Length; i++)
     {
@@ -410,7 +389,7 @@ tags:
     <details>
     <summary>Solution</summary>
 
-    ```cs
+    ```
     bool eitherOccurs = false;
 
     for (int i = 0; i < array.Length; i++)
@@ -428,7 +407,7 @@ tags:
     <details>
     <summary>Solution</summary>
 
-    ```cs
+    ```
     bool xOccurs = false, yOccurs = false, bothOccur = false;
 
     for (int i = 0; i < myArray.Length; i++)
@@ -457,7 +436,7 @@ For example, in an array containing 1, 2, 6, 7, 3, 9 with x being 8, the solutio
     <details>
     <summary>Solution</summary>
 
-    ```cs
+    ```
     int largest = 0;
     for (int i = 0; i < myArray.Length; i++)
     {
@@ -476,7 +455,7 @@ For example, in an array containing 1, 2, 6, 7, 3, 9 with x being 8, the solutio
     <details>
     <summary>Solution</summary>
 
-    ```cs
+    ```
     bool palindromeSoFar = true;
     int n = myArray.Length;
     for (int i = 0; i < (n / 2); i++)
@@ -485,19 +464,33 @@ For example, in an array containing 1, 2, 6, 7, 3, 9 with x being 8, the solutio
         {
             palindromeSoFar = false;
         }
-    } // Both sides of the word have been checked and are mirrors of each other.
+    }
     ```
+    
+    Note that after the code has been executed, both sides of the word have been checked, and `palindromeSoFar` is `true` if both sides are mirrors of each other.
     </details>
 
    
 ### Manipulating Two Arrays
+
+#. Assuming we have two `int` arrays of the same size, `firstA` and `secondA`, write a program that copies the content of `firstA` into `secondA`.
+
+    <details>
+    <summary>Solution</summary>
+
+    ```
+    for (int k =0; k < firstA.Length; k++)
+        secondA[k] = firstA[k];
+    ```
+    </details>
+
 
 #. Given two arrays `array1` and `array2`, write a program to determine if there exists a value that occurs in both arrays. If such value exists, the result should be `true` and `false` otherwise.
 
     <details>
     <summary>Solution</summary>
 
-    ```cs
+    ```
     bool valueInCommon = false;
 
     for (int i = 0; i < array1.Length; i++)
@@ -514,12 +507,12 @@ For example, in an array containing 1, 2, 6, 7, 3, 9 with x being 8, the solutio
     </details>
 
     
-#. Write a program that combines two `string` arrays called `array1` and `array2` into a single array containing first all the elements from `array1`, then all the values from `array2`. No values should be lost during the merge.
+#. Write a program that combines two `string` arrays called `array1` and `array2` into a single array containing first all the elements from `array1`, then all the elements from `array2`.
 
     <details>
     <summary>Solution</summary>
     
-    ```cs
+    ```
     string[] combined = new string[array1.Length + array2.Length];
     
     for (int i = 0; i < array1.Length; i++)
@@ -540,7 +533,7 @@ For example, in an array containing 1, 2, 6, 7, 3, 9 with x being 8, the solutio
     <summary>Solution</summary>
     Using `while` loops:
     
-    ```cs
+    ```
     int i = 0;
     int j;
     bool containsB = true;
@@ -559,7 +552,6 @@ For example, in an array containing 1, 2, 6, 7, 3, 9 with x being 8, the solutio
         }
         if (!containCurrentVal)
         {
-            Console.WriteLine(arrayB[i] + " does not occur.");
             containsB = false;
         }
         else
@@ -572,7 +564,7 @@ For example, in an array containing 1, 2, 6, 7, 3, 9 with x being 8, the solutio
        
     Using `break`:
 
-    ```cs
+    ```
     bool containsB = false;
 
     for (int i = 0; i < arrayB.Length; i++)
@@ -593,20 +585,63 @@ For example, in an array containing 1, 2, 6, 7, 3, 9 with x being 8, the solutio
             break;
         }
     }
-
-    Console.WriteLine(containsB);
     ```
     </details>
 
+### Methods
+    
+#. Write a static method (header included) that takes as an argument an `int` array, and displays on the screen the value of each element of that array.
+    
+    <details>
+    <summary>Solution</summary>
+    
+    ```
+    public static void displayArray(int[] arrayP){
+        foreach (int element in arrayP)
+            Console.WriteLine(element);
+    }
+    ```
+    </details>
+    
+#. Write a static method (header included) that takes as an argument an `int` array, and stores the value 10 in each element of that array.
+    
+    <details>
+    <summary>Solution</summary>
+    
+    ```
+    public static void fillArray(int[] arrayP){
+        for (int j = 0; j < arrayP.Length; j++)
+            arrayP[j] = 10;
+    }
+    ```
+    </details>
+    
 
-## Algorithms
+## Simple Algorithms
+
+#. Write a program that computes the sum of values stored in a `numbers` array of integers and displays it.
+
+    <details>
+    <summary>Solution</summary>
+
+    ```
+    int sum = 0;
+
+    for (int i = 0; i < numbers.Length; i++)
+    {
+        sum += numbers[i];
+    }
+
+    Console.WriteLine($"The sum is {sum}.");
+    ```
+    </details>
 
 #. Given an array of positive integers, count how many even values occur in that array.
 
     <details>
     <summary>Solution</summary>
 
-    ```cs
+    ```
     int count = 0;
 
     for (int i = 0; i < myArray.Length; i++) 
@@ -616,142 +651,105 @@ For example, in an array containing 1, 2, 6, 7, 3, 9 with x being 8, the solutio
             count++;
         }
     }
-    return count;
     ```
     </details>   
 
-#. Write a program that computes the average of values of a numeric array.
+#. Write a program that computes the average of the elements in a `arrayP` numeric array.
 
     <details>
     <summary>Solution</summary>
 
-    ```cs
-    int ArrayAverage(int[] a)
+    ```
+    int sum = 0;
+
+    for (int i = 0; i < arrayP.Length; i++)
     {
-        int sum = 0;
-
-        for (int i = 0; i < a.Length; i++)
-        {
-            sum += a[i];
-        }
-
-        return sum / array.Length;
+        sum += arrayP[i];
     }
+
+    double average = (double)sum / arrayP.Length;
     ```
     </details>
 
-#. Write a program that finds the largest value in an integer array.
+#. Write a program that finds the largest value in an integer array `arrayP`.
 
     <details>
     <summary>Solution</summary>
 
-    ```cs
-    int LargestValue(int[] a)
+    ```
+    int maxSoFar = arrayP[0];
+    foreach (int element in arrayP)
     {
-        if (a.Length == 1)
+        if (element > maxSoFar)
         {
-            return a[0];
-        }
-        else
-        {
-            int largest = a[0];
-
-            foreach (int i in a)
-            {
-                if (i > largest)
-                {
-                    largest = i;
-                }
-            }
-
-            return largest;
+            maxSoFar = element;
         }
     }
     ```
     </details>
 
-#. Write a program that finds the smallest value in an integer array.
+#. Write a program that finds the smallest value in an integer array `arrayP`.
 
     <details>
     <summary>Solution</summary>
 
-    ```cs
-    int SmallestValue(int[] a)
+    ```
+    int minSoFar = arrayP[0];
+    foreach (int element in arrayP)
     {
-        if (a.Length == 1)
+        if (element < minSoFar)
         {
-            return a[0];
-        }
-        else
-        {
-            int smallest = a[0];
-
-            foreach (int i in a)
-            {
-                if (i < smallest)
-                {
-                    smallest = i;
-                }
-            }
-
-            return smallest;
+            minSoFar = element;
         }
     }
     ```
     </details>
 
-#. Write a program that finds second smallest value in an array of integers.
+#. Write a program that finds the *second* smallest value in an array of integers `arrayP`.
 
     <details>
     <summary>Solution</summary>
 
-    ```cs
-    int SecondSmallestValue(int[] a)
+    ```
+    int smallest = arrayP[0];
+    int secondSmallest = arrayP[1];
+
+    if (smallest > secondSmallest)
     {
-        int smallest = a[0];
-        int secondSmallest = a[1];
+        int temp = smallest;
+        smallest = secondSmallest;
+        secondSmallest = temp;
+    }
 
-        if (smallest > secondSmallest)
+    for (int i = 2; i < arrayP.Length; i++)
+    {
+        if (arrayP[i] < smallest)
         {
-            int temp = smallest;
-            smallest = secondSmallest;
-            secondSmallest = temp;
+            secondSmallest = smallest;
+            smallest = arrayP[i];
         }
-
-        for (int i = 2; i < a.Length; i++)
+        else if (arrayP[i] < secondSmallest && arrayP[i] > smallest)
         {
-            if (a[i] < smallest)
-            {
-                secondSmallest = smallest;
-                smallest = a[i];
-            }
-            else if (a[i] < secondSmallest && a[i] > smallest)
-            {
-                secondSmallest = a[i];
-            }
+            secondSmallest = arrayP[i];
         }
-
-        return secondSmallest;
     }
     ```
     </details>
 
-#. Write code that finds the index of the first occurrence of a value in an array. If the array does not contain the value, the result should be -1.
+#. Write code that finds the index of the first occurrence of a value `val` in an array `arrayP`. If the array does not contain the value, the result should be -1.
 
     <details>
     <summary>Solution</summary>
 
-    ```cs
-    int FirstOccurrence(int[] a, int v)
+    ```
+    int index = -1;
+
+    for (int i = arrayP.Length -1; i >= 0; i--)
     {
-        for (int i = 0; i < a.Length; i++)
+        if (arrayP[i] == val)
         {
-            if (a[i] == v)
-            {
-                return i;
-            }
+            index = i;
         }
-        return -1;
     }
     ```
     </details>
@@ -761,19 +759,17 @@ For example, in an array containing 1, 2, 6, 7, 3, 9 with x being 8, the solutio
     <details>
     <summary>Solution</summary>
 
-    ```cs
-    int LastOccurrence(int[] a, int v)
-    {
-        for (int i = a.Length - 1; i > 0; i--)
-        {
-            if (a[i] == v)
-            {
-                return i;
-            }
-        }
-        return -1;
-    }
     ```
+    int index = -1;
+    
+    for (int i = 0; i < arrayP.Length; i++)
+    {
+        if (arrayP[i] == val)
+        {
+            index = i;
+        }
+    }
+    ```    
     </details>
 
 
@@ -782,7 +778,7 @@ For example, in an array containing 1, 2, 6, 7, 3, 9 with x being 8, the solutio
     <details>
     <summary>Solution</summary>
 
-    ```cs
+    ```
     for (int i = 0, j = myArray.Length - 1; i < j; i++, j--)
     {
         int temp = myArray[i];
@@ -796,20 +792,20 @@ For example, in an array containing 1, 2, 6, 7, 3, 9 with x being 8, the solutio
 
 #. Declare and initialize three arrays:
 
-    - Choose different data type for each array
-    - Make the arrays have different lengths: 3, 5, 10 elements respectively
-    - Initialize each array with appropriate values of your choice (depends on the type)
+    - Choose different data type for each array,
+    - Make the arrays have different lengths: 3, 5, 10 elements respectively,
+    - Initialize each array with appropriate values of your choice (depends on the type).
 
     After you have declared and initialized the arrays, display on the screen
 
-    - The first value from array 1 (0th index)
-    - The last value from array 2 (4th index)
-    - the first three values from array 3 (indexed 0 - 2)
+    - The first value from array 1 (0th index),
+    - The last value from array 2 (4th index),
+    - The first three values from array 3 (indexed 0 - 2).
 
     <details>
     <summary>Example Solution</summary>
 
-    ```cs
+    ```
     // Initialize arrays
     string[] names = { "Alice", Bob", "Charlie" };
     float[] tenths = { 0.1f, 0.2f, 0.3f, 0.4f, 0.5f };
@@ -832,7 +828,7 @@ For example, in an array containing 1, 2, 6, 7, 3, 9 with x being 8, the solutio
 
     #. Does words array contain "engine"? (true/false)
     #. Does words array contain "day" at least 2 times? (true/false)
-    #. What is the position (index) of the word society? If it does not exist answer should be -1. Find the position of the first occurrence in case there are multiple matches.
+    #. What is the position (index) of the word "society"? If it does not exist answer should be -1. Find the position of the first occurrence in case there are multiple matches.
 
     After you have implemented your code, change the array contents and make sure your code still works and does not crash.
 
@@ -845,7 +841,7 @@ For example, in an array containing 1, 2, 6, 7, 3, 9 with x being 8, the solutio
     <details>
     <summary>Solution</summary>
 
-    ```cs
+    ```
     // Code for finding the word "engine" in the array
     bool foundEngine = false;
 

@@ -277,41 +277,7 @@ else {Console.WriteLie(“No”);}
 
 
 
-#. Assuming we have two **int** arrays of the same size, `firstA` and `secondA`, write a program that copies the content of `firstA` into `secondA`.
 
-    <details>
-    <summary>Solution</summary>
-
-    ```cs
-    for (int k =0; k < firstA.Length; k++)
-        secondA[k] = firstA[k];
-    ```
-    </details>
-
-#. Write a static method (header included) that takes as an argument an **int** array, and display on the screen the value of each element of that array.
-
-    <details>
-    <summary>Solution</summary>
-
-    ```cs
-    public static void p(int[] a){
-        foreach (int k in a) Console.WriteLine(k);
-    }
-    ```
-    </details>
-
-#. Write a static method (header included) that takes as an argument an **int** array, and stores the value 10 in each element of that array.
-
-    <details>
-    <summary>Solution</summary>
-
-    ```cs
-    public static void z(int[] a){
-        for (int j = 0; j < a.Length; j++) a[j] = 10;
-    }
-    ```
-    </details>  
-    
     
 #. What sequence will appear on the output of this C# code? Which parameter of `SD(int[] A, int B)` method is passed by value? 
 
