@@ -75,7 +75,7 @@ CODE_DIR = code/
 # The folder where the .zip archives containing projects (used in lab and classes as examples) are located.
 PROJECT_DIR = $(CODE_DIR)projects/
 # The folders where .md files are located.
-MD_DIRS = $(LECTURES_DIR) $(DOCS_DIR) $(LABS_DIR) $(EXO_DIR) $(PROJ_DIR)
+MD_DIRS = $(LECTURES_DIR) $(DOCS_DIR) $(LABS_DIR) $(EXO_DIR) $(EXO_W_SOL_DIR) $(PROJ_DIR)
 # The folder where the images are located.
 IMG_DIR = img/
 # The folder where the UML class diagrams are located
