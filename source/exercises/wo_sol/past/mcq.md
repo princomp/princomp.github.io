@@ -250,7 +250,7 @@ title: "Multiple Choice Questions"
     - [ ] Any number between 10 and 100 (both included)
     - [ ] Any number between 10 and 100 (both excluded)
     - [ ] Any number not between 10 and 100 (both excluded)
-    
+
 #. What will be displayed by the following code?
 
     ```
