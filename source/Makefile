@@ -290,8 +290,10 @@ $(EXO_DIR)%.md: $(EXO_W_SOL_DIR)%.md
 # Rule to compile all the exercises in one go.
 SOURCE_EXO_W_SOL := $(shell find $(EXO_W_SOL_DIR) -name '*.md')
 TARGET_EXO_WO_SOL := $(subst exercises_w_sol,exercises,$(SOURCE_EXO_W_SOL)))
+TARGET_EXO_WO_SOL_WITHOUT_INDEX := $(filter-out index.md %/index.md,$(TARGET_EXO_WO_SOL))
 
-exercise: $(TARGET_EXO_WO_SOL)
+
+exercise: $(TARGET_EXO_WO_SOL_WITHOUT_INDEX)
 
 # -------------------------------
 # Order file
