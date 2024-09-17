@@ -1,3 +1,8 @@
+---
+tags:
+- datatypes/collections
+--- 
+
 # Simple Loops and Length
 
 ## Custom Size and Loops

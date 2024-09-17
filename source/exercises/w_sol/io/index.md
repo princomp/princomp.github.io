@@ -1,3 +1,3 @@
 ---
-title: IO
+title: input / output
 ---

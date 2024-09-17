@@ -6,12 +6,11 @@ description: Course resources website to teach principles of computer programmin
 Welcome to the course resources website to teach principles of computer programming using C#.
 You can either:
 
-- navigate on this website, by
-    - heading towards our [documentation](./docs/), [lecture notes](./lectures/) or [labs](./labs/),
+- Navigate on this website, by
+    - heading towards our [documentation](./docs/), [lecture notes](./lectures/), [labs](./labs/), [exercises](./exercises/) or [projects](./projects/),
     - searching using our search bar,
-    - (desktop only) use the menu on your left,
-    - noting that hovering over most links gives a preview of the page content,
-- download our book containing some documentation and all of our lecture notes in multiple formats:
+    - (desktop only) use the menu on your left, noting that hovering over most links gives a preview of the page content.
+- Download our book containing some documentation and all of our lecture notes in multiple formats:
     - [HTML](./book.html) - to read from your browser, convenient for phones as well, and lightweight.
     - [PDF](./book.pdf) - to print and archive.
     - [ODT](./book.odt) - to edit (using e.g., [libreoffice](https://www.libreoffice.org/)) and archive.
