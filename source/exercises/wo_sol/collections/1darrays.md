@@ -14,6 +14,8 @@ tags:
 
 # One-Dimensional Arrays
 
+[Solutions for those exercises.](./exercises/w_sol/collections/1darrays)
+
 ## Multiple Choices
 
 #. What is the correct way of creating an array of `int` of size 5 named `myArray`?
@@ -26,7 +28,7 @@ tags:
     - [ ] `int[] myArray = new int[4];`
     - [ ] `int[] myArray = new int(5);`
     - [ ] `int[] myArray = int[4];`
-    
+
 #. Consider the following code:
 
     ```
@@ -43,6 +45,22 @@ tags:
     - [ ] grades
     - [ ] grades[2]
     - [ ] 10
+
+#. In the following statement, the value `5` is called the…
+
+    `string[] names = new string[5];`
+
+    - [ ] allocation limit
+    - [ ] size declarator
+    - [ ] length
+    - [ ] upper bound
+    
+#. Each element in an array is assigned a unique number called the…
+
+    - [ ] subscript
+    - [ ] index
+    - [ ] position
+    - [ ] rank
 
 #. Consider the following code:
 

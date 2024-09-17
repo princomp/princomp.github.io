@@ -14,6 +14,35 @@ tags:
 
 # Two-Dimensional Arrays
 
+[Solutions for those exercises.](./exercises/w_sol/collections/2darrays)
+
+## Multiple Choices
+
+#. What is the correct way of creating a 2-dimensional rectangular array of `int` with 5 rows and 2 columns named `myMatrix`?
+
+    - [ ] `int[][] myMatrix = new int[5][2];`
+    - [ ] `int[][] myMatrix = new int[2][5];`
+    - [ ] `int[,] myMatrix = new int[2, 5];`
+    - [ ] `int[,] myMatrix = new int[5, 2];`
+
+#. Consider the following code:
+
+    ```
+    int[,] grades = {{10, 20}, {30, 40}};
+    Console.WriteLine(grades[1,0]);
+    ```
+
+    What will it display?
+    
+    - [ ] Nothing
+    - [ ] 10
+    - [ ] 20
+    - [ ] grades
+    - [ ] 30
+    - [ ] grades[1,0]
+    - [ ] 40
+
+
 ## Exercises
 
 #. Write a statement that creates a 2-dimensional rectangular array of `int` with 5 rows and 3 columns.
@@ -21,6 +50,38 @@ tags:
 
 #. Write a statement that creates a 2-dimensional jagged array of `int` with 2 rows. The first row should contain an array containing 1, the second row should contain an array containing 2, 3.
 
+
+
+#. Write a declaration for a 2-dimensional rectangular array of `int` containing the following data:
+
+    | | | | 
+    | --- | --- | --- | 
+    | 10  | 20  | 30  |
+    | 40  | 50  | 60  | 
+    | 70  | 80  | 90  | 
+    
+
+#. Write a declaration for a 2-dimensional ragged array of `int` containing the following data:
+
+    | | | | 
+    | --- | --- | --- | 
+    | 10  | 20  | 
+    | 40  |
+    | 70  | 80  | 90  | 
+    
+
+
+#. Suppose we have a 2-dimensional rectangular array named `temp` that has been declared and initialized. How can we know the number of rows in this array?
+    
     
 #. Suppose we have a 2-dimensional rectangular array named `temp` that has been declared and initialized. How can we know the number of elements in this array?
     
+
+#. Write a program that display "Every row contains its own index" if the 2-dimensional rectangular array of `int` `matrix` is such that its first row contains the value 0, its second row contains the value 1, etc.
+
+
+#. Write a program that display the average of each row of a 2-dimensional jagged array of `int` `jArray`.
+
+
+#. Write a program that display the sum of the values on the diagonal of a 2-dimensional rectangular array of `int` `jArray`.
+

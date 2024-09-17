@@ -17,7 +17,7 @@ tags:
     - [ ] `int[] myArray = new int[4];`
     - [ ] `int[] myArray = new int(5);`
     - [ ] `int[] myArray = int[4];`
-    
+
 #. Consider the following code:
 
     ```
@@ -34,6 +34,22 @@ tags:
     - [ ] grades
     - [ ] grades[2]
     - [ ] 10
+
+#. In the following statement, the value `5` is called the…
+
+    `string[] names = new string[5];`
+
+    - [ ] allocation limit
+    - [x] size declarator
+    - [ ] length
+    - [ ] upper bound
+    
+#. Each element in an array is assigned a unique number called the…
+
+    - [ ] subscript
+    - [x] index
+    - [ ] position
+    - [ ] rank
 
 #. Consider the following code:
 

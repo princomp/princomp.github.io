@@ -18,6 +18,8 @@ highly recommend being familiar with _all the material_ (including but not limit
 
 # Problem 0 (Warm-up)
 
+[Solutions for those exercises.](./exercises/w_sol/past/practice_final)
+
 #. What is the escape sequence for a new line?
 #. What type is the result of `8 * 12M`?
 #. What is the return type of a constructor?
@@ -37,6 +39,8 @@ highly recommend being familiar with _all the material_ (including but not limit
 
 
 # Problem 1
+
+[Solutions for those exercises.](./exercises/w_sol/past/practice_final)
 
 Consider the code below:
 
@@ -76,6 +80,8 @@ class VirtualPet{
 
 # Problem 2
 
+[Solutions for those exercises.](./exercises/w_sol/past/practice_final)
+
 This question will have you partially design, implement and use class to represent hamburgers. A Burger has a name, a price, a Boolean for dairy, and a type (typically beef, pork, chicken, veggie).
 
 #. Draw the UML diagram for the Burger class, assuming it contains the listed attributes, a getter for the name attribute and a setter for the price attribute. Do not include any other methods.
@@ -101,6 +107,8 @@ This question will have you partially design, implement and use class to represe
   - Store the value returned by calling the ToString method with OldBeefy in a variable.
 
 # Problem 3
+
+[Solutions for those exercises.](./exercises/w_sol/past/practice_final)
 
 Complete the table based on the code.
 
@@ -153,10 +161,14 @@ else{
 
 # Problem 4
 
+[Solutions for those exercises.](./exercises/w_sol/past/practice_final)
+
 Given two int arrays of equal length, write a code segment that compares the values at each index to see if they match. Return the total number of matches.
 
 
 # Problem 5 (Deceptively hard)
+
+[Solutions for those exercises.](./exercises/w_sol/past/practice_final)
 
 Given two string arrays (array A and array B) of unknown (possibly different) lengths, determine if there are any values found in both A and B. If they exist, display them to the screen. At the end of the program, display the total number of common values between A and B. If there are repeating values in either or both arrays, each should only be counted once.
 
@@ -166,12 +178,16 @@ Given two string arrays (array A and array B) of unknown (possibly different) le
 
 # Problem 6
 
+[Solutions for those exercises.](./exercises/w_sol/past/practice_final)
+
 Write a program that declares an int variable called "pin" and asks the user for their pin. As long as the user enters something that is not a number, is negative, or greater than 9999, your program should ask again. 
 
 (Bonus): Your code should make sure that the pin has exactly 4 digits, including leading zeros.
 
 
 # Problem 7
+
+[Solutions for those exercises.](./exercises/w_sol/past/practice_final)
 
 #. Write a statement that would create an int array of size 100.
   
