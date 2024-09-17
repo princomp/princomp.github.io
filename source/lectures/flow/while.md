@@ -183,3 +183,36 @@ Console.WriteLine("Done");
 
 - Keep your answer to (3) in mind as you write the body of the loop, and make sure the actions in your loop's body match the condition you wrote.
 
+## While Loop With Complex Conditions
+
+In the following example, a complex boolean expression is used in the _while_ statement. The program gets a value and tries to parse it as an integer. If the value can not be converted to an integer, the program tries again, but not more than three times.
+
+```
+int c;
+string message;
+int count;
+bool res;
+
+Console.WriteLine("Please enter an integer.");
+message = Console.ReadLine();
+res = int.TryParse(message, out c);
+count = 0; // The user has 3 tries: count will be 0, 1, 2, and then we default.
+while (!res && count < 3)
+{
+    count++;
+    if (count == 3)
+    {
+        c = 1;
+        Console.WriteLine("I'm using the default value 1.");
+    }
+    else
+    {
+        Console.WriteLine("The value entered was not an integer.");
+        Console.WriteLine("Please enter an integer.");
+        message = Console.ReadLine();
+        res = int.TryParse(message, out c);
+    }
+}
+Console.WriteLine("The value is: " + c);
+```
+
