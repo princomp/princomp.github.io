@@ -67,9 +67,7 @@ LABS_DIR = labs/
 # The folder where the exercises are located.
 EXO_DIR = exercises/
 # The folder where the exercises with solution are located.
-EXO_W_SOL_DIR = $(EXO_DIR)w_sol
-# The folder where the exercises without solution are located.
-EXO_WO_SOL_DIR = $(EXO_DIR)wo_sol
+EXO_W_SOL_DIR = exercises_w_sol/
 # The folder where the projects (that is, the projects the students have to complete) are located.
 PROJ_DIR = projects/
 # The folder where the .cs code snippets and projects are located.
@@ -280,7 +278,7 @@ $(CLA_DIR)%.md: $(CLA_DIR)%.txt
 	tr '\n' ' ' < $@ > diag-temp.md && mv diag-temp.md $@
 
 # Exercise without solution
-$(EXO_WO_SOL_DIR)%.md: $(EXO_W_SOL_DIR)%.md
+$(EXO_DIR)%.md: $(EXO_W_SOL_DIR)%.md
 	mkdir -p $(dir $@)
 	sed 's/<details>/&\\\n/g' $< > $@ 
 	sed -i '/<details>/,/<\/details>/d' $@
@@ -291,10 +289,10 @@ $(EXO_WO_SOL_DIR)%.md: $(EXO_W_SOL_DIR)%.md
 
 # Rule to compile all the exercises in one go.
 SOURCE_EXO_W_SOL := $(shell find $(EXO_W_SOL_DIR) -name '*.md')
-TARGET_EXO_WO_SOL := $(subst w_sol,wo_sol,$(SOURCE_EXO_W_SOL)))
+TARGET_EXO_WO_SOL := $(subst exercises_w_sol,exercises,$(SOURCE_EXO_W_SOL)))
 
 exercise: $(TARGET_EXO_WO_SOL)
-	
+
 # -------------------------------
 # Order file
 # -------------------------------
