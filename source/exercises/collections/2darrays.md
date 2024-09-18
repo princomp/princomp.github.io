@@ -83,5 +83,5 @@ tags:
 #. Write a program that display the average of each row of a 2-dimensional jagged array of `int` `jArray`.
 
 
-#. Write a program that display the sum of the values on the diagonal of a 2-dimensional rectangular array of `int` `matrix`.
+#. Write a program that display the sum of the values on the diagonal of a 2-dimensional rectangular array of `int` `jArray`.
 
