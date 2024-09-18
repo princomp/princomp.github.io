@@ -27,6 +27,7 @@
 ./lectures/oop/more_advanced_object_concepts.md
 ./lectures/oop/properties.md
 ./lectures/oop/static.md
+./lectures/oop/generic_types.md
 ./lectures/flow/
 ./lectures/flow/flow_intro.md
 ./lectures/flow/booleans.md

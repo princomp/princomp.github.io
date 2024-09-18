@@ -3,7 +3,7 @@ tags:
 - datatypes/collections
 ---
 
-# Arrays
+# Introduction
 
 Arrays are structures that allow you to store multiple values in memory using a single name and indexes.
 Internally, an array contains a fixed number of variables (called *elements*) of a particular type^[Usually, all the elements of an array have the same type, but an array can store elements of different types if `object` is its type, since any element is actually of type `object`.].
