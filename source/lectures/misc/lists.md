@@ -124,3 +124,7 @@ valueList.Remove(2);
 ```
 
 it would become -1, 3, 2, 5.
+
+## A Custom Implementation of Lists
+
+A "custom" implementation of list can be found [in this project](./code/projects/CList.zip).
