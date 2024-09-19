@@ -13,7 +13,7 @@ You may write the following code:
 
 ```
 public class Helper{
-    public static int[] Reverse(int[]] arrayP)
+    public static int[] Reverse(int[] arrayP)
     {
         int[] result = new int[arrayP.Length];
         int j = 0;
