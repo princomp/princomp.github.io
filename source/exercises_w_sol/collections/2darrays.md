@@ -188,8 +188,8 @@ In the following, assume given two `int` variables `first` and `second`, as well
 
 Test your program thoroughly, possibly bundling it in a `static` class to ease testing and debugging.
 
-    <details>
-    <summary>Solution</summary>
-    A possible implementation, as a static class, can be [downloaded](./code/projects/CrossWord.zip).
-    </details>
+<details>
+<summary>Solution</summary>
+A possible implementation, as a static class, can be [downloaded](./code/projects/CrossWord.zip).
+</details>
 
