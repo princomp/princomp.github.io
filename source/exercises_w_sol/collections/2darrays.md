@@ -171,3 +171,25 @@ tags:
     Console.WriteLine(sum);
     ```
     </details>
+
+## Problem: Toward a Crossword Puzzle Solver
+
+The goal of this problem is to work toward the creation of a program that solve crossword puzzles.
+We will reason in the simple case where the "word" is actually simply a pair of number (so, "1, 2" or "8, 101").
+
+In the following, assume given two `int` variables `first` and `second`, as well as a 2-dimensional rectangular array `values`.
+
+#. Write a program that display "pair found" if `first` and `second` occur next to each other in the same row.
+#. Edit your program so that "pair found" is displayed also if `second` occurs before `first` in the same row.
+#. Edit your program so that "pair found" is displayed also if `first` occurs "above" `second` (that is, if they are next to each other in the same column),
+#. Edit your program so that "pair found" is displayed also if `second` occurs "above" `first`,
+#. Edit your program so that "pair found" is displayed also if `first` and `second` occur diagonally,
+#. Edit your program so that "pair found" is displayed also if `first` and `first` occur anti-diagonally.
+
+Test your program thoroughly, possibly bundling it in a `static` class to ease testing and debugging.
+
+    <details>
+    <summary>Solution</summary>
+    A possible implementation, as a static class, can be [downloaded](./code/projects/CrossWord.zip).
+    </details>
+
