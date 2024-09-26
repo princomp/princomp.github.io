@@ -2,10 +2,10 @@
 
 class Circle
 {
-  public decimal diameter;
+  private decimal diameter;
   public decimal Diameter
   {
-    get { return Diameter; }
+    get { return diameter; }
     set
     {
       if (value <= 0)
