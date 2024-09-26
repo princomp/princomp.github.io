@@ -91,7 +91,8 @@ tags:
 	}
 	catch (FormatException)
 	{
-		Console.WriteLine("You have tried to convert a string containing non-numerical characters to a number.");
+		Console.WriteLine("You have tried to convert a string "
+		  + " containing non-numerical characters to a number.");
 	}
 	finally
 	{
@@ -118,13 +119,11 @@ tags:
 		{
 			test[i] = i;
 		}
-
 	}
 	catch (IndexOutOfRangeException ex)
 	{
 		Console.WriteLine(ex.Message);
 		Console.WriteLine(ex.StackTrace);
-
 	}
 	```
 	
