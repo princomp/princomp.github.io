@@ -55,6 +55,7 @@
 ./lectures/misc/random.md
 ./lectures/misc/exceptions.md
 ./lectures/misc/lists.md
+./lectures/misc/references.md
 ./lecture/slides.md
 ./labs/
 ./exercises/
@@ -67,6 +68,7 @@
 ./exercises/oop/oop.md
 ./exercises/oop/operations.md
 ./exercises/oop/structures.md
+./exercises/oop/references.md
 ./exercises/flow/
 ./exercises/flow/iteratives.md
 ./exercises/flow/conditionals.md
