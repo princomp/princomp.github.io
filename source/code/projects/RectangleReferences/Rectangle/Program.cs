@@ -4,6 +4,12 @@ class Program
 {
     static void Main(string[] args)
     {
+        
+        Rectangle r0 = new Rectangle(3, 2);
+
+        r0.Draw();
+        r0.Draw('-');
+        
         Rectangle original;
         original = new Rectangle(5, 10);
         Rectangle copy = original.Copy();
@@ -26,10 +32,6 @@ class Program
             + "\nr1 and r5 identical: " + r1?.Equals(r5)
             );
 
-        Rectangle r0 = new Rectangle(3, 2);
-
-        r0.Draw();
-        r0.Draw('%');
 
     }
 }

@@ -13,6 +13,10 @@ tags:
   - datatypes
 ---
 
+# Manipulating Objects and References
+
+[Solutions for those exercises.](./exercises_w_sol/oop/references)
+
 ## Problem
 
 Consider the "regular" implementation of the `Rectangle` class:
@@ -59,7 +63,7 @@ If your method is correctly implemented, then
     Rectangle r0 = new Rectangle(3, 2);
 
     r0.Draw();
-    r0.Draw('%');
+    r0.Draw('-');
     ```
 
     should display
@@ -68,8 +72,8 @@ If your method is correctly implemented, then
     ***
     ***
 
-    %%%
-    %%%
+    ---
+    ---
     ```
     
     
