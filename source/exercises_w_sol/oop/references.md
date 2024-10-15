@@ -39,6 +39,13 @@ class Rectangle
 }
 ```
 
+And try to answer the following questions.
+
+<details><summary>Solution</summary>
+A possible solution to those questions is [available](./code/projects/RectangleReferences.zip). 
+</details>
+
+
 #. Write a `Draw` method that takes one *optional* `char` parameter and draw a rectangle of the calling object's width and length using that character if provided, `*` otherwise.
 If your method is correctly implemented, then
 
@@ -58,6 +65,25 @@ If your method is correctly implemented, then
     %%%
     %%%
     ```
+    
+    <details><summary>Solution</summary>
+    A possible solution is:
+    ```
+    public void Draw(char symb = '*')
+    {
+        string drawing = "";
+        for (int i = 0; i < Length; i++)
+        {
+            for (int j = 0; j < Width; j++)
+            {
+                drawing += symb;
+            }
+            drawing += "\n";
+        }
+        Console.WriteLine(drawing);
+    }
+    ```
+    </details>
     
 #. Write a `Copy` method that does not take arguments, and return *a copy* of the calling object.
 If your method is correctly implemented, then
@@ -90,7 +116,17 @@ If your method is correctly implemented, then
     ```
     
     If the length of the original object changed after `copy.Length = 12;` was executed, then your method makes a *shallow* copy instead of a "deep" copy.
-
+    
+    <details><summary>Solution</summary>
+    A possible solution is:
+    ```
+    public Rectangle Copy()
+    {
+        return new Rectangle(Width, Length);
+    }
+    ```
+    </details>
+    
 #. Write an `Equals` method that return `true` if the calling object and the argument are both non-null rectangles with the same length and width, `false` otherwise.
 If your method is correctly implemented, then
 
@@ -121,5 +157,14 @@ If your method is correctly implemented, then
       r1 and r4 identical: True
       r1 and r5 identical: False
       ```
-
-A possible solution to those questions is [available](./code/projects/RectangleReferences.zip).
+      
+    <details><summary>Solution</summary>
+    A possible solution is:
+    ```
+    public bool Equals(Rectangle rP)
+    {
+        if (rP == null) return false;
+        return rP.Length == Length && rP.Width == Width;
+    }
+    ```
+    </details>
