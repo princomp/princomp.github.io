@@ -17,6 +17,35 @@ tags:
 
 [Solutions for those exercises.](./exercises_w_sol/oop/references)
 
+## Questions
+
+#. What is the difference between `ref` and `out`?
+
+  - [ ] `ref` variables are "read-only", their value cannot change inside a method.
+  - [ ] `ref` is a keyword, `out` is not.
+  - [ ] There isn't any: they are both used to pass a reference to a method.
+  - [ ] `out` variables may not be initialized going into the method, but have to receive a value inside the method.
+  - [ ] There isn't any: they are both used to pass a value to a method.
+
+## Warm-up Exercises
+
+#. Consider the following code:
+
+    ```
+    !include code/snippets/referencesExercise.cs
+    ```
+    
+    #. What are the values of `x`, `y` and `z`
+        
+        #. Before the `Foo` method is called?
+        #. Inside the `Foo` method?
+        #. After the `Foo` method executed?
+        
+    #. What is the value of `c`?
+    #. What is the value of `d`?
+
+
+
 ## Problem
 
 Consider the "regular" implementation of the `Rectangle` class:
