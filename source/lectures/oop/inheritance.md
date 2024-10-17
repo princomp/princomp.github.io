@@ -16,7 +16,7 @@ tags:
     - This is an example of *inheritance*: the programmer will implement one class for vehicle containing all the shared attributes and methods, and will have the class for e.g., bikes, *inherits* from the vehicle class.
 - The most general class is called *the base class* (or superclass). The most particular class is called *the derived class* (or subclass).
 
-## Vehicle & Bike Example
+## Vehicle Example
 
 Consider the following class:
 
