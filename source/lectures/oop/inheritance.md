@@ -52,7 +52,7 @@ Note:
 - That `SetNOW` into the `Bike()` constructor actually refers to the `SetNOW` method in the `Vehicle` class. A way of being more explicit would have been to write `base.SetNOW` instead of `SetNOW`. In either case, the value `-1M` is overriden by `2` (since every bike has 2 wheels).
 - The `: base(cP, 2)` instructs to call the 
 
-    `Vehicle(string cP, decimal cpmP)`
+    `Vehicle(string cP, int nowP)`
 
     constructor, passing it the values `cP` and `2` (once again since every bike has 2 wheels).
 - The `override` keyword "discards" the `Vehicle` `ToString` method to replace it with a custom `ToString` method for the `Bike` class. Note that we can still access what the `Vehicle` method returns using `base.ToString()`. Note that, in this particular, we have no choice but to call this base `ToString` method, since we have no way of accessing `numberOfWheels` from the `Bike` class: this attribute is private to the `Vehicle` class, and has no getter.
