@@ -266,7 +266,7 @@ $(CLA_DIR)%.md: $(CLA_DIR)%.txt
 # followed by the name of the (first) class in the .txt file
 # followed by "class", followed by a link to the text version of the UML diagram.
 # Then, we convert using the mermaid-filter, and two helpers files, before and after:
-	export MERMAID_FILTER_CAPTION="A UML diagram for the $$(sed 's-class \(.*\){-\1-g' $< | sed -n '1p') class ([text version](./$<))" && pandoc -F mermaid-filter $(CLA_DIR)before.md $< $(CLA_DIR)after.md -o $@
+	export MERMAID_FILTER_CAPTION="A UML diagram for the $$(sed 's-class \(.*\){-\1-g' $< | sed 's/<|--/◁−/' | sed -n '1p' ) class ([text version](./$<))" && pandoc -F mermaid-filter $(CLA_DIR)before.md $< $(CLA_DIR)after.md -o $@
 # We remove the escape characters introduced in the figure's caption.
 	sed -i 's-\\\[-[-g' $@ && sed -i 's-\\\]-]-g' $@
 # Then, we remove the "fig:" caption, and the closing parenthesis.

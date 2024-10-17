@@ -1,0 +1,8 @@
+class Vehicle{
+    +<< property >> Color: string
+    -costPerMile: decimal 
+    +Vehicle()
+    +Vehicle(cP : string, cpmP : decimal)
+    +SetCPM(cpmP : decimal)
+    +ToString() string
+}
