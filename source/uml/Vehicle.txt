@@ -1,8 +1,8 @@
 class Vehicle{
     +<< property >> Color: string
-    -costPerMile: decimal 
+    -numberOfWheels: int 
     +Vehicle()
-    +Vehicle(cP : string, cpmP : decimal)
-    +SetCPM(cpmP : decimal)
+    +Vehicle(cP : string, nowP : int)
+    +SetNOW(nowP : int)
     +ToString() string
 }

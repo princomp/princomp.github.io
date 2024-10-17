@@ -4,9 +4,9 @@ public class Bike : Vehicle
     public Bike()
     {
         ForkLength = -1;
-        SetCPM(0.15M); // or base.setCPM(0.15M);
+        SetNOW(2); // or base.setNOW(2);
     }
-    public Bike(string cP, decimal cpmP, double flP) : base(cP, cpmP)
+    public Bike(string cP, double flP) : base(cP, 2)
     {
         ForkLength = flP;
     }

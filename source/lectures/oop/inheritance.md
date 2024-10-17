@@ -28,7 +28,7 @@ with the following implementation:
 !include code/projects/Vehicle/Vehicle/Vehicle.cs
 ```
 
-and say that we want to extend it to accommodate bikes. Bikes have, in addition to a color and a cost per mile, a fork length.
+and say that we want to extend it to accommodate bikes. Bikes have, in addition to a color and a number of wheels, a fork length.
 Note that no other vehicle have a fork length, so it does not make sense to add this attribute to the `Vehicle` class.
 
 A possible implementation is as follows:
@@ -48,14 +48,14 @@ Note:
     
     and the `Vehicle` `Color` accessor will be used, since `Bike` does not have an accessor for `Color`.
 
-- Implicitly, the `Bike()` constructor starts by calling the `Vehicle()` constructor, so that `Color` and `costPerMile` are actually set to `"undefined"` and `-1M`, respectively.
-- That `SetCPM` into the `Bike()` constructor actually refers to the `SetCPM` method in the `Vehicle` class. A way of being more explicit would have been to write `base.SetCPM` instead of `SetCPM`. In either case, the value `-1M` is overriden by `0.15M`.
-- The `: base(cP, cpmP)` instructs to call the 
+- Implicitly, the `Bike()` constructor starts by calling the `Vehicle()` constructor, so that `Color` and `numberOfWheels` are actually set to `"undefined"` and `-1`, respectively.
+- That `SetNOW` into the `Bike()` constructor actually refers to the `SetNOW` method in the `Vehicle` class. A way of being more explicit would have been to write `base.SetNOW` instead of `SetNOW`. In either case, the value `-1M` is overriden by `2` (since every bike has 2 wheels).
+- The `: base(cP, 2)` instructs to call the 
 
     `Vehicle(string cP, decimal cpmP)`
 
-    constructor, passing it the values `cP` and `cpmP`.
-- The `override` keyword "discards" the `Vehicle` `ToString` method to replace it with a custom `ToString` method for the `Bike` class. Note that we can still access what the `Vehicle` method returns using `base.ToString()`. Note that, in this particular, we have no choice but to call this base `ToString` method, since we have no way of accessing `costPerMile` from the `Bike` class: this attribute is private to the `Vehicle` class, and has no getter.
+    constructor, passing it the values `cP` and `2` (once again since every bike has 2 wheels).
+- The `override` keyword "discards" the `Vehicle` `ToString` method to replace it with a custom `ToString` method for the `Bike` class. Note that we can still access what the `Vehicle` method returns using `base.ToString()`. Note that, in this particular, we have no choice but to call this base `ToString` method, since we have no way of accessing `numberOfWheels` from the `Bike` class: this attribute is private to the `Vehicle` class, and has no getter.
 
 The inheritance is represent in UML as follows:
 
@@ -68,5 +68,5 @@ We could then obtain a code as follows:
 !include code/projects/Vehicle/Vehicle/Bicycle.cs
 ```
 
-Note that `SetCPM` inside the no-args constructor actually calls a `SetCPM` method inside `Bike`, but since there is no such method, it fallback to the `SetCPM` method from the `Vehicle` class.
-If there was a `SetCPM` method in both the `Bike` and the `Vehicle` method, we could not force access to the `Vehicle` method^[Actually, we could, if you read [this post](https://stackoverflow.com/a/32562464), but it is considered bad practice.].
+Note that `SetNOW` inside the no-args constructor actually calls a `SetNOW` method inside `Bike`, but since there is no such method, it fallback to the `SetNOW` method from the `Vehicle` class.
+If there was a `SetNOW` method in both the `Bike` and the `Vehicle` method, we could not force access to the `Vehicle` method^[Actually, we could, if you read [this post](https://stackoverflow.com/a/32562464), but it is considered bad practice.].

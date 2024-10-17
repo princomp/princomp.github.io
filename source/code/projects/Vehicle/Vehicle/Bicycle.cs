@@ -3,10 +3,11 @@
     private string saddleType;
     public Bicycle()
     {
+        SetNOW(2);
         saddleType = "undefined";
-        SetCPM(0.1M);
+
     }
-    public Bicycle(string cP, decimal cpmP, double flP, string sT) : base(cP, cpmP, flP)
+    public Bicycle(string cP, double flP, string sT) : base(cP, flP)
     {
         saddleType = sT;
     }

@@ -1,25 +1,25 @@
 public class Vehicle
 {
     public string Color { get; set; }
-    private decimal costPerMile;
-    public void SetCPM(decimal cpmP)
+    private int numberOfWheels;
+    public void SetNOW(int nowP)
     {
-        if (cpmP > 0) costPerMile = cpmP;
-        else costPerMile = -1M;
+        if (nowP > 0) numberOfWheels = nowP;
+        else numberOfWheels = -1;
     }
     public Vehicle()
     {
         Color = "undefined";
-        costPerMile = -1M;
+        numberOfWheels = -1;
     }
-    public Vehicle(string cP, decimal cpmP)
+    public Vehicle(string cP, int nowP)
     {
-        costPerMile = cpmP;
+        numberOfWheels = nowP;
         Color = cP;
     }
     public override string ToString()
     {
-        return $"Cost per mile: {costPerMile:C}"
+        return $"Number of wheels: {numberOfWheels}"
         + $"\nColor: {Color}";
     }
 }

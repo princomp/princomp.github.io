@@ -1,16 +1,16 @@
 Vehicle <|-- Bike
 class Vehicle{
     +<< property >> Color: string
-    -costPerMile: decimal 
+    -numberOfWheels: int 
     +Vehicle()
-    +Vehicle(cP : string, cpmP : decimal)
-    +SetCPM(cpmP : decimal)
+    +Vehicle(cP : string, nowP : int)
+    +SetNOW(nowP : int)
     +ToString() string
 }
 
 class Bike{
     -ForkLength: double 
     +Bike()
-    +Bike(cP : string, cpmP : decimal, flP: double)
+    +Bike(cP : string, flP: double)
     +ToString() string
 }
