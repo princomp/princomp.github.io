@@ -179,11 +179,100 @@ Note that
 
 ## Passing Arguments
 
+### Motivation
+
+Consider the following "swapping" method and a `Main` method calling it:
+
+```
+!include code/projects/snippets/improperSwap.cs
+```
+
+This program would display:
+
+```text
+Before swap: a holds 10, b holds 20.
+Inside swap: a holds 20, b holds 10.
+After swap:  a holds 10, b holds 20.
+```
+
+As we can see, the values held by the variables `a` and `b` are correctly swapped by the `Swap` method, but this change is not "permanent": once the `Swap` method completed, `a` and `b` still have their "old" values inside `Main`.
+
+Since a method cannot return two values, making that change permanent is difficult. A solution could be designed using arrays for example, but it would require additional manipulation in the `Main` method.
+Instead, one can use references to pass *the reference to the variables instead of their values*.
 
 
-*To be written*
+### `ref` Keyword
 
-<!--
-ref, out, etc.
--->
+The `ref` keyword can be used to pass the reference to a variable, as follows:
 
+```
+!include code/projects/snippets/referenceSwap.cs
+```
+
+Note that the change with the previous code is minimal: only the keyword `ref` is added:
+
+- In front of the datatype of the arguments in `Swap`'s header,
+- In front of the name of the variables when the `Swap` method is called.
+
+Note that *both* edits are required: the first one stipulates that the `Swap` method expects *references*, and the second one stipulates that the *references* are passed.
+
+This program would display:
+
+```text
+Before swap: a holds 10, b holds 20.
+Inside swap: a holds 20, b holds 10.
+After swap:  a holds 20, b holds 10.
+```
+
+Indeed, since *the reference* was passed, `Swap` stored the new values *in the same variables `a` and `b`*, making the swapping "permanent".
+
+### `out` Keyword
+
+In some cases, one may want to pass a reference to a method simply as an address where a value must be stored.
+The benefit is that this reference does not need to contain a value before being passed to a method.
+
+For example, consider:
+
+```
+static void SetToRandom(ref int a)
+{
+    Random gen = new Random();
+    a = gen.Next(10);
+}
+```
+
+that sets the value of a reference to a random number between 0 and 9 (both included).
+
+It can**not** be called as follows:
+
+```
+int a; // This code will not compile
+SetToRandom(ref a);
+```
+
+Because C#'s compilation will return the error message "Use of unassigned local variable 'c'".
+Indeed, `SetToRandom` expects the argument to already holds a reference to a value, even if it has no use for it.
+
+A better alternative is to use the `out` keyword:
+
+```
+!include code/projects/snippets/setToRandom.cs
+```
+
+Note that:
+
+- The keyword `out` is similarly added in the header of the method and when the argument is passed,
+- The variable `a` is *not* given a value before being passed to the method.
+
+Summing up, the difference between `ref` and `out` is that `out` does not require the reference to point to an actual value *entering into the method* but *it must hold a value by the time we exit the method*.
+
+To illustrate this last point, observe that
+
+```
+static void Dummy(out int a)
+{
+    Console.WriteLine("Hi!");
+}
+```
+
+would not compile, as C# would give back a message "The out parameter 'a' must be assigned to before controls leaves the current method": an argument passed using the keyword `out` **must** be initiatialized in the body of the method.
