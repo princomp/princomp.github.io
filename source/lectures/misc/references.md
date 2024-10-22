@@ -184,9 +184,8 @@ Note that
 Consider the following "swapping" method and a `Main` method calling it:
 
 ```
-!include code/projects/snippets/improperSwap.cs
+!include code/snippets/improperSwap.cs
 ```
-
 
 This program would display:
 
@@ -207,7 +206,7 @@ Instead, one can use references to pass *the reference to the variables instead 
 The `ref` keyword can be used to pass the reference to a variable, as follows:
 
 ```
-!include code/projects/snippets/referenceSwap.cs
+!include code/snippets/referenceSwap.cs
 ```
 
 Note that the change with the previous code is minimal: only the keyword `ref` is added:
@@ -257,7 +256,7 @@ Indeed, `SetToRandom` expects the argument to already holds a reference to a val
 A better alternative is to use the `out` keyword:
 
 ```
-!include code/projects/snippets/setToRandom.cs
+!include code/snippets/setToRandom.cs
 ```
 
 Note that:
