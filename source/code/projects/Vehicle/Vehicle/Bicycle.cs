@@ -4,7 +4,6 @@
 
   public Bicycle()
   {
-    SetNOW(2);
     saddleType = "undefined";
   }
 

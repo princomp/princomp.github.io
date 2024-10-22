@@ -68,5 +68,7 @@ We could then obtain a code as follows:
 !include code/projects/Vehicle/Vehicle/Bicycle.cs
 ```
 
+<!--
 Note that `SetNOW` inside the no-args constructor actually calls a `SetNOW` method inside `Bike`, but since there is no such method, it fallback to the `SetNOW` method from the `Vehicle` class.
 If there was a `SetNOW` method in both the `Bike` and the `Vehicle` method, we could not force access to the `Vehicle` method^[Actually, we could, if you read [this post](https://stackoverflow.com/a/32562464), but it is considered bad practice.].
+-->
