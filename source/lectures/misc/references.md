@@ -187,6 +187,7 @@ Consider the following "swapping" method and a `Main` method calling it:
 !include code/projects/snippets/improperSwap.cs
 ```
 
+
 This program would display:
 
 ```text
@@ -275,4 +276,4 @@ static void Dummy(out int a)
 }
 ```
 
-would not compile, as C# would give back a message "The out parameter 'a' must be assigned to before controls leaves the current method": an argument passed using the keyword `out` **must** be initiatialized in the body of the method.
+would not compile, as C# would give back a message "The out parameter 'a' must be assigned to before controls leaves the current method": an argument passed using the keyword `out` **must** be initialized in the body of the method.
