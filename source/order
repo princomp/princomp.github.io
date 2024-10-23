@@ -30,6 +30,7 @@
 ./lectures/oop/generic_types.md
 ./lectures/oop/inheritance.md
 ./lectures/oop/polymorphism.md
+./lectures/oop/abstract.md
 ./lectures/flow/
 ./lectures/flow/flow_intro.md
 ./lectures/flow/booleans.md
