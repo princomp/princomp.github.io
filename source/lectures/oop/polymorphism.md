@@ -102,6 +102,9 @@ One could do the following:
 
 ```
 !include code/projects/Polymorphism4/Polymorphism4/Class1.cs
+```
+
+```
 !include code/projects/Polymorphism4/Polymorphism4/Class2.cs
 ```
 
