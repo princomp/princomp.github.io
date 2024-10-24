@@ -29,12 +29,13 @@ Note that the `Id` property is *also* marked as `abstract`: this means that the 
 Then, we can implement the `Student` and `Employee` classes by inheriting from the `Person` class:
 
 ```
-!include code/projects/AbstractClass/AbstractClass/Employee.cs
+!include code/projects/AbstractClass/AbstractClass/Student.cs
 ```
 
 ```
-!include code/projects/AbstractClass/AbstractClass/Student.cs
+!include code/projects/AbstractClass/AbstractClass/Employee.cs
 ```
+
 
 Using this code, the statement
 
@@ -42,7 +43,7 @@ Using this code, the statement
 Person test = new Person();
 ```
 
-would return the quite clear error message "Cannot create an instance of the abstract type or interface 'Person'".
+would return the error message "Cannot create an instance of the abstract type or interface 'Person'".
 
 Furthermore, the following exemplifies the expected behavior:
 
@@ -51,3 +52,33 @@ Furthermore, the following exemplifies the expected behavior:
 ```
 
 The statement `Morgan.Id = "E8194";` will raise exception, but `Morgan.Id = "S8194";` will execute without throwing an error.
+
+## Additional Details: Abstract Properties and Methods
+
+- As we've seen above with the `Id` property, not only classes can be marked as abstract.
+- For abstract properties, using `{get; set;}`, only `{get;}` or only `{set;}` indicates if the derived class needs to implement both a setter and a getter, or only one of them.
+- In addition to properties, *methods* can also be marked as abstract: in that case, their body need to be absent (not simply empty: missing).
+
+    - For example, the `Person` class could also contain
+    
+        ```
+        public abstract string GenerateLogin();
+        ```
+        to "force" any derived class to implement a `GenerateLogin` method that does not take any parameter and returns a `string`. The derived classes would need to implement a method that overrides the `Person`'s `GenerateLogin` method:
+
+        ```
+        public override string GenerateLogin(){
+            // Insert method body.
+        }
+        ```
+
+- However, abstract attributes are not allowed.
+
+
+## UML Class Diagram Representation
+
+- An abstract class is represented by as a class with its name prefixed by `<<Abstract>>` (or, sometimes, displayed in *italics*),
+- An abstract method or property is represented as a usual, except that it is displayed in *italics*.
+
+!include uml/Person.md
+
