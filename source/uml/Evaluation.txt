@@ -1,0 +1,27 @@
+Evaluation <|-- Exam
+Exam <|-- Final
+Exam <|-- InClass
+Evaluation <|-- Project
+class Evaluation{
+    <<Abstract>>
+    +<< property >> Course: string
+    ++<< property >> Weight: double
+    +<< property>> Bonus: bool
+    +GetContact() string*
+    +ToString() string
+    +Evaluation()
+    +IntegrityTest(evallistP: List<Evaluation>) bool$
+}
+
+class Exam{
+    <<Abstract>>
+    +GetRoom() string*
+    +GetContact() string
+    +Exam()
+    +ToString() string
+}
+
+class Final{
+    +<< property >> Room: string
+    +GetRoom() string
+}
