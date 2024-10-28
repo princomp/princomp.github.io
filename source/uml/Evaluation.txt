@@ -7,21 +7,36 @@ class Evaluation{
     +<< property >> Course: string
     ++<< property >> Weight: double
     +<< property>> Bonus: bool
+    +Evaluation(courseP: string, weightP: double, bonusP: bool)
     +GetContact() string*
     +ToString() string
-    +Evaluation()
     +IntegrityTest(evallistP: List<Evaluation>) bool$
 }
 
 class Exam{
     <<Abstract>>
+    +Exam(courseP: string, weightP: double, bonusP: bool)
     +GetRoom() string*
     +GetContact() string
-    +Exam()
     +ToString() string
 }
 
 class Final{
-    +<< property >> Room: string
+    -Room: string
+    +Final(courseP: string, weightP: double, bonusP: bool, roomP: string)
     +GetRoom() string
+}
+
+class InClass{
+    -Room: string
+    +InClass(courseP: string, weightP: double, bonusP: bool, roomP: string)
+    +GetRoom() string
+}
+
+class Project{
+    -submissionLink: string
+    +<< property >> SubmissionLink: string
+    +Project(courseP: string, weightP: double, bonusP: bool, submissionLinkP: string)
+    +GetContact() string
+    +Tostring() string
 }

@@ -2,14 +2,15 @@ using System;
 
 class Employee : Person
 {
-    private decimal hourlyPay;
-    public override string Id
+  private decimal hourlyPay;
+  public override string Id
+  {
+    set
     {
-        set
-        {
-            if (value[0] != 'E')
-                throw new ArgumentException("An employee ID must start with an 'E'.");
-        }
+      if (value[0] != 'E')
+        throw new ArgumentException(
+          "An employee ID must start with an 'E'."
+        );
     }
+  }
 }
-

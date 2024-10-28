@@ -1,14 +1,16 @@
 using System;
 
-class Student:Person
+class Student : Person
 {
-    private string major;
-    public override string Id
+  private string major;
+  public override string Id
+  {
+    set
     {
-        set
-        {
-            if (value[0] != 'S')
-                throw new ArgumentException("A student ID must start with an 'S'.");
-        }
+      if (value[0] != 'S')
+        throw new ArgumentException(
+          "A student ID must start with an 'S'."
+        );
     }
+  }
 }
