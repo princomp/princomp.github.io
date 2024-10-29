@@ -1,20 +1,20 @@
 Person <|-- Student
 Person <|-- Employee
 class Person{
-    <<Abstract>>
-    +<< property >> Name: string
-    +<< property>> Id: string*
+    <<Abstract»
+    +«property» Name: string
+    +«property» Id: string*
     +GenerateLogin() string*
 }
 
 class Employee{
     -hourlyPay: decimal
-    +<< property >> Id: string
+    +«property» Id: string
     +GenerateLogin() string
 }
 
 class Student{
     -major: string
-    +<< property >> Id: string
+    +«property» Id: string
     +GenerateLogin() string
 }

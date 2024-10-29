@@ -473,7 +473,7 @@ There are several ways we can use `if-else` and `if-else-if` statements with met
 
 - For example, we can add an instance variable called "taxable" to the Item class to indicate whether or not the item should have sales tax added to its price at checkout. The UML diagram for Item with this instance variable would look like this:
 
-    !include uml/Item.md
+    !include uml/cla/Item.md
 
     - Note that the "getter" for a Boolean variable is conventionally named with a word like "Is" or "Has" rather than "Get"
     - We will add a constant named SALES_TAX to the Item class to store the sales tax rate that should be applied if the item is taxable. The sales tax rate is not likely to change during the program's execution, but it is better to store it in a named variable instead of writing the same literal value (e.g. `0.08m`) every time we want to compute a total price with tax.
@@ -732,7 +732,7 @@ It also exemplifies how a method can take _an object_ as a parameter with `InSam
 
 The corresponding UML diagram is:
 
-!include uml/Room.md
+!include uml/cla/Room.md
 
 ### The Loan Class
 

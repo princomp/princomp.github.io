@@ -1,6 +1,6 @@
 Vehicle <|-- Bike
 class Vehicle{
-    +<< property >> Color: string
+    +«property» Color: string
     -numberOfWheels: int 
     +Vehicle()
     +Vehicle(cP : string, nowP : int)

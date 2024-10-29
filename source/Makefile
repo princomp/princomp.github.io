@@ -78,8 +78,10 @@ PROJECT_DIR = $(CODE_DIR)projects/
 MD_DIRS = $(LECTURES_DIR) $(DOCS_DIR) $(LABS_DIR) $(EXO_DIR) $(EXO_W_SOL_DIR) $(PROJ_DIR)
 # The folder where the images are located.
 IMG_DIR = img/
+# The folder where the UML diagrams are located
+UML_DIR = uml/
 # The folder where the UML class diagrams are located
-CLA_DIR = uml/
+CLA_DIR = $(UML_DIR)cla/
 # The folder where the videos are located.
 VID_DIR = vid/
 # The folders where the project are located.
@@ -97,8 +99,13 @@ PDF_TEMPLATES = $(TEMPLATES)pdf/
 ODT_TEMPLATES = $(TEMPLATES)odt/
 # Path to DOCX templates to use with pandoc
 DOC_TEMPLATES = $(TEMPLATES)docx/
+# Path to UML templates to use with pandoc
+UML_TEMPLATES = $(TEMPLATES)uml/
+# Path to UML class diagram templates to use with pandoc
+CLA_TEMPLATES = $(UML_TEMPLATES)cla/
 # Path to the lua filters to use with pandoc
 FIL_TEMPLATES = $(TEMPLATES)filters/
+
 
 
 # -------------------------------
@@ -142,8 +149,8 @@ SOURCE_IMAGES_FILES := $(shell find $(IMG_DIR) -mindepth 1  -maxdepth 1 -iname "
 TARGET_IMAGES_FILES := $(addprefix $(BUILD_DIR), $(SOURCE_IMAGES_FILES))
 
 # UML class diagrams (source and target).
-# Note that we copy only the .txt files: the .diag files are converted to .md, and automatically inserted.
 SOURCE_CLA_TXT_FILES := $(shell find $(CLA_DIR) -mindepth 1  -maxdepth 1 -iname "*.txt")
+TARGET_CLA_MD_FILES := $(addsuffix .md,  $(basename $(SOURCE_CLA_TXT_FILES)))
 TARGET_CLA_TXT_FILES := $(addprefix $(BUILD_DIR), $(SOURCE_CLA_TXT_FILES))
 
 # Video files (source and target).
@@ -257,24 +264,26 @@ $(IMG_DIR)%.svg:$(IMG_DIR)%.pdf
 
 # UML class diagram file
 # To recompile everything, we can use
-# rm uml/Account.md uml/ClassName.md uml/ClassRoom.md uml/ClassRoom_with_constructor.md uml/Item.md uml/Rectangle.md uml/Rectangle_with_properties.md 
+# rm uml/cla/*.md
 # make uml/Account.md uml/ClassName.md uml/ClassRoom.md uml/ClassRoom_with_constructor.md uml/Item.md uml/Rectangle.md uml/Rectangle_with_properties.md 
+
+.PHONY: CLA
+CLA: $(TARGET_CLA_MD_FILES)
 
 $(CLA_DIR)%.md: $(CLA_DIR)%.txt
 # First, set the caption to be 
 # "A UML diagram for the"
 # followed by the name of the (first) class in the .txt file
 # followed by "class", followed by a link to the text version of the UML diagram.
-# Then, we convert using the mermaid-filter, and two helpers files, before and after:
+# Then, we convert using the mermaid-filter, and two helpers files (the template, at $(CLA_TEMPLATES)before.md and $(CLA_TEMPLATES)after.md), before and after:
 	export MERMAID_FILTER_CAPTION="A UML diagram for the $$(sed 's-class \(.*\){-\1-g' $< | sed 's/<|--/◁−/' | sed -n '1p' ) class ([text version](./$<))" && \
 	export MERMAID_FILTER_FORMAT=svg && \
-	pandoc -F mermaid-filter $(CLA_DIR)before.md $< $(CLA_DIR)after.md -o $@
+	pandoc -F mermaid-filter $(CLA_TEMPLATES)before.md $< $(CLA_TEMPLATES)after.md -o $@
 # We remove the escape characters introduced in the figure's caption.
 	sed -i 's-\\\[-[-g' $@ && sed -i 's-\\\]-]-g' $@
 # This needs to be documented: .mermaid-config.json disable html escaping to 
 # produce correct svg files with text
 # https://github.com/mermaid-js/mermaid-cli/issues/112
-	sed -i 's-&lt;-<-g' $@
 # Then, we remove the "fig:" caption, and the closing parenthesis.
 	sed -i 's-"fig:")--g' $@
 # And add the content of the $< file to become the new alt. text for the image:
@@ -511,7 +520,7 @@ fetch:
 book: $(BUILD_DIR)book.html $(BUILD_DIR)book.pdf $(BUILD_DIR)book.odt $(BUILD_DIR)book.docx
 
 # Ligter build, to test compilation and website deployment
-build-light: $(BUILD_DIR)web-order.ts $(TARGET_MD_FILES) $(TARGET_WOFF_FONT_FILES) $(TARGET_IMAGES_FILES) $(TARGET_VIDEOS_FILES) $(TARGET_DOC_FILES_WITHOUT_INDEX) $(TARGET_CLA_TXT_FILES)
+build-light: $(BUILD_DIR)web-order.ts $(TARGET_MD_FILES) $(TARGET_WOFF_FONT_FILES) $(TARGET_IMAGES_FILES) $(TARGET_VIDEOS_FILES) $(TARGET_DOC_FILES_WITHOUT_INDEX) $(TARGET_CLA_TXT_FILES) $(TARGET_CLA_MD_FILES)
 
 build: build-light $(TARGET_PDF_FILES_WITHOUT_INDEX) $(TARGET_ODT_FILES_WITHOUT_INDEX) $(TARGET_PROJECTS_FILES) book
 

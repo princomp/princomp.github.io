@@ -21,7 +21,7 @@ Evaluations can be of different natures (project, in-class exam, finale exam), h
 
 We want to implement the classes pictured in the UML diagram.
 
-!include uml/Evaluation.md
+!include uml/cla/Evaluation.md
 
 Remembering  that:
 

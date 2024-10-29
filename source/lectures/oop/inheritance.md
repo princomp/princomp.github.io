@@ -20,7 +20,7 @@ tags:
 
 Consider the following class:
 
-!include uml/Vehicle.md
+!include uml/cla/Vehicle.md
     
 with the following implementation:
 
@@ -59,7 +59,7 @@ Note:
 
 The inheritance is represent in UML as follows:
 
-!include uml/Bike.md
+!include uml/cla/Bike.md
 
 Note that inheritance can be "chained", as `Bike` could itself be the base class for a `Bicycle` class that could have e.g. a `saddleType` attribute (noting that a motorbike does not have a saddle, but a seat).
 We could then obtain a code as follows:

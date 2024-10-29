@@ -1,0 +1,5 @@
+class Rectangle{
+    + «property» Width: int
+    + «property» Length: int 
+    + ComputeArea() int
+}

@@ -38,7 +38,7 @@ In this project, you are asked to develop a `Character` class, based (loosely) o
 
 Consider the following UML diagram for a `Character` class:
 
-!include uml/Character_pt1.md
+!include uml/cla/Character_pt1.md
 
 In order, the attributes will store:
 
@@ -162,7 +162,7 @@ Consider the following UML diagram for the updated `Character` class:
 | + Character(nameP : string, raceP : string, genderP : char, levelP : int) : void              |
 |===============================================================================================|
 ```-->
-!include uml/Character_pt2.md
+!include uml/cla/Character_pt2.md
 
 In Character.cs:
 
@@ -334,7 +334,7 @@ Consider the following UML diagram for the updated `Character` class:
 | + SetJob() : void                                                                     |
 |=======================================================================================|
 ```-->
-!include uml/Character_pt3.md
+!include uml/cla/Character_pt3.md
 
 In `Character.cs`:
 

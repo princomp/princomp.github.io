@@ -4,10 +4,10 @@ Exam <|-- InClass
 Evaluation <|-- Project
 
 class Evaluation{
-    <<Abstract>>
-    +<< property >> Course: string
-    ++<< property >> Weight: double
-    +<< property>> Bonus: bool
+    << Abstract >>
+    +Course: string
+    +«property» Weight: double
+    +«property» Bonus: bool
     +Evaluation(courseP: string, weightP: double, bonusP: bool)
     +GetContact() string*
     +ToString() string
@@ -15,7 +15,7 @@ class Evaluation{
 }
 
 class Exam{
-    <<Abstract>>
+    << Abstract >>
     +Exam(courseP: string, weightP: double, bonusP: bool)
     +GetRoom() string*
     +GetContact() string
@@ -36,7 +36,7 @@ class InClass{
 
 class Project{
     -submissionLink: string
-    +<< property >> SubmissionLink: string
+    +«property» SubmissionLink: string
     +Project(courseP: string, weightP: double, bonusP: bool, submissionLinkP: string)
     +GetContact() string
     +Tostring() string

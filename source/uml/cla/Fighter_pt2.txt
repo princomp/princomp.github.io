@@ -1,4 +1,4 @@
-class Fighter["Fighter Pt. 3"]{
+class Fighter["Fighter Pt. 2"]{
 	-name : string
 	-level : byte
 	-curExp : int
@@ -19,9 +19,9 @@ class Fighter["Fighter Pt. 3"]{
 	+LevelUp()
 	+TakeDamage(attackP : int)
 	+ToString() string
-	+<< constructor >> Fighter()
-	+<< constructor >> Fighter(nameP : string, attackP : int, defenseP : int)
+	+«constructor» Fighter()
+	+«constructor» Fighter(nameP : string, attackP : int, defenseP : int)
 	+AddExp(expAmt : int)
 	+Heal()
-	+Fighter(nameP : string, playerLvl : byte)
+	+Fighter(nameP : string) (BONUS)
 }

@@ -80,5 +80,5 @@ The statement `Morgan.Id = "E8194";` will raise exception, but `Morgan.Id = "S81
 - An abstract class is represented by as a class with its name prefixed by `<<Abstract>>` (or, sometimes, displayed in *italics*),
 - An abstract method or property is represented as a usual, except that it is displayed in *italics*.
 
-!include uml/Person.md
+!include uml/cla/Person.md
 
