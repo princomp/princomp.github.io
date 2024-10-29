@@ -5,6 +5,8 @@ tags:
 
 # Files
 
+The code for this lecture [is available in this archive](./code/projects/FileDemo.zip).
+
 ## Motivation
 
 Files are useful for permanency: when a program terminates, all the objects created, strings entered by the user, and even the messages displayed on the screen, are lost.
@@ -13,6 +15,8 @@ Files are useful for permanency: when a program terminates, all the objects crea
 
 This lecture is concerned with files: how to write into them, how to read from them, how to make sure that our program does not throw exceptions when dealing with "I/O" (read: input / output) operations?
 We will only consider *textual* files, with the `.txt` extension, for now.
+
+
 
 ## Warm-Up: Finding a Correct Path
 
