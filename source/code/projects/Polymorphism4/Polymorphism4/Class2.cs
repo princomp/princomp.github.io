@@ -1,17 +1,17 @@
 using System;
+
 class Class2 : Class1
 {
-    private int attribute;
-    public override int Property
+  private int attribute;
+  public override int Property
+  {
+    set
     {
-        set
-        {
-            if (value < 0) throw new ArgumentOutOfRangeException();
-            else attribute = value;
-        }
-        get
-        {
-            return attribute;
-        }
+      if (value < 0)
+        throw new ArgumentOutOfRangeException();
+      else
+        attribute = value;
     }
+    get { return attribute; }
+  }
 }

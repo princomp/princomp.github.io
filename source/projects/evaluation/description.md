@@ -31,7 +31,7 @@ Remembering  that:
 Your code should be such that the following:
 
 ```
-include code/projects/evaluation/Program.cs
+!include code/projects/Evaluation/Evaluation/Program.cs
 ```
 
 should display (something along the lines of)
@@ -91,9 +91,10 @@ Evaluations are for different classes.
 **Pay attention to details** in the code above. For example, your code should be such that:
 
 - An exception will be raised if the url for the project's submission link does not start with "https://lms.augusta.edu/d2l/lms/",
-- For exams (in-class or finale exam), the room should be displayed if it is provided, otherwise, either "Same as class meeting room." or "Check the Registrar's exam schedules for " (followed by the course property) should be displayed,
+- For exams (in-class or finale exam), the room should be displayed if it is provided, otherwise, "Same as class meeting room." should be displayed if the exam in in-class, and "Check the Registrar's exam schedules for " (followed by the course property) should be displayed if the exam is the final exam,
 - For all string attributes and properties, `null` or empty strings should *not* make the program crash,
-
+- The *static* `IntegrityTest` method should take as input a list of evaluations, and returns `true` if all the evaluations belong to the same course and the weights of the evaluations that are not bonuses adds to 1, `false` if the evaluations all belong to the same course but the weights of the evaluations that are not bonuses do not add to 1, and raise an exception otherwise,
+- `Final` and `InClass` do *not* have `ToString()` methods, and yet displaying information about them still return information about the room.
 
 ## Submission
 
@@ -101,3 +102,9 @@ Please, follow our [guideline on project submission](https://princomp.github.io/
 In particular, make sure you write your name and the date in a delimited comment at the beginning of your file.
 
 ## Bonuses
+
+This project is already challenging *as is*, but bonus will be given if:
+
+- (easy) The `GetContact()` method cannot be overridden,
+- (medium) Your `Main` method exhibits many test cases and illustrates your classes' features nicely,
+- (hard) A mechanism is implemented to either export the attributes of an `Evaluation` object into a file or to load it from a file.

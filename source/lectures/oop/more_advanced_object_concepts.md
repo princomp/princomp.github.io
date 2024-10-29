@@ -426,7 +426,7 @@ tags:
 - Now that we can write constructors, they should be part of the UML diagram of a class
     - No need to include the default constructor, or one you write yourself that takes no arguments
     - Non-default constructors go in the operations section (box 3) of the UML diagram
-    - Similar syntax to a method: `[+/-] <<constructor>> [name]([parameter name]: [parameter type])`
+    - Similar syntax to a method: `[+/-] <<constructor>> [name]([parameter name]: [parameter type])` (where <<constructor>> is sometimes replaced with «constructor»)
     - Note that the name will always match the class name
     - No return type, ever
     - Annotation "\<\<constructor\>\>" is nice, but not necessary: if the method name matches the class name, it is a constructor

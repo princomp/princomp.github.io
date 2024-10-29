@@ -775,7 +775,7 @@ Make sure you feel ready before starting them, try to do them with limited time 
     \- title : string
     \- price : decimal
     \+ SetTitle(titleP : string) : void
-    \+ <<constructor>> DVD(titleP : string, priceP : double)
+    \+ «constructor» DVD(titleP : string, priceP : double)
     \+ Discount() : void
     \+ ToString() : string
     
@@ -834,7 +834,7 @@ Make sure you feel ready before starting them, try to do them with limited time 
     \- title : string
     \- price : decimal
     \+ GetTitle() : string
-    \+ <<constructor>> Book(titleP : string, priceP : double
+    \+ «constructor» Book(titleP : string, priceP : double
     \+ AddTaxes() : void
     \+ ToString() : string
     
