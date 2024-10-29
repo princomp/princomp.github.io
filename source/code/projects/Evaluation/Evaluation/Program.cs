@@ -8,7 +8,8 @@ class Program
     // Helper string, to display more nicely
     string sep = "\n\n" + new String('*', 20) + "\n\n";
 
-    // Evaluation test = new Evaluation(); // Should return an error
+    // Evaluation test = new Evaluation(); // Should return an error if uncommented.
+    
     Project project1 = new Project(
       "CSCI 1302",
       .05,
@@ -44,7 +45,7 @@ class Program
     }
     Console.Write(sep);
 
-    // Exam test = new Exam(); // Should return an error
+    // Exam test = new Exam(); // Should return an error if uncommented.
     InClass inclassexam1 = new InClass(
       "CSCI 1302",
       .25,

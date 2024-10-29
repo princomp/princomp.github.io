@@ -16,10 +16,11 @@ It involves inheritance, polymorphism, properties, exception handling and `Strin
 
 Develop multiple classes to organize the evaluations for courses. 
 Evaluations can be of different natures (project, in-class exam, finale exam), have different weights and be marked as optional.
+However, evaluations of different natures also have different attributes and methods: for example, only projects have a submission link, and only exams have a room.
 
 ### In more details
 
-We want to implement the classes pictured in the UML diagram.
+We want to implement the classes pictured in the UML diagram (you can zoom in or, in your browser, right click and select "Open Image in New Tab", or access [its text version](./uml/cla/Evaluation.txt)).
 
 !include uml/cla/Evaluation.md
 
