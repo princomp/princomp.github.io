@@ -56,7 +56,8 @@ jobs:
         sudo apt-get update
         test -f pandoc-3.2.1-1-amd64.deb || wget https://github.com/jgm/pandoc/releases/download/3.2.1/pandoc-3.2.1-1-amd64.deb
         sudo dpkg -i pandoc-3.2.1-1-amd64.deb
-        sudo apt-get install -y texlive texlive-xetex texlive-latex-extra lmodern librsvg2-bin fonts-symbola
+        sudo apt-get install -y texlive texlive-xetex texlive-latex-extra lmodern librsvg2-bin fonts-symbola pdf2svg
+        
         pip install --upgrade pip
         pip install Pygments pandoc-include
     - name: Fetch previous version ⤵️ # <- To save some compilation time, we download the last release and unzip it. We also synchronize the project files back in the source/ folder, to gain some time.
