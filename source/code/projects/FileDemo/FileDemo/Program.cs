@@ -1,55 +1,40 @@
 using System;
 using System.IO;
-
 /*
- * Code heavily inspired from
+ * Code inspired from
  * https://learn.microsoft.com/en-us/troubleshoot/developer/visualstudio/csharp/language-compilers/read-write-text-file
  */
 class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
+        // Display directory path where files will be stored.
+        string directoryPath = AppDomain.CurrentDomain.BaseDirectory;
+        Console.WriteLine("Directory path is " + directoryPath + ".");
+        // On a unix system:
+        // ~/source/code/projects/FileDemo/FileDemo/bin/Debug/
 
-        string fName;
-        do
-        {
-            Console.WriteLine("Enter a file name that ends with .txt");
-            fName = Console.ReadLine();
-        } while (!fName.EndsWith(".txt") || fName.StartsWith("."));
-
-        // Write
-        string baseFolder = AppDomain.CurrentDomain.BaseDirectory;
-        Console.WriteLine("baseFolder is " + baseFolder);
-        //  /home/caubert/travail/git/princomp.github.io/source/code/projects/FileDemo/FileDemo/bin/Debug/
-
-        // Directory.GetCurrentDirectory()
-        string filePath = Path.Combine(baseFolder, "Hello.txt");
+        // We append to the base folder the selected file name:
+        string filePath = Path.Combine(directoryPath, "Hello.txt");
+        Console.WriteLine("File path is " + filePath + ".");
+        // On a unix system:
+        // ~/source/code/projects/FileDemo/FileDemo/bin/Debug/Hello.txt
 
         try
         {
-            StreamWriter sw;
-            if (File.Exists(filePath))
-            {
-                Console.WriteLine("The file " + filePath + " already exists, so we append to it.");
-                sw = new StreamWriter(filePath, true);
-
-            }
-            else
-            {
-                //Pass the filepath and filename to the StreamWriter Constructor
-                sw = new StreamWriter(filePath);
-            }
-            //Write a line of text
+            // We create the StreamWriter object,
+            // Write "Hellow World!", a new line, 
+            // "From the StreamWriter class", the numbers
+            // from 0 to 10 in it before closing it.
+            StreamWriter sw = new StreamWriter(filePath);
             sw.WriteLine("Hello World!!");
-            //Write a second line of text
-            sw.WriteLine("From the StreamWriter class");
-            //Write out the numbers 1 to 10 on the same line.
+            sw.Write("From the StreamWriter class");
             for (int x = 0; x < 10; x++)
             {
                 sw.Write(x);
             }
-            //Close the file
             sw.Close();
+            // Go see FileDemo/bin/Debug/Hello.txt for yourself!
         }
         catch (Exception e)
         {
@@ -57,41 +42,35 @@ class Program
         }
         finally
         {
-            Console.WriteLine("Executing finally block.");
+            Console.WriteLine("Executing finally block: was the write operation successful?");
         }
 
-        string line;
         try
         {
-        if (!File.Exists(filePath))
+            // We first make sure the file exists.
+            if (!File.Exists(filePath))
             {
                 Console.WriteLine("File does not exist.");
             }
+            // If the file exists, we proceed.
             else
             {
-                //Pass the file path and file name to the StreamReader constructor
+                // We create the StreamReader object,
+                // read the first line of text, and then 
+                // loop as long as the line read is not null.
+                // We display the line one after the other, 
+                // and close the file when we are done.
+                string line;
                 StreamReader sr = new StreamReader(filePath);
-                //Read the first line of text
                 line = sr.ReadLine();
-                string[] words;
-                int wordcount = 0;
-                //Continue to read until you reach end of file
-                string[] sepChars = { "-", ".", " " };
                 while (line != null)
                 {
-                    words = line.Split(' ');
-                    wordcount += words.Length;
-                    //write the line to console window
                     Console.WriteLine(line);
-                    //Read the next line
-
-                    string[] wordArray = line.Split(sepChars, StringSplitOptions.RemoveEmptyEntries);
-                        // Omit array elements that contain an empty string from the result.
                     line = sr.ReadLine();
                 }
-                //close the file
-                sr.Close(); // or sr.Dispose();
-                Console.WriteLine("Total number of words: " + wordcount + ".");
+                sr.Close();
+                // We could also call the Dispose() method.
+
             }
         }
         catch (Exception e)
@@ -100,9 +79,7 @@ class Program
         }
         finally
         {
-            Console.WriteLine("Executing finally block.");
+            Console.WriteLine("Executing finally block: was the read operation successful?");
         }
-
-
     }
 }
