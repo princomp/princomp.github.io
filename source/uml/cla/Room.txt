@@ -10,7 +10,3 @@ class Room{
     +InSameBuilding(roomP:Room) bool 
     +RoomRoute() string 
 }
-
-
-
-

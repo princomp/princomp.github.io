@@ -16,8 +16,8 @@ class Character["Character Pt. 3"]{
 	-SetHitPts() void
 	+LevelUP() void
 	+ToString() string
-	+<< constructor >> Character()
-	+<< constructor >> Character(nameP : string, raceP : string, genderP : char, levelP : int)
+	+«constructor» Character()
+	+«constructor» Character(nameP : string, raceP : string, genderP : char, levelP : int)
 	+AssignStats(diceRolls : int[]) void
 	+SetRole() void
 	+SetJob() void

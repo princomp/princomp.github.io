@@ -265,7 +265,7 @@ $(IMG_DIR)%.svg:$(IMG_DIR)%.pdf
 # UML class diagram file
 # To recompile everything, we can use
 # rm uml/cla/*.md
-# make uml/Account.md uml/ClassName.md uml/ClassRoom.md uml/ClassRoom_with_constructor.md uml/Item.md uml/Rectangle.md uml/Rectangle_with_properties.md 
+# then make CLA
 
 .PHONY: CLA
 CLA: $(TARGET_CLA_MD_FILES)
@@ -306,7 +306,6 @@ $(EXO_DIR)%.md: $(EXO_W_SOL_DIR)%.md
 SOURCE_EXO_W_SOL := $(shell find $(EXO_W_SOL_DIR) -name '*.md')
 TARGET_EXO_WO_SOL := $(subst exercises_w_sol,exercises,$(SOURCE_EXO_W_SOL)))
 TARGET_EXO_WO_SOL_WITHOUT_INDEX := $(filter-out index.md %/index.md,$(TARGET_EXO_WO_SOL))
-
 
 exercise: $(TARGET_EXO_WO_SOL_WITHOUT_INDEX)
 
