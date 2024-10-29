@@ -2,6 +2,7 @@ Evaluation <|-- Exam
 Exam <|-- Final
 Exam <|-- InClass
 Evaluation <|-- Project
+
 class Evaluation{
     <<Abstract>>
     +<< property >> Course: string

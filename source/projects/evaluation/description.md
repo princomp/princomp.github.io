@@ -88,6 +88,13 @@ Evaluations are for different classes.
 ********************
 ```
 
+**Pay attention to details** in the code above. For example, your code should be such that:
+
+- An exception will be raised if the url for the project's submission link does not start with "https://lms.augusta.edu/d2l/lms/",
+- For exams (in-class or finale exam), the room should be displayed if it is provided, otherwise, either "Same as class meeting room." or "Check the Registrar's exam schedules for " (followed by the course property) should be displayed,
+- For all string attributes and properties, `null` or empty strings should *not* make the program crash,
+
+
 ## Submission
 
 Please, follow our [guideline on project submission](https://princomp.github.io/projects/submission).
