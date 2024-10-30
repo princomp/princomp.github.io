@@ -32,9 +32,13 @@ export default (() => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
-        {cfg.baseUrl && <meta property="og:image" content={ogImagePath} />
-                        <meta property="og:image:width" content="1200" />
-                        <meta property="og:image:height" content="630" />}
+        {cfg.baseUrl && (
+          <>
+            <meta property="og:image" content={ogImagePath} />
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="630" />
+          </>
+        )}
         <meta property="og:width" content="1200" />
         <meta property="og:height" content="675" />
         <link rel="apple-touch-icon" sizes="180x180" href={iconPath + "apple-touch-icon.png"} />
