@@ -15,7 +15,7 @@ const config: QuartzConfig = {
       provider: null,
     },
     locale: "en-US",
-    baseUrl: "https://princomp.github.io/",
+    baseUrl: "princomp.github.io",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "created",
     theme: {
