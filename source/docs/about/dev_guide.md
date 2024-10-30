@@ -162,13 +162,17 @@ The resulting images are added to the repository so that there is no need to re-
 
 #### UML class diagrams
 
-The UML class diagrams are created using [Mermaid](https://mermaid.js.org/) and located in `source/uml`.
+The UML diagrams are created using [Mermaid](https://mermaid.js.org/) and located in `source/uml`.
+
+##### Class Diagrams
+
+The *class* UML diagrams are created using [Mermaid](https://mermaid.js.org/) and located in `source/uml`.
+
 To create a new class diagram, say for a `Documentation` class, follow those steps:
 
-1. Create a `Documentation.txt` file in `source/uml` that follows [the syntax for class diagrams](https://mermaid.js.org/syntax/classDiagram.html) (note that there is no need to add `classDiagram` at the beginning, it will be done automatically),
-2. Run (from the `source/` folder) `make uml/Documentation.md`,
+1. Create a `Documentation.txt` file in `source/uml/cla` that follows [the syntax for class diagrams](https://mermaid.js.org/syntax/classDiagram.html) (note that there is no need to add `classDiagram` at the beginning, it will be done automatically),
+2. Run (from the `source/` folder) `make uml/cla/Documentation.md`,
 3. Integrate the resulting drawing, properly captioned and with a link to your `Documentation.txt` file (for visually impaired readers, or to facilitate automatic processing) using `!include uml/cla/Documentation.md`.
-
 
 #### Source code
 
