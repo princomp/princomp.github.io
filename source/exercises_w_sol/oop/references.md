@@ -4,7 +4,7 @@ tags:
   - datatypes
 ---
 
-# Manipulating Objects and References
+# Objects and References
 
 ## Questions
 

@@ -9,7 +9,7 @@ class Program
     string sep = "\n\n" + new String('*', 20) + "\n\n";
 
     // Evaluation test = new Evaluation(); // Should return an error if uncommented.
-    
+
     Project project1 = new Project(
       "CSCI 1302",
       .05,

@@ -13,7 +13,7 @@ tags:
   - datatypes
 ---
 
-# Manipulating Objects and References
+# Objects and References
 
 [Solutions for those exercises.](./exercises_w_sol/oop/references)
 
