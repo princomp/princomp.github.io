@@ -251,6 +251,8 @@ To create a new lecture, for instance on exception handling:
     - `./lectures/exception/exception-handling.md` (which *must be* between `./lectures/exception/` and the next `./lectures/xyz/` folder).
     
     This last step will insure that your lecture is 1. included in the book, 2. sorted correctly on the website's menu (the default ordering is alphabetical).
+    
+    The order file, unfortunately, does not accept the same folder name twice (even if they are located in different folders or at different levels): there is no good solution to [this problem](https://github.com/princomp/princomp.github.io/issues/46), one has simply to make sure that no two folders have the same name. 
 
 If the lecture does not appear, here are the steps for troubleshooting the issue:
  
