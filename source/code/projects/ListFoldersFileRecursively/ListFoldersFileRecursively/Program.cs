@@ -12,11 +12,13 @@ class Program
         d = d.Parent;
             Console.WriteLine("Going up to " + d + ".");
             }
+        ListDir(d.ToString());
 
     }
-    static void DirSearch_ex3(string sDir)
+    // Code in part inspired from 
+    // https://stackoverflow.com/a/929277
+    static void ListDir(string sDir)
     {
-        //Console.WriteLine("DirSearch..(" + sDir + ")");
         try
         {
             Console.WriteLine(sDir);
@@ -28,7 +30,7 @@ class Program
 
             foreach (string d in Directory.GetDirectories(sDir))
             {
-                DirSearch_ex3(d);
+                ListDir(d);
             }
         }
         catch (System.Exception excpt)
