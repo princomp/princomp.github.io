@@ -21,18 +21,18 @@ tags:
 
 #. What is the name of the class we use to read from files?
 
-- [ ] `FileReader`
-- [ ] `StreamOpener`
-- [ ] `ReadFile`
-- [ ] `StreamReader`
-- [ ] `FileStream`
+    - [ ] `FileReader`
+    - [ ] `StreamOpener`
+    - [ ] `ReadFile`
+    - [ ] `StreamReader`
+    - [ ] `FileStream`
 
 #. What is of crucial importance?
 
-- [ ] Always call the `Open` method before reading from or writing into a file.
-- [ ] Always assume the user has `C:\` as their main drive.
-- [ ] Always call the `Close` method after being done reading from or writing into a file. 
-- [ ] Never read from or write into a file inside a `try…catch` block.
+    - [ ] Always call the `Open` method before reading from or writing into a file.
+    - [ ] Always assume the user has `C:\` as their main drive.
+    - [ ] Always call the `Close` method after being done reading from or writing into a file. 
+    - [ ] Never read from or write into a file inside a `try…catch` block.
 
 ## Problems
 
