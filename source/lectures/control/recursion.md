@@ -104,7 +104,7 @@ While multiplication and factorial can be implemented without recursion, some st
 Going through folders and files is an example of such situation.
 
 ```
-!include`snippetStart="// https://stackoverflow.com/a/929277", snippetEnd="// An improvment would be to replace", dedent=3` code/projects/ListFoldersFileRecursively/ListFoldersFileRecursively/Program.cs
+!include`snippetStart="// https://stackoverflow.com/a/929277", snippetEnd="// An improvment would be to replace", dedent=3` code/projects/ListDirectoriesFileRecursively/ListDirectoriesFileRecursively/Program.cs
 ```
 
 Note that our previous examples were calling themselves only once per method call, but that `ListDir` calls itself as many times as there are folders in the folder currently examined.
