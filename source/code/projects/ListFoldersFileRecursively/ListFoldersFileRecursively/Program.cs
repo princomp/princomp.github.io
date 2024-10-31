@@ -5,9 +5,14 @@ class Program
 {
   static void Main()
   {
-        string root = AppDomain.CurrentDomain.BaseDirectory;
-        Console.Write(root);
-        DirSearch_ex3("c:\\aaa");
+        DirectoryInfo d = new DirectoryInfo(
+        Directory.GetCurrentDirectory()
+      );
+        while (d.Parent != null) {
+        d = d.Parent;
+            Console.WriteLine("Going up to " + d + ".");
+            }
+
     }
     static void DirSearch_ex3(string sDir)
     {
