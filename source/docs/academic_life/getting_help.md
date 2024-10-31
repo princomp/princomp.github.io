@@ -6,7 +6,7 @@ tags:
 
 #  How to get Help
 
-| 🛈 Info |
+| 🛈 Note |
 |:---------------------------|
 | This page is primarily targeted for Augusta University students. |
 

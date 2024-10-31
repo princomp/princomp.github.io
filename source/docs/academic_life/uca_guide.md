@@ -6,7 +6,7 @@ tags:
 
 #  UCA starting guide
 
-| 🛈 Info |
+| 🛈 Note |
 |:---------------------------|
 | This page is primarily targeted for Augusta University students. |
 

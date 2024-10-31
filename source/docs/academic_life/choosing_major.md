@@ -6,7 +6,7 @@ tags:
 
 #  Choosing Your Major
 
-| 🛈 Info |
+| 🛈 Note |
 |:---------------------------|
 | This page is primarily targeted for Augusta University students. |
 
