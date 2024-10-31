@@ -96,7 +96,7 @@ This function can easily be implemented using recursion:
 !include`snippetStart="// Recursive factorial", snippetEnd="// An improvment would be to replace", dedent=3` code/projects/RecursionHelloWorld/RecursionHelloWorld/Program.cs
 ```
 
-Note that this code actually compute e.g., $5! = 5 × 4 × 3 × 2 × 1 × 1$ (with one superfluous 1): can you see why?
+Note that this code actually compute e.g., $5! = 5 × 4 × 3 × 2 × 1 × 1$ (with one superfluous $× 1$): can you see why?
 
 ## Listing Files and Directories -- Recursively
 
