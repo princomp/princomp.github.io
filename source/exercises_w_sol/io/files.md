@@ -67,7 +67,7 @@ tags:
     cument or a typeface without relying on 
     meaningful content. Lorem ipsum may be u
     sed as a placeholder before the final co
-    py is available
+    py is available.
     ```
 
     <details><summary>Solution</summary>```
