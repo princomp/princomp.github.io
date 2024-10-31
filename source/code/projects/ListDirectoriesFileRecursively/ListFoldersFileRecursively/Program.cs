@@ -21,7 +21,6 @@ class Program
         }
         Console.WriteLine("Now listing files and folders from here:");
         ListDir(currentDir.ToString());
-
     }
     // Code in part inspired from 
     // https://stackoverflow.com/a/929277
