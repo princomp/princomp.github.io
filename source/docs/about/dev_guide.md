@@ -109,7 +109,7 @@ Typically, we recommend using
 - "main" instead of "master",
 - "blank space" instead of "white space",
 - "display on the screen" instead of "printing",
--etc.
+- etc.
 
 In doubt, please start by referring to [this list of problematic words and phrases](https://itconnect.uw.edu/guides-by-topic/identity-diversity-inclusion/inclusive-language-guide/#list).
 
