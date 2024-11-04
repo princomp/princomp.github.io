@@ -24,20 +24,26 @@ The [source code repository](https://github.com/princomp/princomp.github.io)'s m
 
 The `source/` folder contains the following:
 
-| path        | description |
-| :------:    | :---: | 
-| `code/`     | code examples (snippets and projects) | 
-| `docs/`     | additional helpful documentation | 
-| `fonts/`    | the fonts (redistributed with permission) used by this resource | 
-| `img/`      | images, sometimes with their LaTeX source code | 
-| `labs/`     | lab exercises | 
-| `lectures/` | lecture notes | 
-| `slides/`   | slides |
-| `templates/`| templates and filters used for building this resource |
-| `vid/`      | video files |
-| `Makefile`  | makefile used to compile this resource |
-| `index.md`  | website index page |
-| `order`     | file used to specify the order on the website's menu and the book |
+| path                   | description |
+| :------------:         | :---: | 
+| `code/`                | code examples (snippets and projects) | 
+| `docs/`                | additional helpful documentation | 
+| `exercises/`           | exercises (without solution, obtained automatically)
+| `exercises_w_sol/`     | exercises (*with* solution)
+| `fonts/`               | the fonts (redistributed with permission) used by this resource | 
+| `img/`                 | images, sometimes with their LaTeX source code | 
+| `labs/`                | lab exercises | 
+| `lectures/`            | lecture notes | 
+| `projects/`            | projects (homework) |
+| `slides/`              | slides |
+| `templates/`           | templates and filters used for building this resource |
+| `uml/`                 | UML diagrams |
+| `vid/`                 | video files |
+| `.mermaid-config.json` | Mermaid configuration file | 
+| `Makefile`             | makefile used to compile this resource |
+| `index.md`             | website index page |
+| `order`                | file used to specify the order onthe website's menu and the book |
+| `tags`                 | list of tags
 
 ### Building and Deploying
 
