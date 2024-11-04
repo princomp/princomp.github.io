@@ -6,29 +6,15 @@ tags:
 # Manipulating Rectangular Arrays
 
 We present below some simple algorithms to manipulate 2-dimensional (rectangular) arrays.
+The code for this lecture is available [in this archive](./code/projects/MagicSquare.zip).
+
 
 ## Summing the values row per row
 
 The following code sum the values contained in a 2-dimensional array row per row, and display the result each time before moving on to the next row:
 
 ```
-int[,] numbers =
-    {
-        {1, 2, 3, 4},
-        {5, 6, 7, 8}
-    };
-    
-int acc;
-for (int row = 0; row < numbers.GetLength(0); row++)
-    {
-    acc = 0;
-    for (int col = 0; col < numbers.GetLength(1); col++)
-    {
-        acc += numbers[row, col];
-    }
-    Console.WriteLine("Total for row #" + row +
-        " is " + acc + ".");
-}
+!include`snippetStart="// Summing the values row per row", snippetEnd="As an exercise, you can"` code/projects/MagicSquare/MagicSquare/Program.cs
 ```
 
 This code can easily be adapted to compute the sums _column per column_ if needed.
@@ -40,11 +26,7 @@ A [magic square](https://en.wikipedia.org/wiki/Magic_square) is a square matrix 
 The following is an example of a magic square:
 
 ```
-int[,] magicSquare = {
-    { 4, 9, 2 },
-    { 3, 5, 7 },
-    { 8, 1, 6 }
-};
+!include`snippetStart="// Examples courtesy of https://en.wikipedia.org/wiki/Magic_square", snippetEnd="// Check by hand that this square is indeed magic!"` code/projects/MagicSquare/MagicSquare/Program.cs
 ```
 
 as we have, diagonally,
@@ -65,9 +47,7 @@ $$2+7+6=15$$
 
 A method to return `true` if the 2d-matrix of `int` passed as an argument is a magic square is as follows:
 
-``` 
-!include code/snippets/magicSquare.cs 
 ```
-
-That code can be tested using for example [this code](./code/snippets/magicSquare_test.cs).
+!include code/projects/MagicSquare/MagicSquare/MagicSquare.cs
+```
 
