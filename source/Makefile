@@ -71,7 +71,7 @@ CODE_DIR = code/
 # The folder where the .zip archives containing projects (used in lab and classes as examples) are located.
 PROJECT_DIR = $(CODE_DIR)projects/
 # The folders where .md files are located.
-MD_DIRS = $(LECTURES_DIR) $(DOCS_DIR) $(LABS_DIR) $(SOL_DIR) $(PROJ_DIR) $(TARGET_EXO) $(EXO_DIR)
+MD_DIRS = $(LECTURES_DIR) $(DOCS_DIR) $(LABS_DIR) $(SOL_DIR) $(PROJ_DIR)
 # The folder where the images are located.
 IMG_DIR = img/
 # The folder where the UML diagrams are located
@@ -130,6 +130,7 @@ TARGET_EXO := $(subst $(SOL_DIR),$(EXO_DIR),$(SOURCE_SOL))
 # (including at root level), and one that doesn't.
 SOURCE_MD_FILES := $(shell find $(MD_DIRS) -name '*.md')
 SOURCE_MD_FILES += index.md
+SOURCE_MD_FILES += $(TARGET_EXO)
 # md files without the index.md files in a folder.
 # Those files only contain the title of the folder.
 # cf. https://quartz.jzhao.xyz/authoring-content
@@ -562,5 +563,5 @@ all: build $(BUILD_DIR)release.zip
 # Uncomment the following and replace
 # TARGET_MD_FILES
 # with the variable you want listed.
-test:
-	$(info $$TARGET_MD_FILES is [${TARGET_MD_FILES}])
+# test:
+#	$(info $$TARGET_MD_FILES is [${TARGET_MD_FILES}])
