@@ -106,6 +106,6 @@ In particular, make sure you write your name and the date in a delimited comment
 
 This project is already challenging *as is*, but bonus will be given if:
 
-- (easy) The `GetContact()` method cannot be overridden,
+- (easy) Except in the `Evaluation` class, make it so that the `GetContact()` methods cannot be overridden,
 - (medium) Your `Main` method exhibits many test cases and illustrates your classes' features nicely,
 - (hard) A mechanism is implemented to either export the attributes of an `Evaluation` object into a file or to load it from a file.
