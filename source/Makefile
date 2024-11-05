@@ -35,10 +35,6 @@ clean:
 	@echo "cleaning build artifacts..."
 	@rm -rf $(BUILD_DIR)
 
-# Rule to tidy all C# source code, requires https://csharpier.com/
-tidy:
-	dotnet csharpier --config-path "$(CODE_DIR)csharpierrc.yaml" $(CODE_DIR)
-	
 # -------------------------------
 # Useful Makefile doc. 
 # -------------------------------
@@ -253,6 +249,9 @@ MAKEFLAGS:= -j
 # the source files have been edited.
 # -------------------------------
 
+.PHONY: PREREQ
+PREREQ: CLA
+
 # Image files produced from .tex files
 # pdf, then svg
 
@@ -276,26 +275,27 @@ $(CLA_DIR)%.md: $(CLA_DIR)%.txt
 # followed by the name of the (first) class in the .txt file
 # followed by "class", followed by a link to the text version of the UML diagram.
 # Then, we convert using the mermaid-filter, and two helpers files (the template, at $(CLA_TEMPLATES)before.md and $(CLA_TEMPLATES)after.md), before and after:
-	export MERMAID_FILTER_CAPTION="A UML diagram for the $$(sed 's-class \(.*\){-\1-g' $< | sed 's/<|--/◁−/' | sed -n '1p' ) class ([text version](./$<))" && \
-	export MERMAID_FILTER_FORMAT=svg && \
-	pandoc -F mermaid-filter $(CLA_TEMPLATES)before.md $< $(CLA_TEMPLATES)after.md -o $@
-# We remove the escape characters introduced in the figure's caption.
-	sed -i 's-\\\[-[-g' $@ && sed -i 's-\\\]-]-g' $@
+# We remove the escape characters introduced in the figure's caption. \
 # This needs to be documented: .mermaid-config.json disable html escaping to 
 # produce correct svg files with text
 # https://github.com/mermaid-js/mermaid-cli/issues/112
 # Then, we remove the "fig:" caption, and the closing parenthesis.
-	sed -i 's-"fig:")--g' $@
 # And add the content of the $< file to become the new alt. text for the image:
-	echo -n '"' >> $@ && cat $< >> $@ && echo -n '")' >> $@
 # We remove all the new lines introduced by the previous operations,
 # Using tr (which doesn't support in-file edit, so we use a temp file).
-	tr '\n' ' ' < $@ > diag-temp.md && mv diag-temp.md $@
+	@echo "Creating $@"
+	@export MERMAID_FILTER_CAPTION="A UML diagram for the $$(sed 's-class \(.*\){-\1-g' $< | sed 's/<|--/◁−/' | sed -n '1p' ) class ([text version](./$<))" \
+	&& export MERMAID_FILTER_FORMAT=svg \
+	&& pandoc -F mermaid-filter $(CLA_TEMPLATES)before.md $< $(CLA_TEMPLATES)after.md -o $@ \
+	&& sed -i 's-\\\[-[-g' $@ && sed -i 's-\\\]-]-g' $@ \
+	&& sed -i 's-"fig:")--g' $@ \
+	&& echo -n '"' >> $@ && cat $< >> $@ && echo -n '")' >> $@ \
+	&& tr '\n' ' ' < $@ > $(notdir $(basename $@))-temp.md && mv $(notdir $(basename $@))-temp.md $@
 
 # Exercise without solution
 $(EXO_DIR)%.md: $(EXO_W_SOL_DIR)%.md
 	mkdir -p $(dir $@)
-	sed 's/<details>/&\\\n/g' $< > $@ 
+# 	sed 's/<details>/&\\\n/g' $< > $@ 
 	sed -i '/<details>/,/<\/details>/d' $@
 	sed -i 's/\[x\]/[ ]/g' $@ 
 	sed -i 's/ (with solutions)//g' $@
@@ -354,7 +354,7 @@ $(BUILD_DIR)web-order.ts: order
 # md file
 # -------------------------------
 
-$(BUILD_DIR)%.md: %.md
+$(BUILD_DIR)%.md: %.md | PREREQ
 	@mkdir -p $(dir $@)
 	@pandoc $(PANDOC_MD) $< -o $@
 
@@ -362,7 +362,7 @@ $(BUILD_DIR)%.md: %.md
 # pdf files
 # -------------------------------
 
-$(BUILD_DIR)%.pdf: %.md
+$(BUILD_DIR)%.pdf: %.md | PREREQ
 	@mkdir -p $(dir $@)
 	@pandoc $(PANDOC_PDF) $< -o $@
 
@@ -370,7 +370,7 @@ $(BUILD_DIR)%.pdf: %.md
 # odt files
 # -------------------------------
 
-$(BUILD_DIR)%.odt: %.md
+$(BUILD_DIR)%.odt: %.md | PREREQ
 	@mkdir -p $(dir $@)
 	@pandoc $(PANDOC_ODT) $< -o $@
 
@@ -378,7 +378,7 @@ $(BUILD_DIR)%.odt: %.md
 # docx files
 # -------------------------------
 
-$(BUILD_DIR)%.docx: %.md
+$(BUILD_DIR)%.docx: %.md | PREREQ
 	@mkdir -p $(dir $@)
 	@pandoc $(PANDOC_DOC) $< -o $@
 
@@ -421,8 +421,13 @@ $(BUILD_DIR)fonts/%.woff2 : $(FONT_DIR)%.woff2
 	@rsync -av $< $@
 
 # -------------------------------
-# project (zip) files
+# project (zip) files / code
 # -------------------------------
+
+# Rule to tidy all C# source code, requires https://csharpier.com/
+
+tidy:
+	dotnet csharpier --config-path "$(CODE_DIR)csharpierrc.yaml" $(CODE_DIR)
 
 # Rule to copy one individual project as a zip file:
 $(BUILD_DIR)$(PROJECT_DIR)%.zip: $(PROJECT_DIR)%.zip
