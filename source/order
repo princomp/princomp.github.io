@@ -46,6 +46,7 @@
 ./lectures/control/break_continue.md
 ./lectures/control/conditional_operator.md
 ./lectures/control/recursion.md
+./lectures/control/more_on_recursion.md
 ./lectures/arrays/
 ./lectures/arrays/intro.md
 ./lectures/arrays/1d.md
