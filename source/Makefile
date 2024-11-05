@@ -114,8 +114,11 @@ FIL_TEMPLATES = $(TEMPLATES)filters/
 
 # UML class diagrams (source and target).
 SOURCE_CLA_TXT_FILES := $(shell find $(CLA_DIR) -mindepth 1  -maxdepth 1 -iname "*.txt")
-TARGET_CLA_MD_FILES := $(addsuffix .md,  $(basename $(SOURCE_CLA_TXT_FILES)))
+SOURCE_CLA_MD_FILES := $(addsuffix .md,  $(basename $(SOURCE_CLA_TXT_FILES)))
 TARGET_CLA_TXT_FILES := $(addprefix $(BUILD_DIR), $(SOURCE_CLA_TXT_FILES))
+TARGET_CLA_MD_FILES :=  $(addprefix $(BUILD_DIR), $(SOURCE_CLA_MD_FILES))
+TARGET_CLA += $(TARGET_CLA_TXT_FILES)
+TARGET_CLA += $(TARGET_CLA_MD_FILES)
 
 # Exercises files (with and without solution)
 SOURCE_EXO_W_SOL := $(shell find $(EXO_W_SOL_DIR) -name '*.md')
@@ -285,7 +288,7 @@ CLEAN-PREREQ:
 
 # UML class diagram file
 .PHONY: CLA
-CLA: $(TARGET_CLA_MD_FILES)
+CLA: $(SOURCE_CLA_MD_FILES)
 
 $(CLA_DIR)%.md: $(CLA_DIR)%.txt
 # After echoing a message, we
@@ -537,12 +540,12 @@ $(BUILD_DIR)book.docx: $(SOURCE_BOOK)
 
 .PHONY: fetch
 fetch:
-	wget https://github.com/princomp/princomp.github.io/releases/download/latest/release.zip -P ../ && cd ../ && unzip -q release.zip && cd content && rsync -avR code/projects/**.zip ../source || true
+	wget https://github.com/princomp/princomp.github.io/releases/download/latest/release.zip -P ../ && cd ../ && unzip -q release.zip && cd content && rsync -avR $(PROJECT_DIR)**.zip ../source && rsync -avR $(CLA_DIR)* ../source || true
 
 book: $(BUILD_DIR)book.html $(BUILD_DIR)book.pdf $(BUILD_DIR)book.odt $(BUILD_DIR)book.docx
 
 # Ligter build, to test compilation and website deployment
-build-light: $(BUILD_DIR)web-order.ts $(TARGET_MD_FILES) $(TARGET_WOFF_FONT_FILES) $(TARGET_IMAGES_FILES) $(TARGET_VIDEOS_FILES) $(TARGET_DOC_FILES_WITHOUT_INDEX) $(TARGET_CLA_TXT_FILES) | PREREQ
+build-light: $(BUILD_DIR)web-order.ts $(TARGET_MD_FILES) $(TARGET_WOFF_FONT_FILES) $(TARGET_IMAGES_FILES) $(TARGET_VIDEOS_FILES) $(TARGET_DOC_FILES_WITHOUT_INDEX) $(TARGET_CLA) | PREREQ
 
 build: build-light $(TARGET_PDF_FILES_WITHOUT_INDEX) $(TARGET_ODT_FILES_WITHOUT_INDEX) $(TARGET_PROJECTS_FILES) book
 
