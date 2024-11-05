@@ -108,11 +108,22 @@ FIL_TEMPLATES = $(TEMPLATES)filters/
 # Files
 # -------------------------------
 
+# UML class diagrams (source and target).
+SOURCE_CLA_TXT_FILES := $(shell find $(CLA_DIR) -mindepth 1  -maxdepth 1 -iname "*.txt")
+TARGET_CLA_MD_FILES := $(addsuffix .md,  $(basename $(SOURCE_CLA_TXT_FILES)))
+TARGET_CLA_TXT_FILES := $(addprefix $(BUILD_DIR), $(SOURCE_CLA_TXT_FILES))
+
+# Exercises files (with and without solution)
+SOURCE_EXO_W_SOL := $(shell find $(EXO_W_SOL_DIR) -name '*.md')
+TARGET_EXO_WO_SOL := $(subst exercises_w_sol,exercises,$(SOURCE_EXO_W_SOL))
+TARGET_EXO_WO_SOL_WITHOUT_INDEX := $(filter-out index.md %/index.md,$(TARGET_EXO_WO_SOL))
+
 ## md files
 # We have two sources, one containing the index.md files,
 # (including at root level), and one that doesn't.
 SOURCE_MD_FILES := $(shell find $(MD_DIRS) -name '*.md')
 SOURCE_MD_FILES += index.md
+SOURCE_MD_FILES += $(TARGET_EXO_WO_SOL_WITHOUT_INDEX)
 # md files without the index.md files in a folder.
 # Those files only contain the title of the folder.
 # cf. https://quartz.jzhao.xyz/authoring-content
@@ -143,16 +154,6 @@ TARGET_WOFF_FONT_FILES := $(addprefix $(BUILD_DIR), $(SOURCE_WOFF_FONT_FILES))
 # Image files (source and target).
 SOURCE_IMAGES_FILES := $(shell find $(IMG_DIR) -mindepth 1  -maxdepth 1 -iname "*.jpg" -or -iname "*.jpeg" -or -iname "*.png" -or -iname "*.pdf" -or -iname "*.svg" -or -iname "*.gif")
 TARGET_IMAGES_FILES := $(addprefix $(BUILD_DIR), $(SOURCE_IMAGES_FILES))
-
-# UML class diagrams (source and target).
-SOURCE_CLA_TXT_FILES := $(shell find $(CLA_DIR) -mindepth 1  -maxdepth 1 -iname "*.txt")
-TARGET_CLA_MD_FILES := $(addsuffix .md,  $(basename $(SOURCE_CLA_TXT_FILES)))
-TARGET_CLA_TXT_FILES := $(addprefix $(BUILD_DIR), $(SOURCE_CLA_TXT_FILES))
-
-# Exercises files (with and without solution)
-SOURCE_EXO_W_SOL := $(shell find $(EXO_W_SOL_DIR) -name '*.md')
-TARGET_EXO_WO_SOL := $(subst exercises_w_sol,exercises,$(SOURCE_EXO_W_SOL))
-TARGET_EXO_WO_SOL_WITHOUT_INDEX := $(filter-out index.md %/index.md,$(TARGET_EXO_WO_SOL))
 
 # Video files (source and target).
 SOURCE_VIDEOS_FILES := $(shell find $(VID_DIR) -mindepth 1  -maxdepth 1 -iname "*.mov" -or -iname "*.avi" -or -iname "*.m4v" -or -iname "*.mkv")
@@ -534,7 +535,7 @@ fetch:
 book: $(BUILD_DIR)book.html $(BUILD_DIR)book.pdf $(BUILD_DIR)book.odt $(BUILD_DIR)book.docx
 
 # Ligter build, to test compilation and website deployment
-build-light: $(BUILD_DIR)web-order.ts $(TARGET_MD_FILES) $(TARGET_WOFF_FONT_FILES) $(TARGET_IMAGES_FILES) $(TARGET_VIDEOS_FILES) $(TARGET_DOC_FILES_WITHOUT_INDEX) $(TARGET_CLA_TXT_FILES) $(TARGET_CLA_MD_FILES)
+build-light: $(BUILD_DIR)web-order.ts $(TARGET_MD_FILES) $(TARGET_WOFF_FONT_FILES) $(TARGET_IMAGES_FILES) $(TARGET_VIDEOS_FILES) $(TARGET_DOC_FILES_WITHOUT_INDEX) $(TARGET_CLA_TXT_FILES) | PREREQ
 
 build: build-light $(TARGET_PDF_FILES_WITHOUT_INDEX) $(TARGET_ODT_FILES_WITHOUT_INDEX) $(TARGET_PROJECTS_FILES) book
 
@@ -545,7 +546,7 @@ all: build $(BUILD_DIR)release.zip
 
 # Phony rule to display variables
 # Uncomment the following and replace
-# TARGET_EXO_WO_SOL
+# TARGET_MD_FILES
 # with the variable you want listed.
-#test:
-#	$(info $$TARGET_EXO_WO_SOL is [${SOURCE_EXO_W_SOL}])
+test:
+	$(info $$TARGET_MD_FILES is [${TARGET_MD_FILES}])
