@@ -22,56 +22,24 @@ class Program
 
         int[] arrayExample = { 1, 10, 12, 129, 190, 220, 230, 310, 320, 340, 400, 460 };
 
-        Console.Write(BinFind(arrayExample, 12));
+        Console.Write(BinFind(arrayExample, 10));
 
         bool BinFind(int[] aP, int target)
         {
-            return BinFind(aP, 0, aP.Length, target);
+            return BinFindH(aP, 0, aP.Length, target);
         }
 
-        bool BinFind(int[] aP, int start, int end, int target) {
+        bool BinFindH(int[] aP, int start, int end, int target) {
             int mid = (start + end) / 2;
-            if (target == aP[mid]) { return true; }
-            else if (target < aP[mid]) { return BinFind(aP, mid + 1, end, target); }
-            else if (target > aP[mid]) { return BinFind(aP, start, mid + 1, target); }
-
-
-        }
-
-
-        bool foundSoFar = false;
-
-        int target = 340;
-
-        int start = 0;
-        int end = arrayExample.Length - 1;
-        int mid;
-        while (start <= end && !foundSoFar)
-        {
-            mid = (start + end) / 2;
-            /*
-             * This is integer division: if start + end is odd,
-             * then it will be truncated. In our example, 
-             * (0 + 11) / 2 gives 5.
-             */
-            Console.WriteLine("The middle index is " + mid + ".");
-            if (target == arrayExample[mid])
-            {
-                foundSoFar = true;
-            }
-            else if (target > arrayExample[mid])
-            {
-                start = mid + 1;
-                Console.WriteLine("I keep looking right.");
-            }
+            if (start > end) { return false; }
             else
             {
-                end = mid - 1;
-                Console.WriteLine("I keep looking left.");
+                if (target == aP[mid]) { return true; }
+                else if (target > aP[mid]) { return BinFindH(aP, mid + 1, end, target); }
+                else { return BinFindH(aP, start, mid -1, target); }
             }
         }
-        Console.WriteLine("Found the value: " + foundSoFar + ".");
 
-        Console.WriteLine();
+
     }
 }
