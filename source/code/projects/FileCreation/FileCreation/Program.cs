@@ -18,8 +18,8 @@ class Program
       );
     } while (
       !fName.EndsWith(".txt")
-      && !fName.StartsWith(".")
-      && !File.Exists(filePath)
+      || fName.StartsWith(".")
+      || File.Exists(filePath)
     );
     try
     {
