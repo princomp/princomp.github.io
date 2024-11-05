@@ -55,6 +55,9 @@ jobs:
         sudo apt-get install -y texlive texlive-xetex texlive-latex-extra lmodern librsvg2-bin fonts-symbola pdf2svg
         pip install --upgrade pip
         pip install Pygments pandoc-include
+    - name: Setup mermaid-filter
+      run: | 
+         npm install --global mermaid-filter 
     - name: Build 🏗️
       run: |
         cd /home/runner/work/princomp.github.io/princomp.github.io/source/
