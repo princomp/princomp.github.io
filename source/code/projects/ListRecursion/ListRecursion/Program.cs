@@ -20,9 +20,30 @@ class Program
         }
         // Violent();
 
+
+        int[] arrayS = { 1, 2, 4, 10, 13, 17 };
+        int[] arrayNS = { 12, 98, 120, 15 };
         int[] arrayExample = { 1, 10, 12, 129, 190, 220, 230, 310, 320, 340, 400, 460 };
 
-        Console.Write(BinFind(arrayExample, 10));
+        Console.WriteLine("Array sorted: " + Sorted(arrayS));
+        Console.WriteLine("Array sorted: " + Sorted(arrayNS));
+        Console.WriteLine("Array sorted: " + Sorted(arrayExample));
+
+        bool Sorted(int[] aP)
+        {
+            if (aP == null) return false;
+            else return SortedH(aP, 0);
+        }
+
+        bool SortedH(int[] aP, int currentIndex)
+        {
+            if (aP.Length == currentIndex+1) return true;
+            else if (aP[currentIndex] > aP[currentIndex+1]) return false;
+            else return SortedH(aP, currentIndex + 1);
+        }
+
+
+        Console.Write("BinFind: " + BinFind(arrayExample, 10));
 
         bool BinFind(int[] aP, int target)
         {
@@ -39,6 +60,10 @@ class Program
                 else { return BinFindH(aP, start, mid -1, target); }
             }
         }
+
+
+
+
 
 
     }
