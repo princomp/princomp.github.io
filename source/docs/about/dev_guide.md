@@ -28,8 +28,7 @@ The `source/` folder contains the following:
 | :------------:         | :---: | 
 | `code/`                | code examples (snippets and projects) | 
 | `docs/`                | additional helpful documentation | 
-| `exercises/`           | exercises (without solution, obtained automatically)
-| `exercises_w_sol/`     | exercises (*with* solution)
+| `solutions/`           | exercises (*with* solution)
 | `fonts/`               | the fonts (redistributed with permission) used by this resource | 
 | `img/`                 | images, sometimes with their LaTeX source code | 
 | `labs/`                | lab exercises | 
