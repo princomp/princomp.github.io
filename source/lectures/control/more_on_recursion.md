@@ -5,7 +5,7 @@ tags:
 
 # More on Recursion
 
-The code for this lecture is available [in this archive](./code/projects/RecursionHelloWorld.zip) (first parts) and [this one](./code/projects/ListDirectoriesFileRecursively.zip) (listing files and folders recursively).
+The code for this lecture is available [in this archive](./code/projects/AdvancedRecursion.zip).
 
 ## Re-Introduction
 
