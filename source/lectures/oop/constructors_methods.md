@@ -3,7 +3,7 @@ tags:
 - oop
 ---
 
-#  More Advanced Object Concepts
+# Constructors and Methods
 
 ## Default Values and the ClassRoom Class
 

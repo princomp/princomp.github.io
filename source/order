@@ -24,7 +24,7 @@
 ./lectures/intro/inputs_and_outputs.md
 ./lectures/oop/
 ./lectures/oop/oop_intro.md
-./lectures/oop/more_advanced_object_concepts.md
+./lectures/oop/constructors_methods.md
 ./lectures/oop/properties.md
 ./lectures/oop/static.md
 ./lectures/oop/generic_types.md
