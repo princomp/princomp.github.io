@@ -19,12 +19,12 @@ Applied very strictly, the simplest (and most likely shortest) recursive method 
 !include`snippetStart="// Simplest possible example of a recursive function:", snippetEnd="// Uncomment at your own risk!"` code/projects/AdvancedRecursion/AdvancedRecursion/Program.cs
 ```
 
-It is a method (`R`) that simply … calls itself. Even if this method does not "do" anything, calling it will most likely make your program crash, since `R` will keep calling itself forever: this is actually an example of an infinite loop.
+It is a method (`R`) that simply … calls itself. Even if this method does not "do" anything, calling it will most likely make your program crash, since `R` will keep calling itself forever: this is actually an example of an infinite loop, and the basics of the ["fork bomb" attack](https://en.wikipedia.org/wiki/Fork_bomb)^[Except that the fork bomb calls itself *twice*, and in parallel.].
 
 A better definition of recursion would include something about the method eventually terminating, like the following:
 
 ```
-!include`snippetStart="// Recursive CountDown method:", snippetEnd="// Usage example:"` code/projects/AdvancedRecursion/AdvancedRecursion/Program.cs
+!include`snippetStart="// Recursive CountDown method", snippetEnd="// Usage example:"` code/projects/AdvancedRecursion/AdvancedRecursion/Program.cs
 ```
 
 In that case, if we call e.g., `CountDown(10)`, then would be displayed:
@@ -78,7 +78,7 @@ Compared to our informal above, we are missing the "making sure the left of the 
 Putting it all together, we can define `Sorted` calling the recursive `SortedH` method with the right arguments (and after performing some checks):
 
 ```
-!include`snippetStart="// Sorted method", snippetEnd="// Examples"` code/projects/AdvancedRecursion/AdvancedRecursion/Program.cs
+!include`snippetStart="//Actual sorted method", snippetEnd="// Examples"` code/projects/AdvancedRecursion/AdvancedRecursion/Program.cs
 ```
 
 ### Binary Search Using Recursion

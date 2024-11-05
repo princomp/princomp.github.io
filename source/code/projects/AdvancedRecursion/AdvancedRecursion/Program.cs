@@ -30,7 +30,7 @@ class Program
     // Usage example
     CountDown(10);
 
-    // Recursive CountUp method:
+    // Recursive CountUp method
     void CountUp(int n)
     {
       if (n == 0)
@@ -92,7 +92,7 @@ class Program
       else
         return SortedH(aP, currentIndex + 1);
     }
-    // Sorted method
+    // Actual sorted method
     bool Sorted(int[] aP)
     {
       if (aP == null)
