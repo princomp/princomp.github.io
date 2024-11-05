@@ -71,7 +71,7 @@ CODE_DIR = code/
 # The folder where the .zip archives containing projects (used in lab and classes as examples) are located.
 PROJECT_DIR = $(CODE_DIR)projects/
 # The folders where .md files are located.
-MD_DIRS = $(LECTURES_DIR) $(DOCS_DIR) $(LABS_DIR) $(SOL_DIR) $(PROJ_DIR)
+MD_DIRS = $(LECTURES_DIR) $(DOCS_DIR) $(LABS_DIR) $(SOL_DIR) $(PROJ_DIR) $(TARGET_EXO) $(EXO_DIR)
 # The folder where the images are located.
 IMG_DIR = img/
 # The folder where the UML diagrams are located
@@ -130,8 +130,6 @@ TARGET_EXO := $(subst $(SOL_DIR),$(EXO_DIR),$(SOURCE_SOL))
 # (including at root level), and one that doesn't.
 SOURCE_MD_FILES := $(shell find $(MD_DIRS) -name '*.md')
 SOURCE_MD_FILES += index.md
-SOURCE_MD_FILES += $(TARGET_EXO)
-SOURCE_MD_FILES += $(EXO_DIR)
 # md files without the index.md files in a folder.
 # Those files only contain the title of the folder.
 # cf. https://quartz.jzhao.xyz/authoring-content
@@ -266,6 +264,11 @@ MAKEFLAGS:= -j
 
 # Image files produced from .tex files
 # pdf, then svg
+
+# WARNING
+# Requires /usr/local/texlive/2024/bin/x86_64-linux/latexminted
+# to be properly installed and set-up.
+# Cf. for example https://github.com/overleaf/toolkit/issues/298
 
 $(IMG_DIR)%.pdf:$(IMG_DIR)%.tex
 	latexmk -shell-escape -pdf -cd -quiet $<
