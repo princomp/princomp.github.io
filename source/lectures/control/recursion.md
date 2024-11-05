@@ -18,7 +18,7 @@ Below, we present some simple recursive programs: while some could be written wi
 Consider the following:
 
 ```
-!include`snippetStart="// Displays numbers from n to 1", snippetEnd="// Displays numbers from 1 to n", dedent=3` code/projects/RecursionHelloWorld/RecursionHelloWorld/Program.cs
+!include`snippetStart="// Displays numbers from n to 1", snippetEnd="// Displays numbers from 1 to n"` code/projects/RecursionHelloWorld/RecursionHelloWorld/Program.cs
 ```
 
 If we call `displayAll(3);`, then the following will happen:
@@ -44,7 +44,7 @@ In our example, it would display "3 2 1 ".
 *When* the function calls itself matters a lot. Indeed, consider `displayRAll`, which calls itself *before* executing the `Console.WriteLine` instruction:
 
 ```
-!include`snippetStart="// Displays numbers from 1 to n", snippetEnd="// Recursive multiplication", dedent=3` code/projects/RecursionHelloWorld/RecursionHelloWorld/Program.cs
+!include`snippetStart="// Displays numbers from 1 to n", snippetEnd="// Recursive multiplication"` code/projects/RecursionHelloWorld/RecursionHelloWorld/Program.cs
 ```
 
 If we call `displayRall(3);`, then the following will happen:
@@ -80,7 +80,7 @@ For example, consider that multiplication can be defined by addition: indeed, $x
 We can implement such a program easily:
 
 ```
-!include`snippetStart="// Recursive multiplication", snippetEnd="// Recursive factorial", dedent=3` code/projects/RecursionHelloWorld/RecursionHelloWorld/Program.cs
+!include`snippetStart="// Recursive multiplication", snippetEnd="// Recursive factorial"` code/projects/RecursionHelloWorld/RecursionHelloWorld/Program.cs
 ```
 
 For example, `mult(2, 10)` tests that `2` is neither 0 nor 1, and adds 10 with the result of `mult(1, 10)`, which is 10 since the first argument is 1.
@@ -93,7 +93,7 @@ The factorial of $n$ is $n! = n × (n-1) × (n-2) × (n-3) × … × 1$.
 This function can easily be implemented using recursion:
 
 ```
-!include`snippetStart="// Recursive factorial", snippetEnd="// An improvment would be to replace", dedent=3` code/projects/RecursionHelloWorld/RecursionHelloWorld/Program.cs
+!include`snippetStart="// Recursive factorial", snippetEnd="// An improvment would be to replace"` code/projects/RecursionHelloWorld/RecursionHelloWorld/Program.cs
 ```
 
 Note that this code actually compute e.g., $5! = 5 × 4 × 3 × 2 × 1 × 1$ (with one superfluous $× 1$): can you see why?

@@ -1,4 +1,4 @@
-class Character["Character Pt. 1"]{
+class Character{
 	-charName : string
 	-race : string
 	-gender : char

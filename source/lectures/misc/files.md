@@ -34,7 +34,7 @@ A fairly reliable way of handling this diversity is to select the folder `/bin/D
 We can access its directory path using:
 
 ```
-!include`snippetStart="// Display directory path where files will be stored.", snippetEnd="// On a unix system:", dedent=-1` code/projects/FileDemo/FileDemo/Program.cs
+!include`snippetStart="// Display directory path where files will be stored.", snippetEnd="// On a unix system:"` code/projects/FileDemo/FileDemo/Program.cs
 ```
 
 On most Unix systems, this would display at the screen something like 
@@ -46,7 +46,7 @@ On most Unix systems, this would display at the screen something like
 To add to this directory path the file name, we will be using the `Combine` method from the `Path` class, as follows:
 
 ```
-!include`snippetStart="// We append to the base folder the selected file name:", snippetEnd="// On a unix system:", dedent=-1` code/projects/FileDemo/FileDemo/Program.cs
+!include`snippetStart="// We append to the base folder the selected file name:", snippetEnd="// On a unix system:"` code/projects/FileDemo/FileDemo/Program.cs
 ```
 
 | ⚠ Warning       |
@@ -74,7 +74,7 @@ From the StreamWriter class0123456789
 using the following code:
 
 ```
-!include`snippetStart="// from 0 to 10 in it before closing it.", snippetEnd="// Go see FileDemo/bin/Debug/Hello.txt for yourself!", dedent=14` code/projects/FileDemo/FileDemo/Program.cs
+!include`snippetStart="// from 0 to 10 in it before closing it.", snippetEnd="// Go see FileDemo/bin/Debug/Hello.txt for yourself!"` code/projects/FileDemo/FileDemo/Program.cs
 ```
 
 ## Reading From a File
@@ -90,7 +90,7 @@ The `Close` method is similarly important and should never be omitted.
 As an example, we can open a file located at `filePath` and display its content at the screen using:
 
 ```
-!include`snippetStart="// and close the file when we are done.", snippetEnd="// We could also call the Dispose() method.", dedent=14` code/projects/FileDemo/FileDemo/Program.cs
+!include`snippetStart="// and close the file when we are done.", snippetEnd="// We could also call the Dispose() method."` code/projects/FileDemo/FileDemo/Program.cs
 ```
 
 ## What Can Go Wrong?
@@ -103,7 +103,7 @@ If the `StreamReader` constructor is given a path to a file that does not exist,
 We can catch this exception, but a better mechanism is to simply warn the user, using the `File.Exists` method that return `true` if its string argument points to a file, `false` otherwise.
 
 ```
-!include`snippetStart="// We first make sure the file exists.", snippetEnd="// If the file exists, we proceed.", dedent=12` code/projects/FileDemo/FileDemo/Program.cs
+!include`snippetStart="// We first make sure the file exists.", snippetEnd="// If the file exists, we proceed."` code/projects/FileDemo/FileDemo/Program.cs
 ```
 
 ### What if we are trying to write into a file that already exist?
