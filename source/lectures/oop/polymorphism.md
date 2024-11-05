@@ -90,9 +90,15 @@ Class2
 but this time the compiler will not complain: there is no ambiguity, as `Class2`'s `Test` method must explicitly take precedence when an object in `Class2` is calling a `Test` method.
 
 Note that by default, methods are non-virtual, and non-virtual method cannot be overridden.
-However, overriding methods are treated as virtual and can be overridden themselves.
+However, overriding methods are treated as virtual and can be overridden themselves, unless they use the `sealed` keyword, as follows:
 
-Also, an override method **must** have the same signature as the overridden method. 
+```
+public override sealed string Test(){…}
+```
+
+Such a method **cannot** be overridden by classes inheriting from the class to which they belong.
+
+Last but not least, note that an override method **must** have the same signature as the overridden method. 
 
 ### For Attributes and Properties
 
