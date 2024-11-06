@@ -36,7 +36,7 @@ const defaultOptions = {
   },
   filterFn: (node) => {
     // set containing names of everything you want to filter out
-    const omit = new Set(["exercises_w_sol", "tags"])
+    const omit = new Set(["solutions", "uml", "tags"])
     return !omit.has(node.name.toLowerCase())
   },
   order: ["filter", "map", "sort"],
