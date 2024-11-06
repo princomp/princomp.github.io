@@ -486,7 +486,7 @@ To edit the layout, style, or other features such as the footer, please *start b
 A couple of indications about the edits made to quartz:
 
 - The favicon at `quartz/static/`, and have been generated using <https://realfavicongenerator.net/>.
-- The order in the menu is constructed using the `content/web-order.ts` file, itself generated from the `source/order` file in the main branch: refer to the makefile (again, in the main branch) for explanations on how this file is created, to [the quartz documentation](https://quartz.jzhao.xyz/features/explorer#use-sort-with-pre-defined-sort-order) for the main inspiration, and to the `quartz.layout.ts` and `sortFn.ts` files for the concrete implementation. If you change the order, setting 
+- The order in the menu is constructed using the `content/web-order.ts` file, itself generated from the `source/order` file in the main branch: refer to the makefile (again, in the main branch) for explanations on how this file is created, to [the quartz documentation](https://quartz.jzhao.xyz/features/explorer#use-sort-with-pre-defined-sort-order) for the main inspiration, and to the `quartz.layout.ts` and `sortFn.ts` files for the concrete implementation. Some folders are omitted thanks to the `const omit` in the `quartz/components/Explorer.tsx` file. If you change the order, setting 
 ```
 useSavedState: true, // To debug the explorer, change to "false" (this way, the menu is not cached / permanent), 
 ```
