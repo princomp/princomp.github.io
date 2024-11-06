@@ -79,7 +79,7 @@ class Program
       Console.WriteLine("It's your turn.");
       MyTurn(n);
     }
-    // Usage example:
+    // Usage example
     MyTurn(4);
 
     // Sorted method helper
@@ -233,29 +233,3 @@ class Program
     Console.WriteLine(desc);
   }
 }
-
-
-/*
-
-// https://gist.github.com/SauliusSun/9572698
-     class RecursionExample
-    {
-        static void Main()
-        {
-            
-
-            string output = Display("", items, 0);
-
-            // Result: Node1 <- Node2 <- Node3 <-.
-            Console.Write(output);
-        
-        Console.Write(items[0]);
-        }
-
-        
-
-
-}
-
-
-*/

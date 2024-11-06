@@ -24,7 +24,7 @@ It is a method (`R`) that simply … calls itself. Even if this method does not 
 A better definition of recursion would include something about the method eventually terminating, like the following:
 
 ```
-!include`snippetStart="// Recursive CountDown method", snippetEnd="// Usage example:"` code/projects/AdvancedRecursion/AdvancedRecursion/Program.cs
+!include`snippetStart="// Recursive CountDown method", snippetEnd="// Usage example"` code/projects/AdvancedRecursion/AdvancedRecursion/Program.cs
 ```
 
 In that case, if we call e.g., `CountDown(10)`, then would be displayed:
@@ -69,7 +69,7 @@ Note that our definition above is recursive: *being sorted* is defined using *be
 Assuming the array is sorted up to `currentIndex`, the following will return `true` if the rest of the array is sorted, `false` otherwise:
 
 ```
-!include`snippetStart="// Sorted method helper", snippetEnd="// Sorted method"` code/projects/AdvancedRecursion/AdvancedRecursion/Program.cs
+!include`snippetStart="// Sorted method helper", snippetEnd="// Actual sorted method"` code/projects/AdvancedRecursion/AdvancedRecursion/Program.cs
 ```
 
 The first test check if we are done (in which case the array *is* sorted), the second compare the value at the current index with the one that follows, and the last one kicks in the reduction by stipulating that if the other two tests failed, then the array is sorted if the rest of the array is.
@@ -78,7 +78,7 @@ Compared to our informal above, we are missing the "making sure the left of the 
 Putting it all together, we can define `Sorted` calling the recursive `SortedH` method with the right arguments (and after performing some checks):
 
 ```
-!include`snippetStart="//Actual sorted method", snippetEnd="// Examples"` code/projects/AdvancedRecursion/AdvancedRecursion/Program.cs
+!include`snippetStart="// Actual sorted method", snippetEnd="// Examples"` code/projects/AdvancedRecursion/AdvancedRecursion/Program.cs
 ```
 
 ### Binary Search Using Recursion
