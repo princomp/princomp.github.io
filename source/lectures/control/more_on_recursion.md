@@ -83,7 +83,7 @@ Putting it all together, we can define `Sorted` calling the recursive `SortedH` 
 
 ### Binary Search Using Recursion
 
-We can perform [binary search](./lectures/arrays/search#binary-search) using recursion:
+We can perform [binary search](./lectures/collections/search#binary-search) using recursion:
 
 ```
 !include`snippetStart="// Binary Search helper", snippetEnd="// Examples"` code/projects/AdvancedRecursion/AdvancedRecursion/Program.cs

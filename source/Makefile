@@ -142,9 +142,9 @@ TARGET_MD_FILES_WITHOUT_INDEX := $(addprefix $(BUILD_DIR), $(SOURCE_MD_FILES_WIT
 
 ## "Alternative formats" target files
 # Every recipe is as follows:
-# 1. Look at the TARGET_MD_FILES_WITHOUT_INDEX, (e.g. "lectures/arrays/1d.md")
-# 2. Extract the name of the file without the extension using basename (e.g. "lectures/arrays/1d"),
-# 3. Add the suffix (.odt, .pdf or .docx) (e.g. "lectures/arrays/1d.odt").
+# 1. Look at the TARGET_MD_FILES_WITHOUT_INDEX, (e.g. "lectures/collections/1d.md")
+# 2. Extract the name of the file without the extension using basename (e.g. "lectures/collections/1d"),
+# 3. Add the suffix (.odt, .pdf or .docx) (e.g. "lectures/collections/1d.odt").
 TARGET_PDF_FILES_WITHOUT_INDEX := $(addsuffix .pdf,  $(basename $(TARGET_MD_FILES_WITHOUT_INDEX)))
 TARGET_ODT_FILES_WITHOUT_INDEX := $(addsuffix .odt,  $(basename $(TARGET_MD_FILES_WITHOUT_INDEX)))
 TARGET_DOC_FILES_WITHOUT_INDEX := $(addsuffix .docx, $(basename $(TARGET_MD_FILES_WITHOUT_INDEX)))
