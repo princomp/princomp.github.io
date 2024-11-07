@@ -110,8 +110,30 @@ tags:
 #. Write a recursive method that takes a `string` as argument and returns `true` if it is a palindrome. Your method should return `true` on input `"civic"`, `"noon"`, `"radar"` and `""` (empty string), and `false` on input  `"test"` and `"not a palindrome"`.
 
     <details>
+    <summary>Hint</summary>
+    Use `Length - 1` to access the last index of the string, and the `Substring` method to create a string without the first and last characters.
+    </details>
+    
+    <details>
     <summary>Solution</summary>
-    To be written.
+    
+    ```
+    bool Palindrome(string s)
+    {
+        if (s.Length <= 1) return true;
+        else
+        {
+            if (s[0] == s[s.Length - 1]) return Palindrome(s.Substring(1, s.Length - 2));
+            else return false;
+        }
+    }
+
+    List<string> palindrome_test = new List<string> { "radar", "civic", "noon", "", "test", "not a palindrome"};
+    foreach (string test in palindrome_test)
+    {
+        Console.WriteLine(test + " is a palindrome: " + Palindrome(test));
+    }
+    ``` 
     </details>
 
 #. Write a recursive method that takes an `int` as argument and returns the number of even digits in it. For example, on input `631`, the method should return `1` since only `6` is even.
