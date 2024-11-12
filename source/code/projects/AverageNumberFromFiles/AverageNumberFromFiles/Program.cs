@@ -102,6 +102,7 @@ but not
           // We read the next line.
           line = sr.ReadLine();
         }
+        sr.Close();
       }
       catch { }
             // if to prevent division by 0.
