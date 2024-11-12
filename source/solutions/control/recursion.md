@@ -87,6 +87,79 @@ tags:
 
 ## Exercises
 
+#. What would the following code display?
+
+    ```
+    int Myst1(int n)
+    {
+        if (n != 0)
+        {
+            return n + Myst1(n - 1);
+        }
+        else
+        {
+            return n;
+        }
+    }
+
+    Console.WriteLine(Myst1(4));
+    ```
+    
+    <details>
+    <summary>Solution</summary>
+    10
+    </details>
+
+#. What would the following code display?
+
+    ```
+    void Myst2(int n)
+    {
+        if (n == 0) { Console.WriteLine("Done"); }
+        else if (n < 0)
+        {
+            Console.Write($"{n} ");
+            Myst2(-n);
+        }
+        else
+        {
+            Console.Write($"{n} ");
+            Myst2(-(n - 1));
+        }
+    }
+    Myst2(3);
+    ```
+    
+    <details>
+    <summary>Solution</summary>
+    3 -2 2 -1 1 Done
+    </details>
+    
+#. What would the following code display?
+
+    ```
+    void Myst3(int len)
+    {
+        MystH(0, 1, 1, len);
+    }
+    void MystH(int axP, int bxP, int counter, int len)
+    {
+        if (counter <= len)
+        {
+            Console.Write($"{axP} ");
+            MystH(bxP, axP + bxP, counter + 1, len);
+        }
+    }
+    Myst3(6);
+    ```
+    
+    <details>
+    <summary>Solution</summary>
+    0 1 1 2 3 5
+    
+    Those are the first 6 digits of the [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_sequence).
+    </details>
+
 #. Write a recursive method that takes an `int` as argument, generates a random `int` between `0` and this argument, displays it and calls itself with that number. The method should stop when the `int` generated is 0.
 
     <details>

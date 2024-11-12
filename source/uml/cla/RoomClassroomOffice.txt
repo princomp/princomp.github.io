@@ -1,0 +1,20 @@
+Room <|-- ClassRoom
+Room <|-- Office
+
+class Room{
+    -building: string 
+    -number: int 
+    +Room(bP: string, nP: int) 
+    +ToString() string
+}
+
+class ClassRoom{
+    -av: bool
+    ClassRoom(bP: string, nP: int, avP: string)
+    +ToString() string
+}
+
+class Office{
+    -phone: string
+    Office(bP: string, nP: int, pP: string)
+}

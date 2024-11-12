@@ -39,7 +39,6 @@ class Final : Exam
                 sw.WriteLine(Weight);
                 sw.WriteLine(Bonus);
                 sw.WriteLine(Room);
-
                 sw.Close();
             }
             catch (Exception e)
@@ -69,16 +68,14 @@ class Final : Exam
             double weight = double.Parse(sr.ReadLine());
             bool bonus = bool.Parse(sr.ReadLine());
             string room = sr.ReadLine();
-            copy = new Final(course, weight, bonus, room);
             sr.Close();
+            copy = new Final(course, weight, bonus, room);
         }
         catch (Exception e)
         {
             Console.WriteLine("Exception: " + e.Message);
         }
         return copy;
-
-
     }
 
 }
