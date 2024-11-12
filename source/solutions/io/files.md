@@ -52,6 +52,54 @@ tags:
     ```
     </details>
 
+#. Suppose that at `filePath` is located a file where each line is either
+
+    - a decimal (e.g., 12.4, -14, 0.34),
+    - the word "STOP",
+    - some other string ("Test", "The sky is blue", "Ignore this line", "My file contains"), that may contain the characters "STOP".
+    
+    Write a program that displays the average of the decimals in the file knowing that
+    
+    - your program should ignore the values after a line containing "STOP" and only "STOP" if it is present,
+    - all the other strings should simply be ignored.
+    
+    For example, for the following three files, "4.0", "10.0" and "7.5" should be displayed, as (12.48 - 2.48 + 2) / 3 = 4 (13 been ignored), (15 + 5) / 2 = 10, and (11 + 4) / 2 = 7.5 (12 being ignored).
+    
+    ```text
+    ┌────────────────┐
+    │12.48           │
+    │This is a test  │     
+    │-2.48           │
+    │2               │
+    │STOP            │
+    │13              │
+    └────────────────┘
+    
+    ┌────────────────┐
+    │My file contains│
+    │STOP but        │
+    │averages        │
+    │15              │
+    │     and        │
+    │5               │ 
+    └────────────────┘
+
+    ┌────────────────┐
+    │This 12 will be │
+    │ignored         │
+    │but not         │
+    │11              │
+    │     nor        │
+    │4               │ 
+    └────────────────┘
+    ```
+    
+    <details><summary>Solution</summary>```
+    !include`snippetStart="// read, and the average.",snippetEnd="// We return the average."` code/projects/AverageNumberFromFiles/AverageNumberFromFiles/Program.cs
+    ```
+    </details>
+
+    
 #. Write a program that asks the user to enter a sentence, and store it in a file *where the maximum width is 40*: if the string entered is more than 40 characters long, then it should span over multiple lines of no more than 40 characters each. For example, if the user enters
 
     ```text

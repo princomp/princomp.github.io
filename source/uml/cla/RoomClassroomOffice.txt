@@ -10,7 +10,7 @@ class Room{
 
 class ClassRoom{
     -av: bool
-    ClassRoom(bP: string, nP: int, avP: string)
+    ClassRoom(bP: string, nP: int, avP: bool)
     +ToString() string
 }
 
