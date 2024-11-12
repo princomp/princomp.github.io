@@ -104,9 +104,17 @@ but not
         }
       }
       catch { }
-      average = sum / counter;
-      // We return the average.
-      return average;
+            // if to prevent division by 0.
+            if (counter != 0)
+            {
+                average = sum / counter;
+            }
+            else
+            {
+                average = -1;
+            }
+            // We return the average.
+            return average;
     }
   }
 }
