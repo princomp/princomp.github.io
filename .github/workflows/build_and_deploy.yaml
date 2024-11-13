@@ -81,7 +81,9 @@ jobs:
         files: content/release.zip
     - name: Switching to quartz 🪴
       run: |
+        cd /home/runner/work/princomp.github.io/princomp.github.io/source/
         make CLEAN-PREREQ
+        cd ../
         git checkout quartz
       # ^ This part is a bit tricky. We built the content/ folder previously, and since it is not tracked by github, this folder stays even if we change branch.
       # However, the PREREQ files are still present, and the ones that have been updated would be deleted by checking out, causing git to return (for example) a
