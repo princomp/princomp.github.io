@@ -43,11 +43,11 @@ tags:
 
 #. Execute the following program, then write a program that find the greatest number in the `RandomNumber.txt` file.
 
-    ```
+    ```{download="./code/projects/FileRandomNumber.zip"}
     !include`snippetStart="// between 0 and 999.",snippetEnd="// We now search for the highest number stored in this file."` code/projects/FileRandomNumber/FileRandomNumber/Program.cs
     ```
         
-    <details><summary>Solution</summary>```
+    <details><summary>Solution</summary>```{download="./code/projects/FileRandomNumber.zip"}
     !include`snippetStart="// We now search for the highest number stored in this file.",snippetEnd="finally"` code/projects/FileRandomNumber/FileRandomNumber/Program.cs
     ```
     </details>

@@ -137,7 +137,7 @@ More precisely,
 
 - in the `markdown+emoji` format, that is, [in pandoc's markdown](https://pandoc.org/MANUAL.html#pandocs-markdown), using the [emoji](https://pandoc.org/MANUAL.html#extension-emoji) [extension](https://pandoc.org/MANUAL.html#extensions)),
 - using the [pandoc-include](https://github.com/DCsunset/pandoc-include) filter,
-- and a [custom](https://github.com/princomp/princomp.github.io/tree/main/source/templates/filters) filter that sets all the [code blocks](https://github.com/princomp/princomp.github.io/blob/main/source/templates/filters/default-code-class-block.lua), or [all the code block and inline code](https://github.com/princomp/princomp.github.io/blob/main/source/templates/filters/default-code-class-block-inline.lua)'s syntax highlighting to C# by default.
+- and using [custom](https://github.com/princomp/princomp.github.io/tree/main/source/templates/filters) filters that sets all the [code blocks](https://github.com/princomp/princomp.github.io/blob/main/source/templates/filters/default-code-class-block.lua), or [all the code block and inline code](https://github.com/princomp/princomp.github.io/blob/main/source/templates/filters/default-code-class-block-inline.lua)'s syntax highlighting to C# by default.
 
 Because of the way the markdown is processed, please refrain from using the `“` and `”` characters: pandoc will automatically convert `"` into language-appropriate quotes for us.
 
@@ -209,6 +209,16 @@ Code snippets can be included in markdown documents using [pandoc-include](https
         ```
     
 Note that for [an unknown reason](https://github.com/DCsunset/pandoc-include/issues/45), no special characters (such as `_`) should be used in the filenames.
+
+- If a "download" attribute is given to the code block, then a download link will be added, pointing to its value, by the add-links-to-projects.lua filter:
+
+    <pre>
+    ```{download="./code/projects/FileRandomNumber.zip"}
+    !include`snippetStart="// between 0 and 999.",snippetEnd="// We now search for the highest number stored in this file."` code/projects/FileRandomNumber/FileRandomNumber/Program.cs
+    ```
+    <pre>
+    
+    will include a link to ./code/projects/FileRandomNumber.zip below the code block.
 
 - Title each source code block included in markdown, this will create a URL for the code block and enables linking to it.
 - code blocks are by default annotated as `csharp`

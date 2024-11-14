@@ -190,7 +190,8 @@ METADATA_FILE = $(TEMPLATES)meta.yaml
 # -M date="$$(LANG=en_us_88591 TZ='America/New_York' date '+%B  %e, %Y (%r)')" \
 
 ## Options for all output formats
-PANDOC_OPTIONS = --filter pandoc-include -f markdown+emoji \
+PANDOC_OPTIONS = --lua-filter $(FIL_TEMPLATES)add-links-to-projects.lua\
+--filter pandoc-include -f markdown+emoji \
 --strip-comments --email-obfuscation=references \
 -M default-code-class=csharp \
 -M date="$$(git log -1 --format=%cd --date=short -- $<)"
