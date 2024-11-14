@@ -59,7 +59,7 @@ After the `Foo` method: 1, 0, and 2
     ```
     
     <details><summary>Solution</summary>```
-    !include`snippetStart="// Solution for RevAdd",snippetEnd="// Solution for RevAdd"` code/projects/ReferenceMethods/ReferenceMethods/Program.cs
+    !include`snippetStart="// Solution for RevAdd",snippetEnd="// Example for AddLog"` code/projects/ReferenceMethods/ReferenceMethods/Program.cs
     ```
     </details>
         
