@@ -190,6 +190,10 @@ Test your program thoroughly, possibly bundling it in a `static` class to ease t
 
 <details>
 <summary>Solution</summary>
-A possible implementation, as a static class, can be [downloaded](./code/projects/CrossWord.zip).
+A possible implementation, as a static class, is as follows:
+
+```{download="./code/projects/CrossWord.zip"}
+!include code/projects/CrossWord/CrossWord/CrossWord.cs
+```</details>
 </details>
 
