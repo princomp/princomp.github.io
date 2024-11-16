@@ -486,6 +486,57 @@ For example, in an array containing 1, 2, 6, 7, 3, 9 with x being 8, the solutio
     Note that after the code has been executed, both sides of the word have been checked, and `palindromeSoFar` is `true` if both sides are mirrors of each other.
     </details>
 
+#. Assume `arrayEx` is an array of `int` containing the following values:
+    
+    ```
+    !include`snippetStart="// Example value",snippetEnd="// Algorithm (silent)"` code/projects/BinarySearch/BinarySearch/Program.cs
+    ```
+    
+    and consider the following algorithm:
+    
+    ```
+    !include`snippetStart="// Algorithm (silent)",snippetEnd="// Algorithm (verbose)"` code/projects/BinarySearch/BinarySearch/Program.cs
+    ```
+    
+    Complete the following table, giving the value of `sta`, `end`, `mid`, `fsf` and `cur` before the `while` loop is executed, after it has executed one time, two times, etc.
+    If the value is not set at this point, write "undef", and if the loop stops before the Xth iteration, simply cross out the Xth iteration.
+    Report the value even if it did not change.
+    
+    |   | Before loop | After 1 iteration | After 2 iterations | After 3 iterations | After 4 iterations | 
+    | -- | ------------- | -------------  | --------------  | --------------  | --------------  |
+    | `sta` |
+    | `end` | 
+    | `mid` | 
+    | `fsf` | 
+    | `cur` | 
+   
+   <details>
+   <summary>Solution</summary>
+   The code can easily be edited to display the information we are looking for.
+   
+   ```{download="code/projects/BinarySearch.zip"}
+   !include`snippetStart="// Algorithm (verbose)",snippetEnd="// Test with different values!"` code/projects/BinarySearch/BinarySearch/Program.cs
+   ```
+   
+   ```text
+   Before loop:
+   ------------------------------------------------------------------------
+   | sta = 0 | end = 12 | mid = undefined | fsf = False | cur = undefined |
+   ------------------------------------------------------------------------
+   After 1 iteration(s):
+   ---------------------------------------------------------
+   | sta = 7 | end = 12 | mid = 6 | fsf = False | cur = 90 |
+   ---------------------------------------------------------
+   After 2 iteration(s):
+   ---------------------------------------------------------
+   | sta = 7 | end = 8 | mid = 9 | fsf = False | cur = 135 |
+   ---------------------------------------------------------
+   After 3 iteration(s):
+   ---------------------------------------------------------
+   | sta = 7 | end = 8 | mid = 7 | fsf = True | cur = 105 |
+   ---------------------------------------------------------
+   ```
+   </details>
    
 ### Manipulating Two Arrays
 
