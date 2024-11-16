@@ -328,6 +328,7 @@ $(EXO_DIR)%.md: $(SOL_DIR)%.md
 	@echo "Creating $@"
 	@mkdir -p $(dir $@) \
 	&& cp $< $@ \
+	&& sed -i 's/ (Solutions)//' $@ \
 	&& sed -i '/<details>/,/<\/details>/d' $@ \
 	&& sed -i 's/title: Exercises with solutions/title: Exercises/g' $@ \
 	&& sed -i 's-Exercises \*without\* solutions \[are also available\](\./exercises/)\.-Exercises *with* solutions [are also available](./solutions/).-g' $@ \

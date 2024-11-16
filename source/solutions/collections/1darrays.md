@@ -3,7 +3,7 @@ tags:
   - datatypes/collections
 ---
 
-# One-Dimensional Arrays
+# One-Dimensional Arrays (Solutions)
 
 ## Multiple Choices
 

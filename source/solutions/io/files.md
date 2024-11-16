@@ -4,7 +4,7 @@ tags:
 - datatypes/strings
 --- 
 
-# Files
+# Files (Solutions)
 
 ## Questions
 
