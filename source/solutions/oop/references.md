@@ -4,7 +4,7 @@ tags:
   - datatypes
 ---
 
-# Objects and References
+# Objects and References (Solutions)
 
 ## Questions
 
@@ -46,23 +46,57 @@ After the `Foo` method: 1, 0, and 2
 
 ## Problems
 
-#. Write the `RevAdd` method (header included) such that the following:
+#. Write the `AddRev` method (header included) such that the following:
 
     ```
-    !include`snippetStart="// Example for RevAdd",snippetEnd="// Solution for RevAdd"` code/projects/ReferenceMethods/ReferenceMethods/Program.cs
+    !include`snippetStart="// Example for AddRev",snippetEnd="// Solution for AddRev"` code/projects/ReferenceMethods/ReferenceMethods/Program.cs
     ```
 
     would display
     
     ```
-    x1 is 7, y1 is 1.
+    x0 is 7, y0 is 1.
     ```
     
     <details><summary>Solution</summary>```
-    !include`snippetStart="// Solution for RevAdd",snippetEnd="// Example for AddLog"` code/projects/ReferenceMethods/ReferenceMethods/Program.cs
+    !include`snippetStart="// Solution for AddRev",snippetEnd="// Example for AddLog"` code/projects/ReferenceMethods/ReferenceMethods/Program.cs
     ```
     </details>
         
+#. Write the `AddLog` method (header included) such that the following:
+        
+    ```
+    !include`snippetStart="// Example for AddLog",snippetEnd="// Solution for AddLog"` code/projects/ReferenceMethods/ReferenceMethods/Program.cs
+    ```
+    
+    would display
+    
+    ```
+    4 + 3 = 7.
+    7
+    ```
+    
+    <details><summary>Solution</summary>```
+    !include`snippetStart="// Solution for AddLog",snippetEnd="// Example for AddReset"` code/projects/ReferenceMethods/ReferenceMethods/Program.cs
+    ```
+    </details>
+
+#. Write the `AddReset` method (header included) such that the following:
+    
+    ```
+    !include`snippetStart="// Example for AddReset",snippetEnd="// Solution for AddReset"` code/projects/ReferenceMethods/ReferenceMethods/Program.cs
+    ```
+    
+    would display
+    
+    ```
+    x2 = 0, y2 = 0, z2 = 5.
+    ```
+    
+    <details><summary>Solution</summary>```
+    !include`snippetStart="// Solution for AddReset",snippetEnd="// Done!"` code/projects/ReferenceMethods/ReferenceMethods/Program.cs
+    ```
+    </details>
 
 #. Consider the "regular" implementation of the `Rectangle` class:
 
@@ -124,8 +158,7 @@ After the `Foo` method: 1, 0, and 2
         ---
         ```
         
-        <details><summary>Solution</summary>
-        A possible solution is:
+        <details><summary>Solution</summary>A possible solution is:
         ```
         public void Draw(char symb = '*')
         {
@@ -175,8 +208,7 @@ After the `Foo` method: 1, 0, and 2
         
         If the length of the original object changed after `copy.Length = 12;` was executed, then your method makes a *shallow* copy instead of a "deep" copy.
         
-        <details><summary>Solution</summary>
-        A possible solution is:
+        <details><summary>Solution</summary>A possible solution is:
         ```
         public Rectangle Copy()
         {
@@ -216,8 +248,7 @@ After the `Foo` method: 1, 0, and 2
         r1 and r5 identical: False
         ```
         
-        <details><summary>Solution</summary>
-        A possible solution is:
+        <details><summary>Solution</summary>A possible solution is:
         ```
         public bool Equals(Rectangle rP)
         {

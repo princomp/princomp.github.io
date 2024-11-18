@@ -4,7 +4,7 @@ tags:
 - oop/objects
 ---
 
-# Inheritance
+# Inheritance (Solutions)
 
 ## Questions
 
