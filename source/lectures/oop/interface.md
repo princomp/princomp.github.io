@@ -1,0 +1,6 @@
+---
+tags:
+- oop
+---
+
+# Interfaces
