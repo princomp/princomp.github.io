@@ -61,6 +61,8 @@ The inheritance is represent in UML as follows:
 
 !include uml/cla/Bike.md
 
+Observe that the `ToString` is indicated in the `Bike` class: this is an indication that the `Vehicle`'s `ToString` method is actually overriden in the `Bike` derived class.
+
 Note that inheritance can be "chained", as `Bike` could itself be the base class for a `Bicycle` class that could have e.g. a `saddleType` attribute (noting that a motorbike does not have a saddle, but a seat).
 We could then obtain a code as follows:
 

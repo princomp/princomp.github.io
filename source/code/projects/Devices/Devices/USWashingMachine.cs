@@ -42,7 +42,9 @@ class USWashingMachine : ElectricalDevice
   public override void SafetyNotice()
   {
     Console.WriteLine(
-      "Refer to https://www.energy.gov/sites/prod/files/2016/06/f32/NFPA_DryerWasherSafetyTips.pdf"
+      "Refer to https://www.energy.gov/sites/"
+        + "prod/files/2016/06/f32/"
+        + "NFPA_DryerWasherSafetyTips.pdf"
     );
   }
 }

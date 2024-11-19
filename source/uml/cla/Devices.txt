@@ -2,26 +2,31 @@ ComputingDevice <|-- Abacus
 ElectricalDevice <|-- USWashingMachine
 
 class ComputingDevice{
-    «Abstract»
+    <<Abstract>>
     +«property» IPS: double*
-    +Instructions() void*
+    +Instructions()*
 }
 
 class ElectricalDevice{
-    «Abstract»
+    <<Abstract>>
     +«property» Voltage: int*
     +«property» Frequency: int*
-    +SafetyNotice() void*
+    +SafetyNotice()*
 }
 
 class Abacus{
     -ips: double
-    -material: string
+    +«property» IPS: double
+    +«property» Material: string
     +Abacus(ipsP : double, materialP : string)
+    +Instructions()
 }
 
 class USWashingMachine{
     -voltage: int
     -frequency: int
+    +«property» Voltage: int
+    +«property» Frequency: int
     +USWashingMachine(vP : int, fP: int)
+    +SafetyNotice()
 }

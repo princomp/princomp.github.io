@@ -1,7 +1,8 @@
 Person <|-- Student
 Person <|-- Employee
+
 class Person{
-    «Abstract»
+    <<Abstract>>
     +«property» Name: string
     +«property» Id: string*
     +GenerateLogin() string*

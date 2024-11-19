@@ -70,6 +70,10 @@ In this example, "1 2 3 " would be displayed: the order is reversed with resp
 |:---------------------------|
 | Recursion can be very powerful and can very easily make your program crash or misbehave. To see it for yourself, *after saving all important documents*, replace `-` with `+` in the previous examples and run the programs again. |
 
+`displayAll` is an example of _tail recursion_: the recursive call is the **last** statement in the method.
+`displayRAll` is an example of _head recursion_: the recursive call is the **first** statement in the method.
+They are furthormore both examples of *linear recursion*, as they call themselves only once.
+
 ## Recursive Methods Returning a Value
 
 Recursive methods can also return a value, used by previous calls to compute some other value.

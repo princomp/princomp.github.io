@@ -7,14 +7,18 @@ tags:
 
 ## Motivation
 
-Imagine you want to represent a variety of devices, and comes up with the following UML diagram^[Note that, technically, since our code below override the abstract methods and properties, they should be repeated in the derived classes.]:
+Imagine you want to represent a variety of devices, and comes up with the following UML diagram:
 
 !include uml/cla/Devices.md
+
+Note that it is possible to gather that e.g., the `Instructions()` method in the `Abacus` class is overriding the `Instructions()` method in the `ComputingDevice` class because it has the same signature: this can be the case only because it is overriding the inherited abstract method.
 
 Your abstract classes are "completely abstract", in the sense that all of their properties and methods are abstract, but it serves your purpose just well:
 
 - you do not want "ComputingDevices" to exist in isolation, but you want any class representing a computing device such as the [Abacus](https://en.wikipedia.org/wiki/Abacus), the [Pascaline](https://en.wikipedia.org/wiki/Pascal%27s_calculator) or the [Turing Tumble](https://en.wikipedia.org/wiki/Turing_Tumble) to have an *Instruction per seconds* property, and a method to display instructions. 
 - similarly, you want any "ElectronicalDevice" to have properties pertaining to their voltage and frequency, as well as a method to display a safety notice.
+
+A class that is "completely abstract" actually forces you to enforce a series of constraints and is a good way of making sure that you are consistent e.g., with the naming of your methods, the accessibility of your properties, or the return type of your methods.
 
 You implement it as follows:
 
@@ -39,7 +43,7 @@ A solution is to switch to *interfaces*.
 
 ## Explanations
 
-Interfaces are completely abstract classes: they do not implement anything, they simply force classes inheriting from them to implement certain features.
+Interfaces are completely abstract classes: they do not implement anything, they simply force classes inheriting from them (we actually say _that realizes them_) to implement certain features.
 
 ### In Diagram
 

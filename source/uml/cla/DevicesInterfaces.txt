@@ -2,16 +2,16 @@ ComputingDevice <|.. Computer
 ElectricalDevice <|.. Computer
 
 class ComputingDevice{
-    «Interface»
+    <<Interface>>
     +«property» IPS: double*
-    +Instructions() void*
+    +Instructions()*
 }
 
 class ElectricalDevice{
-    «Interface»
+    <<Interface>>
     +«property» Voltage: int*
     +«property» Frequency: int*
-    +SafetyNotice() void*
+    +SafetyNotice()*
 }
 
 class Computer{
