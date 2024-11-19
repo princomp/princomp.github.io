@@ -31,6 +31,7 @@
 ./lectures/oop/inheritance.md
 ./lectures/oop/polymorphism.md
 ./lectures/oop/abstract.md
+./lectures/oop/interface.md
 ./lectures/control/
 ./lectures/control/flow_intro.md
 ./lectures/control/booleans.md

@@ -1,0 +1,22 @@
+ComputingDevice <|.. Computer
+ElectricalDevice <|.. Computer
+
+class ComputingDevice{
+    «Interface»
+    +«property» IPS: double*
+    +Instructions() void*
+}
+
+class ElectricalDevice{
+    «Interface»
+    +«property» Voltage: int*
+    +«property» Frequency: int*
+    +SafetyNotice() void*
+}
+
+class Computer{
+    -ips: double
+    -voltage: int
+    -frequency: int
+    +Computer(ipsP : double, voltageP : int, frequencyP : int)
+}

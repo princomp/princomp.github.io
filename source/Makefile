@@ -312,7 +312,7 @@ $(CLA_DIR)%.md: $(CLA_DIR)%.txt
 # 6. We remove all the new lines introduced by the previous operations,
 # Using tr (which doesn't support in-file edit, so we use a temp file).
 	@echo "Creating $@"
-	@export MERMAID_FILTER_CAPTION="A UML diagram for the $$(sed 's-class \(.*\){-\1-g' $< | sed 's/<|--/◁−/' | sed -n '1p' ) class ([text version](./$<))" \
+	@export MERMAID_FILTER_CAPTION="A UML diagram for the $$(sed 's-class \(.*\){-\1-g' $< | sed 's/<|--/⇽/' | sed 's/<|../◁┈/' | sed -n '1p' ) class ([text version](./$<))" \
 	&& export MERMAID_FILTER_FORMAT=svg \
 	&& pandoc -F mermaid-filter $(CLA_TEMPLATES)before.md $< $(CLA_TEMPLATES)after.md -o $@ \
 	&& sed -i 's-\\\[-[-g' $@ && sed -i 's-\\\]-]-g' $@ \
