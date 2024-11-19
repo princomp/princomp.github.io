@@ -34,7 +34,7 @@ You implement it as follows:
 ```
 !include code/projects/Devices/Devices/USWashingMachine.cs
 ```
-```{download=./code/projects/Devices.zip}
+```{download="./code/projects/Devices.zip"}
 !include code/projects/Devices/Devices/Program.cs
 ```
 
@@ -65,7 +65,7 @@ Implementing such interfaces and their realization could be done as follows:
 ```
 !include code/projects/DevicesInterfaces/DevicesInterfaces/Computer.cs
 ```
-```{download=./code/projects/DevicesInterfaces.zip}
+```{download="./code/projects/DevicesInterfaces.zip"}
 !include code/projects/DevicesInterfaces/DevicesInterfaces/Program.cs
 ```
 
