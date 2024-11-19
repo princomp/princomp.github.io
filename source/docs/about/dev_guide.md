@@ -135,7 +135,7 @@ Resources to assess accessibility:
 Text documents are written using [standard markdown syntax](https://commonmark.org/).
 More precisely, 
 
-- in the `markdown+emoji` format, that is, [in pandoc's markdown](https://pandoc.org/MANUAL.html#pandocs-markdown), using the [emoji](https://pandoc.org/MANUAL.html#extension-emoji) [extension](https://pandoc.org/MANUAL.html#extensions)),
+- in the `commonmark+pipe_tables+tex_math_dollars+emoji` format, that is, [in commonmark's markdown](https://pandoc.org/MANUAL.html#markdown-variants), using (among others) the [emoji](https://pandoc.org/MANUAL.html#extension-emoji) [extension](https://pandoc.org/MANUAL.html#extensions)),
 - using the [pandoc-include](https://github.com/DCsunset/pandoc-include) filter,
 - and using [custom](https://github.com/princomp/princomp.github.io/tree/main/source/templates/filters) filters that sets all the [code blocks](https://github.com/princomp/princomp.github.io/blob/main/source/templates/filters/default-code-class-block.lua), or [all the code block and inline code](https://github.com/princomp/princomp.github.io/blob/main/source/templates/filters/default-code-class-block-inline.lua)'s syntax highlighting to C# by default.
 

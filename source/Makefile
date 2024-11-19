@@ -201,7 +201,7 @@ PANDOC_OPTIONS = --lua-filter $(FIL_TEMPLATES)add-links-to-projects.lua\
 
 ## MD build options
 PANDOC_MD = $(PANDOC_OPTIONS) --standalone --lua-filter $(FIL_TEMPLATES)default-code-class-block.lua \
---shift-heading-level-by=-1 --to commonmark+pipe_tables+tex_math_dollars --default-image-extension=svg
+--shift-heading-level-by=-1 --to commonmark+pipe_tables+tex_math_dollars+emoji --default-image-extension=svg
 # -s/--standalone is required to save the metadata block.
 
 ## Alternative formats options.
