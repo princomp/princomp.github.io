@@ -1,4 +1,6 @@
 using System;
+using System.Linq;
+
 public class Rectangle : Shape
 {
     public Rectangle(int wP, int lP, string cP, bool fP):base(cP, fP)
@@ -11,7 +13,7 @@ public class Rectangle : Shape
         return base.ToString() + "Test";
     }
     private int width;
-    public int Width
+    public virtual int Width
     {
         get
         {
@@ -24,7 +26,7 @@ public class Rectangle : Shape
         }
     }
     private int length;
-    public int Length
+    public virtual int Length
     {
         get { return length; }
         set
@@ -41,24 +43,33 @@ public class Rectangle : Shape
 | I'm a rectangle!  |
 ╰─╲╱────────────────╯
 ";
-        // https://stackoverflow.com/questions/2743260/is-it-possible-to-write-to-the-console-in-colour-in-net
         Console.Write(msg);
-        msg = "";
+        Draw();
+    }
+    public void Draw()
+    {
+        // To read about colors, refer e.g. to 
+        // https://stackoverflow.com/questions/2743260/is-it-possible-to-write-to-the-console-in-colour-in-net
+        string msg = "";
+        Type type = typeof(ConsoleColor);
+        if (Enum.GetNames(type).Contains(GetColor())) { Console.ForegroundColor = (ConsoleColor)Enum.Parse(type, GetColor()); }
         for (int i = 0; i < length; i++)
         {
             for (int j = 0; j < width; j++)
             {
                 if (i == 0 && j == 0) { msg += "┍"; }
-                else if (i == length-1 && j == 0) { msg += "┕"; }
-                else if (i == 0 && j == width-1) { msg += "┑"; }
-                else if (i == length-1 && j == width-1) { msg += "┙"; }
-                else if (i==0 || i == length-1) { msg += "─"; }
-                else if (j == 0 || j == width-1) { msg += "|"; }
-                else { msg += " "; }
+                else if (i == length - 1 && j == 0) { msg += "┕"; }
+                else if (i == 0 && j == width - 1) { msg += "┑"; }
+                else if (i == length - 1 && j == width - 1) { msg += "┙"; }
+                else if (i == 0 || i == length - 1) { msg += "─"; }
+                else if (j == 0 || j == width - 1) { msg += "|"; }
+                else if (!GetFilled()) { msg += " "; }
+                else { msg += "█"; }
             }
             msg += "\n";
         }
         Console.WriteLine(msg);
+        Console.ForegroundColor = (ConsoleColor)Enum.Parse(type, "White");
     }
     public override void FlipRight()
     {

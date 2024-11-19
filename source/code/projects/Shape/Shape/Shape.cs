@@ -1,7 +1,16 @@
 public abstract class Shape : IAnimation, IComparable<Shape>
 {
     private string color;
+    public string GetColor()
+    {
+        return color;
+    }
     private bool filled;
+    public bool GetFilled()
+    {
+        return filled;
+    }
+
     public Shape (string color, bool filled)
     {
         this.color = color;
