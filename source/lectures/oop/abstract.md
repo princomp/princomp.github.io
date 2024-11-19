@@ -74,11 +74,9 @@ The statement `Morgan.Id = "E8194";` will raise exception, but `Morgan.Id = "S81
 
 - However, abstract attributes are not allowed.
 
-
 ## UML Class Diagram Representation
 
-- An abstract class is represented by as a class with its name prefixed by `<<Abstract>>` (or, sometimes, displayed in *italics*),
+- An abstract class is represented by as a class with its name prefixed by `<<Abstract>>`,  `«Abstract»`, or with its name displayed in *italics*,
 - An abstract method or property is represented as a usual, except that it is displayed in *italics*.
 
 !include uml/cla/Person.md
-
