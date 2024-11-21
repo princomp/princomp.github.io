@@ -167,7 +167,7 @@ tags:
     ```
     
     <details><summary>Solution</summary>```{download="./code/projects/HelloWorldFile.zip"}
-    !include`snippetStart="// Count-down using recursion",snippetEnd="CountDown(10);"` code/projects/RecursionAndLoops/RecursionAndLoops/Program.cs
+    !include`snippetStart="// Count-down using recursion",snippetEnd=" // End count-down using recursion"` code/projects/RecursionAndLoops/RecursionAndLoops/Program.cs
     ```
     </details>
 
@@ -178,14 +178,14 @@ tags:
     ```
     
     <details><summary>Solution</summary>```{download="./code/projects/HelloWorldFile.zip"}
-    !include`snippetStart="// Sum using recursion",snippetEnd="Console.WriteLine($"Sum: {Sum(10)}");"` code/projects/RecursionAndLoops/RecursionAndLoops/Program.cs
+    !include`snippetStart="// Sum using recursion",snippetEnd="// End sum using recursion"` code/projects/RecursionAndLoops/RecursionAndLoops/Program.cs
     ```
     </details>
 
 #. Rewrite the following `for` loop as a recursive method.
 
     ```{download="./code/projects/RecursionAndLoops.zip"}
-    !include`snippetStart="// Display odd values using for loop",snippetEnd="// Display odd values using recursion"` code/projects/RecursionAndLoops/RecursionAndLoops/Program.cs
+    !include`snippetStart="// Display odd values using for loop",snippetEnd="// End display odd values using recursion"` code/projects/RecursionAndLoops/RecursionAndLoops/Program.cs
     ```
     
     <details><summary>Solution</summary>```{download="./code/projects/HelloWorldFile.zip"}

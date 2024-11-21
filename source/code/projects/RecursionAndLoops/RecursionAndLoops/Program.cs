@@ -26,6 +26,7 @@ class Program
       }
     }
     CountDown(10);
+    // End count-down using recursion
 
     /*
      * Compute 0 + 1 + 2 + … + n
@@ -55,6 +56,7 @@ class Program
       }
     }
     Console.WriteLine($"Sum: {Sum(10)}");
+    // End sum using recursion
 
     /*
      * Display odd numbers in an array
