@@ -4,20 +4,20 @@ Shape  <|--  Rectangle
 Rectangle  <|--  Cube
 
 class IAnimation{
-    «Interface»
+    <<Interface>>
     +Talk()*
     +FlipRight()*
 }
 
 class IComparable~Shape~{
-    «Interface»
+    <<Interface>>
     +CompareTo(arg : Shape) int*
 }
 
 class Shape{
-    «Abstract»
+    <<Abstract>>
     -color: string
-    -bool: filled
+    -filled: bool
     +GetColor() string
     +GetFilled() bool
     +Shape(color: string, filled: bool)
