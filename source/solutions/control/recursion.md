@@ -159,6 +159,39 @@ tags:
     
     Those are the first 6 digits of the [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_sequence).
     </details>
+    
+#. Rewrite the following `while` loop as a recursive method.
+
+    ```{download="./code/projects/RecursionAndLoops.zip"}
+    !include`snippetStart="// Count-down using while loop",snippetEnd="// Count-down using recursion"` code/projects/RecursionAndLoops/RecursionAndLoops/Program.cs
+    ```
+    
+    <details><summary>Solution</summary>```{download="./code/projects/HelloWorldFile.zip"}
+    !include`snippetStart="// Count-down using recursion",snippetEnd="CountDown(10);"` code/projects/RecursionAndLoops/RecursionAndLoops/Program.cs
+    ```
+    </details>
+
+#. Rewrite the following `do…while` loop as a recursive method.
+
+    ```{download="./code/projects/RecursionAndLoops.zip"}
+    !include`snippetStart="// Sum using do while",snippetEnd="// Sum using recursion"` code/projects/RecursionAndLoops/RecursionAndLoops/Program.cs
+    ```
+    
+    <details><summary>Solution</summary>```{download="./code/projects/HelloWorldFile.zip"}
+    !include`snippetStart="// Sum using recursion",snippetEnd="Console.WriteLine($"Sum: {Sum(10)}");"` code/projects/RecursionAndLoops/RecursionAndLoops/Program.cs
+    ```
+    </details>
+
+#. Rewrite the following `for` loop as a recursive method.
+
+    ```{download="./code/projects/RecursionAndLoops.zip"}
+    !include`snippetStart="// Display odd values using for loop",snippetEnd="// Display odd values using recursion"` code/projects/RecursionAndLoops/RecursionAndLoops/Program.cs
+    ```
+    
+    <details><summary>Solution</summary>```{download="./code/projects/HelloWorldFile.zip"}
+    !include`snippetStart="// Display odd values using recursion",snippetEnd="OddInArray(test, 0);"` code/projects/RecursionAndLoops/RecursionAndLoops/Program.cs
+    ```
+    </details>
 
 #. Write a recursive method that takes an `int` as argument, generates a random `int` between `0` and this argument, displays it and calls itself with that number. The method should stop when the `int` generated is 0.
 

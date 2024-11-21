@@ -17,7 +17,8 @@ public class Cube : Rectangle
     }
   }
 
-  public Cube(int hP, int wP, int lP, string cP, bool fP):base(hP, wP, cP, fP)
+  public Cube(int hP, int wP, int lP, string cP, bool fP)
+    : base(hP, wP, cP, fP)
   {
     if (hP != wP || wP != lP)
     {
@@ -25,7 +26,7 @@ public class Cube : Rectangle
         "All arguments must be equal"
       );
     }
-        Height = hP;
+    Height = hP;
   }
 
   public override void Talk()
