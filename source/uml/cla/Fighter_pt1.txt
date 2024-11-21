@@ -1,4 +1,4 @@
-class Fighter["Fighter Pt. 1"]{
+class Fighter{
 	-name : string
 	-level : byte
 	-curExp : int
