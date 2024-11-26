@@ -44,7 +44,7 @@ In particular, make sure you write your name and the date in a delimited comment
 
 Here is an example of a `Program.cs` `Main` method, that creates four test files and illustrates some of the desired functionalities:
 
-```
+```{download="./code/projects/TextFileHelper.zip"}
 !include code/projects/TextFileHelper/TextFileHelper/Program.cs
 ```
 
