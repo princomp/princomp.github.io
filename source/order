@@ -56,11 +56,12 @@
 ./lectures/collections/search.md
 ./lectures/collections/arrays_of_objects.md
 ./lectures/collections/manipulating_rectangular_arrays.md
+./lectures/collections/lists.md
+./lectures/collections/cLists.md
 ./lectures/misc/
 ./lectures/misc/over_under_flow.md
 ./lectures/misc/random.md
 ./lectures/misc/exceptions.md
-./lectures/misc/lists.md
 ./lectures/misc/references.md
 ./lectures/misc/files.md
 ./lecture/slides.md
@@ -81,3 +82,4 @@
 ./projects/todo_list/
 ./projects/temp_stats/
 ./projects/evaluation/
+./projects/TextFileHelper/

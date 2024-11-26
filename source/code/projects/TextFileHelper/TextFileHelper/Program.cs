@@ -32,8 +32,7 @@ directoryPath,
 
         /* 
          * The following is for demo purpose.
-         * Feel free to un-comment it as you go
-         * or to edit it as you see fit.
+         * Feel free edit it as you see fit.
          */
         // WARNING This code cannot be compiled unless the following is commented out.
         // START commenting here
