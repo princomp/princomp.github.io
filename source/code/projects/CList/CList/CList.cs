@@ -236,8 +236,10 @@ public class CList<T>
     return mCount;
   }
 
-  // Method to remove at a particular index
-  public void RemoveAt(int index)
+    // Method to remove at a particular index
+    // Very similar to RemoveI, simply
+    // implemented with a different philosophy.
+    public void RemoveAt(int index)
   {
     if (index >= 0 && index < Size)
     {
@@ -287,8 +289,6 @@ public class CList<T>
       return false;
     else if (cCell.Data.Equals(dataP))
       return true;
-    else if (cCell.Next == null)
-      return false;
     else
       return Find(cCell.Next, dataP);
   }
