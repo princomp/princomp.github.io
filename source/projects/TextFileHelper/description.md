@@ -22,7 +22,7 @@ Develop a static class to perform simple operations on files: display its conten
 
 Your goal is to design and implement a static `TextFileHelper` class containing 5 methods (the fifth one being optional):
 
-#. A `Display` method that takes a `string` as argument and display the file located at the corresponding path if it exists, displays an error message otherwise.
+#. A `Display` method that takes a `string` as argument and displays the content of the file located at the corresponding path if it exists, an error message otherwise.
 #. A `DisplayNoComment` method that takes a `string` and acts as the `Display` method, except that every line starting with the `#` character is ignored.
 #. A `Concat` method that takes three `string` arguments, `arg1`, `arg2` and `arg3` and write at `arg3` a file containing the text stored in `arg1` followed by the text stored in `arg2`, if both files exist and if `arg3` does not exist, and that displays an error message otherwise.
 #. A `Reverse` method that takes two `string` arguments, `arg1` and `arg2`, and write at `arg2` the content of the file located at `arg1`, reversed (that is: last line of `arg1` is first of `arg2`, etc., but the content of the lines themselves is identical). If `arg1` does not exists or if a file is already present at `arg2`, then the method should display an error message.
