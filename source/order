@@ -57,7 +57,7 @@
 ./lectures/collections/arrays_of_objects.md
 ./lectures/collections/manipulating_rectangular_arrays.md
 ./lectures/collections/lists.md
-./lectures/collections/cLists.md
+./lectures/collections/cList.md
 ./lectures/misc/
 ./lectures/misc/over_under_flow.md
 ./lectures/misc/random.md
