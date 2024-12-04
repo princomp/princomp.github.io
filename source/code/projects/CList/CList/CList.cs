@@ -236,10 +236,10 @@ public class CList<T>
     return mCount;
   }
 
-    // Method to remove at a particular index
-    // Very similar to RemoveI, simply
-    // implemented with a different philosophy.
-    public void RemoveAt(int index)
+  // Method to remove at a particular index
+  // Very similar to RemoveI, simply
+  // implemented with a different philosophy.
+  public void RemoveAt(int index)
   {
     if (index >= 0 && index < Size)
     {

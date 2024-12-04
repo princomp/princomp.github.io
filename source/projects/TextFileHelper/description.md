@@ -79,11 +79,10 @@ This is the first demo file
 *****
 * Testing Balanced
 *****
-0 = (0 = )43 = (47 = )0 = (30 = )ex0 is balanced: False
+ex0 is balanced: False
 ex1 is balanced: True
 ex2 is balanced: False
 ex3 is balanced: True
-
 ```
 
 Note that it is ok if you cannot reproduce this output *exactly*.
