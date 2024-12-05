@@ -65,7 +65,7 @@ tags:
     | 40  | 50  | 60  | 
     | 70  | 80  | 90  | 
     
-        <details>
+    <details>
     <summary>Solution</summary>
 
     ```
@@ -111,6 +111,14 @@ tags:
     <summary>Solution</summary>
     By using the `Length` field: `temp.Length` is the number of elements in the `temp` array.
     We can also compute the product of `temp.GetLength(0)` and `temp.GetLength(1)`.
+    </details>
+    
+#. Write a `Display` static method that takes as an argument a 2-dimensional array and displays it at the screen.
+
+    <details>
+    <summary>Solution</summary>```
+    !include`snippetStart="// Method to display 2-d arrays", snippetEnd="// End of method to display 2-d arrays"`  code/snippets/2darrays.cs
+    ```
     </details>
 
 #. Write a program that display "Every row contains its own index" if the 2-dimensional rectangular array of `int` `matrix` is such that its first row contains the value 0, its second row contains the value 1, etc.
@@ -172,6 +180,26 @@ tags:
     ```
     </details>
 
+#. Write a program that "rotate" a 2-dimensional array 90° clockwise. For example, the array 
+
+    ```
+    !include`snippetStart="// Example array1", snippetEnd="// End of example array1"`  code/snippets/2darrays.cs
+    ```
+    
+    would become
+    
+    ```text
+    |  10 |   7 |   4 |   1  |
+    |  11 |   8 |   5 |   2  |
+    |  12 |   9 |   6 |   3  |
+    ```
+
+    <details>
+    <summary>Solution</summary>```
+    !include`snippetStart="// Method to rotate an array 90° clockwise", snippetEnd="// End of method to rotate an array 90° clockwise"`  code/snippets/2darrays.cs
+    ```
+    </details>
+
 ## Problem: Toward a Crossword Puzzle Solver
 
 The goal of this problem is to work toward the creation of a program that solve crossword puzzles.
@@ -191,9 +219,9 @@ Test your program thoroughly, possibly bundling it in a `static` class to ease t
 <details>
 <summary>Solution</summary>
 A possible implementation, as a static class, is as follows:
-
 ```{download="./code/projects/CrossWord.zip"}
-!include code/projects/CrossWord/CrossWord/CrossWord.cs
-```</details>
+!include code/projects/CrossWord/CrossWord/Crossword.cs
+```
 </details>
+
 
