@@ -897,17 +897,29 @@ For example, in an array containing 1, 2, 6, 7, 3, 9 with x being 8, the solutio
     
     <details>
     <summary>Solution</summary>
+    
     A possible implementation is as follows:
+    
     ```{download="./code/projects/Passcode.zip"}
-    !include code/projects/Passcode/Passcode/Crossword.cs
+    !include code/projects/Passcode/Passcode/Program.cs
     ```
+    
     It is recommended to test it with other values to make sure that the program behave as expected.
     </details>
 
 #. Consider this array of words:
 
     ```
-    string[] words = {"voice", "effect", "day", "orange", "appliance", "fly", "cloud", "degree", "engine", "society"};
+    string[] words = {  "voice", 
+                        "effect",
+                        "day",
+                        "orange",
+                        "appliance",
+                        "fly",
+                        "cloud",
+                        "degree",
+                        "engine",
+                        "society"};
     ```
 
     Write code to display an answer to the following questions. If the solution requires looping, use **foreach** loop when possible. Otherwise, use a **for** loop.
