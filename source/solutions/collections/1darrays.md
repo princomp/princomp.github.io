@@ -884,6 +884,25 @@ For example, in an array containing 1, 2, 6, 7, 3, 9 with x being 8, the solutio
     Console.WriteLine( evens[0] + " " + evens[1] + " " + evens[2] ); // Displays: 2 4 6
     ```
     </details>
+    
+
+#. Suppose given two 1-dimensional arrays of `char` called `passcode` and `codeentered` of the same size.
+
+    #. Write a program that displays "Passcode correct" if the content of `passcode` and of `codeentered` are identical.
+    #. Write a program that displays "Passcode valid" if `passcode` does not contain the same character twice.
+    #. Write a program that displays "Passcode sorted" if `passcode` is sorted (either in ascending or descending order).
+    #. Write a program that displays the number of matching characters in the same position in both arrays. For example, if `passcode` contains `b`, `C`, `4`, `a` and `codeentered` contains `B`, `4`, `c`, `a`, then "1" should be displayed, as only one character (`a`) is in both arrays at the same position.
+    #. Write a program that displays the number of matching characters in both arrays.
+    For example, if `passcode` and `codeentered` are as in the previous question, then "2" should be displayed, as two characters (`4` and `a`) are in both arrays^[Assume all the characters in `passcode` are different, and the same for `codeentered`: `a`, `a`, `b`, `b` would not be valid.].
+    
+    <details>
+    <summary>Solution</summary>
+    A possible implementation is as follows:
+    ```{download="./code/projects/Passcode.zip"}
+    !include code/projects/Passcode/Passcode/Crossword.cs
+    ```
+    It is recommended to test it with other values to make sure that the program behave as expected.
+    </details>
 
 #. Consider this array of words:
 
