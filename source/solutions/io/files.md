@@ -138,3 +138,46 @@ tags:
     !include code/projects/FileCountProgram/FileCountProgram/Program.cs
     ```
     </details>
+
+#.  Write a program that
+
+    #. Asks the user to enter a path,
+    #. Checks if there is a file at this path:
+        #. If there is a file, display its content at the screen.
+        #. If there is no file, ask the user to enter text. When the user enters exactly "!DONE!", on a single line, without the quotes, write the text entered before !DONE! into a file located at the given path.
+
+    Your program should be able to handle graciously possible issues (such as an invalid path).
+
+    Below are two examples of execution, taking place one after the other.
+    
+    
+    ### Example execution #1
+
+    ```text
+    Enter a path  
+    /͟h͟o͟m͟e͟/͟u͟s͟e͟r͟/͟C͟S͟C͟I͟_͟1͟3͟0͟2͟/͟f͟i͟n͟a͟l͟/͟t͟e͟s͟t͟.͟t͟x͟t͟
+    Now creating a file at /home/user/CSCI_1302/final/test.txt.  
+    Enter your text, one line at a time. When done, type "!DONE!" (without the quotes), then enter.  
+    T͟h͟i͟s͟ ͟i͟s͟ ͟a͟ ͟t͟e͟s͟t͟
+    s͟p͟a͟n͟n͟i͟n͟g͟ ͟o͟v͟e͟r͟
+    t͟h͟r͟e͟e͟ ͟l͟i͟n͟e͟s͟.͟  
+    !͟D͟O͟N͟E͟!͟
+    File correctly written.
+    ```
+
+    ### Example execution #2
+
+    ```text
+    Enter a path  
+    /͟h͟o͟m͟e͟/͟u͟s͟e͟r͟/͟C͟S͟C͟I͟_͟1͟3͟0͟2͟/͟f͟i͟n͟a͟l͟/͟t͟e͟s͟t͟.͟t͟x͟t͟
+    Now displaying file at /home/user/CSCI_1302/final/test.txt.  
+    This is a test  
+    spanning over  
+    three lines.  
+    Done displaying file.  
+    ```
+    
+    <details><summary>Solution</summary>```{download="./code/projects/ReadOrWritePath.zip"}
+    !include code/projects/ReadOrWritePath/ReadOrWritePath/Program.cs
+    ```
+    </details>

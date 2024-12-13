@@ -17,7 +17,7 @@ tags:
   - [ ] `inherits`
 
 
-## Problem
+## Problems
 
 #. Consider the diagram representing the "Room", "ClassRoom", "Office" classes and their relations.
 
