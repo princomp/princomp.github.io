@@ -1,0 +1,18 @@
+Article <|-- Book
+
+class Article{
+    <<Abstract>>
+    + «property» Id: string
+    - price: decimal
+    + SetPrice(priceP: decimal) 
+    + GetPrice() decimal
+    + Article(idP: string, priceP: decimal)
+    + ShippingCosts() decimal*
+}
+
+class Book{
+    + «property» Title: string
+    + Book(idP: string, priceP: decimal, titleP: string)
+    + ShippingCosts() decimal
+    
+}
