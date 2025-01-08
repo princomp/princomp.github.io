@@ -37,7 +37,7 @@ jobs:
         fetch-depth: 0
     - uses: actions/setup-node@v4
       with:
-        node-version: 20
+        node-version: 23
     - uses: chetan/git-restore-mtime-action@v2
     - name: Cache  💾
       uses: actions/cache@v4
