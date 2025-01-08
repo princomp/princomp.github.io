@@ -12,7 +12,7 @@ tags:
 
 This page lists resources for Augusta University students to receive help with their course of studies, [in general](#in-general), for [students of the School of Computer and Cyber Sciences](#for-students-of-the-school-of-computer-and-cyber-sciences), and for [this course in particular](#course).
 
-## In General {#general}
+## In General{#general}
 
 Many resources are available to help you be a successful student:
 
@@ -23,7 +23,7 @@ Many resources are available to help you be a successful student:
 - To get help with technologies, refer to our [Instructional Technology Support](https://www.augusta.edu/continuity/index.php) correspondent [Sienna Sewell](https://spots.augusta.edu/sSewell/).
 - The [Department of Multicultural Student Engagement (MSE)](https://www.augusta.edu/multicultural/) aims to provide education, training, and programming to foster awareness of diversity and inclusion among Augusta University students. Their [Multicultural Mentorship Program and African American Male Initiative](https://www.augusta.edu/multicultural/programming.php) are excellent resources to receive additional help.
 
-## For Students of the School of Computer and Cyber Sciences {#school}
+## For Students of the School of Computer and Cyber Sciences{#school}
 
 ### School of Computer and Cyber Sciences Tutoring Center
 
