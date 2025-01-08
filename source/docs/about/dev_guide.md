@@ -168,6 +168,7 @@ The resulting images are added to the repository so that there is no need to re-
 #### UML class diagrams
 
 The UML diagrams are created using [Mermaid](https://mermaid.js.org/) and located in `source/uml`.
+Note that because of [an annoying bug](https://github.com/mermaid-js/mermaid-cli/issues/730) present on github's server, mermaid-cli [must call pupeeter with the `--no-sandbox`](https://github.com/mermaid-js/mermaid-cli/blob/340561040b6b0621a486e3fc96723139e5718268/docs/linux-sandbox-issue.md) option, which constitutes a potential safety issue.
 
 ##### Class Diagrams
 
