@@ -286,11 +286,11 @@ $(IMG_DIR)%.svg:$(IMG_DIR)%.pdf
 # -------------------------------
 
 .PHONY: PREREQ
-PREREQ: CLA EXE
+PREREQ: CLA EXE $(TARGET_IMAGES_FILES)
 
 .PHONY: CLEAN-PREREQ
 CLEAN-PREREQ:
-	rm -f $(CLA_DIR)*.md && rm -rf $(EXO_DIR)
+	rm -f $(CLA_DIR)*.md && rm -rf $(EXO_DIR) && rm -rf $(TARGET_IMAGES_FILES)
 
 # UML class diagram file
 .PHONY: CLA
