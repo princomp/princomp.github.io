@@ -10,9 +10,9 @@ tags:
 |:---------------------------|
 | This page is primarily targeted for Augusta University students. |
 
-This page lists resources for Augusta University students to receive help with their course of studies, [in general](#in-general), for [students of the School of Computer and Cyber Sciences](#for-students-of-the-school-of-computer-and-cyber-sciences), and for [this course in particular](#course).
+This page lists resources for Augusta University students to receive help with their course of studies, [in general](#in-general), for [students of the School of Computer and Cyber Sciences](#for-students-of-the-school-of-computer-and-cyber-sciences), and for [this course in particular](#for-this-course).
 
-## In General{#general}
+## In General
 
 Many resources are available to help you be a successful student:
 
@@ -23,7 +23,7 @@ Many resources are available to help you be a successful student:
 - To get help with technologies, refer to our [Instructional Technology Support](https://www.augusta.edu/continuity/index.php) correspondent [Sienna Sewell](https://spots.augusta.edu/sSewell/).
 - The [Department of Multicultural Student Engagement (MSE)](https://www.augusta.edu/multicultural/) aims to provide education, training, and programming to foster awareness of diversity and inclusion among Augusta University students. Their [Multicultural Mentorship Program and African American Male Initiative](https://www.augusta.edu/multicultural/programming.php) are excellent resources to receive additional help.
 
-## For Students of the School of Computer and Cyber Sciences{#school}
+## For Students of the School of Computer and Cyber Sciences
 
 ### School of Computer and Cyber Sciences Tutoring Center
 
@@ -42,7 +42,9 @@ To learn more, you can sign up for the newsletter, or attend one of the subgroup
 
 The Augusta University Game Design Club and Girls Who Code College Loop "will be continuing activities in full force this year".  Notifications for upcoming activities will be shared in class alongside school-wide emails. 
 
-## How to Ask a Question?
+## For This Course
+
+### How to Ask a Question?
 
 It may seems silly, but asking a question "the right way" may not always be easy.
 
@@ -53,7 +55,7 @@ It may seems silly, but asking a question "the right way" may not always be easy
 
 And, remember: your instructor(s) knows that you are a student and here to learn, so you should _never_ feel intimidated or assume that _everyone knows better than you_: many students struggle in this class at times, and you could actually do them all a favor by asking your instructor(s) to go over a particular dimension that they may have overlooked or explained poorly!
 
-## Commenting Using a Github Account
+### Commenting Using a Github Account
 
 On this website, if [you look below](#how-is-this-page), you will see a box where you can comment.
 This will require that you create a [Github account](https://github.com/login), which is free and may serve multiple purpose if you intend to study, use, or contribute to open-source projects.

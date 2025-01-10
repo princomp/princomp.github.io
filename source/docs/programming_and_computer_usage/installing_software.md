@@ -56,7 +56,7 @@ The instructions are detailed, but there are plenty of ways this can go wrong: m
 
 Note that we are *not* installing "Visual Studio *Code*", but simply "Visual Studio".
 
-##### For Windows {#install-win}
+##### For Windows
 
 #. Visit [Azure Dev Tools for Teaching](https://aka.ms/devtoolsforteaching).
 #. Log in using your Augusta University credentials.
