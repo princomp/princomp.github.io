@@ -80,6 +80,7 @@
 ./projects/character_creator/
 ./projects/fighting_game/
 ./projects/todo_list/
+./projects/throw_count/
 ./projects/temp_stats/
 ./projects/evaluation/
 ./projects/TextFileHelper/
