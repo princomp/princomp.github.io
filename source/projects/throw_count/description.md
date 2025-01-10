@@ -18,7 +18,7 @@ Develop a simple program that asks the user how many sides their dice has, how m
 
 ### In more details
 
-#. Your program should start by asking the user how many sides their dices has. The only valid numbers are 4, 6, 8, 10, 12 and 20.
+#. Your program should start by asking the user how many sides their dices has. The only valid values are 4, 6, 8, 10, 12 and 20.
 #. Once the user is done providing this information, it should ask how many times they intend to throw the dice. Of course, only a strictly positive number of throws is allowed.
 #. Then, your program should ask the user to enter the result of their throws, one by one, knowing that the numbers entered should be between 1 and the number of sides of their dice (both included).
 #. Once the user entered all their throws, your program should display:
