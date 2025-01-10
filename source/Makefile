@@ -547,7 +547,7 @@ $(BUILD_DIR)book.docx: $(SOURCE_BOOK)
 
 .PHONY: fetch
 fetch:
-	wget https://github.com/princomp/princomp.github.io/releases/download/latest/release.zip -P ../ && cd ../ && unzip -q release.zip && cd content && rsync -avR $(PROJECT_DIR)**.zip ../source && rsync -avR $(CLA_DIR)**.md ../source && rsync -avR $(EXO_DIR)* ../source || true
+	wget https://github.com/princomp/princomp.github.io/releases/download/latest/release.zip -P ../ && cd ../ && unzip -q release.zip && cd content && rsync -avR $(PROJECT_DIR)**.zip ../source && rsync -avR $(CLA_DIR)**.md ../source && rsync -avR $(EXO_DIR)* ../source || true && git stash
 
 book: $(BUILD_DIR)book.html $(BUILD_DIR)book.pdf $(BUILD_DIR)book.odt $(BUILD_DIR)book.docx
 
