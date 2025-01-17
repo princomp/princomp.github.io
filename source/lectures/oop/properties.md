@@ -184,7 +184,7 @@ tags:
 - It is possible to set a "custom default value" for properties using a *property initializer*, as follows:
 
     ```
-    public double Width { get; set; } = -1;
+    public double Diameter { get; set; } = -1;
     ```
     
     In this case, the property's backing field value will be -1 by default. Properties with initializer can be read-only:
@@ -210,6 +210,12 @@ tags:
     ```
     Circle.Explanation += "\nIts circumference is π multiplied by its diameter.";
     ```
+
+Putting together some of the elements discussed above, we can get for example the following:
+
+```{download="./code/projects/Circle_with_properties.zip"}
+!include code/projects/Circle_with_properties/Circle_with_properties/Circle.cs
+```
 
 ## Properties in UML Class Diagrams
 
