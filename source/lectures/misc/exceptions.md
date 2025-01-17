@@ -161,34 +161,8 @@ tags:
 	In the first case, `<statement block 3>` will *always*^[That is, unless the program crashes or loops forever.] get executed, no matter which block gets executed and even if it breaks the control flow or throws another exception.
 - For example,
 
-	```
-	static bool GuessGame(string guessP)
-    {
-        const int valueToGuess = 12;
-        try
-        {
-            int guessV = int.Parse(guessP);
-            if (guessV == valueToGuess)
-            {
-                Console.WriteLine("You guessed it!");
-                return true;
-            }
-            else
-            {
-                Console.WriteLine("Try again!");
-                return false;
-            }
-        }
-        catch (FormatException)
-        {
-            Console.WriteLine("Please, provide a string containing only numbers");
-            return false;
-        }
-        finally
-        {
-            Console.WriteLine("Thank you for playing!");
-        }
-    }
+	```{download="./code/projects/Game.zip"}
+    !include code/projects/Game/Game/Game.cs
     ```
     
     will always display "Thank you for playing!". If this last statement was *not* in the `finally` block, but was simply inserted after the `try` … `catch` statement, then this message would actually never be displayed.
