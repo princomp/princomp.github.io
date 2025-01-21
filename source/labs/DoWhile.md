@@ -22,7 +22,7 @@ Before writing code, think through the following problems:
     - using `do` is preferable over `while`?
 -->
 
-## Implementing `do` Loops -- Warm-up
+## Implementing `do` Loops, Warm-up
 
 For all the problems in this section, use a `do` loop.
 
