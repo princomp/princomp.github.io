@@ -6,11 +6,13 @@ return {
     {
         CodeBlock = function(el)
             if el.attributes.download ~= nil then
+                link = el.attributes.download
+                el.attributes.download=nil
                 return {
                     el,
                     pandoc.Link(
                         pandoc.Emph("(Download this code)"),
-                        el.attributes.download,
+                        link,
                         "Download a project containing this snippet.",
                         {class = "download-button"}
                     )
@@ -19,3 +21,4 @@ return {
         end
     }
 }
+

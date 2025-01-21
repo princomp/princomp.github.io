@@ -3,7 +3,7 @@ tags:
 - control-structures/iteratives
 ---
 
-#  `do` Loops
+# `do` Loops
 
 This lab serves multiple goals:
 
