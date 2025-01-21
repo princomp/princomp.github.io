@@ -15,7 +15,7 @@ This lab serves multiple goals:
 
 [This last part](#enriching-rectanglecs) is challenging; therefore, we provide a possible solution at the end of the page, but make sure you try to solve it by yourself beforehand.
 
-## Manipulating Two .cs Files at a Time
+## Manipulating Two cs Files at a Time
 
 #. Download [the Rectangle project](./code/projects/Rectangle.zip), extract it, and open it with your IDE.
 #. Note that in the "Solution Explorer", there are two .cs files listed: Program.cs and Rectangle.cs:
@@ -30,7 +30,7 @@ This lab serves multiple goals:
   - Introduce a syntactical error in Rectangle.cs (e.g., remove a `;`) and try to build the solution. What do you observe?  Undo the modification.
   - Add `length = 12;` in the `Main` method of Program.cs and try to build the solution. What do you observe? Undo the modification.
 
-## Enriching Program.cs
+## Enriching Program
 
 Edit Program.cs by adding a few statements at the end of its `Main` method. The statements should perform the following:
 
@@ -41,7 +41,7 @@ Edit Program.cs by adding a few statements at the end of its `Main` method. The 
 In the last part, you may notice that the length and the width of the newly created object were assigned default values.
 To know more about this, refer to [the documentation on default values of C# types](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/default-values-table).
 
-## Editing Rectangle.cs
+## Editing Rectangle
 
 Edit Rectangle.cs:
 
@@ -63,7 +63,7 @@ https://stackoverflow.com/a/17937309/
 -->
 
 
-## Enriching Rectangle.cs
+## Enriching Rectangle
 
 Taking inspiration from the `ComputeArea()` method, write three new methods:
 

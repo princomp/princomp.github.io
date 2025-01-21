@@ -1,6 +1,7 @@
 ---
 tags:
 - datatypes/numerical
+- debugging/exceptions
 ---
 
 # Exceptions
