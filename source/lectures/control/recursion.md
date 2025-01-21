@@ -102,7 +102,7 @@ This function can easily be implemented using recursion:
 
 Note that this code actually compute e.g., $5! = 5 × 4 × 3 × 2 × 1 × 1$ (with one superfluous $× 1$): can you see why?
 
-## Listing Files and Directories -- Recursively
+## Listing Files and Directories, Recursively
 
 While multiplication and factorial can be implemented without recursion, some structures makes it natural, or even required, to use recursion.
 Going through folders and files is an example of such situation.
