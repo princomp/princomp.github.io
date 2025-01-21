@@ -9,10 +9,10 @@ tags:
 
 #. In computing, what is an exception?
 
-  - [ ] A compilation error.
-  - [ ] When a program user requires a special accommodation.
-  - [x] When a behaviour not supposed to happen occurs during execution.
-  - [ ] A keyword.
+    - [ ] A compilation error.
+    - [ ] When a program user requires a special accommodation.
+    - [x] When a behaviour not supposed to happen occurs during execution.
+    - [ ] A keyword.
 
 #. When a program meets an unexpected behaviour, we say that it…
 
@@ -22,10 +22,10 @@ tags:
 
 #. An exception can occur when…
 
-  - [ ] … a user enters for example the `string` "Test" when asked for a numerical value.
-  - [ ] … a division by 0 occurs.
-  - [ ] … the program tries to access an array outside of its index range.
-  - [x] All of the above.
+    - [ ] … a user enters for example the `string` "Test" when asked for a numerical value.
+    - [ ] … a division by 0 occurs.
+    - [ ] … the program tries to access an array outside of its index range.
+    - [x] All of the above.
 
 #. A `try-catch` block…
 
