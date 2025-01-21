@@ -171,7 +171,7 @@ tags:
     ```
     </details>
 
-#. Rewrite the following `do…while` loop as a recursive method.
+#. Rewrite the following `do` loop as a recursive method.
 
     ```{download="./code/projects/RecursionAndLoops.zip"}
     !include`snippetStart="// Sum using do while",snippetEnd="// Sum using recursion"` code/projects/RecursionAndLoops/RecursionAndLoops/Program.cs

@@ -132,4 +132,4 @@ should be used only if we do not care about existing files.
 
 ### Many Things Can Go Wrong!
 
-We will not list in detail all the ways things can go wrong with manipulating files (memory shortage, access right limitations, concurrent access to a file, etc.), but **read and write access to files should always take place in `try{…}catch{…}` blocks**.
+We will not list in detail all the ways things can go wrong with manipulating files (memory shortage, access right limitations, concurrent access to a file, etc.), but **read and write access to files should always take place in `try-catch` blocks**.

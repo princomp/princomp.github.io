@@ -21,7 +21,7 @@ tags:
     - [ ] Always call the `Open` method before reading from or writing into a file.
     - [ ] Always assume the user has `C:\` as their main drive.
     - [x] Always call the `Close` method after being done reading from or writing into a file. 
-    - [ ] Never read from or write into a file inside a `try…catch` block.
+    - [ ] Never read from or write into a file inside a `try-catch` block.
 
 ## Problems
 

@@ -35,9 +35,9 @@ tags:
 - C# allows *exception handling*, which are ways of recovering when such exceptions are thrown, so that the program can keep on executing. Stated differently, they instruct the program what to do, for example, if it is asked to perform a division by 0. This is handled by `catch` blocks.
 - C# also allows `finally` block, which contain code executed unconditionally, that is, regardless of if the exception was thrown or not.
 
-## Syntax and Rules for `try`…`catch`…`finally` Statements
+## Syntax and Rules for `try-catch-finally` Statements
 
-- In a first approximation, the syntax of a `try`…`catch`…`finally` statement is as follows:
+- In a first approximation, the syntax of a `try-catch-finally` statement is as follows:
 
 	```
 	try{
