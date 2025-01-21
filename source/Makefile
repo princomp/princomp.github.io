@@ -368,7 +368,7 @@ $(EXO_DIR)%.md: $(SOL_DIR)%.md
 # Refer to sortFn.ts and web-order.ts
 # in the quartz branch for more info
 $(BUILD_DIR)web-order.ts: order
-	mkdir -p $(dir $@)
+	@mkdir -p $(dir $@)
 	@echo -n "// This file was generated automatically by calling make web-order.ts.\n// Refer to the Makefile to read indications on how to generate and edit it.\nexport const nameOrderMap: Record<string, number> = {\n" > $@
 	@n=0 ;
 	@while read -r line; do \
@@ -460,8 +460,8 @@ tidy:
 
 # Rule to copy one individual project as a zip file:
 $(BUILD_DIR)$(PROJECT_DIR)%.zip: $(PROJECT_DIR)%.zip
-	mkdir -p $(dir $@) 
-	rsync -av $(subst $(BUILD_DIR),,$@) $@
+	@mkdir -p $(dir $@)
+	@rsync -av $(subst $(BUILD_DIR),,$@) $@
 
 # Rule to create one individual project and zip it:
 # The code below is taken from and documented at 
