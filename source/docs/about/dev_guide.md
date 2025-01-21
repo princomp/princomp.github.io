@@ -484,6 +484,14 @@ which will fetch the [latest build output](#build-outputs), extract it and popul
 Due to [make's unique feature](https://makefiletutorial.com/) only the files whose source was edited will be re-created when executing `make all` the next time, hence saving *a lot* of time.
 However, please not that files moved or deleted will still be present in the build.
 
+#### Debugging error messages
+
+Debugging the errors returned by makefile can be tricky at times, but you can save the messages returned in a `log.txt` file using e.g.,
+
+```bash
+make -l 2.5 -j$(nproc --ignore=2) all > log.txt 2>&1
+```
+
 ## Website
 
 ### Editing the website
