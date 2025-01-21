@@ -12,7 +12,7 @@ This lab serves multiple goals:
 - To iterate over arrays,
 - To use the `Length` property of array,
 
-## Declaration, Assignment & Initialization of an Array
+## Declaration, Assignment and Initialization of an Array
 
 ### Warm-up
 
