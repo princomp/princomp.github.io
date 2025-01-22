@@ -71,7 +71,9 @@ jobs:
         draft: false
         files: content/release.zip
     - name: Switching to quartz 🪴
-      run: git checkout quartz # <- This part is a bit tricky. We built the content/ folder previously, and since it is not tracked by github, this folder stays even if we change branch.
+      run: |
+            git stash
+            git checkout quartz # <- This part is a bit tricky. We built the content/ folder previously, and since it is not tracked by github, this folder stays even if we change branch.
       # If we had two different workflow, we would need to re-download the package created previously before being able to deploy the website.
     - name: Install Dependencies
       run: npm ci
