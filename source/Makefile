@@ -191,9 +191,10 @@ METADATA_FILE = $(TEMPLATES)meta.yaml
 
 ## Options for all output formats
 PANDOC_OPTIONS = --lua-filter $(FIL_TEMPLATES)add-links-to-projects.lua\
---filter pandoc-include -f markdown+emoji \
+-f markdown+emoji \
 --strip-comments --email-obfuscation=references \
 -M default-code-class=csharp \
+--filter pandoc-include \
 -M date="$$(git log -1 --format=%cd --date=short -- $<)"
 
 # Potentially, to have some kind of alternate callouts:
@@ -201,7 +202,7 @@ PANDOC_OPTIONS = --lua-filter $(FIL_TEMPLATES)add-links-to-projects.lua\
 
 ## MD build options
 PANDOC_MD = $(PANDOC_OPTIONS) --standalone --lua-filter $(FIL_TEMPLATES)default-code-class-block.lua \
---shift-heading-level-by=-1 --to commonmark_x+pipe_tables+tex_math_dollars+emoji \
+--shift-heading-level-by=-1 --to commonmark_x+pipe_tables+emoji \
 --default-image-extension=svg
 # -s/--standalone is required to save the metadata block.
 

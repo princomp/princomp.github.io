@@ -51,7 +51,7 @@ tags:
 	```
 
     - Determine which input would the user needs to enter to get "IndexOutOfRangeException", "DivideByZeroException", "FormatException" and "ArgumentNullException" displayed.
-    - Is there something the user could enter that would _not_ raises any exception?
+    - Is there something the user could enter that would _not_ raise any exception?
 
 <details><summary>Solution</summary>
 
