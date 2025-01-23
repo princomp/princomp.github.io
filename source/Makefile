@@ -221,7 +221,7 @@ PANDOC_PDF:= $(PANDOC_OPTIONS_ALT) --toc -V links-as-notes --default-image-exten
 PANDOC_ODT:= $(PANDOC_OPTIONS_ALT) --default-image-extension=svg --reference-doc=$(ODT_TEMPLATES)custom-reference.odt
 
 # DOCX build options
-PANDOC_DOC:= $(PANDOC_OPTIONS_ALT) --default-image-extension=svg 
+PANDOC_DOC:= $(PANDOC_OPTIONS_ALT) --default-image-extension=svg
 # --reference-doc=$(DOCX_TEMPLATES)custom-reference.docx
 
 # Book build options
@@ -315,7 +315,6 @@ $(CLA_DIR)%.md: $(CLA_DIR)%.txt
 # Using tr (which doesn't support in-file edit, so we use a temp file).
 	@echo "Creating $@"
 	@export MERMAID_FILTER_CAPTION="A UML diagram for the $$(sed 's-class \(.*\){-\1-g' $< | sed 's/<|--/⇽/' | sed 's/<|../◁┈/' | sed -n '1p' ) class ([text version](./$<))" \
-	&& export MERMAID_FILTER_FORMAT=svg \
 	&& pandoc -F mermaid-filter $(CLA_TEMPLATES)before.md $< $(CLA_TEMPLATES)after.md -o $@ \
 	&& sed -i 's-\\\[-[-g' $@ && sed -i 's-\\\]-]-g' $@ \
 	&& sed -i 's-"fig:")--g' $@ \
