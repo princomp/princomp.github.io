@@ -309,6 +309,9 @@ $(CLA_DIR)%.md: $(CLA_DIR)%.txt
 # This comes from .mermaid-config.json, that disables html escaping to 
 # produce correct svg files with text. Cf.
 # https://github.com/mermaid-js/mermaid-cli/issues/112
+# Note that svg was abandoned to move to png to solve
+# https://github.com/princomp/princomp.github.io/issues/48
+# but this option remained, "just in case".
 # 4. We remove the "fig:" caption, and the closing parenthesis.
 # 5. We add the content of the $< file to become the new alt. text for the image.
 # 6. We remove all the new lines introduced by the previous operations,
