@@ -31,7 +31,7 @@ Your class should allow users to track the book title, total page number, and th
 
     The title *must* be implemented using automatic properties.
 
-#. The current page *must be* less than the total number of pages: if at any point during creation or later modification the current page were to become strictly larger than the total number of pages, your class should throw an exception.
+#. The current page *must be* less than the total number of pages: if at any point during creation or later modification the current page was to become strictly larger than the total number of pages, your class should throw an exception.
 #. The total number of pages *must be* strictly positive, but the current page can be positive (0 would be an acceptable value: it means the reader has not started yet).
 #. Finally, your class should have two methods,
 
@@ -106,7 +106,4 @@ Note that it is ok if you cannot reproduce this output *exactly*.
 
 ## Bonuses
 
-- Implement a method to display the values and the description nicely.
-- Implement a method to display the values *converted to Celcius* nicely.
-- Accept arrays sorted in increasing *or* decreasing order. That is, the array `3.5, -10, -15` should be accepted.
-- Implement a method (or property) to compute [the mode](https://en.wikipedia.org/wiki/Mode_(statistics)) of the temperatures. Note that the mode is not always unique: in that case, an exception should be raised.
+- Have your `Main` method ask the user *how many books they want to track* and create that number of objects,
