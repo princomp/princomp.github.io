@@ -33,10 +33,11 @@ Your class should allow users to track the book title, total page number, and th
 
 #. The current page *must be* less than the total number of pages: if at any point during creation or later modification the current page was to become strictly larger than the total number of pages, your class should throw an exception.
 #. The total number of pages *must be* strictly positive, but the current page can be positive (0 would be an acceptable value: it means the reader has not started yet).
-#. Finally, your class should have two methods,
+#. Finally, your class should have three methods,
 
-    - a `ToString` method that displays, in percentage, how much of the book was read, and how much of the book is left,
-    - one to increment the number of page read by its argument.
+    - a costructor that takes three arguments (one for the title, one for the total number of pages, and one for the current page),
+    - a `ToString` method that returns a `string` containing the title, how much of the book was read, and how much of the book is left (the last two in percentage),
+    - a method to increment the number of page read by its argument.
 
 ## Submission
 
@@ -46,6 +47,15 @@ In particular, make sure you write your name and the date in a delimited comment
 ## Example
 
 Remember that *you* have to develop a `Program.cs` `Main` method that will test your class.
+It will probably contains something along the lines of
+
+```
+Bookmarker book1 = new Bookmarker(title, tPages, cPages);
+Console.WriteLine(book1);
+```
+
+to create the `Bookmarker` object with data given by the user, and to display the object created.
+
 Executing your program with a properly implemented `Bookmarker` class should give something along the lines of:
 
 ```text
