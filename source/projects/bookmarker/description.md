@@ -65,7 +65,9 @@ You have 51,00% to go!
 Press any key to continue...
 ```
 
-If the user enters incorrect data, then the error should be thrown when the object is created (do *not* perform user-input validation in the `Main` method: incorrect data should be handled *by the class*, not by the `Main` method):
+If the user enters incorrect data, then the error should be thrown when the object is created (do *not* perform user-input validation in the `Main` method: incorrect data should be handled *by the class*, not by the `Main` method).
+
+For example, if the user enters a _negative_ number of pages, you should get:
 
 
 ```text
@@ -78,6 +80,9 @@ Enter the page you stopped your reading at.
 The total number of pages cannot be negative.
 ```
 
+If the user enters a current page that is greater than the number of pages, you should get:
+
+
 ```text
 Enter the title of the book.
 T͟e͟s͟t͟3͟⏎͟ ͟
@@ -87,6 +92,8 @@ Enter the page you stopped your reading at.
 3͟0͟⏎͟
 You cannot have read more than the total number of pages!
 ```
+
+If the user try to go "above" the total number of page, you should get:
 
 ```text
 Enter the title of the book.
@@ -102,8 +109,22 @@ How many pages did you read?
 You cannot have read more than the total number of pages!
 ```
 
+Last but not least (even if this is optional), if the user enters `string`s that are not numbers, _your class_ (and not the `Main` method) should throw an exception:
+
+```text
+Enter the title of the book.
+T͟e͟s͟t͟5͟⏎͟
+Enter the total number of pages.
+T͟e͟s͟t͟6͟⏎͟
+Enter the page you stopped your reading at.
+T͟e͟s͟t͟7͟⏎͟
+Input string was not in a correct format.
+```
+
 Note that it is ok if you cannot reproduce this output *exactly*.
 
 ## Bonuses
 
+- Have your class handle `string`s, so that, for example, your `Bookmarker` constructor would take _three strings as input_,
 - Have your `Main` method ask the user *how many books they want to track* and create that number of objects,
+- Implement a _static_ ISBN-13 checker: your method should take as input a `string` representing an ISBN-13, and returns `true` if it is valid. Consult on [wikipedia](https://en.wikipedia.org/wiki/ISBN#ISBN-13_check_digit_calculation) how a ISBN is determined to be valid, and try your best!
