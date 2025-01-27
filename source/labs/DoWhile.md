@@ -3,40 +3,40 @@ tags:
 - control-structures/iteratives
 ---
 
-#  do…while Loops
+# `do` Loops
 
 This lab serves multiple goals:
 
-- To reinforce your understanding of the syntax of `do…while` loops,
-- To stress the differences between `while` and `do…while` loops, and
-- (Optional) To use a `do…while` loop to solve a simple problem.
+- To reinforce your understanding of the syntax of `do` loops,
+- To stress the differences between `while` and `do` loops, and
+- (Optional) To use a `do` loop to solve a simple problem.
 
 <!--
-## do … while Loops
+## do Loops
 
 Before writing code, think through the following problems:
 
-- In your own words, what is the difference between `while` and `do…while` loops?
+- In your own words, what is the difference between `while` and `do` loops?
 - Can you think of a problem where
-    - using `while` is preferable over `do…while`?
-    - using `do…while` is preferable over `while`?
+    - using `while` is preferable over `do`?
+    - using `do` is preferable over `while`?
 -->
 
-## Implementing `do…while` Loops -- Warm-up
+## Implementing `do` Loops, Warm-up
 
-For all the problems in this section, use a `do…while` loop.
+For all the problems in this section, use a `do` loop.
 
 #. Write a program that displays the numbers 0 to 50.
 #. Write a program that displays the numbers 30 to -20.
-#. Write a `do…while` loop that generates this output:
+#. Write a `do` loop that generates this output:
 
     ```text
     1 10 100 1000 10000 100000 1000000
     ```
 
-## User Input Validation using `do…while` Loops
+## User Input Validation using `do` Loops
 
-In the following problem, implement a program combining a `do…while` loop with user input that satisfies the following requirements:
+In the following problem, implement a program combining a `do` loop with user input that satisfies the following requirements:
 
 #. Ask the user to enter an integer between (and including) 0 and 100.
 #. If the value provided by the user is not in this range, the program should repeat the question.
@@ -58,7 +58,7 @@ Enter an integer between 0 and 100:
 You entered 42.
 ```
 
-## Comparing `while` and `do…while` loops
+## Comparing `while` and `do` loops
 
 Consider the program given below that has been implemented using a `while` loop:
 
@@ -79,14 +79,14 @@ while(!flag)
 Console.WriteLine($"The number you entered is {n}");
 ```
 
-#. Convert the program to an equivalent version that uses a `do…while` loop.
-#. Test the `do…while` version with different inputs to ensure the behavior is the same and that the program does not crash with an error. For example, you should try:
+#. Convert the program to an equivalent version that uses a `do` loop.
+#. Test the `do` version with different inputs to ensure the behavior is the same and that the program does not crash with an error. For example, you should try:
     - alphabetic input (e.g., "Train") which would be invalid,
     - floating point numbers (e.g., "12.5") which would be invalid,
     - negative integers (e.g., "-12") which would be valid,
     - positive integers (e.g., "10") which would be valid, and 
     - the number 0 which would be valid.
-#. Compare the `while` and `do…while` implementations: which one is better, in your opinion, and why?
+#. Compare the `while` and `do` implementations: which one is better, in your opinion, and why?
 
 
 ## Pushing Further (Optional)
@@ -102,7 +102,7 @@ A possible solution is given below.
 
 <details><summary>Solution:</summary>
 
-A possible solution, using `do…while` is:
+A possible solution, using `do` is:
 
 ```
 int temp = 0;

@@ -1,4 +1,4 @@
-###################################################### 
+######################################################
 # Welcome, source code reader!                       #
 # In general, refer to                               #
 # https://princomp.github.io/docs/about/dev_guide    #
@@ -191,9 +191,10 @@ METADATA_FILE = $(TEMPLATES)meta.yaml
 
 ## Options for all output formats
 PANDOC_OPTIONS = --lua-filter $(FIL_TEMPLATES)add-links-to-projects.lua\
---filter pandoc-include -f markdown+emoji \
+-f markdown+emoji \
 --strip-comments --email-obfuscation=references \
 -M default-code-class=csharp \
+--filter pandoc-include \
 -M date="$$(git log -1 --format=%cd --date=short -- $<)"
 
 # Potentially, to have some kind of alternate callouts:
@@ -201,7 +202,8 @@ PANDOC_OPTIONS = --lua-filter $(FIL_TEMPLATES)add-links-to-projects.lua\
 
 ## MD build options
 PANDOC_MD = $(PANDOC_OPTIONS) --standalone --lua-filter $(FIL_TEMPLATES)default-code-class-block.lua \
---shift-heading-level-by=-1 --to commonmark_x+pipe_tables+tex_math_dollars+emoji --default-image-extension=svg
+--shift-heading-level-by=-1 --to commonmark_x+pipe_tables+emoji \
+--default-image-extension=svg
 # -s/--standalone is required to save the metadata block.
 
 ## Alternative formats options.
@@ -219,7 +221,7 @@ PANDOC_PDF:= $(PANDOC_OPTIONS_ALT) --toc -V links-as-notes --default-image-exten
 PANDOC_ODT:= $(PANDOC_OPTIONS_ALT) --default-image-extension=svg --reference-doc=$(ODT_TEMPLATES)custom-reference.odt
 
 # DOCX build options
-PANDOC_DOC:= $(PANDOC_OPTIONS_ALT) --default-image-extension=svg 
+PANDOC_DOC:= $(PANDOC_OPTIONS_ALT) --default-image-extension=svg
 # --reference-doc=$(DOCX_TEMPLATES)custom-reference.docx
 
 # Book build options
@@ -307,13 +309,15 @@ $(CLA_DIR)%.md: $(CLA_DIR)%.txt
 # This comes from .mermaid-config.json, that disables html escaping to 
 # produce correct svg files with text. Cf.
 # https://github.com/mermaid-js/mermaid-cli/issues/112
+# Note that svg was abandoned to move to png to solve
+# https://github.com/princomp/princomp.github.io/issues/48
+# but this option remained, "just in case".
 # 4. We remove the "fig:" caption, and the closing parenthesis.
 # 5. We add the content of the $< file to become the new alt. text for the image.
 # 6. We remove all the new lines introduced by the previous operations,
 # Using tr (which doesn't support in-file edit, so we use a temp file).
 	@echo "Creating $@"
 	@export MERMAID_FILTER_CAPTION="A UML diagram for the $$(sed 's-class \(.*\){-\1-g' $< | sed 's/<|--/⇽/' | sed 's/<|../◁┈/' | sed -n '1p' ) class ([text version](./$<))" \
-	&& export MERMAID_FILTER_FORMAT=svg \
 	&& pandoc -F mermaid-filter $(CLA_TEMPLATES)before.md $< $(CLA_TEMPLATES)after.md -o $@ \
 	&& sed -i 's-\\\[-[-g' $@ && sed -i 's-\\\]-]-g' $@ \
 	&& sed -i 's-"fig:")--g' $@ \
@@ -367,7 +371,7 @@ $(EXO_DIR)%.md: $(SOL_DIR)%.md
 # Refer to sortFn.ts and web-order.ts
 # in the quartz branch for more info
 $(BUILD_DIR)web-order.ts: order
-	mkdir -p $(dir $@)
+	@mkdir -p $(dir $@)
 	@echo -n "// This file was generated automatically by calling make web-order.ts.\n// Refer to the Makefile to read indications on how to generate and edit it.\nexport const nameOrderMap: Record<string, number> = {\n" > $@
 	@n=0 ;
 	@while read -r line; do \
@@ -459,8 +463,8 @@ tidy:
 
 # Rule to copy one individual project as a zip file:
 $(BUILD_DIR)$(PROJECT_DIR)%.zip: $(PROJECT_DIR)%.zip
-	mkdir -p $(dir $@) 
-	rsync -av $(subst $(BUILD_DIR),,$@) $@
+	@mkdir -p $(dir $@)
+	@rsync -av $(subst $(BUILD_DIR),,$@) $@
 
 # Rule to create one individual project and zip it:
 # The code below is taken from and documented at 
@@ -483,10 +487,10 @@ $(PROJECT_DIR)%.zip: $(PROJECT_DIR)%/*/Program.cs | $(PROJECT_DIR)/%/*/*.cs
 # cat $< | grep -oP '^\s*(public |private )?class \K.*' # name of the class in Program.cs
 #
 # We start by creating the required Properties directory:
-	mkdir -p $(dir $<)Properties 
+	@mkdir -p $(dir $<)Properties
 #  We create the .sln file,
 #  The new lines have to be escaped with \n:
-	(printf '\nMicrosoft Visual Studio Solution File, Format Version 12.00\n# Visual Studio 14\nVisualStudioVersion = 14.0.25420.1\nMinimumVisualStudioVersion = 10.0.40219.1\nProject("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "$(notdir $(patsubst %/,%,$(dir $<)))", "$(notdir $(patsubst %/,%,$(dir $<)))\\$(notdir $(patsubst %/,%,$(dir $<))).csproj", "{C579075D-4630-47FA-9BE4-0E3E51DDFEA5}"\nEndProject\nGlobal\n	GlobalSection(SolutionConfigurationPlatforms) = preSolution\n		Debug|Any CPU = Debug|Any CPU\n		Release|Any CPU = Release|Any CPU\n	EndGlobalSection\n	GlobalSection(ProjectConfigurationPlatforms) = postSolution\n		{C579075D-4630-47FA-9BE4-0E3E51DDFEA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU\n		{C579075D-4630-47FA-9BE4-0E3E51DDFEA5}.Debug|Any CPU.Build.0 = Debug|Any CPU\n		{C579075D-4630-47FA-9BE4-0E3E51DDFEA5}.Release|Any CPU.ActiveCfg = Release|Any CPU\n		{C579075D-4630-47FA-9BE4-0E3E51DDFEA5}.Release|Any CPU.Build.0 = Release|Any CPU\n	EndGlobalSection\n	GlobalSection(SolutionProperties) = preSolution\n		HideSolutionNode = FALSE\n	EndGlobalSection\nEndGlobal\n') > $(dir $(patsubst %/,%,$(dir $<)))/$(notdir $*).sln
+	@(printf '\nMicrosoft Visual Studio Solution File, Format Version 12.00\n# Visual Studio 14\nVisualStudioVersion = 14.0.25420.1\nMinimumVisualStudioVersion = 10.0.40219.1\nProject("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "$(notdir $(patsubst %/,%,$(dir $<)))", "$(notdir $(patsubst %/,%,$(dir $<)))\\$(notdir $(patsubst %/,%,$(dir $<))).csproj", "{C579075D-4630-47FA-9BE4-0E3E51DDFEA5}"\nEndProject\nGlobal\n	GlobalSection(SolutionConfigurationPlatforms) = preSolution\n		Debug|Any CPU = Debug|Any CPU\n		Release|Any CPU = Release|Any CPU\n	EndGlobalSection\n	GlobalSection(ProjectConfigurationPlatforms) = postSolution\n		{C579075D-4630-47FA-9BE4-0E3E51DDFEA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU\n		{C579075D-4630-47FA-9BE4-0E3E51DDFEA5}.Debug|Any CPU.Build.0 = Debug|Any CPU\n		{C579075D-4630-47FA-9BE4-0E3E51DDFEA5}.Release|Any CPU.ActiveCfg = Release|Any CPU\n		{C579075D-4630-47FA-9BE4-0E3E51DDFEA5}.Release|Any CPU.Build.0 = Release|Any CPU\n	EndGlobalSection\n	GlobalSection(SolutionProperties) = preSolution\n		HideSolutionNode = FALSE\n	EndGlobalSection\nEndGlobal\n') > $(dir $(patsubst %/,%,$(dir $<)))/$(notdir $*).sln
 #  We create the .csproj file.
 #  New lines are escaped as \n
 #  Single quotes are escaped as '\''
@@ -519,9 +523,9 @@ $(PROJECT_DIR)%.zip: $(PROJECT_DIR)%/*/Program.cs | $(PROJECT_DIR)/%/*/*.cs
 	done;  \
 	(printf  '\t<Compile Include="Properties\AssemblyInfo.cs" />\n  </ItemGroup>\n  <Import Project="$$(MSBuildToolsPath)\Microsoft.CSharp.targets" />\n</Project>\n') >> $(dir $<)$(notdir $(patsubst %/,%,$(dir $<))).csproj \
 #  We create the Properties\AssemblyInfo.cs file.
-	(printf 'using System.Reflection;\nusing System.Runtime.InteropServices;\n[assembly: AssemblyTitle("'$$(notdir $*)'=")]\n[assembly: AssemblyCompany("Augusta University")]\n[assembly: AssemblyCopyright("Copyright ©  2018")]\n[assembly: AssemblyVersion("1.0.0.0")]\n[assembly: AssemblyFileVersion("1.0.0.0")]\n') > $(dir $<)Properties/AssemblyInfo.cs
+	@touch $(dir $<)Properties/AssemblyInfo.cs
 #  Finally, we can zip the folder:
-	cd $(dir $(patsubst %/,%,$(dir $<)))../ && 7z a $(notdir $@) $(notdir $*)  -xr\!.vs -xr\!.directory
+	@cd $(dir $(patsubst %/,%,$(dir $<)))../ && 7z a $(notdir $@) $(notdir $*) -xr\!.vs -xr\!.directory > nul
 #  We compress the folder containing the sln and the folder containing the csproj and the code
 #  But we exclude the .vs folder and .directory file
 

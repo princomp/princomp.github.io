@@ -135,11 +135,66 @@ Resources to assess accessibility:
 Text documents are written using [standard markdown syntax](https://commonmark.org/).
 More precisely, 
 
-- in the `commonmark+pipe_tables+tex_math_dollars+emoji` format, that is, [in commonmark's markdown](https://pandoc.org/MANUAL.html#markdown-variants), using (among others) the [emoji](https://pandoc.org/MANUAL.html#extension-emoji) [extension](https://pandoc.org/MANUAL.html#extensions)),
+- in the `commonmark_x+pipe_tables+emoji` format, that is, [in commonmark's markdown ("with many pandoc extensions")](https://pandoc.org/MANUAL.html#markdown-variants), using (among others) the [emoji](https://pandoc.org/MANUAL.html#extension-emoji) and [pipe_tables](https://pandoc.org/MANUAL.html#extension-pipe_tables) [extensions](https://pandoc.org/MANUAL.html#extensions)),
 - using the [pandoc-include](https://github.com/DCsunset/pandoc-include) filter,
 - and using [custom](https://github.com/princomp/princomp.github.io/tree/main/source/templates/filters) filters that sets all the [code blocks](https://github.com/princomp/princomp.github.io/blob/main/source/templates/filters/default-code-class-block.lua), or [all the code block and inline code](https://github.com/princomp/princomp.github.io/blob/main/source/templates/filters/default-code-class-block-inline.lua)'s syntax highlighting to C# by default.
 
 Because of the way the markdown is processed, please refrain from using the `“` and `”` characters: pandoc will automatically convert `"` into language-appropriate quotes for us.
+
+##### Callouts
+
+As discussed [in this issue](https://github.com/princomp/princomp.github.io/issues/2), [callouts (a.k.a. alerts)](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts) are not fully supported by pandoc, so a workaround is to use instead the following syntax:
+
+```text
+| ⚠ Warning       |
+|:---------------------------|
+| A warning |
+```
+
+```text
+| 💡 Tip       |
+|:---------------------------|
+| A tip |
+```
+
+```text
+| ❗Important     |
+|:---------------------------|
+| Something important |
+```
+
+which are rendered as
+
+
+| ⚠ Warning       |
+|:---------------------------|
+| A warning |
+
+| 💡 Tip       |
+|:---------------------------|
+| A tip |
+
+| ❗Important     |
+|:---------------------------|
+| Something important |
+
+
+<!--
+> [!NOTE]
+> Useful information that users should know, even when skimming content.
+
+> [!TIP]
+> Helpful advice for doing things better or more easily.
+
+> [!IMPORTANT]
+> Key information users need to know to achieve their goal.
+
+> [!WARNING]
+> Urgent info that needs immediate user attention to avoid problems.
+
+> [!CAUTION]
+> Advises about risks or negative outcomes of certain actions.
+-->
 
 #### Images
 
@@ -483,6 +538,14 @@ make fetch
 which will fetch the [latest build output](#build-outputs), extract it and populate the `content/` folder using its content.
 Due to [make's unique feature](https://makefiletutorial.com/) only the files whose source was edited will be re-created when executing `make all` the next time, hence saving *a lot* of time.
 However, please not that files moved or deleted will still be present in the build.
+
+#### Debugging error messages
+
+Debugging the errors returned by makefile can be tricky at times, but you can save the messages returned in a `log.txt` file using e.g.,
+
+```bash
+make -l 2.5 -j$(nproc --ignore=2) all > log.txt 2>&1
+```
 
 ## Website
 

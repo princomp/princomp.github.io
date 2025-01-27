@@ -17,21 +17,19 @@ This lab serves multiple goals:
 - To explain how to explore C# documentation,
 - To explore new useful IDE features.
 
-## Your First Program
+## Editing Existing Program
 
-### Editing Existing Program
-
-#### Reusing and Editing
+### Reusing and Editing
 
 #. Download [InitialSolution.zip](./code/projects/InitialSolution.zip) and save it onto your computer.
 
 #. Unzip the program file. You can refer to [our small guide on manipulating archives](./docs/programming_and_computer_usage/unzipping_archives#unzipping-files). *Be careful* as some file explorers will simply _preview_ the (zip) archive if you simply double-click on it, but most IDEs will not accept a file if it has not been actually extracted / unzipped!
 
-#### Renaming
+### Renaming
 
 Open the `InitialSolution` file that you just extracted in your IDE.
 
-##### Renaming the Solution
+#### Renaming the Solution
 
 Use your IDE to rename this _solution_:
 
@@ -45,7 +43,7 @@ Use your IDE to rename this _solution_:
 
 Renaming C# project files requires more than simply changing a file name. By using an IDE to perform the renaming, all references to the name will be updated.
 
-##### Renaming the Project
+#### Renaming the Project
 
 Next use your IDE to rename the _project_:
 
@@ -55,7 +53,7 @@ Next use your IDE to rename the _project_:
 #. Can you still build and debug your program?
 #. Look in your file system where you unzipped the solution earlier. Did the name of the project directory change? Did the name of the `.csproj` file change?
 
-#### Editing
+### Editing
 
 We will now change (edit) our `EditedSolution` solution.
 
@@ -110,11 +108,11 @@ We will now change (edit) our `EditedSolution` solution.
 Make a back up of what you just did. Upload `EditedSolution` to your remote backup, or copy it onto your thumb drive. After saving the backup, close your IDE and make sure you can still open the solution.
 Redownloading and reopening solutions is a good way of making sure that your backup is correct.
 
-### Creating Your First New Project
+## Creating Your First New Project
 
 This time you will not be given a project to load or to copy. You will start from scratch. If your IDE is currently open, exit your IDE application. Next, create a new folder for this lab in your file explorer or backup directory. 
 
-#### Starting from a Template
+### Starting from a Template
 
 We will first create a new C# project using the template for a "Console App" (we give first a general guidance, and then some details that are specific to particular IDE / operating systems combinations):
 
@@ -134,11 +132,11 @@ We will first create a new C# project using the template for a "Console App" (we
 
 Make sure you review the information in the following section that are relevant for you, and then answer the question in [the last section](#questions).
 
-##### Picking the Right Framework and Other Specificities 
+#### Picking the Right Framework and Other Specificities
 
 Interfaces change, and writing a "universal guide" is not an easy task, so we include some additional indications for specific IDE / operating system below:.
 
-###### For Visual Studio on Windows
+##### For Visual Studio on Windows
 
 You may see multiple options for a framework (.Net Framework or .NET Core), and you can choose either as it does not make a difference for this class. **However**, you should make sure that you pick a .NET version strictly less than 6 (ex. NET 5.0) if possible.
 
@@ -151,7 +149,7 @@ When selecting the framework, make sure you are using .NET 5.0 or lower.
 
 ![](./img/select_net.png)
 
-###### For Visual Studio on macOS
+##### For Visual Studio on macOS
 
 On macOS, follow this method:
 
@@ -163,7 +161,7 @@ Finally, make sure you enter the location, project name and solution name correc
 ![](./img/create_project_on_mac_4.png)
 
 
-###### For Monodevelop
+##### For Monodevelop
 
 After clicking on `File > New Solution`, you will be prompted with a screen similar to this one:
 
@@ -172,7 +170,7 @@ After clicking on `File > New Solution`, you will be prompted with a screen simi
 Under ".NET Core", pick the "App" category, and then click on "Console Application" under "General". 
 Make sure you pick the C# programming language.
 
-##### Questions 
+#### Questions
 
 Once your project was created, answer the following:
  
@@ -184,7 +182,7 @@ Once your project was created, answer the following:
 
 #. Execute `MyFirstSolution`. What happened? Compare what happened to what happened when you executed the `EditedSolution` project.
 
-#### Editing the Template
+### Editing the Template
 
 Now you will start writing your own code. We'll start by writing a very familiar instruction to display a message on the screen.
 
@@ -211,7 +209,7 @@ Now you will start writing your own code. We'll start by writing a very familiar
 #. Once you can compile your program without errors, execute it.
 #. Make a backup of your project.
 
-### Exploring the Documentation
+## Exploring the Documentation
 
 The documentation for C# is packed with useful information, and efforts are made to make it accessible to beginners. The goal of this exercise is to help you realize that it contains answers to questions that you may have asked yourself like "what is a solution?" or "what does the `namespace` keyword do?"
 
@@ -223,7 +221,7 @@ The documentation for C# is at <https://docs.microsoft.com/en-us/dotnet/csharp/>
 
  C# programs often use namespaces as a way of organizing large code projects, and your IDE may create a `namespace` when you create a new program. Read the page at <https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/namespaces/>. Do you know an example of a namespace that we have used?
 
-### More About Displaying Characters on the Screen
+## More About Displaying Characters on the Screen
 
 #. Create a new project.
 #. Edit the `Main` method so that when compiled and executed, your program displays the following on the screen:

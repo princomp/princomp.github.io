@@ -1,6 +1,7 @@
 ---
 tags:
 - datatypes/numerical
+- debugging/exceptions
 ---
 
 # Exceptions
@@ -35,9 +36,9 @@ tags:
 - C# allows *exception handling*, which are ways of recovering when such exceptions are thrown, so that the program can keep on executing. Stated differently, they instruct the program what to do, for example, if it is asked to perform a division by 0. This is handled by `catch` blocks.
 - C# also allows `finally` block, which contain code executed unconditionally, that is, regardless of if the exception was thrown or not.
 
-## Syntax and Rules for `try`…`catch`…`finally` Statements
+## Syntax and Rules for `try-catch-finally` Statements
 
-- In a first approximation, the syntax of a `try`…`catch`…`finally` statement is as follows:
+- In a first approximation, the syntax of a `try-catch-finally` statement is as follows:
 
 	```
 	try{
@@ -165,11 +166,11 @@ tags:
     !include code/projects/Game/Game/Game.cs
     ```
     
-    will always display "Thank you for playing!". If this last statement was *not* in the `finally` block, but was simply inserted after the `try` … `catch` statement, then this message would actually never be displayed.
+    will always display "Thank you for playing!". If this last statement was *not* in the `finally` block, but was simply inserted after the `try-catch` statement, then this message would actually never be displayed.
 
-## Scoping in `try` … `catch`… `finally` Statements
+## Scoping in `try-catch-finally` Statements
 
-- Understanding the scope of statements in `try` … `catch`… `finally` statements can be tricky.
+- Understanding the scope of statements in `try-catch-finally` statements can be tricky.
 - The general rules are:
 	- Variables declared in `try`, `catch` or `finally` blocks will not be accessible outside of them,
 	- Variables whose value are set in the `try` block will keep the value they had when the `try` block threw an exception.
@@ -204,7 +205,7 @@ tags:
 	- The variable `x` would not be accessible to the `catch` or `finally` blocks.
 	- If we were to remove the `zero = 0;` statement, then the program would display "The variable holds 2.".
 
-## When To Use `try` … `catch` and When To Use `TryParse`?
+## When To Use `try-catch` and When To Use `TryParse`?
 
 - If something goes wrong in a method, that method can either return some error code or throw an exception.
 - Returning an error code means possibly cluttering the signature of the method with some extra parameters, as in the `TryParse` methods.
@@ -248,7 +249,7 @@ tags:
     ```
     !include code/projects/Properties_Exception/Circle/Circle.cs
     ```
-- To use this class properly, every time the `Diameter` value is set (using the set accessor, possibly *via* the constructor), a `try` … `catch` statement should be used to handle a possible exception, with possibly a loop around it, as follows:
+- To use this class properly, every time the `Diameter` value is set (using the set accessor, possibly *via* the constructor), a `try-catch` statement should be used to handle a possible exception, with possibly a loop around it, as follows:
 
 	```
     !include code/projects/Properties_Exception/Circle/Program.cs

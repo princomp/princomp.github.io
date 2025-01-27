@@ -21,8 +21,8 @@ This type of "branching" between multiple choices can be represented with an [ac
 
 In C#, we will express
 
-- repetition (or "loops") ("As long as there are questions…") with the `while`, `do…while` and `for` keywords,
-- branching ("If there is a quiz…") with the `if`, `if…else` and `switch` keywords.
+- repetition (or "loops") ("As long as there are questions…") with the `while`, `do` and `for` keywords,
+- branching ("If there is a quiz…") with the `if`, `if-else` and `switch` keywords.
 
 Both structures need a datatype to express the result of a decision ("Is it _true_ that there are questions.", or "Is it _false_ that there is a quiz.") called Booleans.
 Boolean values can be set with conditions, that can be composed in different ways using three operators ("and", "or" and "not").  For example, "If today is a Monday or Wednesday, and it is not past 10:10 am, the class will also include a brief reminder about the upcoming exam."

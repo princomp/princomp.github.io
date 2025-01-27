@@ -69,6 +69,8 @@
 ./exercises/
 ./exercises/classes/
 ./exercises/classes/references.md
+./exercises/misc/
+./exercises/misc/exceptions.md
 ./exercises/io/
 ./exercises/io/files.md
 ./exercises/collections/
@@ -82,5 +84,6 @@
 ./projects/todo_list/
 ./projects/throw_count/
 ./projects/temp_stats/
+./projects/bookmarker/
 ./projects/evaluation/
 ./projects/TextFileHelper/
