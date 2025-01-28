@@ -7,7 +7,7 @@ tags:
 
 ## Purpose
 
-This project is designed to teach you how to devise, implement, and submit solutions to the simple programming problem of constructing a software that collect the result of dice throws.
+This project is designed to teach you how to devise, implement, and submit solutions to the simple programming problem of constructing a software that collects the result of dice throws.
 It aims at making sure that you master the simple concepts of control structures and data manipulation before introducing more advanced concepts.
 
 ## Challenge
