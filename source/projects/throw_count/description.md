@@ -14,7 +14,7 @@ It aims at making sure that you master the simple concepts of control structures
 
 ### In short
 
-Develop a simple program that asks the user how many sides their dice has, how many time they will throw it, and what the result of those throws are, with user-input validation.
+Develop a simple program that asks the user how many sides their dice has, how many times they will throw it, and what the result of those throws are, with user-input validation.
 
 ### In more details
 
