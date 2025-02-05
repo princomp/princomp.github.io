@@ -131,14 +131,14 @@ tags:
     }
     ```
     
-    The attribute `width` is called *the Width's property backing field*: it holds the data assigned to the property.
-- When the property's get *and* set accessors are trivial (like the ones above), we can simply omit them their body completely. That is, the previous `Width` property could be implemented using
+    The attribute `width` is called the Width property's *backing field*: it holds the data assigned to the property.
+- When the property's get *and* set accessors are trivial (like the ones above), we can simply omit their bodies completely. That is, the previous `Width` property could be implemented using
 
     ```
     public int Width { get; set;  }
     ```
     This is called *auto-properties*. Note that in this case, we do not need to declare the property's backing field (that is, no need to have `private int width;`), but cannot refer to it!
-- Conversely, get and set accessor can contains arbitrarily convoluted code:
+- Conversely, the get and set accessors can contain arbitrarily convoluted code:
 
     ```
     public int Length
@@ -157,7 +157,7 @@ tags:
         }
     }
     ```
-- Note however that if the set or get accessor is not the "trivial" one, then auto-properties cannot be used and the other accessor must be specified.
+- Note however that if either the set or get accessor is not the "trivial" one, then auto-properties cannot be used and the other accessor must be specified.
     - For example, in the above code, simply writing `get;` instead of `get { return length; }` would give a compilation error.
 - Note that properties can exist without backing field, and they can be *read-only* (that is, without a set accessor) or *write-only* (that is, without a get accessor, but this is rarer).
     - An example of read-only property is as follows: 
@@ -187,7 +187,7 @@ tags:
     public double Diameter { get; set; } = -1;
     ```
     
-    In this case, the property's backing field value will be -1 by default. Properties with initializer can be read-only:
+    In this case, the property's backing field value will be -1 by default. Properties with an initializer can be read-only:
     
     ```
     public int MaximumValue { get; } = 999;
