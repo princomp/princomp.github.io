@@ -31,13 +31,13 @@ Your class should allow users to track the book title, total page number, and th
 
     The title *must* be implemented using automatic properties.
 
-#. The current page *must be* less than the total number of pages: if at any point during creation or later modification the current page was to become strictly larger than the total number of pages, your class should throw an exception.
+#. The current page *must be* less than the total number of pages: if at any point during creation or later modification the current page becomes strictly larger than the total number of pages, your class should throw an exception.
 #. The total number of pages *must be* strictly positive, but the current page can be positive (0 would be an acceptable value: it means the reader has not started yet).
-#. Finally, your class should have three methods,
+#. Finally, your class should have three methods:
 
-    - a costructor that takes three arguments (one for the title, one for the total number of pages, and one for the current page),
-    - a `ToString` method that returns a `string` containing the title, how much of the book was read, and how much of the book is left (the last two in percentage),
-    - a method to increment the number of page read by its argument.
+    - a constructor that takes three arguments (one for the title, one for the total number of pages, and one for the current page),
+    - a `ToString` method that returns a `string` containing the title, how much of the book was read, and how much of the book is left (the last two in percentages),
+    - a method to increment the number of pages read by its argument.
 
 ## Submission
 
@@ -47,7 +47,7 @@ In particular, make sure you write your name and the date in a delimited comment
 ## Example
 
 Remember that *you* have to develop a `Program.cs` `Main` method that will test your class.
-It will probably contains something along the lines of
+It will probably contain something along the lines of
 
 ```
 Bookmarker book1 = new Bookmarker(title, tPages, cPages);
@@ -103,7 +103,7 @@ Enter the page you stopped your reading at.
 You cannot have read more than the total number of pages!
 ```
 
-If the user try to go "above" the total number of page, you should get:
+If the user tries to go "above" the total number of pages, you should get:
 
 ```text
 Enter the title of the book.
@@ -137,4 +137,4 @@ Note that it is ok if you cannot reproduce this output *exactly*.
 
 - Have your class handle `string`s, so that, for example, your `Bookmarker` constructor would take _three strings as input_,
 - Have your `Main` method ask the user *how many books they want to track* and create that number of objects,
-- Implement a _static_ ISBN-13 checker: your method should take as input a `string` representing an ISBN-13, and returns `true` if it is valid. Consult on [wikipedia](https://en.wikipedia.org/wiki/ISBN#ISBN-13_check_digit_calculation) how a ISBN is determined to be valid, and try your best!
+- Implement a _static_ ISBN-13 checker: your method should take as input a `string` representing an ISBN-13, and return `true` if it is valid. Consult [wikipedia](https://en.wikipedia.org/wiki/ISBN#ISBN-13_check_digit_calculation) on how a ISBN is determined to be valid, and try your best!
