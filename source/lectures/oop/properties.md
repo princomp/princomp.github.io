@@ -199,7 +199,7 @@ tags:
     public static string Explanation { get; set; } = "A Circle has for radius its diameter divided by 2.";
     ```
     
-    Such a property can be accessed using for example
+    This means that the property is shared among all instances of the class. It also means that the property can be accessed without creating an object (instantiating the class) first. For example, you might access the above property this way:
     
     ```
     Console.WriteLine(Circle.Explanation);
