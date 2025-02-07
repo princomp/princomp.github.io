@@ -173,7 +173,7 @@ tags:
 - Understanding the scope of statements in `try-catch-finally` statements can be tricky.
 - The general rules are:
 	- Variables declared in `try`, `catch` or `finally` blocks will not be accessible outside of them,
-	- Variables whose value are set in the `try` block will keep the value they had when the `try` block threw an exception.
+	- Variables whose values are set in the `try` block will keep the values they had on the specific line where the `try` block threw an exception.
 - For example, in the following code,
 
 	```
@@ -203,7 +203,7 @@ tags:
 		```
 		
 	- The variable `x` would not be accessible to the `catch` or `finally` blocks.
-	- If we were to remove the `zero = 0;` statement, then the program would display "The variable holds 2.".
+	- If we were to remove the `zero = 0;` statement, then the program would display "The variable holds 2.". This is because the statement `zero = 3;` only executes if the exception is thrown; similarly, the statement `zero = 2` only executes if the exception *isn't* thrown in the line above it.
 
 ## When To Use `try-catch` and When To Use `TryParse`?
 
