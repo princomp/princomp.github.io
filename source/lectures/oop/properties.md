@@ -32,7 +32,7 @@ tags:
 
 - Note that there is a lot of repetitive or "obvious" code here:
     - The name of the attribute is intended to be "width," so you must name the instance variable `width`, and the methods `GetWidth` and `SetWidth`, repeating the name three times.
-    - The attribute is intended to be type `int`, so you must ensure that the instance variable is type `int`, the getter has a return type of `int`, and the setter has a parameter type of `int`. Similarly, this repeats the data type three times.
+    - The attribute is intended to be type `int`, so you must ensure that the instance variable, the getter return type, and the setter parameter type are all `int`. Similarly, this repeats the data type three times.
     - You need to come up with a name for the setter's parameter, even though it also represents the width (i.e. the new value you want to assign to the width attribute). We usually end up naming it "widthParameter" or "widthParam" or "newWidth" or "newValue."
 - Properties are a "shorthand" way of writing this code: They implement an attribute with less repetition. 
 - Note that properties are not present in every object-oriented programming language: for example, [Java does not have properties](https://stackoverflow.com/questions/2701077/does-java-have-properties-that-work-the-same-way-properties-work-in-c).
@@ -68,14 +68,13 @@ tags:
 - *Convention* (not rule) is to give the property the same name as the instance variable, but capitalized -- C# is case sensitive
 - `get` accessor: Starts with the keyword `get`, then a method body inside a code block (between braces)
     - `get` is like a method header that always has the same name, and its other features are implied by the property's header
-    - Access modifier: Same as the property header's, i.e. `public` in this example
-    - Return type: Same as the property header's type, i.e. `int` in this example (so imagine it says `public int get()`)
+    - Imagine that it says `public int get()`: the access modifier (`public`) and the return type (`int`) are the same as in the property header
     - Body of `get` section is exactly the same as body of a "getter": return the instance variable
 - `set` accessor: Starts with the keyword `set`, then a method body inside a code block
     - Also a method header with a fixed name, access modifier, return type, and parameter
-    - Access modifier: Same as the property header's, i.e. `public` in this example
-    - Return type: Always `void` (like a setter)
-    - Parameter: Same type as the property header's type, name is always "value". In this case that means the parameter is `int value`; imagine the method header says `public void set(int value)`
+    - Imagine that it says `public void set (int value)`: the access modifier (`public`), the return type (`void`), and the parameter (`int value`) are the same as in the property header
+    - The return type is always `void` (like a setter)
+    - The parameter name is always "value". In this case, that means the parameter is `int value`
     - Body of `set` section looks just like the body of a setter: Assign the parameter to the instance variable (and the parameter is always named "value"). In this case, that means `width = value`
 
 ## Using properties
