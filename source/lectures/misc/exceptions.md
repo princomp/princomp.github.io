@@ -8,7 +8,7 @@ tags:
 
 ## Introduction
 
-- At *execution time* programs can run into unspecified behaviour, such as
+- At *execution time* programs can run into unspecified behavior, such as
 	- having to divide by zero,
 	- having to access an array at an index greater than its length.
 - For example, the following instructions would compile just fine, but *at execution time* the program would "explode":
@@ -34,7 +34,7 @@ tags:
 	will display a "System.FormatException has been thrown" error message. This is because [the `Parse` method can *throw an exception*](https://learn.microsoft.com/en-us/dotnet/api/system.int32.parse?view=net-8.0#system-int32-parse(system-string)).
 - Of course, a programmer would not *purposely* introduce such strange instructions in their code, but they may arise after interacting with the "outside world", that is, a user, file, or other external factor.
 - C# allows *exception handling*, which are ways of recovering when such exceptions are thrown, so that the program can keep on executing. Stated differently, they instruct the program what to do, for example, if it is asked to perform a division by 0. This is handled by `catch` blocks.
-- C# also allows `finally` block, which contain code executed unconditionally, that is, regardless of if the exception was thrown or not.
+- C# also allows `finally` blocks, which contain code executed unconditionally, that is, regardless of whether an exception was thrown or not.
 
 ## Syntax and Rules for `try-catch-finally` Statements
 
@@ -66,16 +66,16 @@ tags:
 	}
 	finally
 	{
-		Console.WriteLine("Did it worked?");
+		Console.WriteLine("Did it work?");
 	}
 	```
 	
-	- If the user enters a string that contains only numbers (say, "10"), then the program will display "Your number is 10." then "Did it worked?".
-	- If the user enters a string that does *not* contain only numbers (say, "No"), then the program will display "Something was off." then "Did it worked?".
+	- If the user enters a string that contains only numbers (say, "10"), then the program will display "Your number is 10." then "Did it work?".
+	- If the user enters a string that does *not* contain only numbers (say, "No"), then the program will display "Something was off." then "Did it work?".
 	
 	
 - Both the `catch` and the `finally` parts of the statement are optional: they can be both present, or only one can occur in the `try` block statement (however, you have to have one or the other).
-- A `try` block can have multiple `catch`, as follows:
+- A `try` block can have multiple `catch`es, as follows:
 
 	```
 	try
@@ -97,19 +97,19 @@ tags:
 	}
 	finally
 	{
-		Console.WriteLine("Did it worked?");
+		Console.WriteLine("Did it work?");
 	}
 	```
 
 	- This allows a more fine-grained handling of the exceptions that can be thrown.
 	- In the example, if a `DivideByZeroException` exception is thrown, it is because the user entered "0" and the operation `{10 / uInput}` failed. In this case, we can display an appropriate error message ("You tried to divide by zero").
 	- In the example, if a `FormatException` exception is thrown, it is because the user entered a string containing non-numerical characters, and we can similarly return an appropriate error message.
-	- Writing `catch{…}` is the same as `catch (Exception){…}`: by default, a `catch` block catches all the exceptions that can be thrown, not the exceptions of a particular class. Note that, if specifying multiple `catch` blocks, the order matter, as a `catch (Exception)`, if placed first, will always execute before the `catch` blocks put after.
+	- Writing `catch{…}` is the same as `catch (Exception){…}`: by default, a `catch` block catches all the exceptions that can be thrown, not the exceptions of a particular class. Note that, if specifying multiple `catch` blocks, the order matters, as a `catch (Exception)`, if placed first, will always execute before the `catch` blocks put after.
 
 ## Exception Class and Objects
 
 - Technically speaking, an exception is an object in a particular class that inherits from the [exception class](https://learn.microsoft.com/en-us/dotnet/standard/exceptions/exception-class-and-properties).
-- We can assign an identifier to it in the `catch` block, to be able to access some of its properties such as the `Message` and a `StackTrace` properties.
+- We can assign an identifier to it in the `catch` block, to be able to access some of its properties, such as the `Message` and a `StackTrace` properties.
 - For example, the `IndexOutOfRangeException` object returned when trying to access an array outside of its bound can be named `ex` and used to display particular information:
 	
 	```
@@ -173,7 +173,7 @@ tags:
 - Understanding the scope of statements in `try-catch-finally` statements can be tricky.
 - The general rules are:
 	- Variables declared in `try`, `catch` or `finally` blocks will not be accessible outside of them,
-	- Variables whose value are set in the `try` block will keep the value they had when the `try` block threw an exception.
+	- Variables whose values are set in the `try` block will keep the values they had on the specific line where the `try` block threw an exception.
 - For example, in the following code,
 
 	```
@@ -203,14 +203,14 @@ tags:
 		```
 		
 	- The variable `x` would not be accessible to the `catch` or `finally` blocks.
-	- If we were to remove the `zero = 0;` statement, then the program would display "The variable holds 2.".
+	- If we were to remove the `zero = 0;` statement, then the program would display "The variable holds 2.". This is because the statement `zero = 3;` only executes if the exception is thrown; similarly, the statement `zero = 2` only executes if the exception *isn't* thrown in the line above it.
 
 ## When To Use `try-catch` and When To Use `TryParse`?
 
 - If something goes wrong in a method, that method can either return some error code or throw an exception.
 - Returning an error code means possibly cluttering the signature of the method with some extra parameters, as in the `TryParse` methods.
 - `TryParse` is "baking in" a way of signaling that something went wrong because
-	#. This type of error is simple, common and predictable,
+	#. This type of error is simple, common, and predictable,
 	#. It decided not to care about *why* the parsing fails (it can be either because the input is `null`, because it is not in valid format, or because it produces an overflow).
 - However, exceptions can handle those cases differently thanks to different `catch` blocks:
 
