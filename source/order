@@ -67,8 +67,10 @@
 ./lecture/slides.md
 ./labs/
 ./exercises/
-./exercises/classes/
-./exercises/classes/references.md
+./exercises/oop/
+./exercises/oop/properties.md
+./exercises/oop/references.md
+./exercises/oop/inheritance.md
 ./exercises/misc/
 ./exercises/misc/exceptions.md
 ./exercises/io/
@@ -76,6 +78,7 @@
 ./exercises/collections/
 ./exercises/collections/1darrays.md
 ./exercises/collections/2darrays.md
+./exercises/control/
 ./exercises/control/recursion.md
 ./projects/
 ./projects/submission.md
