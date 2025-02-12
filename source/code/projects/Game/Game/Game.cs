@@ -4,11 +4,11 @@ class Game
 {
   public static bool Guess(string guessP)
   {
-    const int valueToGuess = 12;
+    const int VALUE_TO_GUESS = 12;
     try
     {
       int guessV = int.Parse(guessP);
-      if (guessV == valueToGuess)
+      if (guessV == VALUE_TO_GUESS)
       {
         Console.WriteLine("You guessed it!");
         return true;
