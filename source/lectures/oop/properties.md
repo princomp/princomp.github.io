@@ -258,3 +258,37 @@ The benefit of this notation is that read-only properties can easily be integrat
 ```text
 + <<get>> Radius : decimal
 ```
+
+## Properties and Security
+
+*The following discussion is related to the general topic of [`try-catch-finally` scope](../misc/exceptions#scoping-in-try-catch-finally-statements) but can be read independently.*
+
+Properties are extremely useful to insure that an attribute will never receive a "forbidden" value (for example, outside a range).
+Since every access to the attribute is "safeguarded" by the property, it can provide some security *only if used correctly*.
+
+For example, consider the following code:
+
+```{download="./code/projects/PropertySafety.zip"}
+!include code/projects/PropertySafety/PropertySafety/PropertySafety.cs
+```
+
+It may be easy to consider that `sensibleData` will *never* receive the value `"Forbidden word"` if every access to `sensibleData` is made through the property `SensibleData`.
+However, **this is plain wrong**!
+Indeed, consider the following (where you may replace the exception bit with `return;` if you are not familiar with this concept yet).
+
+```{download="./code/projects/PropertySafety.zip"}
+!include code/projects/PropertySafety/PropertySafety/Program.cs
+```
+
+It will display
+
+```text
+Intrusion detected, aborting!
+Attempted to read or write protected memory. This is often an indication that other memory is corrupt.
+Forbidden word
+```
+
+Where the last line indicate that the attribute *was set to `"Forbidden word"`!*
+
+The correct fix is to **first test, then set**, so that an incorrect value would **never be assigned**.
+In the previous example, simply moving `sensibleData = value;` to the end of the `set` would fix this issue.
