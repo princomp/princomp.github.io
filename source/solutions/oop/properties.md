@@ -8,103 +8,110 @@ tags:
 
 ## Questions
 
-#. What is the right syntax for an automatic property?
+#. What is the right syntax for an automatic property? *Select all that apply.*
 
-  - [x] `public int Width { get; set; }`
-  - [x] `public int Width { set; get; }`
-  - [ ] `public int Width { Set; Get; }`
-  - [ ] `public int Width { Get; Set; }`
-  - [ ] `public int Width { set(); get();}`
-  - [ ] `public int Width { get(); set();}`
+    - [x] `public int Width { get; set; }`
+    - [x] `public int Width { set; get; }`
+    - [ ] `public int Width { Set; Get; }`
+    - [ ] `public int Width { Get; Set; }`
+    - [ ] `public int Width { set(); get();}`
+    - [ ] `public int Width { get(); set();}`
 
 #. Which of the following statements is *false*?
 
-  - [ ] Properties can be static.
-  - [x] `get` and `set` accessors must always have bodies.
-  - [ ] Properties have headers.
-  - [ ] `get` and `set` accessors correspond to "getter" and "setter" methods for attributes.
+    - [ ] Properties can be static.
+    - [x] `get` and `set` accessors must always have bodies.
+    - [ ] Properties have headers.
+    - [ ] `get` and `set` accessors correspond to "getter" and "setter" methods for attributes.
 
-For the following nine questions, imagine you've implemented a `Circle` class, with the attribute `private decimal diameter;` and a "getter" and "setter" method for that attribute. You've created an object in this `Circle` class called `myCircle`. If you were to implement the class with properties instead:
+#. Consider the following implementation of a class called `Pet`:
+
+    ```
+    class Pet{
+        private string name;
+        public string Name{
+            get;
+            set { name = value; }
+        }
+    }
+    ```
+    This code will give a compilation error. Why?
+
+    - [x] The `set` accessor has a body, but the `get` accessor does not.
+    - [ ] The instance variable for `name` is declared, but no value is assigned.
+    - [ ] `value` is not a keyword and hasn't been declared, so it is meaningless here.
+    - [ ] The access modifier for `name` is `private`, but it should be `public`.
+
+
+### Circle Example
+
+For the following questions, imagine you've implemented a `Circle` class, with the attribute `private decimal diameter;` and a "getter" and "setter" method for that attribute. You've created an object in this `Circle` class called `myCircle`. If you were to implement the class with properties instead:
 
 #. What would calling the `get` accessor do?
 
-  - [x] Return the value of `diameter`
-  - [ ] Assign a value to `diameter`
+    - [x] Return the value of `diameter`
+    - [ ] Assign a value to `diameter`
 
 #. What would calling the `set` accessor do?
 
-  - [ ] Return the value of `diameter`
-  - [x] Assign a value to `diameter`
+    - [ ] Return the value of `diameter`
+    - [x] Assign a value to `diameter`
 
 #. The statement `myCircle.GetDiameter();` would have to be rewritten. How would you rewrite it?
 
-  - [x] `myCircle.Diameter;`
-  - [ ] `myCircle.diameter;`
-  - [ ] `Diameter.myCircle;`
-  - [ ] `myCircle = Diameter;`
+    - [x] `myCircle.Diameter;`
+    - [ ] `myCircle.diameter;`
+    - [ ] `Diameter.myCircle;`
+    - [ ] `myCircle = Diameter;`
 
 #. The statement `myCircle.SetDiameter(5.0m);` would also need to be rewritten. How would you rewrite it?
 
-  - [ ] `myCircle.diameter = 5.0m;`
-  - [ ] `Diameter.myCircle(5.0m);`
-  - [x] `myCircle.Diameter = 5.0m;`
-  - [ ] `myCircle.diameter(5.0m);`
+    - [ ] `myCircle.diameter = 5.0m;`
+    - [ ] `Diameter.myCircle(5.0m);`
+    - [x] `myCircle.Diameter = 5.0m;`
+    - [ ] `myCircle.diameter(5.0m);`
 
 You would now like to add a `Color` property of type `string` to your `Circle` class.
 
 #. How would you declare the instance variable?
 
-  - [ ] `public color string;`
-  - [ ] `public string Color;`
-  - [ ] `private string Color;`
-  - [x] `private string color;`
+    - [ ] `public color string;`
+    - [ ] `public string Color;`
+    - [ ] `private string Color;`
+    - [x] `private string color;`
 
 #. How would you format the property header?
 
-  - [ ] `public string color;`
-  - [x] `public string Color;`
-  - [ ] `private Color string;`
-  - [ ] `private string color;`
+    - [ ] `public string color;`
+    - [x] `public string Color;`
+    - [ ] `private Color string;`
+    - [ ] `private string color;`
 
 #. What would the `get` accessor's body look like, in its most basic possible form?
 
-  - [ ] `color;`
-  - [ ] `color = value;`
-  - [x] `return color;`
-  - [ ] `string color;`
+    - [ ] `color;`
+    - [ ] `color = value;`
+    - [x] `return color;`
+    - [ ] `string color;`
 
 #. What would the `set` accessor's body look like, in its most basic possible form?
 
-  - [ ] `color;`
-  - [x] `color = value;`
-  - [ ] `return color;`
-  - [ ] `string color;`
+    - [ ] `color;`
+    - [x] `color = value;`
+    - [ ] `return color;`
+    - [ ] `string color;`
 
 #. In the `Main` method, you would like to assign the value `"yellow"` to `color`. Which statement would do that?
 
-  - [ ] `yellow.myCircle;`
-  - [x] `myCircle.Color = "yellow";`
-  - [ ] `myCircle.yellow = Color;`
-  - [ ] `myCircle = "yellow";`
+    - [ ] `yellow.myCircle;`
+    - [x] `myCircle.Color = "yellow";`
+    - [ ] `myCircle.yellow = Color;`
+    - [ ] `myCircle = "yellow";`
 
-#. Consider the following implementation of a class called `Pet`:
-```
-class Pet{
-    private string name;
-    public string Name{
-        get;
-        set { name = value; }
-    }
-}
-```
-This code will give a compilation error. Why?
+### Plant Example
 
-  - [x] The `set` accessor has a body, but the `get` accessor does not.
-  - [ ] The instance variable for `name` is declared, but no value is assigned.
-  - [ ] `value` is not a keyword and hasn't been declared, so it is meaningless here.
-  - [ ] The access modifier for `name` is `private`, but it should be `public`.
+For the next  questions, consider the following implementation of a class called `Plant`:
 
-For the next five questions, consider the following implementation of a class called `Plant`:
 ```
 class Plant{
     private string species;
@@ -115,46 +122,51 @@ class Plant{
         {get;} = true;
 }
 ```
+
 #. Will this code compile? Why or why not?
 
-  - [ ] No, because there are no `set` accessors, and properties must have one.
-  - [ ] No, because a property cannot be assigned a default value.
-  - [ ] No, because a `get` accessor must always have a body.
-  - [x] Yes, because properties are *not* required to have `set` accessors.
-  - [ ] Yes, because a default value must be assigned for each property.
+    - [ ] No, because there are no `set` accessors, and properties must have one.
+    - [ ] No, because a property cannot be assigned a default value.
+    - [ ] No, because a `get` accessor must always have a body.
+    - [x] Yes, because properties are *not* required to have `set` accessors.
+    - [ ] Yes, because a default value must be assigned for each property.
 
 Suppose you've created an object in the `Plant` class called `myPlant`.
 
-#. In the Main method, what would the statement `Console.Write(myPlant.Species);` do?
+#. In the Main method, what would the statement
 
-  - [x] Display the current value of `species`, `"Helianthus annus"`.
-  - [ ] Rename the `myPlant` object to `Species`.
-  - [ ] It won't do anything--the code for the class doesn't compile.  
-  - [ ] It won't do anything--the property is write-only.
+    ```Console.Write(myPlant.Species);```
+
+    do?
+
+    - [x] Display the current value of `species`, `"Helianthus annus"`.
+    - [ ] Rename the `myPlant` object to `Species`.
+    - [ ] It won't do anything--the code for the class doesn't compile.
+    - [ ] It won't do anything--the property is write-only.
 
 #. The `HasChloroplasts` property is `static`. What does this mean? *Select all that apply.*
 
-  - [ ] Every object in the `Plant` class has its own `HasChloroplasts` property.
-  - [x] The property is shared across the class and all of its instances.
-  - [x] The property can be accessed without creating a `Plant` object.
-  - [ ] The property's value cannot be changed from the default.
+    - [ ] Every object in the `Plant` class has its own `HasChloroplasts` property.
+    - [x] The property is shared across the class and all of its instances.
+    - [x] The property can be accessed without creating a `Plant` object.
+    - [ ] The property's value cannot be changed from the default.
 
 #. The statement `myPlant.Species = "Coffea arabica";` would not compile. Why not?
 
-  - [ ] The syntax is wrong.
-  - [ ] Only a `static` property's default value can be changed.
-  - [ ] The code for the class doesn't compile. 
-  - [x] The property only has a `get` accessor, so it is read-only.
+    - [ ] The syntax is wrong.
+    - [ ] Only a `static` property's default value can be changed.
+    - [ ] The code for the class doesn't compile.
+    - [x] The property only has a `get` accessor, so it is read-only.
 
 #. What modification to the `Plant` class would allow the statement `myPlant.Species = "Coffea arabica";` to compile?
 
-  - [ ] Remove the default value, `"Helianthus annus"`.
-  - [x] Add `set;` to the `Species` property.
-  - [ ] Add `set;` to the `HasChloroplasts` property.
-  - [ ] Make the entire class `static`.
-  - [ ] Change the access modifier for `species` from `private` to `public`
+    - [ ] Remove the default value, `"Helianthus annus"`.
+    - [x] Add `set;` to the `Species` property.
+    - [ ] Add `set;` to the `HasChloroplasts` property.
+    - [ ] Make the entire class `static`.
+    - [ ] Change the access modifier for `species` from `private` to `public`
 
-## Problem
+## Problems
 
 #. Consider the following implementation of a `Rectangle` class:
   
