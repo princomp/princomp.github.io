@@ -17,7 +17,7 @@ class Program
     // "Random", "12",   "15"   to get "You cannot have read more than the total number of pages!
     // "Random", "12",   "-12"  to get "You cannot have read a negative number of pages!"
     /*
-     * To trigger error when calling the "Read" method, try,
+     * To trigger error when calling the "Read" method,
      * test with the following values, after having created an object
      * using "Test", "10", "5"
      */

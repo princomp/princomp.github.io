@@ -17,22 +17,13 @@ class Program
     // "Random", "12",   "15"   to get "You cannot have read more than the total number of pages!
     // "Random", "12",   "-12"  to get "You cannot have read a negative number of pages!"
     /*
-     * To trigger error when calling the "Read" method, try,
+     * To trigger error when calling the "Read" method,
      * test with the following values, after having created an object
      * using "Test", "10", "5"
      */
     // "6"    to get "You cannot have read more than the total number of pages!"
     // "-3"   to get "Input string was not in a correct format."
     // "Test" to get "Input string was not in a correct format."
-    /*
-     * An additional test would be to add, for example
-     *             book1.TPages = "3";
-     * after
-     *             Console.WriteLine(book1);
-     * to make sure that setting the number of page to an "invalid"
-     * value would trigger the error
-     * "The total number of pages cannot be less than the current page."
-     */
 
     try
     {
@@ -53,6 +44,15 @@ class Program
       Console.WriteLine("How many pages did you read?");
       book1.Read(Console.ReadLine());
       Console.WriteLine(book1);
+      /*
+* This additional test is here to
+* make sure that setting the number of page to an "invalid"
+* value would trigger the error
+* "The total number of pages cannot be less than the current page."
+*/
+
+      Bookmarker book2 = new Bookmarker("Test", "10", "5");
+      book2.TPages = "3";
     }
     catch (Exception ex)
     {
