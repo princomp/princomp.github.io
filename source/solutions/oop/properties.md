@@ -104,7 +104,23 @@ tags:
     #. Implement a `ToString` method that returns a `string` containing the nickname of the SD card, its capacity in gigabytes (GB, from question 2.), and its capacity in gigabits (Gb, from question 3.).    
     <details><summary>Solution</summary>```
     public override string ToString(){
-        return "Name: " + Nickname + "\nCapacity: " + Capacity + "GB" + "\nCapacity in Gb: " + CapacityinGb + "Gb";
+        return "Name: " + Nickname + "\nCapacity: " + Capacity + "GB" + "\nCapacity in Gb: " + CapacityInGb + "Gb";
     }
     ```
     </details>
+
+
+    <details><summary>Solution</summary>
+    A complete solution gives:
+
+    ```{download="code/projects/SDCard.zip"}
+    !include code/projects/SDCard/SDCard/SDCard.cs
+    ```
+
+    And a possible test program is:
+
+    ```{download="code/projects/SDCard.zip"}
+    !include code/projects/SDCard/SDCard/Program.cs
+    ```
+    </details>
+
