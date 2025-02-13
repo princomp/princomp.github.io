@@ -76,10 +76,35 @@ tags:
 #. Implement a `SDCard` class to represent SD cards. Add attributes to your answer if needed.
 
     #. Implement a `Nickname` `string` property using automatic properties.
+    <details><summary>Solution</summary>```
+    public string Nickname {get; set;}
+    ```
+    </details>
     #. Implement a `Capacity` `int` property whose setter raises an `ArgumentException` exception if the value passed as argument is not 8, 16, 32, 64 or 128.  The getter should simply return the value stored.
-    #. Implement a `CapacityInGb` `int` property with only a getter, than returns the `Capacity` times 8.
-    #. Implement a `ToString` method that returns a `string` containing the nickname of the SD card, its capacity in gigabytes (GB, from question 2.) and gigabits (Gb, from question 3.).
-    
-    <details><summary>Solution</summary>
-    To be written.
+    <details><summary>Solution</summary>```
+    private int capacity;
+    public int Capacity {
+        set {
+            if (value == 8 || value == 16 || value == 32 || value == 64 || value == 128)
+                capacity = value;
+            else
+                throw new ArgumentException();
+         }
+         get { return capacity; }
+    }
+    ```
+    </details>
+    #. Implement a `CapacityInGb` `int` property with only a getter, that returns the `Capacity` times 8.
+    <details><summary>Solution</summary>```
+    public int CapacityInGb {
+        get {return capacity * 8;}
+    }
+    ```
+    </details>
+    #. Implement a `ToString` method that returns a `string` containing the nickname of the SD card, its capacity in gigabytes (GB, from question 2.), and its capacity in gigabits (Gb, from question 3.).    
+    <details><summary>Solution</summary>```
+    public override string ToString(){
+        return "Name: " + Nickname + "\nCapacity: " + Capacity + "GB" + "\nCapacity in Gb: " + CapacityinGb + "Gb";
+    }
+    ```
     </details>
