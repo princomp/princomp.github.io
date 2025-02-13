@@ -446,7 +446,13 @@
     font-size: 1.2em;
     text-align: center;
   }
-  
+  summary{
+    cursor: pointer;
+  }
+  summary > p {
+    font-weight: bold;
+    display: inline-block;
+  }
   details summary {
       font-weight: bold;
   }
