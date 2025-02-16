@@ -61,37 +61,38 @@ Follow the instructions in our ["Contributing Guidelines"](contributing.html#if-
 For a quick syntax guide in Markdown, the best resource is [this website](https://commonmark.org/help/) and its [10 minutes tutorial](https://commonmark.org/help/tutorial/).
 We list some [best practices](./docs/about/dev_guide#editing-resources), and would appreciate if you could follow them.
 
-For github's interface, please refer to the following guide (where the screenshots where taken for the [csci-1301.github.io](https://github.com/csci-1301/csci-1301.github.io) website, but remains relevant).
+For github's interface, please refer to the following guide.
 
-!["Navigating repositories"](img/uca_guide1.jpg) 
+!["Navigating repositories"](img/uca1.png) 
 
 GitHub is separated into many "repositories":
 
 - The **princomp.github.io** contains most of the resources that will be used (so it will be where you will navigate to the most),
-- The **uca-resources-<semester>-YYYY** is a _private_ repository where material useful to UCAs but not accessible to students (such as project solution, listings, etc.) will be shared, 
-- The **feedback-<semester>-YYYY** and similarly named repositories contains feedback submitted by students/users. 
+- The **feedback-<semester>-YYYY** and similarly named repositories contain feedback submitted by students/users. 
 
-!["Navigating folders"](img/uca_guide2.jpg) 
+!["Navigating folders"](img/uca1a.png)
+![Lecture Notes](img/uca2.png)
 
-Under the **Code** section (next to Issues, Pull Requests, Actions, etc.), you will find various folders containing documents for the website. Typically, if there is some error or mistake in the lecture notes, so that will be where you will navigate to the most. 
+Under the **Code** section (next to Issues, Pull Requests, Actions, etc.), you will find various folders containing documents for the website. Typically, if there is some error or mistake, it will be in the lecture notes, so that will be where you will navigate to the most. 
 The way the resources are organized [is explained here](./docs/about/dev_guide#resources-organization-overview).
 
-!["Navigating documents"](img/uca_guide3.jpg)
+!["Navigating documents"](img/uca3a.png)
+![1d](img/uca3b.png)
 
-For this example, I just clicked on the first chapter, "General Concepts".
+For this example, I just clicked on the first chapter, "Collections," then "1d".
 
-!["Editing Mode"](img/uca_guide4.jpg) 
+!["Editing Mode"](img/uca4.png) 
 
 On this page, you can see the edit history of that specific document you clicked on. In the corner above the document and below the edit history, there is a pencil icon that will put you into editing mode for that document.
 
-!["Editing vs Previewing"](img/uca_guide_getting_help.png) 
+When you click on the pencil icon, you will see the document formatted as markdown with two sections at the top of the document: *Edit file* and *Preview*. If you have *Edit file* selected, then you will see the "code" version of the document whereas if you click on the *Preview* button, you will see the document in its "final" form, or how the website users should see it, without the "code". To edit, make sure you have *Edit file* selected. 
 
-On this page, you will see the document formatted as markdown with two sections at the top of the document: *Edit file* and *Preview*. If you have *Edit file* selected, then you will see the "code" version of the document whereas if you click on the *Preview* button, you will see the document in its "final" form, or how the website users should see it, without the "code". To edit, make sure you have *Edit file* selected. 
+!["Committing Changes"](img/uca5gh2.png) 
 
+Once you have made the edits you wanted, you need to "commit" them; just like how you may write a paper, you need to submit it to the professor for them to see it. At the top right corner of the page, there is a button that says "Commit changes." Then, a description box pops up for you to describe what you did so others will know the changes you made. (You do not need to go into *every* detail; just describe it generally, like "I fixed grammatical issues" or "Fixed code error.")
 
-!["Proposing Changes"](img/uca_guide_getting_help_2.png) 
-
-Once you have made the edits you wanted, you need to "commit" them; just like how you may write a paper, you need to submit it to the professor for them to see it. At the bottom of the page, there is a header box and a description box for you to describe what you did so others will know the changes you did (you do not need to go into *every* detail; just describe it generally, like "I fixed grammatical issues" or "Fixed code error"). As a UCA, you do not have write access to the **princomp.github.io** repository, so submitting a change will write it to a new branch in your fork `<your name>`/princomp.github.io, so you can send a pull request. Given the new protocol by Github, after making the neccessary edits, click the "Propose Changes" button located at the bottom. On this page and the next, there will be a "Create pull request" button, by clicking on this you will start a pull request. After you have successfully created a new branch for your commit and started a pull request, your edits will be checked by others so as to catch any mistake(s) you may have introduced before your pull request is merged into the base branch. 
+!["Proposing Changes"](img/uca5gh2a.png)
+As a UCA, you do not have write access to the **princomp.github.io** repository, so submitting a change will write it to a new branch in your fork `<your name>`/princomp.github.io, so you can send a pull request. Given the new protocol by Github, after making the neccessary edits, click the "Propose Changes" button located at the bottom. On this page and the next, there will be a "Create pull request" button. Clicking on this will start a pull request. After you have successfully created a new branch for your commit and started a pull request, your edits will be checked by others so as to catch any mistake(s) you may have introduced before your pull request is merged into the base branch. 
 
 !["Committing"](img/uca_guide6.jpg)
 
