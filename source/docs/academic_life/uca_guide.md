@@ -65,21 +65,26 @@ For github's interface, please refer to the following guide.
 
 !["Navigating repositories"](img/uca1.png) 
 
-GitHub is separated into many "repositories":
+The [ℙrinciples of ℂomputer ℙrogramming organization repository page on GitHub](https://github.com/orgs/princomp/repositories) contains many "repositories":
 
-- The **princomp.github.io** contains most of the resources that will be used (so it will be where you will navigate to the most),
-- The **feedback-<semester>-YYYY** and similarly named repositories contain feedback submitted by students/users. 
+- The [**princomp.github.io**](https://github.com/princomp/princomp.github.io) contains most of the resources that will be used (so it will be where you will navigate to the most),
+- The **feedback-`<semester>`-YYYY** and similarly named repositories contain feedback submitted by students/users.
+
+[Under the **Code** section](https://github.com/princomp/princomp.github.io/tree/main/) (next to Issues, Pull Requests, Actions, etc.), you will find various folders containing documents for the website.
 
 !["Navigating folders"](img/uca1a.png)
+
+
+Typically, if there is some error or mistake, it will be under [`source/lectures`](https://github.com/princomp/princomp.github.io/tree/main/source/lectures), in the lecture notes, so that will be where you will navigate to the most:
+
 ![Lecture Notes](img/uca2.png)
 
-Under the **Code** section (next to Issues, Pull Requests, Actions, etc.), you will find various folders containing documents for the website. Typically, if there is some error or mistake, it will be in the lecture notes, so that will be where you will navigate to the most. 
 The way the resources are organized [is explained here](./docs/about/dev_guide#resources-organization-overview).
 
 !["Navigating documents"](img/uca3a.png)
 ![1d](img/uca3b.png)
 
-For this example, I just clicked on the first chapter, "Collections," then "1d".
+For this example, I just clicked on the "Collections," then "1d".
 
 !["Editing Mode"](img/uca4.png) 
 
@@ -92,11 +97,12 @@ When you click on the pencil icon, you will see the document formatted as markdo
 Once you have made the edits you wanted, you need to "commit" them; just like how you may write a paper, you need to submit it to the professor for them to see it. At the top right corner of the page, there is a button that says "Commit changes." Then, a description box pops up for you to describe what you did so others will know the changes you made. (You do not need to go into *every* detail; just describe it generally, like "I fixed grammatical issues" or "Fixed code error.")
 
 !["Proposing Changes"](img/uca5gh2a.png)
-As a UCA, you do not have write access to the **princomp.github.io** repository, so submitting a change will write it to a new branch in your fork `<your name>`/princomp.github.io, so you can send a pull request. Given the new protocol by Github, after making the neccessary edits, click the "Propose Changes" button located at the bottom. On this page and the next, there will be a "Create pull request" button. Clicking on this will start a pull request. After you have successfully created a new branch for your commit and started a pull request, your edits will be checked by others so as to catch any mistake(s) you may have introduced before your pull request is merged into the base branch. 
+As a UCA, you do not have write access to the **princomp.github.io** repository, so submitting a change will write it to a new branch in your fork `<your github handle>/princomp.github.io`, so you can send a pull request. Given how Github works, after making the necessary edits, click the "Propose Changes" button located at the bottom. On this page and the next, there will be a "Create pull request" button. Clicking on this will start a pull request. After you have successfully created a new branch for your commit and started a pull request, your edits will be checked by others so as to catch any mistake(s) you may have introduced before your pull request is merged into the base branch.
 
 !["Committing"](img/uca_guide6.jpg)
 
- Note that if you are making edits inside the repository for UCAs, `uca-resources-<semester>-YYYY`, you do have write access so there will instead be two buttons:
+<!--
+Note that if you are making edits inside the repository for UCAs, `uca-resources-<semester>-YYYY`, you do have write access so there will instead be two buttons:
  **Commit directly to `main` branch** and **Create a new branch for this commit and start a pull request**
  
 - **Commit directly to `main` branch** submits your edits directly into the document.
@@ -104,3 +110,4 @@ As a UCA, you do not have write access to the **princomp.github.io** repository,
 - **Create a new branch for this commit and start a pull request** creates a "pull request" (which can be found [in the *Pull Requests* tab at the top of the page](https://github.com/princomp/princomp.github.io/pulls)) which essentially notifies others "you edited this document and you want them to check it". Others can check the changes you make, improve them, change them, and can submit them for you. 
 
 You can **Create a new branch for this commit and start a pull request** so others can double check your edits: it can act as a safety net, so your colleagues will be able to catch any mistake(s) you may have introduced!
+-->
