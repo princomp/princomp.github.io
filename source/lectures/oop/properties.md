@@ -136,7 +136,7 @@ tags:
     ```
     public int Width { get; set;  }
     ```
-    This is called *automatic properties* (or *auto-properties*).
+    This is called *automatic properties*.
     Note that in this case, we do not need to declare the property's backing field (that is, no need to have `private int width;`), but cannot refer to it!
 - Conversely, the get and set accessors can contain arbitrarily convoluted code:
 
@@ -157,7 +157,7 @@ tags:
         }
     }
     ```
-- Note however that if either the set or get accessor is not the "trivial" one, then auto-properties cannot be used and the other accessor must be specified.
+- Note however that if either the set or get accessor is not the "trivial" one, then automatic properties cannot be used and the other accessor must be specified.
     - For example, in the above code, simply writing `get;` instead of `get { return length; }` would give a compilation error.
 - Note that properties can exist without backing field, and they can be *read-only* (that is, without a set accessor) or *write-only* (that is, without a get accessor, but this is rarer).
     - An example of read-only property is as follows: 
