@@ -117,7 +117,7 @@ tags:
 
     <details>
     <summary>Solution</summary>```
-    !include`snippetStart="// Method to display 2-d arrays", snippetEnd="// End of method to display 2-d arrays"`  code/snippets/2darrays.cs
+!include`snippetStart="// Method to display 2-d arrays", snippetEnd="// End of method to display 2-d arrays"` code/snippets/2darrays.cs
     ```
     </details>
 
@@ -183,7 +183,7 @@ tags:
 #. Write a program that "rotate" a 2-dimensional array 90° clockwise. For example, the array 
 
     ```
-    !include`snippetStart="// Example array1", snippetEnd="// End of example array1"`  code/snippets/2darrays.cs
+!include`snippetStart="// Example array1", snippetEnd="// End of example array1"` code/snippets/2darrays.cs
     ```
     
     would become
@@ -196,7 +196,7 @@ tags:
 
     <details>
     <summary>Solution</summary>```
-    !include`snippetStart="// Method to rotate an array 90° clockwise", snippetEnd="// End of method to rotate an array 90° clockwise"`  code/snippets/2darrays.cs
+!include`snippetStart="// Method to rotate an array 90° clockwise", snippetEnd="// End of method to rotate an array 90° clockwise"` code/snippets/2darrays.cs
     ```
     </details>
     
@@ -207,24 +207,24 @@ tags:
 
     #. Write statements that declare a 2-dimensional array with at least 2 rows containing values 1 through 6.
     #. Write statements that display the values stored in a 2-dimensional array called `arTest`.
-    #. Write statements displaying "Ranked" if the sum of the values stored in each row is greater than the sum of the values in the preceding row in the `arTest` array.
-    For example, the following rectangular and jagged arrays are both ranked, as 4 < 5 < 6.
+    #. Write statements displaying "Ranked" if the sum of the values stored in each row is greater than the sum of the values in the preceding row in the `arTest` array. For example, the following rectangular and jagged arrays are both ranked, as 4 < 5 < 6.
 
-    ```text
-    2 1 1
-    3 1 1
-    5 1 0
-    ```
+        ```text
+        2 1 1
+        3 1 1
+        5 1 0
+        ```
 
-    ```text
-    4 0
-    3 1 1
-    2 2 1 1
-    ```
+        ```text
+        4 0
+        3 1 1
+        2 2 1 1
+        ```
     
     <details>
-    <summary>Solution</summary>```{download="./code/projects/RankedArrays.zip"}
-    !include code/projects/RankedArrays/RankedArrays/Program.cs
+    <summary>Solution</summary>
+    ```{download="./code/projects/RankedArrays.zip"}
+!include code/projects/RankedArrays/RankedArrays/Program.cs
     ```
     </details>
     
