@@ -64,3 +64,54 @@ Exception | Input
 
 Entering 0 would not raise any exception.
 </details>
+
+
+## Problems
+
+#. We implement two methods for a simple `Calculator` `static` class and use one of them. The header of the methods is always of the form `public static int XXX(…)` with `XXX` standing for the name of the method, and `…` standing for the argument(s) and datatype(s).
+
+    #. Write a `Square` method that takes one `int` argument and returns its value squared if the parameter is less than 46341^[The square of $46,341$ is greater than the maximum value an `int` can hold, `int.MaxValue`.], and throws an `OverflowException` exception otherwise.
+    <details><summary>Solution</summary>
+    Additionally throwing an exception if the parameter is less than 46341:
+    ```
+    public static int Square(int p){
+        if (p > 46341 || p < -46341) throw new OverflowException();
+        else return p*p;
+    }
+    ```
+    </details>
+    #. Write a `Divide` method that takes two `int` arguments and returns the result of dividing the first parameter by the second. If the second parameter is 0, then the method should throw an `ArgumentOutOfRangeException` exception.
+    <details><summary>Solution</summary>
+    Additionally throwing an exception if the parameter is less than 46341:
+    ```
+    public static int Divide(int dividend, int divisor){
+        if (divisor == 0) throw new ArgumentOutOfRangeException();
+        else return dividend / divisor;
+    }
+    ```
+    </details>
+    #. Write a piece of code (to be inserted into a `Main` method) that asks the user to enter one number. Then, call `Square` with it (no need to loop). Your code should *not* check the value of the `string` entered for the operation, but must catch the exceptions potentially thrown by the `Square` method (*and, as a bonus, by the `Parse` method*). Your code should also display "Thanks!" regardless of whether an exception was thrown.
+    <details><summary>Solution</summary>
+    Additionally throwing an exception if the parameter is less than 46341:
+    ```
+    try{
+        int uInput = int.Parse(Console.ReadLine());
+        Console.Write("Your value squared is " + Calculator.Square(uInput));
+    }
+    catch(OverflowException)
+    {
+        Console.WriteLine("Your value squared will not fit in an int!");
+    }
+    finally{
+        Console.WriteLine("Thanks!");
+        }
+    ```
+    </details>
+    
+    <details><summary>Complete solution</summary>
+    ```{download="./code/projects/Calculator.zip"}
+    !include code/projects/Calculator/Calculator/Program.cs
+	```
+	<details>
+
+    

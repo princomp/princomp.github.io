@@ -272,3 +272,43 @@ Suppose you've created an object in the `Plant` class called `myPlant`.
     ```
     </details>
 
+#. In this problem, we will implement a `Weather` class recording a location and a temperature (in Fahrenheit). Add attributes to your answers if needed.
+
+    #. Implement a `Location` `string` property using automatic properties. Its default value should be "Unknown".
+    <details><summary>Solution</summary>```
+    public string Location { get; set; } = "Unknown";
+    ```
+    </details>
+    #. Implement a `Temperature` `double` property. If the value passed as an argument to the setter is less than -128.6 or greater than 134.1, then the setter should raise an `ArgumentOutOfRangeException` exception.
+    The getter simply returns the value stored.
+    <details><summary>Solution</summary>```
+    public double Temp
+    {
+        set
+        {
+            if (value < -128.6 || value > 134.1) throw new ArgumentOutOfRangeException();
+            else { temp = value; }
+        }
+        get { return temp; }
+    }
+    ```
+    </details>
+    #. Implement a `TempInC` `double` property with only a getter that returns the temperature in Celsius, using the following formula: $°C = (°F - 32) ÷ (9/5)$.
+    <details><summary>Solution</summary>```
+    public double TempInC
+    {
+        get
+        {
+            return (Temp - 32) / (9 / 5);
+        }
+    }
+    ```
+    </details>
+    #. Implement a `ToString` method that returns a `string` containing the location and the temperature both in Celsius and Fahrenheit.
+    <details><summary>Solution</summary>```
+    public override string ToString()
+    {
+        return Location + ": " + Temp + "°F (" + TempInC + "°C)";
+    }
+    ```
+    </details>
