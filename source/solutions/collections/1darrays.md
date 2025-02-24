@@ -486,57 +486,6 @@ For example, in an array containing 1, 2, 6, 7, 3, 9 with x being 8, the solutio
     Note that after the code has been executed, both sides of the word have been checked, and `palindromeSoFar` is `true` if both sides are mirrors of each other.
     </details>
 
-#. Assume `arrayEx` is an array of `int` containing the following values:
-    
-    ```
-    !include`snippetStart="// Example value",snippetEnd="// Algorithm (silent)"` code/projects/BinarySearch/BinarySearch/Program.cs
-    ```
-    
-    and consider the following algorithm:
-    
-    ```
-    !include`snippetStart="// Algorithm (silent)",snippetEnd="// Algorithm (verbose)"` code/projects/BinarySearch/BinarySearch/Program.cs
-    ```
-    
-    Complete the following table, giving the value of `sta`, `end`, `mid`, `fsf` and `cur` before the `while` loop is executed, after it has executed one time, two times, etc.
-    If the value is not set at this point, write "undef", and if the loop stops before the Xth iteration, simply cross out the Xth iteration.
-    Report the value even if it did not change.
-    
-    |   | Before loop | After 1 iteration | After 2 iterations | After 3 iterations | After 4 iterations | 
-    | -- | ------------- | -------------  | --------------  | --------------  | --------------  |
-    | `sta` |
-    | `end` | 
-    | `mid` | 
-    | `fsf` | 
-    | `cur` | 
-   
-   <details>
-   <summary>Solution</summary>
-   The code can easily be edited to display the information we are looking for.
-   
-   ```{download="code/projects/BinarySearch.zip"}
-   !include`snippetStart="// Algorithm (verbose)",snippetEnd="// Test with different values!"` code/projects/BinarySearch/BinarySearch/Program.cs
-   ```
-   
-   ```text
-   Before loop:
-   ------------------------------------------------------------------------
-   | sta = 0 | end = 12 | mid = undefined | fsf = False | cur = undefined |
-   ------------------------------------------------------------------------
-   After 1 iteration(s):
-   ---------------------------------------------------------
-   | sta = 7 | end = 12 | mid = 6 | fsf = False | cur = 90 |
-   ---------------------------------------------------------
-   After 2 iteration(s):
-   ---------------------------------------------------------
-   | sta = 7 | end = 8 | mid = 9 | fsf = False | cur = 135 |
-   ---------------------------------------------------------
-   After 3 iteration(s):
-   ---------------------------------------------------------
-   | sta = 7 | end = 8 | mid = 7 | fsf = True | cur = 105 |
-   ---------------------------------------------------------
-   ```
-   </details>
    
 ### Manipulating Two Arrays
 
@@ -854,6 +803,106 @@ For example, in an array containing 1, 2, 6, 7, 3, 9 with x being 8, the solutio
     }
     ```
     </details>
+
+## Problems on Binary Search
+
+Those two problems are related to [binary search](./lectures/collections/search#binary-search).
+
+#. Assume `arrayEx` is an array of `int` containing the following values:
+    
+    ```
+    !include`snippetStart="// Example value",snippetEnd="// Algorithm (silent)"` code/projects/BinarySearch/BinarySearch/Program.cs
+    ```
+    
+    and consider the following algorithm:
+    
+    ```
+    !include`snippetStart="// Algorithm (silent)",snippetEnd="// Algorithm (verbose)"` code/projects/BinarySearch/BinarySearch/Program.cs
+    ```
+    
+    Complete the following table, giving the value of `sta`, `end`, `mid`, `fsf` and `cur` before the `while` loop is executed, after it has executed one time, two times, etc.
+    If the value is not set at this point, write "undef", and if the loop stops before the Xth iteration, simply cross out the Xth iteration.
+    Report the value even if it did not change.
+    
+    |   | Before loop | After 1 iteration | After 2 iterations | After 3 iterations | After 4 iterations | 
+    | -- | ------------- | -------------  | --------------  | --------------  | --------------  |
+    | `sta` |
+    | `end` | 
+    | `mid` | 
+    | `fsf` | 
+    | `cur` | 
+   
+   <details>
+   <summary>Solution</summary>
+   The code can easily be edited to display the information we are looking for.
+   
+   ```{download="code/projects/BinarySearch.zip"}
+   !include`snippetStart="// Algorithm (verbose)",snippetEnd="// Test with different values!"` code/projects/BinarySearch/BinarySearch/Program.cs
+   ```
+   
+   ```text
+   Before loop:
+   ------------------------------------------------------------------------
+   | sta = 0 | end = 12 | mid = undefined | fsf = False | cur = undefined |
+   ------------------------------------------------------------------------
+   After 1 iteration(s):
+   ---------------------------------------------------------
+   | sta = 7 | end = 12 | mid = 6 | fsf = False | cur = 90 |
+   ---------------------------------------------------------
+   After 2 iteration(s):
+   ---------------------------------------------------------
+   | sta = 7 | end = 8 | mid = 9 | fsf = False | cur = 135 |
+   ---------------------------------------------------------
+   After 3 iteration(s):
+   ---------------------------------------------------------
+   | sta = 7 | end = 8 | mid = 7 | fsf = True | cur = 105 |
+   ---------------------------------------------------------
+   ```
+   </details>
+   
+#. Consider the following **incorrect** implementation of binary search:
+
+    ```
+    int[] arrayP = {10, 15, 30, 45, 60, 75, 90, 105, 120, 135, 150, 165};
+    bool fsf = false;             // Found target so far?
+    int tar = 165;                // Target to find.
+    int sta = 0;                  // Beginning
+    int end = arrayP.Length - 1;  // End
+    Console.WriteLine($"Starting ({sta}-{end})");
+    while (sta <= end && !fsf){   // Here goes the main loop
+      if (tar < arrayP[(sta + end) / 2]) { end = (sta + end) / 2;
+                Console.WriteLine($"Going left ({sta}-{end})"); }
+      else if (tar == arrayP[(sta + end) / 2]) fsf = true;
+      else { sta = (sta + end) / 2;
+             Console.WriteLine($"Going right ({sta}-{end})"); }
+    }
+    Console.WriteLine("Found: " + fsf);
+    ```
+    
+    #. Indicate what would be displayed
+    <details><summary>Solution</summary>
+        It would display
+        
+        ```text
+        Starting (0-11)
+        Going right (5-11)
+        Going right (8-11)
+        Going right (9-11)
+        Going right (10-11)
+        Going right (10-11)
+        Going right (10-11)
+        ```
+        
+        and loop forever.
+    </details>
+    #. Explain why this implementation is incorrect, and how it can be fixed.
+    <details><Summary>Solution</summary>
+    The problem is that `mid` will never reach `arrayP.Length -1`.
+    Indeed, we will have an expression equivalent to `((arrayP.Length -2) - arrayP.Length-1) / 2` (for example, as above, `(10 + 11) / 2`) that will never be rounded up to `arrayP.Length-1` (in our example, `11`), but always truncated.
+    
+    To fix this implementation, instead of `end = (sta + end) / 2;`, we should have  `end = ((sta + end) / 2) + 1;`.
+    </details>
+
 
 ## Wrap-Up Problems
 
