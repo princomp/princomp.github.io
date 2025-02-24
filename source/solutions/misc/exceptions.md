@@ -77,7 +77,7 @@ Entering 0 would not raise any exception.
         else return p*p;
     }
     ```
-    Note that this code additionally throws an exception if the parameter is less than 46341:
+    Note that this code additionally throws an exception if the parameter is less than 46341.
     </details>
     #. Write a `Divide` method that takes two `int` arguments and returns the result of dividing the first parameter by the second. If the second parameter is 0, then the method should throw an `ArgumentOutOfRangeException` exception.
     <details><summary>Solution</summary>```
