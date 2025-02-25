@@ -9,7 +9,7 @@ class Vehicle{
 }
 
 class Bike{
-    -ForkLength: double 
+    +«property» ForkLength: double 
     +Bike()
     +Bike(cP : string, flP: double)
     +ToString() string

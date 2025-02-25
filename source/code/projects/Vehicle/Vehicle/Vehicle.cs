@@ -9,6 +9,7 @@ public class Vehicle
       numberOfWheels = nowP;
     else
       numberOfWheels = -1;
+    // We could also decide to throw an exception here.
   }
 
   public Vehicle()

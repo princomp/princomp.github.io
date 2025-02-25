@@ -1,6 +1,6 @@
 public class Bike : Vehicle
 {
-  public double ForkLength;
+  public double ForkLength { get; set; }
 
   public Bike()
   {

@@ -7,10 +7,10 @@
     saddleType = "undefined";
   }
 
-  public Bicycle(string cP, double flP, string sT)
+  public Bicycle(string cP, double flP, string sdtP)
     : base(cP, flP)
   {
-    saddleType = sT;
+    saddleType = sdtP;
   }
 
   public override string ToString()
