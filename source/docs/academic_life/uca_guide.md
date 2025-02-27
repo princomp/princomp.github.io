@@ -101,6 +101,13 @@ As a UCA, you do not have write access to the **princomp.github.io** repository,
 
 !["Committing"](img/uca_guide6.jpg)
 
+### Uploading Images
+
+Like the paragraph above states, UCAs don't have write access to the **princomp.github.io** repository, which also means they are not able to add files to the `img` folder. If you find that you need to add image files, you still can, but you must upload them to your fork first. To access your fork, type `github.com/<your github handle>/princomp.github.io` in the address bar. The page that appears will look nearly the same as the one located at `github.com/princomp/princomp.github.io`. The folders and files will be organized the same way as well. Navigating to `source/img` will bring you to the correct folder. In the top right corner, directly above the edit history, there will be a button that says "Add file." If you click this, two options appear: "Create new file" and "Upload files."
+
+If you click "Upload files," you will be brought to a page where you'll be able to drag files onto it or choose your files manually. When you've uploaded the files, select the radio button next to "Create a new branch for this commit and start a pull request." Then, select "Commit changes" at the bottom of the page. You'll then be prompted to submit a pull request. After this, you should be brought back to the main page of your fork. A yellow box will be at the top of the screen that says "`branch name` had recent pushes x minutes ago." On the right of that box, there will be a button that says "Compare & pull request." From here, you can submit a pull request as you would for any other commit!
+
+
 <!--
 Note that if you are making edits inside the repository for UCAs, `uca-resources-<semester>-YYYY`, you do have write access so there will instead be two buttons:
  **Commit directly to `main` branch** and **Create a new branch for this commit and start a pull request**
