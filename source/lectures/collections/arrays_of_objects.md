@@ -6,12 +6,12 @@ tags:
 
 # Arrays of Objects
 
-An array can contain more than simple datatypes: it can contains object.
+An array can contain more than simple datatypes: it can contain objects.
 It can be objects from a custom class, or even … arrays, which are themselves objects!
 
 ## Array of Objects From a Custom Class
 
-In the following example, we will ask the user how many `Item` objects (the details of the implementation does not matter, but can be [inspired by this example](./lectures/flow/control_flow_and_classes#setters-with-input-validation)) they want to create, then fill an array with `Item` objects initialized from user input:
+In the following example, we will ask the user how many `Item` objects (the details of the implementation do not matter, but can be [inspired by this example](./lectures/flow/control_flow_and_classes#setters-with-input-validation)) they want to create, then fill an array with `Item` objects initialized from user input:
 
 ```
 Console.WriteLine("How many items would you like to stock?");
@@ -55,7 +55,7 @@ A multi-dimensional array can be rectangular (it then represents an $n$-dimensio
 
 ### Rectangular Multi-Dimensional Array
 
-Also called $2$-dimensional arrays, their syntax is very close to $1$-dimensional arrays:
+Also called $2$-dimensional arrays, their syntax is very close to that of $1$-dimensional arrays:
 
 ```
 int[,] matrix = new int[2, 3];
@@ -112,7 +112,13 @@ for (int row = 0; row < matrix.GetLength(0); row++)
 ### Jagged Array
 
 A jagged array is an array of arrays.
-The difference with rectangular arrays is that the arrays stored can be of varying size.
+The difference from rectangular arrays is that the arrays stored can be of varying sizes. The syntax of a jagged array is as follows:
+
+```
+int [][] jaggedArray = new int[3][];
+```
+
+Here, `3` is the number of rows, but the number of columns is not included: this is because the stored arrays are different sizes, so the number of columns will vary depending on the row.
 
 The syntax is straightforward once understood that jagged arrays are *exactly* arrays of arrays: 
 
@@ -121,3 +127,11 @@ The syntax is straightforward once understood that jagged arrays are *exactly* a
 ```
 
 In this example, it should be clear that `jaggedArray[row]` is itself an array, and hence that we can use e.g., `jaggedArray[row].Length` or `jaggedArray[row][arrayCell]`.
+
+### When to Use Rectangular vs. Jagged Arrays
+
+The main distinction between rectangular and jagged arrays is that the former is more consistent with its sizing--in other words, in a rectangular array, each array housed within it will be the same size in every row, by definition. In contrast, jagged arrays are not as consistent. This can be seen in the difference between how rectangular and jagged arrays are initialized. Recall that, when initializing a rectangular array, the number of rows and columns is required, but only the number of rows is required for a jagged array.
+
+Therefore, when deciding which type of array to use in a given situation, you will want to base it off of whether you need an array that is predictable in its sizing. If you want to make a table where most or every cell will be filled, a rectangular array will make more sense, whereas a jagged array will be preferred when the number of entries per row could be highly variable or difficult to predict.
+
+Rectangular arrays work well when creating a matrix (an array of numbers used in mathematics, especially in linear algebra) or a table/spreadsheet of data where the number of data points (and, therefore, the number of columns) is consistent in each row. Jagged arrays work well when the number of data points varies. A good example would be if you want to use an array to store the time it takes you to run a lap. If you run the same number of laps every single time you run, without fail, then a rectangular array may work here. However, the more likely scenario is that the number will vary. In this case, a jagged array is better: the array in each row will be whatever size it needs to be in order to accommodate all of the data.
