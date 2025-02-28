@@ -32,7 +32,7 @@ Then,
 
 This means that the following code is valid:
 
-```
+```{download="./code/projects/Polymorphism1.zip"}
 !include code/projects/Polymorphism1/Polymorphism1/Program.cs
 ```
 
@@ -72,7 +72,7 @@ Now, consider the following class implementation and usage:
 !include code/projects/Polymorphism2/Polymorphism2/Class.cs
 ```
 
-```
+```{download="./code/projects/Polymorphism2.zip"}
 !include code/projects/Polymorphism2/Polymorphism2/Program.cs
 ```
 
@@ -85,7 +85,7 @@ However, a warning will be issued by the compiler because the `Test` method in `
 A much better code explicitly instructs C# to *override* `Class1`'s `Test` method with `Class2`'s `Test` method. 
 However, this further requires `Class1`'s `Test` method to explicitly give permission to be overriden, using the `virtual` keyword:
 
-```
+```{download="./code/projects/Polymorphism3.zip"}
 !include code/projects/Polymorphism3/Polymorphism3/Class.cs
 ```
 
@@ -105,7 +105,7 @@ However, overriding methods are treated as virtual and can be overridden themsel
 public override sealed string Test(){…}
 ```
 
-Such a method **cannot** be overridden by classes inheriting from the class to which they belong.
+Such a method **cannot** be overridden by classes inheriting from the class to which they belong^[A method that is not itself overriding cannot use the `sealed` keyword: [it should "simply" not being declared `abstract`](https://stackoverflow.com/questions/13858384/sealed-keyword-in-association-with-override/13858411#13858411).].
 
 Last but not least, note that an override method **must** have the same signature as the overridden method. 
 
@@ -127,7 +127,7 @@ Note that the property in `Class2` has a backing field while there is no need fo
 
 The following would then throw an exception when the `object2.Property = -12;` statement would be executed:
 
-```
+```{download="./code/projects/Polymorphism4.zip"}
 !include code/projects/Polymorphism4/Polymorphism4/Program.cs
 ```
 
@@ -136,3 +136,5 @@ Note that, as for methods, overriding properties are by default virtual and can 
 ```
 !include code/projects/Polymorphism4/Polymorphism4/Class3.cs
 ```
+
+making `Class3` "restore" the behavior of `Class1`'s `Proporty` using automatic properties.
