@@ -25,7 +25,7 @@ Consider a (shortened) version of the example above. We start by implementing an
 !include code/projects/AbstractClass/AbstractClass/Person.cs
 ```
 
-Note that the `Id` property is *also* marked as `abstract`: this means that the derived class will have to re-implement this property's setter.
+Note that the `Id` property is *also* marked as `abstract`: this means that the derived class will have to re-implement this property's setter and getter.
 Then, we can implement the `Student` and `Employee` classes by inheriting from the `Person` class:
 
 ```
@@ -36,6 +36,7 @@ Then, we can implement the `Student` and `Employee` classes by inheriting from t
 !include code/projects/AbstractClass/AbstractClass/Employee.cs
 ```
 
+Note that the `Employee` does not need to add an attribute for `Id` since it is using automatic properties, but that `Student` does.
 
 Using this code, the statement
 

@@ -4,7 +4,8 @@ class Program
 {
   static void Main()
   {
-    // Person test = new Person(); // Cannot create an instance of the abstract type or interface 'Person'
+    // Person test = new Person();
+    // Cannot create an instance of the abstract type or interface 'Person'
     Employee Harley = new Employee();
     Harley.Id = "E8190";
 
