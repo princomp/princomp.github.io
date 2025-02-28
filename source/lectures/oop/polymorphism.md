@@ -17,13 +17,18 @@ While the example below is abstract, it can be easily instantiated to e.g., a `C
 Consider the following two classes:
 
 ```
-!include code/projects/Polymorphism1/Polymorphism1/Class.cs
+!include code/projects/Polymorphism1/Polymorphism1/Class1.cs
+```
+
+```
+!include code/projects/Polymorphism1/Polymorphism1/Class1.cs
 ```
 
 Then, 
 
 - Any `Class1` object has an attribute `attribute1`, a property `Property1` and a method `SetAttribute1`.
 - Any `Class2` object has the attribute, property and method of a `Class1` object, and *in addition*, it has a `Property2` property.
+- Actually, any object from `Class2` *is* an object of `Class1` and can be treated as such.
 
 This means that the following code is valid:
 
@@ -31,7 +36,11 @@ This means that the following code is valid:
 !include code/projects/Polymorphism1/Polymorphism1/Program.cs
 ```
 
-Note, however, that `object1.Property2 = "Test";` would not compile, since *an object from `Class1` cannot access the attributes, properties and methods of `Class2`*.
+Note, however, that
+
+- `object1.Property2 = "Test";` would not compile, since an object from `Class1` cannot access the attributes, properties and methods of `Class2`.
+- `ClassHelper.Method2(object1);` would also not compile, since an object from `Class1` cannot "become" an object of `Class2`.
+
 Stated differently, an object in `Class2` *is a(n object in)* `Class1`, but the converse is not true: an object in `Class1` *is not* an object in `Class2`.
 
 ## Polymorphism and References
@@ -50,7 +59,7 @@ In particular, we can use
 object3.Property1 = "Test";
 ```
 
-but `object3.Property2 = "Test";` would not compile *since we would be trying to access a property of `Class2` with a `Class1` object.
+but `object3.Property2 = "Test";` would not compile *since we would be trying to access a property of `Class2` with a `Class1` object.*
 Remember that an object in `Class1` *is not* an object in `Class2`, and that the way we declared it, `object3` *is* a `Class1` object.
 
 ## Solving Ambiguity by Overriding

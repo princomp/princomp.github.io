@@ -9,8 +9,3 @@ class Class1
 
   public string Property1 { get; set; }
 }
-
-class Class2 : Class1
-{
-  public string Property2 { get; set; }
-}
