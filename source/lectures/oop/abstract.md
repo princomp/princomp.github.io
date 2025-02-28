@@ -65,7 +65,7 @@ The statement `Morgan.Id = "E8194";` will raise exception, but `Morgan.Id = "S81
         ```
         public abstract string GenerateLogin();
         ```
-        to "force" any derived class to implement a `GenerateLogin` method that does not take any parameter and returns a `string`. The derived classes would need to implement a method that overrides the `Person`'s `GenerateLogin` method:
+        to "force" any derived class to implement a `GenerateLogin` method that does not take any parameter and returns a `string`. The derived classes would need to implement a method that overrides the `Person`'s `GenerateLogin` method^[Which should have the same signature *and* return type.]:
 
         ```
         public override string GenerateLogin(){
