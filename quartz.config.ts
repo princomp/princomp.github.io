@@ -16,7 +16,7 @@ const config: QuartzConfig = {
     },
     locale: "en-US",
     baseUrl: "princomp.github.io",
-    ignorePatterns: ["private", "templates", ".obsidian", "uml/"],
+    ignorePatterns: ["private", "templates", ".obsidian", "uml/*/*.md"],
     defaultDateType: "created",
     theme: {
       fontOrigin: "local",
