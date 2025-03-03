@@ -27,14 +27,16 @@ tags:
 
 #. Write a program that create a text file called `HelloWorld.txt` in its `bin/Debug` folder and store "Hello" followed by a name entered by the user in it.
 
-    <details><summary>Solution</summary>```{download="./code/projects/HelloWorldFile.zip"}
+    <details><summary>Solution</summary>
+    ```{download="./code/projects/HelloWorldFile.zip"}
     !include`snippetStart="// Variable used to store the user name.",snippetEnd="finally"` code/projects/HelloWorldFile/HelloWorldFile/Program.cs
     ```
     </details>
 
 #. Write a program that ask the user for a filename, makes sure the filename ends with ".txt" and does not begin with a "." (otherwise, the file would be hidden on unix systems), does not match a file with the same name in the `bin/Debug` folder of your program, then create it in the `bin/Debug` folder of your program and write in it all the number from 1 to 1,000,000 (both included). Out of curiosity, what is the file size?
 
-    <details><summary>Solution</summary>```{download="./code/projects/FileCreation.zip"}
+    <details><summary>Solution</summary>
+    ```{download="./code/projects/FileCreation.zip"}
     !include`snippetStart="// Variable for file name and file path.",snippetEnd="finally"` code/projects/FileCreation/FileCreation/Program.cs
     ```
     
@@ -47,7 +49,8 @@ tags:
     !include`snippetStart="// between 0 and 999.",snippetEnd="// We now search for the highest number stored in this file."` code/projects/FileRandomNumber/FileRandomNumber/Program.cs
     ```
         
-    <details><summary>Solution</summary>```{download="./code/projects/FileRandomNumber.zip"}
+    <details><summary>Solution</summary>
+    ```{download="./code/projects/FileRandomNumber.zip"}
     !include`snippetStart="// We now search for the highest number stored in this file.",snippetEnd="finally"` code/projects/FileRandomNumber/FileRandomNumber/Program.cs
     ```
     </details>
@@ -94,7 +97,8 @@ tags:
     └────────────────┘
     ```
     
-    <details><summary>Solution</summary>```{download="./code/projects/AverageNumberFromFiles.zip"}
+    <details><summary>Solution</summary>
+    ```{download="./code/projects/AverageNumberFromFiles.zip"}
     !include`snippetStart="// read, and the average.",snippetEnd="// We return the average."` code/projects/AverageNumberFromFiles/AverageNumberFromFiles/Program.cs
     ```
     </details>
@@ -118,7 +122,8 @@ tags:
     py is available.
     ```
 
-    <details><summary>Solution</summary>```{download="./code/projects/FileTruncate.zip"}
+    <details><summary>Solution</summary>
+    ```{download="./code/projects/FileTruncate.zip"}
     !include`snippetStart="// Begin solution",snippetEnd="// End solution"` code/projects/FileTruncate/FileTruncate/Program.cs
     ```
     </details>
@@ -134,7 +139,8 @@ tags:
     )
     ```
 
-    <details><summary>Solution</summary>```{download="./code/projects/FileCountProgram.zip"}
+    <details><summary>Solution</summary>
+    ```{download="./code/projects/FileCountProgram.zip"}
     !include code/projects/FileCountProgram/FileCountProgram/Program.cs
     ```
     </details>
@@ -177,7 +183,8 @@ tags:
     Done displaying file.  
     ```
     
-    <details><summary>Solution</summary>```{download="./code/projects/ReadOrWritePath.zip"}
+    <details><summary>Solution</summary>
+    ```{download="./code/projects/ReadOrWritePath.zip"}
     !include code/projects/ReadOrWritePath/ReadOrWritePath/Program.cs
     ```
     </details>

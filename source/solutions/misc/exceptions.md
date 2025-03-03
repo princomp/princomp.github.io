@@ -71,7 +71,8 @@ Entering 0 would not raise any exception.
 #. We implement two methods for a simple `Calculator` `static` class and use one of them.
 
     #. Write a `Square` method that takes one `int` argument and returns its value squared if the parameter is less than 46341^[The square of $46,341$ is greater than the maximum value an `int` can hold, `int.MaxValue`.], and throws an `OverflowException` exception otherwise.
-    <details><summary>Solution</summary>```
+    <details><summary>Solution</summary>
+    ```
     public static int Square(int p){
         if (p > 46341 || p < -46341) throw new OverflowException();
         else return p*p;
@@ -80,7 +81,8 @@ Entering 0 would not raise any exception.
     Note that this code additionally throws an exception if the parameter is less than 46341.
     </details>
     #. Write a `Divide` method that takes two `int` arguments and returns the result of dividing the first parameter by the second. If the second parameter is 0, then the method should throw an `ArgumentOutOfRangeException` exception.
-    <details><summary>Solution</summary>```
+    <details><summary>Solution</summary>
+    ```
     public static int Divide(int dividend, int divisor){
         if (divisor == 0) throw new ArgumentOutOfRangeException();
         else return dividend / divisor;
@@ -88,7 +90,8 @@ Entering 0 would not raise any exception.
     ```
     </details>
     #. Write a piece of code (to be inserted into a `Main` method) that asks the user to enter one number. Then, call `Square` with it (no need to loop). Your code should *not* check the value of the `string` entered for the operation, but must catch the exceptions potentially thrown by the `Square` method (*and, as a bonus, by the `Parse` method*). Your code should also display "Thanks!" regardless of whether an exception was thrown.
-    <details><summary>Solution</summary>```
+    <details><summary>Solution</summary>
+    ```
     try{
         int uInput = int.Parse(Console.ReadLine());
         Console.Write("Your value squared is " + Calculator.Square(uInput));

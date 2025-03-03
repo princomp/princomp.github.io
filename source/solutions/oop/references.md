@@ -131,7 +131,8 @@ tags:
     x2 = 0, y2 = 0, z2 = 5.
     ```
     
-    <details><summary>Solution</summary>```
+    <details><summary>Solution</summary>
+    ```
     !include`snippetStart="// Solution for AddReset",snippetEnd="// Done!"` code/projects/ReferenceMethods/ReferenceMethods/Program.cs
     ```
     </details>

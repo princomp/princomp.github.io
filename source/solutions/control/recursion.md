@@ -166,7 +166,8 @@ tags:
     !include`snippetStart="// Count-down using while loop",snippetEnd="// Count-down using recursion"` code/projects/RecursionAndLoops/RecursionAndLoops/Program.cs
     ```
     
-    <details><summary>Solution</summary>```{download="./code/projects/HelloWorldFile.zip"}
+    <details><summary>Solution</summary>
+    ```{download="./code/projects/HelloWorldFile.zip"}
     !include`snippetStart="// Count-down using recursion",snippetEnd=" // End count-down using recursion"` code/projects/RecursionAndLoops/RecursionAndLoops/Program.cs
     ```
     </details>
@@ -177,7 +178,8 @@ tags:
     !include`snippetStart="// Sum using do while",snippetEnd="// Sum using recursion"` code/projects/RecursionAndLoops/RecursionAndLoops/Program.cs
     ```
     
-    <details><summary>Solution</summary>```{download="./code/projects/HelloWorldFile.zip"}
+    <details><summary>Solution</summary>
+    ```{download="./code/projects/HelloWorldFile.zip"}
     !include`snippetStart="// Sum using recursion",snippetEnd="// End sum using recursion"` code/projects/RecursionAndLoops/RecursionAndLoops/Program.cs
     ```
     </details>
@@ -188,7 +190,8 @@ tags:
     !include`snippetStart="// Display odd values using for loop",snippetEnd="// End display odd values using recursion"` code/projects/RecursionAndLoops/RecursionAndLoops/Program.cs
     ```
     
-    <details><summary>Solution</summary>```{download="./code/projects/HelloWorldFile.zip"}
+    <details><summary>Solution</summary>
+    ```{download="./code/projects/HelloWorldFile.zip"}
     !include`snippetStart="// Display odd values using recursion",snippetEnd="OddInArray(test, 0);"` code/projects/RecursionAndLoops/RecursionAndLoops/Program.cs
     ```
     </details>
