@@ -57,7 +57,7 @@ tags:
 #. Consider the following code:
 
     ```
-!include code/snippets/referencesExercise.cs
+    !include code/snippets/referencesExercise.cs
     ```
     
     #. What are the values of `x`, `y` and `z`
@@ -85,7 +85,7 @@ tags:
 #. Write the `AddRev` method (header included) such that the following:
 
     ```
-!include`snippetStart="// Example for AddRev",snippetEnd="// Solution for AddRev"` code/projects/ReferenceMethods/ReferenceMethods/Program.cs
+    !include`snippetStart="// Example for AddRev",snippetEnd="// Solution for AddRev"` code/projects/ReferenceMethods/ReferenceMethods/Program.cs
     ```
 
     would display
@@ -94,15 +94,16 @@ tags:
     x0 is 7, y0 is 1.
     ```
     
-    <details><summary>Solution</summary>```
-!include`snippetStart="// Solution for AddRev",snippetEnd="// Example for AddLog"` code/projects/ReferenceMethods/ReferenceMethods/Program.cs
+    <details><summary>Solution</summary>
+    ```
+    !include code/projects/ReferenceMethods/ReferenceMethods/Program.cs
     ```
     </details>
         
 #. Write the `AddLog` method (header included) such that the following:
         
     ```
-!include`snippetStart="// Example for AddLog",snippetEnd="// Solution for AddLog"` code/projects/ReferenceMethods/ReferenceMethods/Program.cs
+    !include`snippetStart="// Example for AddLog",snippetEnd="// Solution for AddLog"` code/projects/ReferenceMethods/ReferenceMethods/Program.cs
     ```
     
     would display
@@ -112,15 +113,16 @@ tags:
     7
     ```
     
-    <details><summary>Solution</summary>```
-!include`snippetStart="// Solution for AddLog",snippetEnd="// Example for AddReset"` code/projects/ReferenceMethods/ReferenceMethods/Program.cs
+    <details><summary>Solution</summary>
+    ```
+    !include`snippetStart="// Solution for AddLog",snippetEnd="// Example for AddReset"` code/projects/ReferenceMethods/ReferenceMethods/Program.cs
     ```
     </details>
 
 #. Write the `AddReset` method (header included) such that the following:
     
     ```
-!include`snippetStart="// Example for AddReset",snippetEnd="// Solution for AddReset"` code/projects/ReferenceMethods/ReferenceMethods/Program.cs
+    !include`snippetStart="// Example for AddReset",snippetEnd="// Solution for AddReset"` code/projects/ReferenceMethods/ReferenceMethods/Program.cs
     ```
     
     would display
@@ -130,7 +132,7 @@ tags:
     ```
     
     <details><summary>Solution</summary>```
-!include`snippetStart="// Solution for AddReset",snippetEnd="// Done!"` code/projects/ReferenceMethods/ReferenceMethods/Program.cs
+    !include`snippetStart="// Solution for AddReset",snippetEnd="// Done!"` code/projects/ReferenceMethods/ReferenceMethods/Program.cs
     ```
     </details>
 
