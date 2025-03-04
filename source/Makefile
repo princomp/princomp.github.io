@@ -334,7 +334,7 @@ $(CLA_DIR)%.svg: $(CLA_DIR)%.txt
 	@echo "Creating $@"
 	echo "classDiagram" > $@_tmp \
 	&& cat $< >> $@_tmp \
-	&& mmdc -i $@_tmp -o $@ \
+	&& mmdc -p .puppeteer.json -i $@_tmp -o $@ \
 	&& rm $@_tmp
 
 # Exercise without solution
