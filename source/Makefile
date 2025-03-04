@@ -298,7 +298,7 @@ PREREQ: CLA EXE $(TARGET_IMAGES_FILES)
 
 .PHONY: CLEAN-PREREQ
 CLEAN-PREREQ:
-	rm -f $(CLA_DIR)*.md && rm -rf $(EXO_DIR) && rm -rf $(TARGET_IMAGES_FILES)
+	rm -i -f $(CLA_DIR)*.md $(CLA_DIR)*.png $(CLA_DIR)*.svg && rm -rf $(EXO_DIR) && rm -rf $(TARGET_IMAGES_FILES)
 
 # UML class diagram file
 .PHONY: CLA
