@@ -116,10 +116,14 @@ FIL_TEMPLATES = $(TEMPLATES)filters/
 SOURCE_CLA_TXT_FILES := $(shell find $(CLA_DIR) -mindepth 1  -maxdepth 1 -iname "*.txt")
 SOURCE_CLA_MD_FILES := $(addsuffix .md,  $(basename $(SOURCE_CLA_TXT_FILES)))
 SOURCE_CLA_SVG_FILES := $(addsuffix .svg,  $(basename $(SOURCE_CLA_TXT_FILES)))
+SOURCE_CLA_PNG_FILES := $(addsuffix .png,  $(basename $(SOURCE_CLA_TXT_FILES)))
 TARGET_CLA_TXT_FILES := $(addprefix $(BUILD_DIR), $(SOURCE_CLA_TXT_FILES))
+TARGET_CLA_PNG_FILES := $(addprefix $(BUILD_DIR), $(SOURCE_CLA_PNG_FILES))
+TARGET_CLA_SVG_FILES := $(addprefix $(BUILD_DIR), $(SOURCE_CLA_SVG_FILES))
 TARGET_CLA_MD_FILES :=  $(addprefix $(BUILD_DIR), $(SOURCE_CLA_MD_FILES))
 TARGET_CLA += $(TARGET_CLA_TXT_FILES)
-TARGET_CLA += $(SOURCE_CLA_SVG_FILES)
+TARGET_CLA += $(TARGET_CLA_SVG_FILES)
+TARGET_CLA += $(TARGET_CLA_PNG_FILES)
 TARGET_CLA += $(TARGET_CLA_MD_FILES)
 
 # Exercises files (with and without solution)
@@ -294,15 +298,12 @@ $(IMG_DIR)%.svg:$(IMG_DIR)%.pdf
 # -------------------------------
 
 .PHONY: PREREQ
-PREREQ: CLA EXE $(TARGET_IMAGES_FILES)
+PREREQ: $(TARGET_CLA) EXE $(TARGET_IMAGES_FILES)
 
 .PHONY: CLEAN-PREREQ
 CLEAN-PREREQ:
 	rm -i -f $(CLA_DIR)*.md $(CLA_DIR)*.png $(CLA_DIR)*.svg && rm -rf $(EXO_DIR) && rm -rf $(TARGET_IMAGES_FILES)
 
-# UML class diagram file
-.PHONY: CLA
-CLA: $(SOURCE_CLA_MD_FILES)
 
 # PREVIOUS RULE
 # $(CLA_DIR)%.md: $(CLA_DIR)%.txt | $(CLA_DIR)%.svg 
@@ -335,8 +336,6 @@ CLA: $(SOURCE_CLA_MD_FILES)
 	
 $(CLA_DIR)%.md: $(CLA_DIR)%.txt | $(CLA_DIR)%.svg $(CLA_DIR)%.png
 	echo "![A UML diagram for the $$(sed 's-class \(.*\){-\1-g' $< | sed 's/<|--/⇽/' | sed 's/<|../◁┈/' | sed -n '1p' ) class ([text version](./$(basename $@).txt), [image version](./$(basename $@).png), [svg version](./$(basename $@).svg))]($(notdir $(basename $@)).png){ width=100% }" > $@
-
-
 
 $(CLA_DIR)%.svg: $(CLA_DIR)%.txt
 	@echo "Creating $@"
@@ -596,7 +595,7 @@ all: build $(BUILD_DIR)release.zip
 
 # Phony rule to display variables
 # Uncomment the following and replace
-# TARGET_MD_FILES
+# TARGET_CLA
 # with the variable you want listed.
-# test:
-#	$(info $$TARGET_MD_FILES is [${TARGET_MD_FILES}])
+#test:
+#	$(info $$TARGET_CLA is [${TARGET_CLA}])
