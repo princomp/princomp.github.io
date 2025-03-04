@@ -58,6 +58,9 @@ jobs:
     - name: Setup mermaid-filter
       run: | 
          npm install --global mermaid-filter 
+    - name: Setup mermaid-cli
+      run: |
+           npm install -g @mermaid-js/mermaid-cli
     - name: Build 🏗️
       run: |
         cd /home/runner/work/princomp.github.io/princomp.github.io/source/
