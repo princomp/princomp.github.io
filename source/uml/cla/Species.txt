@@ -1,0 +1,46 @@
+Animal <|-- Mammal
+Mammal <|-- Felis
+Mammal <|-- Bat
+Animal <|-- Reptile
+
+class Animal{
+    << Abstract >>
+    - conservationStatus: string
+    - population: double
+    - wikiLing: string
+    + SetConservationStatus(conservationStatusP: string)
+    + «property» Population: double
+    + «property» WikiLink: string
+    + Animal(conservationStatusP: string, populationP: double, wikiLinkP: string)
+    + ToString() string
+    + ExpandConservationStatus()$
+}
+
+class Mammal{
+    << Abstract >>
+    - mammaryGlands: int
+    + «property» MammaryGlands: int
+    + Mammal(conservationStatusP: string, populationP: double, wikiLinkP: string, mammaryGlandsP: int)
+    + ToString() string
+    + SoundProduced() string$*
+}
+
+class Felis{
+    - furPattern: string
+    + Felis(conservationStatusP: string, populationP: double, wikiLinkP: string, furPatternP: string)
+    + ToString() string
+    + SoundProduced() string$
+}
+
+class Bat{
+    - flightSpeed: double
+    + Bat(conservationStatusP: string, populationP: double, wikiLinkP: string, mammaryGlandsP: int, flightSpeedP: double)
+    + ToString() string
+    + SoundProduced() string$
+}
+
+class Reptile{
+    - scaleType: string
+    + Reptile(conservationStatusP: string, populationP: double, wikiLinkP: string, scaleTypeP: string)
+    + ToString() string
+}

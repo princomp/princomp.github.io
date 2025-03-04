@@ -115,9 +115,11 @@ FIL_TEMPLATES = $(TEMPLATES)filters/
 # UML class diagrams (source and target).
 SOURCE_CLA_TXT_FILES := $(shell find $(CLA_DIR) -mindepth 1  -maxdepth 1 -iname "*.txt")
 SOURCE_CLA_MD_FILES := $(addsuffix .md,  $(basename $(SOURCE_CLA_TXT_FILES)))
+SOURCE_CLA_SVG_FILES := $(addsuffix .svg,  $(basename $(SOURCE_CLA_TXT_FILES)))
 TARGET_CLA_TXT_FILES := $(addprefix $(BUILD_DIR), $(SOURCE_CLA_TXT_FILES))
 TARGET_CLA_MD_FILES :=  $(addprefix $(BUILD_DIR), $(SOURCE_CLA_MD_FILES))
 TARGET_CLA += $(TARGET_CLA_TXT_FILES)
+TARGET_CLA += $(SOURCE_CLA_SVG_FILES)
 TARGET_CLA += $(TARGET_CLA_MD_FILES)
 
 # Exercises files (with and without solution)
@@ -298,7 +300,7 @@ CLEAN-PREREQ:
 .PHONY: CLA
 CLA: $(SOURCE_CLA_MD_FILES)
 
-$(CLA_DIR)%.md: $(CLA_DIR)%.txt
+$(CLA_DIR)%.md: $(CLA_DIR)%.txt | $(CLA_DIR)%.svg
 # After echoing a message, we
 # 1. Set the caption to be "A UML diagram for the"
 # followed by the name of the (first) class in the .txt file
@@ -317,12 +319,23 @@ $(CLA_DIR)%.md: $(CLA_DIR)%.txt
 # 6. We remove all the new lines introduced by the previous operations,
 # Using tr (which doesn't support in-file edit, so we use a temp file).
 	@echo "Creating $@"
-	@export MERMAID_FILTER_CAPTION="A UML diagram for the $$(sed 's-class \(.*\){-\1-g' $< | sed 's/<|--/⇽/' | sed 's/<|../◁┈/' | sed -n '1p' ) class ([text version](./$<))" \
+	@export MERMAID_FILTER_CAPTION="A UML diagram for the $$(sed 's-class \(.*\){-\1-g' $< | sed 's/<|--/⇽/' | sed 's/<|../◁┈/' | sed -n '1p' ) class ([text version](./$<), [svg version](./$(basename $<).svg)" \
 	&& pandoc -F mermaid-filter $(CLA_TEMPLATES)before.md $< $(CLA_TEMPLATES)after.md -o $@ \
 	&& sed -i 's-\\\[-[-g' $@ && sed -i 's-\\\]-]-g' $@ \
 	&& sed -i 's-"fig:")--g' $@ \
 	&& echo -n '"' >> $@ && cat $< >> $@ && echo -n '")' >> $@ \
-	&& tr '\n' ' ' < $@ > $(notdir $(basename $@))-temp.md && mv $(notdir $(basename $@))-temp.md $@
+	&& tr '\n' ' ' < $@ > $(notdir $(basename $@))-temp.md && mv $(notdir $(basename $@))-temp.md $@ \
+	&& sed -i '1 s/./[&/' $@ \
+	&& echo "](./$(basename $<).svg)" >> $@
+
+
+
+$(CLA_DIR)%.svg: $(CLA_DIR)%.txt
+	@echo "Creating $@"
+	echo "classDiagram" > $@_tmp \
+	&& cat $< >> $@_tmp \
+	&& mmdc -p .puppeteer.json -i $@_tmp -o $@ \
+	&& rm $@_tmp
 
 # Exercise without solution
 .PHONY: EXE
@@ -551,7 +564,7 @@ $(BUILD_DIR)book.docx: $(SOURCE_BOOK)
 
 .PHONY: fetch
 fetch:
-	wget https://github.com/princomp/princomp.github.io/releases/download/latest/release.zip -P ../ && cd ../ && unzip -q release.zip && cd content && rsync -avR $(PROJECT_DIR)**.zip ../source && rsync -avR $(CLA_DIR)**.md ../source && rsync -avR $(EXO_DIR)* ../source || true
+	wget https://github.com/princomp/princomp.github.io/releases/download/latest/release.zip -P ../ && cd ../ && unzip -q release.zip && cd content && rsync -avR $(PROJECT_DIR)**.zip ../source && rsync -avR $(CLA_DIR)**.md ../source && rsync -avR $(CLA_DIR)**.svg ../source && rsync -avR $(EXO_DIR)* ../source || true
 
 book: $(BUILD_DIR)book.html $(BUILD_DIR)book.pdf $(BUILD_DIR)book.odt $(BUILD_DIR)book.docx
 
