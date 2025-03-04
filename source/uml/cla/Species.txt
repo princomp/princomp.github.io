@@ -1,6 +1,6 @@
 Animal <|-- Mammal
-Mammal <|-- Cat
-Mammal <|-- Bear
+Mammal <|-- Felis
+Mammal <|-- Bat
 Animal <|-- Reptile
 
 class Animal{
@@ -22,7 +22,7 @@ class Mammal{
     + «property» MammaryGlands: int
     + Mammal(conservationStatusP: string, populationP: double, wikiLinkP: string, mammaryGlandsP: int)
     + ToString() string
-    + SoundProduced() string*$
+    + SoundProduced() string$*
 }
 
 class Felis{

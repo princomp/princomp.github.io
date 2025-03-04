@@ -29,7 +29,7 @@ Remembering  that:
 - Static methods are u͟n͟d͟e͟r͟l͟i͟n͟e͟d͟,
 - Abstract methods are *in italics*.
 
-**Pay attention to details**.
+**Pay attention to details**, and to the following bug: the `SoundProduced` in `Mammal` should be static **and** abstract ([but unfortunately our UML drawing software does not allow this yet](https://github.com/mermaid-js/mermaid/issues/3001)).
 
 In addition, you code should be such that:
 
