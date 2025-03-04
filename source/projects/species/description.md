@@ -65,7 +65,7 @@ In particular, make sure you write your name and the date in a delimited comment
 
 ## Bonuses
 
-This project is already challenging *as is*, but bonus will be given if:
+This project is already challenging *as is*, but bonus will be given if: (to be written)
 
 <!--
 
