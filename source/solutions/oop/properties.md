@@ -180,25 +180,23 @@ Suppose you've created an object in the `Plant` class called `myPlant`.
         #. Sets its width to 5,
         #. Sets its length to 10,
         #. Displays its area.
-    <details><summary>Solution</summary>
-    ```
-    using System;
-    class Program
-    {
-        public static void Main()
+        <details><summary>Solution</summary>```
+        using System;
+        class Program
         {
-            Rectangle test = new Rectangle(); // 1
-            test.SetWidth(5); // 2
-            test.SetLength(10); // 3
-            Console.WriteLine(test.ComputeArea()); // 4
+            public static void Main()
+            {
+                Rectangle test = new Rectangle(); // 1
+                test.SetWidth(5); // 2
+                test.SetLength(10); // 3
+                Console.WriteLine(test.ComputeArea()); // 4
+            }
         }
-    }
-    ```
-    </details>
+        ```
+        </details>
 
     #. Write an implementation of the `Rectangle` class *using only properties* (included for the `ComputeArea()`).
-    <details><summary>Solution</summary>
-    ```
+    <details><summary>Solution</summary>```
     class Rectangle{
       public int Length{get; set;}
       public int Width{get; set;}
@@ -207,8 +205,7 @@ Suppose you've created an object in the `Plant` class called `myPlant`.
     ```
     </details>
     #. Write a `Main` method that performs the same tasks as above, but using the properties you just defined.
-    <details><summary>Solution</summary>
-    ```
+    <details><summary>Solution</summary>```
     using System;
     class Program
     {
@@ -227,14 +224,12 @@ Suppose you've created an object in the `Plant` class called `myPlant`.
 #. Implement a `SDCard` class to represent SD cards. Add attributes to your answer if needed.
 
     #. Implement a `Nickname` `string` property using automatic properties.
-    <details><summary>Solution</summary>
-    ```
+    <details><summary>Solution</summary>```
     public string Nickname {get; set;}
     ```
     </details>
     #. Implement a `Capacity` `int` property whose setter raises an `ArgumentException` exception if the value passed as argument is not 8, 16, 32, 64 or 128.  The getter should simply return the value stored.
-    <details><summary>Solution</summary>
-    ```
+    <details><summary>Solution</summary>```
     private int capacity;
     public int Capacity {
         set {
@@ -248,16 +243,14 @@ Suppose you've created an object in the `Plant` class called `myPlant`.
     ```
     </details>
     #. Implement a `CapacityInGb` `int` property with only a getter, that returns the `Capacity` times 8.
-    <details><summary>Solution</summary>
-    ```
+    <details><summary>Solution</summary>```
     public int CapacityInGb {
         get {return capacity * 8;}
     }
     ```
     </details>
     #. Implement a `ToString` method that returns a `string` containing the nickname of the SD card, its capacity in gigabytes (GB, from question 2.), and its capacity in gigabits (Gb, from question 3.).    
-    <details><summary>Solution</summary>
-    ```
+    <details><summary>Solution</summary>```
     public override string ToString(){
         return "Name: " + Nickname + "\nCapacity: " + Capacity + "GB" + "\nCapacity in Gb: " + CapacityInGb + "Gb";
     }
@@ -282,15 +275,13 @@ Suppose you've created an object in the `Plant` class called `myPlant`.
 #. In this problem, we will implement a `Weather` class recording a location and a temperature (in Fahrenheit). Add attributes to your answers if needed.
 
     #. Implement a `Location` `string` property using automatic properties. Its default value should be "Unknown".
-    <details><summary>Solution</summary>
-    ```
+    <details><summary>Solution</summary>```
     public string Location { get; set; } = "Unknown";
     ```
     </details>
     #. Implement a `Temperature` `double` property. If the value passed as an argument to the setter is less than -128.6 or greater than 134.1, then the setter should raise an `ArgumentOutOfRangeException` exception.
     The getter simply returns the value stored.
-    <details><summary>Solution</summary>
-    ```
+    <details><summary>Solution</summary>```
     public double Temp
     {
         set
@@ -303,8 +294,7 @@ Suppose you've created an object in the `Plant` class called `myPlant`.
     ```
     </details>
     #. Implement a `TempInC` `double` property with only a getter that returns the temperature in Celsius, using the following formula: $°C = (°F - 32) ÷ (9/5)$.
-    <details><summary>Solution</summary>
-    ```
+    <details><summary>Solution</summary>```
     public double TempInC
     {
         get
@@ -315,8 +305,7 @@ Suppose you've created an object in the `Plant` class called `myPlant`.
     ```
     </details>
     #. Implement a `ToString` method that returns a `string` containing the location and the temperature both in Celsius and Fahrenheit.
-    <details><summary>Solution</summary>
-    ```
+    <details><summary>Solution</summary>```
     public override string ToString()
     {
         return Location + ": " + Temp + "°F (" + TempInC + "°C)";
