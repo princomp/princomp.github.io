@@ -11,7 +11,7 @@ class Animal{
     + SetConservationStatus(conservationStatusP: string)
     + «property» Population: double
     + «property» WikiLink: string
-    + Animal(conservationStatusP: string, populationP: double, wikiLinkP: string)
+    # Animal(conservationStatusP: string, populationP: double, wikiLinkP: string)
     + ToString() string
     + ExpandConservationStatus()$
 }
@@ -20,9 +20,8 @@ class Mammal{
     << Abstract >>
     - mammaryGlands: int
     + «property» MammaryGlands: int
-    + Mammal(conservationStatusP: string, populationP: double, wikiLinkP: string, mammaryGlandsP: int)
+    # Mammal(conservationStatusP: string, populationP: double, wikiLinkP: string, mammaryGlandsP: int)
     + ToString() string
-    + SoundProduced() string$*
 }
 
 class Felis{
