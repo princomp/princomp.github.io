@@ -298,7 +298,7 @@ $(IMG_DIR)%.svg:$(IMG_DIR)%.pdf
 # -------------------------------
 
 .PHONY: PREREQ
-PREREQ: $(TARGET_CLA) EXE $(TARGET_IMAGES_FILES)
+PREREQ: $(TARGET_CLA) $(TARGET_EXO) $(TARGET_IMAGES_FILES)
 
 .PHONY: CLEAN-PREREQ
 CLEAN-PREREQ:
@@ -352,9 +352,6 @@ $(CLA_DIR)%.png: $(CLA_DIR)%.txt
 	&& rm $@_tmp
 
 # Exercise without solution
-.PHONY: EXE
-EXE: $(TARGET_EXO)
-
 $(EXO_DIR)%.md: $(SOL_DIR)%.md
 	@echo "Creating $@"
 	@mkdir -p $(dir $@) \
@@ -586,12 +583,12 @@ book: $(BUILD_DIR)book.html $(BUILD_DIR)book.pdf $(BUILD_DIR)book.odt $(BUILD_DI
 # Ligter build, to test compilation and website deployment
 build-light: $(BUILD_DIR)web-order.ts $(TARGET_MD_FILES) $(TARGET_WOFF_FONT_FILES) $(TARGET_IMAGES_FILES) $(TARGET_VIDEOS_FILES) $(TARGET_DOC_FILES_WITHOUT_INDEX) $(TARGET_CLA) | PREREQ
 
-build: build-light $(TARGET_PDF_FILES_WITHOUT_INDEX) $(TARGET_ODT_FILES_WITHOUT_INDEX) $(TARGET_PROJECTS_FILES) book
+build: build-light $(TARGET_PDF_FILES_WITHOUT_INDEX) $(TARGET_ODT_FILES_WITHOUT_INDEX) $(TARGET_PROJECTS_FILES) book | PREREQ
 
 $(BUILD_DIR)release.zip: | build
 	7z a $(BUILD_DIR)release.zip $(BUILD_DIR)
 
-all: build $(BUILD_DIR)release.zip
+all: build $(BUILD_DIR)release.zip | PREREQ
 
 # Phony rule to display variables
 # Uncomment the following and replace
