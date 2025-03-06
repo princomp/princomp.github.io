@@ -20,14 +20,14 @@ You need to develop at the same time a system to capture the similarities across
 
 ### In more details
 
-We want to implement the classes pictured in the UML diagram (you can zoom in or, in your browser, right click and select "Open Image in New Tab", or access [its text version](./uml/cla/Species.txt)).
+We want to implement the classes pictured in the UML diagram (you right click and select "Open Image in New Tab", or access the other versions listed in caption).
 
 !include uml/cla/Species.md
 
 Keeping in mind that:
 
 - Static methods are u͟n͟d͟e͟r͟l͟i͟n͟e͟d͟,
-- The constructors in the `Animal` and `Mammal` classes are *protected*: simply declare them using `protected Animal(string conservationStatusP, double populationP, string wikiLinkP){…}`.
+- The constructors in the `Animal` and `Mammal` classes are *protected* (that is the `#` sign): simply declare them using `protected Animal(string conservationStatusP, double populationP, string wikiLinkP){…}`.
 
 **Pay attention to details**, and note that
 
