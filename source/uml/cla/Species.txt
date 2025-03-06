@@ -8,9 +8,9 @@ class Animal{
     - conservationStatus: string
     - population: double
     - wikiLing: string
-    + SetConservationStatus(conservationStatusP: string)
     + «property» Population: double
     + «property» WikiLink: string
+    + SetConservationStatus(conservationStatusP: string)
     # Animal(conservationStatusP: string, populationP: double, wikiLinkP: string)
     + ToString() string
     + ExpandConservationStatus()$
@@ -39,7 +39,7 @@ class Bat{
 }
 
 class Reptile{
-    - scaleType: string
-    + Reptile(conservationStatusP: string, populationP: double, wikiLinkP: string, scaleTypeP: string)
+    - ossifiedScale: bool
+    + Reptile(conservationStatusP: string, populationP: double, wikiLinkP: string, ossifiedScaleP: bool)
     + ToString() string
 }

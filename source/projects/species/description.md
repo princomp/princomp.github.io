@@ -24,13 +24,15 @@ We want to implement the classes pictured in the UML diagram (you can zoom in or
 
 !include uml/cla/Species.md
 
-Remembering  that:
+Keeping in mind that:
 
 - Static methods are u͟n͟d͟e͟r͟l͟i͟n͟e͟d͟,
-- Abstract methods are *in italics*.
 - The constructors in the `Animal` and `Mammal` classes are *protected*: simply declare them using `protected Animal(string conservationStatusP, double populationP, string wikiLinkP){…}`.
 
-**Pay attention to details**, and note that population is represented with a `double` as it represents _thousands_ of individuals.
+**Pay attention to details**, and note that
+
+- Population is represented with a `double` as it represents _thousands_ of individuals.
+- The constructor for `Felis` does not require a `mammaryGlandsP` parameter, since all felis have 8 mammary glands. Bats, [however](https://www.auburn.edu/cosam/faculty/biology/hood/lab/documents/Kunz.et.al.2010.LactationChapter.pdf), can have a varying number of mammary glands.
 
 In addition, you code should be such that:
 
@@ -39,10 +41,12 @@ In addition, you code should be such that:
 - An exception will be raised if the url for the `WikiLink` property does not start with `https://en.wikipedia.org/wiki/`.
 - The `ExpandConservationStatus` method should "expand" the conservation status code, as given at <https://en.wikipedia.org/wiki/Conservation_status#IUCN_Red_List_of_Threatened_Species> and below.
 - `MammaryGlands` should not accept any value not listed at <https://en.wikipedia.org/wiki/Mammary_gland#General> under "Total".
-- For `Felis` and `Bat`, the `SoundProduced` methods should simply display on the screen "mew, meow, purr, hiss, trill, caterwaul, growl" and "screech, squeak, eek", respectively ([source](https://en.wikipedia.org/wiki/List_of_animal_sounds)).
+- For `Felis` and `Bat`, the `SoundProduced` methods should simply return a `string` containing "mew, meow, purr, hiss, trill, caterwaul, growl" and "screech, squeak, eek", respectively ([source](https://en.wikipedia.org/wiki/List_of_animal_sounds)).
+- A `Bat` flight speed cannot be negative, but it can be $0$ (which is used for "unknown").
+- `ExpandConservationStatus()` expands the abbreviations of `conservationStatus` and gives a short definition.
 - For each relevant class, the `ToString` method should display all the attributes and properties.
 
-Your code should be such that the following:
+Your code should be such that the following^[You are welcome to test with different data and objects, of course. Just do not lose track of the important goals, which are *not* to get the right status / population estimate / wikipedia page to the species you are representing!]:
 
 ```
 using System;
@@ -71,6 +75,10 @@ class Program
         // Error CS0144: Cannot create an instance of the abstract type or interface 'Mammal' (CS0144) (Species)
         // if uncommented.
 
+        /*
+         * First, we test the static method from the Animal class.
+         */
+        Animal.ExpandConservationStatus();
         /*
          * We now create a couple of objects from proper species.
          * The following should not return exceptions.
@@ -105,6 +113,7 @@ class Program
         /*
          * We now test our improper values handling.
          */
+        Console.WriteLine("Test 1:");
         try
         {
             Felis test1 = new Felis("INVALID CODE", 1, null, null);
@@ -113,6 +122,7 @@ class Program
         {
             Console.WriteLine(e.Message);
         }
+        Console.WriteLine("Test 2:");
         try
         {
             Felis test2 = new Felis("EX", 10, "https://en.wikipedia.org/wiki/whatever", null);
@@ -121,6 +131,7 @@ class Program
         {
             Console.WriteLine(e.Message);
         }
+        Console.WriteLine("Test 3:");
         try
         {
 
@@ -130,6 +141,7 @@ class Program
         {
             Console.WriteLine(e.Message);
         }
+        Console.WriteLine("Test 4:");
         try
         {
 
@@ -139,9 +151,19 @@ class Program
         {
             Console.WriteLine(e.Message);
         }
+        Console.WriteLine("Test 5:");
         try
         {
             Bat test5 = new Bat("LC", 10, "https://en.wikipedia.org/wiki/whatever", 3, 0);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+        Console.WriteLine("Test 6:");
+        try
+        {
+            Bat test5 = new Bat("LC", 1, "https://en.wikipedia.org/wiki/whatever", 2, -1);
         }
         catch (Exception e)
         {
@@ -155,6 +177,17 @@ class Program
 should display (something along the lines of)
 
 ```text
+Extinct (EX) – There are no known living individuals
+Extinct in the wild (EW) – Known only to survive in captivity, or as a naturalized population outside its historic range
+Critically Endangered (CR) – Highest risk of extinction in the wild
+Endangered (EN) – Higher risk of extinction in the wild
+Vulnerable (VU) – High risk of extinction in the wild
+Near Threatened (NT) – Likely to become endangered in the near future
+Conservation Dependent (CD) – Low risk; is conserved to prevent being near threatened, certain events may lead it to being a higher risk level
+Least concern (LC) – Very Low risk; does not qualify for a higher risk category and not likely to be threatened in the near future. Widespread and abundant taxa are included in this category.
+Data deficient (DD) – Not enough data to make an assessment of its risk of extinction
+Not evaluated (NE) – Has not yet been evaluated against the criteria.
+
 | Population           | 10 000
 | Conservation Status  | LC
 | Wikipedia Link       | https://en.wikipedia.org/wiki/Jungle_cat
@@ -223,11 +256,18 @@ should display (something along the lines of)
 
 ********************
 
+Test 1:
 A conservation status is 2 characters long.
+Test 2:
 Population cannot be non-zero if conservation status is not EX.
+Test 3:
 Submission link (http://sketchy-website.com/) does not start with "https://en.wikipedia.org/wiki/".
+Test 4:
 Population cannot be negative unless conservation status is DD.
+Test 5:
 Number of mammary glands cannot be odd, unless it is 13, 25 or 27.
+Test 6:
+Flight speed cannot be negative.
 ```
 
 ## Submission
@@ -235,17 +275,10 @@ Number of mammary glands cannot be odd, unless it is 13, 25 or 27.
 Please, follow our [guideline on project submission](https://princomp.github.io/projects/submission).
 In particular, make sure you write your name and the date in a delimited comment at the beginning of your file.
 
-<!--
-
 ## Bonuses
 
-This project is already challenging *as is*, but bonus will be given if: (to be written)
+This project is already challenging *as is*, but bonus will be given if:
 
-
-- (easy) Except in the `Species` class, make it so that the `GetContact()` methods cannot be overridden,
-- (medium) Your `Main` method exhibits many test cases and illustrates your classes' features nicely,
-- (hard) A mechanism is implemented to either export the attributes of an `Species` object into a file or to load it from a file.
-
-
-Wikipedia accepts any prefix (xx.wikipedia etc.)
--->
+- (easy) The `ToString()` methods return the information nicely formatted, as above.
+- (medium) You explain briefly (in comment) why the `SoundProduced` method is not given as an abstract static method in the `Mammal` class.
+- (hard) The `WikiLink` property accepts any ["WP code" from wikipedia](https://en.wikipedia.org/wiki/List_of_Wikipedias#Active_editions): links starting with `https://id.wikipedia.org/wiki/`, `https://simple.wikipedia.org/wiki/`, etc. should also be accepted.
