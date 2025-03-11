@@ -27,7 +27,11 @@ We want to implement the classes pictured in the UML diagram (you right click an
 Keeping in mind that:
 
 - Static methods are u͟n͟d͟e͟r͟l͟i͟n͟e͟d͟,
-- The constructors in the `Animal` and `Mammal` classes are *protected* (that is the `#` sign): simply declare them using `protected Animal(string conservationStatusP, double populationP, string wikiLinkP){…}`.
+- The constructors in the `Animal` and `Mammal` classes are *protected* (that is the `#` sign): simply declare them using 
+
+    ```
+    protected Animal(string conservationStatusP, double populationP, string wikiLinkP){…}
+    ```
 
 **Pay attention to details**, and note that
 
