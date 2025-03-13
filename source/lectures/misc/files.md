@@ -141,3 +141,17 @@ Some simple(r) examples are:
 ```{download="./code/projects/FileExceptions.zip"}
 !include code/projects/FileExceptions/FileExceptions/Program.cs
 ```
+
+## In More Details: Streams
+
+The `StreamWriter` and `StreamReader` constructors we discussed above can also take `System.IO.Stream` objects as arguments, and it makes handling of files a bit easier to understand.
+Indeed, [`System.IO.Stream`](https://learn.microsoft.com/en-us/dotnet/api/system.io.stream?view=net-9.0) is an abstract class that provides a generic view on sequences of bytes. An object in its class can be a file, a I/O device, a TCP/IP socket, etc.
+
+That means that our `StreamWriter` and `StreamReader` objects don't really see the whole file "all at once", they process it by loading some of it in a *buffer* (whose size can actually be specified when creating e.g. a [`StreamWriter` object](https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter.-ctor?view=net-9.0#system-io-streamwriter-ctor(system-io-stream-system-text-encoding-system-int32)).
+Since all the program "see" is [a series of characters containing new line characters](https://learn.microsoft.com/en-us/dotnet/api/system.io.streamreader.readline?view=net-9.0#remarks), as many as its buffer can hold, we cannot for example
+
+- Open the file at an arbitrary line,
+- Read the file backward (that is, from the end),
+- Search for a particular word,
+
+*unless we write a program to complete this task ourselves*.
