@@ -16,8 +16,6 @@ Files are useful for permanency: when a program terminates, all the objects crea
 This lecture is concerned with files: how to write into them, how to read from them, how to make sure that our program does not throw exceptions when dealing with "I/O" (read: input / output) operations?
 We will only consider *textual* files, with the `.txt` extension, for now.
 
-
-
 ## Warm-Up: Finding a Correct Path
 
 Each file has a (full, or absolute) *path*, which is a string describing where it is stored: it is made of a directory path and a file (or base) name.
@@ -99,7 +97,7 @@ When manipulating files, *many* things can go wrong.
 
 ### What if we are trying to read a file that does not exist?
 
-If the `StreamReader` constructor is given a path to a file that does not exist, it will raise an exception. 
+If the `StreamReader` constructor is given a path to a file that does not exist, it will raise an exception (discussed [below](#many-things-can-go-wrong)).
 We can catch this exception, but a better mechanism is to simply warn the user, using the `File.Exists` method that return `true` if its string argument points to a file, `false` otherwise.
 
 ```
@@ -132,4 +130,14 @@ should be used only if we do not care about existing files.
 
 ### Many Things Can Go Wrong!
 
-We will not list in detail all the ways things can go wrong with manipulating files (memory shortage, access right limitations, concurrent access to a file, etc.), but **read and write access to files should always take place in `try-catch` blocks**.
+We will not list in detail all the ways things can go wrong with manipulating files, but some examples include:
+
+- memory shortage, for example triggering a `OutOfMemoryException` from the [`StreamReader.ReadLine` method](https://learn.microsoft.com/en-us/dotnet/api/system.io.streamreader.readline?view=net-9.0#system-io-streamreader-readline), 
+- File not being writable (for example, because of access right limitations), triggering an `ArgumentException` from the [`StreamWriter`](https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter.-ctor?view=net-9.0#system-io-streamwriter-ctor(system-io-stream)) constructor.
+
+In any cases, **accessing files in general should always take place in `try-catch` blocks**.
+Some simple(r) examples are:
+
+```{download="./code/projects/FileExceptions.zip"}
+!include code/projects/FileExceptions/FileExceptions/Program.cs
+```
