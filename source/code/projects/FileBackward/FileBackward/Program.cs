@@ -11,20 +11,24 @@ class Program
       .CurrentDomain
       .BaseDirectory;
         // Asking the user for file name.
-        Console.WriteLine("Please, enter a file name");
+        Console.WriteLine("Please, enter a file name (hit \"enter\" to use \"test.txt\").");
         string fileName = Console.ReadLine();
-        string filePath = Path.Combine(
+        if (fileName == null || fileName == "") fileName = "test.txt";
+         string filePath = Path.Combine(
       directoryPath,
       fileName
     );
         // Creating a generator for random numbers.
         Random gen = new Random();
+        int numNum = gen.Next(20, 100);
+        // We will store between 20 and 99 numbers in our file.
         // We first populate the file with random numbers.
         try
         {
+            Console.WriteLine("Now storing " + numNum + " random numbers into " + filePath + ".");
             StreamWriter sw = new StreamWriter(filePath);
             // Further references to sw *have to be* on the same try block.
-            for (int i = 0; i < 23; i++) sw.WriteLine(gen.Next(i + 2));
+            for (int i = 0; i < numNum; i++) sw.WriteLine(gen.Next(i + 2));
             sw.Close();
         }
         catch (Exception ex) { Console.WriteLine(ex); }

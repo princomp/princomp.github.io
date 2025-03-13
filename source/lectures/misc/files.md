@@ -181,6 +181,8 @@ Since all the program "see" is [a series of characters containing new line chara
 
 *unless we write a program to complete this task ourselves*.
 
+Here is an example of a program asking the user to enter a file name, populating it with a random number of random numbers, and then reading it backward:
+
 ```{download="./code/projects/FileBackward.zip"}
 !include code/projects/FileBackward/FileBackward/Program.cs
 ```
