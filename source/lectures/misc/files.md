@@ -16,8 +16,6 @@ Files are useful for permanency: when a program terminates, all the objects crea
 This lecture is concerned with files: how to write into them, how to read from them, how to make sure that our program does not throw exceptions when dealing with "I/O" (read: input / output) operations?
 We will only consider *textual* files, with the `.txt` extension, for now.
 
-
-
 ## Warm-Up: Finding a Correct Path
 
 Each file has a (full, or absolute) *path*, which is a string describing where it is stored: it is made of a directory path and a file (or base) name.
@@ -99,7 +97,7 @@ When manipulating files, *many* things can go wrong.
 
 ### What if we are trying to read a file that does not exist?
 
-If the `StreamReader` constructor is given a path to a file that does not exist, it will raise an exception. 
+If the `StreamReader` constructor is given a path to a file that does not exist, it will raise an exception (discussed [below](#many-things-can-go-wrong)).
 We can catch this exception, but a better mechanism is to simply warn the user, using the `File.Exists` method that return `true` if its string argument points to a file, `false` otherwise.
 
 ```
@@ -132,4 +130,59 @@ should be used only if we do not care about existing files.
 
 ### Many Things Can Go Wrong!
 
-We will not list in detail all the ways things can go wrong with manipulating files (memory shortage, access right limitations, concurrent access to a file, etc.), but **read and write access to files should always take place in `try-catch` blocks**.
+We will not list in detail all the ways things can go wrong with manipulating files, but some examples include:
+
+- memory shortage, for example triggering a `OutOfMemoryException` from the [`StreamReader.ReadLine` method](https://learn.microsoft.com/en-us/dotnet/api/system.io.streamreader.readline?view=net-9.0#system-io-streamreader-readline), 
+- File not being writable (for example, because of access right limitations), triggering an `ArgumentException` from the [`StreamWriter`](https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter.-ctor?view=net-9.0#system-io-streamwriter-ctor(system-io-stream)) constructor.
+
+In any cases, **accessing files in general should always take place in `try-catch` blocks**.
+Some simple(r) examples are:
+
+```{download="./code/projects/FileExceptions.zip"}
+!include code/projects/FileExceptions/FileExceptions/Program.cs
+```
+
+Note also that scoping matter, as C# is "pessimistic": it supposes that everything inside the `try` portion will fail.
+For example, one cannot have
+
+```
+// The following would *not* compile
+try
+{
+    StreamWriter sw = new StreamWriter(filePath);
+    // …
+}
+catch (Exception ex) { Console.WriteLine(ex); }
+finally
+{
+    sw.Close();
+}
+```
+
+as C# would complain that
+
+```text
+The name 'sw' does not exist in the current context
+```
+
+since it assumes that the creation of `sw` *will* fail.
+
+## In More Details: Streams
+
+The `StreamWriter` and `StreamReader` constructors we discussed above can also take `System.IO.Stream` objects as arguments, and it makes handling of files a bit easier to understand.
+Indeed, [`System.IO.Stream`](https://learn.microsoft.com/en-us/dotnet/api/system.io.stream?view=net-9.0) is an abstract class that provides a generic view on sequences of bytes. An object in its class can be a file, a I/O device, a TCP/IP socket, etc.
+
+That means that our `StreamWriter` and `StreamReader` objects don't really see the whole file "all at once", they process it by loading some of it in a *buffer* (whose size can actually be specified when creating e.g. a [`StreamWriter` object](https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter.-ctor?view=net-9.0#system-io-streamwriter-ctor(system-io-stream-system-text-encoding-system-int32) ).
+Since all the program "see" is [a series of characters containing new line characters](https://learn.microsoft.com/en-us/dotnet/api/system.io.streamreader.readline?view=net-9.0#remarks), as many as its buffer can hold, we cannot for example
+
+- Open the file at an arbitrary line,
+- Read the file backward (that is, from the end),
+- Search for a particular word,
+
+*unless we write a program to complete this task ourselves*.
+
+Here is an example of a program asking the user to enter a file name, populating it with a random number of random numbers, and then reading it backward:
+
+```{download="./code/projects/FileBackward.zip"}
+!include code/projects/FileBackward/FileBackward/Program.cs
+```

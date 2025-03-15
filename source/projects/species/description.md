@@ -27,7 +27,11 @@ We want to implement the classes pictured in the UML diagram (you right click an
 Keeping in mind that:
 
 - Static methods are u͟n͟d͟e͟r͟l͟i͟n͟e͟d͟,
-- The constructors in the `Animal` and `Mammal` classes are *protected* (that is the `#` sign): simply declare them using `protected Animal(string conservationStatusP, double populationP, string wikiLinkP){…}`.
+- The constructors in the `Animal` and `Mammal` classes are *protected* (that is the `#` sign): simply declare them using 
+
+    ```
+    protected Animal(string conservationStatusP, double populationP, string wikiLinkP){…}
+    ```
 
 **Pay attention to details**, and note that
 
@@ -39,11 +43,10 @@ In addition, you code should be such that:
 - The characters for the `conservationStatus` should be [one of the IUCN Red List of Threatened Species](https://en.wikipedia.org/wiki/Conservation_status#IUCN_Red_List_of_Threatened_Species) code: `EX`, `EW`, `CR`, `EN`, `VU`, `NT`, `CD`, `LC`, `DD`, or `NE`. Your `SetConservationStatus` method should throw an exception if any other value is passed, and your `Animal` constructor should call the `SetConservationStatus` method.
 - An exception should be thrown if `Population` is greater than $0$ and `conservationStatus` is set to `EX` (which stands for Extinct). An exception should also be thrown for negative values, except if `conservationStatus` is set to `DD` (data deficient).
 - An exception will be raised if the url for the `WikiLink` property does not start with `https://en.wikipedia.org/wiki/`.
-- The `ExpandConservationStatus` method should "expand" the conservation status code, as given at <https://en.wikipedia.org/wiki/Conservation_status#IUCN_Red_List_of_Threatened_Species> and below.
 - `MammaryGlands` should not accept any value not listed at <https://en.wikipedia.org/wiki/Mammary_gland#General> under "Total".
 - For `Felis` and `Bat`, the `SoundProduced` methods should simply return a `string` containing "mew, meow, purr, hiss, trill, caterwaul, growl" and "screech, squeak, eek", respectively ([source](https://en.wikipedia.org/wiki/List_of_animal_sounds)).
 - A `Bat` flight speed cannot be negative, but it can be $0$ (which is used for "unknown").
-- `ExpandConservationStatus()` expands the abbreviations of `conservationStatus` and gives a short definition.
+- The `ExpandConservationStatus` method should expand the abbreviations of `conservationStatus` (as given e.g., at <https://en.wikipedia.org/wiki/Conservation_status#IUCN_Red_List_of_Threatened_Species> and below) and give a short definition.
 - For each relevant class, the `ToString` method should display all the attributes and properties.
 
 Your code should be such that the following^[You are welcome to test with different data and objects, of course. Just do not lose track of the important goals, which are *not* to get the right status / population estimate / wikipedia page to the species you are representing!]:
