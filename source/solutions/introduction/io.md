@@ -6,10 +6,9 @@ tags:
 ## Warm-up Exercises
 
 #. Write a program that performs the following steps:
-
-1. Ask user to enter any number between 1 and 100
-2. Multiply the number user enters by 2
-3. Display the result of the calculation at the screen
+	a) Asks user to enter any number between 1 and 100
+	b) Multiplies the number user enters by 2
+	c) Displays the result of the calculation on the screen
 
 Here is a sample of a program output that performs these steps:
 
@@ -21,7 +20,7 @@ Please enter a number between 1 and 100: 32
 32 multiplied by 2 is 64!
 ```
 
-Run your program a few times and use different numbers in range 1-100 to verify the program works as intended (running program 3 - 5 times is sufficient).
+Run your program a few times and use different numbers in range 1-100 to verify the program works as intended (running the program 3 - 5 times is sufficient).
 
 <details>
 <summary>Solution</summary>
@@ -35,7 +34,9 @@ Console.WriteLine($"{input} multiplied by 2 is {input * 2}!");
 
 </details>
 
-#. Prompt the user to enter their favorite food and store the input value in a variable.
+#. Write statements that perform the following tasks:
+
+Prompt the user to enter their favorite food and store the input value in a variable.
 
 <details>
 <summary>Solution</summary>
@@ -46,7 +47,7 @@ string uInput = Console.ReadLine();
 ```
 </details>
 
-#. Prompt the user to enter 3 numbers, and then return their average.
+Prompt the user to enter 3 numbers, and then return their average.
 
 <details>
 <summary>Solution</summary>
@@ -64,7 +65,7 @@ string uInput = Console.ReadLine();
 ```
 </details>
 
-#. Prompt the user to enter a positive number, and then output all the odd numbers between 0 and that number.​
+Prompt the user to enter a positive number, and then output all the odd numbers between 0 and that number.​
 
 <details>
 <summary>Solution</summary>
@@ -83,9 +84,9 @@ string uInput = Console.ReadLine();
 </details>
 
 #. Write a series of statements that: 
-	a) Declare an int variable named userAge, 
+	a) Declare an `int` variable named `userAge`, 
 	b) Display on the screen a message asking the user to enter his or her age, 
-	c) Read the value entered by the user and store it in the userAge variable. 
+	c) Read the value entered by the user and store it in the `userAge` variable. 
 You can add statement(s) performing intermediate steps if you want.
 
 <details>
@@ -100,14 +101,14 @@ You can add statement(s) performing intermediate steps if you want.
 
 ## Questions
 
-#. Method ReadLine() reads a whole line and interprets its content as of integer (int) type.
+#. The method `ReadLine()` reads a whole line and interprets its content as an integer (`int`) type.
 
   - [ ] Yes
   - [x] No
 
-#. A _____ can be used in repetition structures to indicate the end of data entry.
+#. A _____ can be used in repetition structures (such as loops) to indicate the end of data entry.
 - [ ] Property
-- [ ] Using directive
+- [ ] `using` directive
 - [ ] Sentinel value
 - [x] None of the above.
 
