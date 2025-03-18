@@ -184,6 +184,31 @@ tags:
     ```
     </details>
 
+#. Rewrite the following `do` loop as a recursive method.
+
+    ```
+    int n;
+    do
+    {
+        Console.WriteLine("Enter an integer, 0 to exit.");
+        n = int.Parse(Console.ReadLine());
+    } while (n != 0);
+    Console.WriteLine("Bye!");
+    ```
+    
+    <details><summary>Solution</summary>
+    ```
+    static void EnterInteger()
+    {
+        Console.WriteLine("Enter an integer, 0 to exit.");
+        int n = int.Parse(Console.ReadLine());
+        if(n != 0) { EnterInteger(); }
+        else{Console.WriteLine("Bye!");}
+    }
+    ```
+    </details>
+    
+
 #. Rewrite the following `for` loop as a recursive method.
 
     ```{download="./code/projects/RecursionAndLoops.zip"}
