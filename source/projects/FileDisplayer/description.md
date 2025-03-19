@@ -16,17 +16,17 @@ It reinforces your understanding of class input/output operations on files and f
 
 ### In short
 
-Develop a static class to perform simple operations on files: display its content, display one of its line, display it with truncation, display word surrounding a particular word.
+Develop a static class to perform simple operations on files: display its content, display one of its lines, display it with truncation, and display words surrounding a particular word.
 A bonus (for more experienced programmers) asks to compute the winner of a race using data shared in a [comma-separated values](https://en.wikipedia.org/wiki/Comma-separated_values) file.
 
 ### In more details
 
 Your goal is to design and implement a static `TextFileHelper` class containing 5 methods (the fifth one being optional):
 
-#. A `Display` method that takes a `string` as argument and displays the content of the file located at the corresponding path if it exists, an error message otherwise.
-#. A `DisplayN` method that takes a `string` and an `int`, and displays the line corresponding to the `int` argument from the file located at the corresponding path if it exists (with a line number before), an error message otherwise.
-#. A `DisplayT` method that takes a `string` and an `int`, and displays the file located at the corresponding path "truncated" at the character number given by the `int` argument if it exists, an error message otherwise.
-#. A `DisplayW` method that takes two `string` arguments, `path` and `word`, and, for every line in the file located at the corresponding path if it exists containing `word`, display `word`, and the word before and after if they exists. 
+#. A `Display` method that takes a `string` as an argument and displays the content of the file located at the corresponding path if it exists, and an error message otherwise.
+#. A `DisplayN` method that takes a `string` and an `int`, and displays the line corresponding to the `int` argument from the file located at the corresponding path if it exists (with a line number before), and an error message otherwise.
+#. A `DisplayT` method that takes a `string` and an `int`, and displays the file located at the corresponding path "truncated" at the character number given by the `int` argument if the file exists, and an error message otherwise.
+#. A `DisplayW` method that takes two `string` arguments, called `path` and `word`. If the file at the corresponding path exists, then for every line in the file that contains `word`, the method should display `word`, and the words immediately before and after, if there are any.
 #. (optional) A `DisplayMaxCSV` method that takes a `string` argument containing the path of a `.csv` (comma-separated value) file containing values organized as follows:
 
     ```text
@@ -114,6 +114,6 @@ Note that it is ok if you cannot reproduce this output *exactly*.
 
 ## Bonuses
 
-- (easy) Handle gracefully exceptions if files do not exist,
+- (easy) If the file doesn't exist, handle exceptions gracefully.
 - (medium) Write the `DisplayWinnerCSV` method.
 - (hard) Make `DisplayW` accommodate punctuation signs (`,`, `.`, `:`, etc.).
