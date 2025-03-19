@@ -7,7 +7,7 @@ tags:
 
 ## Questions
 
-#. Explain the meaning/purpose of a constructor.
+#. Explain what a constructor is and what it does.
   <details><summary>Solution</summary>
     A constructor is used to instantiate or "construct" an object from the class that contains it.
   </details>
@@ -17,10 +17,10 @@ tags:
 public void SetNumber(int tempNumber)
 { name = tempNumber; } // store the account name
 ``` 
-#. Which of the following statements is false? 
+#. Which of the following statements is *false*? 
 - [ ] the method returns no value
-- [ ] name is a local instance variable
-- [x] the parameter tempNumber is of string type
+- [ ] `name` is a local instance variable
+- [x] the parameter `tempNumber` is of `string` type
 - [ ] the method can be used outside of the class it is defined in
 
 #. C# is an object oriented language that has roots in:
@@ -29,15 +29,13 @@ public void SetNumber(int tempNumber)
 - [ ] Java
 - [x] All above.
 
-#. Fill in the blanks:
-	"A class asserts that every object created using it should have _________ (i.e., 'data') and _________ (i.e., 'operations')."
+#. Fill in the blanks: "A class asserts that every object created using it should have _________ (i.e., 'data') and _________ (i.e., 'operations')."
+- [x] attributes, methods
+- [ ] methods, attributes
+- [ ] methods, properties
+- [ ] properties, attributes
 
-<details>
-<summary>Solution</summary>
-attributes, methods
-</details>
-
-#. Give two access modifiers.
+#. Give two examples of access modifiers.
 
 <details>
 <summary>Solution</summary>
@@ -48,14 +46,16 @@ private, public, internal
 
 <details>
 <summary>Solution</summary>
-The keyword "new" is used for instantiating an object.
+	
+The keyword `new` is used for instantiating an object.
 </details>
 
 #. What does the keyword `return` do?
 
 <details>
 <summary>Solution</summary>
-The keyword "return" ends the execution of a method and, if the method has a non-void return type, returns a value of that type.
+	
+The keyword `return` ends the execution of a method and, if the method has a non-void return type, returns a value of that type.
 </details>
 
 #. What does it mean to say that instance variables have a default initial value? How is that different from the variables we have been manipulating in the `Main` method?
@@ -69,7 +69,7 @@ Instance values have a default initial value if they are assigned a value specif
 
 ## Problems
 
-#. You are going to design a class named `Triangle`. A triangle only has three angles, but knowing the value of only two angles is sufficient to determine the value of the third, since they always add up to 180°. Hence, it is sufficient to have only two **double** attributes, `angle1` and `angle2`. We want to define several methods:
+#. You are going to design a class named `Triangle`. A triangle only has three angles, but knowing the value of only two angles is sufficient to determine the value of the third, since they always add up to 180°. Hence, it is sufficient to have only two `double` attributes, `angle1` and `angle2`. We want to define several methods:
 * a no-arg constructor that sets the value of `angle1` to 60.0 and the value of `angle2` to 60.0,
 * another constructor that takes two arguments, and assigns to `angle1` the value of the first argument, and to `angle2` the value of the second argument,
 * getters for `angle1` and `angle2`,

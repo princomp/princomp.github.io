@@ -5,16 +5,16 @@ tags:
 
 ## Warm-up Exercises
 
-#. Write an explicit conversion from a double variable myDoubleVar to an int variable called myIntVar. You don’t need to re-declare those variables. Assuming myDoubleVar’s value is 5.89, what value would be stored in myIntVar?
+#. Write an explicit conversion from a `double` variable `myDoubleVar` to an `int` variable called `myIntVar`. You don’t need to re-declare those variables. Assuming `myDoubleVar`’s value is `5.89`, what value would be stored in `myIntVar`?
 
 <details>
 <summary>Solution</summary>
+  
 `myIntVar = (int)myDoubleVar;`
 The value stored in `myDoubleVar` would be `5`.
 </details>
 
-#. Declare and initialize two integer variables, x and y. Choose any values you want.
-Then write necessary commands to display the result of following 3 mathematical operations: addition, multiplication, and remainder (modulo) of x and y.
+#. Declare and initialize two integer variables, `x` and `y`. Choose any values you want. Then write necessary commands to display the result of the following 3 mathematical operations: addition, multiplication, and remainder (modulo) of `x` and `y`.
 
 EXAMPLES OF OUTPUT
 
@@ -47,8 +47,7 @@ Console.WriteLine($"{x} % {y} = {x % y}");
 ```
 </details>
 
-
-#. Write a command that performs implicit conversion between two numeric datatypes. Then, write a command that performs explicit conversion between two numeric datatypes. Add a comment above both commands to clearly indicate which command is implicit and which one is explicit.
+#. Write a command that performs *implicit* conversion between two numeric datatypes. Then, write a command that performs *explicit* conversion between two numeric datatypes. Add a comment above both commands to clearly indicate which command is implicit and which one is explicit.
 
 <details>
 <summary>Solution</summary>
@@ -64,14 +63,14 @@ int myInt = (int)myDouble;
 ```
 </details>
 
-
-
 ## Questions
 
-#. Comment briefly on the type decimal and format C it can be used with in a C# code.
-  <details><summary>Solution</summary>
-  The decimal type is the most precise of the numeric types, and it can be used with the C format specifier to display values representing amounts of currency.
-  </details>
+#. What distinguishes the `decimal` datatype from other numeric types? What happens when a `decimal` value is used with the `C` format specifier?
+
+<details><summary>Solution</summary>
+  
+The `decimal` type is the most precise of the numeric types, and it can be used with the `C` format specifier to display values representing amounts of currency.
+</details>
 
 #. What can you learn from this UML class diagram?
   
@@ -86,11 +85,13 @@ int myInt = (int)myDouble;
   </details>
 
 #. Can conversion between two number types change value of a number? Provide an example case.
-<details><summary>Solution</summary>
-  Yes, in the case of floats being converted into integers, the value must be truncated. For example, the value 4.876f, when converted into a integer, will become 4.
+<details>
+<summary>Solution</summary>
+  
+Yes. For example, when `float`s, `double`s, and `decimal`s are converted to `int`s, the value must be *truncated* (shortened). For example, the value `4.876f`, when converted to a `int`, will become 4.
 </details>
 
-#. Assume you have an int variable named myAge whose value is 24. What would be displayed on the screen by the following? 
+#. Assume you have an `int` variable named `myAge` whose value is `24`. What would be displayed on the screen by the following? 
 `Console.WriteLine($"{myAge * 2}");`
 
 <details>

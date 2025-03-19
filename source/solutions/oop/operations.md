@@ -58,18 +58,18 @@ public Book(string titleP, string authorP)
 
 ## Questions
 
-#. How do you make reference to a public property Name outside of the class. 
+#. How do you make reference to a `public` property `Name` outside of the class (for instance, in the `Main` method)? 
   - [ ] *Name
   - [ ] +Name
   - [x] .Name
-  - [ ] neither of these
+  - [ ] None of these
 
 #. In C#, you should think of the class’s properties as the class’s attributes.
 
   - [x] Yes
   - [ ] No
 
-#. The property notation allows the client to directly manipulate the private instance variable.
+#. The property notation allows the client to directly manipulate the `private` instance variable.
 
   - [ ] Yes
   - [x] No
@@ -81,11 +81,11 @@ public void SetName(string tempAccountName)
 name = tempAccountName; // store the account name
 }
 ```
-Which of the following statements is false?
+Which of the following statements is *false*?
 - [ ] The first line of each method declaration is the method header.
 - [ ] The method’s return type specifies the type of data the method returns to its caller
 after performing its task.
-- [ ] The return type void indicates that when SetName() completes its task, it does not
+- [ ] The return type `void` indicates that when `SetName()` completes its task, it does not
 return any information to its calling method.
 - [x] All methods require at least one parameter to provide data to perform tasks.
 
@@ -107,17 +107,17 @@ return any information to its calling method.
 - [ ] Order
 - [x] All of the above
 
-#. Suppose method1 is declared as
+#. Suppose `method1` is declared as
 ```cs
 public void method1(int a, float b, string c)
 ```
-Which of the following methods does not overload method1?
-- [x] void method2(int a, float b, char c)
-- [ ] int method1(float a, int b, string c)
-- [ ] float method1(int a, float b)
-- [ ] string method1(string a, float b, int c)
+Which of the following methods does *not* overload `method1`?
+- [x] `void method2(int a, float b, char c)`
+- [ ] `int method1(float a, int b, string c)`
+- [ ] `float method1(int a, float b)`
+- [ ] `string method1(string a, float b, int c)`
 
-#. Write a get method for an instance variable named `total` of type **int**.
+#. Write a get method for an instance variable named `total` of type `int`.
 
 <details>
 <summary>Solution</summary>
@@ -130,10 +130,11 @@ public int GetTotal()
 ```
 </details>
 
-#. Write a getter for an attribute of type **string** named `myName`.
+#. Write a getter for an attribute of type `string` named `myName`.
 
 <details>
 <summary>Solution</summary>
+	
 ```cs
 public string GetMyName()
 {
@@ -142,10 +143,11 @@ public string GetMyName()
 ```
 </details>
 
-#. Write a setter for an attribute of type **int** named `myAge`.
+#. Write a setter for an attribute of type `int` named `myAge`.
 
 <details>
 <summary>Solution</summary>
+	
 ```cs
 public void SetMyAge(int age)
 {
@@ -154,7 +156,7 @@ public void SetMyAge(int age)
 ```
 </details>
 
-#. Assuming name is a **string** instance variable, there is a problem with the following setter. Fix it.
+#. Assuming `name` is a `string` instance variable, there is a problem with the following setter. What is the problem, and how would one fix it?
 ```cs
 public int SetName1(string var){
 	name = var;
@@ -163,6 +165,8 @@ public int SetName1(string var){
 
 <details>
 <summary>Solution</summary>
+
+The keyword `var` is being used as an identifier.
 
 ```cs
 public int SetName1(string nameVar)
@@ -186,7 +190,7 @@ Yes, C# can identify which constructor is called based on that constructor's met
 The name of a constructor method is the name of the class that contains it, and a constructor's return type *is* the class that contains it.
 </details>
 
-#. Write a constructor for a `Soda` class with one **string** attribute called `name`.
+#. Write a constructor for a `Soda` class with one `string` attribute called `name`.
 
 <details>
 <summary>Solution</summary>
