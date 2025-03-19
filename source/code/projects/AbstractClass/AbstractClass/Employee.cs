@@ -2,11 +2,7 @@ using System;
 
 class Employee : Person
 {
-    private decimal hourlyPay;
+  private decimal hourlyPay;
 
-    public override string Id
-    {
-        get;
-        set;
-    }
+  public override string Id { get; set; }
 }

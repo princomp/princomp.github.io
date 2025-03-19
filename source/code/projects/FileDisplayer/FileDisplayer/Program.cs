@@ -21,38 +21,38 @@ class Program
     // Testing the "Display" Method:
     Console.WriteLine("*****\n* Testing Display\n*****");
     FileDisplayer.Display(ex0);
-        // Testing the "DisplayN" method
-    Console.WriteLine(
-      "*****\n* Testing DisplayN\n*****"
-    );
+    // Testing the "DisplayN" method
+    Console.WriteLine("*****\n* Testing DisplayN\n*****");
     FileDisplayer.DisplayN(ex0, 1);
-        FileDisplayer.DisplayN(ex0, 3);
-        FileDisplayer.DisplayN(ex0, 10);
-        FileDisplayer.DisplayN(ex0, 0);
-        FileDisplayer.DisplayN(ex0, -10);
-        // Testing the "DisplayT" method
-        Console.WriteLine(
-  "*****\n* Testing DisplayT (1/2)\n*****"
-);
-        FileDisplayer.DisplayT(ex0, 20);
-        Console.WriteLine(
-"*****\n* Testing DisplayT (2/2)\n*****"
-);
+    FileDisplayer.DisplayN(ex0, 3);
+    FileDisplayer.DisplayN(ex0, 10);
+    FileDisplayer.DisplayN(ex0, 0);
+    FileDisplayer.DisplayN(ex0, -10);
+    // Testing the "DisplayT" method
+    Console.WriteLine(
+      "*****\n* Testing DisplayT (1/2)\n*****"
+    );
+    FileDisplayer.DisplayT(ex0, 20);
+    Console.WriteLine(
+      "*****\n* Testing DisplayT (2/2)\n*****"
+    );
 
-        FileDisplayer.DisplayT(ex1, 5);
-        // Testing the "DisplayW" method
-        Console.WriteLine(
-"*****\n* Testing DisplayW (1/2)\n*****"
-);
-        FileDisplayer.DisplayW(ex0, "line");
+    FileDisplayer.DisplayT(ex1, 5);
+    // Testing the "DisplayW" method
+    Console.WriteLine(
+      "*****\n* Testing DisplayW (1/2)\n*****"
+    );
+    FileDisplayer.DisplayW(ex0, "line");
 
-        Console.WriteLine(
-"*****\n* Testing DisplayW (2/2)\n*****"
-);
-        FileDisplayer.DisplayW(ex1, "short");
-        // Testing the "DisplayWinnerCSV" method
+    Console.WriteLine(
+      "*****\n* Testing DisplayW (2/2)\n*****"
+    );
+    FileDisplayer.DisplayW(ex1, "short");
+    // Testing the "DisplayWinnerCSV" method
 
-        Console.WriteLine("*****\n* Testing DisplayWinnerCSV (Optional)\n*****");
+    Console.WriteLine(
+      "*****\n* Testing DisplayWinnerCSV (Optional)\n*****"
+    );
     FileDisplayer.DisplayWinnerCSV(ex2);
   }
 }
