@@ -6,18 +6,18 @@ tags:
 
 #. Explain Boolean type `bool` and the meaning of logical operations AND (`&&`), OR (`||`) and negation (`!`). Provide a small example.
 
-  <details>
-  <summary>Solution</summary>
-  The Boolean data type holds either of the two values `true` or `false`. The AND (`&&`) and OR (`||`) operators are used to evaluate multiple conditions. The AND (`&&`) returns `true` if all conditions are true, and the OR (`||`) operator returns `true` if at least one of them is true. The negation operator (`!`) changes a Boolean value into its opposite.
+    <details>
+    <summary>Solution</summary>
+    The Boolean data type holds either of the two values `true` or `false`. The AND (`&&`) and OR (`||`) operators are used to evaluate multiple conditions. The AND (`&&`) returns `true` if all conditions are true, and the OR (`||`) operator returns `true` if at least one of them is true. The negation operator (`!`) changes a Boolean value into its opposite.
 
-  Example:
-  ```
-  bool b1 = true, b2 = false;
+    Example:
+    ```
+    bool b1 = true, b2 = false;
 
-  Console.Write(b1 && !b2); // Displays true
-  Console.Write(b1 || b2);  // Displays true
-  ```
-  </details>
+    Console.Write(b1 && !b2); // Displays true
+    Console.Write(b1 || b2);  // Displays true
+    ```
+    </details>
 
 #. Write a statement that declares a variable of type `int` and sits its value to 3.​
 
@@ -63,21 +63,22 @@ tags:
 ## Problems
 
 #. Declare and initialize 3 variables:
-  #. Each variable should have a different data type
-  #. Choose an appropriate name and value for each variable
 
-  Then display the value of each variable on the screen.
+    #. Each variable should have a different data type
+    #. Choose an appropriate name and value for each variable
 
-  <details>
-  <summary>Solution</summary>
+    Then display the value of each variable on the screen.
 
-  ```
-  int number = 5;
-  string name = "Samuel";
-  float weight = 120.65f;
+    <details>
+    <summary>Solution</summary>
 
-  Console.WriteLine($"number: {number}");
-  Console.WriteLine($"name: {name}");
-  Console.WriteLine($"weight: {weight} kg");
-  ```
-  </details>
+    ```
+    int number = 5;
+    string name = "Samuel";
+    float weight = 120.65f;
+
+    Console.WriteLine($"number: {number}");
+    Console.WriteLine($"name: {name}");
+    Console.WriteLine($"weight: {weight} kg");
+    ```
+    </details>
