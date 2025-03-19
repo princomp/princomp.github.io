@@ -69,8 +69,8 @@
 ./exercises/
 ./exercises/introduction/
 ./exercises/introduction/datatypes.md
-./exercises/introduction/numerical.md
 ./exercises/introduction/strings.md
+./exercises/introduction/numerical.md
 ./exercises/introduction/io.md
 ./exercises/oop/
 ./exercises/oop/properties.md

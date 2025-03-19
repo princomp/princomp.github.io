@@ -3,6 +3,8 @@ tags:
   - datatypes/numerical
 ---
 
+# Numerical (Solutions)
+
 ## Warm-up Exercises
 
 #. Write an explicit conversion from a `double` variable `myDoubleVar` to an `int` variable called `myIntVar`. You don’t need to re-declare those variables. Assuming `myDoubleVar`’s value is `5.89`, what value would be stored in `myIntVar`?

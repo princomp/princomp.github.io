@@ -2,6 +2,9 @@
 tags:
   - datatypes
 ---
+
+# Introduction (Solutions)
+
 ## Warm-up Exercises
 
 #. Explain Boolean type `bool` and the meaning of logical operations AND (`&&`), OR (`||`) and negation (`!`). Provide a small example.
