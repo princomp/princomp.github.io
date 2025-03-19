@@ -43,7 +43,7 @@ class Rectangle{
 
 class Cube{
     -height:int
-    +«property» Height: int 
+    +«property» Height: int
     +Cube(hP : int, wP : int, cP: bool, fP:bool)
     +Talk()
 }
