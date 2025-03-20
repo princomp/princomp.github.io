@@ -1,0 +1,5 @@
+class Contact{
+    - name: string
+    + SetName(accountName : string)
+    + GetName() string
+}

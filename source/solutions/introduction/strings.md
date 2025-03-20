@@ -7,11 +7,11 @@ tags:
 
 ## Warm-up Exercises
 
-#. Assuming that `myLastName` and `myFirstName` are two string variables that have been initialized, write a statement that concatenates them, with a space and a comma in-between, and assign the resulting string to a variable named `fullName`. For instance, if the value of `myLastName` is "Holbertonand", and the value of `myFirstName` is "Betty", then the value of `fullName` after your operation should be "Holbertonand, Betty".
+#. Assuming that `myLastName` and `myFirstName` are two string variables that have been initialized, write a statement that concatenates them, with a space and a comma in-between, and assign the resulting string to a variable named `fullName`. For instance, if the value of `myLastName` is "Holbertonand", and the value of `myFirstName` is "Betty", then the value of `fullName` after your operation should be ["Holbertonand, Betty"](https://en.wikipedia.org/wiki/Betty_Holberton).
 
 	<details>
 	<summary>Solution</summary>
-	`Console.Write($"{myLastName}, {myFirstName}");`
+	`string fullName = $"{myLastName}, {myFirstName}";`
 	</details>
 
 
@@ -33,7 +33,7 @@ tags:
 
 #. Assume we have a variable whose name is `myVariable`, whose type is `string`, and whose value is "My message". What would be displayed on the screen by the following statement?
 
-`Console.WriteLine($"Here is my variable: {myVariable}");`
+	`Console.WriteLine($"Here is my variable: {myVariable}");`
 
 	<details>
 	<summary>Solution</summary>
@@ -60,7 +60,7 @@ tags:
 	#. Declares a `string` variable named `id` and initializes it with the string referenced by the `userName` variable, followed by the number entered by the user. (Note: you can cocatenate a `string` and an `int` using the `+` sign.)
 	#. Displays on the screen: `Your id is `, followed by the content of the `id` variable.
 
-	Here is an example of execution, where the user input is underlined, and hitting “enter” is represented by ↵:
+	Here is an example of execution, where the user input is underlined, and hitting "enter" is represented by ↵:
 
 	```
 	Please, enter your name, followed by enter:
