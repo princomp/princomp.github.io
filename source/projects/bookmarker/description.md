@@ -41,7 +41,7 @@ Your class should allow users to track the book title, total page number, and th
 
 ## Submission
 
-Please, follow our [guideline on project submission](https://princomp.github.io/projects/submission).
+Please, follow our [guideline on project submission](./projects/submission).
 In particular, make sure you write your name and the date in a delimited comment at the beginning of your file.
 
 ## Example

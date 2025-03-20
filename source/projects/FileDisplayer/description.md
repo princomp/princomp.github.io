@@ -37,13 +37,13 @@ Your goal is to design and implement a static `TextFileHelper` class containing 
 
 | ⚠ Warning |
 |:---------------------------|
-| You are allowed to use only `StreamReader`'s `ReadLine` and constructor, `StreamWriter`'s `WriteLine` and constructor, and the usual `Console`, `char`, `string` (including for example `Substring` or `Split`) and `array` methods, conditionals, etc. In particular, *do not* use the Linq library. `AppDomain`, `Path` and `File` methods can be used as in class or in the example below. |
+| You are allowed to use only `StreamReader`'s `ReadLine` and constructor, `StreamWriter`'s `WriteLine` and `Write` as well as their constructors, and the usual `Console`, `char`, `string` (including for example `Substring` or `Split`) and `array` methods, conditionals, etc. **In particular, *do not* use the Linq library.** `AppDomain`, `Path` and `File` methods can be used as in class or in the example below. |
 
 ## Submission
 
 Start by downloading [this project](./code/projects/FileDisplayer.zip) to help you getting started.
 
-Please, follow our [guideline on project submission](https://princomp.github.io/projects/submission).
+Please, follow our [guideline on project submission](./projects/submission).
 In particular, make sure you write your name and the date in a delimited comment at the beginning of your file.
 
 ## Example

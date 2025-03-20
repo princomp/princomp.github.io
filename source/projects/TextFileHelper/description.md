@@ -37,7 +37,7 @@ Your goal is to design and implement a static `TextFileHelper` class containing 
 Feel free to download the project [illustrated below](./code/projects/TextFileHelper.zip) to help you getting started.
 You will need to either write the required methods or to comment out the code between "// START commenting here" and "// END commenting here" before you can compile it.
 
-Please, follow our [guideline on project submission](https://princomp.github.io/projects/submission).
+Please, follow our [guideline on project submission](./projects/submission).
 In particular, make sure you write your name and the date in a delimited comment at the beginning of your file.
 
 ## Example

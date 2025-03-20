@@ -99,7 +99,7 @@ Evaluations are for different classes.
 
 ## Submission
 
-Please, follow our [guideline on project submission](https://princomp.github.io/projects/submission).
+Please, follow our [guideline on project submission](./projects/submission).
 In particular, make sure you write your name and the date in a delimited comment at the beginning of your file.
 
 ## Bonuses
