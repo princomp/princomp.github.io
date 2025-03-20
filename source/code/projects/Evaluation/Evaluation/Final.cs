@@ -3,7 +3,7 @@ using System.IO;
 
 class Final : Exam
 {
-  public string Room { get; set; }
+  private string Room;
 
   public Final(
     string courseP,

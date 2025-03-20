@@ -1,6 +1,6 @@
 ﻿class InClass : Exam
 {
-  public string Room { get; set; }
+  private string Room;
 
   public InClass(
     string courseP,
