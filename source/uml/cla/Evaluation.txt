@@ -5,7 +5,7 @@ Evaluation <|-- Project
 
 class Evaluation{
     << Abstract >>
-    +Course: string
+    +«property» Course: string
     +«property» Weight: double
     +«property» Bonus: bool
     +Evaluation(courseP: string, weightP: double, bonusP: bool)

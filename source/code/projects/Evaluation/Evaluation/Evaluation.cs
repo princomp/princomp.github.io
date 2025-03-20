@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 abstract class Evaluation
 {
-  public string Course;
+  public string Course { get; set; }
   public double Weight { get; set; }
   public bool Bonus { get; set; }
 
