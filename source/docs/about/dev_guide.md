@@ -912,6 +912,6 @@ The steps for migrating feedback target repository are as follows:
 #. Make sure the feedback works after migration. If it does not, retrace your steps.
 #. Archive the earlier feedback repository in its settings.
 
-### Maintaining Instructors / G/UCA rights
+### Maintaining Instructors Rights
 
 This is handled by the [`csci-1301` github organization](https://github.com/csci-1301) and documented at <https://csci-1301.github.io/user_guide.html#maintaining-instructors-guca-rights>.

@@ -100,7 +100,7 @@ This table is to be read as
 > Values or variables from the datatypes in the row and column can be "operated together" and will produce the datatype indicated in the cell, or cannot be "operated together" if the value in the cell is "illegal".
 
 
-## References {-}
+## References
 
 - <https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/types-and-variables>
 - <https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/integral-types-table>
