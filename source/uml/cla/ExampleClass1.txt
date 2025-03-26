@@ -1,0 +1,14 @@
+class ExampleClass1{
+    - attr1 : string
+    + attr2 : int
+    + «property» Prop1 : char
+    + «get, set» Prop2 : double
+    - «get» Prop3 : float
+    + Method1(attr1: sbyte) : short
+    + Method2(attr1: long) 
+    + Method3(): string*
+    + Method4(): char$
+    + «constructor» ExampleClass1() 
+    - ExampleClass1(attr1: byte)
+}
+ 
