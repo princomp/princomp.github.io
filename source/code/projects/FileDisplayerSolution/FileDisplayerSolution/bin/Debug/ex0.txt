@@ -1,0 +1,3 @@
+This is the first demo file. It contains a long first line that will not wrap nicely on some display.
+It also contains another line that contains the word line also.
+It will be used to test our methods.

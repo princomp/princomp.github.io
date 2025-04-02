@@ -224,7 +224,7 @@ Putting together some of the elements discussed above, we can get for example th
 - Since properties represent (or, rather, allow to access) attributes, they go in the "attributes" box (the second box)
 - If a property will simply "get" and "set" an instance variable of the same name, you do *not* need to write the instance variable in the box
     - No need to write both the property `Width` and the instance variable `width`
-- Syntax: `[+/-] «property» [name]: [type]` (where "<<property>>" is sometimes used in place of «property»).
+- Syntax: `[+/-] «property» [name]: [type]` (where "«property»" is sometimes used in place of «property»).
 - Note that the access modifier (+ or -) is for the property, not the instance variable, so it is + if the property is `public` (which it usually is)
 - Example for `Rectangle`, assuming we converted both attributes to use properties instead of getters and setters:
 
@@ -237,26 +237,26 @@ Putting together some of the elements discussed above, we can get for example th
 In general, instead of writing for example
 
 ```text
-+ <<properties>> Explanation: string
++ «properties» Explanation: string
 ```
 
 one can write
 
 ```text
-+ <<get, set>> Explanation: string
++ «get, set» Explanation: string
 ```
 
 or even
 
 ```text
-+ <<set>> Explanation: string
-+ <<get>> Explanation: string
++ «set» Explanation: string
++ «get» Explanation: string
 ```
 
-The benefit of this notation is that read-only properties can easily be integrated in the UML class diagram, by simply omitting the `<<set>>` line:
+The benefit of this notation is that read-only properties can easily be integrated in the UML class diagram, by simply omitting the `«set»` line:
 
 ```text
-+ <<get>> Radius : decimal
++ «get» Radius : decimal
 ```
 
 ## Properties and Security
