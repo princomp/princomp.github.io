@@ -22,6 +22,7 @@ static class FileDisplayer
           Console.WriteLine(cLine);
           cLine = sw.ReadLine();
         }
+        sw.Close();
       }
       catch
       {
@@ -58,6 +59,7 @@ static class FileDisplayer
           cLine = sw.ReadLine();
           currentLine++;
         }
+        sw.Close();
         if (currentLine == lineN)
         { // This will be true if we reached the lineN
           Console.WriteLine(
