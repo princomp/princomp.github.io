@@ -16,6 +16,26 @@ tags:
   - [ ] `over`
   - [ ] `inherits`
 
+#. Suppose your are given an `ElectricDevice` class and a `WallDecor` class. You would like to write a `Clock` class that represents at the same time an electric device and a wall decor. This is possible only if the `ElectricDevice` and `WallDecor` classes are…
+
+  - [ ] Sealed
+  - [x] Interfaces
+  - [ ] Protected
+  - [ ] Constructors
+
+#. A method with header `public virtual void Test(int a, out int b)` will…
+
+  - [ ] Return a value
+  - [x] Set the value of `b`
+  - [x] Require two arguments
+  - [x] Be overrideable
+
+#. A method with header `public abstract string Test()` will…
+
+  - [ ] Have an empty body
+  - [x] Need to be inside an `abstract` class
+  - [x] Not be overriden
+
 
 ## Problems
 
@@ -55,6 +75,49 @@ tags:
       !include`snippetStart="// (not on UML diagram)",snippetEnd="// Note that since we are inside the class,"` code/projects/RoomClassroomOffice/RoomClassroomOffice/Room.cs
       ```
       </details>
+      
+    
+#. Consider the diagram representing the "Room", "BedRoom", "BathRoom" classes and their relations.
+
+    !include uml/cla/RoomBedBath.md
+    
+    #. Write an implementation of the `SurfaceArea` property for the `Room` class, assuming you are given an implementation of the `Width` and `Length` properties.
+    
+        <details><summary>Solution</summary>
+        ```{download="code/projects/RoomBedBath.zip"}
+        !include`snippetStart="// SurfaceArea property",snippetEnd="// Constructor"` code/projects/RoomBedBath/RoomBedBath/Room.cs
+        ```
+        </details>
+    
+    #. Check the statements that would compile, assuming that `rTest` is a `Room` object, `beTest` is a `BedRoom` object, and `baTest` is a `BathRoom` object.
+        
+        - [ ] `rTest.Capacity = 12;`
+        - [x] `baTest.Width = 12;`
+        - [ ] `beTest.capacity = 3;`
+        - [ ] `rTest.SurfaceArea = -2;`
+        - [ ] `baTest.Capacity = 3;`
+        - [ ] `beTest.Shower = true;`
+        - [x] `Console.WriteLine(baTest.ToString());`
+        
+    #. Write a complete implementation of the `BedRoom` class.
+    
+        - Your `Capacity` property should use the `capacity` attribute, and throw an exception if the argument given is strictly less than 1.
+        - Your `ToString` method should complement the `Room`'s `ToString` by appending to its `string` the capacity (in person) of the `BedRoom` object.
+        
+        <details><summary>Solution</summary>
+        ```{download="code/projects/RoomBedBath.zip"}
+        !include code/projects/RoomBedBath/RoomBedBath/BedRoom.cs
+        ```
+        </details>
+
+    #. Write the `ToString` method of the `BathRoom` class, knowing that a disclaimer should be part of the `string` returned if the `BathRoom` has a shower or a bathtub but no hot water.
+  
+        <details><summary>Solution</summary>
+        ```{download="code/projects/RoomBedBath.zip"}
+        !include`snippetStart="// ToString method",snippetEnd="// End of ToString method"` code/projects/RoomBedBath/RoomBedBath/BathRoom.cs
+        ```
+        </details>
+        
 
 #. Consider the diagram representing the "Article", "Book" classes and their relations.
 

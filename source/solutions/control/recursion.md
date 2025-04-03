@@ -289,3 +289,29 @@ tags:
     }
     ```
     </details>
+
+#.  Write a *recursive* method that displays a one-dimensional array of `int`. You can write an example usage if it helps you.
+
+     <details>
+    <summary>Solution</summary>
+    It can be done, for example, using a "Helper" method, as follows:
+    
+    ```
+    int[] test = { 1, 23, 39, 3 };
+    DisplayArray(test);
+
+    void DisplayArray(int[] aP)
+    {
+        DisplayArrayH(aP, 0);
+    }
+
+    void DisplayArrayH(int[] aP, int iP)
+    {
+        if (iP < aP.Length)
+        {
+            Console.WriteLine(aP[iP]);
+            DisplayArrayH(aP, iP + 1);
+        }
+    }
+    ```
+    </details>
