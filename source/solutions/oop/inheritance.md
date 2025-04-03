@@ -74,8 +74,8 @@ tags:
       !include`snippetStart="// (not on UML diagram)",snippetEnd="// Note that since we are inside the class,"` code/projects/RoomClassroomOffice/RoomClassroomOffice/Room.cs
       ```
       </details>
-      
-    
+
+
 #. Consider the diagram representing the "Room", "BedRoom", "BathRoom" classes and their relations.
 
     !include uml/cla/RoomBedBath.md

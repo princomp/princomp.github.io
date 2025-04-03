@@ -2,8 +2,8 @@
 
 abstract class Base
 {
-    public void Test()
-    {
-        Console.WriteLine("Hello from Base!");
-    }
+  public void Test()
+  {
+    Console.WriteLine("Hello from Base!");
+  }
 }
