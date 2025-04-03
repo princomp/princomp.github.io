@@ -1,0 +1,7 @@
+Receipt test
+% Ignore me
+12.48
+2
+** Total **
+14.48
+% 00.00

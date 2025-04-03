@@ -103,7 +103,30 @@ tags:
     ```
     </details>
 
+
+#. Suppose that at `filePath` is located a file containing text. Write a program that, for each line, displays the content of that line if it does not start with a `%` character, and that furthermore displays as a dollar amount the content of that line if it is (only) a `decimal`.
+
+    For example, the following file on the left would be rendered as shown on the right.
     
+    ```text
+    FILE                    OUTPUT SCREEN
+    ┌────────────────┐     ┌────────────────┐
+    │Receipt test    │     │Receipt test    │
+    │% Ignore me     │     │$12.48          │
+    │12.48           │     │$2.00           │
+    │2               │     │** Total **     │
+    │** Total **     │     │$14.48          │
+    │14.48           │     │                │
+    │% 00.00         │     │                │
+    └────────────────┘     └────────────────┘
+    ```
+
+    <details><summary>Solution</summary>
+    ```{download="./code/projects/ReceiptDisplayFromFile.zip"}
+    !include`snippetStart="// Begining of the actual answer.",snippetEnd="// End of the actual answer."` code/projects/ReceiptDisplayFromFile/ReceiptDisplayFromFile/Program.cs
+    ```
+    </details>
+
 #. Write a program that asks the user to enter a sentence, and store it in a file *where the maximum width is 40*: if the string entered is more than 40 characters long, then it should span over multiple lines of no more than 40 characters each. For example, if the user enters
 
     ```text

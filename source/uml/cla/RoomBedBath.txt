@@ -1,0 +1,25 @@
+Room <|-- BedRoom
+Room <|-- BathRoom
+
+class Room{
+    +«property» Width: double 
+    +«property» Length: double 
+    +«get» SurfaceArea: double
+    +Room(wP: double, lP: double) 
+    +ToString() string
+}
+
+class BedRoom{
+    -capacity: int
+    +«set» Capacity: int
+    +BedRoom(wP: double, lP: double, cP: int)
+    +ToString() string
+}
+
+class BathRoom{
+    -hotWater : bool
+    +«property» Shower: bool
+    +«property» Bathtub: bool
+    +BathRoom(wP: double, lP: double, hwP: bool, sP: bool, bP: bool)
+    +ToString() string
+}
