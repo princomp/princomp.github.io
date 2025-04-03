@@ -10,32 +10,31 @@ tags:
 
 #. What is the keyword used to call the constructor from the base class?
 
-  - [ ] `this`.
-  - [ ] the name of the base class.
-  - [x] `base`
-  - [ ] `over`
-  - [ ] `inherits`
+    - [ ] `this`.
+    - [ ] the name of the base class.
+    - [x] `base`
+    - [ ] `over`
+    - [ ] `inherits`
 
 #. Suppose your are given an `ElectricDevice` class and a `WallDecor` class. You would like to write a `Clock` class that represents at the same time an electric device and a wall decor. This is possible only if the `ElectricDevice` and `WallDecor` classes are…
 
-  - [ ] Sealed
-  - [x] Interfaces
-  - [ ] Protected
-  - [ ] Constructors
+    - [ ] Sealed
+    - [x] Interfaces
+    - [ ] Protected
+    - [ ] Constructors
 
 #. A method with header `public virtual void Test(int a, out int b)` will…
 
-  - [ ] Return a value
-  - [x] Set the value of `b`
-  - [x] Require two arguments
-  - [x] Be overrideable
+    - [ ] Return a value
+    - [x] Set the value of `b`
+    - [x] Require two arguments
+    - [x] Be overrideable
 
 #. A method with header `public abstract string Test()` will…
 
-  - [ ] Have an empty body
-  - [x] Need to be inside an `abstract` class
-  - [x] Not be overriden
-
+    - [ ] Have an empty body
+    - [x] Need to be inside an `abstract` class
+    - [x] Not be overriden
 
 ## Problems
 
