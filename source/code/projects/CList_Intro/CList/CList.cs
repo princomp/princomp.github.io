@@ -1,4 +1,6 @@
-﻿public class CList<T>
+﻿using System;
+
+public class CList<T>
 {
   // A CList is … a Cell.
   private Cell first;
