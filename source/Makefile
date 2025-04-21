@@ -340,7 +340,7 @@ CLEAN-PREREQ:
 #	&& echo "](./$(basename $<).svg)" >> $@
 	
 $(CLA_DIR)%.md: $(CLA_DIR)%.txt | $(CLA_DIR)%.svg $(CLA_DIR)%.png
-	echo "![A UML diagram for the $$(sed 's-class \(.*\){-\1-g' $< | sed 's/<|--/⇽/' | sed 's/<|../◁┈/' | sed -n '1p' ) class ([text version](./$(basename $@).txt), [image version](./$(basename $@).png), [svg version](./$(basename $@).svg))]($(notdir $(basename $@)).png){ width=100% }" > $@
+	echo "![A UML diagram for the $$(sed 's-class \(.*\){-\1-g' $< | sed 's/<|--/⇽/' | sed 's/<|../◁┈/' | sed -n '1p' ) class ([text version](./$(basename $@).txt), [image version](./$(basename $@).png), [svg version](./$(basename $@).svg))]($(notdir $(basename $@)).png)" > $@
 
 $(CLA_DIR)%.svg: $(CLA_DIR)%.txt
 	@echo "Creating $@"
@@ -357,7 +357,7 @@ $(CLA_DIR)%.png: $(CLA_DIR)%.txt
 	&& rm $@_tmp
 
 $(FLO_DIR)%.md: $(FLO_DIR)%.txt | $(FLO_DIR)%.svg $(FLO_DIR)%.png
-	echo "![A diagram for $$(sed -n '1p' diag/flo/CList1.txt | sed -r 's/^.{3}//')  ([text version](./$(basename $@).txt), [image version](./$(basename $@).png), [svg version](./$(basename $@).svg))]($(notdir $(basename $@)).png){ width=100% }" > $@
+	echo "![A diagram for $$(sed -n '1p' diag/flo/CList1.txt | sed -r 's/^.{3}//')  ([text version](./$(basename $@).txt), [image version](./$(basename $@).png), [svg version](./$(basename $@).svg))]($(notdir $(basename $@)).png)" > $@
 
 $(FLO_DIR)%.svg: $(FLO_DIR)%.txt
 	@echo "Creating $@"
