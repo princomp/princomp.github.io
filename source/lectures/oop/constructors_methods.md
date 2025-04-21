@@ -51,7 +51,7 @@ tags:
 
 - UML Diagram:
 
-    !include uml/cla/ClassRoom.md
+    !include diag/cla/ClassRoom.md
     
     - There are two attributes: the name of the building (a string) and the room number (an `int`)
     - Each attribute will have a "getter" and "setter" method
@@ -432,4 +432,4 @@ tags:
     - Annotation "\<\<constructor\>\>" is nice, but not necessary: if the method name matches the class name, it is a constructor
 - Example for ClassRoom:
 
-    !include uml/cla/ClassRoom_with_constructor.md
+    !include diag/cla/ClassRoom_with_constructor.md

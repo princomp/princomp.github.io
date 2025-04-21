@@ -67,7 +67,7 @@ Consider the following UML diagram for the `Fighter` class:
 | + Fighter(nameP:string, attackP:int, defenseP:int) (BONUS)   |
 |==============================================================|
 ``` -->
-!include uml/cla/Fighter_pt1.md
+!include diag/cla/Fighter_pt1.md
 
 In order, the attributes will store:
 
@@ -203,7 +203,7 @@ _**(Note: You must use the template to complete this project unless you got a pe
 | + Fighter(nameP:string) (BONUS)                              |
 |==============================================================|
 ```-->
-!include uml/cla/Fighter_pt2.md
+!include diag/cla/Fighter_pt2.md
 
 In `Fighter.cs`...
 
@@ -334,7 +334,7 @@ _**(Note: You must use the template to complete this project unless you got a pe
 | + Fighter(nameP:string, playerLvl:byte)                      |
 |==============================================================|
 ```-->
-!include uml/cla/Fighter_pt3.md
+!include diag/cla/Fighter_pt3.md
 
 In `Fighter.cs`...
 - Add one more constructor that takes in a string parameter for `name` and a byte parameter for the player's level (named `playerLvl` in the UML)

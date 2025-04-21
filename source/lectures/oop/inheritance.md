@@ -20,7 +20,7 @@ tags:
 
 Consider the following class:
 
-!include uml/cla/Vehicle.md
+!include diag/cla/Vehicle.md
     
 with the following implementation:
 
@@ -59,7 +59,7 @@ Note:
 
 The inheritance is represent in UML as follows:
 
-!include uml/cla/Bike.md
+!include diag/cla/Bike.md
 
 Observe that the `ToString` is indicated in the `Bike` class: this is an indication that the `Vehicle`'s `ToString` method is actually overriden in the `Bike` derived class.
 

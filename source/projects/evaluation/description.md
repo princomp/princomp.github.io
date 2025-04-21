@@ -22,7 +22,7 @@ However, evaluations of different natures also have different attributes and met
 
 We want to implement the classes pictured in the UML diagram (you can zoom in or, in your browser, right click and select "Open Image in New Tab", or access [its text version](./uml/cla/Evaluation.txt)).
 
-!include uml/cla/Evaluation.md
+!include diag/cla/Evaluation.md
 
 Remembering  that:
 

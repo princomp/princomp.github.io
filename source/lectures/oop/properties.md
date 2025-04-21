@@ -228,7 +228,7 @@ Putting together some of the elements discussed above, we can get for example th
 - Note that the access modifier (+ or -) is for the property, not the instance variable, so it is + if the property is `public` (which it usually is)
 - Example for `Rectangle`, assuming we converted both attributes to use properties instead of getters and setters:
 
-    !include uml/cla/Rectangle_with_properties.md
+    !include diag/cla/Rectangle_with_properties.md
     
 - We no longer need to write all those setter and getter methods, since they are "built in" to the properties
 

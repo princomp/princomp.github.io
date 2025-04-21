@@ -50,7 +50,7 @@
 
 For example, in the following UML class diagram:
 
-!include uml/cla/ExampleClass1.md
+!include diag/cla/ExampleClass1.md
 
 #### Attributes
 

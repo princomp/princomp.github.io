@@ -74,10 +74,12 @@ PROJECT_DIR = $(CODE_DIR)projects/
 MD_DIRS = $(LECTURES_DIR) $(DOCS_DIR) $(LABS_DIR) $(SOL_DIR) $(PROJ_DIR)
 # The folder where the images are located.
 IMG_DIR = img/
-# The folder where the UML diagrams are located
-UML_DIR = uml/
+# The folder where the diagrams are located
+DIAG_DIR = diag/
 # The folder where the UML class diagrams are located
-CLA_DIR = $(UML_DIR)cla/
+CLA_DIR = $(DIAG_DIR)cla/
+# The folder where the flowcharts diagrams are located
+FLO_DIR = $(DIAG_DIR)flo/
 # The folder where the videos are located.
 VID_DIR = vid/
 # The folders where the project are located.

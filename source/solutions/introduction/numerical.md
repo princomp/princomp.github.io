@@ -75,7 +75,7 @@ tags:
 
 #. What can you learn from this UML class diagram?
   
-    !include uml/cla/Contact.md
+    !include diag/cla/Contact.md
 
     <details><summary>Solution</summary>
         This diagram shows a class called "Contact", which contains a private variable of type `string` called "name" and two public methods. The method called "SetName" has a `void` return type and has a parameter of type `string` called "accountName". The method called "GetName" returns a `string` value and has no parameters.

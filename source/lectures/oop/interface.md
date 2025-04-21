@@ -9,7 +9,7 @@ tags:
 
 Imagine you want to represent a variety of devices, and comes up with the following UML diagram:
 
-!include uml/cla/Devices.md
+!include diag/cla/Devices.md
 
 Note that it is possible to gather that e.g., the `Instructions()` method in the `Abacus` class is overriding the `Instructions()` method in the `ComputingDevice` class because it has the same signature: this can be the case only because it is overriding the inherited abstract method.
 
@@ -50,7 +50,7 @@ Interfaces are completely abstract classes: they do not implement anything, they
 Interfaces are prefixed by the `«Interface»` mention, and have all their properties and methods marked as abstract (so, in *italics*).
 A class can "inherits" from multiple interface (we say that it **realizes** multiple interfaces), and this is marked with an arrow with an open triangle end and a dashed line^[Note that, this time, since our code below does **not** override the methods and properties, there really is no need to repeat them the derived classes.].
 
-!include uml/cla/DevicesInterfaces.md
+!include diag/cla/DevicesInterfaces.md
 
 ### An Implementation
 
@@ -85,6 +85,6 @@ Note that
 
 ## A More Complicated Example
     
-!include uml/cla/Shape.md
+!include diag/cla/Shape.md
 
 [in this archive](./code/projects/Shape.zip)

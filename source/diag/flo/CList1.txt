@@ -1,0 +1,14 @@
+First(first)-->0
+    subgraph 0 [Index 0]
+        direction LR
+        D0(Data:10)~~~N0(Next) --> 1
+        subgraph 1 [Index 1]
+            direction LR
+            D1(Data:12)~~~N1(Next) --> 2
+            subgraph 2 [" "]
+                direction LR
+                Nu(null)
+            end
+        end
+    end
+

@@ -83,4 +83,4 @@ The statement `Morgan.Id = "E8194";` will raise exception, but `Morgan.Id = "S81
 - An abstract method or property is represented as a usual, except that it is displayed in *italics*.
 - Since, for example, `Person`'s `GenerateLogin()` method is to be overridden (it _has_ to be, actually, since it is abstract), it is indicated again in the `Student` and `Employee` classes: this indicates that those method override the one they have inherited from the `Person` class.
 
-!include uml/cla/Person.md
+!include diag/cla/Person.md

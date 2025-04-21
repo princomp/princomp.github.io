@@ -22,7 +22,7 @@ You need to develop at the same time a system to capture the similarities across
 
 We want to implement the classes pictured in the UML diagram (you right click and select "Open Image in New Tab", or access the other versions listed in caption).
 
-!include uml/cla/Species.md
+!include diag/cla/Species.md
 
 Keeping in mind that:
 

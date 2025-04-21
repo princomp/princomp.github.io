@@ -40,7 +40,7 @@ tags:
 
 #. Consider the diagram representing the "Room", "ClassRoom", "Office" classes and their relations.
 
-  !include uml/cla/RoomClassroomOffice.md
+  !include diag/cla/RoomClassroomOffice.md
 
   Suppose you are given an implementation of the `Room` class, such that 
 
@@ -78,7 +78,7 @@ tags:
 
 #. Consider the diagram representing the "Room", "BedRoom", "BathRoom" classes and their relations.
 
-    !include uml/cla/RoomBedBath.md
+    !include diag/cla/RoomBedBath.md
     
     #. Write an implementation of the `SurfaceArea` property for the `Room` class, assuming you are given an implementation of the `Width` and `Length` properties.
     
@@ -120,7 +120,7 @@ tags:
 
 #. Consider the diagram representing the "Article", "Book" classes and their relations.
 
-      !include uml/cla/Article.md
+      !include diag/cla/Article.md
 
     #. Write a (partial) implementation of the `Article` abstract class:
 
