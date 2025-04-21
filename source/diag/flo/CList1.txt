@@ -1,3 +1,4 @@
+%% a CList with 2 non-null cells, holding 10 and 12
 First(first)-->0
     subgraph 0 [Index 0]
         direction LR
