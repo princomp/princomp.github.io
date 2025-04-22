@@ -233,18 +233,18 @@ To create a new class diagram, say for a `Documentation` class, follow those ste
 
 1. Create a `Documentation.txt` file in `source/diag/cla` that follows [the syntax for class diagrams](https://mermaid.js.org/syntax/classDiagram.html) (note that there is no need to add `classDiagram` at the beginning, it will be done automatically),
 2. Run (from the `source/` folder) `make diag/cla/Documentation.md`,
-3. Integrate the resulting drawing, properly captioned and with a link to your `Documentation.txt` file (for visually impaired readers, or to facilitate automatic processing) using `!include diag/cla/Documentation.md`.
+3. Integrate the resulting drawing, properly captioned and with links to `Documentation.txt`, `Documentation.svg` and `Documentation.png` files using `!include diag/cla/Documentation.md`.
 
 ##### Flowchart Diagrams
 
-The *class* UML diagrams are created using [Mermaid](https://mermaid.js.org/) and located in `source/diag/cla`.
+The *flowchart* diagrams are created using [Mermaid](https://mermaid.js.org/) and located in `source/diag/flo`.
 
 To create a new class diagram, say for a `Documentation` class, follow those steps:
 
 1. Create a `Documentation.txt` file in `source/diag/flo` that follows [the syntax for flowchart diagrams](https://mermaid.js.org/syntax/flowchart.html) (note that there is no need to add `flowchart` at the beginning, it will be done automatically),
 2. Add on the first line a comment `%% title` with "title" the title of the diagram,
 3. Run (from the `source/` folder) `make diag/flo/Documentation.md`,
-4. Integrate the resulting drawing, properly captioned and with a link to your `Documentation.txt` file (for visually impaired readers, or to facilitate automatic processing) using `!include diag/flo/Documentation.md`.
+4. Integrate the resulting drawing, properly captioned and with links to `Documentation.txt`, `Documentation.svg` and `Documentation.png` files using `!include diag/flo/Documentation.md`.
 
 #### Source code
 
