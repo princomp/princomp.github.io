@@ -237,7 +237,14 @@ To create a new class diagram, say for a `Documentation` class, follow those ste
 
 ##### Flowchart Diagrams
 
-*To be written*
+The *class* UML diagrams are created using [Mermaid](https://mermaid.js.org/) and located in `source/diag/cla`.
+
+To create a new class diagram, say for a `Documentation` class, follow those steps:
+
+1. Create a `Documentation.txt` file in `source/diag/flo` that follows [the syntax for flowchart diagrams](https://mermaid.js.org/syntax/flowchart.html) (note that there is no need to add `flowchart` at the beginning, it will be done automatically),
+2. Add on the first line a comment `%% title` with "title" the title of the diagram,
+3. Run (from the `source/` folder) `make diag/flo/Documentation.md`,
+4. Integrate the resulting drawing, properly captioned and with a link to your `Documentation.txt` file (for visually impaired readers, or to facilitate automatic processing) using `!include diag/flo/Documentation.md`.
 
 #### Source code
 
