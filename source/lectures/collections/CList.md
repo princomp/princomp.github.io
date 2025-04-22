@@ -35,11 +35,11 @@ Let us discuss the `Cell` class briefly. A `Cell` has two properties:
 - `Data`, of type `T`, will hold the actual data: if we are creating a `CList` of `int`s, then each cell will hold an `int` in its `Data` property,
 - `Next`, of type `Cell`, which contains a reference to the next `Cell`.
 
-A `Cell` holding the `Data` of type `int` `12` and the `Cell` `null` will be represented as follows:
+A `Cell` holding the `Data` of type `int` `12` and that has for `Next` value the `Cell` `null` will be represented as follows:
 
 !include diag/flo/Cell1.md
 
-Intuitively, a `Cell` holds a piece of value (`Data`) and the "address" (more precisely, the reference) to the next cell: "linking" cells together is what gives *(singly) linked lists*, which is the [correct technical term](https://en.wikipedia.org/wiki/Linked_list#Singly_linked_list) for the type of list we are implementing (there are other ways of implementing lists).
+Intuitively, a `Cell` holds a piece of value (`Data`) and the "address" (more precisely, the reference) to the next `Cell`: "linking" `Cell`s together is what gives *(singly) linked lists*, which is the [correct technical term](https://en.wikipedia.org/wiki/Linked_list#Singly_linked_list) for the type of list we are implementing (there are other ways of implementing lists).
 
 ### CList Class
 

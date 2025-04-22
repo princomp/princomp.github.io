@@ -1,9 +1,7 @@
 %% a cell holding value 12
-subgraph 1 [Cell]
-    direction LR
-    D1(Data:12)~~~N1(Next) --> 2
-    subgraph 2 [Cell]
-        direction LR
-        Null(null)
+subgraph Cell1 ["Cell"]
+    Data1(Data:12)~~~Next1(Next) --> Cell2
+    subgraph Cell2 ["Cell"]
+        null(null)
     end
 end
