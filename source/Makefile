@@ -357,7 +357,7 @@ $(CLA_DIR)%.png: $(CLA_DIR)%.txt
 	&& rm $@_tmp
 
 $(FLO_DIR)%.md: $(FLO_DIR)%.txt | $(FLO_DIR)%.svg $(FLO_DIR)%.png
-	echo "![A diagram for $$(sed -n '1p' diag/flo/CList1.txt | sed -r 's/^.{3}//')  ([text version](./$(basename $@).txt), [image version](./$(basename $@).png), [svg version](./$(basename $@).svg))]($(notdir $(basename $@)).png)" > $@
+	echo "![A diagram for $$(sed -n '1p' $< | sed -r 's/^.{3}//') ([text version](./$(basename $@).txt), [image version](./$(basename $@).png), [svg version](./$(basename $@).svg))]($(notdir $(basename $@)).png)" > $@
 
 $(FLO_DIR)%.svg: $(FLO_DIR)%.txt
 	@echo "Creating $@"

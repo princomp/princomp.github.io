@@ -1,0 +1,16 @@
+%% a CList with 2 non-null cells, holding 10 and 12
+subgraph 0 ["CList"]
+    First(first)-->1
+        subgraph 1 ["Cell"]
+            direction LR
+            D0(Data:10)~~~N0(Next) --> 2
+            subgraph 2 ["Cell"]
+                direction LR
+                D1(Data:12)~~~N1(Next) --> 3
+                subgraph 3 ["Cell"]
+                    direction LR
+                    Null(null)
+                end
+            end
+        end
+end

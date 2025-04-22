@@ -3,9 +3,10 @@
 class Program
 {
   static void Main(string[] args)
-  {
+  { 
     /* First example. */
     CList<int> myList1 = new CList<int>();
+        Console.WriteLine(myList1);
     myList1.AddL(1);
     myList1.AddL(5);
     myList1.AddL(2);

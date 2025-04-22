@@ -24,12 +24,12 @@ public class Program
     string directoryPath = AppDomain
       .CurrentDomain
       .BaseDirectory;
-    string ex0 = Path.Combine(directoryPath, "test.txt");
+    string filePath = Path.Combine(directoryPath, "test.txt");
 
     // Begining of the actual answer.
     try
     {
-      StreamReader sw = new StreamReader(ex0);
+      StreamReader sw = new StreamReader(filePath);
       string cLine = sw.ReadLine();
       decimal amount;
       while (cLine != null)

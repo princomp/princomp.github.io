@@ -1,6 +1,8 @@
 %% a CList with only a null cell
-First(first)-->0
-    subgraph 0 ["Cell"]
-        direction LR
-        Nu(null)
-    end
+subgraph Clist
+    First(first)-->0
+        subgraph 0 ["Cell"]
+            direction LR
+            Null(null)
+        end
+end

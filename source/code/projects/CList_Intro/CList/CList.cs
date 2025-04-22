@@ -10,7 +10,6 @@ public class CList<T>
   {
     first = null;
   }
-
   // A Cell is itself two things:
   // - An element of data (of type T),
   // - Another cell, containing the next element of data.
@@ -29,9 +28,11 @@ public class CList<T>
 
   // A method to add a cell at the beginning
   // of the CList (to the left).
-  // We call it AddF for "Add First".
+  // We call it AddF for 'Add First'.
   public void AddF(T dataP)
   {
     first = new Cell(dataP, first);
   }
+  // The updated CList starts with a cell holding dataP and 
+  // a Cell referencing the previous first cell.
 }
