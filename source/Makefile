@@ -163,7 +163,7 @@ TARGET_DOC_FILES_WITHOUT_INDEX := $(addsuffix .docx, $(basename $(TARGET_MD_FILE
 ## Book source
 # Those are the md files that are integrated in "the book".
 # Note that we use the order file, discussed below (look for "order").
-SOURCE_BOOK := $(shell cat order | grep -E "./lectures/.*.md|./docs/.*md")
+SOURCE_BOOK := $(TEMPLATES)cover/cover_page.md $(shell cat order | grep -E "./lectures/.*.md|./docs/.*md")
 
 ## Other files
 
@@ -247,10 +247,7 @@ PANDOC_BOOK_DOC:= $(PANDOC_DOC)
 
 # Remember to add ?
 # --metadata-file=$(METADATA_FILE)
-# documentclass: scrartcl  # templating
-# numbersections: true     # templating
-# papersize: letter        # templating
-# geometry: margin=1in     # templating
+
 # to pandoc's options for pdf, odt, docx (not sure about the use for the last four for docx / odt)
 
 # ===============================
@@ -614,8 +611,8 @@ all: build $(BUILD_DIR)release.zip | PREREQ
 
 # Phony rule to display variables
 # Uncomment the last two lines and replace
-# TARGET_DIAG
+# SOURCE_BOOK
 # with the variable you want listed, then run
 # make test
 test:
-	$(info $$TARGET_DIAG is [${TARGET_DIAG}])
+	$(info $$SOURCE_BOOK is [${SOURCE_BOOK}])

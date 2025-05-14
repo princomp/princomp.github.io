@@ -57,6 +57,8 @@ And, remember: your instructor(s) knows that you are a student and here to learn
 
 ### Commenting Using a Github Account
 
-On this website, if [you look below](#how-is-this-page), you will see a box where you can comment.
+On the website version of this resource, you can see at the bottom of every page a box where you can comment.
 This will require that you create a [Github account](https://github.com/login), which is free and may serve multiple purpose if you intend to study, use, or contribute to open-source projects.
 The comment can use the [markdown syntax](https://commonmark.org/) (exactly like this resource!), which is also used on websites like [stackoverflow](https://stackoverflow.com/editing-help) and extremely popular!
+
+You are also welcome to [open an issue](https://github.com/princomp/princomp.github.io/issues/new/choose) on our website.
