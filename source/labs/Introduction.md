@@ -95,7 +95,7 @@ All of that is discussed [on this page](./docs/academic_life/getting_help).
 
 | ⇒ Action ⇐ | 
 | ---------- | 
-| _If you feel like it_, create an account on [Github](https://github.com/login) and [leave a comment](#how-is-this-page)! We'll be happy to read from you! |
+| _If you feel like it_, create an account on [Github](https://github.com/login) and leave a comment at the bottom of this webpage. We'll be happy to read from you! |
 
 | ⇒ Action ⇐ | 
 | ---------- | 

@@ -292,6 +292,11 @@ $(IMG_DIR)%.pdf:$(IMG_DIR)%.tex
 $(IMG_DIR)%.svg:$(IMG_DIR)%.pdf
 	pdf2svg $< $@
 
+
+$(IMG_DIR)%.png:$(IMG_DIR)%.pdf
+	pdftoppm $< $@ -png
+	mv $@-1.png $@
+
 # -------------------------------
 # "Prereq" rules.
 # Those rules produce files that 
@@ -577,17 +582,20 @@ $(PROJECT_DIR)%.zip: $(PROJECT_DIR)%/*/Program.cs | $(PROJECT_DIR)/%/*/*.cs
 # Book files
 # -------------------------------
 
-$(BUILD_DIR)book.html: $(SOURCE_BOOK)
-	pandoc $(SOURCE_BOOK) $(PANDOC_BOOK_HTM) -o $@
+$(BUILD_DIR)book.md: $(SOURCE_BOOK)
+	pandoc $(SOURCE_BOOK) $(PANDOC_MD) -o $@
 
-$(BUILD_DIR)book.pdf: $(SOURCE_BOOK)
-	pandoc $(SOURCE_BOOK) $(PANDOC_BOOK_PDF) -o $@
+#$(BUILD_DIR)book.html: $(BUILD_DIR)book.md
+#	pandoc $(SOURCE_BOOK) $(PANDOC_BOOK_HTM) -o $@
 
-$(BUILD_DIR)book.odt: $(SOURCE_BOOK)
-	pandoc $(SOURCE_BOOK) $(PANDOC_BOOK_ODT) -o $@
+$(BUILD_DIR)book.pdf: $(BUILD_DIR)book.md
+	pandoc $(BUILD_DIR)book.md $(PANDOC_BOOK_PDF) -o $@
+
+$(BUILD_DIR)book.odt: $(BUILD_DIR)book.md
+	pandoc $(BUILD_DIR)book.md $(PANDOC_BOOK_ODT) -o $@
 	
-$(BUILD_DIR)book.docx: $(SOURCE_BOOK)
-	pandoc $(SOURCE_BOOK) $(PANDOC_BOOK_DOC) -o $@
+$(BUILD_DIR)book.docx: $(BUILD_DIR)book.md
+	pandoc $(BUILD_DIR)book.md $(PANDOC_BOOK_DOC) -o $@
 
 # -------------------------------
 # Putting it all together
@@ -597,7 +605,7 @@ $(BUILD_DIR)book.docx: $(SOURCE_BOOK)
 fetch:
 	wget https://github.com/princomp/princomp.github.io/releases/download/latest/release.zip -P ../ && cd ../ && unzip -q release.zip && cd content && rsync -avR $(PROJECT_DIR)**.zip ../source && rsync -avR $(CLA_DIR)**.md ../source && rsync -avR $(CLA_DIR)**.svg ../source && rsync -avR $(CLA_DIR)**.png ../source && rsync -avR $(EXO_DIR)* ../source || true
 
-book: $(BUILD_DIR)book.html $(BUILD_DIR)book.pdf $(BUILD_DIR)book.odt $(BUILD_DIR)book.docx
+book: $(BUILD_DIR)book.html $(BUILD_DIR)book.pdf $(BUILD_DIR)book.odt $(BUILD_DIR)book.docx | build-light
 
 # Ligter build, to test compilation and website deployment
 build-light: $(BUILD_DIR)web-order.ts $(TARGET_MD_FILES) $(TARGET_WOFF_FONT_FILES) $(TARGET_IMAGES_FILES) $(TARGET_VIDEOS_FILES) $(TARGET_DOC_FILES_WITHOUT_INDEX) $(TARGET_CLA) | PREREQ
