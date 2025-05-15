@@ -605,7 +605,7 @@ $(BUILD_DIR)book.docx: $(BUILD_DIR)book.md
 fetch:
 	wget https://github.com/princomp/princomp.github.io/releases/download/latest/release.zip -P ../ && cd ../ && unzip -q release.zip && cd content && rsync -avR $(PROJECT_DIR)**.zip ../source && rsync -avR $(CLA_DIR)**.md ../source && rsync -avR $(CLA_DIR)**.svg ../source && rsync -avR $(CLA_DIR)**.png ../source && rsync -avR $(EXO_DIR)* ../source || true
 
-book: $(BUILD_DIR)book.html $(BUILD_DIR)book.pdf $(BUILD_DIR)book.odt $(BUILD_DIR)book.docx | build-light
+book: $(BUILD_DIR)book.pdf $(BUILD_DIR)book.odt $(BUILD_DIR)book.docx | build-light
 
 # Ligter build, to test compilation and website deployment
 build-light: $(BUILD_DIR)web-order.ts $(TARGET_MD_FILES) $(TARGET_WOFF_FONT_FILES) $(TARGET_IMAGES_FILES) $(TARGET_VIDEOS_FILES) $(TARGET_DOC_FILES_WITHOUT_INDEX) $(TARGET_CLA) | PREREQ
