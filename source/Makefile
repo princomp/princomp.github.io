@@ -588,13 +588,13 @@ $(BUILD_DIR)book.md:
 #$(BUILD_DIR)book.html: $(BUILD_DIR)book.md
 #	pandoc $(SOURCE_BOOK) $(PANDOC_BOOK_HTM) -o $@
 
-$(BUILD_DIR)book.pdf:
+$(BUILD_DIR)book.pdf: | $(BUILD_DIR)book.md
 	pandoc $(BUILD_DIR)book.md $(PANDOC_BOOK_PDF) -o $@
 
-$(BUILD_DIR)book.odt:
+$(BUILD_DIR)book.odt: | $(BUILD_DIR)book.md
 	pandoc $(BUILD_DIR)book.md $(PANDOC_BOOK_ODT) -o $@
 	
-$(BUILD_DIR)book.docx:
+$(BUILD_DIR)book.docx: | $(BUILD_DIR)book.md
 	pandoc $(BUILD_DIR)book.md $(PANDOC_BOOK_DOC) -o $@
 
 # -------------------------------
