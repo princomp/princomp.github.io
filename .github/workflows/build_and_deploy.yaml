@@ -56,7 +56,7 @@ jobs:
         sudo apt-get update
         test -f pandoc-3.6.3-1-amd64.deb || wget https://github.com/jgm/pandoc/releases/download/3.6.3/pandoc-3.6.3-1-amd64.deb
         sudo dpkg -i pandoc-3.6.3-1-amd64.deb
-        sudo apt-get install -y texlive texlive-xetex texlive-latex-extra lmodern librsvg2-bin fonts-symbola pdf2svg pdftoppm
+        sudo apt-get install -y texlive texlive-xetex texlive-latex-extra lmodern librsvg2-bin fonts-symbola pdf2svg poppler-utils
         
         pip install --upgrade pip
         pip install Pygments pandoc-include
