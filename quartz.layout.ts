@@ -15,7 +15,7 @@ export const sharedPageComponents: SharedLayout = {
       "Credits" : "/docs/about/credits",
       "Source": "https://github.com/princomp/princomp.github.io",
       "CC BY 4.0": "/docs/about/credits#licence",
-      "Discord": "https://discord.gg/AYSw3UNKEh",
+      "Discord": "https://discord.com/invite/AYSw3UNKEh",
     }})
 }
 
