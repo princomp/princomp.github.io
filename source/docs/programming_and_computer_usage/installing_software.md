@@ -63,11 +63,11 @@ Note that we are *not* installing "Visual Studio *Code*", but simply "Visual Stu
 #. Select "Download software".
 #. Look for Visual Studio. The path is Education → Software → Visual Studio Enterprise 2019/2022. You can search "Services" for the "Education" group and then click "Software" if the education group is not immediately displayed. It should look like the following:
 
-    ![](img/dl_VS.jpg){ width=80% }
+    ![How to find Visual studio in the list of Education Software](img/dl_VS.jpg)
 
     Normally, the following direct link should get you to the right page: <https://portal.azure.com/?Microsoft_Azure_Education_correlationId=8ee63052-dc32-46f7-a109-e26793622dbf#view/Microsoft_Azure_Education/EducationMenuBlade/~/software>. Type "Visual Studio Enterprise" in the search bar and you should find what you are looking for:
     
-    ![](img/dl_visual_studio.png){ width=80% }   
+    ![How to find Visual studio on the azure portal, by looking for visual studio](img/dl_visual_studio.png)  
 
 #. Download and install Visual Studio (leave all the options on their default settings).
 
@@ -75,7 +75,7 @@ Note that we are *not* installing "Visual Studio *Code*", but simply "Visual Stu
 
     **If you are installing Visual Studio 2019, click the dropdown for .NET Desktop Development and check ".NET SDK (out of support)".** You do not have to do this for Visual Studio 2022
 
-   ![](img/installing_software_packages.png){ width=80% }
+   ![The Visual studio installation interface](img/installing_software_packages.png)
 
 #. Enter the product key you obtained previously, following [the instructions in the documentation](https://learn.microsoft.com/en-us/visualstudio/ide/how-to-unlock-visual-studio?view=vs-2019).
 Normally, clicking on "View key" on the screen pictured in the fourth step above should give you access to a key, that you simply need to copy-and-paste in the menu you can access on Visual Studio by clicking on "Select File" → "Account Settings" → "License with a Product Key".
@@ -156,11 +156,11 @@ If the IDE you would like to adopt is not available for your operating system, y
 
 For this, and regardless of your current operating system, you will need a [Virtual Machine](https://en.wikipedia.org/wiki/Virtual_machine) manager.
 
-#. There are many (free) options to chose from, let us mention
+#. There are many (free) options to choose from, let us mention
     #. [Virtual Box](https://www.virtualbox.org/) (for Windows, Linux and Mac),
     #. [QEMU](https://www.qemu.org) (for Windows, Linux and Mac),
     #. [Hyper-V](https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v) (for Windows),
-#. Download a version of "Microsoft Operating Systems" from [Azure Dev Tools for Teaching](https://aka.ms/devtoolsforteaching), or a linux-based distribution (typically, [ubuntu](https://ubuntu.com/appliance/vm) has a good reputation of being accessible and user-friendly).
+#. Download a version of "Microsoft Operating Systems" from [Azure Dev Tools for Teaching](https://aka.ms/devtoolsforteaching), or a Linux-based distribution (typically, [ubuntu](https://ubuntu.com/appliance/vm) has a good reputation of being accessible and user-friendly).
 #. Install and execute your version of Windows or Linux from your virtual machine, and follow the corresponding instructions to install the IDE you are interested in.
 
 Note that [it is illegal to execute macOS in a virtual environment that is not hosted on a mac computer](https://law.stackexchange.com/q/18282), which drastically reduces the interest for you to consider this option.

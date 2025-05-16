@@ -13,7 +13,6 @@ This short note explains how to
 
 for the three main operating systems (Windows, Linux and macOS).
 
-
 ## Unzipping Files
 
 ### Windows
@@ -110,4 +109,4 @@ for Linux users.
 
 When in doubt, open your project in the IDE, right-click on the solution, and look for an option called "Open in File Explorer" or "Open Containing Folder":
 
-![](img/open_containing_folder.png){ width=80% }
+![A drop-down menu containing the choice Open in containing folder.](img/open_containing_folder.png)
