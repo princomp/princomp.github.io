@@ -14,7 +14,7 @@ keywords:
 - C# Programming language
 ---
 
-# Foreword {-}
+# Foreword
 
 Welcome to the course resources book to teach principles of computer programming using C#.
 This resource is accessible on-line at <https://princomp.github.io/>, and [the Credits section below](#credits) gives more detail on how this resource was developed and why.

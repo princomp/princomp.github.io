@@ -128,7 +128,7 @@ The syntax is straightforward once understood that jagged arrays are *exactly* a
 
 In this example, it should be clear that `jaggedArray[row]` is itself an array, and hence that we can use e.g., `jaggedArray[row].Length` or `jaggedArray[row][arrayCell]`.
 
-### When to Use Rectangular vs. Jagged Arrays
+### Comparing Use Cases for Rectangular and Jagged Arrays
 
 The main distinction between rectangular and jagged arrays is that the former is more consistent with its sizing--in other words, in a rectangular array, each array housed within it will be the same size in every row, by definition. In contrast, jagged arrays are not as consistent. This can be seen in the difference between how rectangular and jagged arrays are initialized. Recall that, when initializing a rectangular array, the number of rows and columns is required, but only the number of rows is required for a jagged array.
 

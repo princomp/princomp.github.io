@@ -86,7 +86,7 @@ tags:
 - Example: `myAge = 29;`
 - Value *must* match the type of the variable. If `myAge` was declared as an `int`-type variable, you cannot write `myAge = "29";` because `"29"` is a `string`
 
-### Initialization (Declaration + Assignment)
+### Initialization: Declaration and Assignment in One Statement
 
 - Initialization statement combines declaration and assignment in one single statement (it is just a shortcut, a.k.a. some ["syntactical sugar"](https://www.wikiwand.com/en/Syntactic_sugar), and not something new)
 - Creates a new variable and also gives it an initial value
