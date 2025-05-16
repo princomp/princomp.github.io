@@ -18,7 +18,7 @@
   }
 
   /* To convert from Kelvin to Celsius
-   * Cf. conversion rules at https://www.wikiwand.com/en/articles/Kelvin
+   * Cf. conversion rules at https://en.wikipedia.org/wiki/Kelvin
    *                  from kelvins 	            to kelvins
    * Celsius 	        [°C] = [K] − 273.15 	    [K] = [°C] + 273.15
    * Fahrenheit 	    [°F] = [K] × ​9⁄5 − 459.67 	[K] = ([°F] + 459.67) × ​5⁄9

@@ -15,7 +15,7 @@ At the beginning of class the instructor may
 - If there is no quiz scheduled or the quiz is complete (and collected), the instructor may introduce the lecture topic ("Today, we will be discussing Decisions and Decision Structures") and start the class.
 - etc.
 
-This type of "branching" between multiple choices can be represented with an [activity diagram](https://www.wikiwand.com/en/articles/Activity_diagram):
+This type of "branching" between multiple choices can be represented with an [activity diagram](https://en.wikipedia.org/wiki/Activity_diagram):
 
 !["An Activity Diagram on Teaching a Class"](img/activity_diag_teaching)
 

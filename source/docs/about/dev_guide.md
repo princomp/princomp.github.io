@@ -202,7 +202,7 @@ which are rendered as
 - Explain the image in written form.
 - Title each image, this will create a URL for the image and enables linking to it.
 - Always include a descriptive alt tag for accessibility.
-- [Do not rely on everyone seeing colors the same way](https://www.wikiwand.com/en/articles/Color_blindness).
+- [Do not rely on everyone seeing colors the same way](https://en.wikipedia.org/wiki/Color_blindness).
 - Prefer scalable vector images.
 - When referring to images in markdown, use path from root, see example below
 

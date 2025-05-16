@@ -52,7 +52,7 @@ Operation | Value
 `!true` | `false`
 `!false` | `true`
 
-These tables can also be written in 2-dimensions, as can be seen for [conjunction on wikipedia](https://www.wikiwand.com/en/articles/Truth_table#Logical_conjunction_(AND)).
+These tables can also be written in 2-dimensions, as can be seen for [conjunction on wikipedia](https://en.wikipedia.org/wiki/Truth_table#Logical_conjunction_(AND)).
 
 ## Equality and Relational Operators
 
