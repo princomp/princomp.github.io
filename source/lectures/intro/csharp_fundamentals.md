@@ -87,7 +87,7 @@ Features of this program:
 
     - This is the part of the program that actually "does something": It displays a line of text to the console:
     
-        ![](img/hello_world_console.png)
+        ![A terminal displaying the result of the execution: the text Hello World](img/hello_world_console.png)
     - This statement contains a class name (`Console`), followed by a method name (`WriteLine`). It calls the `WriteLine` method in the `Console` class.
     - The **argument** to the `WriteLine` method is the text "Hello, world!", which is in parentheses after the name of the method. This is the text that gets printed in the console: The `WriteLine` method (which is in the standard library) takes an argument and prints it to the console.
     - Note that the argument to `WriteLine` is inside double-quotes. This means it is a **string**, i.e. textual data, not a piece of C# code. The quotes are required in order to distinguish between text and code.
