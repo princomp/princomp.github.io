@@ -5,21 +5,23 @@ tags:
 - debugging/exceptions
 ---
 
-# Description
+# Bookmarker
 
-## Purpose
+## Description
+
+### Purpose
 
 This project is designed to teach you how to manipulate exceptions and properties.
 It reinforces your understanding of class design and implementation while introducing the handling of exceptions.
 
-## Challenge
+### Challenge
 
-### In short
+#### In short
 
 Develop a class that helps the user track the progress in their reading of books.
 Your class should allow users to track the book title, total page number, and the current page they stopped their reading at (as a bookmark!).
 
-### In more details
+#### In more details
 
 #. Your goal is to design and implement a `Bookmarker` class containing three attributes and several methods (some of which may and should be implemented using properties).
 #. You *must* develop a `Program` class with a `Main` method to test your `Bookmarker` class, and this `Program` class will be part of your grade.
@@ -39,12 +41,7 @@ Your class should allow users to track the book title, total page number, and th
     - a `ToString` method that returns a `string` containing the title, how much of the book was read, and how much of the book is left (the last two in percentages),
     - a method to increment the number of pages read by its argument.
 
-## Submission
-
-Please, follow our [guideline on project submission](./projects/submission).
-In particular, make sure you write your name and the date in a delimited comment at the beginning of your file.
-
-## Example
+### Example
 
 Remember that *you* have to develop a `Program.cs` `Main` method that will test your class.
 It will probably contain something along the lines of
@@ -133,8 +130,25 @@ Input string was not in a correct format.
 
 Note that it is ok if you cannot reproduce this output *exactly*.
 
-## Bonuses
+### Bonuses
 
 - Have your class handle `string`s, so that, for example, your `Bookmarker` constructor would take _three strings as input_,
 - Have your `Main` method ask the user *how many books they want to track* and create that number of objects,
 - Implement a _static_ ISBN-13 checker: your method should take as input a `string` representing an ISBN-13, and return `true` if it is valid. Consult [wikipedia](https://en.wikipedia.org/wiki/ISBN#ISBN-13_check_digit_calculation) on how a ISBN is determined to be valid, and try your best!
+
+## Solution
+
+A possible solution is shared [in this archive](./code/projects/Bookmarker.zip):
+
+```
+!include code/projects/Bookmarker/Bookmarker/Bookmarker.cs
+```
+```{download="./code/projects/Bookmarker.zip"}
+!include code/projects/Bookmarker/Bookmarker/Program.cs
+```
+
+A solution completing the bonus
+
+> "Have your class handle strings, so that, for example, your Bookmarker constructor would take three strings as input"
+
+is shared [in this archive](./code/projects/Bookmarker_with_strings.zip).
