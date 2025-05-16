@@ -14,7 +14,7 @@ This lab serves multiple goals:
 
 ## Introduction
 
-Quoting [wikipedia](https://www.wikiwand.com/en/Unified_Modeling_Language),
+Quoting [wikipedia](https://www.wikiwand.com/en/articles/Unified_Modeling_Language),
 
 > The Unified Modeling Language (UML) is a general-purpose, developmental, modeling language in the field of software engineering that is intended to provide a standard way to visualize the design of a system.
 
@@ -94,6 +94,6 @@ The UML diagram for this class is indicated in the comments at the beginning of 
 
 The following are independent tasks that you can perform to broaden your understanding of UML modeling concepts:
 
-#. Class diagrams are one of many kinds of UML diagrams. Have a look at <https://www.wikiwand.com/en/Unified_Modeling_Language#Diagrams>. In which category are class diagrams: behavior or structure?
-#. Besides modeling attributes and methods, class diagrams can also represent relationships between classes. Have a look at <https://www.wikiwand.com/en/Class_diagram> for more examples of class diagrams and their uses.
-#. An Activity Diagram is another type of UML diagram for representing program actions. You will occasionally see activity diagrams in the lecture notes. Have a look at <https://www.wikiwand.com/en/Activity_diagram> and try to understand the example: "Activity diagram for a guided brainstorming process".
+#. Class diagrams are one of many kinds of UML diagrams. Have a look at <https://www.wikiwand.com/en/articles/Unified_Modeling_Language#Diagrams>. In which category are class diagrams: behavior or structure?
+#. Besides modeling attributes and methods, class diagrams can also represent relationships between classes. Have a look at <https://www.wikiwand.com/en/articles/Class_diagram> for more examples of class diagrams and their uses.
+#. An Activity Diagram is another type of UML diagram for representing program actions. You will occasionally see activity diagrams in the lecture notes. Have a look at <https://www.wikiwand.com/en/articles/Activity_diagram> and try to understand the example: "Activity diagram for a guided brainstorming process".
