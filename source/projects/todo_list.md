@@ -3,20 +3,22 @@ tags:
 - control-structures
 ---
 
-# Description
+# Todo List
 
-## Purpose
+## Description
+
+### Purpose
 
 This project is designed to teach you how to devise, implement, and submit solutions to the simple programming problem of constructing a "todo list software".
 It aims at making sure that you master the simple concepts of control structures and data manipulation before introducing more advanced concepts.
 
-## Challenge
+### Challenge
 
-### In short
+#### In short
 
 Develop a simple program that asks the user to provide their todo list, and then tracks the completion of the items (or "tasks") on that list.
 
-### In more details
+#### In more details
 
 #. Your program should start by asking the user to provide items for their todo list, one by one.
 #. Once the user is done providing the items, it should display the todo list, with a number associated to each item, and its status (done or not done).
@@ -28,12 +30,12 @@ Develop a simple program that asks the user to provide their todo list, and then
 #. Once the user entered the number of item, the updated todo list should be displayed, and the user should be asked for another number of an item.
 #. Once the user completed all the items in the list, the program should display a celebratory message about being done.
 
-## Submission
+### Submission
 
 Please, follow our [guideline on project submission](https://princomp.github.io/projects/submission).
 In particular, make sure you write your name and the date in a delimited comment at the beginning of your file.
 
-## Example
+### Example
 
 Here is an example of execution, where the user input is u͟n͟d͟e͟r͟l͟i͟n͟e͟d͟, and hitting "enter" is represented by "⏎͟":
 
@@ -76,9 +78,48 @@ You're all done, congratulations!
 Press any key to continue...
 ```
 
-## Bonuses
+### Bonuses
 
 - The behaviour of the program if the user enters the number of an item whose status is "done" is not specified above. Write (as a comment) in your program which behaviour you implemented, and test it.
 - Complete the project without resizing arrays.
 - Improve the way the todo list is displayed using [string formatting](./labs/OverflowAndUnderflow#optional-string-formatting).
 - Display, along with the list of items, the completion rate: for example, after the user completed the first of their list of 4 items, the program should display "You are 25% done!".
+
+### Submission
+
+Please, follow our [guideline on project submission](./projects/submission).
+In particular, make sure you write your name and the date in a delimited comment at the beginning of your file.
+
+## Solution
+
+### Simplest Solution
+
+A possible solution, using arrays but not resizing them, is as follows:
+
+```
+!include code/projects/TodoList_Array/TodoList/Program.cs
+```
+
+You can [download it here](./code/projects/TodoList_Array.zip)
+
+### Using Classes 
+
+Another solution is to create a class for "todo list items" and to create an array of them.
+That is, have a class file `Todo.cs` along the lines of
+
+```
+class Todo{
+    public string Description{get; set;}
+    public bool Status{get; set;}
+}
+```
+
+and then to create and manipulate arrays of `Todo` objects, for example as follows:
+
+```
+Todo[] todoList = new Todo[100];
+todoList[0] = new Todo();
+todoList[0].Description = "My first item";
+todoList[0].Status = false;
+Console.Write(todoList[0].Description + (todoList[0].Status ? " done" : " not done"));
+```

@@ -136,6 +136,11 @@ Note that it is ok if you cannot reproduce this output *exactly*.
 - Have your `Main` method ask the user *how many books they want to track* and create that number of objects,
 - Implement a _static_ ISBN-13 checker: your method should take as input a `string` representing an ISBN-13, and return `true` if it is valid. Consult [wikipedia](https://en.wikipedia.org/wiki/ISBN#ISBN-13_check_digit_calculation) on how a ISBN is determined to be valid, and try your best!
 
+### Submission
+
+Please, follow our [guideline on project submission](./projects/submission).
+In particular, make sure you write your name and the date in a delimited comment at the beginning of your file.
+
 ## Solution
 
 A possible solution is shared [in this archive](./code/projects/Bookmarker.zip):

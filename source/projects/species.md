@@ -3,22 +3,24 @@ tags:
 - oop
 ---
 
-# Description
+# Species
 
-## Purpose
+## Description
+
+### Purpose
 
 This project is designed to teach you how to interpret and implement a simple UML specification involving multiple classes.
 It involves inheritance, polymorphism, properties and exception handling.
 
-## Challenge
+### Challenge
 
-### In short
+#### In short
 
 Develop multiple classes to represent animal taxonomy.
 Different animal species have different characteristics---for example, species that belongs to the mammal class will have mammal glands---but they also all share some common properties, like their conservation status or estimated population.
 You need to develop at the same time a system to capture the similarities across species, and to be able to represent relevant attributes and characteristics for each species.
 
-### In more details
+#### In more details
 
 We want to implement the classes pictured in the UML diagram (you right click and select "Open Image in New Tab", or access the other versions listed in caption).
 
@@ -273,15 +275,36 @@ Test 6:
 Flight speed cannot be negative.
 ```
 
-## Submission
-
-Please, follow our [guideline on project submission](./projects/submission).
-In particular, make sure you write your name and the date in a delimited comment at the beginning of your file.
-
-## Bonuses
+### Bonuses
 
 This project is already challenging *as is*, but bonus will be given if:
 
 - (easy) The `ToString()` methods return the information nicely formatted, as above.
 - (medium) You explain briefly (in comment) why the `SoundProduced` method is not given as an abstract static method in the `Mammal` class.
 - (hard) The `WikiLink` property accepts any ["WP code" from wikipedia](https://en.wikipedia.org/wiki/List_of_Wikipedias#Active_editions): links starting with `https://id.wikipedia.org/wiki/`, `https://simple.wikipedia.org/wiki/`, etc. should also be accepted.
+
+### Submission
+
+Please, follow our [guideline on project submission](./projects/submission).
+In particular, make sure you write your name and the date in a delimited comment at the beginning of your file.
+
+## Possible misconceptions
+
+Some additional possible misconceptions are discussed [in this project](./code/projects/Properties_errors.zip).
+
+## Solution
+
+A possible solution is shared [in this archive](./code/projects/Species.zip)
+
+Note that
+
+- in the `Animal` class, a `EpsilonD` constant was added to test if a double is "almost" 0,
+- in the `Bat` class, a `FlightSpeed` property was added to facilitate testing the validity of its value,
+- in the `Bat` class, objects are created even if the number of mammary glands is not 2 or 4, but a message is displayed,
+
+This solution completes the "(easy) The ToString() methods return the information nicely formatted, as above." bonus, and a solution to the "(medium) You explain briefly (in comment) why the SoundProduced method is not given as an abstract static method in the Mammal class." can be as follows:
+
+> In short, static methods cannot be inherited or overridden in C#, and that is why they cannot be abstract.
+> This is discussed in some details in [this stack exchange post](https://stackoverflow.com/questions/3284/why-cant-i-have-abstract-static-methods-in-c).
+> A change was recently introduced in .NET 6, that [makes static abstract members in interface possible](https://learn.microsoft.com/en-us/dotnet/core/compatibility/core-libraries/6.0/static-abstract-interface-methods), but it is limited to interfaces, and abstract static methods cannot be added to abstract classes.
+

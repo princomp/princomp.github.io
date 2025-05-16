@@ -1,3 +1,0 @@
----
-title: Dice Throws Counter
----
