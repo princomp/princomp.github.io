@@ -151,9 +151,12 @@ a {
     }
 
     & li:has(> input[type="checkbox"]:checked) {
+      font-weight: bold;
+      /*
       text-decoration: line-through;
       text-decoration-color: var(--gray);
       color: var(--gray);
+      */
     }
 
     & li > * {

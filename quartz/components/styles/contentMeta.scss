@@ -1,6 +1,7 @@
 .content-meta {
-  margin-top: 0;
+  margin-top: 10;
   color: var(--gray);
+  display:inline-block;
 
   &[show-comma="true"] {
     > *:not(:last-child) {
