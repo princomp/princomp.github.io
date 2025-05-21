@@ -25,7 +25,7 @@ export interface Options {
 const defaultOptions: Options = {
   folderDefaultState: "collapsed",
   folderClickBehavior: "link",
-  useSavedState: false,   // To debug the explorer, change to "false" (this way, the menu is not cached / permanent), 
+ useSavedState: false,   // To debug the explorer, change to "false" (this way, the menu is not cached / permanent), 
  // Cf. https://quartz.jzhao.xyz/features/explorer
   mapFn: (node) => {
     return node
