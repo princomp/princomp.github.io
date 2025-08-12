@@ -5,6 +5,18 @@ tags:
 
 # Introduction
 
+An [abstract data type (ADT)](https://en.wikipedia.org/wiki/Abstract_data_type) is a mathematical model for data types, typically giving
+
+- possible values, 
+- possible operations on data of this type,
+- behavior of those operations.
+
+Data *structures*, on the other hand, are concrete representations of data, from the point of view of a programmer, and not from a user's perspective.
+
+
+
+## Arrays
+
 Arrays are structures that allow you to store multiple values in memory using a single name and indexes.
 Internally, an array contains a fixed number of variables (called *elements*) of a particular type^[Usually, all the elements of an array have the same type, but an array can store elements of different types if `object` is its type, since any element is actually of type `object`.].
 The elements in an array are always stored in a contiguous block of memory, providing fast and efficient access.

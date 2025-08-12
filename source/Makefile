@@ -422,10 +422,7 @@ $(EXO_DIR)%.md: $(SOL_DIR)%.md
 # This is work in progress and need to be updated.
 $(BUILD_DIR)web-order.ts: order
 	@mkdir -p $(dir $@)
-	@echo -n "// This file was generated automatically by calling make web-order.ts.\n// Refer to the Makefile to read indications on how to generate and edit it." > $@
-	@echo -n "import { Options } from \"../quartz/components/Explorer\"\n >> $@
-	\nexport const nameOrderMap: Record<string, number> = {\n" > $@
-	@n=0 ;
+	@echo -n "// This file was generated automatically by calling make web-order.ts.\n// Refer to the Makefile to read indications on how to generate and edit it.\nexport const nameOrderMap: Record<string, number> = {\n" > $@	@n=0 ;
 	@while read -r line; do \
 	n=$$((n+1)); \
 	echo -n '\t"' >> $@;\
