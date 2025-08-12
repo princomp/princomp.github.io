@@ -15,6 +15,7 @@
 ./docs/programming_and_computer_usage/keyboard_shortcuts.md
 ./docs/programming_and_computer_usage/datatypes_in_csharp.md
 ./docs/programming_and_computer_usage/uml_class.md
+./docs/programming_and_computer_usage/complexity.md
 ./lectures/
 ./lectures/intro/
 ./lectures/intro/computers_and_programming.md
