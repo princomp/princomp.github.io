@@ -3,22 +3,24 @@ tags:
 - oop
 ---
 
-# Description
+# Evaluation
 
-## Purpose
+## Description
+
+### Purpose
 
 This project is designed to teach you how to interpret and implement a simple UML specification involving multiple classes.
 It involves inheritance, polymorphism, properties, exception handling and `String` methods.
 
-## Challenge
+### Challenge
 
-### In short
+#### In short
 
 Develop multiple classes to organize the evaluations for courses. 
 Evaluations can be of different natures (project, in-class exam, finale exam), have different weights and be marked as optional.
 However, evaluations of different natures also have different attributes and methods: for example, only projects have a submission link, and only exams have a room.
 
-### In more details
+#### In more details
 
 We want to implement the classes pictured in the UML diagram (you can zoom in or, in your browser, right click and select "Open Image in New Tab", or access [its text version](./uml/cla/Evaluation.txt)).
 
@@ -97,15 +99,19 @@ Evaluations are for different classes.
 - The *static* `IntegrityTest` method should take as input a list of evaluations, and returns `true` if all the evaluations belong to the same course and the weights of the evaluations that are not bonuses adds to 1, `false` if the evaluations all belong to the same course but the weights of the evaluations that are not bonuses do not add to 1, and raise an exception otherwise,
 - `Final` and `InClass` do *not* have `ToString()` methods, and yet displaying information about them still return information about the room.
 
-## Submission
+### Submission
 
 Please, follow our [guideline on project submission](./projects/submission).
 In particular, make sure you write your name and the date in a delimited comment at the beginning of your file.
 
-## Bonuses
+### Bonuses
 
 This project is already challenging *as is*, but bonus will be given if:
 
 - (easy) Except in the `Evaluation` class, make it so that the `GetContact()` methods cannot be overridden,
 - (medium) Your `Main` method exhibits many test cases and illustrates your classes' features nicely,
 - (hard) A mechanism is implemented to either export the attributes of an `Evaluation` object into a file or to load it from a file.
+
+## Solution
+
+A possible solution is shared [in this archive](./code/projects/Evaluation.zip).

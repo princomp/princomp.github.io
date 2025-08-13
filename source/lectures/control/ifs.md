@@ -306,7 +306,7 @@ Console.WriteLine("Goodbye");
     | -15        | "yes"         | `true`      | 30  |
     | 10         | "yes"         | `false`     | 40  |
 
-### if-else-if vs. nested if
+### Comparing if-else-if and nested if statements
 
 - Sometimes a nested `if` statement can be rewritten as an `if-else-if` statement
 

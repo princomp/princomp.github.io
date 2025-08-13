@@ -5,21 +5,23 @@ tags:
 - debugging/exceptions
 ---
 
-# Description
+# FileDisplayer
 
-## Purpose
+## Description
+
+### Purpose
 
 This project is designed to teach you how to manipulate files and exceptions.
 It reinforces your understanding of class input/output operations on files and forces you to be creative with a limited toolbox.
 
-## Challenge
+### Challenge
 
-### In short
+#### In short
 
 Develop a static class to perform simple operations on files: display its content, display one of its lines, display it with truncation, and display words surrounding a particular word.
 A bonus (for more experienced programmers) asks to compute the winner of a race using data shared in a [comma-separated values](https://en.wikipedia.org/wiki/Comma-separated_values) file.
 
-### In more details
+#### In more details
 
 Your goal is to design and implement a static `TextFileHelper` class containing 5 methods (the fifth one being optional):
 
@@ -39,14 +41,12 @@ Your goal is to design and implement a static `TextFileHelper` class containing 
 |:---------------------------|
 | You are allowed to use only `StreamReader`'s `ReadLine` and constructor, `StreamWriter`'s `WriteLine` and `Write` as well as their constructors, and the usual `Console`, `char`, `string` (including for example `Substring` or `Split`) and `array` methods, conditionals, etc. **In particular, *do not* use the Linq library.** `AppDomain`, `Path` and `File` methods can be used as in class or in the example below. |
 
-## Submission
+### Submission
 
 Start by downloading [this project](./code/projects/FileDisplayer.zip) to help you getting started.
-
 Please, follow our [guideline on project submission](./projects/submission).
-In particular, make sure you write your name and the date in a delimited comment at the beginning of your file.
 
-## Example
+### Example
 
 Here is an example of a `Program.cs` `Main` method:
 
@@ -112,8 +112,17 @@ The winner is Marty Gave.
 
 Note that it is ok if you cannot reproduce this output *exactly*.
 
-## Bonuses
+### Bonuses
 
 - (easy) If the file doesn't exist, handle exceptions gracefully.
 - (medium) Write the `DisplayWinnerCSV` method.
 - (hard) Make `DisplayW` accommodate punctuation signs (`,`, `.`, `:`, etc.).
+
+### Submission
+
+Please, follow our [guideline on project submission](./projects/submission).
+In particular, make sure you write your name and the date in a delimited comment at the beginning of your file.
+
+## Solution
+
+A possible solution is shared [in this archive](./code/projects/FileDisplayerSolution.zip)

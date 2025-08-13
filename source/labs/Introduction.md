@@ -30,7 +30,7 @@ We want this reading to be proactive, so we will include questions and actions l
 
 | ❓ Question       |
 |:---------------------------|
-| We used five different file formats in the text above you may not be familiar with. Along with _markdown_ (`md`), that's six; can you make sure you know them all and know their purposes? Looking them up [on wikipedia](https://www.wikiwand.com/en/List_of_file_formats) and reading the first paragraph of each of their pages can be a good way of getting started! |
+| We used five different file formats in the text above you may not be familiar with. Along with _markdown_ (`md`), that's six; can you make sure you know them all and know their purposes? Looking them up [on wikipedia](https://en.wikipedia.org/wiki/List_of_file_formats) and reading the first paragraph of each of their pages can be a good way of getting started! |
 
 | ⇒ Action ⇐ | 
 | ---------- | 
@@ -62,7 +62,7 @@ Our resources are supported by Affordable Learning Georgia, which strives to sha
 | ❓ Questions       |
 |:---------------------------|
 | What exactly is implied by "free" as in "free coffee" _and_ as in "free speech"? | 
-| Try to understand what "[free software](https://www.wikiwand.com/en/Free_software)" means; is it like coffee (some people say "beer") or like speech? | 
+| Try to understand what "[free software](https://en.wikipedia.org/wiki/Free_software)" means; is it like coffee (some people say "beer") or like speech? | 
 | Are the resources presented here free as in coffee, as in speech, or both? And what about your computer's operating system? Your media player? |
     
 Try to look at the licenses of some of the software you use on a daily basis. You may realize that some important software products are actually open source and host their code on e.g., github!
@@ -77,7 +77,7 @@ Try to look at the licenses of some of the software you use on a daily basis. Yo
     This means that a free software can come at a cost (it is not necessarily "gratis"), but once it is paid for, you can use it in any way you like: edit it, improve it, copy it, and in some cases redistribute it.
 - The resources presented here are free as in coffee _and_ speech.
 - If your computer is running [Windows](https://www.microsoft.com/en-us/licensing/product-licensing/windows) or [macOS](https://www.apple.com/legal/sla/), then it is mostly proprietary (read: not free).
-[Android](https://www.wikiwand.com/en/Android_(operating_system)#Licensing) is mostly free, and [Linux](https://www.wikiwand.com/en/Linux#Development) distributions are in general completely free.
+[Android](https://en.wikipedia.org/wiki/Android_(operating_system)#Licensing) is mostly free, and [Linux](https://en.wikipedia.org/wiki/Linux#Development) distributions are in general completely free.
 - For your media player, you should check yourself! One excellent media player released under a free license is [VLC](http://www.videolan.org/)!
 </details>
 

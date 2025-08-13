@@ -5,20 +5,22 @@ tags:
 - debugging/exceptions
 ---
 
-# Description
+# TextFileHelper Class
 
-## Purpose
+## Description
+
+### Purpose
 
 This project is designed to teach you how to manipulate files and exceptions.
 It reinforces your understanding of class input/output operations on files and forces you to be creative with a limited toolbox.
 
-## Challenge
+### Challenge
 
-### In short
+#### In short
 
 Develop a static class to perform simple operations on files: display its content, display its content without the comments, reverse its content, concatenate two files, and finally (for more experienced programmers), determine if the content of the file is balanced (as defined below).
 
-### In more details
+#### In more details
 
 Your goal is to design and implement a static `TextFileHelper` class containing 5 methods (the fifth one being optional):
 
@@ -32,7 +34,7 @@ Your goal is to design and implement a static `TextFileHelper` class containing 
 |:---------------------------|
 | You are allowed to use only `StreamReader`'s `ReadLine` and constructor, `StreamWriter`'s `WriteLine` and constructor, and the usual `Console`, `char`, `string` and `array` methods, lists, arrays, conditionals, etc. In particular, *do not* use the Linq library. `AppDomain`, `Path` and `File` methods can be used as in class or in the example below. |
 
-## Submission
+### Submission
 
 Feel free to download the project [illustrated below](./code/projects/TextFileHelper.zip) to help you getting started.
 You will need to either write the required methods or to comment out the code between "// START commenting here" and "// END commenting here" before you can compile it.
@@ -40,7 +42,7 @@ You will need to either write the required methods or to comment out the code be
 Please, follow our [guideline on project submission](./projects/submission).
 In particular, make sure you write your name and the date in a delimited comment at the beginning of your file.
 
-## Example
+### Example
 
 Here is an example of a `Program.cs` `Main` method, that creates four test files and illustrates some of the desired functionalities:
 
@@ -55,7 +57,7 @@ Executing it with the properly implemented `TextFileHelper` missing methods shou
 * Testing Display
 *****
 This is the first demo file
-# This line starts with an "#").
+## This line starts with an "#").
 (An isolated parenthesis
 *****
 * Testing DisplayNoComment
@@ -66,13 +68,13 @@ This is the first demo file
 * Testing Reverse
 *****
 (An isolated parenthesis
-# This line starts with an "#").
+## This line starts with an "#").
 This is the first demo file
 *****
 * Testing Concat
 *****
 This is the first demo file
-# This line starts with an "#").
+## This line starts with an "#").
 (An isolated parenthesis
 (This is the second demo file
 )There are parenthesis in it, but no pound ("#") character on the first line.
@@ -87,8 +89,17 @@ ex3 is balanced: True
 
 Note that it is ok if you cannot reproduce this output *exactly*.
 
-## Bonuses
+### Bonuses
 
 - Write the `Balanced` method.
 - Handle gracefully exceptions if files do not exist,
 - Give to `Concat` and `Reverse` an optional `bool` argument that allows overriding the file whose path is given as a last argument.
+
+### Submission
+
+Please, follow our [guideline on project submission](./projects/submission).
+In particular, make sure you write your name and the date in a delimited comment at the beginning of your file.
+
+## Solution
+
+A possible solution is shared [in this archive](./code/projects/TextFileHelperSolution.zip)

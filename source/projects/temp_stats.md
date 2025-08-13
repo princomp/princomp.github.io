@@ -5,20 +5,22 @@ tags:
 - debugging/exceptions
 ---
 
-# Description
+# Temperature Statistics
 
-## Purpose
+## Description
+
+### Purpose
 
 This project is designed to teach you how to manipulate exceptions, properties, and arrays.
 It reinforces your understanding of class design and implementation while introducing the handling of exceptions.
 
-## Challenge
+### Challenge
 
-### In short
+#### In short
 
 Develop a class that helps gather data about temperature statistics. Your class will allow to compute the mean, median and (optionally) mode of arrays of temperatures (in Fahrenheit), and raise exceptions if the data is incorrectly entered.
 
-### In more details
+#### In more details
 
 #. Your goal is to design and implement a `TempStats` class containing two attributes and several methods (some of which may and should be implemented using properties).
 #. You *must* develop a `Program` class with a `Main` method to test your `TempStats` class, but **note that this `Program` class will not be part of your grade**.
@@ -27,13 +29,12 @@ Develop a class that helps gather data about temperature statistics. Your class 
 #. The temperatures in the array *must be* between -128.6 and 134.1 (the [lowest](https://en.wikipedia.org/wiki/Lowest_temperature_recorded_on_Earth) and [highest](https://en.wikipedia.org/wiki/Highest_temperature_recorded_on_Earth) temperatures ever recorded on Earth): if at any point during creation or later modification of the array the temperatures were to exceed that range, your class should throw an exception.
 #. Finally, your class should have two methods, one to compute the mean of the values in the array, and one to compute the median. Both methods can be implemented as properties.
 
-
-## Submission
+### Submission
 
 Please, follow our [guideline on project submission](./projects/submission).
 In particular, make sure you write your name and the date in a delimited comment at the beginning of your file.
 
-## Example
+### Example
 
 Here is an example of a `Program.cs` `Main` method:
 
@@ -93,9 +94,18 @@ Press any key to continue...
 
 Note that it is ok if you cannot reproduce this output *exactly*.
 
-## Bonuses
+### Bonuses
 
 - Implement a method to display the values and the description nicely.
 - Implement a method to display the values *converted to Celcius* nicely.
 - Accept arrays sorted in increasing *or* decreasing order. That is, the array `3.5, -10, -15` should be accepted.
 - Implement a method (or property) to compute [the mode](https://en.wikipedia.org/wiki/Mode_(statistics)) of the temperatures. Note that the mode is not always unique: in that case, an exception should be raised.
+
+### Submission
+
+Please, follow our [guideline on project submission](./projects/submission).
+In particular, make sure you write your name and the date in a delimited comment at the beginning of your file.
+
+## Solution
+
+A possible solution can be [downloaded here](./code/projects/TempStats.zip).

@@ -372,7 +372,7 @@ Let's look at each part of this code in order.
 
 ## Variable Scope
 
-#### Instance variables vs. local variables
+#### Instance and local variables
 
 - Instance variables: Stored (in memory) with the object, shared by all methods of the object. Changes made within a method persist after method finishes executing.
 

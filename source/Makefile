@@ -240,7 +240,7 @@ PANDOC_DOC:= $(PANDOC_OPTIONS_ALT)
 # --reference-doc=$(DOCX_TEMPLATES)custom-reference.docx
 
 # Book build options
-PANDOC_BOOK_HTM:= $(PANDOC_HTM)
+PANDOC_BOOK_MD:= $(PANDOC_MD) --shift-heading-level-by=0 -M tags="book"
 PANDOC_BOOK_PDF:= $(PANDOC_PDF)
 PANDOC_BOOK_ODT:= $(PANDOC_ODT)
 PANDOC_BOOK_DOC:= $(PANDOC_DOC)
@@ -291,7 +291,6 @@ $(IMG_DIR)%.pdf:$(IMG_DIR)%.tex
 
 $(IMG_DIR)%.svg:$(IMG_DIR)%.pdf
 	pdf2svg $< $@
-
 
 $(IMG_DIR)%.png:$(IMG_DIR)%.pdf
 	pdftoppm $< $@ -png
@@ -418,6 +417,9 @@ $(EXO_DIR)%.md: $(SOL_DIR)%.md
 # process.
 # Refer to sortFn.ts and web-order.ts
 # in the quartz branch for more info
+
+
+# This is work in progress and need to be updated.
 $(BUILD_DIR)web-order.ts: order
 	@mkdir -p $(dir $@)
 	@echo -n "// This file was generated automatically by calling make web-order.ts.\n// Refer to the Makefile to read indications on how to generate and edit it.\nexport const nameOrderMap: Record<string, number> = {\n" > $@
@@ -583,10 +585,7 @@ $(PROJECT_DIR)%.zip: $(PROJECT_DIR)%/*/Program.cs | $(PROJECT_DIR)/%/*/*.cs
 # -------------------------------
 
 $(BUILD_DIR)book.md:
-	pandoc $(SOURCE_BOOK) $(PANDOC_MD) -o $@
-
-#$(BUILD_DIR)book.html: $(BUILD_DIR)book.md
-#	pandoc $(SOURCE_BOOK) $(PANDOC_BOOK_HTM) -o $@
+	pandoc $(SOURCE_BOOK) $(PANDOC_BOOK_MD) -o $@
 
 $(BUILD_DIR)book.pdf: | $(BUILD_DIR)book.md
 	pandoc $(BUILD_DIR)book.md $(PANDOC_BOOK_PDF) -o $@

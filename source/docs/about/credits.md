@@ -20,7 +20,7 @@ The first source of support is the constant stream of feedback we receive from s
 
 This project has been monetarily supported by an [Affordable Learning Georgia](https://www.affordablelearninggeorgia.org/) [Transformation Grants](https://www.affordablelearninggeorgia.org/grants/overview/) ([Proposal 571](https://www.affordablelearninggeorgia.org/assets/documents/571-proposal.docx)) and a Continuous Improvement Grant (M260).
 
-[!["Affordable Learning Georgia"](./img/ALG_Logo_hires.png){ width=80% }](https://www.affordablelearninggeorgia.org/)
+[!["Affordable Learning Georgia"](./img/ALG_Logo_hires.png)](https://www.affordablelearninggeorgia.org/)
 
 This project also received the support of [Augusta University](https://www.augusta.edu/)'s [School of Computer and Cyber Sciences](https://www.augusta.edu/ccs/) and [Center for Instructional Innovation](https://www.augusta.edu/innovation/).
 
@@ -48,7 +48,7 @@ Those fonts have been specially selected for their legibility and [lower impact 
 
 The source code and the website are graciously hosted and built by [github](https://github.com/).
 
-## Licence
+## License
 
 This work is under [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/).
 Concretely, this means that you are free to:
@@ -56,6 +56,6 @@ Concretely, this means that you are free to:
 - Save, print, copy and redistribute the entirety of the resources presented here,
 - Modify them as you see fit,
 
-as long as you give proper credit and keep the same licence.
+as long as you give proper credit and keep the same license .
 
-Please refer to [our licence file](https://github.com/princomp/princomp.github.io/blob/main/license.md) for the detail of this licence.
+Please refer to [our license  file](https://github.com/princomp/princomp.github.io/blob/main/license.md) for the details of this license .
