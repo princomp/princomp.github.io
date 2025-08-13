@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 
 class Program
@@ -33,3 +33,4 @@ class Program
     // End solution
   }
 }
+ 

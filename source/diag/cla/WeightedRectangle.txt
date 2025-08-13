@@ -1,0 +1,23 @@
+Shape <|-- Rectangle
+Rectangle <|-- WeightedRectangle
+
+class Shape{
+    <<Abstract>>
+    +GetArea() double*
+    +ToString() string
+}
+
+class Rectangle{
+    + «property» Width: int
+    + «property» Length: int 
+    + GetArea() int
+    + Rectangle(wiP: int, leP: int)
+    + ToString() string
+    + Equals(rP: Rectangle) bool
+}
+
+class WeightedRectangle{
+    + «property» Weight: int
+    + WeightedRectangle(wiP: int, leP: int, weP: int)
+    + Equals(wrP: WeightedRectangle) bool
+}
