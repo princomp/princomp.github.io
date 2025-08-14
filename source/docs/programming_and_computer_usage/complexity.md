@@ -52,7 +52,7 @@ In typical usage the $O$ notation is *asymptotical* (we are interested in very l
 - If $f(x)$ is a sum of several terms, if there is one with largest growth rate, it can be kept, and all others omitted.
 - If $f(x)$ is a product of several factors, any constants (factors in the product that do not depend on $x$) can be omitted.
 
-There are additionaly some very useful [properties of the big O notation](https://www.geeksforgeeks.org/dsa/properties-of-asymptotic-notations/):
+There are additionally some very useful [properties of the big O notation](https://www.geeksforgeeks.org/dsa/properties-of-asymptotic-notations/):
 
 - Reflexivity: $f(n) = O(f(n))$,
 - Transitivity: $f(n) = O(g(n))$ and $g(n) = O(h(n))$ implies $f(n) = O(h(n))$,
@@ -60,24 +60,6 @@ There are additionaly some very useful [properties of the big O notation](https:
 - Sum rule: $f(n) = O(g(n))$ and $h(n) = O(k(n))$ implies $f(n) + h(n) = O(\max (g(n), k(n))$,
 - Product rule: $f(n) = O(g(n))$ and $h(n) = O(k(n))$ implies $f(n) \times h(n) = O(g(n) \times k(n))$,
 - Composition rule: $f(n) = O(g(n))$ and $g(n) = O(h(n))$ implies $f(g(n)) = O(h(n))$.
-
-$$
-\begin{aligned}
-f(n) & = O(f(n)) && \text{Reflexivity}\\
-f(n) & = O(f(n)) && \text{Reflexivity}
-\end{aligned}
-$$
-
-$$
-\begin{array}{rll}
-E \psi &= H\psi & \text{Expanding the Hamiltonian Operator} \\
-&= -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} \psi + \frac{1}{2}m\omega x^2 \psi & \text{Using the ansatz $\psi(x) = e^{-kx^2}f(x)$, hoping to cancel the $x^2$ term} \\
-&= -\frac{\hbar^2}{2m} [4k^2x^2f(x)+2(-2kx)f'(x) + f''(x)]e^{-kx^2} + \frac{1}{2}m\omega x^2 f(x)e^{-kx^2} &\text{Removing the $e^{-kx^2}$ term from both sides} \\
-& \Downarrow \\
-Ef(x) &= -\frac{\hbar^2}{2m} [4k^2x^2f(x)-4kxf'(x) + f''(x)] + \frac{1}{2}m\omega x^2 f(x) & \text{Choosing $k=\frac{im}{2}\sqrt{\frac{\omega}{\hbar}}$ to cancel the $x^2$ term, via $-\frac{\hbar^2}{2m}4k^2=\frac{1}{2}m \omega$} \\
-&= -\frac{\hbar^2}{2m} [-4kxf'(x) + f''(x)] \\
-\end{array}
-$$
 
 <!--
     Example 1:  f(n) = 3n2 + 2n + 1000Logn +  5000
@@ -91,15 +73,56 @@ $$
     Big O Notation: O(n3)
 --> 
 
-
-
 Have a look at the [Big-O complexity chart](https://www.bigocheatsheet.com/):
 
 ![Big-O Complexity Chart](https://www.bigocheatsheet.com/img/big-o-complexity-chart.png)
 
 
-This can make a *very* significant difference, as exemplified in the following code:
+This can make a *very* significant difference, as exemplified in [the following code](./code/projects/GrowthMagnitudes.zip):
 
-```
+```{download="./code/projects/GrowthMagnitudes.zip"}
 !include code/projects/GrowthMagnitudes/GrowthMagnitudes/Program.cs
 ```
+
+
+# An Example: Integers
+
+## Abstraction and Representation
+
+To measure the time and space consumption of programs, we make some simplifying assumptions:
+
+- Hardware is discarded: we compare programs assuming they run on the same platform, and do *not* consider if a program would be "better" on parallel hardware. 
+- Constants are discarded: if a program is twice as slow as another one, we still consider them to be in the same order of magnitude^[This is captured by the "constant factor" property of the big O notation.].
+- *Representations* are in general discarded, as programs are assumed to use the same: for example, if the implementation of the `int` datatype is "reasonable" and the same for all programs, then we can discard it.
+
+## How integers are represented
+
+Compare the following three ways of representing integers:
+
+Name | Base | Examples | Bits to represent $n$ | 
+--- | :---: | ---------- | ----- | 
+Unary (Tallies) | 1 | III, IIIIIII, IIIIIIII, … | $O(n)$ |
+Binary | 2 | 01011, 10011101, 101101010, … | $O(\log_2(n))$ |
+Decimal | 10 | 123, 930, 120,439, … | $O(\log_{10}(n))$ |
+
+Actually, it takes roughly [$\log_2(n) / \log_2(b)$ digits](https://math.stackexchange.com/a/4490764) to represent the number $n$ in base $b$, except if $b = 1$.
+
+And indeed we can confirm that for $b = 10$, we have
+
+$$\log_2(n) / \log_2(b) = \log_{10}(n)$$
+
+by [changing the base](https://en.wikipedia.org/wiki/List_of_logarithmic_identities#Changing_the_base) of the logarithm.
+
+## Why it (almost) does not matter
+
+Now, imagine that we have a program manipulating integers in base $b$.
+Converting numbers in base $b'$ takes $\log_2(b) / \log_2(b')$ times more (or less!) space, so if $b = 2$ and $b' = 2$, it means we need $3.322$ times more space to store and manipulate the integers.
+
+If our program in base $b$ uses $O(g(n))$, it means that a program performing the same task, with the same algorithm, but using integers in base $b'$, would require $O((\log_2(b) / \log_2(b')) \times g(n))$.
+By adapting the constant factor principle of the big O notation, we can see that this is a negligible factor that can be omitted.
+
+However, if the $b'$ base is 1, then the new program will use $O(n \times g(n))$: if $g(n)$ is greater than linear, this will make a difference!
+Of course, unary representation is "not" reasonable, so we will always assume that our representations are related by some constant, making the function orger of magnitude insensible to such details.
+
+You can have a look at [the complexity of various arithmetic functions](https://en.wikipedia.org/wiki/Computational_complexity_of_mathematical_operations#Arithmetic_functions) and see that the representation is not even discussed, as those results are insensible to them, provided they are "reasonable".
+
