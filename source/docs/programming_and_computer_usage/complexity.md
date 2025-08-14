@@ -62,10 +62,21 @@ There are additionaly some very useful [properties of the big O notation](https:
 - Composition rule: $f(n) = O(g(n))$ and $g(n) = O(h(n))$ implies $f(g(n)) = O(h(n))$.
 
 $$
-\begin{align*}
-f(n) & = O(f(n)) \tag{Reflexivity}\\
-f(n) & = O(f(n)) \text{Reflexivity}
-\end{align*}
+\begin{aligned}
+f(n) & = O(f(n)) && \text{Reflexivity}\\
+f(n) & = O(f(n)) && \text{Reflexivity}
+\end{aligned}
+$$
+
+$$
+\begin{array}{rll}
+E \psi &= H\psi & \text{Expanding the Hamiltonian Operator} \\
+&= -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} \psi + \frac{1}{2}m\omega x^2 \psi & \text{Using the ansatz $\psi(x) = e^{-kx^2}f(x)$, hoping to cancel the $x^2$ term} \\
+&= -\frac{\hbar^2}{2m} [4k^2x^2f(x)+2(-2kx)f'(x) + f''(x)]e^{-kx^2} + \frac{1}{2}m\omega x^2 f(x)e^{-kx^2} &\text{Removing the $e^{-kx^2}$ term from both sides} \\
+& \Downarrow \\
+Ef(x) &= -\frac{\hbar^2}{2m} [4k^2x^2f(x)-4kxf'(x) + f''(x)] + \frac{1}{2}m\omega x^2 f(x) & \text{Choosing $k=\frac{im}{2}\sqrt{\frac{\omega}{\hbar}}$ to cancel the $x^2$ term, via $-\frac{\hbar^2}{2m}4k^2=\frac{1}{2}m \omega$} \\
+&= -\frac{\hbar^2}{2m} [-4kxf'(x) + f''(x)] \\
+\end{array}
 $$
 
 <!--
