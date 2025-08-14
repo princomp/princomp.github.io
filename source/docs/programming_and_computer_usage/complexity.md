@@ -84,6 +84,8 @@ This can make a *very* significant difference, as exemplified in [the following 
 !include code/projects/GrowthMagnitudes/GrowthMagnitudes/Program.cs
 ```
 
+Do not hesitate to edit this code to have all input values starting at 0 to "feel" the difference it makes in terms of time!
+
 
 # An Example: Integers
 

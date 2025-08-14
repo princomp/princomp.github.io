@@ -46,10 +46,10 @@ They are generally useful for storing and retrieving data, that is, collection o
 ## Summarizing 
 
 - An abstract data type is the "description", the interface, the contract: this is the most abstract perspective, describing the *behavior* of the structure you want to manipulate.
-- A data type is the implementation of an abstract data type, giving concrete instructions to the computer for how to manipulate it.
-- A data structure is a concrete implementation of how to 
+- A data type is the implementation of an abstract data type describing "atoms" of data, giving concrete instructions to the computer for how to manipulate simple (isolated) values.
+- A data structure is the implementation of an abstract data type describing how to manipulate "collections" of data, giving concrete instructions to the computer for how to manipulate multiple values at the same time.
 
-Some abstract data types are implemented as data types: integers [can be given as an abstract data type](https://cs.stackexchange.com/questions/153597/are-integers-an-abstract-data-type) and are (imperfectly) implemented in C# as `int`^[Typically, `int` cannot correctly add 2,147,483,647 (the value of `int.MaxValue`) and 2, making it an imperfect implementation of integers.]
+Note that some abstract data types are implemented as data types: integers [can be given as an abstract data type](https://cs.stackexchange.com/questions/153597/are-integers-an-abstract-data-type) and are (imperfectly) implemented in C# as `int`^[Typically, `int` cannot correctly add 2,147,483,647 (the value of `int.MaxValue`) and 2, making it an imperfect implementation of integers.]
 Some abstract data types are (imperfectly) implemented as data structures, for example strings of text are implemented in the [`String` class](https://learn.microsoft.com/en-us/dotnet/api/system.string?view=net-9.0).
 
 ## Arrays
