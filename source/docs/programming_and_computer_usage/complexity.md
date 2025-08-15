@@ -81,13 +81,15 @@ Have a look at the [Big-O complexity chart](https://www.bigocheatsheet.com/):
 This can make a *very* significant difference, as exemplified in [the following code](./code/projects/GrowthMagnitudes.zip):
 
 ```{download="./code/projects/GrowthMagnitudes.zip"}
-!include code/projects/GrowthMagnitudes/GrowthMagnitudes/Program.cs
+!include`snippetStart="// Exponential",snippetEnd="// Cubic"` code/projects/GrowthMagnitudes/GrowthMagnitudes/Program.cs
 ```
+
+
 
 Do not hesitate to edit this code to have all input values starting at 0 to "feel" the difference it makes in terms of time!
 
 
-# An Example: Integers
+# The Example of Integers
 
 ## Abstraction and Representation
 

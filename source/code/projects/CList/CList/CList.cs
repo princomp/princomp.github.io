@@ -36,18 +36,18 @@ public class CList<T>
     first = new Cell(dataP, first);
   }
 
-    // We will frequently test if
-    // a CList is empty, so we introduce 
-    // a method for that:
-    public bool IsEmpty()
-    {
-        return (first == null);
-    }
+  // We will frequently test if
+  // a CList is empty, so we introduce
+  // a method for that:
+  public bool IsEmpty()
+  {
+    return (first == null);
+  }
 
-    // A method to add a cell at the end
-    // of the CList (to the right).
-    // We call it AddL for 'Add Last'.
-    public void AddL(T dataP)
+  // A method to add a cell at the end
+  // of the CList (to the right).
+  // We call it AddL for 'Add Last'.
+  public void AddL(T dataP)
   {
     if (IsEmpty())
       AddF(dataP);
@@ -64,6 +64,7 @@ public class CList<T>
       cCell.Next = new Cell(dataP, null);
     }
   }
+
   // Property for the size of the CList.
   public int Size
   {
@@ -89,6 +90,7 @@ public class CList<T>
       return size;
     }
   }
+
   // We can implement a ToString method
   // "the usual way", using a loop
   // similar to the one in AddL:
@@ -98,13 +100,13 @@ public class CList<T>
   public override string ToString()
   {
     string returned = "———";
-        // Line above the table
+    // Line above the table
     for (int i = 0; i < Size; i++)
     {
       returned += "————";
     }
     returned += "\n| ";
-        // Content of the CList
+    // Content of the CList
     Cell cCell = first;
     while (cCell != null)
     {
@@ -112,7 +114,7 @@ public class CList<T>
       cCell = cCell.Next;
     }
     returned += "\n———";
-        // Line below the table
+    // Line below the table
     for (int i = 0; i < Size; i++)
     {
       returned += "————";
@@ -330,15 +332,14 @@ public class CList<T>
       return 0 + Count(dataP, pTmp.Next);
   }
 
-    /* Some other methods that can be implemented are:
-        - ToArray(), that returns an array containing the values held in the calling object,
-        - CopyTo(int startP, int endP), that returns a CList object containing the elements between indices startP (included) and endP (excluded) in the calling object, and throw an error if the range is outside the calling object's limits,
-        - FromArray(T[] arrayP) that appends to the calling object the value held in the arrayP parameter,
-        - IndexCListOf(T elemP) returns a CList containing all the indices where the value elemP is stored in the calling object,
-        - Remove(int startP, int endP) that removes all the cells between indices startP (included) and endP (excluded) in the calling object, and throw an error if the range is outside the calling object's limits,
-        - Reverse(int startP, int endP) that reverse the order of all the cells between indices startP (included) and endP (excluded) in the calling object, and throw an error if the range is outside the calling object's limits,
-        - Concat(CList<T> clistP) that append to the end of the calling object the elements in the CList clistP,
-        - Insert(T elemP, int indexP) that insert at indexP the elemP if the calling object is of size at least indexP, and throw an error otherwise.
-    */
-
+  /* Some other methods that can be implemented are:
+      - ToArray(), that returns an array containing the values held in the calling object,
+      - CopyTo(int startP, int endP), that returns a CList object containing the elements between indices startP (included) and endP (excluded) in the calling object, and throw an error if the range is outside the calling object's limits,
+      - FromArray(T[] arrayP) that appends to the calling object the value held in the arrayP parameter,
+      - IndexCListOf(T elemP) returns a CList containing all the indices where the value elemP is stored in the calling object,
+      - Remove(int startP, int endP) that removes all the cells between indices startP (included) and endP (excluded) in the calling object, and throw an error if the range is outside the calling object's limits,
+      - Reverse(int startP, int endP) that reverse the order of all the cells between indices startP (included) and endP (excluded) in the calling object, and throw an error if the range is outside the calling object's limits,
+      - Concat(CList<T> clistP) that append to the end of the calling object the elements in the CList clistP,
+      - Insert(T elemP, int indexP) that insert at indexP the elemP if the calling object is of size at least indexP, and throw an error otherwise.
+  */
 }

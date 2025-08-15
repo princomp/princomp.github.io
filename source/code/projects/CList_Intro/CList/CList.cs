@@ -10,6 +10,7 @@ public class CList<T>
   {
     first = null;
   }
+
   // A Cell is itself two things:
   // - An element of data (of type T),
   // - Another cell, containing the next element of data.
@@ -33,6 +34,6 @@ public class CList<T>
   {
     first = new Cell(dataP, first);
   }
-  // The updated CList starts with a cell holding dataP and 
+  // The updated CList starts with a cell holding dataP and
   // a Cell referencing the previous first cell.
 }

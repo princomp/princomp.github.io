@@ -24,7 +24,10 @@ public class Program
     string directoryPath = AppDomain
       .CurrentDomain
       .BaseDirectory;
-    string filePath = Path.Combine(directoryPath, "test.txt");
+    string filePath = Path.Combine(
+      directoryPath,
+      "test.txt"
+    );
 
     // Begining of the actual answer.
     try
