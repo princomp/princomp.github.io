@@ -77,17 +77,22 @@ Have a look at the [Big-O complexity chart](https://www.bigocheatsheet.com/):
 
 ![Big-O Complexity Chart](https://www.bigocheatsheet.com/img/big-o-complexity-chart.png)
 
+### Experimentation
 
-This can make a *very* significant difference, as exemplified in [the following code](./code/projects/GrowthMagnitudes.zip):
+How fast a function grows can make a *very* significant difference, as exemplified in [this code available to download](./code/projects/GrowthMagnitudes.zip).
+In it, we "experiment" to see how fast factorial, exponential, cubic, quadratic, linearithmic, linear and logarithmic functions can produce an integer that is larger than `int.MaxValue`, whose value is $2,147,483,647$.
+
+For example, the test for exponential growth is as follows:
+
 
 ```{download="./code/projects/GrowthMagnitudes.zip"}
 !include`snippetStart="// Exponential",snippetEnd="// Cubic"` code/projects/GrowthMagnitudes/GrowthMagnitudes/Program.cs
 ```
 
+C#'s default `Math.Pow` method returns a `double` (because, as you will see, producing something an `int` cannot hold goes *very fast*), so we cast it back to an `int`, in a `checked` environment so that C# will raise an exception if an overflow occurs.
+Our `while(true)` loop *will* terminate, since we are bound to produce a value overflowing, and then we simply display the value our input reached: in this case, it was enough to "feed" the value $31$ to the exponential function to make it go over `int.MaxValue`.
 
-
-Do not hesitate to edit this code to have all input values starting at 0 to "feel" the difference it makes in terms of time!
-
+[Download the project](./code/projects/GrowthMagnitudes.zip) to see how fast other magnitude produce a value exceeding `int`'s capacity, and do not hesitate to edit this code to have all input values starting at 0 to "feel" the difference it makes in terms of time!
 
 # The Example of Integers
 
