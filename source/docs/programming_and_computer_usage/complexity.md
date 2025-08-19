@@ -125,13 +125,48 @@ by [changing the base](https://en.wikipedia.org/wiki/List_of_logarithmic_identit
 ## Why it (almost) does not matter
 
 Now, imagine that we have a program manipulating integers in base $b$.
-Converting numbers in base $b'$ takes $\log_2(b) / \log_2(b')$ times more (or less!) space, so if $b = 2$ and $b' = 2$, it means we need $3.322$ times more space to store and manipulate the integers.
+Converting numbers in base $b'$ result in numbers that use $\log_2(b') / \log_2(b)$ more (or less!) space.
+For example, going from base $10$ to base $2$ means that $b = 2$ and $b' = 10$, hence we need $\log_2(10) / \log_2(2) = 3.322 / 1$ times more space to store and manipulate the integers.
+This corresponds intuitively to 32 bits being able to store at most a 10-digit number (2,147,483,647).
 
 If our program in base $b$ uses $O(g(n))$, it means that a program performing the same task, with the same algorithm, but using integers in base $b'$, would require $O((\log_2(b) / \log_2(b')) \times g(n))$.
 By adapting the constant factor principle of the big O notation, we can see that this is a negligible factor that can be omitted.
 
 However, if the $b'$ base is 1, then the new program will use $O(n \times g(n))$: if $g(n)$ is greater than linear, this will make a difference!
-Of course, unary representation is "not" reasonable, so we will always assume that our representations are related by some constant, making the function orger of magnitude insensible to such details.
+Of course, unary representation is "not" reasonable, so we will always assume that our representations are related by some constant, making the function order of magnitude insensible to such details.
 
 You can have a look at [the complexity of various arithmetic functions](https://en.wikipedia.org/wiki/Computational_complexity_of_mathematical_operations#Arithmetic_functions) and see that the representation is not even discussed, as those results are insensible to them, provided they are "reasonable".
 
+# Types of Bounds
+
+## Foreword
+
+When considering order of magnitude, we are always *asymptotic*, i.e., we consider that the input will grow for ever.
+The Big-O notation above furthermore corresponds to the *worst case*, but two other cases are sometimes considered:
+
+- Best case,
+- Average case.
+
+The first type of study requires to understand the algorithm very well, to understand what type of input can be easily processed. The second case requires to consider all possible inputs, and to know the distribution of cases.
+
+The reason why worst case is generally preferred is because:
+
+- Worst case gives an upper bound that is in practise useful,
+- Best case is considered unreliable as it can easily be tweaked, and may not be representative of the algorithm's resource consumption in general,
+- Average case is difficult to compute, and not necessarily useful, as worst and average complexity are often the same.
+
+## Examples
+
+### Linear search algorithm
+
+The [linear search algorithm](https://princomp.github.io/lectures/data/search#finding-a-particular-value) look for a particular value in an array. The version that exit exit prematurely the loop when the target value is found has the following complexity:
+
+- The **best case** is if the target is the very first value, in this case, the time complexity is $O(c)$.
+- The **worst case** is if the target is the very last value, in this case the time complexity is $O(n)$ where $n$ is the size of the array.
+- The **average case** is $O(n)$.
+
+Note that the space usage of this algorithm is $O(c)$, it requires only one variable if we do not copy the array.
+
+### Matrix Multiplication
+
+Consider the ["schoolbook algorithm for multiplication"](https://en.wikipedia.org/wiki/Computational_complexity_of_matrix_multiplication#Schoolbook_algorithm)
