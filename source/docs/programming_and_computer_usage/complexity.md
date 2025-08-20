@@ -165,20 +165,29 @@ The [linear search algorithm](https://princomp.github.io/lectures/data/search#fi
 !include`snippetStart="// Example value",snippetEnd="// We can optimize this algorithm"` code/projects/LinearSearch/LinearSearch/Program.cs
 ```
 
+How many "steps" of computation are needed? 
+The operations inside the loop themselves can be discarded, since they are a finite number, but what matter is how many time those operations are performed, that is, how many time the loop iterate.
 
-It can be slightly tuned, to exit as soon as the target value is found:
+Considering that the array is of size $n$, we have:
+
+- The **best case** is if the target is the very first value, in this case, the time complexity is $O(n)$.
+- The **worst case** is if the target is the very last value (or is not in the array), in this case the time complexity is $O(n)$.
+- The **average case** is $O(n)$.
+
+This algorithm can be slightly tuned, to exit as soon as the target value is found:
 
 ```{download="./code/projects/LinearSearch.zip"}
 !include`snippetStart="// by exiting when the target is found.",snippetEnd="// This would display:"` code/projects/LinearSearch/LinearSearch/Program.cs
 ```
 
-The version that exit exit prematurely the loop when the target value is found has the following complexity (in terms of "number of steps"):
+Similarly, considering that the array is of size $n$, and counting how many time the loop iterate, we have:
 
-- The **best case** is if the target is the very first value, in this case, the time complexity is $O(c)$.
-- The **worst case** is if the target is the very last value (or is not in the array), in this case the time complexity is $O(n)$ where $n$ is the size of the array.
+- The **best case** is if the target is the very first value, in this case, the time complexity is $O(c)$, for $c$ a constant value.
+- The **worst case** is if the target is the very last value (or is not in the array), in this case the time complexity is $O(n)$.
 - The **average case** is $O(n)$.
 
-Note that the space usage of this algorithm is $O(c)$, it requires only one variable if we do not copy the array.
+Note that the space usage of both algorithms are $O(c)$, as they require only one variable if we do not copy the array.
+Note, also, that both algorithms have the same worst case and average case complexity, which are the cases we are actually interested in.
 
 ### Matrix Multiplication
 
