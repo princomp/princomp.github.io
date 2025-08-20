@@ -36,37 +36,16 @@ The simplest way to perform such a search is to
 #. Set the Boolean variable to `false`,
 #. Inspect the values in `arrayExample` one by one, comparing them to `target`, and setting the Boolean variable to `true` if they are identical.
 
-```
-int[] arrayExample = { 1, 8, -12, 9, 10, 1, 30, 1, 32, 3 };
 
-bool foundTarget = false;
-int target = 8;
-
-for (int i = 0; i < arrayExample.Length; i++)
-{
-    if (arrayExample[i] == target) foundTarget = true;
-}
-Console.WriteLine(target + " is in the array: " + foundTarget + ".");
+```{download="./code/projects/LinearSearch.zip"}
+!include`snippetStart="// Example value",snippetEnd="// We can optimize this algorithm"` code/projects/LinearSearch/LinearSearch/Program.cs
 ```
 
 Note that in the particular example above, we could have stopped exploring the array after the second index, since the target value was found.
 A slightly different logic would allow to exit prematurely the loop when the `target` value is found:
 
-```
-int[] arrayExample = { 1, 8, -12, 9, 10, 1, 30, 1, 32, 3 };
-
-bool foundYet = false;
-int target = 30;
-int index = 0;
-
-do
-{
-    if (arrayExample[index] == target) foundYet = true;
-    index++;
-}
-while (index < arrayExample.Length && !foundYet);
-Console.WriteLine(target + " is in the array: " + foundYet + 
-"\nNumber of elements inspected: " + (index) +".");
+```{download="./code/projects/LinearSearch.zip"}
+!include`snippetStart="// by exiting when the target is found.",snippetEnd="// This would display:"` code/projects/LinearSearch/LinearSearch/Program.cs
 ```
 
 This code would display:

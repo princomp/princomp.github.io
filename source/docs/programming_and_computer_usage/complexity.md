@@ -159,10 +159,23 @@ The reason why worst case is generally preferred is because:
 
 ### Linear search algorithm
 
-The [linear search algorithm](https://princomp.github.io/lectures/data/search#finding-a-particular-value) look for a particular value in an array. The version that exit exit prematurely the loop when the target value is found has the following complexity:
+The [linear search algorithm](https://princomp.github.io/lectures/data/search#finding-a-particular-value) look for a particular value in an array by inspecting the values one after the other:
+
+```{download="./code/projects/LinearSearch.zip"}
+!include`snippetStart="// Example value",snippetEnd="// We can optimize this algorithm"` code/projects/LinearSearch/LinearSearch/Program.cs
+```
+
+
+It can be slightly tuned, to exit as soon as the target value is found:
+
+```{download="./code/projects/LinearSearch.zip"}
+!include`snippetStart="// by exiting when the target is found.",snippetEnd="// This would display:"` code/projects/LinearSearch/LinearSearch/Program.cs
+```
+
+The version that exit exit prematurely the loop when the target value is found has the following complexity (in terms of "number of steps"):
 
 - The **best case** is if the target is the very first value, in this case, the time complexity is $O(c)$.
-- The **worst case** is if the target is the very last value, in this case the time complexity is $O(n)$ where $n$ is the size of the array.
+- The **worst case** is if the target is the very last value (or is not in the array), in this case the time complexity is $O(n)$ where $n$ is the size of the array.
 - The **average case** is $O(n)$.
 
 Note that the space usage of this algorithm is $O(c)$, it requires only one variable if we do not copy the array.
