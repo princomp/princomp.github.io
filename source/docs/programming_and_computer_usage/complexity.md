@@ -23,13 +23,18 @@ This growth rate is classified according to ["orders"](https://en.wikipedia.org/
 
 Using $|\cdot|$ to denote the absolute value, we write:
 
-$$f(x) = O(g(x))$$
+$$f(n) = O(g(n))$$
 
-if there exists positive numbers $n$ and $x_0$ such that
+if there exists positive numbers $m$ and $k$ such that
 
-$$|f(x)| \leqslant M |g(x)|$$
+$$|f(n)| \leqslant m \times |g(n)|$$
 
-for all $x \geqslant x_0$.
+for all $n \geqslant k$.
+
+Stated differently, the size of $f$'s output (which we will use to represent the time or space needed by $f$ to carry out its computation) can be bounded by the size of $g$'s output,
+
+- up to a multiplicative factor ($m$) that does *not* depend of $n$ (it is fixed once and for all),
+- for inputs that are "large enough" (that is, greater than $k$, which again does not depend on $n$, it is fixed once and for all).
 
 ### Common orders of magnitude
 
@@ -94,9 +99,9 @@ Our `while(true)` loop *will* terminate, since we are bound to produce a value o
 
 [Download the project](./code/projects/GrowthMagnitudes.zip) to see how fast other magnitude produce a value exceeding `int`'s capacity, and do not hesitate to edit this code to have all input values starting at 0 to "feel" the difference it makes in terms of time!
 
-# The Example of Integers
+## The Example of Integers
 
-## Abstraction and Representation
+### Abstraction and Representation
 
 To measure the time and space consumption of programs, we make some simplifying assumptions:
 
@@ -104,7 +109,9 @@ To measure the time and space consumption of programs, we make some simplifying 
 - Constants are discarded: if a program is twice as slow as another one, we still consider them to be in the same order of magnitude^[This is captured by the "constant factor" property of the big O notation.].
 - *Representations* are in general discarded, as programs are assumed to use the same: for example, if the implementation of the `int` datatype is "reasonable" and the same for all programs, then we can discard it.
 
-## How integers are represented
+How "reasonable" is defined is tricky, and we discuss it in the next section.
+
+### How integers are represented
 
 Compare the following three ways of representing integers:
 
@@ -114,7 +121,7 @@ Unary (Tallies) | 1 | III, IIIIIII, IIIIIIII, … | $O(n)$ |
 Binary | 2 | 01011, 10011101, 101101010, … | $O(\log_2(n))$ |
 Decimal | 10 | 123, 930, 120,439, … | $O(\log_{10}(n))$ |
 
-Actually, it takes roughly [$\log_2(n) / \log_2(b)$ digits](https://math.stackexchange.com/a/4490764) to represent the number $n$ in base $b$, except if $b = 1$.
+It takes roughly [$\log_2(n) / \log_2(b)$ digits](https://math.stackexchange.com/a/4490764) to represent the number $n$ in base $b$, except if $b = 1$.
 
 And indeed we can confirm that for $b = 10$, we have
 
@@ -122,24 +129,33 @@ $$\log_2(n) / \log_2(b) = \log_{10}(n)$$
 
 by [changing the base](https://en.wikipedia.org/wiki/List_of_logarithmic_identities#Changing_the_base) of the logarithm.
 
-## Why it (almost) does not matter
+### Why it (almost) does not matter
 
-Now, imagine that we have a program manipulating integers in base $b$.
-Converting numbers in base $b'$ result in numbers that use $\log_2(b') / \log_2(b)$ more (or less!) space.
-For example, going from base $10$ to base $2$ means that $b = 2$ and $b' = 10$, hence we need $\log_2(10) / \log_2(2) = 3.322 / 1$ times more space to store and manipulate the integers.
+Now, imagine that we have a program manipulating integers in base $b$, and we want to convert them in base $b'$.
+We will ignore [how much time](https://cs.stackexchange.com/a/21799) is required to perform this conversion, and simply focus on the memory gain or loss.
+
+Base | Size of $n$ |
+--- | ------------ |
+Base $b$ | $\log_2(n) \ \log_2(b)$ |
+Base $b'$ | $\log_2(n) \ \log_2(b')$ |
+
+Hence, converting a number $n$ in base $b$ into a number in base $b'$ results in a number that uses $\log_{2}(b) / \log_{2}(b')$ more (or less!) space.
+Notice, and this is very important, that is expression *does not depend on $n$, but only on $b$ and $b'$*, hence the "constant factor" property of the big O notation tells us that we do not care about such a change.
+
+For example, going from base $10$ to base $2$ means that $b = 10$ and $b' = 2$, hence we need $\log_2(10) / \log_2(2) = 3.322 / 1$ times more space to store and manipulate the integers.
 This corresponds intuitively to 32 bits being able to store at most a 10-digit number (2,147,483,647).
 
-If our program in base $b$ uses $O(g(n))$, it means that a program performing the same task, with the same algorithm, but using integers in base $b'$, would require $O((\log_2(b) / \log_2(b')) \times g(n))$.
+If our program in base $b$ uses memory of order $O(g(n))$, it means that a program performing the same task, with the same algorithm, but using integers in base $b'$, would have its memory usage bounded by $O((\log_2(b) / \log_2(b')) \times g(n))$.
 By adapting the constant factor principle of the big O notation, we can see that this is a negligible factor that can be omitted.
 
-However, if the $b'$ base is 1, then the new program will use $O(n \times g(n))$: if $g(n)$ is greater than linear, this will make a difference!
-Of course, unary representation is "not" reasonable, so we will always assume that our representations are related by some constant, making the function order of magnitude insensible to such details.
+However, if the $b'$ base is 1, then the new program will use $O(n \times g(n))$: if $g(n)$ is greater than linear, this will make a difference^[This can already be seen by observing that $\log_{2}(b) / \log_{2}(b')$, if $b' = 1$, is impossible, since we cannot divide by $\log_2(1) =0$.]
+Of course, unary representation is *not* reasonable, so we will always assume that our representations are related by some constant, making the function order of magnitude insensible to such details.
 
 You can have a look at [the complexity of various arithmetic functions](https://en.wikipedia.org/wiki/Computational_complexity_of_mathematical_operations#Arithmetic_functions) and see that the representation is not even discussed, as those results are insensible to them, provided they are "reasonable".
 
-# Types of Bounds
+## Types of Bounds
 
-## Foreword
+### Foreword
 
 When considering order of magnitude, we are always *asymptotic*, i.e., we consider that the input will grow for ever.
 The Big-O notation above furthermore corresponds to the *worst case*, but two other cases are sometimes considered:
@@ -155,9 +171,9 @@ The reason why worst case is generally preferred is because:
 - Best case is considered unreliable as it can easily be tweaked, and may not be representative of the algorithm's resource consumption in general,
 - Average case is difficult to compute, and not necessarily useful, as worst and average complexity are often the same.
 
-## Examples
+### Examples
 
-### Linear search algorithm
+#### Linear search algorithm
 
 The [linear search algorithm](https://princomp.github.io/lectures/data/search#finding-a-particular-value) look for a particular value in an array by inspecting the values one after the other:
 
@@ -189,6 +205,6 @@ Similarly, considering that the array is of size $n$, and counting how many time
 Note that the space usage of both algorithms are $O(c)$, as they require only one variable if we do not copy the array.
 Note, also, that both algorithms have the same worst case and average case complexity, which are the cases we are actually interested in.
 
-### Matrix Multiplication
+#### Matrix Multiplication
 
 Consider the ["schoolbook algorithm for multiplication"](https://en.wikipedia.org/wiki/Computational_complexity_of_matrix_multiplication#Schoolbook_algorithm)
