@@ -286,15 +286,15 @@ MAKEFLAGS:= -j
 # to be properly installed and set-up.
 # Cf. for example https://github.com/overleaf/toolkit/issues/298
 
-$(IMG_DIR)%.pdf:$(IMG_DIR)%.tex
-	latexmk -shell-escape -pdf -cd -quiet $<
-
-$(IMG_DIR)%.svg:$(IMG_DIR)%.pdf
-	pdf2svg $< $@
-
-$(IMG_DIR)%.png:$(IMG_DIR)%.pdf
-	pdftoppm $< $@ -png
-	mv $@-1.png $@
+#$(IMG_DIR)%.pdf:$(IMG_DIR)%.tex
+#	latexmk -shell-escape -pdf -cd -quiet $<
+#
+#$(IMG_DIR)%.svg:$(IMG_DIR)%.pdf
+#	pdf2svg $< $@
+#
+#$(IMG_DIR)%.png:$(IMG_DIR)%.pdf
+#	pdftoppm $< $@ -png
+#	mv $@-1.png $@
 
 # -------------------------------
 # "Prereq" rules.

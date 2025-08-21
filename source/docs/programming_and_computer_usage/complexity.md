@@ -175,7 +175,7 @@ The reason why worst case is generally preferred is because:
 
 #### Linear search algorithm
 
-The [linear search algorithm](https://princomp.github.io/lectures/data/search#finding-a-particular-value) look for a particular value in an array by inspecting the values one after the other:
+The [linear search algorithm](./lectures/data/search#finding-a-particular-value) looks for a particular value in an array by inspecting the values one after the other:
 
 ```{download="./code/projects/LinearSearch.zip"}
 !include`snippetStart="// Example value",snippetEnd="// We can optimize this algorithm"` code/projects/LinearSearch/LinearSearch/Program.cs
@@ -204,6 +204,27 @@ Similarly, considering that the array is of size $n$, and counting how many time
 
 Note that the space usage of both algorithms are $O(c)$, as they require only one variable if we do not copy the array.
 Note, also, that both algorithms have the same worst case and average case complexity, which are the cases we are actually interested in.
+
+#### Binary search algorithm
+
+The [binary search algorithm](./lectures/data/search#binary-search) looks for a particular value in a *sorted* array by leveraging this additional information: it "jumps" in the middle of the array, and if the value is found, it terminates, if the value is less than the target value, it keep looking in the right half of the array, and it keeps looking in the left half of the array otherwise.
+
+What is the time complexity of such an algorithm? It halves the array at every step, and we know that if the array is of size $1$, then it will terminate (either because the value was found, or because it was not in the array).
+That means that, if the array is of size $n$, in the worst case,
+
+- after $1$ step, we have an array of size $n / 2$ left to explore,
+- after $2$ steps, we have an array of size $n / 4$ left to explore,
+- after $3$ steps, we have an array of size $n / 8$ left to explore,
+- … after $k$ steps, we have an array of size $n / (2^k) left to explore.
+
+Hence, we need to determine what is a $k$ such that $n / (2^k) \leqslant 1$ (since we terminate when the array is of size $1$)
+
+
+
+
+
+
+
 
 #### Matrix Multiplication
 
