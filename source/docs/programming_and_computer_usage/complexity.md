@@ -136,8 +136,8 @@ We will ignore [how much time](https://cs.stackexchange.com/a/21799) is required
 
 Base | Size of $n$ |
 --- | ------------ |
-Base $b$ | $\log_2(n) \ \log_2(b)$ |
-Base $b'$ | $\log_2(n) \ \log_2(b')$ |
+Base $b$ | $\log_2(n) / \log_2(b)$ |
+Base $b'$ | $\log_2(n) / \log_2(b')$ |
 
 Hence, converting a number $n$ in base $b$ into a number in base $b'$ results in a number that uses $\log_{2}(b) / \log_{2}(b')$ more (or less!) space.
 Notice, and this is very important, that is expression *does not depend on $n$, but only on $b$ and $b'$*, hence the "constant factor" property of the big O notation tells us that we do not care about such a change.
@@ -148,7 +148,7 @@ This corresponds intuitively to 32 bits being able to store at most a 10-digit n
 If our program in base $b$ uses memory of order $O(g(n))$, it means that a program performing the same task, with the same algorithm, but using integers in base $b'$, would have its memory usage bounded by $O((\log_2(b) / \log_2(b')) \times g(n))$.
 By adapting the constant factor principle of the big O notation, we can see that this is a negligible factor that can be omitted.
 
-However, if the $b'$ base is 1, then the new program will use $O(n \times g(n))$: if $g(n)$ is greater than linear, this will make a difference^[This can already be seen by observing that $\log_{2}(b) / \log_{2}(b')$, if $b' = 1$, is impossible, since we cannot divide by $\log_2(1) =0$.]
+However, if the $b'$ base is 1, then the new program will use $O(n \times g(n))$: if $g(n)$ is greater than linear, this will make a difference^[This can already be seen by observing that $\log_{2}(b) / \log_{2}(b')$, if $b' = 1$, is impossible, since we cannot divide by $\log_2(1) =0$.].
 Of course, unary representation is *not* reasonable, so we will always assume that our representations are related by some constant, making the function order of magnitude insensible to such details.
 
 You can have a look at [the complexity of various arithmetic functions](https://en.wikipedia.org/wiki/Computational_complexity_of_mathematical_operations#Arithmetic_functions) and see that the representation is not even discussed, as those results are insensible to them, provided they are "reasonable".
@@ -209,23 +209,33 @@ Note, also, that both algorithms have the same worst case and average case compl
 
 The [binary search algorithm](./lectures/data/search#binary-search) looks for a particular value in a *sorted* array by leveraging this additional information: it "jumps" in the middle of the array, and if the value is found, it terminates, if the value is less than the target value, it keep looking in the right half of the array, and it keeps looking in the left half of the array otherwise.
 
-What is the time complexity of such an algorithm? It halves the array at every step, and we know that if the array is of size $1$, then it will terminate (either because the value was found, or because it was not in the array).
+What is the (worst case) time complexity of such an algorithm? It halves the array at every step, and we know that if the array is of size $1$, then it will terminate (either because the value was found, or because it was not in the array).
 That means that, if the array is of size $n$, in the worst case,
 
 - after $1$ step, we have an array of size $n / 2$ left to explore,
 - after $2$ steps, we have an array of size $n / 4$ left to explore,
 - after $3$ steps, we have an array of size $n / 8$ left to explore,
-- … after $k$ steps, we have an array of size $n / (2^k) left to explore.
+- … after $k$ steps, we have an array of size $n / (2^k)$ left to explore.
 
-Hence, we need to determine what is a $k$ such that $n / (2^k) \leqslant 1$ (since we terminate when the array is of size $1$)
+Hence, we need to determine what is a $k$ such that 
 
+$$n / (2^k) \leqslant 1$$
 
-
-
-
-
-
+since we terminate when the array is of size $1$. It is easy to see that if $2^k \geqslant n$, then this will be true, hence $k = \log_2(n)$, as $2^{\log_2(n)} = n$.
 
 #### Matrix Multiplication
 
-Consider the ["schoolbook algorithm for multiplication"](https://en.wikipedia.org/wiki/Computational_complexity_of_matrix_multiplication#Schoolbook_algorithm)
+Consider the ["schoolbook algorithm for multiplication"](https://en.wikipedia.org/wiki/Computational_complexity_of_matrix_multiplication#Schoolbook_algorithm):
+
+```{download="./code/projects/MatrixMultiplication.zip"}
+!include`snippetStart="// This method computes the product of two matrices.",snippetEnd="// Useful to display matrices."` code/projects/MatrixMultiplication/MatrixMultiplication/Program.cs
+```
+
+
+We can see that 
+
+- The first loop iterates `row1` times,
+- The second loop iterates `column2` times,
+- The third loop iterates `column1` times,
+
+If we multiply square matrices, then `row1`, `colmun2` and `column1` are all equal to the same value, $n$, that we take as input of the problem: then we can see by the product rule above that this algorithm requires time $O(n^3)$ to complete.
