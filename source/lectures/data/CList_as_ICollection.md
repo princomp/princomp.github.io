@@ -14,7 +14,7 @@ This requires implementing a series of properties and methods:
 
 
 ```{download="./code/projects/CList_Icollection.zip"}
-!include`snippetStart="/* Done with Cell.*/", snippetEnd="/* We are done realizing the ICollection class. */` code/projects/CList_Icollection/CList_Icollection.cs
+!include`snippetStart="/* Done with Cell.*/", snippetEnd="/* We are done realizing the ICollection class. */"` code/projects/CList_Icollection/CList_Icollection.cs
 ```
 
 
