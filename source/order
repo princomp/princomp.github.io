@@ -60,6 +60,7 @@
 ./lectures/data/manipulating_rectangular_arrays.md
 ./lectures/data/lists.md
 ./lectures/data/CList.md
+./lectures/data/CList_as_ICollection.md
 ./lectures/misc/
 ./lectures/misc/over_under_flow.md
 ./lectures/misc/random.md

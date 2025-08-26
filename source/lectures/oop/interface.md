@@ -87,4 +87,4 @@ Note that
     
 !include diag/cla/Shape.md
 
-[in this archive](./code/projects/Shape.zip)
+Find a project implementing this diagram [in this archive](./code/projects/Shape.zip)
