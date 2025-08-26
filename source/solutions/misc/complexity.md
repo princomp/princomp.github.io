@@ -48,8 +48,7 @@
    
 #. Write a code snippet (no need to include `using` statements or `Main` header) that displays the sum of all the values in a `score` `int` array that you can suppose declared and initialized.  What is the worst case time complexity of the algorithm you wrote, relative to the size $n$ of the array `score`?
     
-    <details><summary>Solution</summary>
-    ```
+    <details><summary>Solution</summary>```
     int sum = 0;
     for(int i = 0; i < score.Length; i++){sum += score[i];}
     Console.WriteLine($"The sum is {sum}.");
@@ -57,5 +56,3 @@
     
     This algorithm is linear: it goes through the array once.
     </detail>
-    
-

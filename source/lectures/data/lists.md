@@ -7,6 +7,29 @@ tags:
 
 ## Introduction
 
+### Abstract Data Type
+
+Described [abstractly](./lectures/data/intro#abstract-data-types), [a list](https://en.wikipedia.org/wiki/List_(abstract_data_type)) is 
+
+- a finite collection of elements,
+- in a particular order,
+- that may contain the same element multiple times.
+
+The fact that it may contain the same element multiple times makes it different from a set, the fact that it is ordered makes it different from a [multiset](https://en.wikipedia.org/wiki/Multiset).
+
+Generally, it has operations to…
+
+- … create an empty list,
+- … test for emptiness, 
+- … add an element at "the beginning" of the list,
+- … add an element at "the end" of the list,
+- … remove an element at "the beginning" of the list,
+- … remove an element at "the end" of the list,
+- … access an element at index $i$.
+
+
+### Difference with array 
+
 The `List` class serves a similar purpose than arrays, but with a few notable differences:
 
 - Lists do not need to have a number of elements fixed ahead of time,
@@ -18,6 +41,8 @@ The `List` class serves a similar purpose than arrays, but with a few notable di
 The [complete description of the `List` class](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=net-9.0) describes all the useful methods, we simply give a quick overview below.
 
 ## Syntax
+
+We discuss here the "built-in" implementation of lists in C#.
 
 ### Creation
 

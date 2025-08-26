@@ -2,94 +2,86 @@
 
 public class CList<T>
 {
-  // A CList is … a Cell.
-  private Cell first;
+    // A CList is … a Cell.
+    private Cell first;
 
-  // By default, a CList contains only an empty cell.
-  public CList()
-  {
-    first = null;
-  }
-
-  // A Cell is itself two things:
-  // - An element of data (of type T),
-  // - Another cell, containing the next element of data.
-  // We implement this using automatic properties:
-  private class Cell
-  {
-    public T Data { get; set; }
-    public Cell Next { get; set; }
-
-    public Cell(T dataP, Cell nextP)
+    // By default, a CList contains only an empty cell.
+    public CList()
     {
-      Data = dataP;
-      Next = nextP;
+        first = null;
     }
-  }
 
-  // A method to add a cell at the beginning
-  // of the CList (to the left).
-  // We call it AddF for "Add First".
-
-  public void AddF(T dataP)
-  {
-    first = new Cell(dataP, first);
-  }
-
-  // We will frequently test if
-  // a CList is empty, so we introduce
-  // a method for that:
-  public bool IsEmpty()
-  {
-    return (first == null);
-  }
-
-  // A method to add a cell at the end
-  // of the CList (to the right).
-  // We call it AddL for 'Add Last'.
-  public void AddL(T dataP)
-  {
-    if (IsEmpty())
-      AddF(dataP);
-    else
+    // A Cell is itself two things:
+    // - An element of data (of type T),
+    // - Another cell, containing the next element of data.
+    // We implement this using automatic properties:
+    private class Cell
     {
-      Cell cCell = first;
-      while (cCell.Next != null)
-      // As long as the cCell Cell has a neighbour…
-      {
-        cCell = cCell.Next;
-        // We move the cCell cell to this neighbour.
-      }
-      // When we are done, we can insert the cell.
-      cCell.Next = new Cell(dataP, null);
-    }
-  }
+        public T Data { get; set; }
+        public Cell Next { get; set; }
 
-  // Property for the size of the CList.
-  public int Size
-  {
-    get
-    {
-      int size;
-      if (IsEmpty())
-      {
-        size = 0;
-      }
-      else
-      {
-        size = 1;
-        Cell cCell = first;
-        while (cCell.Next != null)
-        // As long as the cCell Cell has a neighbour…
+        public Cell(T dataP, Cell nextP)
         {
-          cCell = cCell.Next;
-          // We move the cCell cell to this neighbour.
-          size++;
+            Data = dataP;
+            Next = nextP;
         }
-      }
-      return size;
     }
-  }
+
+    // A method to add a cell at the beginning
+    // of the CList (to the left).
+    // We call it AddF for "Add First".
+
+    public void AddF(T dataP)
+    {
+        first = new Cell(dataP, first);
+    }
+
+    // We will frequently test if
+    // a CList is empty, so we introduce
+    // a method for that:
+    public bool IsEmpty()
+    {
+        return (first == null);
+    }
+
+    // A method to add a cell at the end
+    // of the CList (to the right).
+    // We call it AddL for 'Add Last'.
+    public void AddL(T dataP)
+    {
+        if (IsEmpty())
+            AddF(dataP);
+        else
+        {
+            Cell cCell = first;
+            while (cCell.Next != null)
+            // As long as the cCell Cell has a neighbour…
+            {
+                cCell = cCell.Next;
+                // We move the cCell cell to this neighbour.
+            }
+            // When we are done, we can insert the cell.
+            cCell.Next = new Cell(dataP, null);
+        }
+    }
+
+    // Property for the size of the CList.
+    public int Size
+    {
+        get
+        {
+            int size = 0;
+            Cell cCell = first;
+            while (cCell != null)
+            // As long as the cCell Cell has a neighbour…
+            {
+                cCell = cCell.Next;
+                // We move the cCell cell to this neighbour.
+                size++;
+            }
+            return size;
+        }
+    }  
 
   // We can implement a ToString method
   // "the usual way", using a loop
