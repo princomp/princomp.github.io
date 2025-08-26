@@ -1,13 +1,13 @@
 class ICollection~T~{
     <<Interface>>
-    + <<get>> Count: int
-    + <<get>> IsReadOnly: bool
+    + «get» Count: int
+    + «get» IsReadOnly: bool
     + Add(item: T)
     + Clear()
-    + Contains(item: T): bool
+    + Contains(item: T) bool
     + CopyTo(array: T[], arrayIndex:int)
-    + GetEnumerator(): IEnumerator
-    + Remove(item: T): bool
+    + GetEnumerator() IEnumerator
+    + Remove(item: T) bool
 }
 
     
