@@ -67,7 +67,7 @@ We represent this situation as follows:
 To start adding elements to our `CList` `myList1`, we use the `AddF` method:
 
 ```
-!include`snippetStart="// We call it AddF for 'Add First'.", snippetEnd="// The updated CList starts with a cell holding dataP and "` code/projects/CList_Intro/CList/CList.cs
+!include`snippetStart="// We call it AddF for 'Add First'.", snippetEnd="// The updated CList starts with a cell holding dataP and"` code/projects/CList_Intro/CList/CList.cs
 ```
 
 as follows:
@@ -117,11 +117,11 @@ Note that we could have decided to implement this test as a property, using for 
 ```
 public bool IsEmpty
 {
-    get {return first == null;
+    get {return first == null;}
 }
 ```
 
-Of course, such property would not have any `set` method.
+Of course, such property would not have any `set` method: it is not up to the user to decide if the `CList` is empty.
 
 ### AddL Method
 

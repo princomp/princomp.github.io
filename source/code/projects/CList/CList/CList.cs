@@ -2,86 +2,86 @@
 
 public class CList<T>
 {
-    // A CList is … a Cell.
-    private Cell first;
+  // A CList is … a Cell.
+  private Cell first;
 
-    // By default, a CList contains only an empty cell.
-    public CList()
+  // By default, a CList contains only an empty cell.
+  public CList()
+  {
+    first = null;
+  }
+
+  // A Cell is itself two things:
+  // - An element of data (of type T),
+  // - Another cell, containing the next element of data.
+  // We implement this using automatic properties:
+  private class Cell
+  {
+    public T Data { get; set; }
+    public Cell Next { get; set; }
+
+    public Cell(T dataP, Cell nextP)
     {
-        first = null;
+      Data = dataP;
+      Next = nextP;
     }
+  }
 
-    // A Cell is itself two things:
-    // - An element of data (of type T),
-    // - Another cell, containing the next element of data.
-    // We implement this using automatic properties:
-    private class Cell
+  // A method to add a cell at the beginning
+  // of the CList (to the left).
+  // We call it AddF for "Add First".
+
+  public void AddF(T dataP)
+  {
+    first = new Cell(dataP, first);
+  }
+
+  // We will frequently test if
+  // a CList is empty, so we introduce
+  // a method for that:
+  public bool IsEmpty()
+  {
+    return (first == null);
+  }
+
+  // A method to add a cell at the end
+  // of the CList (to the right).
+  // We call it AddL for 'Add Last'.
+  public void AddL(T dataP)
+  {
+    if (IsEmpty())
+      AddF(dataP);
+    else
     {
-        public T Data { get; set; }
-        public Cell Next { get; set; }
-
-        public Cell(T dataP, Cell nextP)
-        {
-            Data = dataP;
-            Next = nextP;
-        }
+      Cell cCell = first;
+      while (cCell.Next != null)
+      // As long as the cCell Cell has a neighbour…
+      {
+        cCell = cCell.Next;
+        // We move the cCell cell to this neighbour.
+      }
+      // When we are done, we can insert the cell.
+      cCell.Next = new Cell(dataP, null);
     }
+  }
 
-    // A method to add a cell at the beginning
-    // of the CList (to the left).
-    // We call it AddF for "Add First".
-
-    public void AddF(T dataP)
+  // Property for the size of the CList.
+  public int Size
+  {
+    get
     {
-        first = new Cell(dataP, first);
+      int size = 0;
+      Cell cCell = first;
+      while (cCell != null)
+      // As long as the cCell Cell has a neighbour…
+      {
+        cCell = cCell.Next;
+        // We move the cCell cell to this neighbour.
+        size++;
+      }
+      return size;
     }
-
-    // We will frequently test if
-    // a CList is empty, so we introduce
-    // a method for that:
-    public bool IsEmpty()
-    {
-        return (first == null);
-    }
-
-    // A method to add a cell at the end
-    // of the CList (to the right).
-    // We call it AddL for 'Add Last'.
-    public void AddL(T dataP)
-    {
-        if (IsEmpty())
-            AddF(dataP);
-        else
-        {
-            Cell cCell = first;
-            while (cCell.Next != null)
-            // As long as the cCell Cell has a neighbour…
-            {
-                cCell = cCell.Next;
-                // We move the cCell cell to this neighbour.
-            }
-            // When we are done, we can insert the cell.
-            cCell.Next = new Cell(dataP, null);
-        }
-    }
-
-    // Property for the size of the CList.
-    public int Size
-    {
-        get
-        {
-            int size = 0;
-            Cell cCell = first;
-            while (cCell != null)
-            // As long as the cCell Cell has a neighbour…
-            {
-                cCell = cCell.Next;
-                // We move the cCell cell to this neighbour.
-                size++;
-            }
-            return size;
-        }
-    }  
+  }
 
   // We can implement a ToString method
   // "the usual way", using a loop
@@ -179,20 +179,31 @@ public class CList<T>
   // Method to remove the nth element if it exists.
   public void RemoveI(int index)
   {
-    if (index > Size)
+    if (index > Size || index < 0)
     {
       throw new IndexOutOfRangeException();
     }
     else // Some IDE will flag this "else" as redundant.
     {
-      int counter = 0;
-      Cell cCell = first;
-      while (counter < index - 1)
+      if (index == 0)
       {
-        cCell = cCell.Next;
-        counter++;
+        RemoveF();
       }
-      cCell.Next = cCell.Next.Next;
+      else if (index == (Size - 1))
+      {
+        RemoveL();
+      }
+      else
+      {
+        int counter = 0;
+        Cell cCell = first;
+        while (counter < index - 1)
+        {
+          cCell = cCell.Next;
+          counter++;
+        }
+        cCell.Next = cCell.Next.Next;
+      }
     }
   }
 
