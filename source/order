@@ -84,6 +84,7 @@
 ./exercises/oop/structures.md
 ./exercises/misc/
 ./exercises/misc/exceptions.md
+./exercises/misc/complexity.md
 ./exercises/io/
 ./exercises/io/files.md
 ./exercises/data/
