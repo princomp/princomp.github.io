@@ -239,31 +239,6 @@ public class CList<T>
     return mCount;
   }
 
-  // Method to remove at a particular index
-  // Very similar to RemoveI, simply
-  // implemented with a different philosophy.
-  public void RemoveAt(int index)
-  {
-    if (index >= 0 && index < Size)
-    {
-      if (index == 0)
-        RemoveF();
-      else if (index == (Size - 1))
-        RemoveL();
-      else
-      {
-        Cell cCell = first;
-        for (int i = 0; i < index - 1; i++)
-        {
-          cCell = cCell.Next;
-        }
-        cCell.Next = cCell.Next.Next;
-      }
-    }
-    else
-      throw new ArgumentOutOfRangeException();
-  }
-
   // Method to reverse a list
   public void Reverse()
   {

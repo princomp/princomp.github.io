@@ -60,7 +60,7 @@ class Program
     );
     myList1.Reverse();
     Console.WriteLine(myList1);
-    myList1.RemoveAt(1);
+    myList1.RemoveI(1);
     Console.WriteLine(myList1);
 
     myList1.RemoveI(2);
