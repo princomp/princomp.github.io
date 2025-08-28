@@ -120,29 +120,37 @@ class Program
       );
     }
 
-        /* Third example */
-        CList<double> myList3 = new CList<double>();
-        myList3.AddF(12.5);
-        myList3.AddF(23.8);
-        myList3.AddF(34.8);
+    /* Third example */
+    CList<double> myList3 = new CList<double>();
+    myList3.AddF(12.5);
+    myList3.AddF(23.8);
+    myList3.AddF(34.8);
 
-        try
-        {
-            myList3.RemoveI(-1);
-        }
-        catch(Exception ex) { Console.WriteLine(ex.Message); }
-        try
-        {
-            myList3.RemoveI(3);
-        }
-        catch (Exception ex) { Console.WriteLine(ex.Message); }
-        Console.WriteLine("Before removing element at index 1:");
-                Console.WriteLine(myList3);
-        myList3.RemoveI(1);
-        Console.WriteLine("After removing element at index 1:");
-        Console.WriteLine(myList3);
-        myList3.RemoveI(0);
-        Console.WriteLine("After removing element at index 0:");
-        Console.WriteLine(myList3);
+    try
+    {
+      myList3.RemoveI(-1);
     }
+    catch (Exception ex)
+    {
+      Console.WriteLine(ex.Message);
+    }
+    try
+    {
+      myList3.RemoveI(3);
+    }
+    catch (Exception ex)
+    {
+      Console.WriteLine(ex.Message);
+    }
+    Console.WriteLine(
+      "Before removing element at index 1:"
+    );
+    Console.WriteLine(myList3);
+    myList3.RemoveI(1);
+    Console.WriteLine("After removing element at index 1:");
+    Console.WriteLine(myList3);
+    myList3.RemoveI(0);
+    Console.WriteLine("After removing element at index 0:");
+    Console.WriteLine(myList3);
+  }
 }

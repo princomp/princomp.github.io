@@ -5,12 +5,15 @@ class Program
   static void Main(string[] args)
   {
     /* Simple example. */
-    CList<int> myList1 = new CList<int>();
-    myList1.Add(1);
+    DLList<int> myList1 = new DLList<int>();
+    Console.WriteLine(myList1);
+    myList1.Add(15);
     myList1.Add(5);
     myList1.Add(2);
     myList1.Add(2);
     myList1.Add(1);
+    Console.WriteLine(myList1);
+    myList1.Clear();
     myList1.Add(1);
     myList1.Add(3);
     myList1.Add(4);
@@ -18,44 +21,30 @@ class Program
     myList1.Add(5);
     myList1.Add(5);
     myList1.Add(2);
-    myList1.Add(2);
+    myList1.Add(22);
+    Console.WriteLine(myList1);
+    /*
+    Console.WriteLine("Removed 3: " + myList1.Remove(3));
+    Console.WriteLine(myList1);
+    Console.WriteLine("Removed 21: " + myList1.Remove(21));
+    Console.WriteLine(myList1);
+    Console.WriteLine("Removed 2: " + myList1.Remove(2));
+    Console.WriteLine(myList1);
 
+*/
     // A benefit of realizing the ICollection interface
     // is that we can iterate over elements of lists now:
     foreach (var item in myList1)
     {
-      Console.Write(item + " ");
+      Console.WriteLine(item);
     }
-    Console.WriteLine("");
-
-    Console.Write(
-      "We removed an occurence of 1: "
-        + myList1.Remove(1)
-        + ".\n"
-    );
-    foreach (var item in myList1)
-    {
-      Console.Write(item + " ");
-    }
-    Console.WriteLine("");
-
-    Console.Write(
-      "We removed an occurence of 10: "
-        + myList1.Remove(10)
-        + ".\n"
-    );
-    foreach (var item in myList1)
-    {
-      Console.Write(item + " ");
-    }
-    Console.WriteLine("");
 
     Console.WriteLine(
-      "Our list is read-only: " + myList1.IsReadOnly + "."
+      "Our list is read-only:" + myList1.IsReadOnly + "."
     );
     myList1.IsReadOnly = true;
     Console.WriteLine(
-      "Our list is read-only: " + myList1.IsReadOnly + "."
+      "Our list is read-only:" + myList1.IsReadOnly + "."
     );
     try
     {

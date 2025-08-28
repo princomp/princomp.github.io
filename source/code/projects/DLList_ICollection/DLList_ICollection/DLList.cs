@@ -2,51 +2,43 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class CList<T> : ICollection<T>
+public class DLList<T> : ICollection<T>
 {
-  /*
-   * https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.icollection-1?view=net-9.0
-   * A class realizing the ICollection interface must have the following properties:
-   * - A `Count` property that gets the number of elements contained in the ICollection<T>.
-   * - A `IsReadOnly` property that gets a value indicating whether the ICollection<T> is read-only.
-   * and the following methods:
-   * - Add(T): Adds an item to the ICollection<T>.
-   * - Clear(): Removes all items from the ICollection<T>.
-   * Contains(T): Determines whether the ICollection<T> contains a specific value.
-   * CopyTo(T[], Int32): Copies the elements of the ICollection<T> to an Array, starting at a particular Array index.
-   * GetEnumerator(): Returns an enumerator that iterates through a collection. (Inherited from IEnumerable)
-   * Remove(T): Removes the first occurrence of a specific object from the ICollection<T>.
-   */
+  private Cell head;
+  private Cell tail;
 
-  /* Same implementation of Cell as usual.*/
-  private Cell first;
-
-  public CList()
+  public DLList()
   {
-    first = null;
+    head = null;
+    tail = null;
   }
 
   private class Cell
   {
     public T Data { get; set; }
     public Cell Next { get; set; }
+    public Cell Previous { get; set; }
 
-    public Cell(T dataP = default(T), Cell nextP = null) // We provide default values
+    public Cell(
+      T dataP = default(T),
+      Cell previousP = null,
+      Cell nextP = null
+    ) // We provide default values
     {
       Data = dataP;
+      Previous = previousP;
       Next = nextP;
     }
   }
 
-  /* Done with Cell.*/
-
   // Empty
   public bool IsEmpty()
   {
-    return first == null;
+    return head == null;
   }
 
-  // Add is simply "AddF", slightly revisited.
+  // Add "to the right",
+  // at the end of the list.
   public void Add(T value)
   {
     if (isReadonly)
@@ -55,19 +47,36 @@ public class CList<T> : ICollection<T>
         "List is read-only."
       );
     }
-    Cell cCell = first;
-    first = new Cell(value, first);
+    Cell cCell = head;
+    if (cCell != null)
+    {
+      while (cCell.Next != null)
+      // As long as the cCell Cell has a neighbour…
+      {
+        cCell = cCell.Next;
+        // We move the cCell cell to this neighbour.
+      }
+      Cell newNode = new Cell(value, cCell, null);
+      cCell.Next = newNode;
+      tail = newNode;
+    }
+    else
+    {
+      head = new Cell(value, null);
+      tail = head;
+    }
   }
 
   public void Clear()
   {
-    first = null;
+    head = null;
+    tail = null;
   }
 
   public bool Contains(T value)
   {
     bool found = false;
-    Cell cCell = first;
+    Cell cCell = head;
     while (cCell != null && !found)
     {
       if (cCell.Data.Equals(value))
@@ -95,7 +104,7 @@ public class CList<T> : ICollection<T>
         "The destination array has fewer elements than the collection."
       );
 
-    Cell cCell = first;
+    Cell cCell = head;
     int i = 0; // keeping track of how many elements were copied.
     while (cCell != null)
     {
@@ -105,9 +114,6 @@ public class CList<T> : ICollection<T>
     }
   }
 
-  // Remove the first node containing the value
-  // if it exists and returns true,
-  // returns false otherwise.
   public bool Remove(T value)
   {
     if (isReadonly)
@@ -119,24 +125,26 @@ public class CList<T> : ICollection<T>
     bool removed = false;
     if (!IsEmpty())
     {
-      if (first.Data.Equals(value))
+      if (head.Data.Equals(value))
       {
-        first = first.Next;
+        head = head.Next;
+        if (head != null)
+        {
+          head.Previous = null;
+        }
         removed = true;
       }
       else
       {
-        Cell cCell = first;
-        while (cCell.Next != null && !removed)
+        Cell cCell = head;
+        while (cCell.Next != null)
         {
           if (cCell.Next.Data.Equals(value))
           {
+            cCell.Next.Previous = cCell.Previous;
+
             cCell.Next = cCell.Next.Next;
             removed = true;
-          }
-          else
-          {
-            cCell = cCell.Next;
           }
         }
       }
@@ -149,7 +157,7 @@ public class CList<T> : ICollection<T>
     get
     {
       int size = 0;
-      Cell cCell = first;
+      Cell cCell = head;
       while (cCell != null)
       {
         cCell = cCell.Next;
@@ -168,7 +176,7 @@ public class CList<T> : ICollection<T>
 
   public IEnumerator<T> GetEnumerator()
   {
-    Cell cCell = first;
+    Cell cCell = head;
     while (cCell != null)
     {
       yield return cCell.Data;
@@ -182,4 +190,34 @@ public class CList<T> : ICollection<T>
   }
 
   /* We are done realizing the ICollection class. */
+
+  public override string ToString()
+  {
+    string returned = "———";
+    // Line above the table
+    for (int i = 0; i < Count; i++)
+    {
+      returned += "————";
+    }
+    returned += "\n| ";
+    // Content of the CList
+    Cell cCell = head;
+    while (cCell != null)
+    {
+      returned += $"{cCell.Data} | ";
+      cCell = cCell.Next;
+    }
+    returned += "\n———";
+    // Line below the table
+    for (int i = 0; i < Count; i++)
+    {
+      returned += "————";
+    }
+    if (Count > 0)
+    {
+      returned += $"\nHead: {head.Data}\n";
+      returned += $"Tail: {tail.Data}\n";
+    }
+    return returned;
+  }
 }
