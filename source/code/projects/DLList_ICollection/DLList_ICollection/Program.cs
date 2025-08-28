@@ -13,6 +13,18 @@ class Program
     myList1.Add(2);
     myList1.Add(1);
     Console.WriteLine(myList1);
+
+    myList1.RemoveI(3);
+    Console.WriteLine(myList1);
+
+    myList1.RemoveF();
+    Console.WriteLine(myList1);
+    myList1.RemoveL();
+    Console.WriteLine(myList1);
+
+    myList1.RemoveI(1);
+    Console.WriteLine(myList1);
+
     myList1.Clear();
     myList1.Add(1);
     myList1.Add(3);
@@ -23,7 +35,6 @@ class Program
     myList1.Add(2);
     myList1.Add(22);
     Console.WriteLine(myList1);
-    /*
     Console.WriteLine("Removed 3: " + myList1.Remove(3));
     Console.WriteLine(myList1);
     Console.WriteLine("Removed 21: " + myList1.Remove(21));
@@ -31,7 +42,6 @@ class Program
     Console.WriteLine("Removed 2: " + myList1.Remove(2));
     Console.WriteLine(myList1);
 
-*/
     // A benefit of realizing the ICollection interface
     // is that we can iterate over elements of lists now:
     foreach (var item in myList1)

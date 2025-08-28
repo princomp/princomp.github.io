@@ -47,23 +47,15 @@ public class DLList<T> : ICollection<T>
         "List is read-only."
       );
     }
-    Cell cCell = head;
-    if (cCell != null)
+    if (head == null)
     {
-      while (cCell.Next != null)
-      // As long as the cCell Cell has a neighbour…
-      {
-        cCell = cCell.Next;
-        // We move the cCell cell to this neighbour.
-      }
-      Cell newNode = new Cell(value, cCell, null);
-      cCell.Next = newNode;
-      tail = newNode;
+      head = new Cell(value, null, null);
+      tail = head;
     }
     else
     {
-      head = new Cell(value, null);
-      tail = head;
+      tail.Next = new Cell(value, tail, null);
+      tail = tail.Next;
     }
   }
 
@@ -137,7 +129,7 @@ public class DLList<T> : ICollection<T>
       else
       {
         Cell cCell = head;
-        while (cCell.Next != null)
+        while (cCell.Next != null && !removed)
         {
           if (cCell.Next.Data.Equals(value))
           {
@@ -145,6 +137,10 @@ public class DLList<T> : ICollection<T>
 
             cCell.Next = cCell.Next.Next;
             removed = true;
+          }
+          else
+          {
+            cCell = cCell.Next;
           }
         }
       }
@@ -213,11 +209,91 @@ public class DLList<T> : ICollection<T>
     {
       returned += "————";
     }
+
+    // We go through the list in the other direction:
+
+    returned += "\n———";
+    // Line above the table
+    for (int i = 0; i < Count; i++)
+    {
+      returned += "————";
+    }
+    returned += "\n| ";
+    // Content of the CList
+    cCell = tail;
+    while (cCell != null)
+    {
+      returned += $"{cCell.Data} | ";
+      cCell = cCell.Previous;
+    }
+    returned += "\n———";
+    // Line below the table
+    for (int i = 0; i < Count; i++)
+    {
+      returned += "————";
+    }
+
     if (Count > 0)
     {
       returned += $"\nHead: {head.Data}\n";
       returned += $"Tail: {tail.Data}\n";
     }
     return returned;
+  }
+
+  public void RemoveF()
+  {
+    if (head != null)
+    {
+      if (head.Next != null)
+      {
+        head.Next.Previous = null;
+      }
+      head = head.Next;
+    }
+  }
+
+  public void RemoveL()
+  {
+    if (tail != null)
+    {
+      if (tail.Previous != null)
+      {
+        tail.Previous.Next = null;
+      }
+      tail = tail.Previous;
+    }
+  }
+
+  // Method to remove the nth element if it exists.
+  public void RemoveI(int index)
+  {
+    if (index > Count || index < 0)
+    {
+      throw new IndexOutOfRangeException();
+    }
+    else // Some IDE will flag this "else" as redundant.
+    {
+      if (index == 0)
+      {
+        RemoveF();
+      }
+      else if (index == (Count - 1))
+      {
+        RemoveL();
+      }
+      else
+      {
+        int counter = 0;
+        Cell cCell = head;
+        while (counter < index - 1)
+        {
+          cCell = cCell.Next;
+          counter++;
+        }
+        cCell.Next = cCell.Next.Next;
+        cCell.Next.Previous = cCell;
+      }
+    }
   }
 }
