@@ -165,9 +165,7 @@ public class CList<T>
       else
       {
         Cell cCell = first;
-        while (
-          cCell.Next.Next != null
-        )
+        while (cCell.Next.Next != null)
         {
           cCell = cCell.Next;
         }

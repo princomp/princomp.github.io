@@ -152,11 +152,10 @@ class Program
     myList3.RemoveI(0);
     Console.WriteLine("After removing element at index 0:");
     Console.WriteLine(myList3);
-        myList3.AddL(11.5);
-        myList3.AddF(-8.15);
-        Console.WriteLine(myList3);
-        myList3.RemoveL();
-        Console.WriteLine(myList3);
-
-    }
+    myList3.AddL(11.5);
+    myList3.AddF(-8.15);
+    Console.WriteLine(myList3);
+    myList3.RemoveL();
+    Console.WriteLine(myList3);
+  }
 }
