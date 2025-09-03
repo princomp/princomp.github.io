@@ -41,6 +41,10 @@ class Program
     Console.WriteLine(myList1);
     Console.WriteLine("Removed 2: " + myList1.Remove(2));
     Console.WriteLine(myList1);
+    Console.WriteLine("Removed 1: " + myList1.Remove(1));
+    Console.WriteLine(myList1);
+    Console.WriteLine("Removed 22: " + myList1.Remove(22));
+    Console.WriteLine(myList1);
 
     // A benefit of realizing the ICollection interface
     // is that we can iterate over elements of lists now:
@@ -90,5 +94,59 @@ class Program
     {
       Console.Write(i + " ");
     }
+    /*
+     * Testing Remove in detail
+     */
+
+    // Trying to remove from an empty list.
+    DLList<string> myList3 = new DLList<string>();
+    Console.WriteLine(myList3);
+    Console.WriteLine(
+      "Remove \"test\": " + myList3.Remove("Test")
+    );
+    Console.WriteLine(myList3);
+
+    // Trying to remove the only element of a list.
+    myList3.Add("Test");
+    Console.WriteLine(myList3);
+    Console.WriteLine(
+      "Remove \"test\": " + myList3.Remove("Test")
+    );
+    Console.WriteLine(myList3);
+
+    // Trying to remove the first element of a list of size 2.
+    myList3.Add("Test");
+    myList3.Add("String 1");
+    Console.WriteLine(myList3);
+    Console.WriteLine(
+      "Remove \"test\": " + myList3.Remove("Test")
+    );
+    Console.WriteLine(myList3);
+
+    // Trying to remove the last element of a list of size 3.
+    myList3.Add("String 2");
+    myList3.Add("Test");
+    Console.WriteLine(myList3);
+    Console.WriteLine(
+      "Remove \"test\": " + myList3.Remove("Test")
+    );
+    Console.WriteLine(myList3);
+
+    // Trying to remove an  element that is not in a list.
+    Console.WriteLine(myList3);
+    Console.WriteLine(
+      "Remove \"test\": " + myList3.Remove("Test")
+    );
+    Console.WriteLine(myList3);
+
+    // Trying to remove an element in the middle of a list of size 5.
+    myList3.Add("Test");
+    myList3.Add("String 3");
+    myList3.Add("String 4");
+    Console.WriteLine(myList3);
+    Console.WriteLine(
+      "Remove \"test\": " + myList3.Remove("Test")
+    );
+    Console.WriteLine(myList3);
   }
 }

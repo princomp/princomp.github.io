@@ -41,7 +41,7 @@ public class DLList<T> : ICollection<T>
   // at the end of the list.
   public void Add(T value)
   {
-    if (isReadonly)
+    if (IsReadOnly)
     {
       throw new InvalidOperationException(
         "List is read-only."
@@ -108,7 +108,7 @@ public class DLList<T> : ICollection<T>
 
   public bool Remove(T value)
   {
-    if (isReadonly)
+    if (IsReadOnly)
     {
       throw new InvalidOperationException(
         "List is read-only"
@@ -117,12 +117,25 @@ public class DLList<T> : ICollection<T>
     bool removed = false;
     if (!IsEmpty())
     {
+      // If the value we are looking for
+      // is held by head
       if (head.Data.Equals(value))
       {
         head = head.Next;
+        // If there was more than one
+        // cell in our list
         if (head != null)
         {
+          // We delete the reference
+          // to the node
+          // we want to remove.
           head.Previous = null;
+        }
+        else
+        {
+          // Since there was only one cell in our list,
+          // the tail needs to be updated.
+          tail = null;
         }
         removed = true;
       }
@@ -133,13 +146,24 @@ public class DLList<T> : ICollection<T>
         {
           if (cCell.Next.Data.Equals(value))
           {
-            cCell.Next.Previous = cCell.Previous;
-
             cCell.Next = cCell.Next.Next;
+            // We test if we reached the end of the list
+            if (cCell.Next != null)
+            {
+              cCell.Next.Previous = cCell;
+            }
+            else
+            {
+              // If we did, we update the tail.
+              tail = cCell;
+            }
             removed = true;
           }
           else
           {
+            // If we did not find the value,
+            // we move the cCell to the next
+            // cell to continue searching.
             cCell = cCell.Next;
           }
         }
@@ -163,12 +187,7 @@ public class DLList<T> : ICollection<T>
     }
   }
 
-  public bool isReadonly = false;
-  public bool IsReadOnly
-  {
-    get { return isReadonly; }
-    set { isReadonly = value; }
-  }
+  public bool IsReadOnly { get; set; }
 
   public IEnumerator<T> GetEnumerator()
   {
