@@ -40,7 +40,7 @@ A good, finished project should include *all* of the following:
 
 - Read the problem statement over and over; make sure you did not overlook anything.
 - Make sure your project compiles without errors or warnings and can be executed as expected.
-- Test your code again and again, and compare your result with our examples.
+- Test your code again and again, and compare your result with our examples, if provided, or make up some.
 - A partially completed project is better than nothing. Do not hesitate to add a comment describing your difficulties; that will show that you are aware of the limitations of your program.
 - Make sure you submitted the correct files by re-downloading them (possibly on a different computer) and making sure you can still compile and execute your program.
 
@@ -56,13 +56,12 @@ Try to
 
 ## Getting Help 
 
-You can ask the instructor or the (under)graduate course assistants for help  and feedback. Please upload your project according to the  instructions and send an email asking to go over it if you want us to check that you submitted the correct file, that your code compiles,  etc.
+You can ask the instructor or the (under)graduate course assistants for help and feedback. Please upload your project according to the instructions and send an email asking to go over it if you want us to check that you submitted the correct file, that your code compiles, etc.
 You should ask early and not wait until the last minute.
 
 | ⚠ Warning       |
 |:---------------------------|
-| *Do not* ask other classmates for help, copy and paste from the internet, or ask a chatbot to writh the program for you. This work is supposed to be *your own*, and should reflect *your own* understanding. Getting help from un-authorized sources will hurt your understanding of this class and therefore your grade on the long run. | 
-
+| *Do not* ask other classmates for help, copy and paste from the internet, or ask a chatbot to write the program for you. This work is supposed to be *your own*, and should reflect *your own* understanding. Getting help from un-authorized sources will hurt your understanding of this class and therefore your grade on the long run. | 
 
 How to share a project is also explained [in this video](./vid/CreateUploadProjectTutorial_light.mkv).
 
