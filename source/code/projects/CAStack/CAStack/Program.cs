@@ -17,13 +17,14 @@ class Program
     myStack1.Push(4);
     myStack1.Push(5);
     myStack1.Push(5);
-        try
-        {
-            myStack1.Push(5);
-        } catch(Exception ex)
-        {
-            Console.WriteLine(ex.Message);
-        }
+    try
+    {
+      myStack1.Push(5);
+    }
+    catch (Exception ex)
+    {
+      Console.WriteLine(ex.Message);
+    }
     Console.WriteLine(myStack1);
 
     /* Second example. */
