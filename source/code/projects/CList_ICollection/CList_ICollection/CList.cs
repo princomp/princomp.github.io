@@ -55,7 +55,6 @@ public class CList<T> : ICollection<T>
         "List is read-only."
       );
     }
-    Cell cCell = first;
     first = new Cell(value, first);
   }
 
