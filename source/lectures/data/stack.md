@@ -45,8 +45,19 @@ However, the `Stack` class is also different from lists:
 
 ## Possible Implementation
 
-Here is a possible implementation of stacks:
+### Using Cells
+
+Here is a possible implementation of stacks, using cells:
 
 ```{download="./code/projects/CStack.zip"}
 !include code/projects/CStack/CStack/CStack.cs
+```
+
+
+### Using Arrays
+
+Another implementation, using arrays, requires the stack to have a fixed size:
+
+```{download="./code/projects/CAStack.zip"}
+!include code/projects/CAStack/CAStack/CAStack.cs
 ```
