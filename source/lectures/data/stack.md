@@ -40,7 +40,7 @@ Like lists, the `Stack` class serves a similar purpose than arrays, but with a f
 
 However, the `Stack` class is also different from lists:
 
-- Only the top element can be read,
+- Only the top element's value can be read (accessed),
 - Adding and removing can only be done "on the right side", that is, at the top of the stack.
 
 ## Possible Implementation
@@ -53,7 +53,6 @@ Here is a possible implementation of stacks, using cells:
 !include code/projects/CStack/CStack/CStack.cs
 ```
 
-
 ### Using Arrays
 
 Another implementation, using arrays, requires the stack to have a fixed size:
@@ -61,3 +60,5 @@ Another implementation, using arrays, requires the stack to have a fixed size:
 ```{download="./code/projects/CAStack.zip"}
 !include code/projects/CAStack/CAStack/CAStack.cs
 ```
+
+This technique uses a [partially filled array](https://princomp.github.io/lectures/data/default_resizing#partially-filled-arrays) to make sure that non-allocated indices are never accessed.
