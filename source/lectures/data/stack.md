@@ -19,9 +19,9 @@ The fact that it may contain the same element multiple times makes it different 
 
 Generally, it has operations to…
 
-- … create an empty list,
+- … create an empty stack,
 - … test for emptiness, 
-- … obtain the value of the element at "the top" of the stak ("peek"),
+- … obtain the value of the element at "the top" of the stack ("peek"),
 - … add an element at "the top" of the stack ("push"),
 - … remove an element at "the top" of the stack ("pop").
 
@@ -30,7 +30,7 @@ Exactly like a stack of plates, stacks implement a "last in, first out" (LIFO) p
 
 ### Difference with array 
 
-Like lists, the `Stack` class serves a similar purpose than arrays, but with a few notable differences:
+Like lists, stacks serve a similar purpose to arrays, but with a few notable differences:
 
 - Stacks do not need to have a number of elements fixed ahead of time,
 - Stacks automatically expand when elements are added,
@@ -38,7 +38,7 @@ Like lists, the `Stack` class serves a similar purpose than arrays, but with a f
 
 ### Difference with lists
 
-However, the `Stack` class is also different from lists:
+However, stacks have difference with lists:
 
 - Only the top element's value can be read (accessed),
 - Adding and removing can only be done "on the right side", that is, at the top of the stack.

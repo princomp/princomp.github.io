@@ -62,6 +62,8 @@
 ./lectures/data/CList.md
 ./lectures/data/CList_as_ICollection.md
 ./lectures/data/DLList.md
+./lectures/data/stack.md
+./lectures/data/queue.md
 ./lectures/misc/
 ./lectures/misc/over_under_flow.md
 ./lectures/misc/random.md
