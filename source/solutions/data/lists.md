@@ -46,46 +46,46 @@ tags:
        
     #. … a `IsEmpty` property that is `true` if the `CList` calling object is empty.
     
-    <details>
-    <summary>Solution</summary>
+        <details>
+        <summary>Solution</summary>
 
-    Note that the question asks for a *property*: 
-    
-    ```
-    public bool IsEmpty{
-        get{ return first == null; }
-    }
-    ```
-    </details>
+        Note that the question asks for a *property*: 
+        
+        ```
+        public bool IsEmpty{
+            get{ return first == null; }
+        }
+        ```
+        </details>
 
     #. … the `AddF` method that add a cell at the beginning of the CList (to the left).
 
-    <details>
-    <summary>Solution</summary>
+        <details>
+        <summary>Solution</summary>
 
-    The key is to use the given `Cell` constructor to create the new element:
-    
-    ```
-    public void AddF(T dataP){
-        first = new Cell(dataP, first);
-    }
-    ```
-    </details>
+        The key is to use the given `Cell` constructor to create the new element:
+        
+        ```
+        public void AddF(T dataP){
+            first = new Cell(dataP, first);
+        }
+        ```
+        </details>
 
     #. … a series of statements, to be inserted in a `Main` method, that a. create a `CList` object capable of containing `char`, b. insert the elements `'b'` and `'/'` in it, c. displays whether it is empty using `IsEmpty`.
 
-    <details>
-    <summary>Solution</summary>
+        <details>
+        <summary>Solution</summary>
 
-    Remembering that `IsEmpty` is a property, we obtain:
-    
-    ```
-    CList<char> myList1 = new CList<char>();
-    myList1.AddF('b');
-    myList1.AddF('/');
-    Console.WriteLine("myList1 is empty:" + myList1.IsEmpty);
-    ```
-    </details>
+        Remembering that `IsEmpty` is a property, we obtain:
+        
+        ```
+        CList<char> myList1 = new CList<char>();
+        myList1.AddF('b');
+        myList1.AddF('/');
+        Console.WriteLine("myList1 is empty:" + myList1.IsEmpty);
+        ```
+        </details>
     
 #. Briefly explain the purpose of the `IsReadonly` property from the `ICollection<T>` interface, and list at least two methods in a List implementation realizing `ICollection<T>` that should use it.
 
