@@ -57,7 +57,6 @@ tags:
         }
         ```
         </details>
-
     #. … the `AddF` method that add a cell at the beginning of the CList (to the left).
 
         <details>
@@ -71,7 +70,6 @@ tags:
         }
         ```
         </details>
-
     #. … a series of statements, to be inserted in a `Main` method, that a. create a `CList` object capable of containing `char`, b. insert the elements `'b'` and `'/'` in it, c. displays whether it is empty using `IsEmpty`.
 
         <details>
