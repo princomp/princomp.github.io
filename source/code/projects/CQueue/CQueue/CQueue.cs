@@ -60,10 +60,10 @@ class CQueue<T>
   }
 
   // Increment must be done carefully:
-  // what if we reached the "end of mArray"
-  // but there is room available at the
-  // beginning of the queue? Then the value
-  // needs to become 0.
+  // if we reached the "end" of mArray,
+  // then the value needs to become 0:
+  // we resume "circling" through the 
+  // array.
   private void Increment(ref int value)
   {
     value++;
