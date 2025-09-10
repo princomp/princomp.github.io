@@ -78,4 +78,29 @@ Our implementation can recover the capacity of the queue by using:
 ```
 capacity = mArray.Length - size;
 ```
-.
+
+However, trying to recover the size from the `front` and `end` values is not possible.
+One could try, using
+
+```
+public int CSize
+{
+    get
+    {
+        int csize = 0;
+        if (front < end) { csize = end - front; }
+        else if (front == end) { csize = mArray.Length; }
+        else
+        {
+            csize = mArray.Length - front + end;
+        }
+        if (csize != size)
+        {
+            throw new NotImplementedException("CSize is not correctly implemented!");
+        }
+        return csize;
+    }
+}
+```
+
+but the exception would be thrown: can you figure out in which case(s) the "computed size" would be incorrect?
