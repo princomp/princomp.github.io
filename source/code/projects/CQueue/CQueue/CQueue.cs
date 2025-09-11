@@ -5,6 +5,7 @@ class CQueue<T>
   private int front,
     end,
     size;
+
   private T[] mArray;
 
   public CQueue(int capacity = 10)
@@ -31,11 +32,11 @@ class CQueue<T>
     return size == mArray.Length;
   }
 
-  public void Enqueue(T newItem)
+  public void Enqueue(T dataP)
   {
     if (!IsFull())
     {
-      mArray[end] = newItem;
+      mArray[end] = dataP;
       Increment(ref end);
       size++;
     }
@@ -53,16 +54,16 @@ class CQueue<T>
 
   public void Resize()
   {
-    throw new Exception(
-      "Queue Resize is not implemented - you could implement it"
+    throw new NotImplementedException(
+      "Queue Resize is not implemented."
     );
   }
 
   // Increment must be done carefully:
-  // what if we reached the "end of mArray"
-  // but there is room available at the
-  // beginning of the queue? Then the value
-  // needs to become 0.
+  // if we reached the "end" of mArray,
+  // then the value needs to become 0:
+  // we resume "circling" through the 
+  // array.
   private void Increment(ref int value)
   {
     value++;
@@ -70,6 +71,9 @@ class CQueue<T>
     {
       value = 0;
     }
+    // This if statement could be replaced
+    // with
+    // value %= mArray.Length;
   }
 
   public int Capacity
@@ -82,6 +86,7 @@ class CQueue<T>
     string returned = "";
     returned +=
       $"Front : {front}, end : {end}, size : {size}, capacity: {Capacity}\n";
+    // Note how the for is constructed:
     for (int i = front; i < size + front; i++)
     {
       returned += mArray[i % mArray.Length] + ":";

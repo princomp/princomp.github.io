@@ -78,4 +78,38 @@ Our implementation can recover the capacity of the queue by using:
 ```
 capacity = mArray.Length - size;
 ```
-.
+
+However, trying to recover the size from the `front` and `end` values is not possible.
+One could try, using
+
+```
+public int CSize
+{
+    get
+    {
+        int csize = 0;
+        if (front < end) { csize = end - front; }
+        else if (front == end) { csize = mArray.Length; }
+        else
+        {
+            csize = mArray.Length - front + end;
+        }
+        if (csize != size)
+        {
+            throw new NotImplementedException("CSize is not correctly implemented!");
+        }
+        return csize;
+    }
+}
+```
+
+but the exception would be thrown: can you figure out in which case(s) the "computed size" would be incorrect?
+<details>
+<summary>Solution</summary>
+The implementation is *almost* correct, the problem is that `front == end` can be true for two reasons:
+
+#. The queue is empty, no element have been added yet (hence, size should be 0),
+#. The queue is full, no element can be added (hence, size should be `mArray.Length`).
+
+Since `IsFull`, `IsEmpty` and `Capacity` all uses `size`, we have no way of telling if we are in the first or second situation. The rest of the implementation is correct, but `size` must be an attribute to be able to differenciate those two cases (note that we could also have added a `bool` to distinguish between "full" and "empty", but it's more convenient to have a `size` attribute available at all time).
+</details>
