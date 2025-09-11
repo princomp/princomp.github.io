@@ -62,7 +62,7 @@ class CQueue<T>
   // Increment must be done carefully:
   // if we reached the "end" of mArray,
   // then the value needs to become 0:
-  // we resume "circling" through the 
+  // we resume "circling" through the
   // array.
   private void Increment(ref int value)
   {
