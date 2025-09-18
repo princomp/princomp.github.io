@@ -18,6 +18,13 @@ class Program
     btree.Insert(15);
 
     Console.WriteLine(btree);
+    Console.WriteLine("Inorder traversal:");
+    Console.WriteLine(btree.TrasverseI());
+    Console.WriteLine("Preorder traversal:");
+    Console.WriteLine(btree.TrasversePr());
+    Console.WriteLine("Postorder traversal:");
+    Console.WriteLine(btree.TrasversePo());
+
     Console.WriteLine("Smallest value: " + btree.FindMin());
 
     btree.Delete(btree.FindMin());
@@ -41,5 +48,23 @@ class Program
     {
       Console.WriteLine(i + " occurs: " + btree.Find(i));
     }
+
+    /*
+     * Second example, we begin by clearing the tree.
+     * The purpose of this example is to illustrate that
+     * the order in which values are inserted matter.
+     */
+    btree.Clear();
+    btree.Insert(10);
+    btree.Insert(6);
+    btree.Insert(12);
+    btree.Insert(15);
+    Console.WriteLine(btree);
+    btree.Clear();
+    btree.Insert(6);
+    btree.Insert(12);
+    btree.Insert(15);
+    btree.Insert(10);
+    Console.WriteLine(btree);
   }
 }

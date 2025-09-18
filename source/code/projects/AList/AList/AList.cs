@@ -25,7 +25,16 @@ public class AList<T> : ICollection<T>
 
   public void Clear()
   {
-    alist = new T[0];
+    if (isReadonly)
+    {
+      throw new InvalidOperationException(
+        "List is read-only, you cannot clear it."
+      );
+    }
+    else
+    {
+      alist = new T[0];
+    }
   }
 
   // Attribute and property for the

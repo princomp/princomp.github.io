@@ -137,4 +137,77 @@ public abstract class BTree<T>
 
   public abstract void Insert(T dataP);
   public abstract bool Delete(T dataP);
+
+  /* Traversal methods. */
+  // Inorder traversal
+  // "Left, root, right"
+  public string TrasverseI()
+  {
+    string returned = "";
+    if (root != null)
+    {
+      returned += TraverseI(root);
+    }
+    return returned;
+  }
+
+  private string TraverseI(Node nodeP)
+  {
+    string returned = "";
+    if (nodeP != null)
+    {
+      returned += TraverseI(nodeP.left);
+      returned += nodeP.Data + " ";
+      returned += TraverseI(nodeP.right);
+    }
+    return returned;
+  }
+
+  // Preorder traversal
+  // "Root, left, right"
+  public string TrasversePr()
+  {
+    string returned = "";
+    if (root != null)
+    {
+      returned += TraversePr(root);
+    }
+    return returned;
+  }
+
+  private string TraversePr(Node nodeP)
+  {
+    string returned = "";
+    if (nodeP != null)
+    {
+      returned += nodeP.Data + " ";
+      returned += TraversePr(nodeP.left);
+      returned += TraversePr(nodeP.right);
+    }
+    return returned;
+  }
+
+  // Postorder traversal
+  // "Left, right, root"
+  public string TrasversePo()
+  {
+    string returned = "";
+    if (root != null)
+    {
+      returned += TraversePo(root);
+    }
+    return returned;
+  }
+
+  private string TraversePo(Node nodeP)
+  {
+    string returned = "";
+    if (nodeP != null)
+    {
+      returned += TraversePo(nodeP.left);
+      returned += TraversePo(nodeP.right);
+      returned += nodeP.Data + " ";
+    }
+    return returned;
+  }
 }

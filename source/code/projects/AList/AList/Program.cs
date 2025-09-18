@@ -122,7 +122,16 @@ class Program
     {
       Console.WriteLine(ex.Message);
     }
+    try
+    {
+      myList1.Clear();
+    }
+    catch (Exception ex)
+    {
+      Console.WriteLine(ex.Message);
+    }
 
+    /* Testing copying into an array.*/
     int[] array = new int[myList1.Count + 1];
     try
     {

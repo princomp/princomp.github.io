@@ -80,6 +80,8 @@ DIAG_DIR = diag/
 CLA_DIR = $(DIAG_DIR)cla/
 # The folder where the flowcharts diagrams are located
 FLO_DIR = $(DIAG_DIR)flo/
+# The folder where the graph diagrams are located
+GRA_DIR = $(DIAG_DIR)gra/
 # The folder where the videos are located.
 VID_DIR = vid/
 # The folders where the project are located.
@@ -370,6 +372,25 @@ $(FLO_DIR)%.svg: $(FLO_DIR)%.txt
 $(FLO_DIR)%.png: $(FLO_DIR)%.txt
 	@echo "Creating $@"
 	echo "flowchart" > $@_tmp \
+	&& cat $< >> $@_tmp \
+	&& mmdc -s 2 -p .puppeteer.json -i  $@_tmp -o $@ \
+	&& rm $@_tmp
+
+# Graph diagram are only used for 
+# binary trees.
+$(GRA_DIR)%.md: $(GRA_DIR)%.txt | $(GRA_DIR)%.svg $(GRA_DIR)%.png
+	echo "![A binary tree diagram ([text version](./$(basename $@).txt), [image version](./$(basename $@).png), [svg version](./$(basename $@).svg))]($(notdir $(basename $@)).png)" > $@
+
+$(GRA_DIR)%.svg: $(GRA_DIR)%.txt
+	@echo "Creating $@"
+	echo "graph TB" > $@_tmp \
+	&& cat $< >> $@_tmp \
+	&& mmdc -p .puppeteer.json -i $@_tmp -o $@ \
+	&& rm $@_tmp
+
+$(GRA_DIR)%.png: $(GRA_DIR)%.txt
+	@echo "Creating $@"
+	echo "graph TB" > $@_tmp \
 	&& cat $< >> $@_tmp \
 	&& mmdc -s 2 -p .puppeteer.json -i  $@_tmp -o $@ \
 	&& rm $@_tmp
