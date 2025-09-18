@@ -310,8 +310,7 @@ PREREQ: $(TARGET_DIAG) $(TARGET_EXO) $(TARGET_IMAGES_FILES)
 
 .PHONY: CLEAN-PREREQ
 CLEAN-PREREQ:
-	rm -f $(DIAG_DIR)*/*.md $(DIAG_DIR)*/*.png $(DIAG_DIR)*/*m.svg && rm -rf $(EXO_DIR) && rm -rf $(TARGET_IMAGES_FILES)
-
+	rm -f $(DIAG_DIR)*/*.md $(DIAG_DIR)*/*.png $(DIAG_DIR)*/*.svg && rm -rf $(EXO_DIR) && rm -rf $(TARGET_IMAGES_FILES)
 
 # PREVIOUS RULE
 # $(CLA_DIR)%.md: $(CLA_DIR)%.txt | $(CLA_DIR)%.svg 
@@ -385,6 +384,7 @@ $(GRA_DIR)%.svg: $(GRA_DIR)%.txt
 	@echo "Creating $@"
 	echo "graph TB" > $@_tmp \
 	&& cat $< >> $@_tmp \
+	&& echo "\nclassDef hidden display: none;" >> $@_tmp \
 	&& mmdc -p .puppeteer.json -i $@_tmp -o $@ \
 	&& rm $@_tmp
 
@@ -392,6 +392,7 @@ $(GRA_DIR)%.png: $(GRA_DIR)%.txt
 	@echo "Creating $@"
 	echo "graph TB" > $@_tmp \
 	&& cat $< >> $@_tmp \
+	&& echo "\nclassDef hidden display: none;" >> $@_tmp \
 	&& mmdc -s 2 -p .puppeteer.json -i  $@_tmp -o $@ \
 	&& rm $@_tmp
 

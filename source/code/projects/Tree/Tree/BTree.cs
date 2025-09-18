@@ -4,6 +4,7 @@ using System.Collections.Generic;
 public abstract class BTree<T>
   where T : IComparable<T>
 {
+  // We begin by defining a node class.
   protected class Node
   {
     public T Data { get; set; }
@@ -26,9 +27,12 @@ public abstract class BTree<T>
       return "| " + Data.ToString() + " |";
     }
   }
+  // We can now define the BTree class 
+  // using this notion of nodes.
 
+        // Constructor, Clear and IsEmpty
+        // are relying on the root Node.
   protected Node root;
-
   public BTree()
   {
     root = null;
@@ -43,38 +47,8 @@ public abstract class BTree<T>
   {
     return root == null;
   }
-
-  public override string ToString()
-  {
-    string returned = "Depth: " + Depth() + "\n";
-    if (root != null)
-    {
-      returned += Stringify(root, 0);
-    }
-    return returned;
-  }
-
-  private string Stringify(Node nodeP, int depth)
-  {
-    string returned = "";
-    if (nodeP != null)
-    {
-      for (int i = 0; i < depth; i++)
-      {
-        returned += " ";
-      }
-      returned += nodeP + "\n"; // Calls Node's ToString method.
-      if (nodeP.left != null)
-      {
-        returned += "L" + Stringify(nodeP.left, depth + 1);
-      }
-      if (nodeP.right != null)
-      {
-        returned += "R" + Stringify(nodeP.right, depth + 1);
-      }
-    }
-    return returned;
-  }
+    // We now look at how to 
+    // compute the Depth of a tree.
 
   public int Depth()
   {
@@ -105,6 +79,7 @@ public abstract class BTree<T>
     }
     return result;
   }
+    // Finding is also recursive.
 
   public virtual bool Find(T dataP)
   {
@@ -134,6 +109,8 @@ public abstract class BTree<T>
     }
     return found;
   }
+
+    // Done with finding.
 
   public abstract void Insert(T dataP);
   public abstract bool Delete(T dataP);
@@ -210,4 +187,39 @@ public abstract class BTree<T>
     }
     return returned;
   }
+
+
+    // The ToString method is simply here to help debug.
+
+    public override string ToString()
+    {
+        string returned = "Depth: " + Depth() + "\n";
+        if (root != null)
+        {
+            returned += Stringify(root, 0);
+        }
+        return returned;
+    }
+
+    private string Stringify(Node nodeP, int depth)
+    {
+        string returned = "";
+        if (nodeP != null)
+        {
+            for (int i = 0; i < depth; i++)
+            {
+                returned += " ";
+            }
+            returned += nodeP + "\n"; // Calls Node's ToString method.
+            if (nodeP.left != null)
+            {
+                returned += "L" + Stringify(nodeP.left, depth + 1);
+            }
+            if (nodeP.right != null)
+            {
+                returned += "R" + Stringify(nodeP.right, depth + 1);
+            }
+        }
+        return returned;
+    }
 }

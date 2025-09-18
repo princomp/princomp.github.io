@@ -1,0 +1,37 @@
+d1:::depthClass
+d2:::depthClass
+d3:::depthClass
+d4:::depthClass
+d5:::depthClass
+
+subgraph d1 [Depth 0]
+    A((10))
+end
+subgraph d2 [Depth 1]
+    B((7))
+    E((11))
+end
+subgraph d3 [Depth 2]
+    C((5))
+    D((8))
+    F((30))
+end
+subgraph d4 [Depth 3]
+    G((12))
+end
+subgraph d5 [Depth 4]
+    H((15))
+end
+
+A-->B
+B-->C
+B-->D
+A-->E
+E~~~H0:::hidden
+E-->F 
+F-->G
+G~~~H2:::hidden
+G-->H
+F~~~H3:::hidden
+
+classDef depthClass width:30em, height:4em, display:flex, justify-content: flex-start, align-items:flex-end;
