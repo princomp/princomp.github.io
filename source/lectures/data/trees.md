@@ -92,6 +92,13 @@ Etc., etc. Hence, we get:
 
 #### Displaying Trees
 
+There are essentially three ways of "linearizing" a tree (that is, listing its value as a list):
+
+```{download="./code/projects/Tree.zip"}
+!include`snippetStart="/* Traversal methods. */", snippetEnd="/* Done with traversal methods. */"` code/projects/Tree/Tree/BTree.cs
+```
+
+
 #### Implementation Detail
 
 We implemented the binary tree class abstractly, because two methods are still missing: how to insert a value, and how to delete a value (we will add them later on).

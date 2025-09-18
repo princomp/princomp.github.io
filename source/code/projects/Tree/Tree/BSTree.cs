@@ -57,6 +57,8 @@ public class BSTree<T> : BTree<T>
         {
           nodeP.Data = FindMin(nodeP.right);
           Delete(nodeP.Data, ref nodeP.right);
+                    // Or we could replace with the largest
+                    // value in the left subtree.
         }
         else
         {
