@@ -40,12 +40,12 @@ public class BSTree<T> : BTree<T>
         bool found = false;
         if (root != null)
         {
-            found = Find(root, dataP);
+            found = Find(dataP, root);
         }
         return found;
     }
 
-    private bool Find(Node nodeP, T dataP)
+    private bool Find(T dataP, Node nodeP)
   {
     bool found = false;
     if (nodeP != null)
@@ -58,11 +58,11 @@ public class BSTree<T> : BTree<T>
       {
         if (dataP.CompareTo(nodeP.Data) < 0) // dataP < nodeP.Data
         {
-          found = Find(nodeP.left, dataP);
+          found = Find(dataP, nodeP.left);
         }
         else if (dataP.CompareTo(nodeP.Data) > 0) // dataP > nodeP.Data
         {
-          found = Find(nodeP.right, dataP);
+          found = Find(dataP, nodeP.right);
         }
       }
     }
