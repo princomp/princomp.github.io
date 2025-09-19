@@ -33,19 +33,19 @@ public class BSTree<T> : BTree<T>
     return nodeP;
   }
 
-  public override bool Find(T dataP)
-  {
-    bool found = false;
-    if (root != null)
+    // Finding into a BSTree
+
+    public override bool Find(T dataP)
     {
-      found = Find(root, dataP);
+        bool found = false;
+        if (root != null)
+        {
+            found = Find(root, dataP);
+        }
+        return found;
     }
-    return found;
-  }
 
-  // Finding into a BSTree
-
-  private bool Find(Node nodeP, T dataP)
+    private bool Find(Node nodeP, T dataP)
   {
     bool found = false;
     if (nodeP != null)

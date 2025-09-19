@@ -21,10 +21,11 @@ public abstract class BTree<T>
       left = leftP;
       right = rightP;
     }
-
+        // Displaying a Node is only 
+        // displaying its data.
     public override string ToString()
     {
-      return "| " + Data.ToString() + " |";
+      return Data.ToString();
     }
   }
 
@@ -90,9 +91,9 @@ public abstract class BTree<T>
       depthR = Depth(nodeP.right, result + 1);
     }
     // Finally, if at least one sub-tree
-    // is not null, we take their max to
-    // be the depth of the tree starting
-    // with our current node.
+    // is not null, we take the max of their
+    // depths to be the depth of the tree
+    // starting with our current node.
     if (nodeP.left != null || nodeP.right != null)
     {
       result = Math.Max(depthL, depthR);
@@ -211,7 +212,10 @@ public abstract class BTree<T>
   public abstract void Insert(T dataP);
   public abstract bool Delete(T dataP);
 
-  // The ToString method is simply here to help debug.
+  // The ToString method is simply here to help us debug.
+  // It is not really pretty, but using pre-order and spaces
+  // to make it easier to understand how the tree is
+  // constructed. It also displays the depth of the tree.
 
   public override string ToString()
   {
