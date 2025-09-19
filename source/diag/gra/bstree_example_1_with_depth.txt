@@ -1,3 +1,16 @@
+%%% A binary tree with depth illustrated
+
+A((10))-->B((7))
+B-->C((5))
+B-->D((8))
+A-->E((11))
+E~~~H0:::hidden
+E-->F((30)) 
+F-->G((12))
+G~~~H1:::hidden
+G-->I((15))
+F~~~H2:::hidden
+
 d1:::depthClass
 d2:::depthClass
 d3:::depthClass
@@ -5,33 +18,25 @@ d4:::depthClass
 d5:::depthClass
 
 subgraph d1 [Depth 0]
-    A((10))
+    A
 end
 subgraph d2 [Depth 1]
-    B((7))
-    E((11))
+    B
+    E
 end
 subgraph d3 [Depth 2]
-    C((5))
-    D((8))
-    F((30))
+    C
+    D
+    F
+    H0
 end
 subgraph d4 [Depth 3]
-    G((12))
+    H2
+    G
 end
 subgraph d5 [Depth 4]
-    H((15))
+    H1
+    I
 end
 
-A-->B
-B-->C
-B-->D
-A-->E
-E~~~H0:::hidden
-E-->F 
-F-->G
-G~~~H2:::hidden
-G-->H
-F~~~H3:::hidden
-
-classDef depthClass width:30em, height:4em, display:flex, justify-content: flex-start, align-items:flex-end;
+classDef depthClass width:23em, height:4em, display:flex, justify-content: flex-start, align-items:flex-end;

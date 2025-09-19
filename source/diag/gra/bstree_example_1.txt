@@ -1,3 +1,5 @@
+%%% A simple binary tree
+
 A((10))-->B((7))
 B-->C((5))
 B-->D((8))

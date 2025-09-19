@@ -4,6 +4,7 @@ using System.Collections.Generic;
 public class BSTree<T> : BTree<T>
   where T : IComparable<T>
 {
+    // Inserting into a BSTree
   public override void Insert(T dataP)
   {
     root = Insert(dataP, root);
@@ -31,8 +32,72 @@ public class BSTree<T> : BTree<T>
     }
     return nodeP;
   }
+    public override bool Find(T dataP)
+    {
+        bool found = false;
+        if (root != null)
+        {
+            found = Find(root, dataP);
+        }
+        return found;
+    }
 
-  public override bool Delete(T dataP)
+    // Finding into a BSTree
+
+    private bool Find(Node nodeP, T dataP)
+    {
+        bool found = false;
+        if (nodeP != null)
+        {
+            if (nodeP.Data.Equals(dataP))
+            {
+                found = true;
+            }
+            else
+            {
+                if (dataP.CompareTo(nodeP.Data) < 0) // dataP < nodeP.Data
+                {
+                    found = Find(nodeP.left, dataP);
+                }
+                else if (dataP.CompareTo(nodeP.Data) > 0) // dataP > nodeP.Data
+                {
+                    found = Find(nodeP.right, dataP);
+                }
+            }
+        }
+        return found;
+    }
+
+    public T FindMin()
+    {
+        if (root == null)
+        {
+            throw new ApplicationException(
+              "Cannot find a value in an empty tree!"
+            );
+        }
+        else
+        {
+            return FindMin(root);
+        }
+    }
+
+    private T FindMin(Node nodeP)
+    {
+        T minValue;
+        if (nodeP.left == null)
+        {
+            minValue = nodeP.Data;
+        }
+        else
+        {
+            minValue = FindMin(nodeP.left);
+        }
+        return minValue;
+    }
+    // Deleting from a BSTree
+
+    public override bool Delete(T dataP)
   {
     return Delete(dataP, ref root);
   }
@@ -76,65 +141,7 @@ public class BSTree<T> : BTree<T>
     return found;
   }
 
-  public override bool Find(T dataP)
-  {
-    bool found = false;
-    if (root != null)
-    {
-      found = Find(root, dataP);
-    }
-    return found;
-  }
+    // Done with deletion.
 
-  private bool Find(Node nodeP, T dataP)
-  {
-    bool found = false;
-    if (nodeP != null)
-    {
-      if (nodeP.Data.Equals(dataP))
-      {
-        found = true;
-      }
-      else
-      {
-        if (dataP.CompareTo(nodeP.Data) < 0) // dataP < nodeP.Data
-        {
-          found = Find(nodeP.left, dataP);
-        }
-        else if (dataP.CompareTo(nodeP.Data) > 0) // dataP > nodeP.Data
-        {
-          found = Find(nodeP.right, dataP);
-        }
-      }
-    }
-    return found;
-  }
-
-  public T FindMin()
-  {
-    if (root == null)
-    {
-      throw new ApplicationException(
-        "Cannot find a value in an empty tree!"
-      );
-    }
-    else
-    {
-      return FindMin(root);
-    }
-  }
-
-  private T FindMin(Node nodeP)
-  {
-    T minValue;
-    if (nodeP.left == null)
-    {
-      minValue = nodeP.Data;
-    }
-    else
-    {
-      minValue = FindMin(nodeP.left);
-    }
-    return minValue;
-  }
+  
 }

@@ -227,6 +227,8 @@ The resulting images are added to the repository so that there is no need to re-
 The diagrams are created using [Mermaid](https://mermaid.js.org/) and located in `source/diag`.
 Note that because of [an annoying bug](https://github.com/mermaid-js/mermaid-cli/issues/730) present on github's server, mermaid-cli [must call pupeeter with the `--no-sandbox`](https://github.com/mermaid-js/mermaid-cli/blob/340561040b6b0621a486e3fc96723139e5718268/docs/linux-sandbox-issue.md) option, which constitutes a potential safety issue.
 
+To auto-reload the images when they are re-built, we recommend using sxiv.
+
 ##### Class Diagrams
 
 The *class* UML diagrams are created using [Mermaid](https://mermaid.js.org/) and located in `source/diag/cla`.
@@ -241,12 +243,25 @@ To create a new class diagram, say for a `Documentation` class, follow those ste
 
 The *flowchart* diagrams are created using [Mermaid](https://mermaid.js.org/) and located in `source/diag/flo`.
 
-To create a new class diagram, say for a `Documentation` class, follow those steps:
+To create a new flowchart diagram, follow those steps:
 
-1. Create a `Documentation.txt` file in `source/diag/flo` that follows [the syntax for flowchart diagrams](https://mermaid.js.org/syntax/flowchart.html) (note that there is no need to add `flowchart` at the beginning, it will be done automatically),
+1. Create a `Cell.txt` file in `source/diag/flo` that follows [the syntax for flowchart diagrams](https://mermaid.js.org/syntax/flowchart.html) (note that there is no need to add `flowchart` at the beginning, it will be done automatically),
 2. Add on the first line a comment `%% title` with "title" the title of the diagram,
-3. Run (from the `source/` folder) `make diag/flo/Documentation.md`,
-4. Integrate the resulting drawing, properly captioned and with links to `Documentation.txt`, `Documentation.svg` and `Documentation.png` files using `!include diag/flo/Documentation.md`.
+3. Run (from the `source/` folder) `make diag/flo/Cell.md`,
+4. Integrate the resulting drawing, properly captioned and with links to `Cell.txt`, `Cell.svg` and `Cell.png` files using `!include diag/flo/Cell.md`.
+
+##### Graph Diagrams
+
+The *graph* diagrams are created using [Mermaid](https://mermaid.js.org/) and located in `source/diag/gra`: note that while `graph` and `flowchart` are [synonyms in mermaid](https://mermaid.js.org/syntax/flowchart.html#a-node-default), we separate them to apply different styles to them.
+Graphs are used to represent binary trees.
+
+To create a new class diagram, say for a `BTree_Example`, follow those steps:
+
+1. Create a `BTree_Example.txt` file in `source/diag/gra` that follows [the syntax for flowchart diagrams](https://mermaid.js.org/syntax/flowchart.html) (note that there is no need to add `flowchart` at the beginning, it will be done automatically),
+2. Add on the first line a comment `%% title` with "title" the title of the diagram,
+3. Run (from the `source/` folder) `make diag/gra/BTree_Example.md`,
+4. Integrate the resulting drawing, properly captioned and with links to `BTree_Example.txt`, `BTree_Example.svg` and `BTree_Example.png` files using `!include diag/flo/BTree_Example.md`.
+
 
 #### Source code
 

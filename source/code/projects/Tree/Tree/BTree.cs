@@ -62,17 +62,34 @@ public abstract class BTree<T>
 
   private int Depth(Node nodeP, int depth)
   {
+        // "Unless proven otherwise",
+        // we assume that the depth of the 
+        // node is the depth it received
+        // as argument.
     int result = depth;
+        // We assume the depth of
+        // its right sub-tree
+        // is 0.
     int depthL = 0;
     if (nodeP.left != null)
     {
+            // If its left sub-tree is not null,
+            // we inquire about its depth, 
+            // knowing that it will be 1 more 
+            // than the depth of the current node.
       depthL = Depth(nodeP.left, result + 1);
     }
-    int depthR = 0;
+        // We proceed similarly for the 
+        // left sub-tree.
+        int depthR = 0;
     if (nodeP.right != null)
     {
       depthR = Depth(nodeP.right, result + 1);
     }
+    // Finally, if at least one sub-tree
+    // is not null, we take their max to 
+    // be the depth of the tree starting
+    // with our current node.
     if (nodeP.left != null || nodeP.right != null)
     {
       result = Math.Max(depthL, depthR);
@@ -114,7 +131,7 @@ public abstract class BTree<T>
 
     /* Traversal methods. */
     // Inorder traversal
-    // "Left, root, right"
+    // "Left, data, right"
     public string TrasverseI()
     {
         string returned = "";
@@ -138,7 +155,7 @@ public abstract class BTree<T>
     }
 
     // Preorder traversal
-    // "Root, left, right"
+    // "Data, left, right"
     public string TrasversePr()
     {
         string returned = "";
@@ -162,7 +179,7 @@ public abstract class BTree<T>
     }
 
     // Postorder traversal
-    // "Left, right, root"
+    // "Left, right, data"
     public string TrasversePo()
     {
         string returned = "";
@@ -185,11 +202,10 @@ public abstract class BTree<T>
         return returned;
     }
 
+    /* Done with traversal methods. */
+
     public abstract void Insert(T dataP);
   public abstract bool Delete(T dataP);
-
-  
-
 
     // The ToString method is simply here to help debug.
 
