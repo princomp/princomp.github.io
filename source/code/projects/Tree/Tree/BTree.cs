@@ -113,7 +113,7 @@ public abstract class BTree<T>
     return found;
   }
 
-  private bool Find(Node nodeP, T dataP)
+  private bool Find(T dataP, Node nodeP)
   {
     bool found = false;
     if (nodeP != null)
@@ -125,8 +125,8 @@ public abstract class BTree<T>
       else
       {
         found =
-          Find(nodeP.left, dataP)
-          || Find(nodeP.right, dataP);
+          Find(dataP, nodeP.left)
+          || Find(dataP, nodeP.right);
       }
     }
     return found;
