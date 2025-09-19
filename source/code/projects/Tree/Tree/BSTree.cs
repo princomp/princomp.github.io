@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class BSTree<T> : BTree<T>
   where T : IComparable<T>
 {
-    // Inserting into a BSTree
+  // Inserting into a BSTree
   public override void Insert(T dataP)
   {
     root = Insert(dataP, root);
@@ -32,72 +32,74 @@ public class BSTree<T> : BTree<T>
     }
     return nodeP;
   }
-    public override bool Find(T dataP)
+
+  public override bool Find(T dataP)
+  {
+    bool found = false;
+    if (root != null)
     {
-        bool found = false;
-        if (root != null)
-        {
-            found = Find(root, dataP);
-        }
-        return found;
+      found = Find(root, dataP);
     }
+    return found;
+  }
 
-    // Finding into a BSTree
+  // Finding into a BSTree
 
-    private bool Find(Node nodeP, T dataP)
+  private bool Find(Node nodeP, T dataP)
+  {
+    bool found = false;
+    if (nodeP != null)
     {
-        bool found = false;
-        if (nodeP != null)
+      if (nodeP.Data.Equals(dataP))
+      {
+        found = true;
+      }
+      else
+      {
+        if (dataP.CompareTo(nodeP.Data) < 0) // dataP < nodeP.Data
         {
-            if (nodeP.Data.Equals(dataP))
-            {
-                found = true;
-            }
-            else
-            {
-                if (dataP.CompareTo(nodeP.Data) < 0) // dataP < nodeP.Data
-                {
-                    found = Find(nodeP.left, dataP);
-                }
-                else if (dataP.CompareTo(nodeP.Data) > 0) // dataP > nodeP.Data
-                {
-                    found = Find(nodeP.right, dataP);
-                }
-            }
+          found = Find(nodeP.left, dataP);
         }
-        return found;
+        else if (dataP.CompareTo(nodeP.Data) > 0) // dataP > nodeP.Data
+        {
+          found = Find(nodeP.right, dataP);
+        }
+      }
     }
+    return found;
+  }
 
-    public T FindMin()
+  public T FindMin()
+  {
+    if (root == null)
     {
-        if (root == null)
-        {
-            throw new ApplicationException(
-              "Cannot find a value in an empty tree!"
-            );
-        }
-        else
-        {
-            return FindMin(root);
-        }
+      throw new ApplicationException(
+        "Cannot find a value in an empty tree!"
+      );
     }
-
-    private T FindMin(Node nodeP)
+    else
     {
-        T minValue;
-        if (nodeP.left == null)
-        {
-            minValue = nodeP.Data;
-        }
-        else
-        {
-            minValue = FindMin(nodeP.left);
-        }
-        return minValue;
+      return FindMin(root);
     }
-    // Deleting from a BSTree
+  }
 
-    public override bool Delete(T dataP)
+  private T FindMin(Node nodeP)
+  {
+    T minValue;
+    if (nodeP.left == null)
+    {
+      minValue = nodeP.Data;
+    }
+    else
+    {
+      minValue = FindMin(nodeP.left);
+    }
+    return minValue;
+  }
+
+  // Deleting from a BSTree
+
+  public override bool Delete(T dataP)
   {
     return Delete(dataP, ref root);
   }
@@ -122,8 +124,8 @@ public class BSTree<T> : BTree<T>
         {
           nodeP.Data = FindMin(nodeP.right);
           Delete(nodeP.Data, ref nodeP.right);
-                    // Or we could replace with the largest
-                    // value in the left subtree.
+          // Or we could replace with the largest
+          // value in the left subtree.
         }
         else
         {
@@ -141,7 +143,5 @@ public class BSTree<T> : BTree<T>
     return found;
   }
 
-    // Done with deletion.
-
-  
+  // Done with deletion.
 }

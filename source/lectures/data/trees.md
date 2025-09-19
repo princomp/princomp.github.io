@@ -191,6 +191,19 @@ To insert in a binary search tree, we must respect the binary *search* tree defi
 !include`snippetStart="// Inserting into a BSTree", snippetEnd="// Finding into a BSTree"` code/projects/Tree/Tree/BSTree.cs
 ```
 
+Note that it implies that creating a `BSTree` by inserting, for example
+
+- 10, 6, 13, 12 and 14
+- 14, 12, 13, 6 and 10
+
+will result in different trees.
+
+!include diag/gra/bstree_example_2.md
+
+!include diag/gra/bstree_example_3.md
+
+To begin with, the first will have 10 on its root while the other will have 14!
+
 #### Finding
 
 To find a value in a binary search tree, we can leverage its principles to make only *one recursive call instead of two* (as in our previous `Find` method for `BTree`).

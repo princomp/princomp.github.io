@@ -1,0 +1,6 @@
+%%% A simple binary tree illustrating that insertion order matter
+
+A((10))-->B((6))
+A-->C((13))
+C-->D((12))
+C-->E((12))
