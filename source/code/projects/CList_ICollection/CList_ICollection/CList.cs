@@ -181,4 +181,32 @@ public class CList<T> : ICollection<T>
   }
 
   /* We are done realizing the ICollection class. */
+
+  // One last method, to remove the last cell and
+  // returns its value.
+  public T RemoveL()
+  {
+    if (isReadonly)
+    {
+      throw new InvalidOperationException(
+        "List is read-only"
+      );
+    }
+    if (IsEmpty())
+    {
+      throw new InvalidOperationException(
+        "Cannot remove last cell from an empty list!."
+      );
+    }
+    T data;
+
+    Cell cCell = first;
+    while (cCell.Next != null && cCell.Next.Next != null)
+    {
+      cCell = cCell.Next;
+    }
+    data = cCell.Next.Data;
+    cCell.Next = null;
+    return data;
+  }
 }

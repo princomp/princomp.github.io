@@ -96,6 +96,9 @@
 ./exercises/data/1darrays.md
 ./exercises/data/2darrays.md
 ./exercises/data/lists.md
+./exercises/data/stacks.md
+./exercises/data/queues.md
+./exercises/data/trees.md
 ./exercises/control/
 ./exercises/control/conditionals.md
 ./exercises/control/iteratives.md

@@ -26,6 +26,12 @@ tags:
     - This restriction applies to queues or stacks (depending how "beginning" is interpreted), but not to lists.   
     </details>
   
+#. Implementing a list as a doubly linked list (as opposed to singly linked list) allows to …
+    
+    - [ ] use fewer attributes.
+    - [x] keep track of the end of the list.
+    - [ ] store more elements.
+    - [ ] insert at the beginning of the list faster.
 
 ## Exercises
 
@@ -41,7 +47,8 @@ tags:
         }
         public CList(){first = null;}
     }
-    ``` 
+    ```   
+
     Write…
        
     #. … a `IsEmpty` property that is `true` if the `CList` calling object is empty.
@@ -57,7 +64,7 @@ tags:
         }
         ```
         </details>
-    #. … the `AddF` method that add a cell at the beginning of the CList (to the left).
+    #. … a `AddF` method that takes an argument of type `T` and adds it at the beginning ("to the left") of the `CList` calling object.
 
         <details>
         <summary>Solution</summary>
@@ -70,6 +77,36 @@ tags:
         }
         ```
         </details>
+    #. … a `RemoveL` method that remove the value at the end ("to the right") of the `CList` calling object and returns it.
+    
+        <details>
+        <summary>Solution</summary>        
+        ```
+        public T RemoveL()
+            {
+                if (first == null)
+                {
+                    throw new InvalidOperationException(
+                                "Cannot remove last cell from an empty list!."
+                                );
+                }
+                T data;
+
+                Cell cCell = first;
+                while (
+                    cCell.Next != null && cCell.Next.Next != null
+                )
+                {
+                    cCell = cCell.Next;
+                }
+                data = cCell.Next.Data;
+                cCell.Next = null;
+                return data;
+            }
+        ```
+        </details>
+        
+
     #. … a series of statements, to be inserted in a `Main` method, that a. create a `CList` object capable of containing `char`, b. insert the elements `'b'` and `'/'` in it, c. displays whether it is empty using `IsEmpty`.
 
         <details>
@@ -84,7 +121,14 @@ tags:
         Console.WriteLine("myList1 is empty:" + myList1.IsEmpty);
         ```
         </details>
-    
+        
+    #. If the `AddF` and `RemoveL` were the only two methods to add to and to remove from the list, what would be the name of the data-structure we actually just implemented?
+
+        <details>
+        <summary>Solution</summary>
+        It would be a queue.
+        </details>
+        
 #. Briefly explain the purpose of the `IsReadonly` property from the `ICollection<T>` interface, and list at least two methods in a List implementation realizing `ICollection<T>` that should use it.
 
     <details>

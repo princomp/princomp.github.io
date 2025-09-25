@@ -1,0 +1,6 @@
+%%% The "random" binary tree obtained by inserting 1, 2, 3 and 4 (in that order).
+
+A((1))-->B((2))
+A-->C((3))
+C~~~H1:::hidden
+C-->D((4))
