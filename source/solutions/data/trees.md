@@ -50,9 +50,9 @@ tags:
             <summary>Solution</summary>
             One among the following:
             
-            - Inorder displays first the left subtree, then the data at the root, then the right subtree.
-            - Preorder displays first the data at the root, then the left subtree, then the right subtree.
-            - Postorder displays first the left subtree, then the right subtree, then the data at the root.
+            - Inorder traversal processes (recursively) first the left subtree, then the data at the root, then the right subtree.
+            - Preorder traversal processes (recursively) first the data at the root, then the left subtree, then the right subtree.
+            - Postorder traversal processes (recursively) first the left subtree, then the right subtree, then the data at the root.
 
             </details>
         
@@ -68,25 +68,85 @@ tags:
             - Postorder gives 6, 14, 12, 13, 10
             </details>
 
-#. Consider the implementation of "random" binary trees shared on page \pageref{code:rbtree}, and note that the `Insert(T dataP, Node nodeP)` method uses the `gen.NextDouble() > 0.5` test that will be randomly `true` half of the time, and `false` the other half.
+#. Consider the following implementation of "random" binary trees:
 
+    ```
+    public class RBTree<T>
+    {
+    
+    private class Node
+        {
+        public T Data { get; set; }
+        public Node left;
+        public Node right;
+        public Node(
+            T dataP = default(T),
+            Node leftP = null,
+            Node rightP = null
+            )
+            {
+                Data = dataP;
+                left = leftP;
+                right = rightP;
+            }
+        }
+        
+    private Node root;
+
+    public RBTree()
+        {
+            root = null;
+        }
+    
+    public void Insert(T dataP)
+        {
+            root = Insert(dataP, root);
+        }
+    
+    private Node Insert(T dataP, Node nodeP)
+        {
+            if (nodeP == null)
+            {
+                return new Node(dataP, null, null);
+            }
+            else
+            {
+                Random gen = new Random();
+                if(gen.NextDouble() > 0.5)
+                {
+                    nodeP.left = Insert(dataP, nodeP.left);
+                }
+                else
+                {
+                    nodeP.right = Insert(dataP, nodeP.right);
+                }
+            }
+            return nodeP;
+        }
+    }
+    ```
+
+    Note that the `Insert(T dataP, Node nodeP)` method uses the `gen.NextDouble() > 0.5` test that will be randomly `true` half of the time, and `false` the other half.
+
+    
     #. Explain the `T dataP = default(T)` part of the `Node` constructor.
         <details>
         <summary>Solution</summary>
-            This makes the first argument of the constructor optional: if no value is provided, then the default value for `T` is used.
-            For example, for `int`, then 0 would be used.
+        This makes the first argument of the constructor optional: if no value is provided, then the default value for `T` is used.
+        For example, for `int`, then 0 would be used.
         </details>
     #. Write a `ToString` method for the `Node` class, remembering that only a node `Data` needs to be part of the `string` returned.
-            <details>
-            <summary>Solution</summary>
-            ```
-            public override string ToString()
-            {
-                return Data.ToString();
-            }
-            ```
-            </details>
-            
+
+        <details>
+        <summary>Solution</summary>
+        ```
+        public override string ToString()
+        {
+            return Data.ToString();
+        }
+        ```
+        </details>
+        
     #. Write a series of statements that would 
         #. create a `RBTree` object,
         #. insert the values 1, 2, 3, and 4 in it (in this order).
@@ -105,47 +165,43 @@ tags:
     #. Make a drawing of a possible `RBTree` obtained by executing your code.
         <details>
         <summary>Solution</summary>
-           Any binary tree containing 1, 2, 3 and 4, with 1 at the root, is correct. One such example is:
+        Any binary tree containing 1, 2, 3 and 4, with 1 at the root, 2 a child of 1, 3 a child of 1 or 2, and 4 a child of 1, 2 or 3, is correct. One such example is:
            
-            !include diag/gra/bstree_example_5.md
+        !include diag/gra/bstree_example_5.md
         </details>
 
     #. Write a `Find` method that takes one argument `dataP` of type `T` and returns `true` if `dataP` is in the `RBtree` calling object, `false` otherwise.
     
-            <details>
-            <summary>Solution</summary>
-            ```
-            public bool Find(T dataP)
+        <details>
+        <summary>Solution</summary>
+        ```
+        public bool Find(T dataP)
+        {
+            bool found = false;
+            if (root != null)
             {
-                bool found = false;
-                if (root != null)
-                {
-                    found = Find(root, dataP);
-                }
-                return found;
+                found = Find(root, dataP);
             }
+            return found;
+        }
 
-            private bool Find(Node nodeP, T dataP)
+        private bool Find(Node nodeP, T dataP)
+        {
+            bool found = false;
+            if (nodeP != null)
             {
-                bool found = false;
-                if (nodeP != null)
+                if (nodeP.Data.Equals(dataP))
                 {
-                    if (nodeP.Data.Equals(dataP))
-                    {
-                        found = true;
-                    }
-                    else
-                    {
-                        found =
-                        Find(nodeP.left, dataP)
-                        || Find(nodeP.right, dataP);
-                    }
+                    found = true;
                 }
-                return found;
+                else
+                {
+                    found =
+                    Find(nodeP.left, dataP)
+                    || Find(nodeP.right, dataP);
+                }
             }
-            ```
-            </details>
-
-   
-    
-     
+            return found;
+        }
+        ```
+        </details>

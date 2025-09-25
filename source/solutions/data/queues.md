@@ -8,25 +8,25 @@ tags:
 ## Multiple Choices
 
 #. A queue is generally endowed with operations called…
-   
-        - [ ] Requeue
-        - [x] Dequeue
-        - [x] Enqueue
-        - [ ] Unqueue
+
+    - [ ] Requeue
+    - [x] Dequeue
+    - [x] Enqueue
+    - [ ] Unqueue
         
 #. A queue implements which principle?
     
-        - [ ] LIFO
-        - [x] FIFO 
-        - [ ] LILO
-        - [ ] FOFI
+    - [ ] LIFO
+    - [x] FIFO 
+    - [ ] LILO
+    - [ ] FOFI
 
 #. LIFO stands for…
-    
-        - [ ] Least Is First Out
-        - [ ] Last Is First Outside
-        - [x] Last In First Out
-        - [ ] Low Input Fast Output
+
+    - [ ] Least Is First Out
+    - [ ] Last Is First Outside
+    - [x] Last In First Out
+    - [ ] Low Input Fast Output
 
 ## Exercises
 
