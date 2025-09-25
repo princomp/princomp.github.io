@@ -378,7 +378,7 @@ $(FLO_DIR)%.png: $(FLO_DIR)%.txt
 # Graph diagram are only used for 
 # binary trees.
 $(GRA_DIR)%.md: $(GRA_DIR)%.txt | $(GRA_DIR)%.svg $(GRA_DIR)%.png
-	echo "![A binary tree diagram ([text version](./$(basename $@).txt), [image version](./$(basename $@).png), [svg version](./$(basename $@).svg))]($(notdir $(basename $@)).png)" > $@
+	echo "![$$(sed -n '1p' $< | sed -r 's/^.{3}//') ([text version](./$(basename $@).txt), [image version](./$(basename $@).png), [svg version](./$(basename $@).svg))]($(notdir $(basename $@)).png)" > $@
 
 $(GRA_DIR)%.svg: $(GRA_DIR)%.txt
 	@echo "Creating $@"

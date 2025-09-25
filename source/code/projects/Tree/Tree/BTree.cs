@@ -22,17 +22,21 @@ public abstract class BTree<T>
       right = rightP;
     }
 
+    // Displaying a Node is only
+    // displaying its data.
     public override string ToString()
     {
-      return "| " + Data.ToString() + " |";
+      return Data.ToString();
     }
   }
-  // We can now define the BTree class 
+
+  // We can now define the BTree class
   // using this notion of nodes.
 
-        // Constructor, Clear and IsEmpty
-        // are relying on the root Node.
+  // Constructor, Clear and IsEmpty
+  // are relying on the root Node.
   protected Node root;
+
   public BTree()
   {
     root = null;
@@ -47,8 +51,9 @@ public abstract class BTree<T>
   {
     return root == null;
   }
-    // We now look at how to 
-    // compute the Depth of a tree.
+
+  // We now look at how to
+  // compute the Depth of a tree.
 
   public int Depth()
   {
@@ -62,36 +67,54 @@ public abstract class BTree<T>
 
   private int Depth(Node nodeP, int depth)
   {
+    // "Unless proven otherwise",
+    // we assume that the depth of the
+    // node is the depth it received
+    // as argument.
     int result = depth;
+    // We assume the depth of
+    // its right sub-tree
+    // is 0.
     int depthL = 0;
     if (nodeP.left != null)
     {
+      // If its left sub-tree is not null,
+      // we inquire about its depth,
+      // knowing that it will be 1 more
+      // than the depth of the current node.
       depthL = Depth(nodeP.left, result + 1);
     }
+    // We proceed similarly for the
+    // left sub-tree.
     int depthR = 0;
     if (nodeP.right != null)
     {
       depthR = Depth(nodeP.right, result + 1);
     }
+    // Finally, if at least one sub-tree
+    // is not null, we take the max of their
+    // depths to be the depth of the tree
+    // starting with our current node.
     if (nodeP.left != null || nodeP.right != null)
     {
       result = Math.Max(depthL, depthR);
     }
     return result;
   }
-    // Finding is also recursive.
+
+  // Finding is also recursive.
 
   public virtual bool Find(T dataP)
   {
     bool found = false;
     if (root != null)
     {
-      found = Find(root, dataP);
+      found = Find(dataP, root);
     }
     return found;
   }
 
-  private bool Find(Node nodeP, T dataP)
+  private bool Find(T dataP, Node nodeP)
   {
     bool found = false;
     if (nodeP != null)
@@ -103,128 +126,127 @@ public abstract class BTree<T>
       else
       {
         found =
-          Find(nodeP.left, dataP)
-          || Find(nodeP.right, dataP);
+          Find(dataP, nodeP.left)
+          || Find(dataP, nodeP.right);
       }
     }
     return found;
   }
 
-    // Done with finding.
+  // Done with finding.
 
-    /* Traversal methods. */
-    // Inorder traversal
-    // "Left, root, right"
-    public string TrasverseI()
+  /* Traversal methods. */
+  // Inorder traversal
+  // "Left, data, right"
+  public string TrasverseI()
+  {
+    string returned = "";
+    if (root != null)
     {
-        string returned = "";
-        if (root != null)
-        {
-            returned += TraverseI(root);
-        }
-        return returned;
+      returned += TraverseI(root);
     }
+    return returned;
+  }
 
-    private string TraverseI(Node nodeP)
+  private string TraverseI(Node nodeP)
+  {
+    string returned = "";
+    if (nodeP != null)
     {
-        string returned = "";
-        if (nodeP != null)
-        {
-            returned += TraverseI(nodeP.left);
-            returned += nodeP.Data + " ";
-            returned += TraverseI(nodeP.right);
-        }
-        return returned;
+      returned += TraverseI(nodeP.left);
+      returned += nodeP.Data + " ";
+      returned += TraverseI(nodeP.right);
     }
+    return returned;
+  }
 
-    // Preorder traversal
-    // "Root, left, right"
-    public string TrasversePr()
+  // Preorder traversal
+  // "Data, left, right"
+  public string TrasversePr()
+  {
+    string returned = "";
+    if (root != null)
     {
-        string returned = "";
-        if (root != null)
-        {
-            returned += TraversePr(root);
-        }
-        return returned;
+      returned += TraversePr(root);
     }
+    return returned;
+  }
 
-    private string TraversePr(Node nodeP)
+  private string TraversePr(Node nodeP)
+  {
+    string returned = "";
+    if (nodeP != null)
     {
-        string returned = "";
-        if (nodeP != null)
-        {
-            returned += nodeP.Data + " ";
-            returned += TraversePr(nodeP.left);
-            returned += TraversePr(nodeP.right);
-        }
-        return returned;
+      returned += nodeP.Data + " ";
+      returned += TraversePr(nodeP.left);
+      returned += TraversePr(nodeP.right);
     }
+    return returned;
+  }
 
-    // Postorder traversal
-    // "Left, right, root"
-    public string TrasversePo()
+  // Postorder traversal
+  // "Left, right, data"
+  public string TrasversePo()
+  {
+    string returned = "";
+    if (root != null)
     {
-        string returned = "";
-        if (root != null)
-        {
-            returned += TraversePo(root);
-        }
-        return returned;
+      returned += TraversePo(root);
     }
+    return returned;
+  }
 
-    private string TraversePo(Node nodeP)
+  private string TraversePo(Node nodeP)
+  {
+    string returned = "";
+    if (nodeP != null)
     {
-        string returned = "";
-        if (nodeP != null)
-        {
-            returned += TraversePo(nodeP.left);
-            returned += TraversePo(nodeP.right);
-            returned += nodeP.Data + " ";
-        }
-        return returned;
+      returned += TraversePo(nodeP.left);
+      returned += TraversePo(nodeP.right);
+      returned += nodeP.Data + " ";
     }
+    return returned;
+  }
 
+  /* Done with traversal methods. */
 
-    /* Done with traversal methods. */
-
-    public abstract void Insert(T dataP);
+  public abstract void Insert(T dataP);
   public abstract bool Delete(T dataP);
 
-  
+  // The ToString method is simply here to help us debug.
+  // It is not really pretty, but using pre-order and spaces
+  // to make it easier to understand how the tree is
+  // constructed. It also displays the depth of the tree.
 
-
-    // The ToString method is simply here to help debug.
-
-    public override string ToString()
+  public override string ToString()
+  {
+    string returned = "Depth: " + Depth() + "\n";
+    if (root != null)
     {
-        string returned = "Depth: " + Depth() + "\n";
-        if (root != null)
-        {
-            returned += Stringify(root, 0);
-        }
-        return returned;
+      returned += Stringify(root, 0);
     }
+    return returned;
+  }
 
-    private string Stringify(Node nodeP, int depth)
+  private string Stringify(Node nodeP, int depth)
+  {
+    string returned = "";
+    if (nodeP != null)
     {
-        string returned = "";
-        if (nodeP != null)
-        {
-            for (int i = 0; i < depth; i++)
-            {
-                returned += " ";
-            }
-            returned += nodeP + "\n"; // Calls Node's ToString method.
-            if (nodeP.left != null)
-            {
-                returned += "L" + Stringify(nodeP.left, depth + 1);
-            }
-            if (nodeP.right != null)
-            {
-                returned += "R" + Stringify(nodeP.right, depth + 1);
-            }
-        }
-        return returned;
+      for (int i = 0; i < depth; i++)
+      {
+        returned += " ";
+      }
+      returned += nodeP + "\n"; // Calls Node's ToString method.
+      if (nodeP.left != null)
+      {
+        returned += "L" + Stringify(nodeP.left, depth + 1);
+      }
+      if (nodeP.right != null)
+      {
+        returned += "R" + Stringify(nodeP.right, depth + 1);
+      }
     }
+    return returned;
+  }
 }

@@ -1,0 +1,6 @@
+%%% The binary tree obtained by inserting 10, 6, 13, 12 and 14 (in that order).
+
+A((10))-->B((6))
+A-->C((13))
+C-->D((12))
+C-->E((14))

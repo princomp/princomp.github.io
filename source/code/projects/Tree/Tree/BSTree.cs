@@ -4,6 +4,7 @@ using System.Collections.Generic;
 public class BSTree<T> : BTree<T>
   where T : IComparable<T>
 {
+  // Inserting into a BSTree
   public override void Insert(T dataP)
   {
     root = Insert(dataP, root);
@@ -32,61 +33,19 @@ public class BSTree<T> : BTree<T>
     return nodeP;
   }
 
-  public override bool Delete(T dataP)
-  {
-    return Delete(dataP, ref root);
-  }
-
-  private bool Delete(T dataP, ref Node nodeP)
-  {
-    bool found = false;
-    if (nodeP != null)
-    {
-      if (dataP.CompareTo(nodeP.Data) < 0) // dataP < nodeP.Data
-      {
-        found = Delete(dataP, ref nodeP.left);
-      }
-      else if (dataP.CompareTo(nodeP.Data) > 0) // dataP > nodeP.Data
-      {
-        found = Delete(dataP, ref nodeP.right);
-      }
-      else // We found the value!
-      {
-        found = true;
-        if (nodeP.left != null && nodeP.right != null)
-        {
-          nodeP.Data = FindMin(nodeP.right);
-          Delete(nodeP.Data, ref nodeP.right);
-                    // Or we could replace with the largest
-                    // value in the left subtree.
-        }
-        else
-        {
-          if (nodeP.left != null)
-          {
-            nodeP = nodeP.left;
-          }
-          else
-          {
-            nodeP = nodeP.right;
-          }
-        }
-      }
-    }
-    return found;
-  }
+  // Finding into a BSTree
 
   public override bool Find(T dataP)
   {
     bool found = false;
     if (root != null)
     {
-      found = Find(root, dataP);
+      found = Find(dataP, root);
     }
     return found;
   }
 
-  private bool Find(Node nodeP, T dataP)
+  private bool Find(T dataP, Node nodeP)
   {
     bool found = false;
     if (nodeP != null)
@@ -99,11 +58,11 @@ public class BSTree<T> : BTree<T>
       {
         if (dataP.CompareTo(nodeP.Data) < 0) // dataP < nodeP.Data
         {
-          found = Find(nodeP.left, dataP);
+          found = Find(dataP, nodeP.left);
         }
         else if (dataP.CompareTo(nodeP.Data) > 0) // dataP > nodeP.Data
         {
-          found = Find(nodeP.right, dataP);
+          found = Find(dataP, nodeP.right);
         }
       }
     }
@@ -137,4 +96,52 @@ public class BSTree<T> : BTree<T>
     }
     return minValue;
   }
+
+  // Deleting from a BSTree
+
+  public override bool Delete(T dataP)
+  {
+    return Delete(dataP, ref root);
+  }
+
+  private bool Delete(T dataP, ref Node nodeP)
+  {
+    bool found = false;
+    if (nodeP != null)
+    {
+      if (dataP.CompareTo(nodeP.Data) < 0) // dataP < nodeP.Data
+      {
+        found = Delete(dataP, ref nodeP.left);
+      }
+      else if (dataP.CompareTo(nodeP.Data) > 0) // dataP > nodeP.Data
+      {
+        found = Delete(dataP, ref nodeP.right);
+      }
+      else // We found the value!
+      {
+        found = true;
+        if (nodeP.left != null && nodeP.right != null)
+        {
+          nodeP.Data = FindMin(nodeP.right);
+          Delete(nodeP.Data, ref nodeP.right);
+          // Or we could replace with the largest
+          // value in the left subtree.
+        }
+        else
+        {
+          if (nodeP.left != null)
+          {
+            nodeP = nodeP.left;
+          }
+          else
+          {
+            nodeP = nodeP.right;
+          }
+        }
+      }
+    }
+    return found;
+  }
+
+  // Done with deletion.
 }
