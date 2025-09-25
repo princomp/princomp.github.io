@@ -185,6 +185,9 @@ public abstract class BTree<T>
         return returned;
     }
 
+
+    /* Done with traversal methods. */
+
     public abstract void Insert(T dataP);
   public abstract bool Delete(T dataP);
 
