@@ -1,0 +1,6 @@
+%%% A binary tree that is not a binary search tree.
+
+A((10))-->B((6))
+A-->C((13))
+C-->D((14))
+C-->E((12))
