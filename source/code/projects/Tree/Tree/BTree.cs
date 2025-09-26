@@ -21,8 +21,9 @@ public abstract class BTree<T>
       left = leftP;
       right = rightP;
     }
-        // Displaying a Node is only 
-        // displaying its data.
+
+    // Displaying a Node is only
+    // displaying its data.
     public override string ToString()
     {
       return Data.ToString();
@@ -108,7 +109,7 @@ public abstract class BTree<T>
     bool found = false;
     if (root != null)
     {
-      found = Find(root, dataP);
+      found = Find(dataP, root);
     }
     return found;
   }

@@ -91,5 +91,31 @@ class Program
     {
       Console.Write(i + " ");
     }
+    // Last, we test the RemoveL method
+    myList1.IsReadOnly = false;
+    Console.WriteLine("\nThe list contains:");
+    foreach (int i in myList1)
+    {
+      Console.Write(i + " ");
+    }
+    for (int i = 0; i < myList1.Count; i++)
+    {
+      try
+      {
+        Console.WriteLine(
+          "\nValue removed: " + myList1.RemoveL()
+        );
+      }
+      catch (Exception e)
+      {
+        Console.WriteLine(e.Message);
+      }
+    }
+
+    Console.WriteLine("\nThe list contains:");
+    foreach (int i in myList1)
+    {
+      Console.Write(i + " ");
+    }
   }
 }
