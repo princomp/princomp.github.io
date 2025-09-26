@@ -3,7 +3,7 @@ tags:
   - datatypes/collections
 ---
 
-# Lists (Solutions)
+# Trees (Solutions)
 
 <!--
 ## Multiple Choices
