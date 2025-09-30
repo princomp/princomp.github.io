@@ -1,0 +1,10 @@
+%%% The binary search tree obtained by inserting 1, 2, …, 1000 (in that order).
+
+A((1))~~~H1:::hidden
+A-->B((2))
+B~~~H2:::hidden
+B-->C((3))
+C~~~H3:::hidden
+C-.->H4:::hidden
+H4~~~H5:::hidden
+H5-.->Z((100))
