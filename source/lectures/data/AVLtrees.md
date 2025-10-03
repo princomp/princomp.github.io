@@ -33,7 +33,14 @@ A good way of [remembering the difference](https://stackoverflow.com/q/2603692) 
 
 ## Possible Implementation
 
+### Storing the height in the node
 
 ```{download="./code/projects/AVLTree.zip"}
 !include code/projects/AVLTree/AVLTree/AVLTree.cs
 ```
+
+### Computing the height on the fly
+
+It is also possible to compute the height of nodes "on the fly" instead of storing it.
+[This archive](./code/projects/AVLTree_I.zip) demonstrates this concept while additionally inheriting from the `BTree` class [explored previously](./lectures/data/trees).
+
