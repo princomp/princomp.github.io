@@ -19,36 +19,38 @@ public class RBTree<T>
       left = leftP;
       right = rightP;
     }
-}
+  }
+
   private Node root;
 
   public RBTree()
   {
     root = null;
   }
-    public void Insert(T dataP)
-    {
-        root = Insert(dataP, root);
-    }
 
-    private Node Insert(T dataP, Node nodeP)
+  public void Insert(T dataP)
+  {
+    root = Insert(dataP, root);
+  }
+
+  private Node Insert(T dataP, Node nodeP)
+  {
+    if (nodeP == null)
     {
-        if (nodeP == null)
-        {
-            return new Node(dataP, null, null);
-        }
-        else
-        {
-            Random gen = new Random();
-            if(gen.NextDouble() > 0.5)
-            {
-                nodeP.left = Insert(dataP, nodeP.left);
-            }
-            else
-            {
-                nodeP.right = Insert(dataP, nodeP.right);
-            }
-        }
-        return nodeP;
+      return new Node(dataP, null, null);
     }
+    else
+    {
+      Random gen = new Random();
+      if (gen.NextDouble() > 0.5)
+      {
+        nodeP.left = Insert(dataP, nodeP.left);
+      }
+      else
+      {
+        nodeP.right = Insert(dataP, nodeP.right);
+      }
+    }
+    return nodeP;
+  }
 }

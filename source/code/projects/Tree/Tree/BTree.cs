@@ -29,32 +29,31 @@ public abstract class BTree<T>
       return Data.ToString();
     }
 
-        public int Height
+    public int Height
+    {
+      get
+      {
+        int height = 0;
+        if (left != null && right != null)
         {
-            get
-            {
-                int height = 0;
-                if (left != null && right != null)
-                {
-                    height = Math.Max(left.Height, right.Height) + 1;
-                }
-                else if (left != null)
-                {
-                    height = left.Height + 1;
-                }
-                else if (right != null)
-                {
-                    height = right.Height + 1;
-                }
-                else
-                {
-                    height = 0;
-                }
-                return height;
-
-            }
+          height = Math.Max(left.Height, right.Height) + 1;
         }
+        else if (left != null)
+        {
+          height = left.Height + 1;
+        }
+        else if (right != null)
+        {
+          height = right.Height + 1;
+        }
+        else
+        {
+          height = 0;
+        }
+        return height;
+      }
     }
+  }
 
   // We can now define the BTree class
   // using this notion of nodes.
@@ -127,57 +126,57 @@ public abstract class BTree<T>
     }
     return result;
   }
-    public int Height()
+
+  public int Height()
+  {
+    int height = 0;
+    if (root != null)
     {
-        int height = 0;
-        if (root != null)
-        {
-            height = Height(root, 0);
-        }
-        return height;
+      height = Height(root, 0);
     }
+    return height;
+  }
 
-    private int Height(Node nodeP, int depth)
+  private int Height(Node nodeP, int depth)
+  {
+    // "Unless proven otherwise",
+    // we assume that the depth of the
+    // node is the depth it received
+    // as argument.
+    int result = depth;
+    // We assume the depth of
+    // its right sub-tree
+    // is 0.
+    int depthL = 0;
+    if (nodeP.left != null)
     {
-        // "Unless proven otherwise",
-        // we assume that the depth of the
-        // node is the depth it received
-        // as argument.
-        int result = depth;
-        // We assume the depth of
-        // its right sub-tree
-        // is 0.
-        int depthL = 0;
-        if (nodeP.left != null)
-        {
-            // If its left sub-tree is not null,
-            // we inquire about its depth,
-            // knowing that it will be 1 more
-            // than the depth of the current node.
-            depthL = Depth(nodeP.left, result + 1);
-        }
-        // We proceed similarly for the
-        // left sub-tree.
-        int depthR = 0;
-        if (nodeP.right != null)
-        {
-            depthR = Depth(nodeP.right, result + 1);
-        }
-        // Finally, if at least one sub-tree
-        // is not null, we take the max of their
-        // depths to be the depth of the tree
-        // starting with our current node.
-        if (nodeP.left != null || nodeP.right != null)
-        {
-            result = Math.Max(depthL, depthR);
-        }
-        return result;
+      // If its left sub-tree is not null,
+      // we inquire about its depth,
+      // knowing that it will be 1 more
+      // than the depth of the current node.
+      depthL = Depth(nodeP.left, result + 1);
     }
+    // We proceed similarly for the
+    // left sub-tree.
+    int depthR = 0;
+    if (nodeP.right != null)
+    {
+      depthR = Depth(nodeP.right, result + 1);
+    }
+    // Finally, if at least one sub-tree
+    // is not null, we take the max of their
+    // depths to be the depth of the tree
+    // starting with our current node.
+    if (nodeP.left != null || nodeP.right != null)
+    {
+      result = Math.Max(depthL, depthR);
+    }
+    return result;
+  }
 
+  // Finding is also recursive.
 
-    // Finding is also recursive.
-
-    public virtual bool Find(T dataP)
+  public virtual bool Find(T dataP)
   {
     bool found = false;
     if (root != null)
@@ -294,7 +293,7 @@ public abstract class BTree<T>
   public override string ToString()
   {
     string returned = "Depth: " + Depth() + "\n";
-        returned += "Height: " + Height() + "\n";
+    returned += "Height: " + Height() + "\n";
     if (root != null)
     {
       returned += Stringify(root, 0);
@@ -314,11 +313,21 @@ public abstract class BTree<T>
       returned += nodeP + "\n"; // Calls Node's ToString method.
       if (nodeP.left != null)
       {
-        returned += "L" + "(height: " + nodeP.left.Height + ")" + Stringify(nodeP.left, depth + 1) ;
+        returned +=
+          "L"
+          + "(height: "
+          + nodeP.left.Height
+          + ")"
+          + Stringify(nodeP.left, depth + 1);
       }
       if (nodeP.right != null)
       {
-        returned += "R" +"(height: " + nodeP.right.Height + ")" + Stringify(nodeP.right, depth + 1) ;
+        returned +=
+          "R"
+          + "(height: "
+          + nodeP.right.Height
+          + ")"
+          + Stringify(nodeP.right, depth + 1);
       }
     }
     return returned;
