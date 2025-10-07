@@ -53,7 +53,53 @@ public class AVLTree<T> where T : IComparable<T>
         else
             return nodeP.Height;
     }
-    
+    // We have a method to update the height
+    // of a node, and of its sub-trees.
+    private int UpdateHeight(Node nodeP)
+    {
+        int height = -1;
+        if (nodeP != null)
+        {
+            int nodeLeft = UpdateHeight(nodeP.left);
+            int nodeRight = UpdateHeight(nodeP.right);
+            height = Math.Max(nodeLeft, nodeRight) + 1;
+            nodeP.Height = height;
+        }
+        return height;
+    }
+
+    // 
+    private int SubtreeBalance(Node nodeP)
+    {
+        // Will return
+        // a negative number if subtree is right-heavy
+        // a positive number if subtree is left-heavy
+        // 0 if the subtree is perfectly balanced.
+        UpdateHeight(nodeP.left);
+        UpdateHeight(nodeP.right);
+        int balance;
+        if (nodeP == null)
+        {
+            balance = 0;
+        }
+        else if (nodeP.left == null && nodeP.right == null)
+        {
+            balance = 0;
+        }
+        else if (nodeP.left == null)
+        {
+            balance = -(nodeP.right.Height + 1);    // right side heavy represented by negative number
+        }
+        else if (nodeP.right == null)
+        {
+            balance = nodeP.left.Height + 1;
+        }
+        else
+        {
+            balance =  nodeP.left.Height - nodeP.right.Height;
+        }
+        return balance;
+    }
     public void Insert(T valueP)
     {
         root = Insert(valueP, root);

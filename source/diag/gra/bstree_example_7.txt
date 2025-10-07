@@ -1,0 +1,17 @@
+%%% A balanced binary search tree containing 1, 2, …, 1000.
+
+A((64))-->B((32))
+A-->C((80))
+B-->D((16))
+B-->E((48))
+C-->F((72))
+C-->G((88))
+F-.->H1:::hidden
+F-.->H2:::hidden
+G-.->H3:::hidden
+G-.->H4:::hidden
+D-.->H5:::hidden
+D-.->H6:::hidden
+E-.->H7:::hidden
+E-.->H8:::hidden
+
