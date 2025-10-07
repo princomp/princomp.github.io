@@ -25,13 +25,13 @@ public class AVLTree<T>
     }
 
     public Node(
-      T d = default(T),
+      T dataP = default(T),
       Node leftP = null,
       Node rightP = null,
       int heightP = 0
     )
     {
-      Data = d;
+      Data = dataP;
       left = leftP;
       right = rightP;
       Height = heightP;
@@ -96,9 +96,7 @@ public class AVLTree<T>
     return height;
   }
 
-  private int SubtreeBalance(Node nodeP)
-  {
-    // Will return
+    // The following will return
     // a negative number if subtree is right-heavy
     // a positive number if subtree is left-heavy
     // 0 if the subtree is perfectly balanced.
@@ -107,6 +105,8 @@ public class AVLTree<T>
     // less than or equal to -2.
     // Stated differently, if the value returned is
     // -1, 0 or 1, then no re-balancing will take place.
+    private int SubtreeBalance(Node nodeP)
+  {
     UpdateHeight(nodeP.left);
     UpdateHeight(nodeP.right);
     int balance;
@@ -233,6 +233,18 @@ public class AVLTree<T>
 *       D       C
 *              / \
 *             F   G
+*
+* The simplified version is:
+* Before:
+*        A
+*       /
+*       B
+*       \
+*        E
+* After:
+*        E
+*       / \
+*      B   A
 */
 
   private Node DoubleleftChild(Node nodeP)
@@ -292,7 +304,7 @@ public class AVLTree<T>
       throw new ApplicationException(
         "Tree did not insert "
           + valueP
-          + " since an item with that value is already in the tree"
+          + " since an item with that value is already in the tree."
       );
     }
 

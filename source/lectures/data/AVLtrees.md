@@ -22,7 +22,7 @@ The resulting tree would be much more efficient if we were leveraging the proper
 
 This is precisely the point of AVL trees, which are binary search trees with the additional property:
 
-> The heights of the two child subtrees of any node differ by at most one; if at any time they differ by more than one, rebalancing is done to restore this property.
+> The heights of the two child subtrees of any node differ by at most one; if at any time they differ by more than one, re-balancing is done to restore this property.
 
 where 
 
@@ -32,6 +32,25 @@ where
 A good way of [remembering the difference](https://stackoverflow.com/q/2603692) is to observe that we measure the height of a person from toe (leaf) to head (root), while we measure the depth (of an ocean) from earth's surface (root) to ocean bed (leaf).
 
 ## Possible Implementation
+
+The main challenge is to "re-balance" the tree when needed.
+To determine if a tree needs to be re-balanced, one has to compute its "balance factor", obtained by substracting the right subtree height from the left subtree height. This is done below in the `SubtreeBalance` method.
+
+Consider the following:
+
+!include diag/gra/bstree_example_8.md
+
+After inserting 2, the tree becomes:
+
+!include diag/gra/bstree_example_10.md
+
+which needs to be re-balanced using the `RotateleftChild` method given below. Indeed it is "left-heavy", on the left-hand side (because the left sub-tree, with root 5, is deeper, because of its left side).
+
+If, re-using the same example, we insert 7, then the tree becomes: 
+
+!include diag/gra/bstree_example_9.md
+
+which needs to be re-balanced using the `Doubleleftchild` method given below. Indeed it is "left-heavy", on the right-hand side (because the left sub-tree, with root 5, is deeper, because of its right side).
 
 ### Storing the height in the node
 
@@ -43,4 +62,3 @@ A good way of [remembering the difference](https://stackoverflow.com/q/2603692) 
 
 It is also possible to compute the height of nodes "on the fly" instead of storing it.
 [This archive](./code/projects/AVLTree_I.zip) demonstrates this concept while additionally inheriting from the `BTree` class [explored previously](./lectures/data/trees).
-

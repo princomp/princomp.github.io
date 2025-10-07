@@ -1,0 +1,8 @@
+%%% A left-right heavy binary search tree
+
+A((10))-->B((5))
+A-->C((20))
+B-->D((4))
+B-->E((6))
+E~~~H1:::hidden
+E-->F((7))
