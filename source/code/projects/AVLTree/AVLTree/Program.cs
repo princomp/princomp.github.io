@@ -12,5 +12,9 @@ class Program
         }
         Console.WriteLine(test);
 
+        Console.WriteLine("Is 7 in tree: " + test.Remove(7));
+        Console.WriteLine("Is 7 in tree: " + test.Remove(7));
+        Console.WriteLine(test);
+
     }
 }

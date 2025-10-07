@@ -46,6 +46,22 @@ public class AVLTree<T> where T : IComparable<T>
     {
         root = null;
     }
+
+    public T FindMin()
+    {
+        if (root == null)
+            throw new ApplicationException("FindMin called on empty BinSearchTree");
+        else
+            return FindMin(root);
+    }
+    private T FindMin(Node nodeP)
+    {
+        if (nodeP.left == null)
+            return nodeP.Data;
+        else
+            return FindMin(nodeP.left);
+    }
+
     private int GetHeight(Node nodeP)
     {
         if (nodeP == null)
@@ -68,13 +84,17 @@ public class AVLTree<T> where T : IComparable<T>
         return height;
     }
 
-    // 
     private int SubtreeBalance(Node nodeP)
     {
         // Will return
         // a negative number if subtree is right-heavy
         // a positive number if subtree is left-heavy
         // 0 if the subtree is perfectly balanced.
+        // The AVL tree will need to be re-balanced if the value 
+        // returned is greater than or equal to 2, or 
+        // less than or equal to -2.
+        // Stated differently, if the value returned is
+        // -1, 0 or 1, then no re-balancing will take place.
         UpdateHeight(nodeP.left);
         UpdateHeight(nodeP.right);
         int balance;
@@ -88,7 +108,7 @@ public class AVLTree<T> where T : IComparable<T>
         }
         else if (nodeP.left == null)
         {
-            balance = -(nodeP.right.Height + 1);    // right side heavy represented by negative number
+            balance = -(nodeP.right.Height + 1);
         }
         else if (nodeP.right == null)
         {
@@ -293,6 +313,70 @@ public class AVLTree<T> where T : IComparable<T>
         }
         return result;
     }
+
+    public bool Remove(T value)
+    {
+        return Remove(value, ref root);
+    }
+
+    private bool Remove(T value, ref Node nodeP)
+    {
+        bool found = false;
+        if (nodeP != null)
+        {
+            if (value.CompareTo(nodeP.Data) < 0) // value < nodeP.Data, check left subtree
+            {
+                found = Remove(value, ref nodeP.left);  // similar to BST's find and remove method
+                if (SubtreeBalance(nodeP) <= -2) // negative balance means heavy on right side
+                {
+                    if (SubtreeBalance(nodeP.right) <= 0) // children in straight line
+                        nodeP = RotaterightChild(nodeP);   //  rotate middle up to balance   
+                    else
+                        nodeP = DoublerightChild(nodeP);  // children in zig patter - needs double rotate to balance
+                }
+            }
+            else if (value.CompareTo(nodeP.Data) > 0) // value > nodeP.Data, check right subtree
+            {
+                found = Remove(value, ref nodeP.right);
+                if (SubtreeBalance(nodeP) >= 2)
+                {
+                    if (SubtreeBalance(nodeP.left) >= 0)
+                        nodeP = RotateleftChild(nodeP);
+                    else
+                        nodeP = DoubleleftChild(nodeP);
+                }
+            }
+            else  // The value was found!
+            {
+                found = true;
+                if (nodeP.left != null && nodeP.right != null) // Two children
+                {
+                    nodeP.Data = FindMin(nodeP.right);
+                    Remove(nodeP.Data, ref nodeP.right);
+                    if (SubtreeBalance(nodeP) == 2) // Need to rebalance
+                    {
+                        if (SubtreeBalance(nodeP.left) >= 0)
+                            nodeP = RotateleftChild(nodeP);
+                        else
+                            nodeP = DoubleleftChild(nodeP);
+                    }
+
+                }
+                else
+                {
+                    nodeP = nodeP.left ?? nodeP.right;  // replace with one or no child
+                    // This is equivalent to 
+                    // if (nodeP.left == null){
+                    //     nodeP = nodeP.right;
+                    // } else { nodeP = nodeP.left;}
+                    // Observe that if both are null, then nodeP simply 
+                    // becomes null, as expected.
+                }
+            }
+        }
+        return found;
+        }
+
 
     // The ToString method is simply here to help us debug.
     // It is not really pretty, but using pre-order and spaces
