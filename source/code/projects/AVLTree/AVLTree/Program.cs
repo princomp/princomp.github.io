@@ -16,7 +16,5 @@ class Program
         Console.WriteLine(avltree1);
         avltree1.Remove(5);
         Console.WriteLine(avltree1);
-
-
     }
 }

@@ -46,10 +46,9 @@ public abstract class BTree<T>
         {
           height = right.Height + 1;
         }
-        else
-        {
-          height = 0;
-        }
+        // The last case is if both children
+        // are null, in which case the height
+        // remains 0.
         return height;
       }
     }
@@ -78,54 +77,18 @@ public abstract class BTree<T>
   }
 
   // We now look at how to
-  // compute the Depth of a tree.
-  // Remember that the depth and height
-  // of a tree are both the root height.
-  public int Depth()
+  // compute the height of a tree.
+  // Remember that the height
+  // of a tree is the height of 
+  // its root node.
+  public int Height()
   {
-    int depth = 0;
+    int height = 0;
     if (root != null)
     {
-      depth = Depth(root, 0);
+            height = root.Height;
     }
-    return depth;
-  }
-
-  private int Depth(Node nodeP, int depth)
-  {
-    // "Unless proven otherwise",
-    // we assume that the depth of the
-    // node is the depth it received
-    // as argument.
-    int result = depth;
-    // We assume the depth of
-    // its right sub-tree
-    // is 0.
-    int depthL = 0;
-    if (nodeP.left != null)
-    {
-      // If its left sub-tree is not null,
-      // we inquire about its depth,
-      // knowing that it will be 1 more
-      // than the depth of the current node.
-      depthL = Depth(nodeP.left, result + 1);
-    }
-    // We proceed similarly for the
-    // left sub-tree.
-    int depthR = 0;
-    if (nodeP.right != null)
-    {
-      depthR = Depth(nodeP.right, result + 1);
-    }
-    // Finally, if at least one sub-tree
-    // is not null, we take the max of their
-    // depths to be the depth of the tree
-    // starting with our current node.
-    if (nodeP.left != null || nodeP.right != null)
-    {
-      result = Math.Max(depthL, depthR);
-    }
-    return result;
+    return height;
   }
 
   // Finding is also recursive.
@@ -246,7 +209,7 @@ public abstract class BTree<T>
 
   public override string ToString()
   {
-    string returned = "Tree depth: " + Depth() + "\n";
+    string returned = "Tree height: " + Height() + "\n";
     int tBalance = SubtreeBalance(root);
     returned += "Tree balance: " + tBalance;
     if (tBalance <= -2)
@@ -266,12 +229,12 @@ public abstract class BTree<T>
     return returned;
   }
 
-  private string Stringify(Node nodeP, int depth)
+  private string Stringify(Node nodeP, int height)
   {
     string returned = "";
     if (nodeP != null)
     {
-      for (int i = 0; i < depth; i++)
+      for (int i = 0; i < height; i++)
       {
         returned += " ";
       }
@@ -283,7 +246,7 @@ public abstract class BTree<T>
           + " (h: "
           + nodeP.left.Height
           + ")"
-          + Stringify(nodeP.left, depth + 1);
+          + Stringify(nodeP.left, height + 1);
       }
       if (nodeP.right != null)
       {
@@ -292,7 +255,7 @@ public abstract class BTree<T>
           + " (h: "
           + nodeP.right.Height
           + ")"
-          + Stringify(nodeP.right, depth + 1);
+          + Stringify(nodeP.right, height + 1);
       }
     }
     return returned;
