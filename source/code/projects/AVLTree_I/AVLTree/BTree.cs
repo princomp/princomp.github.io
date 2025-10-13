@@ -79,14 +79,14 @@ public abstract class BTree<T>
   // We now look at how to
   // compute the height of a tree.
   // Remember that the height
-  // of a tree is the height of 
+  // of a tree is the height of
   // its root node.
   public int Height()
   {
     int height = 0;
     if (root != null)
     {
-            height = root.Height;
+      height = root.Height;
     }
     return height;
   }

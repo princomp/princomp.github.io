@@ -1,28 +1,29 @@
 using System;
 using System.Collections.Generic;
 
-/* 
+/*
  * This implementation of AVL tree is
- * "from scratch", and stores the height 
- * of a node as an attribute instead of 
+ * "from scratch", and stores the height
+ * of a node as an attribute instead of
  * re-comptuing it when needed.
- * This class does not inherit from any 
+ * This class does not inherit from any
  * other class and is "standalone".
  */
 
 public class AVLTree<T>
   where T : IComparable<T>
-    // We need T to realize IComparable 
-    // so that we can decide where to 
-    // insert node, exactly like BSTrees.
+// We need T to realize IComparable
+// so that we can decide where to
+// insert node, exactly like BSTrees.
 {
   private class Node
   {
     public T Data { get; set; }
     public Node left;
     public Node right;
-        // Height is implemented as an attribute
-        // with a property.
+
+    // Height is implemented as an attribute
+    // with a property.
     private int height;
     public int Height
     {
@@ -110,37 +111,39 @@ public class AVLTree<T>
     return height;
   }
 
-    // The following will return
-    // a negative number if subtree is right-heavy
-    // a positive number if subtree is left-heavy
-    // 0 if the subtree is perfectly balanced.
+  // The following will return
+  // a negative number if subtree is right-heavy
+  // a positive number if subtree is left-heavy
+  // 0 if the subtree is perfectly balanced.
 
-    private int SubtreeBalance(Node nodeP)
+  private int SubtreeBalance(Node nodeP)
   {
     UpdateHeight(nodeP.left);
     UpdateHeight(nodeP.right);
-        // The resulting value is essentially
-        // nodeP.left.Height - nodeP.right.Height
-        // but we need to account for null values.
-        int balance = 0;
-        if (!(nodeP == null) &&
-                !(nodeP.left == null && nodeP.right == null))
-        {
-            // If nodeP is null, or if nodeP has no children,
-            // then balanceP is 0. Otherwise, we compute it:
-            if (nodeP.left == null)
-            {
-                balance = -(nodeP.right.Height + 1);
-            }
-            else if (nodeP.right == null)
-            {
-                balance = nodeP.left.Height + 1;
-            }
-            else
-            {
-                balance = nodeP.left.Height - nodeP.right.Height;
-            }
-        }
+    // The resulting value is essentially
+    // nodeP.left.Height - nodeP.right.Height
+    // but we need to account for null values.
+    int balance = 0;
+    if (
+      !(nodeP == null)
+      && !(nodeP.left == null && nodeP.right == null)
+    )
+    {
+      // If nodeP is null, or if nodeP has no children,
+      // then balanceP is 0. Otherwise, we compute it:
+      if (nodeP.left == null)
+      {
+        balance = -(nodeP.right.Height + 1);
+      }
+      else if (nodeP.right == null)
+      {
+        balance = nodeP.left.Height + 1;
+      }
+      else
+      {
+        balance = nodeP.left.Height - nodeP.right.Height;
+      }
+    }
     return balance;
   }
 
@@ -270,10 +273,10 @@ public class AVLTree<T>
     return RotaterightChild(nodeP);
   }
 
-    // Note that the following method could also use 
-    // SubtreeBalance to compute if the tree needs to be 
-    // re-balanced, instead of using GetHeight directly.
-    private Node Insert(T valueP, Node nodeP)
+  // Note that the following method could also use
+  // SubtreeBalance to compute if the tree needs to be
+  // re-balanced, instead of using GetHeight directly.
+  private Node Insert(T valueP, Node nodeP)
   {
     if (nodeP == null)
       return new Node(valueP, null, null, 0);
@@ -330,7 +333,7 @@ public class AVLTree<T>
     return nodeP;
   }
 
-public bool Remove(T value)
+  public bool Remove(T value)
   {
     return Remove(value, ref root);
   }
@@ -395,7 +398,7 @@ public bool Remove(T value)
   // The ToString method is simply here to help us debug.
   // It is not really pretty, but using pre-order and spaces
   // to make it easier to understand how the tree is
-  // constructed. 
+  // constructed.
 
   public override string ToString()
   {
