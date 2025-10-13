@@ -83,7 +83,9 @@ public abstract class BTree<T>
   // its root node.
   public int Height()
   {
-    int height = 0;
+    int height = -1;
+    // By convention, an empty tree
+    // will have a height of -1.
     if (root != null)
     {
       height = root.Height;

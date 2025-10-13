@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-public class BSTree<T> : BTree<T>
+public class BSTree<T> : IBTree<T>
   where T : IComparable<T>
 {
   // Inserting into a BSTree

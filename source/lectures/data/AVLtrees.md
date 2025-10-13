@@ -61,4 +61,9 @@ which needs to be re-balanced using the `Doubleleftchild` method given below. In
 ### Computing the height on the fly
 
 It is also possible to compute the height of nodes "on the fly" instead of storing it.
-[This archive](./code/projects/AVLTree_I.zip) demonstrates this concept while additionally inheriting from the `BTree` class [explored previously](./lectures/data/trees).
+
+[This archive](./code/projects/AVLTree_I.zip) demonstrates this concept while additionally
+
+- inheriting from the `BTree` class [explored previously](./lectures/data/trees),
+- adding an `IBTree` class that allows you to explore the re-balancing methods more freely,
+- containing some examples showcasing how re-balancing works.
