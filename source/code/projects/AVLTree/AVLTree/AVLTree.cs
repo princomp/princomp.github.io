@@ -1,14 +1,28 @@
 using System;
 using System.Collections.Generic;
 
+/* 
+ * This implementation of AVL tree is
+ * "from scratch", and stores the height 
+ * of a node as an attribute instead of 
+ * re-comptuing it when needed.
+ * This class does not inherit from any 
+ * other class and is "standalone".
+ */
+
 public class AVLTree<T>
   where T : IComparable<T>
+    // We need T to realize IComparable 
+    // so that we can decide where to 
+    // insert node, exactly like BSTrees.
 {
   private class Node
   {
     public T Data { get; set; }
     public Node left;
     public Node right;
+        // Height is implemented as an attribute
+        // with a property.
     private int height;
     public int Height
     {
@@ -19,7 +33,7 @@ public class AVLTree<T>
           height = value;
         else
           throw new ApplicationException(
-            "TreeNode height can't be < 0"
+            "The height of a node cannot be less than 0."
           );
       }
     }
@@ -59,7 +73,7 @@ public class AVLTree<T>
   {
     if (root == null)
       throw new ApplicationException(
-        "FindMin called on empty BinSearchTree"
+        "FindMin was called on an empty AVL tree."
       );
     else
       return FindMin(root);
@@ -100,36 +114,33 @@ public class AVLTree<T>
     // a negative number if subtree is right-heavy
     // a positive number if subtree is left-heavy
     // 0 if the subtree is perfectly balanced.
-    // The AVL tree will need to be re-balanced if the value
-    // returned is greater than or equal to 2, or
-    // less than or equal to -2.
-    // Stated differently, if the value returned is
-    // -1, 0 or 1, then no re-balancing will take place.
+
     private int SubtreeBalance(Node nodeP)
   {
     UpdateHeight(nodeP.left);
     UpdateHeight(nodeP.right);
-    int balance;
-    if (nodeP == null)
-    {
-      balance = 0;
-    }
-    else if (nodeP.left == null && nodeP.right == null)
-    {
-      balance = 0;
-    }
-    else if (nodeP.left == null)
-    {
-      balance = -(nodeP.right.Height + 1);
-    }
-    else if (nodeP.right == null)
-    {
-      balance = nodeP.left.Height + 1;
-    }
-    else
-    {
-      balance = nodeP.left.Height - nodeP.right.Height;
-    }
+        // The resulting value is essentially
+        // nodeP.left.Height - nodeP.right.Height
+        // but we need to account for null values.
+        int balance = 0;
+        if (!(nodeP == null) &&
+                !(nodeP.left == null && nodeP.right == null))
+        {
+            // If nodeP is null, or if nodeP has no children,
+            // then balanceP is 0. Otherwise, we compute it:
+            if (nodeP.left == null)
+            {
+                balance = -(nodeP.right.Height + 1);
+            }
+            else if (nodeP.right == null)
+            {
+                balance = nodeP.left.Height + 1;
+            }
+            else
+            {
+                balance = nodeP.left.Height - nodeP.right.Height;
+            }
+        }
     return balance;
   }
 
@@ -259,7 +270,10 @@ public class AVLTree<T>
     return RotaterightChild(nodeP);
   }
 
-  private Node Insert(T valueP, Node nodeP)
+    // Note that the following method could also use 
+    // SubtreeBalance to compute if the tree needs to be 
+    // re-balanced, instead of using GetHeight directly.
+    private Node Insert(T valueP, Node nodeP)
   {
     if (nodeP == null)
       return new Node(valueP, null, null, 0);
@@ -316,54 +330,7 @@ public class AVLTree<T>
     return nodeP;
   }
 
-  public int Depth()
-  {
-    int depth = 0;
-    if (root != null)
-    {
-      depth = Depth(root, 0);
-    }
-    return depth;
-  }
-
-  private int Depth(Node nodeP, int depth)
-  {
-    // "Unless proven otherwise",
-    // we assume that the depth of the
-    // node is the depth it received
-    // as argument.
-    int result = depth;
-    // We assume the depth of
-    // its right sub-tree
-    // is 0.
-    int depthL = 0;
-    if (nodeP.left != null)
-    {
-      // If its left sub-tree is not null,
-      // we inquire about its depth,
-      // knowing that it will be 1 more
-      // than the depth of the current node.
-      depthL = Depth(nodeP.left, result + 1);
-    }
-    // We proceed similarly for the
-    // left sub-tree.
-    int depthR = 0;
-    if (nodeP.right != null)
-    {
-      depthR = Depth(nodeP.right, result + 1);
-    }
-    // Finally, if at least one sub-tree
-    // is not null, we take the max of their
-    // depths to be the depth of the tree
-    // starting with our current node.
-    if (nodeP.left != null || nodeP.right != null)
-    {
-      result = Math.Max(depthL, depthR);
-    }
-    return result;
-  }
-
-  public bool Remove(T value)
+public bool Remove(T value)
   {
     return Remove(value, ref root);
   }
@@ -428,12 +395,11 @@ public class AVLTree<T>
   // The ToString method is simply here to help us debug.
   // It is not really pretty, but using pre-order and spaces
   // to make it easier to understand how the tree is
-  // constructed. It also displays the depth of the tree
-  // and the height of the nodes.
+  // constructed. 
 
   public override string ToString()
   {
-    string returned = "Depth: " + Depth() + "\n";
+    string returned = "";
     if (root != null)
     {
       returned += Stringify(root, 0);
@@ -450,7 +416,7 @@ public class AVLTree<T>
       {
         returned += " ";
       }
-      returned += nodeP + " (depth: " + depth + ")\n"; // Calls Node's ToString method.
+      returned += nodeP + "\n"; // Calls Node's ToString method.
       if (nodeP.left != null)
       {
         returned += "L" + Stringify(nodeP.left, depth + 1);
