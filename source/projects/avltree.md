@@ -55,6 +55,7 @@ Bonus points will be given if:
     
     operate after a tree becomes unbalanced after a **deletion** (the examples above had trees unbalanced following an **insertion**).
 - (medium) Override the `Insert` from `AVLTree` in your `IAVLTree` class so that it uses `SubtreeBalance` (like `Delete` do). Write good test cases to make sure your method behaves as expected.
+- (potentially hard) Write in `IAVLTree` a `ToString` method that improves on the one provided in `IBTree`.
 
 ### Submission
 
