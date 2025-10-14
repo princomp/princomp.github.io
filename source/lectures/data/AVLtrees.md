@@ -58,7 +58,6 @@ which needs to be re-balanced using the `Doubleleftchild` method given below. In
 !include code/projects/AVLTree/AVLTree/AVLTree.cs
 ```
 
-
 ### Computing the height on the fly
 
 It is also possible to compute the height of nodes "on the fly" instead of storing it.
