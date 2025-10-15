@@ -112,7 +112,12 @@ Etc., etc. Hence, we get:
 ```
 
 Note that we have *two* recursive calls: one for the `left` `Node`, one for the `right` `Node` (if they are not `null`).
+Depth *of a node* is also briefly mentioned in the `ToString` method, as follows:
 
+```{download="./code/projects/Tree.zip"}
+!include`snippetStart="// constructed.", snippetEnd="// End of helper Stringify method"` code/projects/Tree/Tree/BTree.cs
+```
+ 
 #### Displaying Trees
 
 There are essentially three ways of "linearizing" a tree (that is, listing its value in a sequence), depending how we organize the recursive calls.

@@ -134,7 +134,6 @@ public abstract class BTree<T>
     }
 
     // Finding is also recursive.
-
     public virtual bool Find(T dataP)
     {
         bool found = false;
@@ -281,4 +280,5 @@ public abstract class BTree<T>
         }
         return returned;
     }
+    // End of helper Stringify method
 }
