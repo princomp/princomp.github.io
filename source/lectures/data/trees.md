@@ -93,11 +93,11 @@ However, only the root knows its depth (it is $0$), all the other nodes do not k
 Of course, if the `BTree` is `null`, then deciding its height is easy: it is -1.
 If its `root` has $0$ children, then it is 0.
 But otherwise, we need to ask the children their depths, take the maximum, and add 1 to it.
-For this, we will use *recursion*.
+For this, we will use *recursion* in the `ComputeMaxDepth` method below, that we discuss first.
 
-In short, for a node to determine its depth, it needs to 
+In short, we need to
 
-- Have its `root` "ask its children" what their deepest node is,
+- Have the `root` node "ask its children" what their deepest node is,
 - Take the maximum value returned, and add 1 to it.
 
 For the `root`'s children to determine what the deepest node under them is, they need both to
