@@ -90,10 +90,52 @@ public abstract class BTree<T>
     }
     return height;
   }
+    // We illustrate another way of computing the 
+    // height of the tree, as the depth of the 
+    // deepest node.
 
-  // Finding is also recursive.
+    public int HeightAlt()
+    {
+        int height = 0;
+        if (root != null)
+        {
+            height = Depth(root);
+        }
+        return height;
+    }
 
-  public virtual bool Find(T dataP)
+    private int Depth(Node nodeP)
+    {
+        // We first assume that the Depth of
+        // nodeP is 0.
+        int result = 0;
+        // Then, we compute the depth of
+        // its left subtree, if it is not null.
+        int depthL = 0;
+        if (nodeP.left != null)
+        {
+            depthL = 1 + Depth(nodeP.left);
+        }
+        // We proceed similarly for the
+        // left sub-tree.
+        int depthR = 0;
+        if (nodeP.right != null)
+        {
+            depthR = 1 + Depth(nodeP.right);
+        }
+        // Finally, if at least one sub-tree
+        // is not null, we take the max of their
+        // depths to be the depth of nodeP.
+        if (nodeP.left != null || nodeP.right != null)
+        {
+            result = Math.Max(depthL, depthR);
+        }
+        return result;
+    }
+
+    // Finding is also recursive.
+
+    public virtual bool Find(T dataP)
   {
     bool found = false;
     if (root != null)
@@ -209,7 +251,7 @@ public abstract class BTree<T>
 
   public override string ToString()
   {
-    string returned = "";
+    string returned = "Height of the tree:" + Height() + " (computed alternatively: " + HeightAlt() + ")\n";
     if (root != null)
     {
       returned += Stringify(root, 0);

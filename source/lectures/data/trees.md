@@ -14,7 +14,8 @@ As an abstract data type, it generally uses the following definitions:
 - A (rooted) binary tree has exactly one node with 0 parent (that is not the child of any other node), called *the root*. Except for the root, all the nodes have exactly one parent.
 - A node without children is called *a leaf*.
 - The *depth of a node* is the distance (i.e., the number of times we must go to its parent) from it to the root. This means in particular that the depth of the root is $0$.
-- The *depth of a tree* is the maximum depth of the nodes it contain.
+- The *height of a node* is the greater distance from it to a leaf (i.e., the number of edges on the *longest* path from the node to a leaf).
+- The *height of a tree* is the height of its root node.
 - A *subtree* is the tree obtain by considering a particular node in a tree as the root of the tree made of all the nodes "below" it, starting with its children.
 
 From there, operations generally include, as usual
@@ -33,8 +34,8 @@ In the following example:
 - The root has two children, holding the values 7 and 11,
 - The node holding the value 5 has $0$ children, hence it is a leaf,
 - The node with value 11 has one child (holding the value 30): we call it "the right child", and observe that the node holding the value 11 has no "left child",
-- The depth of the tree is $4$,
-- The nodes holding the values 7, 5 and 8 taken together form a subtree, of depth $1$.
+- The height *of the tree* is $4$,
+- The nodes holding the values 7, 5 and 8 taken together form a subtree, of height $1$.
 
 ## Possible Implementation
 
@@ -56,6 +57,7 @@ As we can see, a `Node` has three elements:
 - `Data` is the value it is holding,
 - `left` denotes its "left child" (which is a `Node`, possibly `null`),
 - `right` denotes its "right child" (which is a `Node`, possibly `null`),
+- (plus `Height`, implemented as a read-only property)
 
 If we wanted to be more technically correct in our drawing, we would explicitly label some nodes as `null`, and the previous tree would actually be as follows:
 
@@ -71,8 +73,19 @@ A `BTree` object is simply the `root` `Node`, and we can construct, empty, and t
 
 #### Computing the Depth of the tree
 
-Now, assume that we are given a `BTree` object. How can we compute its depth?
-Its depth is the maximum depth of the nodes it contain.
+Now, assume that we are given a `BTree` object. How can we compute its height?
+There are two ways: 
+
+- The height of a tree is the height of its root node,
+- The height of a tree is equivalently equal to the depth of its deepest node.
+
+We illustrate both approaches below:
+
+```{download="./code/projects/Tree.zip"}
+!include`snippetStart="// its root node.", snippetEnd="// Finding is also recursive."` code/projects/Tree/Tree/BTree.cs
+```
+
+The second approach uses that the height of the tree is the maximum depth of the nodes it contain.
 However, only the root knows its depth (it is $0$), all the other nodes do not know their depth, only that they have 0, 1 or 2 children.
 
 Of course, if the `BTree` is `null` or if its `root` has $0$ children, then deciding its depth is easy: it is $0$.
@@ -92,7 +105,7 @@ For the `root`'s children to determine what the deepest node under them is, they
 Etc., etc. Hence, we get:
 
 ```{download="./code/projects/Tree.zip"}
-!include`snippetStart="// compute the Depth of a tree.", snippetEnd="// Finding is also recursive."` code/projects/Tree/Tree/BTree.cs
+!include`snippetStart="// deepest node.", snippetEnd="// Finding is also recursive."` code/projects/Tree/Tree/BTree.cs
 ```
 
 Note that we have *two* recursive calls: one for the `left` `Node`, one for the `right` `Node` (if they are not `null`).
