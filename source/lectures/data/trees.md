@@ -79,28 +79,31 @@ There are two ways:
 - The height of a tree is the height of its root node,
 - The height of a tree is equivalently equal to the depth of its deepest node.
 
+If the tree is empty, then we set the height to be -1.
+
 We illustrate both approaches below:
 
 ```{download="./code/projects/Tree.zip"}
-!include`snippetStart="// its root node.", snippetEnd="// Finding is also recursive."` code/projects/Tree/Tree/BTree.cs
+!include`snippetStart="// its root node.", snippetEnd="// We illustrate another way of computing the"` code/projects/Tree/Tree/BTree.cs
 ```
 
 The second approach uses that the height of the tree is the maximum depth of the nodes it contain.
 However, only the root knows its depth (it is $0$), all the other nodes do not know their depth, only that they have 0, 1 or 2 children.
 
-Of course, if the `BTree` is `null` or if its `root` has $0$ children, then deciding its depth is easy: it is $0$.
-Otherwise, the idea is that each tree knows that its depth is $1$ more than the depth of the its two sub-trees: remains to find which sub-tree has the biggest depth.
+Of course, if the `BTree` is `null`, then deciding its height is easy: it is -1.
+If its `root` has $0$ children, then it is 0.
+But otherwise, we need to ask the children their depths, take the maximum, and add 1 to it.
 For this, we will use *recursion*.
 
-In short, for a tree to determine its node, it needs to 
+In short, for a node to determine its depth, it needs to 
 
 - Have its `root` "ask its children" what their deepest node is,
-- Take the maximum value returned.
+- Take the maximum value returned, and add 1 to it.
 
 For the `root`'s children to determine what the deepest node under them is, they need both to
 
 - "Ask their children" what is their deepest node,
-- Take the maximum value returned.
+- Take the maximum value returned, and add 1 to it.
 
 Etc., etc. Hence, we get:
 

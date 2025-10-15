@@ -83,7 +83,7 @@ public abstract class BTree<T>
   // its root node.
   public int Height()
   {
-    int height = 0;
+    int height = -1;
     if (root != null)
     {
       height = root.Height;
@@ -96,7 +96,7 @@ public abstract class BTree<T>
 
     public int HeightAlt()
     {
-        int height = 0;
+        int height = -1;
         if (root != null)
         {
             height = Depth(root);
@@ -114,21 +114,21 @@ public abstract class BTree<T>
         int depthL = 0;
         if (nodeP.left != null)
         {
-            depthL = 1 + Depth(nodeP.left);
+            depthL = Depth(nodeP.left);
         }
         // We proceed similarly for the
         // left sub-tree.
         int depthR = 0;
         if (nodeP.right != null)
         {
-            depthR = 1 + Depth(nodeP.right);
+            depthR = Depth(nodeP.right);
         }
         // Finally, if at least one sub-tree
         // is not null, we take the max of their
         // depths to be the depth of nodeP.
         if (nodeP.left != null || nodeP.right != null)
         {
-            result = Math.Max(depthL, depthR);
+            result = 1 + Math.Max(depthL, depthR);
         }
         return result;
     }
