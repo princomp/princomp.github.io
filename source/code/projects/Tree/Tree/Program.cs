@@ -8,12 +8,12 @@ class Program
         Console.WriteLine(btree);
 
         /*
-    * The purpose of this example is to illustrate that
-    * the order in which values are inserted matter.
-    */
+        * The purpose of this example is to illustrate that
+        * the order in which values are inserted matter.
+        * We display the tree periodically to "see it grow".   
+        */
         btree.Insert(10);
         Console.WriteLine(btree);
-
         btree.Insert(6);
         btree.Insert(13);
         btree.Insert(12);
@@ -50,6 +50,7 @@ class Program
         btree.Insert(8);
         btree.Insert(15);
 
+        /* Testing traversal methods. */
         Console.WriteLine(btree);
         Console.WriteLine("Inorder traversal:");
         Console.WriteLine(btree.TrasverseI());
@@ -58,16 +59,16 @@ class Program
         Console.WriteLine("Postorder traversal:");
         Console.WriteLine(btree.TrasversePo());
 
+        /* Testing FindMin. */
         Console.WriteLine("Smallest value: " + btree.FindMin());
-
+        btree.Delete(btree.FindMin());
+        Console.WriteLine(btree);
+        Console.WriteLine("Smallest value: " + btree.FindMin());
         btree.Delete(btree.FindMin());
         Console.WriteLine(btree);
         Console.WriteLine("Smallest value: " + btree.FindMin());
 
-        btree.Delete(btree.FindMin());
-        Console.WriteLine(btree);
-        Console.WriteLine("Smallest value: " + btree.FindMin());
-
+        /* Testing FindMin with negavite values. */
         btree.Insert(-1);
         btree.Insert(-8);
         btree.Insert(-7);
@@ -77,6 +78,12 @@ class Program
         Console.WriteLine(btree);
         Console.WriteLine("Smallest value: " + btree.FindMin());
 
+        /* Testing ValueGreaterThan. */
+        Console.WriteLine("Value greater than 10: " + btree.ValueGreaterThan(10) + ".");
+        Console.WriteLine("Value greater than 30: " + btree.ValueGreaterThan(30) + ".");
+        Console.WriteLine("Value greater than 31: " + btree.ValueGreaterThan(31) + ".");
+
+        /* Testing occurs. */
         for (int i = -10; i <= 10; i++)
         {
             Console.WriteLine(i + " occurs: " + btree.Find(i));

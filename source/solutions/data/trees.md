@@ -205,3 +205,47 @@ tags:
         }
         ```
         </details>
+
+#. Given the usual implementation of `Node`:
+
+    ```
+    private class Node
+    {
+        public T Data { get; set; }
+        public Node left;
+        public Node right;
+
+        public Node(T dataP = default(T), Node leftP = null, Node rightP = null)
+        {
+            Data = dataP;  left = leftP; right = rightP;
+        }
+    }
+    ```
+
+    Write an `Height` property for `Node` (i.e., a way of *computing* the longest distance between the calling `Node` and a leaf).
+
+    <details>
+    <summary>Solution</summary>
+    The one provided in the lecture notes is:
+    
+    ```{download="./code/projects/Tree.zip"}
+    !include`snippetStart="// Computing the Height of a node:", snippetEnd="// No set method for Height."` code/projects/Tree/Tree/BTree.cs
+    ```
+    </details>
+
+
+#. Considering an implementation of binary search trees where `T` realizes the `IComparable<T>` interface (i.e., where the `.CompareTo` method can be used to compare values), write a `ValueGreaterThan` method that
+
+    - takes an argument `dataP` of type `T`,
+    - returns 
+        - `true` if there is a value greater than or equal to `dataP` in the binary search tree,
+        - `false` if there is no value greater than `dataP` in the binary search tree, or if the tree is empty.    
+    
+    <details>
+    <summary>Solution</summary>
+    The one provided in the lecture notes is:
+    
+    ```{download="./code/projects/Tree.zip"}
+    !include`snippetStart="// than the argument in the tree.", snippetEnd="// Done with ValueGreaterThan helper method."` code/projects/Tree/Tree/BSTree.cs
+    ```
+    </details>   

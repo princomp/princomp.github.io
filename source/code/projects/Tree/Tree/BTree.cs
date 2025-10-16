@@ -29,6 +29,7 @@ public abstract class BTree<T>
             return Data.ToString();
         }
 
+        // Computing the Height of a node:
         public int Height
         {
             get
@@ -52,6 +53,7 @@ public abstract class BTree<T>
                 return height;
             }
         }
+        // No set method for Height.
     }
 
     // We can now define the BTree class

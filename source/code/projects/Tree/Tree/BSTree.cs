@@ -144,4 +144,33 @@ public class BSTree<T> : BTree<T>
   }
 
   // Done with deletion.
+
+    // The following returns true if there is a value greater
+    // than the argument in the tree.
+
+    public bool ValueGreaterThan(T dataP)
+    {
+        bool returned = false;
+        if(root != null)
+        {
+            returned = ValueGreaterThan(dataP, root);
+        }
+        return returned;
+    }
+
+    private bool ValueGreaterThan(T dataP, Node nodeP)
+    {
+        bool returned = false;
+        if (nodeP != null)
+        {
+            if (dataP.CompareTo(nodeP.Data) > 0) // dataP > nodeP.Data
+                return ValueGreaterThan(dataP, nodeP.right);
+            // We only need to go right, since values will decrease
+            // if we go left.
+            else
+                returned = true;
+        }
+        return returned;
+    }
+    // Done with ValueGreaterThan helper method.
 }
