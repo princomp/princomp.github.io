@@ -12,7 +12,7 @@ class Program
   {
     Low,
     Medium,
-    High,
+    High
   }
 
   static void Main(string[] args)
