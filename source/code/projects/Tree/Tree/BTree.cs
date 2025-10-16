@@ -250,7 +250,7 @@ public abstract class BTree<T>
 
     public override string ToString()
     {
-        string returned = "Height of the tree:" + Height() + " (computed alternatively: " + HeightAlt() + ")\n";
+        string returned = "Height of the tree: " + Height() + " (computed alternatively: " + HeightAlt() + ")\n";
         if (root != null)
         {
             returned += Stringify(root, 0);
@@ -268,7 +268,7 @@ public abstract class BTree<T>
             {
                 returned += " ";
             }
-            returned += nodeP + " Depth:" + padding + ", Height: " + nodeP.Height + "\n"; // Calls Node's ToString method.
+            returned += nodeP + " Depth: " + padding + ", Height: " + nodeP.Height + "\n"; // Calls Node's ToString method.
             if (nodeP.left != null)
             {
                 returned += "L" + Stringify(nodeP.left, padding + 1);
