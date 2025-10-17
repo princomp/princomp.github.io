@@ -12,13 +12,11 @@ tags:
 
 A *dictionary*, also called a *hash*, an *associative array*, a *map*, or a *hashmap*, is a key-value store: it stores values (that can be of any type) and indexes them using a key (which is in general of a simple type, such as `int`).
 
-Described [abstractly](./lectures/data/intro#abstract-data-types), [a dictionary](https://en.wikipedia.org/wiki/Hash_table)) is 
+Described [abstractly](./lectures/data/intro#abstract-data-types), [a dictionary](https://en.wikipedia.org/wiki/Hash_table) is 
 
-- a finite collection of elements,
+- a finite collection of pair of elements (one key, one value),
 - in *no* particular order,
-- that may contain the same element multiple times.
-
-The fact that it may contain the same element multiple times makes it different from a set, the fact that it is ordered makes it different from a [multiset](https://en.wikipedia.org/wiki/Multiset).
+- that may contain the same *value* multiple times (it *cannot* contain the same key twice, however).
 
 Generally, it has operations to…
 
@@ -28,6 +26,10 @@ Generally, it has operations to…
 - … remove a key-value pair,
 - … test for existence of a key.
 
+And, very importantly, it uses
+
+- *a hash function*, which transforms the key into an `int` (its *hash*), used as an array index, 
+- *a collision resolution strategy*, which handles when two *different* keys have been assigned the same hash by the hash function.
 
 ## Possible Implementation
 
