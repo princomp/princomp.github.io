@@ -9,7 +9,7 @@ class Program
     CDictionary<string, int> ht = new CDictionary<
       string,
       int
-    >(13, CDictionary<string, int>.CollisionRes.Linear);
+    >(13, CDictionary<string, int>.PSSType.Linear);
     // Key of type string, value of type int.
     ht.Add("one", 1);
     ht.Add("twenty", 20);
