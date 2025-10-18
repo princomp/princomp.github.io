@@ -3,58 +3,8 @@ using System.Collections.Generic;
 
 class Program
 {
-  /*
-   * Demonstrating how to use
-   * enum type, cf.
-   * https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/enum
-   */
-  public enum Level
-  {
-    Low,
-    Medium,
-    High
-  }
-
   static void Main(string[] args)
   {
-    // Demonstrating enum type.
-    Level lvl1 = Level.Medium; // To access the value, we prefix with Level.
-    Level lvl2 = (Level)0; // We can cast an int into a Level.
-    Console.WriteLine(lvl1 + " " + lvl2);
-    // Will display "Medium Low"
-
-    // Demonstrating PrimeHelper class:
-    for (int i = 0; i < 10; i++)
-    {
-      Console.WriteLine(
-        "The smallest prime greater than or equal to "
-          + i
-          + " is "
-          + PrimeHelper.NextPrime(i)
-          + "."
-      );
-    }
-
-    // Demonstrating GetHashCode:
-    Console.WriteLine(
-      "The hash code of an empty array of 12 int is: "
-        + (new int[12]).GetHashCode()
-        + "."
-    );
-    Console.WriteLine(
-      "The hash code of an empty array of 14 string is: "
-        + (new string[14]).GetHashCode()
-        + "."
-    );
-    Console.WriteLine(
-      "The hash code of \"test string\" is: "
-        + "test string".GetHashCode()
-        + "."
-    );
-    Console.WriteLine(
-      "The hash code of 12 is: " + 12.GetHashCode() + "."
-    );
-
     // Example of using the CDictionary class
     CDictionary<string, int> ht = new CDictionary<
       string,
