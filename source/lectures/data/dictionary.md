@@ -83,7 +83,7 @@ Then, a dictionary has only two attributes: an array of `Cell`s, and a probe seq
 !include`snippetStart="// probe sequence strategy type.", snippetEnd="// Status Type will be used to mark"` code/projects/Dictionary/Dictionary/Dictionary.cs
 ```
 ```{download="./code/projects/Dictionary.zip"}
-!include`snippetStart="// - and a probe sequence strategy.", snippetEnd="// The ToString method is immediate"` code/projects/Dictionary/Dictionary/Dictionary.cs
+!include`snippetStart="// - and a probe sequence strategy.", snippetEnd="// The ToString method uses String.Format"` code/projects/Dictionary/Dictionary/Dictionary.cs
 ```
 
 The default size of 31 and the reason why we are using the `NextPrime` method are discussed [further down](#array-size).
@@ -94,8 +94,8 @@ The next important bit is to decide where a pair key, value will be stored in th
 Hence, computing an index requires to 
 
 - start from the hash of the key, as computed by `GetHashCode`,
-- "shift" the hash if a collision happened, by adding something to it,
-- take the absolute value of the resulting number (since a `GetHashCode` can return negative values),
+- take its absolute value (since a `GetHashCode` can return negative values),
+- "shift" the hash if a collision happened (possibly multiple times), by adding something to it,
 - take the remainder of dividing this number by `table.Length`, to make sure we produce a "valid" index.
 
 All together, this guarantee that the index we produced is positive, and less than `table.Length`.
@@ -128,6 +128,10 @@ Once we have reached this point (i.e., once we exit the `while` loop), we know t
 ```
 
 
+<!--
+https://en.wikibooks.org/wiki/Data_Structures/Hash_Tables#Open_addressing
+
+https://github.com/dotnet/runtime/issues/38340
 
 
     /*
