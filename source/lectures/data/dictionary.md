@@ -88,7 +88,7 @@ Then, a dictionary has only two attributes: an array of `Cell`s, and a probe seq
 !include`snippetStart="// - and a probe sequence strategy.", snippetEnd="// The ToString method uses String.Format"` code/projects/Dictionary/Dictionary/Dictionary.cs
 ```
 
-The default size of 31 and the reason why we are using the `NextPrime` method are discussed [further down](#array-size).
+The default size of 31 and the reason why we are using the `NextPrime` method are discussed [further down](#how-is-the-size-of-the-array-decided).
 
 #### Computing the index
 
@@ -113,7 +113,7 @@ We obtain the following, where the details of `CollisionResolution` are not impo
 Adding an element is a delicate process.
 We only need a key and a value, and then we 
 
-- make sure the dictionary does not already contain a key-value pair with the same key ([detailed below](#find)),
+- make sure the dictionary does not already contain a key-value pair with the same key ([detailed below](#finding-a-key)),
 - compute an index, store it into a variable `index`, and proceed as follows:
 
     As long as the table contains a `Cell` at `index` whose status is not `Deleted` nor `Empty`, we
@@ -132,17 +132,17 @@ We only need a key and a value, and then we
 !include`snippetStart="// Adding an element", snippetEnd="// Done with adding an element"` code/projects/Dictionary/Dictionary/Dictionary.cs
 ```
 
-#### Finding a key {#find}
+#### Finding a key 
 
 For `find`, we use a subroutine `FindI` that computes the index of a key if it exists, returns -1 otherwise.
 The critical point is to understand that we *need to keep looking even if the cell is marked as `deleted`*.
-We illustrate this [point below](#deleted).
+We illustrate this [point below](#handling-deletion).
 
 ```{download="./code/projects/Dictionary.zip"}
 !include`snippetStart="// We use a bool Find sub-routine", snippetEnd="// Done with found."` code/projects/Dictionary/Dictionary/Dictionary.cs
 ```
 
-#### Handling Deleting {#deleted}
+#### Handling Deletion
 
 The `Remove` method heavily relies on `FindI`:
 
@@ -160,7 +160,7 @@ Imagine the following scenario:
 
 This is the reason why we need to keep track of the deleted cells, to make sure `Find` will keep looking because it knows that possibly, when the value with key `"Lora"` was inserted, its index was already taken.
 
-#### How is the size of the array decided? {#array-size}
+#### How is the size of the array decided?
 
 The size of the array will in general be a prime number. This is discussed in detail [on stackexchange](https://cs.stackexchange.com/a/64191), but can be easily illustrated.
 Let us assume that our dictionary
