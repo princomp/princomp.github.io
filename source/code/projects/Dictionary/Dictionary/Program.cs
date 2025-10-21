@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-
+// A simple, dummy class, to illustrate that 
+// dictionaries can contain any type of 
+// values, even complex ones.
 public class Address
 {
     public string Street { get; set; }
@@ -24,13 +26,18 @@ class Program
           string,
           Address
         >(13, CDictionary<string, Address>.PSSType.Linear);
-        // Key of type string, value of type int.
+        // Key of type string, value of type Address, Linear probe sequence strategy.
+        // Try with
+        // CDictionary<string, Address>.PSSType.Linear
+        // CDictionary<string, Address>.PSSType.Quad 
+        // CDictionary<string, Address>.PSSType.Double
 
-        string[] friends = { "Bob", "Sarah", "Justice", "Claire", "Pierre", "Mary", "Lora" };
+        string[] friends = { "Bob", "Sarah", "Sam", "Justice", "Claire", "Pierre", "Mary", "Lora" };
+
         foreach (string friend in friends)
         {
             Console.WriteLine("Inserting " + friend + " (Original index: " + notebook.GetIndex(friend, 0) + ")");
-            notebook.Add(friend, new Address("Main St."));
+            notebook.Add(friend, new Address(notebook.GetIndex(friend, 0) + " Main St."));
         }
 
         Console.WriteLine(notebook);
@@ -59,54 +66,29 @@ class Program
             Console.WriteLine(ex.Message);
         }
 
-        /*
+        Console.WriteLine("Clearing the notebook.");
+        notebook.Clear();
+        Console.WriteLine(notebook);
 
-        notebook.Add("twenty", 20);
-    notebook.Add("fourteen", 14);
-    notebook.Add("two", 2);
-    notebook.Add("seventeen", 17);
-    notebook["fifteen"] = 15;
-    Console.Write(notebook);
-    Console.WriteLine(notebook["two"]);
-    notebook["two"] = 10;
-    Console.WriteLine(notebook["two"]);
+        string[] friends2 = {"Pierre", "Sandra", "Joy", "Nicole", "Sam", "Fritz"}; 
 
-    int x = notebook.Find("two");
-    Console.WriteLine($"Found x = {x}");
-    try
-    {
-      int y = notebook.Find("zzz");
-      Console.WriteLine($"Found x = {y}");
-    }
-    catch (Exception)
-    {
-      Console.WriteLine($"Didn't find zzz");
-    }
+    foreach (string friend in friends2)
+        {
+            Console.WriteLine("Inserting " + friend + " (Original index: " + notebook.GetIndex(friend, 0) + ")");
+            notebook.Add(friend, new Address(notebook.GetIndex(friend, 0) + " Main St."));
+        }
+        Console.WriteLine(notebook);
 
-    notebook.Remove("two");
-    try
-    {
-      int y = notebook.Find("two");
-      Console.WriteLine($"Should not find two = {y}");
-    }
-    catch (Exception)
-    {
-      Console.WriteLine(
-        $"Didn't find two since it was removed"
-      );
-    }
-    try
-    {
-      notebook.Remove("two");
-      int y = notebook.Find("two");
-      Console.WriteLine($"Should not find two = {y}");
-    }
-    catch (Exception)
-    {
-      Console.WriteLine(
-        $"Shoud throw when trying to remove two since it was removed"
-      );
-    }
-    */
+        Console.WriteLine("If the table size is not prime, we obtain:");
+        for (int i = 0; i < 10; i++)
+        {
+            Console.Write((i * i) % 12 + ", ");
+        }
+
+        Console.WriteLine("…\nIf the table size is prime, we obtain:");
+        for (int i = 0; i < 10; i++)
+        {
+            Console.Write((i * i) % 13 + ", ");
+        }
     }
 }

@@ -99,18 +99,18 @@ public class CDictionary<TKey, TValue>
     // how many collisions we met so far.
     public int GetIndex(TKey keyP, int countP)
     {
-        // countP captures the number of times we had to solve
-        // a collision.
+        // countP captures the number of times we had 
+        // to solve a collision.
         return (
             Math.Abs(keyP.GetHashCode())
             + CollisionResolution(keyP, countP)
           ) % table.Length;
     }
 
-    // This is the how collision are handled.
-    // It depends on the strategy picked,
-    // the key, and the number of time we had
-    // to handle a collision.
+    // This is how collisions are handled.
+    // It depends on the strategy picked (Strategy),
+    // the key (keyP), and the number of time we had
+    // to handle a collision (countP).
     private int CollisionResolution(TKey keyP, int countP)
     {
         if (countP == 0)
@@ -153,12 +153,14 @@ public class CDictionary<TKey, TValue>
         )
         {
             count++;
-            if (count == table.Length) // If table is full, throw an exception.
+            if (count == table.Length)
             {
+                // If table is full, throw an exception.
                 throw new ApplicationException("Table is full.");
             }
-            else // there is still room, generate the next index.
+            else
             {
+                // There is still room, generate the next index.
                 index = GetIndex(keyP, count);
             }
         }
@@ -178,6 +180,7 @@ public class CDictionary<TKey, TValue>
     }
     // Done with adding an element
 
+        // We use a bool Find sub-routine
     public bool Find(TKey keyP)
     {
         bool found = FindI(keyP) != -1;
@@ -207,7 +210,9 @@ public class CDictionary<TKey, TValue>
         if (!found) { index = -1; }
         return index;
     }
+    // Done with found.
 
+        // Removing relies also on Find:
     public void Remove(TKey keyP)
     {
         int index = FindI(keyP);
@@ -220,4 +225,5 @@ public class CDictionary<TKey, TValue>
             table[index].Status = StatusType.Deleted;
         }
     }
+    // Done with Remove
 }
