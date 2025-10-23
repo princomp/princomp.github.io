@@ -25,7 +25,7 @@ class Program
         CDictionary<string, Address> notebook = new CDictionary<
           string,
           Address
-        >(13, CDictionary<string, Address>.PSSType.Linear);
+        >(13, CDictionary<string, Address>.PSSType.Quad);
         // Key of type string, value of type Address, Linear probe sequence strategy.
         // Try with
         // CDictionary<string, Address>.PSSType.Linear
@@ -90,5 +90,49 @@ class Program
         {
             Console.Write((i * i) % 13 + ", ");
         }
+        Console.WriteLine("…");
+
+        Console.WriteLine("\nFinally, let us observe the index computed using the quadratic strategy:");
+
+        CDictionary<string, string> demoQ = new CDictionary<
+string,
+string
+>(1009, CDictionary<string, string>.PSSType.Quad);
+        bool[] arrayQ = new bool[1009];
+        for (int i = 0; i < arrayQ.Length; i++)
+        {
+            arrayQ[demoQ.GetIndex("Test", i)] = true;
+            // Uncomment the following if you'd like to see 
+            // which indices are hit.
+            // Console.WriteLine(i +": " + demoQ.GetIndex("Test", i) + ".");
+        }
+        int count = 0;
+        for (int i = 0; i < arrayQ.Length; i++)
+        {
+            if (arrayQ[i]) count++;
+        }
+        Console.WriteLine($"We hit {((decimal)count / arrayQ.Length):p} of the indices.");
+
+        Console.WriteLine("\nFinally, let us observe the index computed using the double hash strategy:");
+        // Demonstrating the double hash strategy:
+                    CDictionary<string, string> demoD = new CDictionary<
+          string,
+          string
+        >(1009, CDictionary<string, string>.PSSType.Double);
+        bool[] arrayD = new bool[1009];
+        for (int i = 0; i < arrayD.Length; i++)
+        {
+            arrayD[demoD.GetIndex("Test", i)] = true;
+            // Uncomment the following if you'd like to see 
+            // which indices are hit.
+            // Console.WriteLine(i +": " + demoD.GetIndex("Test", i) + ".");
+        }
+        count = 0;
+        for (int i = 0; i < arrayD.Length; i++)
+        {
+            if (arrayD[i]) count++;
+        }
+        Console.WriteLine($"We hit {((decimal)count / arrayD.Length):p} of the indices.");
+        // 100% !
     }
 }

@@ -105,7 +105,10 @@ public class CDictionary<TKey, TValue>
             Math.Abs(keyP.GetHashCode())
             + CollisionResolution(keyP, countP)
           ) % table.Length;
+
     }
+    // GetIndex is public for demonstration purposes, 
+    // but should really be private.
 
     // This is how collisions are handled.
     // It depends on the strategy picked (Strategy),
@@ -123,15 +126,26 @@ public class CDictionary<TKey, TValue>
                 return countP * countP;
             else if (Strategy == PSSType.Double)
                 // This is double hashing.
-                return countP * (31 - (keyP.GetHashCode() % 31));
-            // countP * hash2(keyP) where hash2 is 31 - (key % 31) and will always be > 0
+                return countP * GetHash2(keyP);
             else
+                // This is needed to compile:
+                // even if we know that those are 
+                // the only values in the PSSType 
+                // enumerated datatype, C# will
+                // complain that not all code path 
+                // return a value otherwise.
                 throw new ApplicationException(
                   "Unknown collision startegy."
                 );
         }
     }
     // Done with GetIndex and CollisionResolution.
+
+    // Secondary hash function
+    private int GetHash2(TKey key)
+    {
+        return table.Length - (key.GetHashCode() % table.Length);
+    }
 
     // Adding an element
     public void Add(TKey keyP, TValue valueP)

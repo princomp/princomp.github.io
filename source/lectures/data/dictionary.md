@@ -142,7 +142,7 @@ We illustrate this [point below](#handling-deletion).
 !include`snippetStart="// We use a bool Find sub-routine", snippetEnd="// Done with found."` code/projects/Dictionary/Dictionary/Dictionary.cs
 ```
 
-#### Handling Deletion
+#### Handling deletion
 
 The `Remove` method heavily relies on `FindI`:
 
@@ -186,25 +186,35 @@ Table size | Probe sequence
 
 While still not ideal, we can see that using a prime number for the size allows to "break the cyclicity" every now and then and to obtain additional numbers in the sequence: we go from 4 different indices to 7 per 10 indexes.
 
-The default size of 31 is picked for [various reasons](https://stackoverflow.com/questions/299304/why-does-javas-hashcode-in-string-use-31-as-a-multiplier), some being historical, 
+The default size of 31 is picked for [various reasons](https://stackoverflow.com/questions/299304/why-does-javas-hashcode-in-string-use-31-as-a-multiplier), some being historical.
 
+As we can see, the quadratic probing strategy has an issue that linear probing does not have: it may "skip" some indices, and incorrectly returns that the array is full while it is not. 
+Why would we chose it, then? Because of clustering.
 
 #### Clustering
 
-In general, the main goal is to avoid having parts of the array filled while other parts are left unused, a situation known as *clustering*.
+An important goal of dictionaries is to avoid having parts of the array filled while other parts are left unused, a situation known as *clustering*.
+This is detrimental, because finding an index requires more and more computation if keys are often given the same or close indices (i.e., we need to call `GetIndex` with higher `countP` values).
+
 This situation *will* happen if too many keys are given the same hash and index, something that is hard to predict since keys will in general not be uniformly distributed and not known ahead of time.
-Linear probing is very bad in solving this problem, since the clusters are "spread out continuously", quadratic probing is an improvement, but only partially solve this issue, since keys with identical hashes will still follow teh same sequence. 
-Double hashing is a bit better at solving this problem, since keys with identical hashes may drift apart significantly when the secondary hash function is applied.
+Linear probing is very bad in solving this problem, since the clusters are "spread out continuously", quadratic probing is an improvement, but only partially solve this issue, since keys with identical hashes will still follow the same sequence. 
+[Double hashing](https://en.wikipedia.org/wiki/Double_hashing) is a bit better at solving this problem, since keys with identical hashes may drift apart significantly when the secondary hash function is applied:
+
+
+```{download="./code/projects/Dictionary.zip"}
+!include`snippetStart="// Secondary hash function", snippetEnd="// Adding an element"` code/projects/Dictionary/Dictionary/Dictionary.cs
+```
+
+A second Hash function **must never evaluate to zero** (otherwise we are just trying the same spot again and again), be as independent from the first hash function as possible, and should help in trying as many slots as possible.
+Note that our function never evaluate to zero, since `key.GetHashCode() % table.Length` gives a value between 0 and `table.Length`-1, so `table.Length - (key.GetHashCode() % table.Length)` gives a value between 1 and `table.Length`.
+
+Our `main` method includes a test demonstrating the efficiency of our double hashing techniques:
+
+```{download="./code/projects/Dictionary.zip"}
+!include`snippetStart="// Demonstrating the double hash strategy:", snippetEnd="// 100% !"` code/projects/Dictionary/Dictionary/Dictionary.cs
+```
+
+While the quadratic method hits about 50% of the indices, the double hashing techniques reach 100%!
 
 This general discussion relates to performance and requires to measure the dictionary's load factor, which is the number of entries occupied in the hash table divided by the table length (or number of "buckets").
 Of course, open-addressed hash table cannot have a load factor greater than 1, but other techniques, such as chaining, allows for larger load factors.
-
-<!--
-Double hashing, in which the interval between probes is computed by a secondary hash function
-
-For open addressing schemes, the hash function should also avoid clustering, the mapping of two or more keys to consecutive slots. Such clustering may cause the lookup cost to skyrocket, even if the load factor is low and collisions are infrequent. The popular multiplicative hash is claimed to have particularly poor clustering behavior.[22][4]
-
-https://www.javamex.com/tutorials/collections/hash_function_technical_2.shtml
-
-cf. "Implementing Double Hashing" at <https://pressbooks.palni.org/anopenguidetodatastructuresandalgorithms/chapter/hashing-and-hash-tables/>
--->

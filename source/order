@@ -67,6 +67,7 @@
 ./lectures/data/trees.md
 ./lectures/data/AVLtrees.md
 ./lectures/data/dictionary.md
+./lectures/data/priority_queue.md
 ./lectures/misc/
 ./lectures/misc/over_under_flow.md
 ./lectures/misc/random.md
