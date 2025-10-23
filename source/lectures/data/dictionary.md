@@ -218,3 +218,14 @@ While the quadratic method hits about 50% of the indices, the double hashing tec
 
 This general discussion relates to performance and requires to measure the dictionary's load factor, which is the number of entries occupied in the hash table divided by the table length (or number of "buckets").
 Of course, open-addressed hash table cannot have a load factor greater than 1, but other techniques, such as chaining, allows for larger load factors.
+
+#### Clearing
+
+Clearing the dictionary set all the `Status` to `Empty`:
+
+```{download="./code/projects/Dictionary.zip"}
+!include`snippetStart="// Clear method", snippetEnd="// The following is used to compute the"` code/projects/Dictionary/Dictionary/Dictionary.cs
+```
+
+We decide to do "object reuse", or *pooling*, so that we can re-use the object instead of deleting it by setting the array to `null` and re-creating `Cell` objects when needed.
+This may or may not be a performance gain, based on context, but must be done using `Empty` instead of `Deleted`: otherwise, the `FindI` method may go through many `Cell` that have been cleared instead of deciding more rapidly that a key is missing. The `Add` method, however, already handle this case by having the same behavior for `Deleted` and `Empty` status.

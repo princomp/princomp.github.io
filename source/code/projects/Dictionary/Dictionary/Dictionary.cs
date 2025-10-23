@@ -86,6 +86,7 @@ public class CDictionary<TKey, TValue>
         return returned;
     }
 
+    // Clear method
     public void Clear()
     {
         for (int i = 0; i < table.Length; i++)
@@ -206,11 +207,16 @@ public class CDictionary<TKey, TValue>
         bool found = false;
         int count = 0;
         int index = GetIndex(keyP, count);
-        while (table[index] != null && count <= table.Length && !found)
+        while (table[index] != null && count < table.Length && !found)
         {
             if (table[index].Status == StatusType.Active && table[index].Key.Equals(keyP))
             {
                 found = true;
+            }
+            else if (table[index].Status == StatusType.Empty)
+            {
+                // We can exit, the value will not be found.
+                count = table.Length;
             }
             else
             {
