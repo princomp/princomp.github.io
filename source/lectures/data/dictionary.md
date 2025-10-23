@@ -211,7 +211,7 @@ Note that our function never evaluate to zero, since `key.GetHashCode() % table.
 Our `main` method includes a test demonstrating the efficiency of our double hashing techniques:
 
 ```{download="./code/projects/Dictionary.zip"}
-!include`snippetStart="// Demonstrating the double hash strategy:", snippetEnd="// 100% !"` code/projects/Dictionary/Dictionary/Dictionary.cs
+!include`snippetStart="// Demonstrating the double hash strategy:", snippetEnd="// 100% !"` code/projects/Dictionary/Dictionary/Program.cs
 ```
 
 While the quadratic method hits about 50% of the indices, the double hashing techniques reach 100%!
