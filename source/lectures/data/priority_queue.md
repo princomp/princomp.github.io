@@ -50,7 +50,38 @@ An implementation using lists would be very similar to the one using array, exce
 
 ### Using Heaps
 
-A maximally efficient implementation of priority queues is given by [heaps](https://en.wikipedia.org/wiki/Heap_(data_structure)).
+A maximally efficient implementation of priority queues is given by [heaps](https://en.wikipedia.org/wiki/Heap_(data_structure)), which is
+
+- A complete binary tree^[A complete binary tree is such that all levels are filled completely except the lowest level, which is filled from as left as possible.] (that we will represent in an array),
+– Such that the priority of every (non-root) node is less important than the priority of its parent.
+
+Note that this is different from being a binary search tree.
+
+```{download="./code/projects/PQueue_heap.zip"}
+!include code/projects/PQueue_heap/PQueue/PQueue.cs
+```
+
+
+<!--
+
+- Index 0 is unused.
+- Most important will be at index 1.
+
+Deleting consists in:
+- Remove node root,
+- Move right-most node in last row to root,
+- "Percolate down" to restore heap property
+
+https://slideplayer.com/slide/17853217/
+
+
+https://courses.cs.washington.edu/courses/cse373/18su/files/slides/lecture-10.pdf
+https://courses.cs.washington.edu/courses/cse373/14sp/lecture9.pdf
+https://www.geeksforgeeks.org/dsa/priority-queue-using-linked-list/
+https://www.geeksforgeeks.org/dsa/priority-queue-using-array/
+https://en.wikipedia.org/wiki/Priority_queue
+
+-->
 
 <!--
 

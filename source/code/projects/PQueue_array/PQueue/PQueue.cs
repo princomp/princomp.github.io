@@ -41,7 +41,7 @@ class PQueue<TPriority, TValue> where TPriority : IComparable<TPriority>
         }
         if (slot == -1)
         {
-            throw new ApplicationException("Could not add the element.");
+            throw new ApplicationException("Queue is full, cannot add " + valueP + " with priority " + priorityP + ".");
         }
         else
         {
@@ -100,11 +100,11 @@ class PQueue<TPriority, TValue> where TPriority : IComparable<TPriority>
         return minI;
     }
 
-    public string Peek()
+    public TValue Peek()
     {
         // Looking at the most urgent Cell
         // uses MinPriority.
-        return mArray[MinPriority()].ToString();
+        return mArray[MinPriority()].Value;
     }
 
     public string Extract()
