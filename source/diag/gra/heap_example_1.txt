@@ -1,0 +1,8 @@
+%%% Heap example, represented as a complete binary tree
+
+A((1))-->B((3))
+A-->C((2))
+B-->D((6))
+B-->E((4))
+C-->F((5))
+C-->H((null))

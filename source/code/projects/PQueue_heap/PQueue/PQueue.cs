@@ -45,7 +45,6 @@ public class PQueue<TPriority, TValue> where TPriority : IComparable<TPriority>
         count = 0;
     }
 
-
     public TValue Peek()
     {
         if (IsEmpty()) throw new ApplicationException("Queue is empty, no most urgent value.");
@@ -71,7 +70,7 @@ public class PQueue<TPriority, TValue> where TPriority : IComparable<TPriority>
             // and move the data at hole / 2 at hole.
         }
         // Once this is done, we can insert the new value.
-        mArray[hole] = new Cell(priorityP, aValue);
+        mArray[hole] = new Cell(priorityP, valueP);
     }
 
     public TValue Extract()
@@ -80,43 +79,53 @@ public class PQueue<TPriority, TValue> where TPriority : IComparable<TPriority>
             throw new ApplicationException("Queue is empty, cannot extract from it.");
 
         // Save the data to be returned.
-        TValue value = mArray[1].Value;
+        TValue cellValue = mArray[1].Value;
 
-        // put the last item in the tree in the root
+        // Move the "rightmost" cell from the 
+        // last level to the root.
         mArray[1] = mArray[count];
-        // We have one less element now
+        // We have one less element now.
         count--;
 
         // Move the lowest child up until we've found the right spot 
-        // for the item moved from the last level to the root.
+        // for the cell moved from the last level to the root.
         PercolateDown(1);
-
-        return value;
+        return cellValue;
     }
 
-    private void PercolateDown(int hole)
+    private void PercolateDown(int indexP)
     {
+        // "PercolateDown", starting at 
+        // indexP.
         int child;
-        // save the hole's cell in a tmp spot
-        Cell pTmp = mArray[hole];
+        // Save the hole's cell.
+        Cell cellValue = mArray[indexP];
 
-        // keep going down the tree until the last level
-        for (; hole * 2 <= count; hole = child)
+        bool found = false;
+        // Keep going down the tree until the last level
+        while(indexP * 2 <= count && !found)
         {
-            child = hole * 2;   // get right child
-                                // check right and left child and put lowest one in the child variable
+            child = indexP * 2;   // get right child
+                                  // check right and left child and put lowest one in the child variable
             if (child != count && mArray[child + 1].Priority.CompareTo(mArray[child].Priority) < 0)
-                child++;
-            // put lowest child in hole
-            if (mArray[child].Priority.CompareTo(pTmp.Priority) < 0)
             {
-                mArray[hole] = mArray[child];
+                child++;
+            }
+            // put lowest child in hole
+            if (mArray[child].Priority.CompareTo(cellValue.Priority) < 0)
+            {
+                mArray[indexP] = mArray[child];
             }
             else
-                break;
+            {
+                found = true;
+            }
+            // If we are not done, 
+            // we update the value for indexP.
+            if (!found) { indexP = child; }
         }
         // found right spot of hole's original value, put it back into tree
-        mArray[hole] = pTmp;
+        mArray[indexP] = cellValue;
     }
 
     /// <summary>
@@ -134,7 +143,7 @@ public class PQueue<TPriority, TValue> where TPriority : IComparable<TPriority>
         string returned = "";
         for (int i = 1; i <= count; i++)
         {
-            returned += mArray[i].Value.ToString() + "; ";
+            returned += mArray[i].ToString() + "; ";
         }
         return returned;
     }

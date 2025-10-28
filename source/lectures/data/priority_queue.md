@@ -27,6 +27,8 @@ Letting a greater priority means "more important" is called a *max-priority queu
 In both cases, a decision must be made if multiple elements have the same priority: we can decide arbitrarily, using the element value, take the "first one" in the structure, etc.
 
 Exactly like a people waiting **at the ER**, priority queues implement a **"most-important-in-first-out"** principle.
+Our examples will use the [Emergency Severity Index](https://en.wikipedia.org/wiki/Emergency_Severity_Index), which ranges from 1 (most urgent) to 5 (less urgent).
+
 
 ## Possible Implementation
 
@@ -37,7 +39,6 @@ Here is an implementation of priority queues using arrays:
 ```{download="./code/projects/PQueue_array.zip"}
 !include code/projects/PQueue_array/PQueue/PQueue.cs
 ```
-
 This implementation as the following performance:
 
 - `Add` is $O(n)$, it may take $n$ steps to find an empty slot,
@@ -57,9 +58,64 @@ A maximally efficient implementation of priority queues is given by [heaps](http
 
 Note that this is different from being a binary search tree.
 
+#### Representing complete binary trees using arrays
+
+A [binary heap](https://en.wikipedia.org/wiki/Binary_heap) is often [implemented as an array](https://en.wikipedia.org/wiki/Binary_heap#Heap_implementation).
+Consider the following binary tree (we will take the priority of the node to be its value in the following):
+
+!include diag/gra/heap_example_1.md
+
+It is a heap, but not a binary search tree. It can be represented as the following array:
+
+Index |     0 |   1 |   2 |   3 |   4 |   5 |   6 |   7 | 
+---   |   :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+Node  |`null` |   1 |   3 |   2 |   6 |   4 |   5 | `null` |
+
+The reason why we start at index 1 and not 0 is because it makes the following calculation easier^[The difference can be looked up [on wikipedia](https://en.wikipedia.org/wiki/Binary_heap#Heap_implementation), it is mostly a matter of substracting or adding 1 at various places.].
+Indeed, each element at index $i$ has
+
+- its children at indices $2 \times i$ and $(2 \times i) + 1$,
+- its parent at index $\lfloor i/2 \rfloor$ for $\lfloor \cdot \rfloor$ the floor function (i.e., $\lfloor 1.5 \rfloor = 1$).
+
+#### Inserting into a heap
+
+To insert an element to a heap, we perform the following steps:
+
+1. Add the element to the bottom level of the heap at the leftmost open space (or "start" a new level if the last level is full).
+2. Compare the added element with its parent; if they are in the correct order, stop.
+3. If not, swap the element with its parent and return to the previous step.
+
+Imagine we want to insert $-1$ in our previous example, we would:
+
+- Add $-1$ as the right child of $2$, 
+- Swap $-1$ and $2$, 
+- Swap $-1$ and $1$,
+- Be done.
+
+In terms of array representation, we would obtain (with the values that changed **in bold**):
+
+Index |     0 |   1 |   2 |   3 |   4 |   5 |   6 |   7 | 
+---   |   :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+Node  |`null` |  **-1** |   3 |   **1** |   6 |   4 |   5 | **2** |
+
+
+#### Deleting from a heap
+
+Extracting the element with the lowest priority is easy: it is located at the root of the tree, or at index 1 in the array representation. 
+The challenge is to restore "the heap property", which is done as follows:
+
+1. Replace the root of the heap with the last element on the last level.
+2. Compare the new root with its children; if they are in the correct order, stop.
+3. If not, swap the element with one of its children and return to the previous step. (Swap with its smaller child in a min-heap and its larger child in a max-heap.)
+
+The 2nd and 3rd steps are called "percolate-down".
+
+
 ```{download="./code/projects/PQueue_heap.zip"}
 !include code/projects/PQueue_heap/PQueue/PQueue.cs
 ```
+
+
 
 
 <!--
