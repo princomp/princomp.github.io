@@ -21,8 +21,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine(-4 % 5);
-
         // Example of using the CDictionary class
         CDictionary<string, Address> notebook = new CDictionary<
           string,

@@ -188,8 +188,8 @@ public class CDictionary<TKey, TValue>
             );
         else
         {
-            table[index].Value = valueP;
             table[index].Key = keyP;
+            table[index].Value = valueP;
             table[index].Status = StatusType.Active;
         }
     }
