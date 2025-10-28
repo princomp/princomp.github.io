@@ -58,7 +58,7 @@ We first illustrate prime numbers with the following class, [remembering that](h
 
 We can then declare a `Level` enumerated type, and demonstrate how to use it, our PrimeHelper `static` class, and a couple of examples using `GetHashCode`:
 
-```{download="./code/projects/ĉ.zip"}
+```{download="./code/projects/Dictionary_prelim.zip"}
 !include code/projects/Dictionary_prelim/Dictionary_prelim/Program.cs
 ```
 
@@ -206,7 +206,11 @@ Linear probing is very bad in solving this problem, since the clusters are "spre
 ```
 
 A second Hash function **must never evaluate to zero** (otherwise we are just trying the same spot again and again), be as independent from the first hash function as possible, and should help in trying as many slots as possible.
-Note that our function never evaluate to zero, since `key.GetHashCode() % table.Length` gives a value between 0 and `table.Length`-1, so `table.Length - (key.GetHashCode() % table.Length)` gives a value between 1 and `table.Length`.
+
+Note that our function never evaluate to zero:
+
+- `key.GetHashCode() % table.Length` gives a value between $-($`table.Length`$-1)$ and `table.Length`$-1$ (since `GetHashCode` can return negative values or 0), 
+- so `table.Length - (key.GetHashCode() % table.Length)` gives a value between 1 and $($`table.Length`$\times 2) -1$.
 
 Our `main` method includes a test demonstrating the efficiency of our double hashing techniques:
 
