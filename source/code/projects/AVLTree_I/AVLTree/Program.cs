@@ -11,7 +11,7 @@ class Program
     bstree1.Insert(10);
     bstree1.Insert(5);
     bstree1.Insert(4);
-    bstree1.Insert(6);
+    bstree1.Insert(7);
     bstree1.Insert(20);
 
     Console.WriteLine(bstree1);
@@ -34,12 +34,12 @@ class Program
     bstree1.Insert(10);
     bstree1.Insert(5);
     bstree1.Insert(4);
-    bstree1.Insert(6);
+    bstree1.Insert(7);
     bstree1.Insert(20);
     Console.WriteLine(
-      "if we insert 7, it becomes left-heavy \"in a zig-zag line\":"
+      "if we insert 6, it becomes left-heavy \"in a zig-zag line\":"
     );
-    bstree1.Insert(7);
+    bstree1.Insert(6);
     Console.WriteLine(bstree1);
 
     Console.WriteLine(
