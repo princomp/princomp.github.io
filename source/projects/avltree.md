@@ -62,10 +62,9 @@ Bonus points will be given if:
 Please, follow our [guideline on project submission](./projects/submission).
 In particular, make sure you write your name and the date in a delimited comment at the beginning of your file.
 
-<!--
+
 ## Solution
 
-A possible solution is shared [in this archive](./code/projects/AList.zip).
+A possible solution is shared [in this archive](./code/projects/AVLTree_I.zip).
 
-Note that it does not use a "counter" to keep track of how many elements are in the list, but instead resize the array and create a new array of the appropriate size when needed: this is less efficient, since copying the array is linear in its size, but gives a more compact code.
--->
+Note that *only the `Program.cs` and `IAVLTree.cs` files have been changed, there is no need to review the other ones. One bonus (the last one) is completed, and all the other requirements of the projects are completed.
