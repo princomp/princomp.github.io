@@ -54,9 +54,10 @@ An implementation using lists would be very similar to the one using array, exce
 A maximally efficient implementation of priority queues is given by [heaps](https://en.wikipedia.org/wiki/Heap_(data_structure)), which is
 
 - A complete binary tree^[A complete binary tree is such that all levels are filled completely except the lowest level, which is filled from as left as possible.] (that we will represent in an array),
-– Such that the priority of every (non-root) node is less important than the priority of its parent.
+- Such that the priority of every (non-root) node is greater than the priority of its parent (remember that we are implementing a *min-priority queue*, so a lowest priority means "comes first").
 
 Note that this is different from being a binary search tree.
+We begin by explaining informally the main principles, before commenting on the implementation.
 
 #### Representing complete binary trees using arrays
 
@@ -70,6 +71,20 @@ It is a heap, but not a binary search tree. It can be represented as the followi
 Index |     0 |   1 |   2 |   3 |   4 |   5 |   6 |   7 | 
 ---   |   :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 Node  |`null` |   1 |   3 |   2 |   6 |   4 |   5 | `null` |
+
+It can help to see the tree as follows^[Symbols courtesy of <https://gist.github.com/GeorgeHernandez/10dcbb5fd6ca8b087d169d5a44d72cd2>.]:
+
+```text
+1
+└── 3
+│   └──── 6
+│   └────────4 
+└──────2
+       └──────── 5
+       └────────────(null)
+```
+
+so that reading it right to left gives the array pictured above.
 
 The reason why we start at index 1 and not 0 is because it makes the following calculation easier^[The difference can be looked up [on wikipedia](https://en.wikipedia.org/wiki/Binary_heap#Heap_implementation), it is mostly a matter of substracting or adding 1 at various places.].
 Indeed, each element at index $i$ has
@@ -106,9 +121,11 @@ The challenge is to restore "the heap property", which is done as follows:
 
 1. Replace the root of the heap with the last element on the last level.
 2. Compare the new root with its children; if they are in the correct order, stop.
-3. If not, swap the element with one of its children and return to the previous step. (Swap with its smaller child in a min-heap and its larger child in a max-heap.)
+3. If not, swap the element with one of its children and return to the previous step (swaping with the smaller child in a min-heap).
 
 The 2nd and 3rd steps are called "percolate-down".
+
+#### Implementing priority queue using heaps implemented as arrays
 
 
 ```{download="./code/projects/PQueue_heap.zip"}
