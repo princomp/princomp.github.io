@@ -28,6 +28,7 @@ class Program
           string,
           Address
         >(13);
+        Console.WriteLine("Dictionary is empty: " + notebook.IsEmpty() + ".");
 
         string[] friends =
         {
@@ -57,6 +58,8 @@ class Program
         }
 
         Console.WriteLine(notebook);
+        Console.WriteLine("Dictionary is empty: " + notebook.IsEmpty() + ".");
+
         Console.WriteLine(
           "Bob is present:" + notebook.Find("Bob") + "."
         );
@@ -79,5 +82,9 @@ class Program
         {
             Console.WriteLine(ex.Message);
         }
+        Console.WriteLine("Dictionary is empty: " + notebook.IsEmpty() + ".");
+        notebook.Clear();
+        Console.WriteLine(notebook);
+        Console.Write("Dictionary is empty: " + notebook.IsEmpty() + ".");
     }
 }

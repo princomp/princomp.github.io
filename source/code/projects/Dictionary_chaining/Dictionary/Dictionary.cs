@@ -115,4 +115,17 @@ public class CDictionary<TKey, TValue>
         }
         table[index].RemoveAt(counter);
     }
+
+    public void Clear()
+    {
+        /* Fill me! */
+    }
+
+    public bool IsEmpty()
+    {
+
+        /* Fill me! */
+        return true;
+
+    }
 }

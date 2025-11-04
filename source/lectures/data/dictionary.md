@@ -245,6 +245,6 @@ This method
 - is better if the load factor is high (as it can handle load factor greater than 1, e.g., dictionaries with more entries than the array length),
 - uses more memory than open addressing, and can be slower than a well-thought open addressing implementation using a good hash function.
 
-```{download="./code/projects/Dictionary_open_addressing.zip"}
-!include`snippetStart="// Clear method", snippetEnd="// The following is used to compute the"` code/projects/Dictionary_open_addressing/Dictionary/Dictionary.cs
+```{download="./code/projects/Dictionary_chaining.zip"}
+!include code/projects/Dictionary_chaining/Dictionary/Dictionary.cs
 ```
