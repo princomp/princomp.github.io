@@ -69,23 +69,23 @@ We can then declare a `Level` enumerated type, and demonstrate how to use it, ou
 The first step in our definition of dictionary is to require *two* [generic type parameters](./lectures/oop/generic_types): one for the key (which will generally be simple, such as `int` or `string`), and one for the values.
 We additional require that the datatype for keys realizes the `IComparable` interface:
 
-```{download="./code/projects/Dictionary.zip"}
-!include`snippetStart="// A Dictionary requires two generic types parameter.", snippetEnd="// We only need to assume that Keys can be compared."` code/projects/Dictionary/Dictionary/Dictionary.cs
+```{download="./code/projects/Dictionary_open_addressing.zip"}
+!include`snippetStart="// A Dictionary requires two generic types parameter.", snippetEnd="// We only need to assume that Keys can be compared."` code/projects/Dictionary_open_addressing/Dictionary/Dictionary.cs
 ```
 
 We then define the `Cell` class, which we will use to store the key and value. A third attribute of the enumerated datatype `StatusType`, will be used to mark if the cell is empty, active or deleted: its purpose will become clearer later on.
 
-```{download="./code/projects/Dictionary.zip"}
-!include`snippetStart="// the status of a cell.", snippetEnd="// A dictionary is"` code/projects/Dictionary/Dictionary/Dictionary.cs
+```{download="./code/projects/Dictionary_open_addressing.zip"}
+!include`snippetStart="// the status of a cell.", snippetEnd="// A dictionary is"` code/projects/Dictionary_open_addressing/Dictionary/Dictionary.cs
 ```
 
 Then, a dictionary has only two attributes: an array of `Cell`s, and a probe sequence strategy of the `PSSType`.
 
-```{download="./code/projects/Dictionary.zip"}
-!include`snippetStart="// probe sequence strategy type.", snippetEnd="// Status Type will be used to mark"` code/projects/Dictionary/Dictionary/Dictionary.cs
+```{download="./code/projects/Dictionary_open_addressing.zip"}
+!include`snippetStart="// probe sequence strategy type.", snippetEnd="// Status Type will be used to mark"` code/projects/Dictionary_open_addressing/Dictionary/Dictionary.cs
 ```
-```{download="./code/projects/Dictionary.zip"}
-!include`snippetStart="// - and a probe sequence strategy.", snippetEnd="// The ToString method uses String.Format"` code/projects/Dictionary/Dictionary/Dictionary.cs
+```{download="./code/projects/Dictionary_open_addressing.zip"}
+!include`snippetStart="// - and a probe sequence strategy.", snippetEnd="// The ToString method uses String.Format"` code/projects/Dictionary_open_addressing/Dictionary/Dictionary.cs
 ```
 
 The default size of 31 and the reason why we are using the `NextPrime` method are discussed [further down](#how-is-the-size-of-the-array-decided).
@@ -104,8 +104,8 @@ All together, this guarantee that the index we produced is positive, and less th
 
 We obtain the following, where the details of `CollisionResolution` are not important at this point: the crucial point is to note that if `countP` is 0, then no collision have occurred yet, and we do not shift the hash.
 
-```{download="./code/projects/Dictionary.zip"}
-!include`snippetStart="// how many collisions we met so far.", snippetEnd="// Done with GetIndex"` code/projects/Dictionary/Dictionary/Dictionary.cs
+```{download="./code/projects/Dictionary_open_addressing.zip"}
+!include`snippetStart="// how many collisions we met so far.", snippetEnd="// Done with GetIndex"` code/projects/Dictionary_open_addressing/Dictionary/Dictionary.cs
 ```
 
 #### Adding an element
@@ -128,8 +128,8 @@ We only need a key and a value, and then we
     - empty, in which case we can create a `Cell` object using the parameters,
     - with a status set to `deleted` or `empty`, and we can re-use it.
 
-```{download="./code/projects/Dictionary.zip"}
-!include`snippetStart="// Adding an element", snippetEnd="// Done with adding an element"` code/projects/Dictionary/Dictionary/Dictionary.cs
+```{download="./code/projects/Dictionary_open_addressing.zip"}
+!include`snippetStart="// Adding an element", snippetEnd="// Done with adding an element"` code/projects/Dictionary_open_addressing/Dictionary/Dictionary.cs
 ```
 
 #### Finding a key 
@@ -138,16 +138,16 @@ For `find`, we use a subroutine `FindI` that computes the index of a key if it e
 The critical point is to understand that we *need to keep looking even if the cell is marked as `deleted`*.
 We illustrate this [point below](#handling-deletion).
 
-```{download="./code/projects/Dictionary.zip"}
-!include`snippetStart="// We use a bool Find sub-routine", snippetEnd="// Done with found."` code/projects/Dictionary/Dictionary/Dictionary.cs
+```{download="./code/projects/Dictionary_open_addressing.zip"}
+!include`snippetStart="// We use a bool Find sub-routine", snippetEnd="// Done with found."` code/projects/Dictionary_open_addressing/Dictionary/Dictionary.cs
 ```
 
 #### Handling deletion
 
 The `Remove` method heavily relies on `FindI`:
 
-```{download="./code/projects/Dictionary.zip"}
-!include`snippetStart="// Removing relies also on Find:", snippetEnd="// Done with Remove"` code/projects/Dictionary/Dictionary/Dictionary.cs
+```{download="./code/projects/Dictionary_open_addressing.zip"}
+!include`snippetStart="// Removing relies also on Find:", snippetEnd="// Done with Remove"` code/projects/Dictionary_open_addressing/Dictionary/Dictionary.cs
 ```
 
 The important aspect is to understand why we use the `Deleted` status instead of simply removing the `Cell`. There is one important reason for that.
@@ -201,8 +201,8 @@ Linear probing is very bad in solving this problem, since the clusters are "spre
 [Double hashing](https://en.wikipedia.org/wiki/Double_hashing) is a bit better at solving this problem, since keys with identical hashes may drift apart significantly when the secondary hash function is applied:
 
 
-```{download="./code/projects/Dictionary.zip"}
-!include`snippetStart="// Secondary hash function", snippetEnd="// Adding an element"` code/projects/Dictionary/Dictionary/Dictionary.cs
+```{download="./code/projects/Dictionary_open_addressing.zip"}
+!include`snippetStart="// Secondary hash function", snippetEnd="// Adding an element"` code/projects/Dictionary_open_addressing/Dictionary/Dictionary.cs
 ```
 
 A second Hash function **must never evaluate to zero** (otherwise we are just trying the same spot again and again), be as independent from the first hash function as possible, and should help in trying as many slots as possible.
@@ -214,8 +214,8 @@ Note that our function never evaluate to zero:
 
 Our `main` method includes a test demonstrating the efficiency of our double hashing techniques:
 
-```{download="./code/projects/Dictionary.zip"}
-!include`snippetStart="// Demonstrating the double hash strategy:", snippetEnd="// 100% !"` code/projects/Dictionary/Dictionary/Program.cs
+```{download="./code/projects/Dictionary_open_addressing.zip"}
+!include`snippetStart="// Demonstrating the double hash strategy:", snippetEnd="// 100% !"` code/projects/Dictionary_open_addressing/Dictionary/Program.cs
 ```
 
 While the quadratic method hits about 50% of the indices, the double hashing techniques reach 100%!
@@ -227,9 +227,24 @@ Of course, open-addressed hash table cannot have a load factor greater than 1, b
 
 Clearing the dictionary set all the `Status` to `Empty`:
 
-```{download="./code/projects/Dictionary.zip"}
-!include`snippetStart="// Clear method", snippetEnd="// The following is used to compute the"` code/projects/Dictionary/Dictionary/Dictionary.cs
+```{download="./code/projects/Dictionary_open_addressing.zip"}
+!include`snippetStart="// Clear method", snippetEnd="// The following is used to compute the"` code/projects/Dictionary_open_addressing/Dictionary/Dictionary.cs
 ```
 
 We decide to do "object reuse", or *pooling*, so that we can re-use the object instead of deleting it by setting the array to `null` and re-creating `Cell` objects when needed.
 This may or may not be a performance gain, based on context, but must be done using `Empty` instead of `Deleted`: otherwise, the `FindI` method may go through many `Cell` that have been cleared instead of deciding more rapidly that a key is missing. The `Add` method, however, already handle this case by having the same behavior for `Deleted` and `Empty` status.
+
+### Using Chaining
+
+A dictionary implemented using chaining uses an array of *lists* of cells instead of an array to store the values.
+This means that when a collision happens, then the new cell is simply appended to the end of the list at the computed index.
+
+This method 
+
+- is easier to understand and implement than open addressing, 
+- is better if the load factor is high (as it can handle load factor greater than 1, e.g., dictionaries with more entries than the array length),
+- uses more memory than open addressing, and can be slower than a well-thought open addressing implementation using a good hash function.
+
+```{download="./code/projects/Dictionary_open_addressing.zip"}
+!include`snippetStart="// Clear method", snippetEnd="// The following is used to compute the"` code/projects/Dictionary_open_addressing/Dictionary/Dictionary.cs
+```
