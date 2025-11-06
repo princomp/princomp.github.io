@@ -123,7 +123,9 @@ The challenge is to restore "the heap property", which is done as follows:
 2. Compare the new root with its children; if they are in the correct order, stop.
 3. If not, swap the element with one of its children and return to the previous step (swaping with the smaller child in a min-heap).
 
-The 2nd and 3rd steps are called "percolate-down".
+The 2nd and 3rd steps are called "percolate-down": the idea is that the element that is at the root will "go down" the heap by swapping with elements with smaller priority.
+At each step, we compare its priority with its children priority, and swap it with the children with the lowest priority if it is lower than its own.
+When both children have a higher than or equal priority to its own, we know we are done and can stop.
 
 #### Implementing priority queue using heaps implemented as arrays
 
@@ -131,46 +133,3 @@ The 2nd and 3rd steps are called "percolate-down".
 ```{download="./code/projects/PQueue_heap.zip"}
 !include code/projects/PQueue_heap/PQueue/PQueue.cs
 ```
-
-
-
-
-<!--
-
-- Index 0 is unused.
-- Most important will be at index 1.
-
-Deleting consists in:
-- Remove node root,
-- Move right-most node in last row to root,
-- "Percolate down" to restore heap property
-
-https://slideplayer.com/slide/17853217/
-
-
-https://courses.cs.washington.edu/courses/cse373/18su/files/slides/lecture-10.pdf
-https://courses.cs.washington.edu/courses/cse373/14sp/lecture9.pdf
-https://www.geeksforgeeks.org/dsa/priority-queue-using-linked-list/
-https://www.geeksforgeeks.org/dsa/priority-queue-using-array/
-https://en.wikipedia.org/wiki/Priority_queue
-
--->
-
-<!--
-
-Heap definitions. The binary heap is a data structure that can efficiently support the basic priority-queue operations. In a binary heap, the items are stored in an array such that each key is guaranteed to be larger than (or equal to) the keys at two other specific positions. In turn, each of those keys must be larger than two more keys, and so forth. This ordering is easy to see if we view the keys as being in a binary tree structure with edges from each key to the two keys known to be smaller.
-
-Definition. A binary tree is heap-ordered if the key in each node is larger than (or equal to) the keys in that nodes two children (if any).
-
-Proposition. The largest key in a heap-ordered binary tree is found at the root. 
-
-
- We can impose the heap-ordering restriction on any binary tree. It is particularly convenient, however, to use a complete binary tree like the one below.
-
-Heap representations
-We represent complete binary trees sequentially within an array by putting the nodes with level order, with the root at position 1, its children at positions 2 and 3, their children in positions 4, 5, 6 and 7, and so on.
-
-Definition. A binary heap is a set of nodes with keys arranged in a complete heap-ordered binary tree, represented in level order in an array (not using the first entry).
-
-Heap representations 
--->
