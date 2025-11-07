@@ -28,6 +28,7 @@ among other properties.
 
 # Insertion Sort Algorithm
 
+This algorithm is [nicely explained and illustrated on wikipedia](https://en.wikipedia.org/wiki/Insertion_sort), and can be implemented as follows:
 
 ```
 !include`snippetStart="// Insertion Algorithm", snippetEnd="// Done with insertion Algorithm"` code/projects/Sorting/Sorting/Sorting.cs
@@ -38,9 +39,13 @@ among other properties.
 We first define some helper methods:
 
 ```
-!include`snippetStart="// Helper methods for Heapsort", snippetEnd="// Done with helper methods for Heapsort` code/projects/Sorting/Sorting/Sorting.cs
+!include`snippetStart="// Helper methods for Heapsort", snippetEnd="// Done with helper methods for Heapsort"` code/projects/Sorting/Sorting/Sorting.cs
 ```
+
+and then leverage the heap structure to sort:
 
 ```
 !include`snippetStart="// Heapsort Algorithm", snippetEnd="// Done with heapsort Algorithm` code/projects/Sorting/Sorting/Sorting.cs
 ```
+
+Note that `PercDown` builds a *max heap*: once the values are "pre-sorted **greater value first**", removing the first one to move it to the *end* of the list makes the list sorted from smallest to greatest value once we are done.
