@@ -138,6 +138,5 @@ public class CDictionary<TKey, TValue>
             }
         }
         return empty;
-
     }
 }

@@ -248,3 +248,5 @@ This method
 ```{download="./code/projects/Dictionary_chaining.zip"}
 !include code/projects/Dictionary_chaining/Dictionary/Dictionary.cs
 ```
+
+Note that lists are re-used when `Clear` is called, instead of being set to `null`.
