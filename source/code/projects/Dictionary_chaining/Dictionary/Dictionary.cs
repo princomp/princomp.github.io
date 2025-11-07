@@ -118,14 +118,26 @@ public class CDictionary<TKey, TValue>
 
     public void Clear()
     {
-        /* Fill me! */
+        for (int i = 0; i < table.Length; i++)
+        {
+            if (table[i] != null) { table[i].Clear(); }
+        }
     }
 
     public bool IsEmpty()
     {
-
-        /* Fill me! */
-        return true;
+        bool empty = true;
+        for (int i = 0; i < table.Length; i++)
+        {
+            if (table[i] != null)
+            {
+                if (table[i].Count != 0)
+                {
+                    empty = false;
+                }
+            }
+        }
+        return empty;
 
     }
 }
