@@ -7,45 +7,53 @@ tags:
 
 ## Motivation
 
-[Wikipedia](https://en.wikipedia.org/wiki/Sorting_algorithm) explains it very nicely: sorting is ubiquitous in Computer Sciences. 
-It is a simple problem ("*How can I sort the following values the most efficiently?*") that has many solutions, but still offers open problems.
+[Higher-order programming](https://en.wikipedia.org/wiki/Higher-order_programming) allows to manipulate for example methods themselves. 
+This can be useful for many purposes, and is called ["delegates"](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/delegates/) in C#.
+We explain its basics below, and refer to [the sorting lecture](./lectures/misc/sorting) for an example of how it can be used.
 
-We only consider **correct** algorithms, i.e., one where their output is such that
+## Action -- In short
 
-- each element is larger than or equal to the previous one, according to the order picked,
-- all the elements that were in the input are present in the output (with the same cardinality, if repetition is allowed).
+[An *action* is](https://learn.microsoft.com/en-us/dotnet/api/system.action?view=net-9.0)
 
-There are many ways of "comparing" sorting algorithms.
-A sorting algorithm…
+> a  method that has no parameters and does not return a value.
 
-- has a best, worst and average case time complexity (measured in general in number of comparisons required),
-- has a best, worst and average case space complexity (i.e., "how much additional memory is required?"),
-- can be "stable" (i.e., equal values are not permutted),
-- uses *insertion*, *exchange*, *selection*, *merging* method,
-- is serial or parallel,
+An "Action<T>" is a method that has a single parameter (of type `T`) and does not return a value.
 
-among other properties.
-
-# Insertion Sort Algorithm
-
-This algorithm is [nicely explained and illustrated on wikipedia](https://en.wikipedia.org/wiki/Insertion_sort), and can be implemented as follows:
+Here are for example three actions:
 
 ```
-!include`snippetStart="// Insertion Algorithm", snippetEnd="// Done with insertion Algorithm"` code/projects/Sorting/Sorting/Sorting.cs
+!include code/projects/Actions/Actions/ExampleActions.cs
 ```
 
-# Heapsort Algorithm
+- `Test`, `Display` and `DisplayArray` all have `void` as their return type,
+- `Test` does not take any argument,
+- `Display` takes an `int` as an argument,
+- `DisplayArray` takes "an array of `T`" (that is, a [generic type](./lectures/oop/generic_types) as an argument.
 
-We first define some helper methods:
-
-```
-!include`snippetStart="// Helper methods for Heapsort", snippetEnd="// Done with helper methods for Heapsort"` code/projects/Sorting/Sorting/Sorting.cs
-```
-
-and then leverage the heap structure to sort:
+We can call those easily:
 
 ```
-!include`snippetStart="// Heapsort Algorithm", snippetEnd="// Done with heapsort Algorithm"` code/projects/Sorting/Sorting/Sorting.cs
+!include`snippetStart="// We can call our methods directly:", snippetEnd="// Or we can store them"` code/projects/Actions/Actions/Program.cs
 ```
 
-Note that `PercDown` builds a *max heap*: once the values are "pre-sorted **greater value first**", removing the first one to move it to the *end* of the list makes the list sorted from smallest to greatest value once we are done.
+We can also store them into variables and then call them:
+
+```
+!include`snippetStart="// in variables and then call them:", snippetEnd="// Passing an Action as an argument:"` code/projects/Actions/Actions/Program.cs
+```
+
+As we can see, `ExampleActions.Display` is of type `Action<int>` since the `Display` method takes an `int` as argument.
+
+## Action as Parameter
+
+Method can take actions as parameter:
+
+```
+!include code/projects/Actions/Actions/CallingAction.cs
+```
+
+and then can be passed an action as an argument:
+
+```
+!include`snippetStart="// Passing an action as an argument:", snippetEnd="// Done passing an action."`code/projects/Actions/Actions/Program.cs
+```
