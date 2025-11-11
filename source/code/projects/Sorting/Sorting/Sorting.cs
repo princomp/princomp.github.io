@@ -7,9 +7,9 @@ static class Sorting<T> where T : IComparable<T>
     // Helper method
     private static void Swap(List<T> listP, int lhs, int rhs)
     {
-        T temp = listP[lhs];
+        T current = listP[lhs];
         listP[lhs] = listP[rhs];
-        listP[rhs] = temp;
+        listP[rhs] = current;
     }
     public static bool IsSorted(List<T> listP)
     {
@@ -123,18 +123,16 @@ for (int i = listP.Count - 1; i >= 0; i--)
             }
         }
 
+    // Done with shellSort Algorithm
 
-  
 
-        // ================================================================================
-        //
-        //    QuickSort Algorithm
-        //
-        // ================================================================================
-        public static void QuickSort(List<T> listP, int stopOn = 3)
+
+
+
+    // QuickSort Algorithm
+
+    public static void QuickSort(List<T> listP, int stopOn = 3)
         {
-            Console.WriteLine("-------- QuickSort ---------");
-
             QuickSort(listP, 0, listP.Count - 1, stopOn);
             Console.WriteLine("After QuickSort but before it calls InsertionSort");
             Displaying<T>.Display(listP);
@@ -198,11 +196,7 @@ for (int i = listP.Count - 1; i >= 0; i--)
             }
         }
 
-        // ================================================================================
-        //
-        //    Selection Sort Algorithm
-        //
-        // ================================================================================
+        // Selection Sort Algorithm
         public static void SelectionSort(List<T> listP)
         {
             SelectionSort(listP, 0, listP.Count - 1);
@@ -210,7 +204,7 @@ for (int i = listP.Count - 1; i >= 0; i--)
 
         private static void SelectionSort(List<T> listP, int low, int high)
         {
-            T temp;
+            T current;
             for (int i = low; i <= high; ++i)
             {
                 T min = listP[i];       // smallest element so far
@@ -225,20 +219,18 @@ for (int i = listP.Count - 1; i >= 0; i--)
 
                 if (i != min_index)
                 {
-                    temp = listP[i];
+                    current = listP[i];
                     listP[i] = min;
-                    listP[min_index] = temp;
+                    listP[min_index] = current;
                 }
             }
         }
+        // End of selection sort algorithm
 
 
 
-        // ================================================================================
-        //
-        //    Merge Sort Algorithm
-        //
-        // ================================================================================
+        //  Merge Sort Algorithm
+
         public static void RecMergeSort(List<T> listP)
         {
             RecMergeSort(listP, 0, listP.Count);

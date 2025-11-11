@@ -15,7 +15,7 @@ class Program
         Demo.Run(Sorting<int>.BubbleSort);
         Demo.Run(Sorting<char>.BubbleSort);
 
-        Demo.Run(Sorting<int>.ShellSort);
+        Demo.Run(Sorting<int >.ShellSort);
         Demo.Run(Sorting<char>.ShellSort);
 
     }
