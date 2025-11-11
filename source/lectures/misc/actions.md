@@ -11,7 +11,7 @@ tags:
 This can be useful for many purposes, and is called ["delegates"](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/delegates/) in C#.
 We explain its basics below, and refer to [the sorting lecture](./lectures/misc/sorting) for an example of how it can be used.
 
-## Action -- In short
+## Definition
 
 [An *action* is](https://learn.microsoft.com/en-us/dotnet/api/system.action?view=net-9.0)
 
@@ -36,6 +36,8 @@ We can call those easily:
 !include`snippetStart="// We can call our methods directly:", snippetEnd="// Or we can store them"` code/projects/Actions/Actions/Program.cs
 ```
 
+## Manipulating Actions as Variables
+
 We can also store them into variables and then call them:
 
 ```
@@ -44,7 +46,7 @@ We can also store them into variables and then call them:
 
 As we can see, `ExampleActions.Display` is of type `Action<int>` since the `Display` method takes an `int` as argument.
 
-## Action as Parameter
+## Action as Parameters
 
 Method can take actions as parameter:
 
