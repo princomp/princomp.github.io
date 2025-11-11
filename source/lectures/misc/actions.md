@@ -55,5 +55,5 @@ Method can take actions as parameter:
 and then can be passed an action as an argument:
 
 ```
-!include`snippetStart="// Passing an action as an argument:", snippetEnd="// Done passing an action."`code/projects/Actions/Actions/Program.cs
+!include`snippetStart="// Passing an action as an argument:", snippetEnd="// Done passing an action."` code/projects/Actions/Actions/Program.cs
 ```
