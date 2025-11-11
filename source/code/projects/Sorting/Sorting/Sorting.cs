@@ -4,16 +4,30 @@ using System.Collections.Generic;
 static class Sorting<T> where T : IComparable<T>
     {
 
-        // Insertion Algorithm
-        public static void InsertionSort(List<T> listP)
+    // Helper method
+    private static void Swap(List<T> listP, int lhs, int rhs)
+    {
+        T temp = listP[lhs];
+        listP[lhs] = listP[rhs];
+        listP[rhs] = temp;
+    }
+    public static bool IsSorted(List<T> listP)
+    {
+        bool isSorted = true;
+        for (int i = 0; i < listP.Count-1; i++)
         {
-            int swapOperations = 0;
-        // Can be ignored, is simply here
-        // to count number of time we 
-        // swap values.
-        Console.WriteLine("----------- Insertion Sort -------");
-            Displaying<T>.DisplayHeader(listP, 0, listP.Count);
+            if (listP[i].CompareTo(listP[i + 1]) > 0){
+                isSorted = false;
+            }
+        }
+        return isSorted;
+    }
 
+    // Done with helper method.
+
+    // Insertion Algorithm
+    public static void InsertionSort(List<T> listP)
+        {
             T current;
             int slot;
             for (int bar = 1; bar < listP.Count; bar++)
@@ -21,25 +35,14 @@ static class Sorting<T> where T : IComparable<T>
                 current = listP[bar];
                 for (slot = bar; slot > 0 && current.CompareTo(listP[slot - 1]) < 0; slot--)
                 {
-                    swapOperations++;
                     listP[slot] = listP[slot - 1];
                 }
                 listP[slot] = current;
             }
-
-            Displaying<T>.Display(listP);
-            Console.WriteLine("Count = {0}", swapOperations);
         }
     // Done with insertion Algorithm
 
     // Helper methods for Heapsort
-    private static void Swap(List<T> listP, int lhs, int rhs)
-    {
-        T temp = listP[lhs];
-        listP[lhs] = listP[rhs];
-        listP[rhs] = temp;
-    }
-
     private static int LeftChild(int i)
     {
         return 2 * i + 1;
@@ -49,24 +52,17 @@ static class Sorting<T> where T : IComparable<T>
     // Heapsort Algorithm
     public static void Heapsort(List<T> listP)
     {
-        Console.WriteLine(" --- Starting HeapSort ----");
         Heapsort(listP, listP.Count);
     }
 
     private static void Heapsort(List<T> listP, int N)
     {
-        Displaying<T>.DisplayHeader(listP, 0, listP.Count);
-        Displaying<T>.Display(listP);
-
         for (int i = N / 2; i >= 0; i--) /* BuildHeap */
             PercDown(listP, i, N);
-        Console.WriteLine("-- Max Heap is built --");
-        Displaying<T>.Display(listP);
         for (int i = N - 1; i > 0; i--)
         {
             Swap(listP, 0, i); /* DeleteMax */
             PercDown(listP, 0, i);
-            Displaying<T>.Display(listP);
         }
     }
 
@@ -74,7 +70,6 @@ static class Sorting<T> where T : IComparable<T>
     {
         int Child;
         T current;
-
         for (current = listP[i]; LeftChild(i) < N; i = Child)
         {
             Child = LeftChild(i);
@@ -92,132 +87,42 @@ static class Sorting<T> where T : IComparable<T>
 
     // Done with heapsort Algorithm
 
-
-
-
-
-    // ================================================================================
-    //
-    //    Bubble Algorithm
-    //
-    // ================================================================================
+        // Bubble Algorithm
     public static void BubbleSort(List<T> listP)
         {
-            int count = 0;
-            Console.WriteLine("----------- Bubble Sort --- Green - bubbled to correct spot starting at end");
-            Displaying<T>.DisplayHeader(listP, 0, listP.Count);
-            Displaying<T>.Display(listP);
-
-            for (int i = listP.Count - 1; i >= 0; i--)
+for (int i = listP.Count - 1; i >= 0; i--)
             {
                 for (int j = 0; j < listP.Count - 1; j++)
                 {
                     if (listP[j].CompareTo(listP[j + 1]) > 0)
                         Swap(listP, j, j + 1);
-                    count++;
                 }
-                Displaying<T>.DisplayOne(listP, i, 0, i + 1);
             }
-
-            Displaying<T>.Display(listP);
-            Console.WriteLine("Count = {0}", count);
         }
+    // Done with bubble algorithm.
 
-        // ================================================================================
-        //
-        //    ShellSort Algorithm
-        //
-        // ================================================================================        public static void ShellSort(List<T> listP)
+        // ShellSort Algorithm
+
         public static void ShellSort(List<T> listP)
         {
-            int swapNum = 0;
-            Console.WriteLine();
-            Console.Write("      ");
-            Displaying<T>.DisplayHeader(listP, 0, listP.Count);
-
             int slot;
-            T tmp;
-            for (int gap = listP.Count / 3 + 1; gap > 0; gap /= 2)                  // determines increment sequence
+            T current;
+            for (int gap = listP.Count / 3 + 1; gap > 0; gap /= 2)
             {
-                Console.Write("{0}     ", gap);
-                Displaying<T>.Display2(listP, 0, listP.Count);
-                for (int next = gap; next < listP.Count; next++)
-                {              // goes thru array by steps
-                    tmp = listP[next];
-                    for (slot = next; slot >= gap && tmp.CompareTo(listP[slot - gap]) < 0; slot -= gap) // slides tmp until in place
-                    {
-                    ++swapNum;
-                        listP[slot] = listP[slot - gap];
-
-                    }
-                    listP[slot] = tmp;
-                }
-            }
-            Console.WriteLine("Count = {0}", swapNum);
-        }
-
-        // gaps must be sorted larger to smaller
-        public static void ShellSort(List<T> listP, int[] gaps)
-        {
-            Console.Write("---- ShellSort -----");
-            T tmp;
-            int slot;
-            int count = 0;
-            Console.WriteLine();
-            Console.Write("      ");
-            Displaying<T>.DisplayHeader(listP, 0, listP.Count);
-            Console.Write("      ");
-            Displaying<T>.Display(listP);
-            foreach (int gap in gaps)                  // determines increment sequence
-            {
-                Console.Write("{0}     ", gap);
-                for (int next = gap; next < listP.Count; next++)
-                {              // goes thru array by steps
-                    tmp = listP[next];
-                    for (slot = next; slot >= gap && tmp.CompareTo(listP[slot - gap]) < 0; slot -= gap) // slides tmp until in place
-                    {
-                        ++count;
-                        listP[slot] = listP[slot - gap];
-
-                    }
-                    listP[slot] = tmp;
-                }
-                Displaying<T>.DisplayEvery(listP, 0, listP.Count, gap);
-            }
-            Console.WriteLine("Number of shifts = {0}", count);
-        }
-
-        public static void ShellSort(List<T> listP, List<int> IncrementList)
-        {
-            T tmp;
-            int slot;
-            int count = 0;
-
-            Console.Write("      ");
-            Displaying<T>.DisplayHeader(listP, 0, listP.Count);
-            Console.Write("      ");
-            Displaying<T>.Display2(listP, 0, listP.Count);
-
-            for (int incNumber = IncrementList.Count - 1; incNumber >= 0; incNumber--)
-            {
-                int gap = IncrementList[incNumber];
 
                 for (int next = gap; next < listP.Count; next++)
-                {              // goes thru array by steps
-                    tmp = listP[next];
-                    for (slot = next; slot >= gap && tmp.CompareTo(listP[slot - gap]) < 0; slot -= gap) // slides tmp until in place
+                {
+                // goes thru array by steps
+                    current = listP[next];
+                    for (slot = next; slot >= gap && current.CompareTo(listP[slot - gap]) < 0; slot -= gap) // slides current until in place
                     {
-                        ++count;
                         listP[slot] = listP[slot - gap];
                     }
-                    listP[slot] = tmp;
-                    //                    Console.WriteLine("Count = {0}", count);
+                    listP[slot] = current;
                 }
-                Console.Write("{0,3}   ", gap);
-                Displaying<T>.Display2(listP, 0, listP.Count);
             }
-            Console.WriteLine("Count = {0}", count);
         }
+
 
   
 

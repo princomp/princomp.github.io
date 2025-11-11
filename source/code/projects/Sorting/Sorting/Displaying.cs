@@ -1,9 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
 
-
 static class Displaying<T> where T : IComparable<T>
     {
+    public static void List(List<T> listP)
+    {
+        Console.Write("Index ");
+        for (int i = 0; i < listP.Count; i++)
+            Console.Write("|{0,3}", i);
+        Console.Write("|\n      ");
+        for (int i = 0; i < listP.Count; i++)
+            Console.Write("|---", i);
+        Console.WriteLine("|");
+        Console.Write("Before");
+        for (int i = 0; i < listP.Count; i++)
+            Console.Write("|{0,3}", listP[i]);
+        Console.WriteLine("|");
+}
+
+    public static void After(List<T> listP)
+    {
+        Console.Write("After ");
+        for (int i = 0; i < listP.Count; i++)
+            Console.Write("|{0,3}", listP[i]);
+        Console.Write("|");
+        if (Sorting<T>.IsSorted(listP))
+        {
+            Console.Write(" Is sorted: ✓\n");
+        }
+        else
+        {
+            throw new Exception("Sorting method is not correct!");
+        }
+    }
+
     public static void DisplayHeader(List<T> aList, int start, int stop)
         {
             for (int i = start; i < stop; ++i)

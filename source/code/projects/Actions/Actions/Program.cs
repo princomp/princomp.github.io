@@ -35,7 +35,8 @@ class Program
         Action<int[]> display_array_variable = ExampleActions<int>.DisplayArray;
         display_array_variable(arrayT);
 
-        // 
+        // Passing an Action as an argument:
         CallingAction.Demo(ExampleActions.Test);
-    }
+}
+
 }

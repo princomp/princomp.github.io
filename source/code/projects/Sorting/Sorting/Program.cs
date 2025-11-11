@@ -5,21 +5,18 @@ class Program
 {
   static void Main(string[] args)
   {
-        List<int> test = new List<int>();
-        Random gen = new Random();
-        for (int i = 0; i < 20; i++)
-        {
-            test.Add(gen.Next(50));
-        }
-        Displaying<int>.DisplayHeader(test, 0, test.Count);
-        Displaying<int>.Display(test);
-        Sorting<int>.InsertionSort(test);
+        Demo.Run(Sorting<int>.InsertionSort);
+        Demo.Run(Sorting<char>.InsertionSort);
 
-        test.Clear();
-        for (int i = 0; i < 20; i++)
-        {
-            test.Add(gen.Next(50));
-        }
-        Sorting<int>.Heapsort(test);
+        Demo.Run(Sorting<int>.Heapsort);
+        Demo.Run(Sorting<char>.Heapsort);
+
+
+        Demo.Run(Sorting<int>.BubbleSort);
+        Demo.Run(Sorting<char>.BubbleSort);
+
+        Demo.Run(Sorting<int>.ShellSort);
+        Demo.Run(Sorting<char>.ShellSort);
+
     }
 }
