@@ -26,7 +26,30 @@ A sorting algorithm…
 
 among other properties.
 
-# Insertion Sort Algorithm
+
+## Algorithm Comparison
+
+The algorithms we are about to study compare [as follows](https://en.wikipedia.org/wiki/Sorting_algorithm#Comparison_of_algorithms):
+
+Name | Best | Average | Worst | Memory | Stable | In-place | 
+--------- | --- | --- | --- | --- | --- | --- | 
+Insertion sort | n | $n^2$ | $n^2$ | 1 | Yes | Yes |
+Heapsort | $n \log n$ | $n \log n$ | $n \log n$ | 1 | No | Yes |
+Bubble sort | n | $n^2$ | $n^2$ | 1 | Yes | Yes |
+Shellsort | $n (\log n)^2$ | $n (\log n)^2$ | $n (\log n)^2$ | 1 | No | Yes | 
+Quicksort | $n \log n$ | $n \log n$ | $n^2$ | $\log n$ | No | Yes | 
+Selection sort | $n^2$ | $n^2$ | $n^2$ | 1 | No | Yes | 
+Merge sort | $n \log n$ | $n \log n$ | $n \log n$ | n | Yes | No | 
+
+## Helper Methods
+
+We start by defining two simple "helper" methods:
+
+```
+!include`snippetStart="// Helper method", snippetEnd="// Done with helper method."` code/projects/Sorting/Sorting/Sorting.cs
+```
+
+## Insertion Sort Algorithm
 
 This algorithm is [nicely explained and illustrated on wikipedia](https://en.wikipedia.org/wiki/Insertion_sort), and can be implemented as follows:
 
@@ -34,7 +57,7 @@ This algorithm is [nicely explained and illustrated on wikipedia](https://en.wik
 !include`snippetStart="// Insertion Algorithm", snippetEnd="// Done with insertion Algorithm"` code/projects/Sorting/Sorting/Sorting.cs
 ```
 
-# Heapsort Algorithm
+## Heapsort Algorithm
 
 We first define some helper methods:
 
@@ -49,3 +72,18 @@ and then leverage the heap structure to sort:
 ```
 
 Note that `PercDown` builds a *max heap*: once the values are "pre-sorted **greater value first**", removing the first one to move it to the *end* of the list makes the list sorted from smallest to greatest value once we are done.
+
+
+## Bubble Algorithm
+
+
+```
+!include`snippetStart="// Bubble Algorithm", snippetEnd="// Done with bubble algorithm."` code/projects/Sorting/Sorting/Sorting.cs
+```
+
+## ShellSort Algorithm
+
+```
+!include`snippetStart="// ShellSort Algorithm", snippetEnd="// Done with shellSort algorithm."` code/projects/Sorting/Sorting/Sorting.cs
+```
+

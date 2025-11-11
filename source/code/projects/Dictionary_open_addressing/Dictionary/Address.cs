@@ -3,15 +3,15 @@
 // values, even complex ones.
 public class Address
 {
-    public string Street { get; set; }
+  public string Street { get; set; }
 
-    public Address(string streetP)
-    {
-        Street = streetP;
-    }
+  public Address(string streetP)
+  {
+    Street = streetP;
+  }
 
-    public override string ToString()
-    {
-        return Street;
-    }
+  public override string ToString()
+  {
+    return Street;
+  }
 }

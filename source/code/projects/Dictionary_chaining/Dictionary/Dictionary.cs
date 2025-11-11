@@ -4,139 +4,148 @@ using System.Collections.Generic;
 public class CDictionary<TKey, TValue>
   where TKey : IComparable<TKey>
 {
+  private class Cell
+  {
+    public TValue Value { get; set; }
+    public TKey Key { get; set; }
 
-    private class Cell
-    {
-        public TValue Value { get; set; }
-        public TKey Key { get; set; }
-
-        public Cell(
-          TKey keyP = default(TKey),
-          TValue valueP = default(TValue)
-        )
-        {
-            Key = keyP;
-            Value = valueP;
-        }
-
-        public override string ToString()
-        {
-            return Key + ":" + Value;
-        }
-    }
-
-    // A dictionary is an array of *lists* of Cells,
-    private List<Cell>[] table;
-
-    public CDictionary(
-      int size = 31
+    public Cell(
+      TKey keyP = default(TKey),
+      TValue valueP = default(TValue)
     )
     {
-        table = new List<Cell>[size];
+      Key = keyP;
+      Value = valueP;
     }
 
-    // The ToString method uses String.Format
     public override string ToString()
     {
-        string returned = "";
-        for (int i = 0; i < table.Length; i++)
-        {
-            returned += String.Format("\nIndex {0, -2} |", i);
-            if (table[i] != null)
-            {
-                foreach (Cell cCell in table[i])
-                {
-                    returned += String.Format(
-          " {0, -10}| {1, -10}|", cCell.Key, cCell.Value);
-                }
-            }
-        }
-        return returned;
+      return Key + ":" + Value;
     }
+  }
 
-    public int GetIndex(TKey keyP)
-    {
-        return (
-            Math.Abs(keyP.GetHashCode())
-          ) % table.Length;
-    }
+  // A dictionary is an array of *lists* of Cells,
+  private List<Cell>[] table;
 
-    public bool Find(TKey keyP)
-    {
-        bool found = false;
-        int index = GetIndex(keyP);
-        if (table[index] != null)
-        {
-            foreach (Cell cCell in table[index])
-            {
-                if (cCell.Key.Equals(keyP)) { found = true; }
-            }
-        }
-        return found;
-    }
+  public CDictionary(int size = 31)
+  {
+    table = new List<Cell>[size];
+  }
 
-    public void Add(TKey keyP, TValue valueP)
+  // The ToString method uses String.Format
+  public override string ToString()
+  {
+    string returned = "";
+    for (int i = 0; i < table.Length; i++)
     {
-        if (Find(keyP))
+      returned += String.Format("\nIndex {0, -2} |", i);
+      if (table[i] != null)
+      {
+        foreach (Cell cCell in table[i])
         {
-            throw new ArgumentException(
-              "A value with key "
-                + keyP.ToString()
-                + " is already present."
-            );
+          returned += String.Format(
+            " {0, -10}| {1, -10}|",
+            cCell.Key,
+            cCell.Value
+          );
         }
-        int index = GetIndex(keyP);
-        if (
-          table[index] == null)
-        {
-            table[index] = new List<Cell>();
-        }
-        Cell newCell = new Cell(keyP, valueP);
-        table[index].Add(newCell);
+      }
     }
+    return returned;
+  }
 
-    public void Remove(TKey keyP)
-    {
-        if (!Find(keyP))
-        {
-            throw new ArgumentException(
-              "There is no value with key "
-                + keyP.ToString()
-                + " in the dictionary."
-                 );
-        }
-        int index = GetIndex(keyP);
-        bool found = false;
-        int counter = 0;
-        while (!found)
-        {
-            if (table[index][counter].Key.Equals(keyP)) { found = true; }
-            else { counter++; }
-        }
-        table[index].RemoveAt(counter);
-    }
+  public int GetIndex(TKey keyP)
+  {
+    return (Math.Abs(keyP.GetHashCode())) % table.Length;
+  }
 
-    public void Clear()
+  public bool Find(TKey keyP)
+  {
+    bool found = false;
+    int index = GetIndex(keyP);
+    if (table[index] != null)
     {
-        for (int i = 0; i < table.Length; i++)
+      foreach (Cell cCell in table[index])
+      {
+        if (cCell.Key.Equals(keyP))
         {
-            if (table[i] != null) { table[i].Clear(); }
+          found = true;
         }
+      }
     }
+    return found;
+  }
 
-    public bool IsEmpty()
+  public void Add(TKey keyP, TValue valueP)
+  {
+    if (Find(keyP))
     {
-        bool empty = true;
-        for (int i = 0; i < table.Length; i++)
-        {
-            if (table[i] != null)
-            {
-                if (table[i].Count != 0)
-                {
-                    empty = false;
-                }
-            }
-        }
-        return empty;
+      throw new ArgumentException(
+        "A value with key "
+          + keyP.ToString()
+          + " is already present."
+      );
     }
+    int index = GetIndex(keyP);
+    if (table[index] == null)
+    {
+      table[index] = new List<Cell>();
+    }
+    Cell newCell = new Cell(keyP, valueP);
+    table[index].Add(newCell);
+  }
+
+  public void Remove(TKey keyP)
+  {
+    if (!Find(keyP))
+    {
+      throw new ArgumentException(
+        "There is no value with key "
+          + keyP.ToString()
+          + " in the dictionary."
+      );
+    }
+    int index = GetIndex(keyP);
+    bool found = false;
+    int counter = 0;
+    while (!found)
+    {
+      if (table[index][counter].Key.Equals(keyP))
+      {
+        found = true;
+      }
+      else
+      {
+        counter++;
+      }
+    }
+    table[index].RemoveAt(counter);
+  }
+
+  public void Clear()
+  {
+    for (int i = 0; i < table.Length; i++)
+    {
+      if (table[i] != null)
+      {
+        table[i].Clear();
+      }
+    }
+  }
+
+  public bool IsEmpty()
+  {
+    bool empty = true;
+    for (int i = 0; i < table.Length; i++)
+    {
+      if (table[i] != null)
+      {
+        if (table[i].Count != 0)
+        {
+          empty = false;
+        }
+      }
+    }
+    return empty;
+  }
 }

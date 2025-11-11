@@ -34,17 +34,17 @@ class Program
     PQueue<int, string> myQueue = new PQueue<int, string>(
       5
     );
-        myQueue.Add(3, "Abdominal pain");
-        Console.WriteLine(myQueue);
-        myQueue.Add(2, "Asthma attack");
-        Console.WriteLine(myQueue);
-        myQueue.Add(4, "Sore throat");
-        Console.WriteLine(myQueue);
-        myQueue.Add(3, "High fever with cough");
-        Console.WriteLine(myQueue);
-        myQueue.Add(1, "Unresponsive");
-        Console.WriteLine(myQueue);
-        myQueue.Add(1, "Cardiac arrest");
-        Console.WriteLine(myQueue);
-    }
+    myQueue.Add(3, "Abdominal pain");
+    Console.WriteLine(myQueue);
+    myQueue.Add(2, "Asthma attack");
+    Console.WriteLine(myQueue);
+    myQueue.Add(4, "Sore throat");
+    Console.WriteLine(myQueue);
+    myQueue.Add(3, "High fever with cough");
+    Console.WriteLine(myQueue);
+    myQueue.Add(1, "Unresponsive");
+    Console.WriteLine(myQueue);
+    myQueue.Add(1, "Cardiac arrest");
+    Console.WriteLine(myQueue);
+  }
 }
