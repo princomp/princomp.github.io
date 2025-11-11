@@ -46,7 +46,7 @@ Merge sort | $n \log n$ | $n \log n$ | $n \log n$ | n | Yes | No |
 We start by defining two simple "helper" methods:
 
 ```
-!include`snippetStart="// Helper method", snippetEnd="// Done with helper method."` code/projects/Sorting/Sorting/Sorting.cs
+!include`snippetStart="// Helper methods", snippetEnd="// Done with helpers method."` code/projects/Sorting/Sorting/Sorting.cs
 ```
 
 ## Insertion Sort Algorithm
@@ -56,6 +56,9 @@ This algorithm is [nicely explained and illustrated on wikipedia](https://en.wik
 ```
 !include`snippetStart="// Insertion Algorithm", snippetEnd="// Done with insertion Algorithm"` code/projects/Sorting/Sorting/Sorting.cs
 ```
+
+[As explained on wikipedia](https://en.wikipedia.org/wiki/Insertion_sort#Best,_worst,_and_average_cases), the simplest worst case input is an array sorted in reverse order. 
+With an array sorted in reverse order, every iteration of the inner loop will scan and shift the entire sorted subsection of the array before inserting the next element. This gives insertion sort a quadratic running time (i.e., $O(n^2)$). 
 
 ## Heapsort Algorithm
 
@@ -73,6 +76,9 @@ and then leverage the heap structure to sort:
 
 Note that `PercDown` builds a *max heap*: once the values are "pre-sorted **greater value first**", removing the first one to move it to the *end* of the list makes the list sorted from smallest to greatest value once we are done.
 
+The `PercDown` is first called $N / 2$ times, which is equivalent to $O(n)$.
+Its complexity is $O(\log(n))$, and it is called a second time $O(n)$ times.
+So, we get an overall performance of $O((n + n) \times \log n) = O(n \times \log(n))$. 
 
 ## Bubble Algorithm
 

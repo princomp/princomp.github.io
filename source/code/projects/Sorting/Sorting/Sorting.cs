@@ -4,7 +4,7 @@ using System.Collections.Generic;
 static class Sorting<T>
   where T : IComparable<T>
 {
-  // Helper method
+  // Helper methods
   private static void Swap(List<T> listP, int lhs, int rhs)
   {
     T current = listP[lhs];
@@ -24,7 +24,7 @@ static class Sorting<T>
     }
     return isSorted;
   }
-  // Done with helper method.
+  // Done with helpers method.
 
   // Insertion Algorithm
   public static void InsertionSort(List<T> listP)
@@ -48,13 +48,13 @@ static class Sorting<T>
 
   // Done with insertion Algorithm
 
-  // Helper methods for Heapsort
+  // Helper method for Heapsort
   private static int LeftChild(int i)
   {
     return 2 * i + 1;
   }
 
-  // Done with helper methods for Heapsort
+  // Done with helper method for Heapsort
 
   // Heapsort Algorithm
   public static void Heapsort(List<T> listP)
