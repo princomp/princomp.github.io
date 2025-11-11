@@ -557,7 +557,7 @@ $(PROJECT_DIR)%.zip: $(PROJECT_DIR)%/*/Program.cs | $(PROJECT_DIR)/%/*/*.cs
 # $(notdir $*) # Name of Solution
 # $(notdir $(patsubst %/,%,$(dir $<))) # Name of Project
 # $@ # Name of target, the zip file
-# cat $< | grep -oP '^\s*(public |private )?class \K.*' # name of the class in Program.cs
+# cat $< | grep -oP '(((internal)|(public)|(private)|(protected)|(sealed)|(abstract)|(static))?[\s\r\n\t]+){0,2}class[\s]+\K([[:alnum:]]|_)*[\s\S]' # name of the class in Program.cs
 #
 # We start by creating the required Properties directory:
 	@mkdir -p $(dir $<)Properties

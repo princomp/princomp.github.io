@@ -25,8 +25,8 @@ class Program
         Action<int> display_variable = ExampleActions.Display;
         display_variable(10);
 
-        // We can even have action
-        // from class that uses generic
+        // We can even have actions
+        // from classes that uses generic
         // type parameters.
 
         int[] arrayT = { 20, 30, 40 };
@@ -37,6 +37,5 @@ class Program
 
         // Passing an Action as an argument:
         CallingAction.Demo(ExampleActions.Test);
-}
-
+    }
 }
