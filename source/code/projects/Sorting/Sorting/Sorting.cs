@@ -53,25 +53,21 @@ static class Sorting<T>
   {
     return 2 * i + 1;
   }
+    // Done with helper method for Heapsort
 
-  // Done with helper method for Heapsort
-
-  // Heapsort Algorithm
+  // Heapsort algorithm
   public static void Heapsort(List<T> listP)
   {
-    Heapsort(listP, listP.Count);
-  }
-
-  private static void Heapsort(List<T> listP, int N)
-  {
-    for (int i = N / 2; i >= 0; i--) /* BuildHeap */
-      PercDown(listP, i, N);
-    for (int i = N - 1; i > 0; i--)
-    {
-      Swap(listP, 0, i); /* DeleteMax */
-      PercDown(listP, 0, i);
+        // Step 1: heapify, or build heap.
+        for (int i = listP.Count / 2; i >= 0; i--)
+            PercDown(listP, i, listP.Count);
+        // Step 2: recursively extract the largest value.
+        for (int i = listP.Count - 1; i > 0; i--)
+        {
+            Swap(listP, 0, i);
+            PercDown(listP, 0, i);
+        }
     }
-  }
 
   private static void PercDown(List<T> listP, int i, int N)
   {
@@ -95,14 +91,14 @@ static class Sorting<T>
     listP[i] = current;
   }
 
-  // Done with heapsort Algorithm
+  // Done with heapsort algorithm
 
   // Bubble Algorithm
   public static void BubbleSort(List<T> listP)
   {
     for (int i = listP.Count - 1; i >= 0; i--)
     {
-      for (int j = 0; j < listP.Count - 1; j++)
+      for (int j = 0; j < i; j++)
       {
         if (listP[j].CompareTo(listP[j + 1]) > 0)
           Swap(listP, j, j + 1);
