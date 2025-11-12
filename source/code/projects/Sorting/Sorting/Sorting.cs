@@ -24,6 +24,7 @@ static class Sorting<T>
     }
     return isSorted;
   }
+
   // Done with helpers method.
 
   // Insertion Algorithm
@@ -53,21 +54,22 @@ static class Sorting<T>
   {
     return 2 * i + 1;
   }
-    // Done with helper method for Heapsort
+
+  // Done with helper method for Heapsort
 
   // Heapsort algorithm
   public static void Heapsort(List<T> listP)
   {
-        // Step 1: heapify, or build heap.
-        for (int i = listP.Count / 2; i >= 0; i--)
-            PercDown(listP, i, listP.Count);
-        // Step 2: recursively extract the largest value.
-        for (int i = listP.Count - 1; i > 0; i--)
-        {
-            Swap(listP, 0, i);
-            PercDown(listP, 0, i);
-        }
+    // Step 1: heapify, or build heap.
+    for (int i = listP.Count / 2; i >= 0; i--)
+      PercDown(listP, i, listP.Count);
+    // Step 2: recursively extract the largest value.
+    for (int i = listP.Count - 1; i > 0; i--)
+    {
+      Swap(listP, 0, i);
+      PercDown(listP, 0, i);
     }
+  }
 
   private static void PercDown(List<T> listP, int i, int N)
   {
