@@ -29,17 +29,19 @@ among other properties.
 
 ## Algorithm Comparison
 
-The algorithms we are about to study compare [as follows](https://en.wikipedia.org/wiki/Sorting_algorithm#Comparison_of_algorithms):
+The algorithms we are about to study compare [as follows](https://en.wikipedia.org/wiki/Sorting_algorithm#Comparison_of_algorithms), omitting the $O(.)$, $\times$, and letting $n$ be the size of the list we have to sort:
 
-Name | Best | Average | Worst | Memory | Stable | In-place | 
---------- | --- | --- | --- | --- | --- | --- | 
-Insertion sort | n | $n^2$ | $n^2$ | 1 | Yes | Yes |
-Heapsort | $n \log n$ | $n \log n$ | $n \log n$ | 1 | No | Yes |
-Bubble sort | n | $n^2$ | $n^2$ | 1 | Yes | Yes |
-Shellsort | $n (\log n)^2$ | $n (\log n)^2$ | $n (\log n)^2$ | 1 | No | Yes | 
-Quicksort | $n \log n$ | $n \log n$ | $n^2$ | $\log n$ | No | Yes | 
-Selection sort | $n^2$ | $n^2$ | $n^2$ | 1 | No | Yes | 
-Merge sort | $n \log n$ | $n \log n$ | $n \log n$ | n | Yes | No | 
+Name | Best | Average | Worst | Memory | Stable | 
+--------- | --- | --- | --- | --- | --- | 
+Insertion sort | $n$ | $n^2$ | $n^2$ | $c$ | Yes | 
+Heapsort | $n \log(n)$ | $n \log (n)$ | $n \log(n)$ | $c$ | No | 
+Bubble sort | $n$ | $n^2$ | $n^2$ | $c$ | Yes | 
+Shellsort | $n (\log(n))^2$ | $n (\log(n))^2$ | $n (\log(n))^2$ | $c$ | No | 
+Quicksort | $n \log(n)$ | $n \log(n)$ | $n^2$ | $\log(n)$ | No |
+Selection sort | $n^2$ | $n^2$ | $n^2$ | $c$ | No | 
+Merge sort | $n \log(n)$ | $n \log(n)$ | $n \log(n)$ | $n$ | Yes |
+
+All the algorithms above are in-place except for merge sort.
 
 ## Helper Methods
 
@@ -66,17 +68,21 @@ At every step, it position a `slot` on the bar and look *back*, moving the value
 
 ### Complexity
 
-[As explained on wikipedia](https://en.wikipedia.org/wiki/Insertion_sort#Best,_worst,_and_average_cases), the simplest worst case input is an array sorted in reverse order. 
-With an array sorted in reverse order, every iteration of the inner loop will scan and shift the entire sorted subsection of the array (i.e., from `bar` to the beginning) before inserting the next element. This gives a quadratic running time (i.e., $O(n^2)$). 
+[As explained on wikipedia](https://en.wikipedia.org/wiki/Insertion_sort#Best,_worst,_and_average_cases), the simplest **worst** case input is an array sorted in reverse order. 
+With an array sorted in reverse order, every iteration of the inner loop will scan and shift the entire sorted subsection of the array (i.e., from `bar` to the beginning) before inserting the next element. This gives a quadratic running time (i.e., $O(n^2)$), since `bar` is linear in `n`, and we iterate twice over it.
+
+On the flip side, if the array is already sorted, then the algorithm is linear, since the inner loop will always execute just one time, giving an overall **best** performance of $O(n)$.
+
+But **on average**, the algorithm remains in $O(n^2)$ since it will need to go through the list twice.
 
 ## Heapsort Algorithm
 
 ### Implementation
 
-We first define some helper methods:
+We first define a helper method:
 
 ```
-!include`snippetStart="// Helper methods for Heapsort", snippetEnd="// Done with helper methods for Heapsort"` code/projects/Sorting/Sorting/Sorting.cs
+!include`snippetStart="// Helper method for Heapsort", snippetEnd="// Done with helper method for Heapsort"` code/projects/Sorting/Sorting/Sorting.cs
 ```
 
 and then leverage the heap structure to sort:
@@ -101,6 +107,7 @@ This algorithm works in two steps:
 - The second step also calls `PercDown` $n$ times, so it is overall $O(n \times \log(n))$ as well.
 
 Hence, the complexity of heapsort is $O(n \times \log(n))$ by [the sum rule](./docs/programming_and_computer_usage/complexity#simplifications).
+Note that the **average**, **worst** and **best** complexity are all the same!
 
 ## Bubble Algorithm
 
@@ -116,7 +123,8 @@ The nested loop accomplishes the following: "from the beginning of the list to w
 
 ### Complexity
 
-Since both loops depends on the size of the list, $n$, the algorithm is overall $O(n^2)$: we need to perform $n$ times $n$ operations.
+Since both loops depends on the size of the list, $n$, the algorithm is **on average** $O(n^2)$: we need to perform $n$ times $n$ operations.
+An optimization (not presented here) that stops the inner loop when elements were not swapped allows to bring the **best** case performance of bubble sort to linear ($O(n)$).
 
 ## ShellSort Algorithm
 
@@ -156,15 +164,27 @@ Consider a list of size 30, we have (assuming `current.CompareTo(listP[slot - ga
 … | … | … | 
 1 | 
 
-The important point is to understand that we generate the sequences
+The important point is to understand that we generate the sequences of pairs (`slot`, `slot-gap`) as follows:
+
 - *Gap of 11*: (11, 0), (12, 1), (13, 2), … (22, 11), (11, 0),  (23, 12), (12, 1), (30, 19), (19, 8), 
 - *Gap of 5*: (5, 0), (11, 6), (6, 1), …
 
-which are sequences of values we are comparing. 
+which are sequences of values we are comparing. For the gap of 11, it means we do the following:
+
+- First, we compare the values at indices 11 and 0, and swap them if needed,
+- Then, we compare the values at indices 12 and 1, and swap them if needed,
+- …
+- Then, we compare the values at indices 30 and 19, and swap them if needed,
+- If we did swap the values previously, then we compare the values at indices 19 and 8, and swap them if needed. 
+
 After we are done going through "the $i$ gap", we know that all values $i$ indices apart are sorted.
 Reducing the value of $i$ to $1$ makes it so that the whole array is sorted.
 
-
 ### Complexity
 
+The complexity of shell sort depends with the "gap sequence" that is used. We use `listP.Count / 3 + 1`, `(listP.Count / 3 + 1) / 2`, `(listP.Count / 3 + 1) / 4`, …, `1`. 
+This sequence follows Shell's original algorithm, and it is of complexity $O(n^2)$ in the **worst case**: indeed, we may need to explore $O(n)$ gaps, each requiring $O(n)$ swaps.
+If the **best case**, if the array is already mostly sorted, then we still need to explore $O(n)$ gaps, but each gap takes only $O(\log(n))$ swaps, giving a $O(n \times \log(n))$ complexity.
+On **average**, the complexity depends a lot on the sequence, but can be around $O(n^{1.5})$, which is still better than quadratic!
 
+Playing with the gap sequence further can give a **best**, **worst** and **average** performance of $O(n \times (\log(n))^2)$!
