@@ -1,4 +1,4 @@
-%%% An AVL tree
+%%% The AVL sub-tree after RotateleftChild
 
 A((9))~~~H1:::hidden
 A-->B((10))
