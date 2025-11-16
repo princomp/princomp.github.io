@@ -1,0 +1,6 @@
+%%% An AVL tree
+
+A((10))-->B((9))
+A~~~H1:::hidden
+B~~~H2:::hidden
+B-->E((null))
