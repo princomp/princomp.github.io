@@ -121,6 +121,6 @@ SDictionary_solution
         The solution is to be in a position where the `error` value is "hidden after" a `null` value:
         
         ```{download="./code/projects/SDictionary_solution.zip"}
-        !include`snippetStart="// Exhibiting Delete incorrect behavior:", snippetEnd="// Done: the program will believe that "Alex" is not"`  code/projects/SDictionary_solution/SDictionary/SDictionary.cs
+        !include`snippetStart="// Exhibiting Delete incorrect behavior:", snippetEnd="// Done: the program will believe that the "`  code/projects/SDictionary_solution/SDictionary/SDictionary.cs
         ```
         </details>

@@ -26,7 +26,8 @@ class Program
         demo.Add(error, null);
         demo.Delete("Alice");
         Console.WriteLine($"{error} is in dictionary: {demo.Delete(error)}.");
-        // Done: the program will believe that "Alex" is not
+        // Done: the program will believe that the 
+        // string error ("Alex") is not
         // in the demo array, while it is.
         Console.WriteLine(demo);
 
