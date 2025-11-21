@@ -14,10 +14,17 @@ class Program
         friends.Add("Lora", null);
         Console.WriteLine(friends);
 
-        Console.WriteLine("Deleted Bob:" + friends.Delete("Bob"));
+        friends.Add("Bob", null);
+        friends.Add("Bob", null);
+        friends.Add("Bob", null);
+        friends.Add("Bob", null);
+        friends.Add("Bob", null);
+        friends.Add("Bob", null);
+        // At this point the dictionary is full:
         Console.WriteLine(friends);
-        Console.WriteLine("Deleted Mary:" + friends.Delete("Mary"));
-        Console.WriteLine(friends);
+        // Uncomment the following to see the program
+        // enters an infinite loop.
+        // friends.Add("Bob", null);
 
         // Exhibiting Delete incorrect behavior:
         SDictionary demo = new SDictionary(2);

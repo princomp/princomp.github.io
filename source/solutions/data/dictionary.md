@@ -26,8 +26,6 @@ tags:
 
 ## Problem
 
-SDictionary_solution
-
 #. Consider the implementation of "simple" dictionary `SDictionary` below:
 
     ```{download="./code/projects/SDictionary.zip"}
@@ -80,7 +78,8 @@ SDictionary_solution
 
         <details>
         <summary>Solution</summary>
-        "Lora" would be inserted at index `2`: `10`, `0` and `1` being taken, `Add` goes to the next available index, `2`. This is not expected, since a dictionary should reject 
+        "Lora" would be inserted at index `2`: `10`, `0` and `1` being taken, `Add` goes to the next available index, `2`. This is not expected, since a dictionary should reject entering *two* values with the same key.
+        </details>
     
     #. Write a `ToString` method for the `SDictionary` class, that returns a `string` containing all the keys and values stored in the dictionary.
     
@@ -99,8 +98,10 @@ SDictionary_solution
         </details>
     
     #. Consider the following `Delete` method:
-    
-
+        
+        ```{download="./code/projects/SDictionary_solution.zip"}
+        !include`snippetStart="// Delete method:", snippetEnd="// End of Delete method."`  code/projects/SDictionary_solution/SDictionary/SDictionary.cs
+        ```
         
         Complete the series of instructions below such that `demo.Delete(error)` would return `false` even though the string `error` *is* the key of a value present in the `demo` dictionary object.
         
@@ -121,6 +122,6 @@ SDictionary_solution
         The solution is to be in a position where the `error` value is "hidden after" a `null` value:
         
         ```{download="./code/projects/SDictionary_solution.zip"}
-        !include`snippetStart="// Exhibiting Delete incorrect behavior:", snippetEnd="// Done: the program will believe that the "`  code/projects/SDictionary_solution/SDictionary/SDictionary.cs
+        !include`snippetStart="// Exhibiting Delete incorrect behavior:", snippetEnd="// Done: the program will believe that the "`  code/projects/SDictionary_solution/SDictionary/Program.cs
         ```
         </details>
