@@ -7,7 +7,6 @@ class Program
   {
     Demo.Run(Sorting<int>.InsertionSort);
     Demo.Run(Sorting<char>.InsertionSort);
-
     Demo.Run(Sorting<int>.Heapsort);
     Demo.Run(Sorting<char>.Heapsort);
 
