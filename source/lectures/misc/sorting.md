@@ -47,7 +47,7 @@ All the algorithms above are in-place except for merge sort.
 
 We start by defining two simple "helper" methods:
 
-```
+```{download="./code/projects/Sorting.zip"}
 !include`snippetStart="// Helper methods", snippetEnd="// Done with helpers method."` code/projects/Sorting/Sorting/Sorting.cs
 ```
 
@@ -57,7 +57,7 @@ We start by defining two simple "helper" methods:
 
 This algorithm is [nicely explained and illustrated on wikipedia](https://en.wikipedia.org/wiki/Insertion_sort), and can be implemented as follows:
 
-```
+```{download="./code/projects/Sorting.zip"}
 !include`snippetStart="// Insertion Algorithm", snippetEnd="// Done with insertion Algorithm"` code/projects/Sorting/Sorting/Sorting.cs
 ```
 
@@ -81,13 +81,13 @@ But **on average**, the algorithm remains in $O(n^2)$ since it will need to go t
 
 We first define a helper method:
 
-```
+```{download="./code/projects/Sorting.zip"}
 !include`snippetStart="// Helper method for Heapsort", snippetEnd="// Done with helper method for Heapsort"` code/projects/Sorting/Sorting/Sorting.cs
 ```
 
 and then leverage the heap structure to sort:
 
-```
+```{download="./code/projects/Sorting.zip"}
 !include`snippetStart="// Heapsort algorithm", snippetEnd="// Done with heapsort algorithm"` code/projects/Sorting/Sorting/Sorting.cs
 ```
 
@@ -113,7 +113,7 @@ Note that the **average**, **worst** and **best** complexity are all the same!
 
 ### Implementation
 
-```
+```{download="./code/projects/Sorting.zip"}
 !include`snippetStart="// Bubble Algorithm", snippetEnd="// Done with bubble algorithm."` code/projects/Sorting/Sorting/Sorting.cs
 ```
 
@@ -130,7 +130,7 @@ An optimization (not presented here) that stops the inner loop when elements wer
 
 ### Implementation
 
-```
+```{download="./code/projects/Sorting.zip"}
 !include`snippetStart="// ShellSort Algorithm", snippetEnd="// Done with shellSort algorithm."` code/projects/Sorting/Sorting/Sorting.cs
 ```
 
@@ -190,3 +190,28 @@ On **average**, the complexity depends a lot on the sequence, but can be around 
 Playing with the gap sequence further can give a **best**, **worst** and **average** performance of $O(n \times (\log(n))^2)$!
 
 ## Quick Sort Algorithm
+
+### Implementation
+
+
+```{download="./code/projects/Sorting.zip"}
+!include`snippetStart="// Quick sort algorithm", snippetEnd="// End of quick Sort algorithm"` code/projects/Sorting/Sorting/Sorting.cs
+```
+
+<!--
+
+### Description
+
+This algorithm works as follows:
+
+- Choose a pivot: we use the `medianOfThree` method to select an element from the list as the pivot. Other ways of choosing the pivot exist, this "median-of-three" technique is optimal when no information about the ordering of the input is known. Note that this method actually sort those three elements "as a bonus", passing by.
+- Partition the list: the idea here is to re-arrange the list around the pivot. After partitioning, all elements smaller than the pivot will be on its left, and all elements greater than the pivot will be on its right. The pivot is then in its correct position, and we obtain the index of the pivot.
+    Recursively Call: Recursively apply the same process to the two partitioned sub-arrays (left and right of the pivot).
+    Base Case: The recursion stops when there is only one element left in the sub-array, as a single element is already sorted.
+
+
+### Complexity
+   
+To implement the "Median of Three" strategy, select the first, last, and middle elements from your current array (or array portion as the recursive calls begin). Take the median (middle) value of those three elements to use for the current pivot.
+
+-->

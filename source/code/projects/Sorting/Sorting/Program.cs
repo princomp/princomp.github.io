@@ -16,7 +16,17 @@ class Program
     Demo.Run(Sorting<int>.ShellSort);
     Demo.Run(Sorting<char>.ShellSort);
 
-    Demo.Run(Sorting<int>.QuickSort);
-    Demo.Run(Sorting<char>.QuickSort);
+        Demo.Run(Sorting<int>.MergeSort);
+        Demo.Run(Sorting<char>.MergeSort);
+
+        Console.WriteLine("Quick sort:");
+        try
+        {
+            Demo.Run(Sorting<int>.QuickSort);
+            Demo.Run(Sorting<char>.QuickSort);
+        }catch (Exception e)
+        {
+            Console.Write(e.Message);
+        }
     }
 }
