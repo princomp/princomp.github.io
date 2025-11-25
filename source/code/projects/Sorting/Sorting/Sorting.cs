@@ -241,11 +241,6 @@ static class Sorting<T>
   )
   {
     QuickSort(listP, 0, listP.Count - 1, stopOn);
-    Console.WriteLine(
-      "After QuickSort but before it calls InsertionSort"
-    );
-    Displaying<T>.Display(listP);
-    Console.WriteLine();
     InsertionSort(listP);
   }
 
@@ -255,12 +250,6 @@ static class Sorting<T>
     int right
   )
   {
-    Console.Write(
-      "\tIn median3: {0}  {1}  {2}",
-      listP[left],
-      listP[(left + right) / 2],
-      listP[right]
-    );
     int center = (left + right) / 2;
     if (listP[center].CompareTo(listP[left]) < 0)
       Swap(listP, left, center);
@@ -284,20 +273,8 @@ static class Sorting<T>
       return;
     else
     {
-      Console.Write("QuickSort({");
-      for (int j = left; j <= right; j++)
-      {
-        Console.Write("{0}", listP[j]);
-        if (j != right)
-          Console.Write(", ");
-      }
-      Console.Write("}");
-      Console.WriteLine(", {0}, {1})", left, right);
-
-      Console.WriteLine();
+        Console.WriteLine();
       T pivot = median3(listP, left, right);
-      Console.Write("{0}", new String(' ', left * 4));
-      Displaying<T>.Display2(listP, left, right + 1);
       int i = left; //, j = right;
       for (int j = right; i < j; )
       {
@@ -311,10 +288,7 @@ static class Sorting<T>
           break;
       }
       Swap(listP, i, right); // Move pivot back
-      Console.Write("{0}", new String(' ', left * 4));
-      Displaying<T>.Display3(listP, left, right + 1, i);
-
-      QuickSort(listP, left, i - 1, stopOn); // sort small partition
+        QuickSort(listP, left, i - 1, stopOn); // sort small partition
       QuickSort(listP, i + 1, right, stopOn); // sort large partition
     }
   }

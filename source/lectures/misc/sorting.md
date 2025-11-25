@@ -188,3 +188,5 @@ If the **best case**, if the array is already mostly sorted, then we still need 
 On **average**, the complexity depends a lot on the sequence, but can be around $O(n^{1.5})$, which is still better than quadratic!
 
 Playing with the gap sequence further can give a **best**, **worst** and **average** performance of $O(n \times (\log(n))^2)$!
+
+## Quick Sort Algorithm
