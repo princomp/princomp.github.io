@@ -68,6 +68,60 @@ tags:
             - Postorder gives 6, 14, 12, 13, 10
             </details>
 
+            
+#. Consider the following AVL tree:
+
+    !include diag/gra/bstree_example_11.md
+    
+    #. Give its *inorder* traversal.
+    
+        <details>
+        <summary>Solution</summary>
+        8, 9, 10, 13, 15, 25
+        </details>
+            
+    #. Give an order in which the values could have been inserted (for example, even if this is incorrect, "9, 13, 25, …") to obtain this tree.
+    
+        <details>
+        <summary>Solution</summary>
+        The values could have been inserted as
+        
+        - 10, 8, 15, 9, 13, 25
+        - 10, 15, 8, 9, 13, 25 (permuting 15 and 8),
+        - 10, 8, 15, 13, 25, 9 (permuting 13, 25, and 9),
+        
+        or some other variations: the important aspects are:
+        
+        1. Start with 10,
+        2. Do not, while inserting the tree, make it un-balanced (otherwise, the tree would re-balance itself and 10 would not be the root).
+        
+        If one wants to leverage re-balancing of the tree, then we can use the following sequence:
+        
+        - 15, 13, 25, 10, 8, 9
+        
+        Indeed, the tree remains balanced until 9 is inserted: inserting 9 triggers a re-balancing that actually produce the tree given as an example.
+        An example of an **incorrect** sequence could be 
+        
+        - 15, 13, 8, 9, 25, 10,
+        
+        as this produces a tree with 13 at its root.
+        </details>
+        
+    #. Draw next to the drawing the tree obtained after 10 was removed.
+    
+        <details>
+        <summary>Solution</summary>
+        There are two strategies after the root was removed:
+        
+        - Replacing it with the greatest value on the sub-tree to the left,
+        - Replacing it with the lowest value on the sub-tree to the right.
+        
+        The second strategy, which is the one [implemented in the lecture notes](./lectures/data/AVLtrees), gives:
+        
+        !include diag/gra/bstree_example_12.md
+        
+        </details>
+    
 #. Consider the following implementation of "random" binary trees:
 
     ```

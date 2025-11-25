@@ -104,6 +104,7 @@
 ./exercises/data/stacks.md
 ./exercises/data/queues.md
 ./exercises/data/trees.md
+./exercises/data/dictionary.md
 ./exercises/control/
 ./exercises/control/conditionals.md
 ./exercises/control/iteratives.md

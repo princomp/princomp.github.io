@@ -67,3 +67,31 @@ It is also possible to compute the height of nodes "on the fly" instead of stori
 - inheriting from the `BTree` class [explored previously](./lectures/data/trees),
 - adding an `IBTree` class that allows you to explore the re-balancing methods more freely,
 - containing some examples showcasing how re-balancing works.
+
+### Additional Example
+
+Consider the following example:
+
+!include diag/gra/avltree_example_1.md
+
+After inserting 8, the tree would become un-balanced and require to call `RotateleftChild`:
+
+!include diag/gra/avltree_example_2.md
+
+The detail to note here is that `RotateleftChild` is called with 
+
+- `nodeTop` being 10,
+- `nodeLeft` being 9,
+- and `nodeLeft.Right` being `null`,
+
+aka, going from
+
+!include diag/gra/avltree_subtree_1.md
+
+to
+
+!include diag/gra/avltree_subtree_2.md
+
+and since the node with value 8 remains the right child of the node with value 9, we obtain (marking explicitely the `null` node that was manipulated):
+
+!include diag/gra/avltree_example_3.md

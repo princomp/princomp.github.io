@@ -1,0 +1,10 @@
+%%% An AVL tree before rebalancing using RotateleftChild on a subtree
+
+A((12))-->B((10))
+A-->C((13))
+B-->D((9))
+D-->E((8))
+B~~~H1:::hidden
+D~~~H2:::hidden
+
+

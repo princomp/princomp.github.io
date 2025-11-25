@@ -1,0 +1,6 @@
+%%% The AVL sub-tree after RotateleftChild
+
+A((9))~~~H1:::hidden
+A-->B((10))
+B-->C((null))
+B~~~H2:::hidden

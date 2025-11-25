@@ -67,7 +67,8 @@ This resource is mainly developed and powered using
 - [make](https://www.gnu.org/software/make/)
 - [python](https://www.python.org)
 - [quartz](https://quartz.jzhao.xyz/), 
-- [github's actions](https://docs.github.com/en/actions).
+- [github's actions](https://docs.github.com/en/actions),
+- [mermaid CLI](https://github.com/mermaid-js/mermaid-cli).
 
 But note that knowing git and markdown are enough to contribute on-line through the [github repository](https://github.com/princomp/princomp.github.io).
 
