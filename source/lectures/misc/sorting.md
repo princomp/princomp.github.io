@@ -197,21 +197,42 @@ Playing with the gap sequence further can give a **best**, **worst** and **avera
 ```{download="./code/projects/Sorting.zip"}
 !include`snippetStart="// Quick sort algorithm", snippetEnd="// End of quick Sort algorithm"` code/projects/Sorting/Sorting/Sorting.cs
 ```
-
-<!--
-
+ 
 ### Description
 
-This algorithm works as follows:
+At a high level, the algorithm
 
-- Choose a pivot: we use the `medianOfThree` method to select an element from the list as the pivot. Other ways of choosing the pivot exist, this "median-of-three" technique is optimal when no information about the ordering of the input is known. Note that this method actually sort those three elements "as a bonus", passing by.
-- Partition the list: the idea here is to re-arrange the list around the pivot. After partitioning, all elements smaller than the pivot will be on its left, and all elements greater than the pivot will be on its right. The pivot is then in its correct position, and we obtain the index of the pivot.
-    Recursively Call: Recursively apply the same process to the two partitioned sub-arrays (left and right of the pivot).
-    Base Case: The recursion stops when there is only one element left in the sub-array, as a single element is already sorted.
+- pick a "median" value (the pivot), at the middle of the list to be sorted,
+- organize the list so that the values to the left of the pivot are smaller than the pivot, and the values greater than or equal to the pivot are to its right,
+- then recursively call quicksort on the values to the left of the pivot, and on the values to the right of the pivot,
+- when the lists left to be sorted are of size 1, we know that quicksort is done (a list of size 1 is sorted!), the list is sorted.
 
+In detail, this algorithm works as follows:
+
+- Choose a pivot: we use the `medianOfThree` method to select an element from the list as the pivot. Other ways of choosing the pivot exist, this "median-of-three" technique is optimal when no information about the ordering of the input is known. Note that this method actually sorts those three elements (at the beginning, center and end of the list to be sorted), and take the median one as the `pivot`,
+- The `while (left <= right)` loop in `QuickSort` proceeds as follows:
+  
+    - It first look for the smallest `left` index such that `listP[left] > pivot`,
+    - It then look for the greatest `right` index such that `pivot <= listP[right]` and `left <= right`,
+    - At this point, we know that those values at `left` and `right` needs to be swapped (if `left < right`, i.e., they did not cross) and we swap them.
+    
+- When this loop is done, we know that `left` is where the `pivot` ought to be, it's the median value of the list we are sorting.
+- We can then call `Quicksort` on the two sub-lists:
+  - the one that goes from `leftP` to `left - 1` (i.e, the values to the left of the pivot),
+  - the one that goes from `left + 1` to `rightP` (i.e, the values to the left of the pivot),
+
+One subtlety is that we know that `left` is where the `pivot` value ought to be (we actually did not know where it should have been where we started, we simply made an educated guess): hence, it was swapped at the end of `medianOfThree` and back at the end of `Quicksort`.
 
 ### Complexity
-   
-To implement the "Median of Three" strategy, select the first, last, and middle elements from your current array (or array portion as the recursive calls begin). Take the median (middle) value of those three elements to use for the current pivot.
 
--->
+The complexity of quick sort depends on how "lucky" we were when we picked the pivot value.
+The **best case** is when the pivot always divides the array in two equal halves. Let $T(n)$ be the complexity of sorting a list of size $n$ using quicksort:
+
+- We need to perform a linear ($O(n)$) number of comparison, to partition the values to the left and the right of the pivot, and then to sort each-sublist,
+- To sort each sub-list, we need to first partition them, which takes $O(n/2)$ number of comparison,
+- Then, sorting each sub-list takes $T(n / 2)$.
+- So, we get that $T(n) = O(n) + 2 \times T(n / 2)$,
+- Iterating this mechanism, we get that $T(n) = 2^k \times T(n/(2^k)) + k \times n$, for $n = 2^k$,
+- Then, we get $k = log2(n)$ and $T(n) = n \times T(1) + n \times \log(n) = O(n \times \log(n))$.
+
+The **average case** is also $O(n \times \log(n))$, but if we are unlucky with our pivot (which is always at the beginning or at the end of the list), then we have to keep on sorting a sub-list that is linear $n$ (we partition our list in lists of size $n-1$ and $1$), and we get a **worst case** complexity of $O(n^2)$.

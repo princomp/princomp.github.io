@@ -138,6 +138,70 @@ static class Sorting<T>
 
     // Done with shellSort algorithm.
 
+    // Quick sort algorithm
+    public static void QuickSort(
+        List<T> listP
+    )
+    {
+        QuickSort(listP, 0, listP.Count - 1);
+    }
+
+    public static void QuickSort(
+      List<T> listP,
+      int leftP,
+      int rightP
+    )
+    {
+        if (leftP < rightP + 1)
+        {
+            T pivot = MedianOfThree(listP, leftP, rightP);
+            int left = leftP;
+            int right = rightP;
+            while (left <= right)
+            {
+                // looking for value larger
+                // than the pivot
+                // on the left:
+                while (listP[left].CompareTo(pivot) < 0) left++;
+                // looking for value smaller
+                // than or equal to the pivot
+                // on the right, without "crossing"
+                // left and right.
+                while ((left <= right) && pivot.CompareTo(listP[right]) <= 0) right--;
+                if (left < right)
+                    Swap(listP, left, right);
+
+            }
+
+            Swap(listP, left, rightP); // Move pivot back
+            QuickSort(listP, leftP, left - 1); // sort left sub-list
+            QuickSort(listP, left + 1, rightP); // sort rigth sub-list
+        }
+    }
+
+    private static T MedianOfThree(
+  List<T> listP,
+  int left,
+  int right
+)
+    {
+        int center = (left + right) / 2;
+        // We sort the left, center and right 
+        // elements:
+        if (listP[center].CompareTo(listP[left]) < 0)
+            Swap(listP, left, center);
+        if (listP[right].CompareTo(listP[left]) < 0)
+            Swap(listP, left, right);
+        if (listP[right].CompareTo(listP[center]) < 0)
+            Swap(listP, center, right);
+
+        // Move the pivot to the right:
+        Swap(listP, center, right);
+        return listP[right];
+    }
+    // End of quick Sort algorithm
+
+
     // Selection Sort Algorithm
     public static void SelectionSort(List<T> listP)
     {
@@ -174,73 +238,5 @@ static class Sorting<T>
 
     // End of selection sort algorithm
 
-    // Quick sort algorithm
-    public static void QuickSort(
-        List<T> listP
-    )
-    {
-        QuickSort(listP, 0, listP.Count - 1, 3);
-    }
-
-    public static void QuickSort(
-      List<T> listP,
-      int leftP,
-      int rightP,
-      int stopOnP = 3
-    )
-    {
-        int range = rightP - leftP + 1;
-        // if range is larger than stopOn use insertion sort
-        if (range >= stopOnP)
-        {
-            InsertionSort(listP);
-        }
-        else
-        {
-            T pivot = medianOfThree(listP, leftP, rightP);
-            int i = leftP;
-            int j = rightP;
-            while(i < j)
-            {
-                // looking for value larger
-                // than the pivot
-                // on the left:
-                while (listP[i].CompareTo(pivot) < 0) i++;
-                // looking for value smaller
-                // than the pivot
-                // on the right.
-                while (pivot.CompareTo(listP[j]) < 0) j--;
-
-                if (i < j)
-                    Swap(listP, i, j);
-            }
-
-            Swap(listP, i, rightP); // Move pivot back
-            QuickSort(listP, leftP, i - 1, stopOnP); // sort small partition
-            QuickSort(listP, i + 1, rightP, stopOnP); // sort large partition
-        }
-    }
-
-    private static T medianOfThree(
-      List<T> listP,
-      int left,
-      int right
-    )
-    {
-        int center = (left + right) / 2;
-        // We sort the left, center and right 
-        // elements:
-        if (listP[center].CompareTo(listP[left]) < 0)
-            Swap(listP, left, center);
-        if (listP[right].CompareTo(listP[left]) < 0)
-            Swap(listP, left, right);
-        if (listP[right].CompareTo(listP[center]) < 0)
-            Swap(listP, center, right);
-
-        // Move the pivot to the right:
-        Swap(listP, center, right);
-        return listP[right];
-    }
-    // End of quick Sort algorithm
 
 }

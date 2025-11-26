@@ -3,30 +3,30 @@ using System.Collections.Generic;
 
 class Program
 {
-  static void Main(string[] args)
-  {
-    Demo.Run(Sorting<int>.InsertionSort);
-    Demo.Run(Sorting<char>.InsertionSort);
-    Demo.Run(Sorting<int>.Heapsort);
-    Demo.Run(Sorting<char>.Heapsort);
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Insertion sort:");
+        Demo.Run(Sorting<int>.InsertionSort);
+        Demo.Run(Sorting<char>.InsertionSort);
 
-    Demo.Run(Sorting<int>.BubbleSort);
-    Demo.Run(Sorting<char>.BubbleSort);
+        Console.WriteLine("Heap sort:");
+        Demo.Run(Sorting<int>.Heapsort);
+        Demo.Run(Sorting<char>.Heapsort);
 
-    Demo.Run(Sorting<int>.ShellSort);
-    Demo.Run(Sorting<char>.ShellSort);
+        Console.WriteLine("Bubble sort:");
+        Demo.Run(Sorting<int>.BubbleSort);
+        Demo.Run(Sorting<char>.BubbleSort);
 
-        Demo.Run(Sorting<int>.MergeSort);
-        Demo.Run(Sorting<char>.MergeSort);
+        Console.WriteLine("Shell sort:");
+        Demo.Run(Sorting<int>.ShellSort);
+        Demo.Run(Sorting<char>.ShellSort);
 
         Console.WriteLine("Quick sort:");
-        try
-        {
-            Demo.Run(Sorting<int>.QuickSort);
-            Demo.Run(Sorting<char>.QuickSort);
-        }catch (Exception e)
-        {
-            Console.Write(e.Message);
-        }
+        Demo.Run(Sorting<int>.QuickSort);
+        Demo.Run(Sorting<char>.QuickSort);
+
+        Console.WriteLine("Selection sort:");
+        Demo.Run(Sorting<int>.SelectionSort);
+        Demo.Run(Sorting<char>.SelectionSort);
     }
 }
