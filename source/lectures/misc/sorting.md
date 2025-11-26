@@ -204,13 +204,13 @@ At a high level, the algorithm
 
 - pick a "median" value (the pivot), at the middle of the list to be sorted,
 - organize the list so that the values to the left of the pivot are smaller than the pivot, and the values greater than or equal to the pivot are to its right,
-- then recursively call quicksort on the values to the left of the pivot, and on the values to the right of the pivot,
+- then recursively call quicksort on the list on the left of the pivot, and on the list on the right of the pivot,
 - when the lists left to be sorted are of size 1, we know that quicksort is done (a list of size 1 is sorted!), the list is sorted.
 
 In detail, this algorithm works as follows:
 
 - Choose a pivot: we use the `medianOfThree` method to select an element from the list as the pivot. Other ways of choosing the pivot exist, this "median-of-three" technique is optimal when no information about the ordering of the input is known. Note that this method actually sorts those three elements (at the beginning, center and end of the list to be sorted), and take the median one as the `pivot`,
-- The `while (left <= right)` loop in `QuickSort` proceeds as follows:
+- Partition the list: the `while (left <= right)` loop in `QuickSort` proceeds as follows:
   
     - It first look for the smallest `left` index such that `listP[left] > pivot`,
     - It then look for the greatest `right` index such that `pivot <= listP[right]` and `left <= right`,
@@ -233,6 +233,6 @@ The **best case** is when the pivot always divides the array in two equal halves
 - Then, sorting each sub-list takes $T(n / 2)$.
 - So, we get that $T(n) = O(n) + 2 \times T(n / 2)$,
 - Iterating this mechanism, we get that $T(n) = 2^k \times T(n/(2^k)) + k \times n$, for $n = 2^k$,
-- Then, we get $k = log2(n)$ and $T(n) = n \times T(1) + n \times \log(n) = O(n \times \log(n))$.
+- Then, we get $k = \log(n)$ and $T(n) = n \times T(1) + n \times \log(n) = O(n \times \log(n))$.
 
 The **average case** is also $O(n \times \log(n))$, but if we are unlucky with our pivot (which is always at the beginning or at the end of the list), then we have to keep on sorting a sub-list that is linear $n$ (we partition our list in lists of size $n-1$ and $1$), and we get a **worst case** complexity of $O(n^2)$.
