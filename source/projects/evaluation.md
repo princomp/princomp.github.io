@@ -112,6 +112,9 @@ This project is already challenging *as is*, but bonus will be given if:
 - (medium) Your `Main` method exhibits many test cases and illustrates your classes' features nicely,
 - (hard) A mechanism is implemented to either export the attributes of an `Evaluation` object into a file or to load it from a file.
 
+<!--
+
 ## Solution
 
 A possible solution is shared [in this archive](./code/projects/Evaluation.zip).
+-->

@@ -62,9 +62,11 @@ Bonus points will be given if:
 Please, follow our [guideline on project submission](./projects/submission).
 In particular, make sure you write your name and the date in a delimited comment at the beginning of your file.
 
+<!--
 
 ## Solution
 
 A possible solution is shared [in this archive](./code/projects/AVLTree_I_solution.zip).
 
 Note that *only the `Program.cs` and `IAVLTree.cs` files have been changed*, there is no need to review the other ones. One bonus (the last one) is completed, and all the other requirements of the projects are completed.
+-->

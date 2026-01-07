@@ -288,6 +288,8 @@ This project is already challenging *as is*, but bonus will be given if:
 Please, follow our [guideline on project submission](./projects/submission).
 In particular, make sure you write your name and the date in a delimited comment at the beginning of your file.
 
+<!--
+
 ## Possible misconceptions
 
 Some additional possible misconceptions are discussed [in this project](./code/projects/Properties_errors.zip).
@@ -308,3 +310,4 @@ This solution completes the "(easy) The ToString() methods return the informatio
 > This is discussed in some details in [this stack exchange post](https://stackoverflow.com/questions/3284/why-cant-i-have-abstract-static-methods-in-c).
 > A change was recently introduced in .NET 6, that [makes static abstract members in interface possible](https://learn.microsoft.com/en-us/dotnet/core/compatibility/core-libraries/6.0/static-abstract-interface-methods), but it is limited to interfaces, and abstract static methods cannot be added to abstract classes.
 
+-->
