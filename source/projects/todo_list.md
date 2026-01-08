@@ -30,11 +30,6 @@ Develop a simple program that asks the user to provide their todo list, and then
 #. Once the user entered the number of item, the updated todo list should be displayed, and the user should be asked for another number of an item.
 #. Once the user completed all the items in the list, the program should display a celebratory message about being done.
 
-### Submission
-
-Please, follow our [guideline on project submission](https://princomp.github.io/projects/submission).
-In particular, make sure you write your name and the date in a delimited comment at the beginning of your file.
-
 ### Example
 
 Here is an example of execution, where the user input is u͟n͟d͟e͟r͟l͟i͟n͟e͟d͟, and hitting "enter" is represented by "⏎͟":
