@@ -538,11 +538,19 @@ tidy:
 $(BUILD_DIR)$(PROJECT_DIR)%.zip: $(PROJECT_DIR)%.zip
 	@mkdir -p $(dir $@)
 	@rsync -av $(subst $(BUILD_DIR),,$@) $@
+	
+$(PROJECT_DIR)%.zip: $(PROJECT_DIR)%/*/Program.cs | $(PROJECT_DIR)/%/*/*.cs
+	@(printf '<Project Sdk="Microsoft.NET.Sdk">\n	<PropertyGroup>\n    <OutputType>Exe</OutputType>\n    <TargetFramework>net10.0</TargetFramework>\n    <ImplicitUsings>enable</ImplicitUsings>\n    <Nullable>enable</Nullable>\n  </PropertyGroup>\n \n</Project>') > $(dir $<)$(notdir $(patsubst %/,%,$(dir $<))).csproj 
+# We now zip the folder:
+	@cd $(dir $(patsubst %/,%,$(dir $<))) && 7z a $(notdir $@) $(notdir $*) -xr\!.vs -xr\!.directory > nul && mv $(notdir $@) ../
+# We compress (silently, thanks to the -bso0 -bsp0 options) the folder containing the csproj and the code
+# Finally, we clean the files:
+	@rm $(dir $<)$(notdir $(patsubst %/,%,$(dir $<))).csproj
 
 # Rule to create one individual project and zip it:
 # The code below is taken from and documented at 
 # https://github.com/princomp/C-Sharp-project-maker
-$(PROJECT_DIR)%.zip: $(PROJECT_DIR)%/*/Program.cs | $(PROJECT_DIR)/%/*/*.cs
+$(PROJECT_DIR)%_v4.5.2.zip: $(PROJECT_DIR)%/*/Program.cs | $(PROJECT_DIR)/%/*/*.cs
 #
 # The structure of an archive is as follows:
 # └───<Solution>	 	     $(notdir $*)
@@ -601,6 +609,11 @@ $(PROJECT_DIR)%.zip: $(PROJECT_DIR)%/*/Program.cs | $(PROJECT_DIR)/%/*/*.cs
 	@cd $(dir $(patsubst %/,%,$(dir $<)))../ && 7z a $(notdir $@) $(notdir $*) -xr\!.vs -xr\!.directory > nul
 #  We compress the folder containing the sln and the folder containing the csproj and the code
 #  But we exclude the .vs folder and .directory file
+# Finally, we clean the files:
+	@rm -rf $(dir $(patsubst %/,%,$(dir $<)))/$(notdir $*).sln 
+	@rm -rf $(dir $<)$(notdir $(patsubst %/,%,$(dir $<))).csproj 
+	@rm -rf $(dir $<)Properties 
+	@rm -rf $(dir $<)Properties/AssemblyInfo.cs
 
 # -------------------------------
 # Book files
