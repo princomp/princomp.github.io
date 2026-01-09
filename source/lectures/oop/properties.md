@@ -259,6 +259,8 @@ The benefit of this notation is that read-only properties can easily be integrat
 + «get» Radius : decimal
 ```
 
+<!--
+
 ## Properties and Security
 
 *The following discussion is related to the general topic of [`try-catch-finally` scope](../misc/exceptions#scoping-in-try-catch-finally-statements) but can be read independently.*
@@ -292,3 +294,9 @@ Where the last line indicate that the attribute *was set to `"Forbidden word"`!*
 
 The correct fix is to **first test, then set**, so that an incorrect value would **never be assigned**.
 In the previous example, simply moving `sensibleData = value;` to the end of the `set` would fix this issue.
+
+
+
+```{download="./code/projects/PropertySafety"}
+```
+-->
