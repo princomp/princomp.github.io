@@ -2,6 +2,9 @@
 title: How to Submit Projects
 ---
 
+This page assumes that you already created a project, following the instructions in the prompt if there are any.
+Note that your instructor will make efforts to accommodate all versions of the .NET framework, the important is that your project can compile with *some* version of it.
+
 # Submission
 
 First, make sure your name and the date is placed in a delimited comment at the very beginning of each of your `.cs` file.
