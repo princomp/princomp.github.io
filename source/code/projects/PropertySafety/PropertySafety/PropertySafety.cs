@@ -7,12 +7,12 @@ class PropertySafety
   {
     set
     {
+      sensibleData = value;
       if (value == "Forbidden word")
       {
         Console.WriteLine("Intrusion detected, aborting!");
         throw new AccessViolationException();
       }
-      sensibleData = value;
     }
     get { return sensibleData; }
   }
