@@ -47,22 +47,23 @@ class Program
     myQueue.Add(1, "Cardiac arrest");
     Console.WriteLine(myQueue);
 
-        PQueue<int, string> heapProblem = new PQueue<int, string>(6);
-        heapProblem.Add(10, null);
-        Console.WriteLine(heapProblem);
-        heapProblem.Add(2, null);
-        Console.WriteLine(heapProblem);
-        heapProblem.Add(5, null);
-        Console.WriteLine(heapProblem);
-        heapProblem.Add(7, null);
-        Console.WriteLine(heapProblem);
-        heapProblem.Extract();
-        Console.WriteLine(heapProblem);
-        heapProblem.Add(3, null);
-        Console.WriteLine(heapProblem);
-        heapProblem.Add(12, null);
-        Console.WriteLine(heapProblem);
-
-
-    }
+    PQueue<int, string> heapProblem = new PQueue<
+      int,
+      string
+    >(6);
+    heapProblem.Add(10, null);
+    Console.WriteLine(heapProblem);
+    heapProblem.Add(2, null);
+    Console.WriteLine(heapProblem);
+    heapProblem.Add(5, null);
+    Console.WriteLine(heapProblem);
+    heapProblem.Add(7, null);
+    Console.WriteLine(heapProblem);
+    heapProblem.Extract();
+    Console.WriteLine(heapProblem);
+    heapProblem.Add(3, null);
+    Console.WriteLine(heapProblem);
+    heapProblem.Add(12, null);
+    Console.WriteLine(heapProblem);
+  }
 }

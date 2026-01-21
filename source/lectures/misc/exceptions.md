@@ -24,14 +24,14 @@ tags:
 	```
 	- In the first case, a "System.DivideByZeroException has been thrown" error message would be displayed.
 	- In the second case, a "System.IndexOutOfRangeException has been thrown" error message would be displayed.
-	- Those are examples of exceptions [thrown by operations](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/exceptions#215-common-exception-classes).
-- Methods can also throw exceptions. For example, the following statement:
+	- Those are examples of exceptions [*thrown by operations*](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/exceptions#215-common-exception-classes).
+- *Methods* can also throw exceptions. For example, the following statement:
 
 	```
 	int x = int.Parse("This is not a number.");
 	```
 	
-	will display a "System.FormatException has been thrown" error message. This is because [the `Parse` method can *throw an exception*](https://learn.microsoft.com/en-us/dotnet/api/system.int32.parse?view=net-8.0#system-int32-parse(system-string)).
+	will display a "System.FormatException has been thrown" error message. This is because [the `Parse` method can throw an exception](https://learn.microsoft.com/en-us/dotnet/api/system.int32.parse?view=net-8.0#system-int32-parse(system-string)).
 - Of course, a programmer would not *purposely* introduce such strange instructions in their code, but they may arise after interacting with the "outside world", that is, a user, file, or other external factor.
 - C# allows *exception handling*, which are ways of recovering when such exceptions are thrown, so that the program can keep on executing. Stated differently, they instruct the program what to do, for example, if it is asked to perform a division by 0. This is handled by `catch` blocks.
 - C# also allows `finally` blocks, which contain code executed unconditionally, that is, regardless of whether an exception was thrown or not.
@@ -214,30 +214,13 @@ tags:
 	#. It decided not to care about *why* the parsing fails (it can be either because the input is `null`, because it is not in valid format, or because it produces an overflow).
 - However, exceptions can handle those cases differently thanks to different `catch` blocks:
 
-	```
-	Console.WriteLine("Test with" +
-		"\n\t- nothing (ctrl + d on linux, ctrl + z on windows), " +
-		"\n\t- \"No\"," +
-		"\n\t-  " + int.MaxValue + "+ 1 = 2147483648.");
-	try
-	{
-		int.Parse(Console.ReadLine());
-	}
-	catch (ArgumentNullException)
-	{
-		Console.WriteLine("No argument provided.");
-	}
-	catch (FormatException)
-	{
-		Console.WriteLine("The string does not contain only number characters.");
-	}
-	catch (OverflowException)
-	{
-		Console.WriteLine("The number is greater than what an integer can store.");
-	}
-	```
+	```{download="./code/projects/ExceptionParse.zip"}
+    !include code/projects/ExceptionParse/ExceptionParse/Program.cs
+    ```
+    
+    Note that we could decide to give different values to `value` to reflect different types of exceptions in the `catch`es blocks.
 	
-- So, in summary, `TryParse` is in general better if there is no need to handle the different exceptions differently.
+- So, in summary, `TryParse` is in general better if there is no need to handle the different exceptions differently. But `Parse` is more fine-grained, as it can allow to distinguish between exceptions.
 
 ## Throwing an Exception
 
