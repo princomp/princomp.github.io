@@ -1,4 +1,4 @@
----
+    ---
 tags:
 - oop
 ---
@@ -82,9 +82,9 @@ tags:
 - Properties are members of an object, just like instance variables and methods
 - Access them with the "member access" operator, aka the dot operator
     - For example, `myRect.Width` will access the property we wrote, assuming `myRect` is a Rectangle
-- A complete example (available [as a complete solution](./code/projects/Properties_Example.zip)), where the "length" and "width" attributes are implemented with properties:
+- A complete example where the "length" and "width" attributes are implemented with properties:
 
-    ```
+    ```{download="./code/projects/Properties_Example.zip"}
     !include code/projects/Properties_Example/Rectangle/Rectangle.cs
     ```
 
@@ -159,14 +159,14 @@ tags:
     ```
 - Note however that if either the set or get accessor is not the "trivial" one, then automatic properties cannot be used and the other accessor must be specified.
     - For example, in the above code, simply writing `get;` instead of `get { return length; }` would give a compilation error.
-- Note that properties can exist without backing field, and they can be *read-only* (that is, without a set accessor) or *write-only* (that is, without a get accessor, but this is rarer).
+- Note that properties can exist without backing field, and they can be *read-only* (that is, without a set accessor) or *write-only* (that is, without a get accessor, but this is more rare).
     - An example of read-only property is as follows: 
 
         ```
         class Circle
         {
             public decimal Diameter { get; set; }
-            // The constructor below  sets the value
+            // The constructor below sets the value
             // of the property's backing field through
             // the property's set accessor.
             public Circle(decimal dP)
@@ -221,11 +221,11 @@ Putting together some of the elements discussed above, we can get for example th
 
 ### Simple Notation
 
-- Since properties represent (or, rather, allow to access) attributes, they go in the "attributes" box (the second box)
-- If a property will simply "get" and "set" an instance variable of the same name, you do *not* need to write the instance variable in the box
+- Since properties represent (or, rather, allow to access) attributes, they go in the "attributes" box (the second box).
+- If a property will simply "get" and "set" an instance variable of the same name, you do *not* need to write the instance variable in the box, especially if those instance variables are not used anywhere other than through the property
     - No need to write both the property `Width` and the instance variable `width`
-- Syntax: `[+/-] «property» [name]: [type]` (where "«property»" is sometimes used in place of «property»).
-- Note that the access modifier (+ or -) is for the property, not the instance variable, so it is + if the property is `public` (which it usually is)
+- Syntax: `[+/-] «property» [name]: [type]` (where "<<property>>" is sometimes used in place of «property»).
+- Note that the access modifier (+ or -) is for the property, not the instance variable, so it is + if the property is `public` (which it usually is).
 - Example for `Rectangle`, assuming we converted both attributes to use properties instead of getters and setters:
 
     !include diag/cla/Rectangle_with_properties.md
