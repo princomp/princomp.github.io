@@ -85,8 +85,6 @@ Press any key to continue...
 Please, follow our [guideline on project submission](./projects/submission).
 In particular, make sure you write your name and the date in a delimited comment at the beginning of your file.
 
-<!--
-
 ## Solution
 
 ### Simplest Solution
@@ -120,4 +118,3 @@ todoList[0].Description = "My first item";
 todoList[0].Status = false;
 Console.Write(todoList[0].Description + (todoList[0].Status ? " done" : " not done"));
 ```
--->
