@@ -141,8 +141,6 @@ Note that it is ok if you cannot reproduce this output *exactly*.
 Please, follow our [guideline on project submission](./projects/submission).
 In particular, make sure you write your name and the date in a delimited comment at the beginning of your file.
 
-<!--
-
 ## Solution
 
 A possible solution is shared [in this archive](./code/projects/Bookmarker.zip):
@@ -159,4 +157,3 @@ A solution completing the bonus
 > "Have your class handle strings, so that, for example, your Bookmarker constructor would take three strings as input"
 
 is shared [in this archive](./code/projects/Bookmarker_with_strings.zip).
--->

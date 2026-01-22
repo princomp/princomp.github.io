@@ -89,13 +89,12 @@ In particular, make sure you write your name and the date in a delimited comment
 
 ### Simplest Solution
 
-A possible solution, using arrays but not resizing them, is as follows:
+A possible solution, using arrays but not resizing them, is [in this archive](./code/projects/TodoList_Array.zip).
+This solution could be improved by:
 
-```
-!include code/projects/TodoList_Array/TodoList/Program.cs
-```
-
-You can [download it here](./code/projects/TodoList_Array.zip)
+- using a `MAXSIZE` constant variable to hold the maximum number of elements in the todo list instead of "hard-coding" the value 100,
+- making sure that the user cannot enter more than `MAXSIZE` number of elements,
+- fix the incorrect behavior when the user enters the same number twice: can you determine what would happen with the current implementation, and why it is incorrect?
 
 ### Using Classes 
 
