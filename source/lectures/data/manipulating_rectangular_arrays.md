@@ -13,7 +13,7 @@ The code for this lecture is available [in this archive](./code/projects/MagicSq
 
 The following code sum the values contained in a 2-dimensional array row per row, and display the result each time before moving on to the next row:
 
-```
+```{download="./code/projects/MagicSquare.zip"}
 !include`snippetStart="// Summing the values row per row", snippetEnd="As an exercise, you can"` code/projects/MagicSquare/MagicSquare/Program.cs
 ```
 
@@ -25,7 +25,7 @@ A [magic square](https://en.wikipedia.org/wiki/Magic_square) is a square matrix 
 
 The following is an example of a magic square:
 
-```
+```{download="./code/projects/MagicSquare.zip"}
 !include`snippetStart="// Examples courtesy of https://en.wikipedia.org/wiki/Magic_square", snippetEnd="// Check by hand that this square is indeed magic!"` code/projects/MagicSquare/MagicSquare/Program.cs
 ```
 
@@ -47,7 +47,7 @@ $$2+7+6=15$$
 
 A method to return `true` if the 2d-matrix of `int` passed as an argument is a magic square is as follows:
 
-```
+```{download="./code/projects/MagicSquare.zip"}
 !include code/projects/MagicSquare/MagicSquare/MagicSquare.cs
 ```
 

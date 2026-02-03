@@ -116,8 +116,8 @@ tags:
 #. Write a `Display` static method that takes as an argument a 2-dimensional array and displays it at the screen.
 
     <details>
-    <summary>Solution</summary>```
-    !include`snippetStart="// Method to display 2-d arrays", snippetEnd="// End of method to display 2-d arrays"` code/snippets/2darrays.cs
+    <summary>Solution</summary>```{download="./code/projects/2DarrayExercise.zip"}
+    !include`snippetStart="// Method to display 2-d arrays", snippetEnd="// End of method to display 2-d arrays"` code/projects/2DarrayExercise/2DarrayExercise/Program.cs
     ```
     </details>
 
@@ -183,7 +183,7 @@ tags:
 #. Write a program that "rotate" a 2-dimensional array 90° clockwise. For example, the array 
 
     ```
-    !include`snippetStart="// Example array1", snippetEnd="// End of example array1"` code/snippets/2darrays.cs
+    !include`snippetStart="// Example array1", snippetEnd="// End of example array1"` code/projects/2DarrayExercise/2DarrayExercise/Program.cs
     ```
     
     would become
@@ -195,8 +195,8 @@ tags:
     ```
 
     <details>
-    <summary>Solution</summary>```
-    !include`snippetStart="// Method to rotate an array 90° clockwise", snippetEnd="// End of method to rotate an array 90° clockwise"` code/snippets/2darrays.cs
+    <summary>Solution</summary>```{download="./code/projects/2DarrayExercise.zip"}
+    !include`snippetStart="// Method to rotate an array 90° clockwise", snippetEnd="// End of method to rotate an array 90° clockwise"` code/projects/2DarrayExercise/2DarrayExercise/Program.cs
     ```
     </details>
     
