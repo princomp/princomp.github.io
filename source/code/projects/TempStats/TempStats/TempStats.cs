@@ -2,6 +2,13 @@
 
 class TempStats
 {
+  private const double LOWEST_TEMPERATURE = -128.6;
+
+  // https://en.wikipedia.org/wiki/Lowest_temperature_recorded_on_Earth
+  private const double HIGHEST_TEMPERATURE = 134.1;
+
+  // https://en.wikipedia.org/wiki/Highest_temperature_recorded_on_Earth
+
   public string Description { get; set; }
   private double[] temp;
   public double[] Temp
@@ -11,34 +18,44 @@ class TempStats
       bool sortedSoFar = true;
       int index = 0;
 
+      if (value == null)
+      {
+        throw new ArgumentException(
+          "Array of temperatures cannot be null."
+        );
+      }
+
       while (index + 1 < value.Length && sortedSoFar)
       {
         if (value[index] > value[index + 1])
           sortedSoFar = false;
         index++;
       }
+
       if (!sortedSoFar)
       {
         throw new ArgumentException(
           "Your data is not sorted."
         );
       }
-      foreach (double i in value)
+
+      // At this point, we know the array is sorted (increasingly).
+      // We can check only the first value against LOWEST_TEMPERATURE,
+      // since we know all other values are greater.
+      // Similarly, we can check only the last value against HIGHEST_TEMPERATURE.
+      if (value[0] < LOWEST_TEMPERATURE)
       {
-        if (i < -128.6)
-        {
-          throw new ArgumentOutOfRangeException(
-            "That is colder than the coldest ever recorded on Earth!"
-          );
-          // https://en.wikipedia.org/wiki/Lowest_temperature_recorded_on_Earth
-        }
-        else if (i > 134.1)
-        {
-          throw new ArgumentOutOfRangeException(
-            "That is hotter than the hottest ever recorded on Earth!"
-          );
-          // https://en.wikipedia.org/wiki/Highest_temperature_recorded_on_Earth
-        }
+        throw new ArgumentOutOfRangeException(
+          "That is colder than the coldest ever recorded on Earth!"
+        );
+      }
+      else if (
+        value[value.Length - 1] > HIGHEST_TEMPERATURE
+      )
+      {
+        throw new ArgumentOutOfRangeException(
+          "That is hotter than the hottest ever recorded on Earth!"
+        );
       }
       temp = value;
     }

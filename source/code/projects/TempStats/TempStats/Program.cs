@@ -22,6 +22,7 @@ class Program
     {
       Console.WriteLine(ex.Message);
     }
+
     try
     {
       double[] coldest = { -1000000 };
@@ -34,12 +35,26 @@ class Program
     {
       Console.WriteLine(ex.Message);
     }
+
     try
     {
       double[] improper = { 10, -5, 100 }; // This data is not sorted.
       TempStats notSorted = new TempStats(
         improper,
         "Not Sorted"
+      );
+    }
+    catch (Exception ex)
+    {
+      Console.WriteLine(ex.Message);
+    }
+
+    try
+    {
+      double[] empty = null;
+      TempStats emptyTemperatures = new TempStats(
+        empty,
+        "Empty"
       );
     }
     catch (Exception ex)
