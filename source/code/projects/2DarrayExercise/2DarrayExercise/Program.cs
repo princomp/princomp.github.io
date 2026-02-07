@@ -18,13 +18,13 @@ class Program
     Console.WriteLine("We now rotate the array.");
     Rotate(ref matrix1);
     Display(matrix1);
-    
+
     // Example array2
     int[,] matrix2 =
     {
       { 1, 2, 3, 4 },
       { 5, 6, 7, 8 },
-      { 9, 10, 11, 12 }
+      { 9, 10, 11, 12 },
     };
     // End of example array2
     Console.WriteLine("Example 2:");
@@ -64,9 +64,12 @@ class Program
       {
         tmp[row, col] = matP[
           // This would be incorrect:
-          // tmp.GetLength(0) - col, row 
+          // tmp.GetLength(0) - col, row
           // can you figure out why?
-          tmp.GetLength(1) - col - 1, row
+          tmp.GetLength(1)
+            - col
+            - 1,
+          row
         ];
       }
     }

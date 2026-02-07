@@ -80,4 +80,14 @@ class TempStats
       }
     }
   }
+  public double Mode
+  {
+    get
+    {
+      // Mode is not implemented.
+      throw new NotImplementedException(
+        "Mode property is not implemented."
+      );
+    }
+  }
 }

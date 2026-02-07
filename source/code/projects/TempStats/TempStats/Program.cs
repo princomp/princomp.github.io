@@ -51,9 +51,9 @@ class Program
     {
       Console.WriteLine("Mode: " + test.Mode);
     }
-    catch
+    catch (NotImplementedException ex)
     {
-      Console.WriteLine("This set has no mode");
+      Console.WriteLine(ex.Message);
     }
   }
 }
