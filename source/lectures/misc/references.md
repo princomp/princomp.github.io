@@ -276,3 +276,29 @@ static void Dummy(out int a)
 ```
 
 would not compile, as C# would give back a message "The out parameter 'a' must be assigned to before controls leaves the current method": an argument passed using the keyword `out` **must** be initialized in the body of the method.
+
+## Security Concerns
+
+Note that reference types requires greater care.
+
+Consider the following `Demo` class implementation:
+
+
+```{download="./code/projects/ReferenceAndProperties.zip"}
+!include code/projects/ReferenceAndProperties/ReferenceAndProperties/Demo.cs
+```
+
+One may think that `values` is "read-only" and can only be given a value when a new object is created, since the `Values` property does not implement a `set` method.
+However, **this is wrong**, as we show now:
+
+```{download="./code/projects/ReferenceAndProperties.zip"}
+!include code/projects/ReferenceAndProperties/ReferenceAndProperties/Program.cs
+```
+
+The following would compile and execute properly, **allowing to change the values in the `Values` array since *its reference* was passed to the `Main` method**.
+
+To avoid this issue, one would have to return a *copy* of the array, for example by copying the array using a `for` loop and returning the copy, or by using the `Clone` method, as follows:
+
+```
+get { return (int[])values.Clone(); }
+```
