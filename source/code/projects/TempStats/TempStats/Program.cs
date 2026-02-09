@@ -22,6 +22,7 @@ class Program
     {
       Console.WriteLine(ex.Message);
     }
+
     try
     {
       double[] coldest = { -1000000 };
@@ -34,6 +35,7 @@ class Program
     {
       Console.WriteLine(ex.Message);
     }
+
     try
     {
       double[] improper = { 10, -5, 100 }; // This data is not sorted.
@@ -49,11 +51,24 @@ class Program
 
     try
     {
+      double[] empty = null;
+      TempStats emptyTemperatures = new TempStats(
+        empty,
+        "Empty"
+      );
+    }
+    catch (Exception ex)
+    {
+      Console.WriteLine(ex.Message);
+    }
+
+    try
+    {
       Console.WriteLine("Mode: " + test.Mode);
     }
-    catch
+    catch (NotImplementedException ex)
     {
-      Console.WriteLine("This set has no mode");
+      Console.WriteLine(ex.Message);
     }
   }
 }
