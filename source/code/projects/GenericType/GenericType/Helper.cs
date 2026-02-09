@@ -18,7 +18,9 @@
   public static string Description<T>(T[] arrayP)
   {
     string returned = "";
-    foreach (var element in arrayP)
+    // Both works:
+    //  foreach (var element in arrayP)
+    foreach (T element in arrayP)
     {
       returned += element + " ";
     }
