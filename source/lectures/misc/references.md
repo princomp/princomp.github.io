@@ -250,7 +250,7 @@ int a; // This code will not compile
 SetToRandom(ref a);
 ```
 
-Because C#'s compilation will return the error message "Use of unassigned local variable 'c'".
+Because C#'s compilation will return the error message "Use of unassigned local variable 'a'".
 Indeed, `SetToRandom` expects the argument to already holds a reference to a value, even if it has no use for it.
 
 A better alternative is to use the `out` keyword:

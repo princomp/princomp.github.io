@@ -42,35 +42,19 @@ This is not very efficient, and it is error-prone.
 
 ## Generic Types
 
-There is a tool in C# to avoid having to be *too* specific, and to be able to tell the compiler that the method will work "with some type", called [generic type parameter](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/generics/generic-type-parameters), using the keyword `T`.
+There is a tool in C# to avoid having to be *too* specific, and to be able to tell the compiler that the method will work "with some type", called [generic type parameter](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/generics/generic-type-parameters), using the notation `<T>`.
 In essence, `<T>` is affixed after the name of the method to signal that the method will additionally require to instantiate `T` with a particular type.
 
 The previous method would become:
 
-```
-public class Helper{
-    public static T[] Reverse<T>(T[] arrayP)
-    {
-        T[] result = new T[arrayP.Length];
-        int j = 0;
-        for (int i = arrayP.Length - 1; i >= 0; i--)
-        {
-            result[j] = arrayP[i];
-            j++;
-        }
-        return result;
-    }
-}
+```{download="./code/projects/GenericType.zip"}
+!include`snippetStart="// A generic way of reversing an array.", snippetEnd="// A generic way of describing an array."` code/projects/GenericType/GenericType/Helper.cs
 ```
 
 where three occurrences of `int[]` were replaced by `T[]`, and `<T>` was additionally added between the name of the method and its parameters. This method is used as follows:
 
-```
-int[] array1 = {0, 2, 3, 6};
-int[] array1reversed = Helper.Reverse<int>(array1);
-
-char[] array2 = {'a', 'b', 'c'};
-char[] array2reversed = Helper.Reverse<char>(array2);
+```{download="./code/projects/GenericType.zip"}
+!include`snippetStart="// Using Reverse:", snippetEnd="// Using Description:"` code/projects/GenericType/GenericType/Program.cs
 ```
 
 In essence, `Reverse<int>` tells C# that `Reverse` will be used with `T` being `int` (not `int[]`, as the method uses `T[]` for its argument and return type).
@@ -101,28 +85,24 @@ Making the header generic is "easy", as we can use, as before:
 public static string Description<T>(T[] arrayP)
 ```
 
-but the body is problematic: what should be the type of the `element` variable in the header of the `foreach`? We cannot simply use `T`, but we can use *implicitly typed variable*.
+but the body is problematic: what should be the type of the `element` variable in the header of the `foreach`? We can simply use `T`, or we can use *implicitly typed variable*.
 This technique, that uses the keyword `var` essentially tells C# to … figure out the type of the variable.
 In that case, since C# knows the type of the array you are passing, it can easily infer the type of its elements.
 
-We can then rewrite the previous method as follows:
+We can then rewrite the previous method as follows (using `T`, but simply replacing `T` with `var` gives another way):
 
-```
-public static string Description<T>(T[] arrayP)
-{
-    string returned = "";
-    foreach (var element in arrayP)
-    {
-        returned += element + " ";
-    }
-    return returned;
-}
+```{download="./code/projects/GenericType.zip"}
+!include`snippetStart="// A generic way of describing an array.", snippetEnd="// Done."` code/projects/GenericType/GenericType/Helper.cs
 ```
 
 and use it with
 
-```
-Console.WriteLine(Helper.Display<char>(array2);
+```{download="./code/projects/GenericType.zip"}
+!include`snippetStart="// Using Description:", snippetEnd="// Done."` code/projects/GenericType/GenericType/Program.cs
 ```
 
 for example.
+
+## Comparing
+
+Last but not least, C# does not know if `T` has access to the `==` operator, but it will always assume that a `Equals` method is used: refer to [how arrays are compared](./lectures/misc/references#comparing-arrays) for an example.
