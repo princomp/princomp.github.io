@@ -4,6 +4,41 @@ class Program
 {
   static void Main(string[] args)
   {
+    // Example for NameChange
+            static void NameChange(ref string name, string newname, out string oldname){
+          oldname = name;
+          name = newname;
+        }    
+        
+      string name = "Smith", oldname;
+      Console.WriteLine("Enter new name.");
+      NameChange(ref name, Console.ReadLine(), out oldname);
+      Console.WriteLine($"New name: {name}\nOld name: {oldname}");
+      
+      /*
+      // Example for Test method
+
+        static void Test(int a, out int b){
+            if (b < 0) { b = a; }
+            else { b++;}
+        }
+      */
+    
+    // SafeLength
+      static int SafeLength<T>(T[] aP){
+        int ans;
+        if (aP == null) ans = -1;
+        else ans = aP.Length;
+        return ans;
+      }
+      
+      int[] test1 = null;
+      Console.WriteLine(SafeLength(test1));
+      char[] test2 = {'a', 'b'};
+      Console.WriteLine(SafeLength(test2));
+      
+      
+    
     // Example for AddRev
     int x0 = 4,
       y0 = 3;

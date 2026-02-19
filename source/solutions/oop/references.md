@@ -79,6 +79,24 @@ tags:
     `c` holds `'*'`, `d` holds `%`.
     </details>
 
+#. Consider the following method:
+
+    ```
+    static void NameChange(ref string nameP, string newnameP, out string oldnameP){
+        oldnameP = nameP;
+        nameP = newnameP;
+    }        
+    ```
+    
+    <details><summary>Solution</summary>
+    
+    </details>
+
+    
+    Assume given a `string` `name` variable containing a value. Write a short program (possibly declaring additional variables) that
+    #. Asks the user their new name,
+    #. Calls the `NameChange` method with appropriate arguments,
+    #. Displays the new name and the old name.
 
 ## Problems
 

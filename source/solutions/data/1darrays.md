@@ -897,7 +897,7 @@ Those two problems are related to [binary search](./lectures/collections/search#
     </details>
     #. Explain why this implementation is incorrect, and how it can be fixed.
     <details><Summary>Solution</summary>
-    The problem is that `mid` will never reach `arrayP.Length -1`.
+    The problem is that what we use for `mid` (`(sta + end) / 2`) will never reach `arrayP.Length -1`.
     Indeed, we will have an expression equivalent to `((arrayP.Length -2) - arrayP.Length-1) / 2` (for example, as above, `(10 + 11) / 2`) that will never be rounded up to `arrayP.Length-1` (in our example, `11`), but always truncated.
     
     To fix this implementation, instead of `end = (sta + end) / 2;`, we should have  `end = ((sta + end) / 2) + 1;`.
