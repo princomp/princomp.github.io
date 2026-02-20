@@ -1,3 +1,4 @@
+using System;
 public class Vehicle
 {
   public string Color { get; set; }
@@ -9,7 +10,8 @@ public class Vehicle
       numberOfWheels = nowP;
     else
       numberOfWheels = -1;
-    // We could also decide to throw an exception here.
+    // We could also decide to throw an exception here, using e.g.
+    // throw new ArgumentException();
   }
 
   public Vehicle()
@@ -22,6 +24,8 @@ public class Vehicle
   {
     Color = cP;
     numberOfWheels = nowP;
+    // We could also use our SetNOW method, as follows:
+    // SetNOW(nowP);
   }
 
   public override string ToString()

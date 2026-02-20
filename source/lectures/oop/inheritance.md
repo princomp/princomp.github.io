@@ -49,7 +49,7 @@ Note:
     and the `Vehicle` `Color` accessor will be used, since `Bike` does not have an accessor for `Color`.
 
 - Implicitly, the `Bike()` constructor starts by calling the `Vehicle()` constructor, so that `Color` and `numberOfWheels` are actually set to `"undefined"` and `-1`, respectively.
-- That `SetNOW` into the `Bike()` constructor actually refers to the `SetNOW` method in the `Vehicle` class. A way of being more explicit would have been to write `base.SetNOW` instead of `SetNOW`. In either case, the value `-1M` is overriden by `2` (since every bike has 2 wheels).
+- That `SetNOW` into the `Bike()` constructor actually refers to the `SetNOW` method in the `Vehicle` class. A way of being more explicit would have been to write `base.SetNOW` instead of `SetNOW`. In either case, the value `-1` is overriden by `2` (since every bike has 2 wheels).
 - The `: base(cP, 2)` instructs to call the 
 
     `Vehicle(string cP, int nowP)`
