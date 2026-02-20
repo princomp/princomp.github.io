@@ -632,6 +632,25 @@ For example, in an array containing 1, 2, 6, 7, 3, 9 with x being 8, the solutio
     ```
     </details>
     
+#. Write a `SafeLength` method that takes an input an array of *any type* and returns its length if the argument is not `null`, -1 otherwise.
+
+
+    <details>
+    <summary>Solution</summary>
+    
+    ```
+    public static int SafeLength<T>(T[] aP)
+    {
+        int ans;
+        if (aP == null)
+            ans = -1;
+        else
+            ans = aP.Length;
+        return ans;
+    }
+    ```
+    </details>
+
 
 ## Simple Algorithms
 

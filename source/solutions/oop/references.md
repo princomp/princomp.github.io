@@ -18,18 +18,8 @@ tags:
 
 #. What would be displayed by the following?
 
-    ```
-    static void Main(){
-        int x = 4, y = 3;
-        Console.WriteLine($"x is {x}, y is {y}.");
-        AddR(ref x, ref y);
-        Console.WriteLine($"x is {x}, y is {y}.");
-    }
-    static void AddR(ref int a, ref int b){
-        int tmp = a;
-        a = a + b;
-        b = tmp - b;
-    }
+    ```{download="./code/projects/ReferenceMethods.zip"}
+    !include`snippetStart="// Example for AddR",snippetEnd="// End of AddR example"` code/projects/ReferenceMethods/ReferenceMethods/Program.cs
     ```
     
     - [ ] "x is {x}, y is {y}.", "x is {x}, y is {y}."
@@ -40,24 +30,35 @@ tags:
   
 #. The following method would *not* compile. Why?
 
-    ```
-    public static void Test(int a, out int b){
-        if (a > 0) { b = 12; }
-    }
+    ```{download="./code/projects/ReferenceMethods.zip"}
+    !include`snippetStart="// This Test1 method would not compile",snippetEnd="// Uncomment Test1 to see for yourself."` code/projects/ReferenceMethods/ReferenceMethods/Program.cs
     ```
     
     - [ ] A method cannot be `static` and have `void` as a return type.
     - [x] Any `out` parameter must have its value set in the body of the method.
     - [ ] The `else` is missing.
+    - [ ] C# assumes that `out` parameters do not have a value.
     - [ ] The keyword `out` cannot be used in the header of a method.
     - [ ] An `out` parameter cannot be assigned a value.
-  
+
+#. The following method would *not* compile. Why?
+
+    ```{download="./code/projects/ReferenceMethods.zip"}
+    !include`snippetStart="// This Test2 method would not compile",snippetEnd="// Uncomment Test2 to see for yourself."` code/projects/ReferenceMethods/ReferenceMethods/Program.cs
+    ```
+    
+    - [ ] A method cannot be `static` and have `void` as a return type.
+    - [ ] Any `out` parameter must have its value set in the body of the method.
+    - [x] C# assumes that `out` parameters do not have a value.
+    - [ ] The keyword `out` cannot be used in the header of a method.
+    - [ ] An `out` parameter cannot be assigned a value.
+
 ## Warm-up Exercises
 
 #. Consider the following code:
 
-    ```
-    !include code/snippets/referencesExercise.cs
+    ```{download="./code/projects/ReferenceExercises.zip"}
+    !include code/projects/ReferenceExercises/ReferenceExercises/Program.cs
     ```
     
     #. What are the values of `x`, `y` and `z`
@@ -70,59 +71,45 @@ tags:
     #. What is the value of `d`?
 
     <details><summary>Solution</summary>
-    Before the `Foo` method is executed: 1, 2, and `z` is not set.
+    #. We have the following:
+    
+        When                               | `x`   | `y` | `z` 
+        ---------------------------------- | :---: | :---: | :---: 
+        Before the `Foo` method is called  | 1   | 2   | not set
+        Inside the `Foo` method            | 2   | 1   | 3
+        After the `Foo` method             | 1   | 0   | 2
 
-    Inside the `Foo` method: 2, 1 and 3.
-
-    After the `Foo` method: 1, 0, and 2
-
-    `c` holds `'*'`, `d` holds `%`.
+    #. `c` holds `'*'`, 
+    #. `d` holds `'%'`.
     </details>
 
 #. Consider the following method:
 
-    ```
-    static void NameChange(ref string nameP, string newnameP, out string oldnameP){
-        oldnameP = nameP;
-        nameP = newnameP;
-    }        
-    ```
-    
-    <details><summary>Solution</summary>
-    
-    </details>
-
+    ```{download="./code/projects/ReferenceMethods.zip"}
+    !include`snippetStart="// Example for NameChange",snippetEnd="// End of NameChange example"` code/projects/ReferenceMethods/ReferenceMethods/Program.cs
+    ``` 
     
     Assume given a `string` `name` variable containing a value. Write a short program (possibly declaring additional variables) that
+    
     #. Asks the user their new name,
     #. Calls the `NameChange` method with appropriate arguments,
     #. Displays the new name and the old name.
 
+    <details><summary>Solution</summary>
+    ```{download="./code/projects/ReferenceMethods.zip"}
+    !include`snippetStart="// This previous string is assumed given.",snippetEnd="// End of NameChange usage example"` code/projects/ReferenceMethods/ReferenceMethods/Program.cs
+    ```     
+    </details>
+    
+    
 ## Problems
 
-#. Write the `AddRev` method (header included) such that the following:
-
-    ```
-    !include`snippetStart="// Example for AddRev",snippetEnd="// Solution for AddRev"` code/projects/ReferenceMethods/ReferenceMethods/Program.cs
-    ```
-
-    would display
-    
-    ```
-    x0 is 7, y0 is 1.
-    ```
-    
-    <details><summary>Solution</summary>
-    ```
-    !include code/projects/ReferenceMethods/ReferenceMethods/Program.cs
-    ```
-    </details>
-        
 #. Write the `AddLog` method (header included) such that the following:
         
-    ```
+    <details><summary>Solution</summary>
+    ```{download="./code/projects/ReferenceMethods.zip"}
     !include`snippetStart="// Example for AddLog",snippetEnd="// Solution for AddLog"` code/projects/ReferenceMethods/ReferenceMethods/Program.cs
-    ```
+    ```     
     
     would display
     
@@ -132,15 +119,15 @@ tags:
     ```
     
     <details><summary>Solution</summary>
-    ```
-    !include`snippetStart="// Solution for AddLog",snippetEnd="// Example for AddReset"` code/projects/ReferenceMethods/ReferenceMethods/Program.cs
-    ```
+    ```{download="./code/projects/ReferenceMethods.zip"}
+    !include`snippetStart="// Solution for AddLog",snippetEnd="// AddReset example"` code/projects/ReferenceMethods/ReferenceMethods/Program.cs
+    ```     
     </details>
 
 #. Write the `AddReset` method (header included) such that the following:
     
-    ```
-    !include`snippetStart="// Example for AddReset",snippetEnd="// Solution for AddReset"` code/projects/ReferenceMethods/ReferenceMethods/Program.cs
+    ```{download="./code/projects/ReferenceMethods.zip"}
+    !include`snippetStart="AddReset example",snippetEnd="// Solution for AddReset"` code/projects/ReferenceMethods/ReferenceMethods/Program.cs
     ```
     
     would display
@@ -150,10 +137,12 @@ tags:
     ```
     
     <details><summary>Solution</summary>
-    ```
-    !include`snippetStart="// Solution for AddReset",snippetEnd="// Done!"` code/projects/ReferenceMethods/ReferenceMethods/Program.cs
+    ```{download="./code/projects/ReferenceMethods.zip"}
+    !include`snippetStart="// Solution for AddReset",snippetEnd="// Done with AddReset"` code/projects/ReferenceMethods/ReferenceMethods/Program.cs
     ```
     </details>
+
+
 
 #. Consider the "regular" implementation of the `Rectangle` class:
 
@@ -165,7 +154,12 @@ tags:
         public int Length
         {
             get { return length; }
-            set { if (value < 0) { throw new ArgumentNullException(); } else length = value; }
+            set {
+                if (value < 0) {
+                    throw new ArgumentNullException();
+                } 
+                else length = value; 
+                }
         }
 
         private int width;

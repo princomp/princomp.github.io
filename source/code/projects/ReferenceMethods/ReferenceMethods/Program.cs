@@ -4,69 +4,76 @@ class Program
 {
   static void Main(string[] args)
   {
-    // Example for NameChange
-            static void NameChange(ref string name, string newname, out string oldname){
-          oldname = name;
-          name = newname;
-        }    
-        
-      string name = "Smith", oldname;
-      Console.WriteLine("Enter new name.");
-      NameChange(ref name, Console.ReadLine(), out oldname);
-      Console.WriteLine($"New name: {name}\nOld name: {oldname}");
-      
-      /*
-      // Example for Test method
-
-        static void Test(int a, out int b){
-            if (b < 0) { b = a; }
-            else { b++;}
-        }
-      */
-    
-    // SafeLength
-      static int SafeLength<T>(T[] aP){
-        int ans;
-        if (aP == null) ans = -1;
-        else ans = aP.Length;
-        return ans;
-      }
-      
-      int[] test1 = null;
-      Console.WriteLine(SafeLength(test1));
-      char[] test2 = {'a', 'b'};
-      Console.WriteLine(SafeLength(test2));
-      
-      
-    
-    // Example for AddRev
-    int x0 = 4,
-      y0 = 3;
-    AddRev(ref x0, ref y0);
-    Console.WriteLine($"x0 is {x0}, y0 is {y0}.");
-    // Solution for AddRev
-    void AddRev(ref int xP0, ref int yP0)
-    {
-      int temp = xP0;
-      xP0 = xP0 + yP0;
-      yP0 = temp - yP0;
+    // Example for AddR
+    static void AddR(ref int a, ref int b){
+      int tmp = a;
+      a = a + b;
+      b = tmp - b;
     }
+    
+    int x = 4, y = 3;
+    Console.WriteLine($"x is {x}, y is {y}.");
+    AddR(ref x, ref y);
+    Console.WriteLine($"x is {x}, y is {y}.");
+    // End of AddR example
+    
+    /*
+    // This Test1 method would not compile
+    static void Test1(int a, out int b){
+      if (a > 0) { b = 12; }
+    }
+    // Uncomment Test1 to see for yourself.
+    */
+    
+    /*
+     // This Test2 method would not compile
+     static void Test2(int a, out int b){
+                 if (b < 0) { b = a; }
+                 else { b = 10;}
+     }
+      // Uncomment Test2 to see for yourself.
+      */           
+                 
+    // Example for NameChange
+    static void NameChange(
+      ref string nameP,
+      string newnameP,
+      out string oldnameP
+    )
+    {
+      oldnameP = nameP;
+      nameP = newnameP;
+    }
+    // End of NameChange example
+    
+    string name = "Smith"; 
+    // This previous string is assumed given.
+    string oldname;
+    Console.WriteLine("Enter new name.");
+    NameChange(ref name, Console.ReadLine(), out oldname);
+    Console.WriteLine(
+      $"New name: {name}\nOld name: {oldname}"
+    );
+    // End of NameChange usage example
+    
     // Example for AddLog
     string log;
     int x1 = 4,
-      y1 = 3;
+    y1 = 3;
     int result = AddLog(x1, y1, out log);
     Console.WriteLine(log + "\n" + result);
+    
     // Solution for AddLog
     int AddLog(int xP1, int yP1, out string logP)
     {
       logP = xP1 + " + " + yP1 + " = " + (xP1 + yP1) + ".";
       return xP1 + yP1;
     }
-    // Example for AddReset
+    
+    // AddReset example
     int x2 = 2,
-      y2 = 3,
-      z2;
+    y2 = 3,
+    z2;
     AddReset(ref x2, ref y2, out z2);
     Console.WriteLine($"x2 = {x2}, y2 = {y2}, z2 = {z2}.");
     // Solution for AddReset
@@ -76,6 +83,7 @@ class Program
       xP2 = 0;
       yP2 = 0;
     }
-    // Done!
+    // Done with AddReset
   }
+    
 }
