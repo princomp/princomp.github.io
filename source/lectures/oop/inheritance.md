@@ -24,7 +24,7 @@ Consider the following class:
     
 with the following implementation:
 
-```
+```{download="./code/projects/Vehicle.zip"}
 !include code/projects/Vehicle/Vehicle/Vehicle.cs
 ```
 
@@ -33,7 +33,7 @@ Note that no other vehicle have a fork length, so it does not make sense to add 
 
 A possible implementation is as follows:
 
-```
+```{download="./code/projects/Vehicle.zip"}
 !include code/projects/Vehicle/Vehicle/Bike.cs
 ```
 
@@ -66,7 +66,7 @@ Observe that the `ToString` is indicated in the `Bike` class: this is an indicat
 Note that inheritance can be "chained", as `Bike` could itself be the base class for a `Bicycle` class that could have e.g. a `saddleType` attribute (noting that a motorbike does not have a saddle, but a seat).
 We could then obtain a code as follows:
 
-```
+```{download="./code/projects/Vehicle.zip"}
 !include code/projects/Vehicle/Vehicle/Bicycle.cs
 ```
 
