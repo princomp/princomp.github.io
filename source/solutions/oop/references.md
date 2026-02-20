@@ -106,7 +106,6 @@ tags:
 
 #. Write the `AddLog` method (header included) such that the following:
         
-    <details><summary>Solution</summary>
     ```{download="./code/projects/ReferenceMethods.zip"}
     !include`snippetStart="// Example for AddLog",snippetEnd="// Solution for AddLog"` code/projects/ReferenceMethods/ReferenceMethods/Program.cs
     ```     
