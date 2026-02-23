@@ -21,7 +21,7 @@ Consider the following two classes:
 ```
 
 ```
-!include code/projects/Polymorphism1/Polymorphism1/Class1.cs
+!include code/projects/Polymorphism1/Polymorphism1/Class2.cs
 ```
 
 Then, 
