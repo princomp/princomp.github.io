@@ -1,4 +1,5 @@
 using System;
+
 public class Vehicle
 {
   public string Color { get; set; }

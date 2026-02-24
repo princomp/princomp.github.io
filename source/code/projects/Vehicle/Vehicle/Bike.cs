@@ -5,8 +5,8 @@ public class Bike : Vehicle
   public Bike()
   {
     ForkLength = -1;
-    SetNOW(2); 
-    // or 
+    SetNOW(2);
+    // or
     // base.SetNOW(2);
   }
 
