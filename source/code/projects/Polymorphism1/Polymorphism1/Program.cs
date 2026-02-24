@@ -6,13 +6,9 @@ class Program
     object1.SetAttribute1("Test");
     object1.Property1 = "Test";
 
-    Class2 object2 = new Class2();
-    object2.SetAttribute1("Test");
-    object2.Property1 = "Test";
-    object2.Property2 = "Test";
-
-    ClassHelper.Method1(object1);
-    ClassHelper.Method1(object2);
-    ClassHelper.Method2(object2);
+    Class2 object2 = new Class2("property1", "property2", "attribute1");
+    object2.SetAttribute1("Attribute1");
+    object2.Property1 = "Property1";
+    object2.Property2 = "Property2";
   }
 }

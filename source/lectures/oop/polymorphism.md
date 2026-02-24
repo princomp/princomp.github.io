@@ -16,11 +16,11 @@ While the example below is abstract, it can be easily instantiated to e.g., a `C
 
 Consider the following two classes:
 
-```
+```{download="./code/projects/Polymorphism1.zip"}
 !include code/projects/Polymorphism1/Polymorphism1/Class1.cs
 ```
 
-```
+```{download="./code/projects/Polymorphism1.zip"}
 !include code/projects/Polymorphism1/Polymorphism1/Class2.cs
 ```
 
@@ -43,24 +43,27 @@ Note, however, that
 
 Stated differently, an object in `Class2` *is a(n object in)* `Class1`, but the converse is not true: an object in `Class1` *is not* an object in `Class2`.
 
+
+In addition, observe that the `Class2` constructor *cannot* access `class1`'s `attribute1` directly, since it is marked as `private`: it needs to use the `SetAttribute1` method.
+
 ## Polymorphism and References
 
 Note that a `Class1` object can be created using a `Class2` constructor, since an object in `Class2` *is a(n object in)* `Class1`.
 Formally, we can write:
 
 ```
-Class1 object3 = new Class2();
+Class1 test = new Class2("property1", "property2", "attribute1");
 ```
 
-and then manipulate `object3` like any other *object from `Class1` (it is, in a way, "truncated").
+and then manipulate `test` like any other *object from `Class1` (it is, in a way, "truncated").
 In particular, we can use
 
 ```
-object3.Property1 = "Test";
+test.Property1 = "Test";
 ```
 
-but `object3.Property2 = "Test";` would not compile *since we would be trying to access a property of `Class2` with a `Class1` object.*
-Remember that an object in `Class1` *is not* an object in `Class2`, and that the way we declared it, `object3` *is* a `Class1` object.
+but `test.Property2 = "Test";` would not compile *since we would be trying to access a property of `Class2` with a `Class1` object.*
+Remember that an object in `Class1` *is not* an object in `Class2`, and that the way we declared it, `test` *is* a `Class1` object.
 
 ## Solving Ambiguity by Overriding
 
@@ -68,7 +71,7 @@ Remember that an object in `Class1` *is not* an object in `Class2`, and that the
 
 Now, consider the following class implementation and usage:
 
-```
+```{download="./code/projects/Polymorphism2.zip"}
 !include code/projects/Polymorphism2/Polymorphism2/Class.cs
 ```
 
