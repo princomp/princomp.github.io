@@ -40,21 +40,21 @@ tags:
 
 #. Consider the diagram representing the "Room", "ClassRoom", "Office" classes and their relations.
 
-  !include diag/cla/RoomClassroomOffice.md
+    !include diag/cla/RoomClassroomOffice.md
 
-  Suppose you are given an implementation of the `Room` class, such that 
+    Suppose you are given an implementation of the `Room` class, such that 
 
-  ```
-  !include`snippetStart="// Question 1",snippetEnd="// Refer to Classroom.cs for a solution"` code/projects/RoomClassroomOffice/RoomClassroomOffice/Program.cs
-  ```
+    ```
+    !include`snippetStart="// Question 1",snippetEnd="// Refer to Classroom.cs for a solution"` code/projects/RoomClassroomOffice/RoomClassroomOffice/Program.cs
+    ```
 
-  displays
+    displays
 
-  ```text
-  UH 243
-  ```
+    ```text
+    UH 243
+    ```
 
-  #. Write an implementation of the `ClassRoom` class. Your `ToString` method should display the room's building and number, in addition to whether it has AV set-up.
+    #. Write an implementation of the `ClassRoom` class. Your `ToString` method should display the room's building and number, in addition to whether it has AV set-up.
 
         <details><summary>Solution</summary>
         ```
@@ -62,7 +62,7 @@ tags:
         ```
         </details>
 
-  #. Write a `SameBuilding` static method to be placed inside the `Room` class such that
+    #. Write a `SameBuilding` static method to be placed inside the `Room` class such that
 
         ```
         !include`snippetStart="// Question 2",snippetEnd="// Refer to Room.cs for a solution.",dedent=4` code/projects/RoomClassroomOffice/RoomClassroomOffice/Program.cs

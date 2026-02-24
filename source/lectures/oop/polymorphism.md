@@ -39,7 +39,7 @@ This means that the following code is valid:
 Note, however, that
 
 - `object1.Property2 = "Test";` would not compile, since an object from `Class1` cannot access the attributes, properties and methods of `Class2`.
-- `ClassHelper.Method2(object1);` would also not compile, since an object from `Class1` cannot "become" an object of `Class2`.
+- A method requiring an argument of type `Class2` would *not* accept `object1` as an argument, since an object from `Class1` cannot "become" an object of `Class2`.
 
 Stated differently, an object in `Class2` *is a(n object in)* `Class1`, but the converse is not true: an object in `Class1` *is not* an object in `Class2`.
 
