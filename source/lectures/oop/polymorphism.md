@@ -72,7 +72,11 @@ Remember that an object in `Class1` *is not* an object in `Class2`, and that the
 Now, consider the following class implementation and usage:
 
 ```{download="./code/projects/Polymorphism2.zip"}
-!include code/projects/Polymorphism2/Polymorphism2/Class.cs
+!include code/projects/Polymorphism2/Polymorphism2/Class1.cs
+```
+
+```{download="./code/projects/Polymorphism2.zip"}
+!include code/projects/Polymorphism2/Polymorphism2/Class2.cs
 ```
 
 ```{download="./code/projects/Polymorphism2.zip"}
@@ -89,7 +93,11 @@ A much better code explicitly instructs C# to *override* `Class1`'s `Test` metho
 However, this further requires `Class1`'s `Test` method to explicitly give permission to be overriden, using the `virtual` keyword:
 
 ```{download="./code/projects/Polymorphism3.zip"}
-!include code/projects/Polymorphism3/Polymorphism3/Class.cs
+!include code/projects/Polymorphism3/Polymorphism3/Class1.cs
+```
+
+```{download="./code/projects/Polymorphism3.zip"}
+!include code/projects/Polymorphism3/Polymorphism3/Class2.cs
 ```
 
 This program will also display, as expected, 
