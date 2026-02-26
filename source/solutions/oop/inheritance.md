@@ -24,7 +24,7 @@ tags:
     - [ ] … a way of connecting a *basic* class with a *derived* class.
 
     <details><summary>Comment</summary>
-        The class inherited from is called the *base*, superclass or parent class, but not *basic*.
+    The class inherited from is called the *base*, superclass or parent class, but not *basic*.
     </details>
     
 #. Suppose your are given an `ElectricDevice` class and a `WallDecor` class. You would like to write a `Clock` class that represents at the same time an electric device and a wall decor. This is possible only if the `ElectricDevice` and `WallDecor` classes are…
