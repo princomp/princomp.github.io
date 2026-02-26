@@ -1,3 +1,3 @@
 # Contributing Guidelines
 
-See: [docs/contributing](https://github.com/princomp/princomp.github.io/blob/main/docs/contributing.md)
+See: [docs/about/contributing](https://princomp.github.io/docs/about/contributing)
