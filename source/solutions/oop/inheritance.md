@@ -34,6 +34,28 @@ tags:
     - [ ] Protected
     - [ ] Constructors
 
+#. An abstract class…
+
+    - [ ] … can be instantiated.
+    - [x] … can contain a constructor.
+    - [x] … can contain abstract and non-abstract methods.
+    - [x] … is represented in a UML diagram by prefixing its name with \<\<Abstract\>\>.  
+    
+#. In a UML diagram, an abstract method is …
+
+    - [ ] … underlined.
+    - [ ] … impossible to distinguish from a non-abstract method.
+    - [x] … necessarily part of an abstract class.
+    - [x] … in italics.
+    
+#. A class `Student` inheriting from an abstract class `Person` …
+
+    - [ ] … must override all of `Person`'s methods.
+    - [x] … must implement all the methods marked `abstract` in `Student`.
+    - [x] … can be instantiated.
+    - [x] … is connected to `Person` using an open triangle end and a continuous line (⇽) on the UML diagram.
+    - [ ] … is connected to `Person` using an open triangle end and a dashed line (◁┈) on the UML diagram.        
+
 #. A method with header `public virtual void Test(int a, out int b)` will…
 
     - [ ] Return a value
@@ -46,6 +68,18 @@ tags:
     - [ ] Have an empty body
     - [x] Need to be inside an `abstract` class
     - [x] Not be overriden
+
+#. Give at least two differences between an abstract class and an interface.
+
+    <details><summary>Solution</summary>
+    A possible list includes:
+    
+    - An abstract class can contain `private` methods.
+    - An abstract class is *inherited* by another class, while an interface is *realized* by another class.
+    - An class can inherit from only one abstract class, but it can realize multiple interfaces.
+    - Interfaces do not need to explicitly mark their methods and properties as public or abstract, since they are always public and abstract.
+    - Abstract methods in an abstract class need to be explicitly overridden by methods in the class inheriting from them, while classes realizing interfaces need not to mark the methods as explicitely overriding methods from the interface.
+    </details>
 
 ## Problems
 
