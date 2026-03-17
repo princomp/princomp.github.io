@@ -23,7 +23,49 @@ tags:
     - [x] Always call the `Close` method after being done reading from or writing into a file. 
     - [ ] Never read from or write into a file inside a `try-catch` block.
 
+#. The `StreamReader` class contains a method called…
+
+    - [ ] … `.Open`
+    - [x] … `.Close`.
+    - [x] … `.ReadLine`
+    - [ ] … `.WriteLine`
+    - [ ] … `.NextLine`
+
+#. If a file is located at `~/upload/teaching/2026/spring/quiz8.md`, then…
+
+    - [x] … its extension is `md`.
+    - [ ] … it is safe to assume that it can be accessed by all users.
+    - [ ] … it will have the same path if transferred to a computer using Windows.
+    - [x] … it is located in a folder called `spring`.    
+
 ## Problems
+
+#. Assume that `filePath` contains the path to a text file. Briefly explain what the following program would do, and how it could be made safer to execute.
+
+    ```
+    StreamWriter sw = new StreamWriter(filePath);
+    sw.WriteLine("Hello World!!");
+    ```
+    
+    <details><summary>Solution</summary>
+    This program would
+    
+    #. Create a file located at `filePath`,
+    #. Store in the file "Hello World!!", followed by a new line.
+    
+    This program is unsafe because:
+    
+    #. It does not close the file properly,
+    #. It can throw exceptions if e.g., `filePath` cannot be accessed by the program,
+    #. It possibly overwrite the file located at `filePath`.
+    
+    To solve those, it should be edited to:
+    
+    #. Close the file using `sw.Close()`,
+    #. Be wrapped inside a `try`…`catch` block,
+    #. Either test first if the file exists, or use the `StreamWriter` constructor that appends to the file if it already exists.
+    </details>
+    
 
 #. Write a program that create a text file called `HelloWorld.txt` in its `bin/Debug` folder and store "Hello" followed by a name entered by the user in it.
 
