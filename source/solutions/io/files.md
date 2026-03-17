@@ -65,7 +65,6 @@ tags:
     #. Be wrapped inside a `try`…`catch` block,
     #. Either test first if the file exists, or use the `StreamWriter` constructor that appends to the file if it already exists.
     </details>
-    
 
 #. Write a program that create a text file called `HelloWorld.txt` in its `bin/Debug` folder and store "Hello" followed by a name entered by the user in it.
 
