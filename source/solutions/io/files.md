@@ -57,7 +57,7 @@ tags:
     
     #. It does not close the file properly,
     #. It can throw exceptions if e.g., `filePath` cannot be accessed by the program,
-    #. It possibly overwrite the file located at `filePath`.
+    #. It possibly overwrites the file located at `filePath`.
     
     To solve those, it should be edited to:
     
@@ -65,6 +65,15 @@ tags:
     #. Be wrapped inside a `try`…`catch` block,
     #. Either test first if the file exists, or use the `StreamWriter` constructor that appends to the file if it already exists.
     </details>
+
+#. Assume that `filePath` contains the path to a text file that is not empty. Write a program that counts its number of lines.
+
+    <details><summary>Solution</summary>
+    ```{download="./code/projects/FileLineCount.zip"}
+    !include`snippetStart="// in the file we created.",snippetEnd="// We can do a simple check to make sure"` code/projects/FileLineCount/FileLineCount/Program.cs
+    ```
+    </details>
+
 
 #. Write a program that create a text file called `HelloWorld.txt` in its `bin/Debug` folder and store "Hello" followed by a name entered by the user in it.
 
