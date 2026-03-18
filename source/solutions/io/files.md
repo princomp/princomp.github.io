@@ -46,21 +46,21 @@ tags:
     StreamWriter sw = new StreamWriter(filePath);
     sw.WriteLine("Hello World!!");
     ```
-    
+
     <details><summary>Solution</summary>
     This program would
-    
+
     #. Create a file located at `filePath`,
     #. Store in the file "Hello World!!", followed by a new line.
-    
+
     This program is unsafe because:
-    
+
     #. It does not close the file properly,
     #. It can throw exceptions if e.g., `filePath` cannot be accessed by the program,
     #. It possibly overwrites the file located at `filePath`.
-    
+
     To solve those, it should be edited to:
-    
+
     #. Close the file using `sw.Close()`,
     #. Be wrapped inside a `try`…`catch` block,
     #. Either test first if the file exists, or use the `StreamWriter` constructor that appends to the file if it already exists.
