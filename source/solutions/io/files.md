@@ -47,8 +47,7 @@ tags:
     sw.WriteLine("Hello World!!");
     ```
 
-    <details><summary>Solution</summary>
-    This program would
+    <details><summary>Solution</summary>This program would
 
     #. Create a file located at `filePath`,
     #. Store in the file "Hello World!!", followed by a new line.
