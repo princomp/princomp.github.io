@@ -30,6 +30,16 @@ public string Attr1
   }
 
 */
+  
+  // A similar issue is to have a setter that does nothing:
+  
+  public string Attr2 {get{return attr1;} set{}}
+  
+  public string GetAttr2(){
+    return attr1;
+  }
+      
+  
   // Misconception #2
   public void Test(string argP)
   {
