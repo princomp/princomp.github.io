@@ -74,3 +74,16 @@ We could then obtain a code as follows:
 Note that `SetNOW` inside the no-args constructor actually calls a `SetNOW` method inside `Bike`, but since there is no such method, it fallback to the `SetNOW` method from the `Vehicle` class.
 If there was a `SetNOW` method in both the `Bike` and the `Vehicle` method, we could not force access to the `Vehicle` method^[Actually, we could, if you read [this post](https://stackoverflow.com/a/32562464), but it is considered bad practice.].
 -->
+
+## On Private and Public Methods and Attributes
+
+The following example tries to make it clear that `private` attributes *cannot* be accessed from classes inheriting.
+
+
+```{download="./code/projects/InheritanceAndAccessModifiers.zip"}
+!include code/projects/InheritanceAndAccessModifiers/InheritanceAndAccessModifiers/Person.cs
+```
+
+```{download="./code/projects/InheritanceAndAccessModifiers.zip"}
+!include code/projects/InheritanceAndAccessModifiers/InheritanceAndAccessModifiers/FMember.cs
+```
