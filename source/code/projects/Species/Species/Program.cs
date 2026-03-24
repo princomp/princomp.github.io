@@ -136,7 +136,13 @@ class Program
     }
     try
     {
-      Bat test4 = new Bat("LC", 10, "https://en.wikipedia.org/wiki/whatever", 2, -10);
+      Bat test4 = new Bat(
+        "LC",
+        10,
+        "https://en.wikipedia.org/wiki/whatever",
+        2,
+        -10
+      );
     }
     catch (Exception e)
     {

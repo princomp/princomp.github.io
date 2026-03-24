@@ -3,16 +3,17 @@
 class Bat : Mammal
 {
   private double flightSpeed;
-    /* 
-     * Having a property for the 
-     * flightSpeed attribute was 
-     * not required per the UML 
-     * diagram, but it was not 
-     * disallowed either.
-     * We use this approach here
-     * to make the code more 
-     * modular.
-     */
+
+  /*
+   * Having a property for the
+   * flightSpeed attribute was
+   * not required per the UML
+   * diagram, but it was not
+   * disallowed either.
+   * We use this approach here
+   * to make the code more
+   * modular.
+   */
   public double FlightSpeed
   {
     get { return flightSpeed; }

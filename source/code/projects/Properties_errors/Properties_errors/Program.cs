@@ -9,7 +9,7 @@ class Program
 
     test1.Test(null);
     test1.Test();
-    
+
     test1.Attr2 = "This is the parameter.";
     Console.WriteLine(test1.GetAttr2());
 

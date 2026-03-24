@@ -5,21 +5,20 @@ class Program
 {
   static void Main()
   {
-
     string filePath = Path.Combine(
       new DirectoryInfo(
         Directory.GetCurrentDirectory()
       ).ToString(),
       "Program.cs"
     );
-    
+
     /*
-     * On older versions, you may need to use the following instead, 
+     * On older versions, you may need to use the following instead,
      * as the program is executed in /bin/Debug, we need to go
      * two folders up, where Program.cs is located: note the ".Parent"
      * bits in the code that follows.
      */
-    
+
     /*
     
     string filePath = Path.Combine(
@@ -30,7 +29,7 @@ class Program
     );
     
     */
-    
+
     if (!File.Exists(filePath))
     {
       Console.WriteLine(

@@ -9,7 +9,10 @@ class Program
     string directoryPath = AppDomain
       .CurrentDomain
       .BaseDirectory;
-    string filePath = Path.Combine(directoryPath, "dummy.txt");
+    string filePath = Path.Combine(
+      directoryPath,
+      "dummy.txt"
+    );
     // Creating a generator for random numbers.
     Random gen = new Random();
     int linePopulated = gen.Next(20, 100);
@@ -37,7 +40,7 @@ class Program
       line = sr.ReadLine();
       while (line != null)
       {
-       count++;
+        count++;
         line = sr.ReadLine();
       }
       sr.Close();
@@ -48,11 +51,15 @@ class Program
     }
     // We can do a simple check to make sure
     // we populated as many lines as we counted.
-    if(count != linePopulated){
+    if (count != linePopulated)
+    {
       throw new Exception("Something was wrong!");
     }
-    else{
-      Console.WriteLine($"The file located at {filePath} has {count} lines.");
+    else
+    {
+      Console.WriteLine(
+        $"The file located at {filePath} has {count} lines."
+      );
     }
   }
 }

@@ -79,7 +79,6 @@ If there was a `SetNOW` method in both the `Bike` and the `Vehicle` method, we c
 
 The following example tries to make it clear that `private` attributes *cannot* be accessed from classes inheriting.
 
-
 ```{download="./code/projects/InheritanceAndAccessModifiers.zip"}
 !include code/projects/InheritanceAndAccessModifiers/InheritanceAndAccessModifiers/Person.cs
 ```
