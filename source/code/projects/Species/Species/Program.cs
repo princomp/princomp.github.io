@@ -136,7 +136,7 @@ class Program
     }
     try
     {
-      Bat test4 = new Bat("LC", -10, null, 0, 12);
+      Bat test4 = new Bat("LC", 10, "https://en.wikipedia.org/wiki/whatever", 2, -10);
     }
     catch (Exception e)
     {
@@ -156,5 +156,8 @@ class Program
     {
       Console.WriteLine(e.Message);
     }
+    // For the bonus on the url, consider testing with
+    // https://https://aubert.codeberg.page/.wikipedia.org/wiki/scam/
+    // If this string is accepted, consider revising your code!
   }
 }
