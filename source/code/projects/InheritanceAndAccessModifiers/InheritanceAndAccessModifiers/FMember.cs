@@ -1,3 +1,7 @@
+// Class for family members.
+// Family members are person
+// with an additional relationship
+// attribute.
 class FMember : Person
 {
   public string Relationship;
