@@ -5,8 +5,6 @@ tags:
 
 # More on Recursion
 
-The code for this lecture is available [in this archive](./code/projects/AdvancedRecursion.zip).
-
 ## Re-Introduction
 
 We previously defined recursion as follows:
@@ -15,7 +13,7 @@ We previously defined recursion as follows:
 
 Applied very strictly, the simplest (and most likely shortest) recursive method is the following:
 
-```
+```{download="./code/projects/AdvancedRecursion.zip"}
 !include`snippetStart="// Simplest possible example of a recursive function:", snippetEnd="// Uncomment at your own risk!"` code/projects/AdvancedRecursion/AdvancedRecursion/Program.cs
 ```
 
@@ -23,7 +21,7 @@ It is a method (`R`) that simply … calls itself. Even if this method does not 
 
 A better definition of recursion would include something about the method eventually terminating, like the following:
 
-```
+```{download="./code/projects/AdvancedRecursion.zip"}
 !include`snippetStart="// Recursive CountDown method", snippetEnd="// Usage example"` code/projects/AdvancedRecursion/AdvancedRecursion/Program.cs
 ```
 
@@ -37,7 +35,7 @@ But note that this method is not _always_ terminating: indeed, calling `CountDow
 
 A possible way to patch this would be to have two additional method: one to count "up" to 0, and one that decides which method to call:
 
-```
+```{download="./code/projects/AdvancedRecursion.zip"}
 !include`snippetStart="// Recursive CountUp method", snippetEnd="// Mutually recursive methods"` code/projects/AdvancedRecursion/AdvancedRecursion/Program.cs
 ```
 
@@ -45,7 +43,7 @@ As we can see, `Count` itself is *not* recursive, but it calls a recursive metho
 
 Finally, methods can be *mutually recursive*: a method `MyTurn` can call a `YourTurn` method that itself calls `MyTurn`. While neither method are recursive, they create a recursive situation, as exemplified below:
 
-```
+```{download="./code/projects/AdvancedRecursion.zip"}
 !include`snippetStart="// Mutually recursive methods", snippetEnd="// Usage example"` code/projects/AdvancedRecursion/AdvancedRecursion/Program.cs
 ```
 

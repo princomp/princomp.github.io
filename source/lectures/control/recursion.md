@@ -5,8 +5,6 @@ tags:
 
 # Recursion
 
-The code for this lecture is available [in this archive](./code/projects/RecursionHelloWorld.zip) (first parts) and [this one](./code/projects/ListDirectoriesFileRecursively.zip) (listing files and folders recursively).
-
 ## Introduction
 
 Recursion is a central notion in programming, simple to state but difficult to master: a method is *recursive* if it calls itself.
@@ -17,7 +15,7 @@ Below, we present some simple recursive programs: while some could be written wi
 
 Consider the following:
 
-```
+```{download="./code/projects/RecursionHelloWorld.zip"}
 !include`snippetStart="// Displays numbers from n to 1", snippetEnd="// Displays numbers from 1 to n"` code/projects/RecursionHelloWorld/RecursionHelloWorld/Program.cs
 ```
 
@@ -43,7 +41,7 @@ In our example, it would display "3 2 1 ".
 
 *When* the function calls itself matters a lot. Indeed, consider `displayRAll`, which calls itself *before* executing the `Console.WriteLine` instruction:
 
-```
+```{download="./code/projects/RecursionHelloWorld.zip"}
 !include`snippetStart="// Displays numbers from 1 to n", snippetEnd="// Recursive multiplication"` code/projects/RecursionHelloWorld/RecursionHelloWorld/Program.cs
 ```
 
@@ -72,7 +70,7 @@ In this example, "1 2 3 " would be displayed: the order is reversed with resp
 
 `displayAll` is an example of _tail recursion_: the recursive call is the **last** statement in the method.
 `displayRAll` is an example of _head recursion_: the recursive call is the **first** statement in the method.
-They are furthormore both examples of *linear recursion*, as they call themselves only once.
+They are furthermore both examples of *linear recursion*, as they call themselves only once.
 
 ## Recursive Methods Returning a Value
 
@@ -83,7 +81,7 @@ Recursive methods can also return a value, used by previous calls to compute som
 For example, consider that multiplication can be defined by addition: indeed, $x × y$ is $y + y + y + … + y$ where $y$ is summed $x$ times. Stated differently (read: recursively), $x × y$ is $y + ((x - 1) × y)$.
 We can implement such a program easily:
 
-```
+```{download="./code/projects/RecursionHelloWorld.zip"}
 !include`snippetStart="// Recursive multiplication", snippetEnd="// Recursive factorial"` code/projects/RecursionHelloWorld/RecursionHelloWorld/Program.cs
 ```
 
@@ -96,7 +94,7 @@ Observe that `mult(10000000, 0)` would call `mult` 10000001 times and add 0 to i
 The factorial of $n$ is $n! = n × (n-1) × (n-2) × (n-3) × … × 1$.
 This function can easily be implemented using recursion:
 
-```
+```{download="./code/projects/RecursionHelloWorld.zip"}
 !include`snippetStart="// Recursive factorial", snippetEnd="// An improvment would be to replace"` code/projects/RecursionHelloWorld/RecursionHelloWorld/Program.cs
 ```
 
@@ -107,12 +105,8 @@ Note that this code actually compute e.g., $5! = 5 × 4 × 3 × 2 × 1 × 1$ (wi
 While multiplication and factorial can be implemented without recursion, some structures makes it natural, or even required, to use recursion.
 Going through folders and files is an example of such situation.
 
-```
+```{download="./code/projects/ListDirectoriesFileRecursively.zip"}
 !include code/projects/ListDirectoriesFileRecursively/ListDirectoriesFileRecursively/Program.cs
 ```
-
-<!--
-`snippetStart="// https://stackoverflow.com/a/929277", snippetEnd="// An improvment would be to replace"
--->
 
 Note that our previous examples were calling themselves only once per method call, but that `ListDir` calls itself as many times as there are folders in the folder currently examined.
