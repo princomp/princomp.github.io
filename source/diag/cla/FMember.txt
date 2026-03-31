@@ -4,7 +4,7 @@ class Person{
     - name: string
     # nickName: string
     + commonName: string
-    + GetName(): string
+    + GetName() string
     + SetName(nameP: string)
     - NewName(newNameP)
     + Person()

@@ -83,6 +83,8 @@ Note that
         ```
     - there is no need for the `override` keyword,
 
+## A ToString 
+    
 ## A More Complicated Example
     
 !include diag/cla/Shape.md
