@@ -75,9 +75,13 @@ Note that `SetNOW` inside the no-args constructor actually calls a `SetNOW` meth
 If there was a `SetNOW` method in both the `Bike` and the `Vehicle` method, we could not force access to the `Vehicle` method^[Actually, we could, if you read [this post](https://stackoverflow.com/a/32562464), but it is considered bad practice.].
 -->
 
-## On Private and Public Methods and Attributes
+## On Private, Public and Protected Methods and Attributes
 
-The following example tries to make it clear that `private` attributes *cannot* be accessed from classes inheriting.
+The following example tries to make it clear that 
+
+- `private` attributes *cannot* be accessed from classes inheriting, nor from e.g., `Main` methods manipulating objects,
+- `protected` attributes *can* be accessed from classes inheriting, but *cannot* be accessed from e.g., `Main` methods manipulating objects,
+- `public` attributes *can* be accessed from classes inheriting *and* from e.g., `Main` methods manipulating objects.
 
 ```{download="./code/projects/InheritanceAndAccessModifiers.zip"}
 !include code/projects/InheritanceAndAccessModifiers/InheritanceAndAccessModifiers/Person.cs
@@ -86,3 +90,12 @@ The following example tries to make it clear that `private` attributes *cannot* 
 ```{download="./code/projects/InheritanceAndAccessModifiers.zip"}
 !include code/projects/InheritanceAndAccessModifiers/InheritanceAndAccessModifiers/FMember.cs
 ```
+
+```{download="./code/projects/InheritanceAndAccessModifiers.zip"}
+!include code/projects/InheritanceAndAccessModifiers/InheritanceAndAccessModifiers/Program.cs
+```
+
+
+Protected attributes and methods are denoted with the `#` sign in UML diagrams, as follows:
+
+!include diag/cla/FMember.md
