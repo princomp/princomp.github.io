@@ -23,7 +23,7 @@ A bonus (for more experienced programmers) asks to compute the winner of a race 
 
 #### In more details
 
-Your goal is to design and implement a static `TextFileHelper` class containing 5 methods (the fifth one being optional):
+Your goal is to design and implement a static `FileDisplayer` class containing 5 methods (the fifth one being optional):
 
 #. A `Display` method that takes a `string` as an argument and displays the content of the file located at the corresponding path if it exists, and an error message otherwise.
 #. A `DisplayN` method that takes a `string` and an `int`, and displays the line corresponding to the `int` argument from the file located at the corresponding path if it exists (with a line number before), and an error message otherwise.

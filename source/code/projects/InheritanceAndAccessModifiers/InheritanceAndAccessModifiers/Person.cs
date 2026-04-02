@@ -1,13 +1,13 @@
 public class Person
 {
   private string name;
+  protected string nickName;
+  public string commonName;
 
   public string GetName()
   {
     return name;
   }
-
-  public Person() { }
 
   public void SetName(string nameP)
   {
@@ -21,8 +21,10 @@ public class Person
     }
   }
 
-  private void NewName(string newnameP)
+  private void NewName(string newNameP)
   {
-    name = newnameP + $" (previous name: {name})";
+    name = newNameP + $" (previous name: {name})";
   }
+  
+  public Person() { }
 }

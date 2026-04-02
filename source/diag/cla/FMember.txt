@@ -1,0 +1,16 @@
+Person <|-- FMember
+
+class Person{
+    - name: string
+    # nickName: string
+    + commonName: string
+    + GetName() string
+    + SetName(nameP: string)
+    - NewName(newNameP)
+    + Person()
+}
+
+class FMember{
+    + relationShip: string
+    + FMember(relationP: string, nameP:string)
+}
