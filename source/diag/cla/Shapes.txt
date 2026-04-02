@@ -1,0 +1,23 @@
+Shape <|-- Circle
+Shape <|-- Rectangle
+
+class Shape{
+    <<Abstract>>
+    + GetArea() double*
+    + ToString() string
+}
+
+class Circle{
+    + «property» Radius: int
+    + «get» Diameter: int
+    + GetArea() double
+    + ToString() string
+}
+
+class Rectangle{
+    + «property» Width: int
+    + «property» Length: int 
+    + GetArea() double
+    + ToString() string
+    + Equals(rP: Rectangle) bool
+}
