@@ -232,7 +232,7 @@ PANDOC_OPTIONS_ALT = $(PANDOC_OPTIONS) --lua-filter $(FIL_TEMPLATES)default-code
 PANDOC_HTM = $(PANDOC_OPTIONS_ALT) --toc --default-image-extension=svg --standalone --template=$(HTM_TEMPLATES)template.html --metadata title="ℙrinciples of ℂomputer ℙrogramming"
 
 # PDF build options
-PANDOC_PDF:= $(PANDOC_OPTIONS_ALT) --toc --default-image-extension=svg --pdf-engine=xelatex --include-in-header=$(PDF_TEMPLATES)header.tex
+PANDOC_PDF:= $(PANDOC_OPTIONS_ALT) --toc --default-image-extension=svg --pdf-engine=xelatex --include-in-header=$(PDF_TEMPLATES)header.tex -V pdfstandard=ua-2
 
 # ODT build options
 PANDOC_ODT:= $(PANDOC_OPTIONS_ALT) --default-image-extension=png --reference-doc=$(ODT_TEMPLATES)custom-reference.odt
