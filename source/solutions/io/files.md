@@ -73,7 +73,6 @@ tags:
     ```
     </details>
 
-
 #. Write a program that create a text file called `HelloWorld.txt` in its `bin/Debug` folder and store "Hello" followed by a name entered by the user in it.
 
     <details><summary>Solution</summary>
@@ -104,6 +103,33 @@ tags:
     ```
     </details>
 
+#. Suppose that at `fPath` is located a file containing text. Write a program that
+    - Reads the content of the file, and sums all the numerical values when they are the only content on the line.
+    - Writes at the end of the file "Total:" followed by the total obtained previously.
+    
+    For example, the following file on the left would be edited as shown on the right once the program is done.
+    
+    ```text
+    File at fPath (before)   File at fPath (after)
+    ┌────────────────┐      ┌────────────────┐
+    │12.01           │      │12.01           │
+    │15.52           │      │15.52           │
+    │12.48           │      │12.48           │
+    └────────────────┘      │Total: 40.01    │
+                            └────────────────┘
+    ```
+    
+    In addition, your program should
+    
+    #. handle possible issues (file missing, not enough memory, …) graciously,
+    #. handle lines containing text: a line containing "This is 1 test" should simply be ignored.
+    
+    <details><summary>Solution</summary>
+    ```{download="./code/projects/FileSumNumber.zip"}
+    !include`snippetStart="// Beginning of solution.",snippetEnd="// This is simply to open the file and read it back"` code/projects/FileSumNumber/AverageNumberFromFiles/Program.cs
+    ```
+    </details>
+    
 #. Suppose that at `filePath` is located a file where each line is either
 
     - a decimal (e.g., 12.4, -14, 0.34),
