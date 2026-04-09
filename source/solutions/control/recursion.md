@@ -160,6 +160,17 @@ tags:
     Those are the first 6 digits of the [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_sequence).
     </details>
     
+#. What would the following code display?
+
+    ```{download="./code/projects/RecursionDisplayH.zip"}
+    !include`snippetStart="// DisplayH question",snippetEnd="// Examples"` code/projects/RecursionDisplayH/RecursionDisplayH/Program.cs
+    ```
+    
+    <details>
+    <summary>Solution</summary>
+    It would display `|| 4, 2, 1 **`. You can download the solution above to execute the method and see for yourself. Note that the condition `currentIndex == 0`  adds the ` ** ` string *at the very end* of the string returned.
+    </details>
+    
 #. Rewrite the following `while` loop as a recursive method.
 
     ```{download="./code/projects/RecursionAndLoops.zip"}

@@ -1,6 +1,16 @@
 using System;
 using System.IO;
 
+/*
+ * Foreword: note that the project
+ * asks the method to display an error
+ * message if something goes wrong. A more
+ * principled approach would require the
+ * method to send an exception back to 
+ * the main routine, and to let it handle
+ * the error as it sees fit.
+ */
+
 static class FileDisplayer
 {
   public static void Display(string exP)
