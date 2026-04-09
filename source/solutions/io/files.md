@@ -126,7 +126,7 @@ tags:
     
     <details><summary>Solution</summary>
     ```{download="./code/projects/FileSumNumber.zip"}
-    !include`snippetStart="// Beginning of solution.",snippetEnd="// This is simply to open the file and read it back"` code/projects/FileSumNumber/AverageNumberFromFiles/Program.cs
+    !include`snippetStart="// Beginning of solution.",snippetEnd="// This is simply to open the file and read it back"` code/projects/FileSumNumber/FileSumNumber/Program.cs
     ```
     </details>
     
