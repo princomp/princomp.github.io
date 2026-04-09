@@ -181,7 +181,6 @@ tags:
         !include`snippetStart="// ToString method",snippetEnd="// End of ToString method"` code/projects/RoomBedBath/RoomBedBath/BathRoom.cs
         ```
         </details>
-        
 
 #. Consider the diagram representing the "Article", "Book" classes and their relations.
 
@@ -221,3 +220,82 @@ tags:
         ```
         </details>
 
+#. Consider the diagram representing the "Shape", "Circle" and "Rectangle" classes, as well as their relations.
+
+      !include diag/cla/Shapes.md
+
+    #. Write the complete implementation of the `Shape` abstract class. The `ToString` method should simply return the string `"This shape is "`.
+            
+        <details><summary>Solution</summary>
+        ```{download="code/projects/Shapes.zip"}
+        !include code/projects/Shapes/Shapes/Shape.cs
+        ```
+        </details> 
+            
+    #. Write an implementation for the `Radius` property of the `Circle` class such that setting the radius to a negative value would result in an `ArgumentOutOfRangeException` (that you can shorten to `AOORE`) exception being thrown. Add an attribute if needed.
+    
+        <details><summary>Solution</summary>
+        ```{download="code/projects/Shapes.zip"}
+        !include`snippetStart="// Radius property",snippetEnd="// Diameter property"` code/projects/Shapes/Shapes/Circle.cs
+        ```
+        </details> 
+        
+    #. Write the `Diameter` property for the `Circle` class, which should return $2$ times the radius. Only the `get` should be provided: briefly explain why the `set` is missing.
+
+        <details><summary>Solution</summary>
+        ```{download="code/projects/Shapes.zip"}
+        !include`snippetStart="// Diameter property",snippetEnd="// Rest of the class"` code/projects/Shapes/Shapes/Circle.cs
+        ```
+        </details> 
+        
+    #. Write an implementation for the `ToString` method of the `Rectangle` class that returns a `string` containing what was returned by the `Shape`'s `ToString` method, the width, length and area of the calling object. For example, for a `Rectangle` with width 10 and length 5, it should be of the form "This shape is a rectangle (W: 10, L: 5, Area: 50)".
+
+        <details><summary>Solution</summary>
+        ```{download="code/projects/Shapes.zip"}
+        !include`snippetStart="// ToString method",snippetEnd="// Equals method"` code/projects/Shapes/Shapes/Rectangle.cs
+        ```
+        </details> 
+        
+    #. Write the `Equals` method for the `Rectangle` class. It should return `true` if the calling object and the parameter have the same lengths and same widths, or if one can be obtained by rotating the other.
+
+        <details><summary>Solution</summary>
+        ```{download="code/projects/Shapes.zip"}
+        !include`snippetStart="// Equals method",snippetEnd="// End of Equals method"` code/projects/Shapes/Shapes/Rectangle.cs
+        ```
+        </details> 
+        
+    #. Briefly explain how `Shape` could be converted into an interface and what would be the benefit(s) and disadvantage(s) of carrying out such a modification.
+        
+        <details><summary>Solution</summary>
+        A `Shape` interface would be 
+        
+        - less code,
+        - without the need to explicitly list the methods as `public` and `abstract`,
+        - not capable of specifying what the beginning of the string returned by the `ToString` method should be, or to give any non-abstract method for that matter.
+        
+        Another benefit is that the `Rectangle` and `Circle` classes could realize multiple interfaces instead of only inheriting from the `Shape` class.
+        
+        Its implementation would be:
+        
+        ```
+        interface Shape
+        {
+            double GetArea();
+        }
+        ```
+        
+        Note that our interface *cannot* have a `ToString` method, for a delicate reason that we explain now, but that was not supposed to be part of the answer. You cannot force the implementation of a `ToString` with an interface, as discussed for example [in this stack exchange post](https://stackoverflow.com/q/510341), where an alternative solution is provided (essentially: use an abstract class).
+
+        You can convince yourself that this is the case by downloading and compiling the following two files:
+
+        ```{download="code/projects/IToString.zip"}
+        !include code/projects/IToString/IToString/IToString.cs
+        ```
+        
+        ```{download="code/projects/IToString.zip"}
+        !include code/projects/IToString/IToString/Demo.cs
+        ```
+
+        This code would indeed compile just fine, *even if `Demo` does not provide the implementation of a `ToString` method*.
+        Of course, `Demo` already posses a `ToString` method, the one every class inherits.
+        </details>
