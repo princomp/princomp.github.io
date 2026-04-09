@@ -53,6 +53,22 @@ tags:
     - [ ] The keyword `out` cannot be used in the header of a method.
     - [ ] An `out` parameter cannot be assigned a value.
 
+#. A method is forced to set the value of an `int` argument `c` passed as a reference, if it has…
+
+    - [x] … `out int c` in its header
+    - [ ] … `int out c` in its header
+    - [ ] … `ref int c` in its header
+    - [ ] … `int ref c` in its header
+    
+#. A method with header `public virtual void Test(int a, ref int b)` will…
+  
+    - [ ] Return a value
+    - [ ] Set the value of `a`
+    - [ ] Set the value of `b`
+    - [x] Assume that `a` has a value
+    - [x] Assume that `b` has a value
+    - [ ] Be impossible to override
+    
 ## Warm-up Exercises
 
 #. Consider the following code:

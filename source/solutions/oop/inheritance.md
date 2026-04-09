@@ -69,6 +69,15 @@ tags:
     - [x] Need to be inside an `abstract` class
     - [x] Not be overriden
 
+#. A method …
+
+    - [ ] … can be accessed from any class if it is marked `protected`.
+    - [ ] … can be accessed from its derived classes if it is marked `private`.
+    - [ ] … is recursive if it terminates.
+    - [x] … is recursive if it calls itself.
+    - [x] … must be overridden if it is marked `abstract`.
+    - [ ] … cannot be overriden if it is marked `sealed`.
+
 #. Give at least two differences between an abstract class and an interface.
 
     <details><summary>Solution</summary>
