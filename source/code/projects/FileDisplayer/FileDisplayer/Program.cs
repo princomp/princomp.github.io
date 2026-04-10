@@ -61,8 +61,7 @@ demo file.
 2,Phillip,Summers,76,82,91
 3,Kristine,Travis,78,82,83
 4,Marty,Gave,67,73,72
-5,Harley,Test,78,91,72
-"
+5,Harley,Test,78,91,72"
       );
       sr.Close();
     }
