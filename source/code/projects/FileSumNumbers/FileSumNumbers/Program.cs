@@ -26,7 +26,7 @@ class Program
     {
       Console.WriteLine("Exception: " + e.Message);
     }
-    
+
     // Beginning of solution.
     string line;
     double number;
@@ -53,12 +53,14 @@ class Program
     }
     finally
     {
-      Console.WriteLine("Done summing the numbers in the file.");
+      Console.WriteLine(
+        "Done summing the numbers in the file."
+      );
     }
-    
+
     try
     {
-      // The "true" in the following constructor allows 
+      // The "true" in the following constructor allows
       // us to directly append at the end of the file.
       StreamWriter sw = new StreamWriter(fPath, true);
       sw.WriteLine($"Total: {sum}");
@@ -68,28 +70,31 @@ class Program
     {
       Console.WriteLine("Exception: " + e.Message);
     }
-    finally{
+    finally
+    {
       Console.WriteLine("Done writing in the file.");
     }
-    
+
     // This is simply to open the file and read it back
     // directly from the program.
-    try{
+    try
+    {
       StreamReader sr = new StreamReader(fPath);
       line = sr.ReadLine();
-      while(line != null){
+      while (line != null)
+      {
         Console.WriteLine(line);
         line = sr.ReadLine();
       }
       sr.Close();
     }
-        catch (Exception e)
+    catch (Exception e)
     {
       Console.WriteLine("Exception: " + e.Message);
     }
-    finally{
+    finally
+    {
       Console.WriteLine("Done displaying the file.");
     }
-      
   }
 }

@@ -30,22 +30,30 @@ public class Rectangle : Shape
         length = value;
     }
   }
-  
-  public override double GetArea(){
+
+  public override double GetArea()
+  {
     return Width * Length;
   }
-  
+
   // ToString method
-    public override string ToString()
+  public override string ToString()
   {
-    return base.ToString() + " a rectangle (W:" + Width + ", L:" + Length + ", Area: " + GetArea() + ")\n";
+    return base.ToString()
+      + " a rectangle (W:"
+      + Width
+      + ", L:"
+      + Length
+      + ", Area: "
+      + GetArea()
+      + ")\n";
   }
-  
-  // Equals method  
-  public bool Equals(Rectangle rP){
-    return (rP.Length == Length && rP.Width == Width) || (rP.Length == Width && rP.Width == Length); 
+
+  // Equals method
+  public bool Equals(Rectangle rP)
+  {
+    return (rP.Length == Length && rP.Width == Width)
+      || (rP.Length == Width && rP.Width == Length);
   }
   // End of Equals method
-  
-
 }

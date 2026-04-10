@@ -25,6 +25,6 @@ public class Person
   {
     name = newNameP + $" (previous name: {name})";
   }
-  
+
   public Person() { }
 }

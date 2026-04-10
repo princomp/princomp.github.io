@@ -20,6 +20,5 @@ class Program
 
     test1.commonName = "Test";
     FMember test2 = new FMember("Cousin", "Samuel");
-    
   }
 }
