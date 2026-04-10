@@ -126,3 +126,7 @@ In particular, make sure you write your name and the date in a delimited comment
 ## Solution
 
 A possible solution is shared [in this archive](./code/projects/FileDisplayerSolution.zip).
+
+Note that the project asks the method to display an error message if something goes wrong, and that this is the approach used in the proposed solution.
+A more principled approach would require the method to send an exception back to the main routine, and to let it handle the error as it sees fit.
+
