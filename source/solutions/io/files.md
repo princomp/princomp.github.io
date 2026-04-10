@@ -125,8 +125,8 @@ tags:
     #. handle lines containing text: a line containing "This is 1 test" should simply be ignored.
     
     <details><summary>Solution</summary>
-    ```{download="./code/projects/FileSumNumber.zip"}
-    !include`snippetStart="// Beginning of solution.",snippetEnd="// This is simply to open the file and read it back"` code/projects/FileSumNumber/FileSumNumber/Program.cs
+    ```{download="./code/projects/FileSumNumbers.zip"}
+    !include`snippetStart="// Beginning of solution.",snippetEnd="// This is simply to open the file and read it back"` code/projects/FileSumNumbers/FileSumNumbers/Program.cs
     ```
     </details>
     
