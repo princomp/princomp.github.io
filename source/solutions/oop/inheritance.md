@@ -76,7 +76,7 @@ tags:
     - [ ] … is recursive if it terminates.
     - [x] … is recursive if it calls itself.
     - [x] … must be overridden if it is marked `abstract`.
-    - [ ] … cannot be overriden if it is marked `sealed`.
+    - [x] … cannot be overriden if it is marked `sealed`.
 
 #. Give at least two differences between an abstract class and an interface.
 
@@ -255,6 +255,8 @@ tags:
         ```{download="code/projects/Shapes.zip"}
         !include`snippetStart="// Diameter property",snippetEnd="// Rest of the class"` code/projects/Shapes/Shapes/Circle.cs
         ```
+        
+        The `set` is missing because `Diameter` must be at all time be equal to `Radius` times 2. There is no point in storing the diamater separately, since this information can be recovered, and since storing it would require to change the value of `Radius` every time it is updated.
         </details> 
         
     #. Write an implementation for the `ToString` method of the `Rectangle` class that returns a `string` containing what was returned by the `Shape`'s `ToString` method, the width, length and area of the calling object. For example, for a `Rectangle` with width 10 and length 5, it should be of the form "This shape is a rectangle (W: 10, L: 5, Area: 50)".
