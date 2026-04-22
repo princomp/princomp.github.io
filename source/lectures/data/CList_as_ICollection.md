@@ -34,3 +34,5 @@ In addition to signaling that our class realizes the interface, using `public cl
 ```{download="./code/projects/CList_ICollection.zip"}
 !include`snippetStart="/* Done with Cell.*/", snippetEnd="/* We are done realizing the ICollection class. */"` code/projects/CList_ICollection/CList_ICollection/CList.cs
 ```
+
+The technical role of the [`yield` keyword](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/yield) is not really important: the main thing to understand is that we are constructing a way for C# to iterate over elements in our custom list in the `GetEnumerator` method.
