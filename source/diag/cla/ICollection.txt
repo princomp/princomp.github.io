@@ -9,5 +9,3 @@ class ICollection~T~{
     + GetEnumerator() IEnumerator
     + Remove(item: T) bool
 }
-
-    

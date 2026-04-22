@@ -232,7 +232,9 @@ PANDOC_OPTIONS_ALT = $(PANDOC_OPTIONS) --lua-filter $(FIL_TEMPLATES)default-code
 PANDOC_HTM = $(PANDOC_OPTIONS_ALT) --toc --default-image-extension=svg --standalone --template=$(HTM_TEMPLATES)template.html --metadata title="ℙrinciples of ℂomputer ℙrogramming"
 
 # PDF build options
-PANDOC_PDF:= $(PANDOC_OPTIONS_ALT) --toc --default-image-extension=svg --pdf-engine=xelatex --include-in-header=$(PDF_TEMPLATES)header.tex -V pdfstandard=ua-2
+PANDOC_PDF:= $(PANDOC_OPTIONS_ALT) --toc --default-image-extension=svg --pdf-engine=xelatex --include-in-header=$(PDF_TEMPLATES)header.tex 
+# -V pdfstandard=ua-2
+# ! Package tagpdf Error: there is no open structure on the stack
 
 # ODT build options
 PANDOC_ODT:= $(PANDOC_OPTIONS_ALT) --default-image-extension=png --reference-doc=$(ODT_TEMPLATES)custom-reference.odt
@@ -342,7 +344,8 @@ CLEAN-PREREQ:
 #	&& echo "](./$(basename $<).svg)" >> $@
 	
 $(CLA_DIR)%.md: $(CLA_DIR)%.txt | $(CLA_DIR)%.svg $(CLA_DIR)%.png
-	echo "![A UML diagram for the $$(sed 's-class \(.*\){-\1-g' $< | sed 's/<|--/⇽/' | sed 's/<|../◁┈/' | sed -n '1p' ) class ([text version](./$(basename $@).txt), [image version](./$(basename $@).png), [svg version](./$(basename $@).svg))]($(notdir $(basename $@)).png)" > $@
+# In the following substitution, 's/~T~/<T>/' is for generic type parameter. 
+	echo "![A UML diagram for the \`$$(sed 's-class \(.*\){-\1-g' $< | sed 's/~T~/<T>/' | sed 's/<|--/⇽/' | sed 's/<|../◁┈/' | sed -n '1p' )\` class ([text version](./$(basename $@).txt), [image version](./$(basename $@).png), [svg version](./$(basename $@).svg))]($(notdir $(basename $@)).png)" > $@
 
 $(CLA_DIR)%.svg: $(CLA_DIR)%.txt
 	@echo "Creating $@"

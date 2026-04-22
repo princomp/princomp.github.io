@@ -39,17 +39,37 @@ public class CList<T> : ICollection<T>
   }
 
   /* Done with Cell.*/
-
-  // Empty
-  public bool IsEmpty()
+  
+  public int Count
   {
-    return first == null;
+    get
+    {
+      int size = 0;
+      Cell cCell = first;
+      while (cCell != null)
+      {
+        cCell = cCell.Next;
+        size++;
+      }
+      return size;
+    }
   }
 
-  // Add is simply "AddF", slightly revisited.
+  public bool isReadOnly = false;
+  // This attribute is not required by the interface,
+  // but convenient to have.
+  public bool IsReadOnly
+  {
+    get { return isReadOnly; }
+    set { isReadOnly = value; }
+    // Note that set is not required by the interface
+  }
+  
+  // Add is simply "AddF", slightly revisited
+  // to account for IsReadOnly attribute.
   public void Add(T value)
   {
-    if (isReadonly)
+    if (isReadOnly)
     {
       throw new InvalidOperationException(
         "List is read-only."
@@ -57,12 +77,12 @@ public class CList<T> : ICollection<T>
     }
     first = new Cell(value, first);
   }
-
+  
   public void Clear()
   {
     first = null;
   }
-
+  
   public bool Contains(T value)
   {
     bool found = false;
@@ -77,8 +97,8 @@ public class CList<T> : ICollection<T>
     }
     return found;
   }
-
-  // Copies the elements of the ICollection to an Array, starting at a particular Array index.
+  
+    // Copies the elements of the ICollection to an Array, starting at a particular Array index.
   public void CopyTo(T[] array, int arrayIndex)
   {
     if (array == null)
@@ -103,13 +123,38 @@ public class CList<T> : ICollection<T>
       cCell = cCell.Next;
     }
   }
+  
+    public IEnumerator<T> GetEnumerator()
+  {
+    Cell cCell = first;
+    while (cCell != null)
+    {
+      yield return cCell.Data;
+      cCell = cCell.Next;
+    }
+  }
+
+  IEnumerator IEnumerable.GetEnumerator()
+  {
+    return this.GetEnumerator(); // call the generic version of the method
+  }
+
+  /* We are done realizing the ICollection class. */
+  
+  // Some additional methods.
+
+  // Empty
+  public bool IsEmpty()
+  {
+    return first == null;
+  }
 
   // Remove the first node containing the value
   // if it exists and returns true,
   // returns false otherwise.
   public bool Remove(T value)
   {
-    if (isReadonly)
+    if (isReadOnly)
     {
       throw new InvalidOperationException(
         "List is read-only"
@@ -143,50 +188,11 @@ public class CList<T> : ICollection<T>
     return removed;
   }
 
-  public int Count
-  {
-    get
-    {
-      int size = 0;
-      Cell cCell = first;
-      while (cCell != null)
-      {
-        cCell = cCell.Next;
-        size++;
-      }
-      return size;
-    }
-  }
-
-  public bool isReadonly = false;
-  public bool IsReadOnly
-  {
-    get { return isReadonly; }
-    set { isReadonly = value; }
-  }
-
-  public IEnumerator<T> GetEnumerator()
-  {
-    Cell cCell = first;
-    while (cCell != null)
-    {
-      yield return cCell.Data;
-      cCell = cCell.Next;
-    }
-  }
-
-  IEnumerator IEnumerable.GetEnumerator()
-  {
-    return this.GetEnumerator(); // call the generic version of the method
-  }
-
-  /* We are done realizing the ICollection class. */
-
   // One last method, to remove the last cell and
   // returns its value.
   public T RemoveL()
   {
-    if (isReadonly)
+    if (isReadOnly)
     {
       throw new InvalidOperationException(
         "List is read-only"

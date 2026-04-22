@@ -26,6 +26,7 @@ class Program
     {
       Console.Write(item + " ");
     }
+    // Done with first example.
     Console.WriteLine("");
 
     Console.Write(
