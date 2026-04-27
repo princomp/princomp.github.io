@@ -59,7 +59,7 @@ class Program
 
     // 1. Removing a value that is present one time.
     Console.Write(
-      "We removed an occurence of 10: "
+      "We removed an occurrence of 10: "
         + myList1.Remove(10)
         + ".\n"
     );
@@ -73,7 +73,7 @@ class Program
     myList1.Add(1);
     myList1.Add(1);
     Console.Write(
-      "We removed an occurence of 1: "
+      "We removed an occurrence of 1: "
         + myList1.Remove(1)
         + ".\n"
     );
@@ -85,7 +85,7 @@ class Program
 
     // 3. Removing a value that is not in the list.
     Console.Write(
-      "We removed an occurence of 20: "
+      "We removed an occurrence of 20: "
         + myList1.Remove(20)
         + ".\n"
     );

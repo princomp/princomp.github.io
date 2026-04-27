@@ -79,11 +79,8 @@ Please, follow our [guideline on project submission](./projects/submission).
 In particular, make sure you write your name and the date in a delimited comment at the beginning of your file.
 
 
-<!--
-
 ## Solution
 
-A possible solution is shared [in this archive](./code/projects/AList.zip).
+A possible solution is shared [in this archive](./code/projects/AList.zip). It does *not* implement a `ToString` method or a method to insert at a given index, but complete all the bonuses otherwise: in particular, the `Main` method exemplifies numerous tests.
 
 Note that it does not use a "counter" to keep track of how many elements are in the list, but instead resize the array and create a new array of the appropriate size when needed: this is less efficient, since copying the array is linear in its size, but gives a more compact code.
--->

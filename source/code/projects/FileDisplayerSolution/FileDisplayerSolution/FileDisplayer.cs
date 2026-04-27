@@ -199,7 +199,7 @@ static class FileDisplayer
       {
         StreamReader sw = new StreamReader(exP);
         sw.ReadLine(); // Skipping the first line
-        
+
         string cLine = sw.ReadLine();
         string[] cLineSplit = cLine.Split(',');
         string winnerSoFar =

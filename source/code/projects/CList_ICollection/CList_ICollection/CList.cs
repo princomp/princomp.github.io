@@ -39,7 +39,7 @@ public class CList<T> : ICollection<T>
   }
 
   /* Done with Cell.*/
-  
+
   public int Count
   {
     get
@@ -56,6 +56,7 @@ public class CList<T> : ICollection<T>
   }
 
   public bool isReadOnly = false;
+
   // This attribute is not required by the interface,
   // but convenient to have.
   public bool IsReadOnly
@@ -64,7 +65,7 @@ public class CList<T> : ICollection<T>
     set { isReadOnly = value; }
     // Note that set is not required by the interface
   }
-  
+
   // Add is simply "AddF", slightly revisited
   // to account for IsReadOnly attribute.
   public void Add(T value)
@@ -77,12 +78,12 @@ public class CList<T> : ICollection<T>
     }
     first = new Cell(value, first);
   }
-  
+
   public void Clear()
   {
     first = null;
   }
-  
+
   public bool Contains(T value)
   {
     bool found = false;
@@ -97,8 +98,8 @@ public class CList<T> : ICollection<T>
     }
     return found;
   }
-  
-    // Copies the elements of the ICollection to an Array, starting at a particular Array index.
+
+  // Copies the elements of the ICollection to an Array, starting at a particular Array index.
   public void CopyTo(T[] array, int arrayIndex)
   {
     if (array == null)
@@ -123,8 +124,8 @@ public class CList<T> : ICollection<T>
       cCell = cCell.Next;
     }
   }
-  
-    public IEnumerator<T> GetEnumerator()
+
+  public IEnumerator<T> GetEnumerator()
   {
     Cell cCell = first;
     while (cCell != null)
@@ -140,7 +141,7 @@ public class CList<T> : ICollection<T>
   }
 
   /* We are done realizing the ICollection class. */
-  
+
   // Some additional methods.
 
   // Empty
