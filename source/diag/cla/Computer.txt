@@ -4,13 +4,13 @@ class Computer{
     - name: brand
     + SetBrand(brandP: string)
     + Computer(bP: string)
-    + ToString(): string
+    + ToString() string
 }
 
 class Laptop{
     + «property» Battery: double
     - int screenSize
     + «property» ScreenSize: int 
-    + Laptop(bap: double, ssP: int, brP: string)
-    + ToString(): string
+    + Laptop(baP: double, ssP: int, brP: string)
+    + ToString() string
 }
