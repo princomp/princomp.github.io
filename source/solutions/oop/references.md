@@ -120,6 +120,25 @@ tags:
     
 ## Problems
 
+#. Knowing that our secret word is "[scytale](https://en.wikipedia.org/wiki/Scytale)", write a `UserFoundSecretWord` method that
+
+    - asks the user for a `string`,
+    - throws an `ArgumentNullException` exception if the string entered is `null`,
+    - returns `true` if the string entered contains `"scytale"`, `false` otherwise,
+    - stores the string entered in the `uInput` reference variable.
+    
+    with the following header, where you need to fill in `_________`:
+
+    ```
+    public static bool UserFoundSecretWord(_________ string uInput){
+    ```
+    
+    <details><summary>Solution</summary>
+    ```{download="./code/projects/UserFoundSecretWord.zip"}
+    !include`snippetStart="// Beginning of solution.",snippetEnd="// End of solution."` code/projects/UserFoundSecretWord/UserFoundSecretWord/Program.cs
+    ```
+    </details>
+    
 #. Write the `AddLog` method (header included) such that the following:
         
     ```{download="./code/projects/ReferenceMethods.zip"}
