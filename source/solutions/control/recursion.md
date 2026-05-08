@@ -173,9 +173,11 @@ tags:
     
 #. Write a *recursive* method that asks the user to enter a `string`, and calls itself if the user entered anything other than `"Let me out!"`.
 
+    <details><summary>Solution</summary>
     ```{download="./code/projects/RecursivePrison.zip"}
     !include`snippetStart="// Beginning of solution.",snippetEnd="// End of solution."` code/projects/RecursivePrison/RecursivePrison/Program.cs
     ```
+    </details>
     
   
 #. Rewrite the following `while` loop as a recursive method.
