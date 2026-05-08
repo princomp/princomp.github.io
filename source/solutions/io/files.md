@@ -103,7 +103,39 @@ tags:
     ```
     </details>
 
+
+#. Suppose given 
+    
+    - a `inputFilePath` `string` variable, where a `txt` file is located,
+    - a `outputFilePath` `string` variable.
+    
+    Write a program that copies the content of the file located at `inputFilePath` *excluding lines starting with the `%` character* into the file located at `outputFilePath`.
+    
+    For example, if the file located at `inputFilePath` contains:
+
+    ```text
+    % This is a comment
+    Here is a line.
+    I'm 90% done!
+    ```
+    
+    then, after your program executed, the file at `outputFilePath` should contain:
+    
+    ```text
+    Here is a line.
+    I'm 90% done!
+    ```
+    
+    Your program should handle graciously unexpected issues.
+    
+    <details><summary>Solution</summary>
+    ```{download="./code/projects/FileCopy.zip"}
+    !include`snippetStart="// Beginning of solution.",snippetEnd="// This is simply to open the file and read it back"` code/projects/FileCopy/FileCopy/Program.cs
+    ```
+    </details>
+    
 #. Suppose that at `fPath` is located a file containing text. Write a program that
+
     - Reads the content of the file, and sums all the numerical values when they are the only content on the line.
     - Writes at the end of the file "Total:" followed by the total obtained previously.
     
