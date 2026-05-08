@@ -98,19 +98,36 @@ tags:
     !include code/projects/Computer/Computer/Computer.cs
     ```
     
-    Write a `Laptop` class that
+    #. Write a `Laptop` class that
     
-    #. Inherits from `Computer`,
-    #. Has one single (automatic) property, called `ScreenSize`, of type `int`,
-    #. Has a constructor that takes 2 parameters of appropriate datatypes, and use them to set `brand` and `ScreenSize`,
-    #. Has a `ToString` method that returns a `string` containing the brand and screen size.
-    
+        #. Inherits from `Computer`,
+        #. Has an automatic `double` property called `Battery`,
+        #. Has a property, called `ScreenSize`, of type `int`, that throws the `ArgumentException` exception if the argument is 0 or less,
+        #. Has a constructor that takes 3 parameters of appropriate datatypes, and use them to set `Battery`, `ScreenSize` and `brand` (in this order),
+        #. Has a `ToString` method that returns a `string` containing the battery (expressed as a percentage), the screen size and the brand.
 
         <details><summary>Solution</summary>
         ```{download="code/projects/Computer.zip"}
         !include code/projects/Computer/Computer/Laptop.cs
         ```
-        </details>
+        </details>    
+    #. Among the following statements, indicate which are valid:
+    
+        - [ ] `Computer test0 = new Computer();`
+        - [x] `Computer test1 = new Computer("Dell");`
+        - [x] `Computer test2 = new Laptop(.6, 12, "ThinkPenguin");`
+        - [ ] `Laptop test3 = new Computer("Dell");`
+        - [x] `Laptop test4 = new Laptop(.6, 12, "ThinkPenguin");`
+        - [ ] `Computer test5 = new Computer(.6, 12, "ThinkPenguin");`
+    
+    #. Draw the UML diagram for the `Computer` and `Laptop` classes.
+    
+    <details><summary>Solution</summary>
+    !include diag/cla/Computer.md
+
+    Note that we explicitly list `Battery` and `Screensize` as properties and include the backing field for `ScreenSize`.
+    Note also that we omit the `void` return type.
+    </details>
 
 #. Consider the diagram representing the "Room", "ClassRoom", "Office" classes and their relations.
 
