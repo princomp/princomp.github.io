@@ -171,6 +171,13 @@ tags:
     It would display `|| 4, 2, 1 **`. You can download the solution above to execute the method and see for yourself. Note that the condition `currentIndex == 0`  adds the ` ** ` string *at the very end* of the string returned.
     </details>
     
+#. Write a *recursive* method that asks the user to enter a `string`, and calls itself if the user entered anything other than `"Let me out!"`.
+
+    ```{download="./code/projects/RecursivePrison.zip"}
+    !include`snippetStart="// Beginning of solution.",snippetEnd="// End of solution."` code/projects/RecursivePrison/RecursivePrison/Program.cs
+    ```
+    
+  
 #. Rewrite the following `while` loop as a recursive method.
 
     ```{download="./code/projects/RecursionAndLoops.zip"}
